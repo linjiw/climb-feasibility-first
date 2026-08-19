@@ -188,6 +188,26 @@ against Newton 1.0 GA (which changed the collision stack) is specified as future
 5. For flagged-but-wanted motions: repair, don't just drop [pending 🕐 — repair experiment
    sealed-after-N3, `plan/N7_DRAFT_repair.md`].
 
+## 8. Deliverables and economics
+
+**The economics, stated once** [measured]: the screen costs ~1 CPU-second per clip — ~3 CPU-hours
+for this entire bank — and the geometric repair ~3 CPU-seconds per recoverable clip, against
+training runs of 10³–10⁴ GPU-hours (SONIC-scale: 21,000 GPU-hours). Feasibility hygiene is four
+to five orders of magnitude cheaper than the training it protects, and the exposure it reclaims
+is not marginal: a failure-weighted sampler spent a mean 48.8 % of its draws on one impossible
+clip [measured; `reports/wasted_exposure_accounting.json`].
+
+**Three deliverables, at three pipeline stages:** (i) **refeas v0.1.0** — the offline
+pre-training screen (Apache-2.0, github.com/linjiw/refeas; version hash pinned in the sealed
+evaluation policy). (ii) **contact-projection repair**
+(`tools/repair_contact_projection.py`) — recovers the root-floating defect class in ~3 s/clip
+[measured: the attractor 0.13 → 0.00 at 8.2 cm; a 100 %-flagged subset's walks 0.66 → 0.01] while
+refusing genuine ballistics via an over-repair budget; the census over all 2,442 flagged clips is
+aggregating [pending 🕐; `reports/repair_census/`]. (iii) **evaluation & monitoring protocols** —
+stratified-start evaluation, feasibility-stratified endpoints (sealed policy `a93a87a0`), the
+Appendix-A coupling checklist, and the pre-registered rollout-only infeasibility detector
+[pending 🕐, P-SIGN `c7916e8c`].
+
 ## Appendix A — coupling-error taxonomy
 
 (→ `appendix_coupling_taxonomy.md`, shipped verbatim; also `refeas/docs/COUPLING_TAXONOMY.md`.)

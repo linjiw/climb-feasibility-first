@@ -69,10 +69,24 @@ to the community now, independent of how those slots resolve — and the paper i
 either outcome is reportable without revision of any earlier claim.
 
 **Contributions.** (1) A mechanism-level diagnosis of failure-adaptive curriculum collapse in
-humanoid tracking, including the non-floor derivation, with upstream fixes filed. (2) A
-coverage-grounded repair that provably floors exposure and rescues failure-weighted sampling.
-(3) The feasibility × support × intrinsic decomposition of tracking difficulty, with a released
-~1 CPU-s/clip dynamic-feasibility screen, bank-scale prevalence, and the demonstration that
+humanoid tracking, including the non-floor derivation, with upstream fixes filed — and the
+exposure accounting that quantifies the cost: the shipped sampler spends a mean 48.8 % of all
+clip draws (peak 87–89 %) on a single impossible clip [measured;
+`reports/wasted_exposure_accounting.json`]. (2) A coverage-grounded repair that provably floors
+exposure and rescues failure-weighted sampling. (3) The feasibility × support × intrinsic
+decomposition of tracking difficulty, with bank-scale prevalence and the demonstration that
 feasibility is the transferable component of difficulty. (4) An audit methodology for
 simulation-based robot learning — dual-stack conformance, stratified-start evaluation, calibrated
-paired-rollout sensitivity, and a sealed prediction ledger — released as tools and protocols.
+paired-rollout sensitivity, and a sealed prediction ledger. The data-engineering economics frame
+all four: screening the entire 10,705-clip bank costs ~3 CPU-hours and repairing a recoverable
+clip ~3 CPU-seconds, against the 10³–10⁴ GPU-hours of the training runs they protect — four to
+five orders of magnitude between the audit and the asset it defends.
+
+**Released deliverables (three, distinct in where they sit in the pipeline):**
+(i) **refeas** — the offline pre-training screen (contact-free inverse dynamics + torque-limited
+contact LP, ~1 CPU-s/clip); (ii) **contact-projection repair** — the lightweight geometric fix
+for the recoverable fraction of flagged clips (root projection onto the contact manifold, with an
+over-repair budget that refuses genuine ballistics); (iii) **evaluation & monitoring protocols**
+— stratified-start evaluation, feasibility-stratified endpoints, the dual-stack conformance
+checklist, and (pending its pre-registered test 🕐) the rollout-only sign-reversal detector as a
+runtime guard.
