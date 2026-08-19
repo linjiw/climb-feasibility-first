@@ -27,19 +27,19 @@ five orders of magnitude cheaper than the training it protects.**
 The loop "diagnosis → fix → measured performance gain" closes in three steps, two already sealed:
 
 - **N3 (sealed `af1b7c9f`, preflight frozen)**: composition — do 16 *feasible* kneel/crawl clips
-  make the feasible phase trackable? This is the *support* axis's causal test. Runs first GPU
-  block after Sept 15.
+  make the feasible phase trackable? This is the *support* axis's causal test. **Chain launched
+  2026-08-21** (gap-gated; verification passed; s2/s3 pre-unblinding baselines already captured).
 - **N7 (draft, seal after N3 — now extended, see §2)**: repair — does fixing the impossible
   transition make the *descent* trackable, and does the sign-reversal vanish? This is the
   *feasibility* axis's causal test, now with a prune arm so repair-vs-prune is answered in the
   same run.
-- **E-HYG (proposal, needs advisor approval — one rider arm on E3)**: the end-to-end claim at
+- **E-HYG (APPROVED 2026-08-21; sealed `a5494b7c…`, frozen analysis `5f8eb56e…`; queued in the gap-gated chain after N3)**: the end-to-end claim at
   scale: `uniform-800-pruned` (drop the 800-bank's flagged clips, hold compute) vs `uniform-800`.
   Endpoints per D1: feasible-only held-out survival (primary), all-clips (secondary), plus
   **zero-shot category generalisation** — survival on held-out *ground-category feasible* clips,
-  where pruning hurts if done naively and repair should win. One seed as a rider (~4 GPU-h);
-  promotes to the flagship's §8 if approved. This is precisely the "端到端对比" asked for, at the
-  minimum compute that makes it credible. *Not run, not sealed — awaiting approval.*
+  where pruning hurts if done naively and repair should win. One seed as a rider (~4–6 GPU-h);
+  promotes to the flagship's §8. This is precisely the "端到端对比" asked for, at the minimum
+  compute that makes it credible. *Sealed; pending 🕐 (chain running).*
 
 Prediction structure the three share (written now): hygiene helps *because* it redirects exposure,
 so gains should concentrate exactly where exposure was being burned — worst-decile clips and the
@@ -71,8 +71,8 @@ root adjustment.
 ≤ 5 %-residual budget — 73.1 % of the 10–25 % band, 61.7 % of the > 25 % band; by category:
 quiet 80.9 %, ground 68.1 %, locomotion 64.8 %, dynamic 51.2 % (ballistics correctly refused);
 by source: BMLhandball 92.5 %, BMLmovi 89.2 %, CNRS 65.8 %, CMU 55.1 %. So roughly **two-thirds
-of the 22.8 % contamination is a 3-second script; one-third needs upstream regeneration** — The
-trade-off then stops being rhetorical: prune costs distribution coverage exactly where the bank
+of the 22.8 % contamination is a 3-second script; one-third needs upstream regeneration.** The
+trade-off thus stops being rhetorical: prune costs distribution coverage exactly where the bank
 is thinnest (ground-contact = 3.2 % of training duration — pruning its flagged 39 % makes the N3
 problem worse), repair keeps it at ~zero marginal cost, and the census quantifies the split per
 category. N7's seal (post-N3) now includes a **prune arm** so the causal comparison is
@@ -105,6 +105,6 @@ attached.
 
 | issue | immediate (done today, CPU) | sealed/scheduled | needs approval |
 |---|---|---|---|
-| 1 causal loop | efficiency ledger; prediction structure | N3 → N7 (extended) | E-HYG rider arm on E3 |
-| 2 repair vs prune | operator + validation + census (running) | N7 prune arm (in draft, seals post-N3) | — |
+| 1 causal loop | efficiency ledger; prediction structure | N3 (running) → N7 (extended) → E-HYG (sealed, queued) | — |
+| 2 repair vs prune | operator + validation + **census: 65.8 % auto-recoverable** | N7 prune arm (in draft, seals post-N3) | — |
 | 3 sim-to-real | saturation measurement; labeled prediction sections | P-SIGN (runtime-guard half) | — |
