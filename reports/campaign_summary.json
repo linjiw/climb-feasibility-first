@@ -1,0 +1,42 @@
+{
+  "arms": [
+    "adaptive",
+    "uniform"
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "iters": [
+    0,
+    500,
+    1000,
+    1500,
+    2000,
+    2500,
+    3000,
+    3500,
+    3999
+  ],
+  "adaptive": {
+    "final": 0.7804,
+    "aulc": 0.6403
+  },
+  "uniform": {
+    "final": 0.8096,
+    "aulc": 0.6979
+  },
+  "paired": {
+    "uniform_vs_adaptive": {
+      "n_seeds": 3,
+      "mean_delta": 0.0292,
+      "wins_for_uniform": 3,
+      "p_one_sided": 0.125,
+      "p_floor": 0.125,
+      "seed_sd": 0.00144,
+      "cohens_dz": 20.207,
+      "t_stat": 35.0
+    }
+  }
+}

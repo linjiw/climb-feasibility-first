@@ -1,0 +1,110 @@
+{
+  "n_clips": 100,
+  "arms": {
+    "adaptive": {
+      "same_clip_across_seeds": true,
+      "per_seed": {
+        "1": {
+          "clip_idx": 44,
+          "clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+          "share_of_concentrated_iters": 0.281,
+          "n_distinct_dominants": 41,
+          "atlas": {
+            "required_mu_p95": 0.1806,
+            "vert_force_bw_max": 1.416,
+            "flight_phase_frac": 0.3387,
+            "duration_s": 9.98,
+            "foot_clearance_p50": 0.03752
+          }
+        },
+        "2": {
+          "clip_idx": 44,
+          "clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+          "share_of_concentrated_iters": 0.527,
+          "n_distinct_dominants": 30,
+          "atlas": {
+            "required_mu_p95": 0.1806,
+            "vert_force_bw_max": 1.416,
+            "flight_phase_frac": 0.3387,
+            "duration_s": 9.98,
+            "foot_clearance_p50": 0.03752
+          }
+        },
+        "3": {
+          "clip_idx": 44,
+          "clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+          "share_of_concentrated_iters": 0.347,
+          "n_distinct_dominants": 30,
+          "atlas": {
+            "required_mu_p95": 0.1806,
+            "vert_force_bw_max": 1.416,
+            "flight_phase_frac": 0.3387,
+            "duration_s": 9.98,
+            "foot_clearance_p50": 0.03752
+          }
+        }
+      }
+    },
+    "grounded": {
+      "same_clip_across_seeds": true,
+      "per_seed": {
+        "1": {
+          "clip_idx": 44,
+          "clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+          "share_of_concentrated_iters": 0.383,
+          "n_distinct_dominants": 19,
+          "atlas": {
+            "required_mu_p95": 0.1806,
+            "vert_force_bw_max": 1.416,
+            "flight_phase_frac": 0.3387,
+            "duration_s": 9.98,
+            "foot_clearance_p50": 0.03752
+          }
+        },
+        "2": {
+          "clip_idx": 44,
+          "clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+          "share_of_concentrated_iters": 0.555,
+          "n_distinct_dominants": 20,
+          "atlas": {
+            "required_mu_p95": 0.1806,
+            "vert_force_bw_max": 1.416,
+            "flight_phase_frac": 0.3387,
+            "duration_s": 9.98,
+            "foot_clearance_p50": 0.03752
+          }
+        },
+        "3": {
+          "clip_idx": 44,
+          "clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+          "share_of_concentrated_iters": 0.446,
+          "n_distinct_dominants": 29,
+          "atlas": {
+            "required_mu_p95": 0.1806,
+            "vert_force_bw_max": 1.416,
+            "flight_phase_frac": 0.3387,
+            "duration_s": 9.98,
+            "foot_clearance_p50": 0.03752
+          }
+        }
+      }
+    }
+  },
+  "band_throughput": {
+    "uniform": {
+      "up_per_1k": 26.09,
+      "down_per_1k": 5.58,
+      "net_per_1k": 20.51
+    },
+    "adaptive": {
+      "up_per_1k": 30.59,
+      "down_per_1k": 10.25,
+      "net_per_1k": 20.34
+    },
+    "grounded": {
+      "up_per_1k": 29.09,
+      "down_per_1k": 7.67,
+      "net_per_1k": 21.42
+    }
+  }
+}

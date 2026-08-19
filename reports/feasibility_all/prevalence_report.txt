@@ -1,0 +1,21 @@
+clips screened: 10705
+category          n  >10% infeasible    >25% median infeas median airborne  dur share flagged
+dynamic         804            58.6%   32.6%         14.5%           15.3%              54.5%
+ground          175            39.4%   18.3%          7.2%            6.1%              44.1%
+locomotion     5591            24.5%   17.4%          0.0%            0.0%              31.2%
+quiet          4135            12.9%    7.5%          0.0%            0.0%              19.8%
+ALL           10705            22.8%   14.8%          0.0%            0.0%              27.4%
+
+by source dataset (>10% infeasible share):
+  KIT            n= 4163   16.5%
+  CMU            n= 1978   39.7%
+  GRAB           n= 1340    0.1%
+  BMLmovi        n=  975   21.8%
+  Eyes           n=  733   23.2%
+  BMLhandball    n=  634   27.4%
+  ACCAD          n=  230   41.7%
+  DFaust         n=  128   18.8%
+  HUMAN4D        n=  121   55.4%
+  Transitions    n=  106   89.6%
+  CNRS           n=   79  100.0%
+  TCD            n=   62    1.6%

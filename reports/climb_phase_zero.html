@@ -1,0 +1,1002 @@
+<title>CLIMB Phase Zero</title>
+<style>
+  /* ---- tokens: light is the base, both dark paths redefine only these ---- */
+  :root {
+    --ground:   #F6F7F9;
+    --surface:  #FFFFFF;
+    --sunken:   #EDEFF3;
+    --line:     #DCE0E8;
+    --line-soft:#E8EBF0;
+    --ink:      #161A22;
+    --ink-2:    #3A4252;
+    --muted:    #5D6678;
+    --accent:   #A2650B;
+    --accent-2: #C98A22;
+    --ok:       #1C6F47;
+    --ok-bg:    #E4F1EA;
+    --bad:      #A62019;
+    --bad-bg:   #FAE6E4;
+    --warn:     #8A5A00;
+    --warn-bg:  #F8EEDA;
+    --info:     #2C4C8C;
+    --info-bg:  #E5EAF6;
+    --left:     #2C4C8C;
+    --right:    #A2650B;
+    --spine:    #6A7285;
+    --shadow:   0 1px 2px rgba(20,26,40,.05), 0 4px 14px rgba(20,26,40,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:   #10131A;
+      --surface:  #181C25;
+      --sunken:   #1F242F;
+      --line:     #2C323F;
+      --line-soft:#242A35;
+      --ink:      #E7EAF0;
+      --ink-2:    #BFC6D4;
+      --muted:    #939CAF;
+      --accent:   #E5A63F;
+      --accent-2: #F0BC68;
+      --ok:       #55BE8A;
+      --ok-bg:    #16301F;
+      --bad:      #F0736A;
+      --bad-bg:   #351A1B;
+      --warn:     #DFA53C;
+      --warn-bg:  #322612;
+      --info:     #86A6E8;
+      --info-bg:  #1A2237;
+      --left:     #86A6E8;
+      --right:    #E5A63F;
+      --spine:    #8A93A6;
+      --shadow:   0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:   #10131A;
+    --surface:  #181C25;
+    --sunken:   #1F242F;
+    --line:     #2C323F;
+    --line-soft:#242A35;
+    --ink:      #E7EAF0;
+    --ink-2:    #BFC6D4;
+    --muted:    #939CAF;
+    --accent:   #E5A63F;
+    --accent-2: #F0BC68;
+    --ok:       #55BE8A;
+    --ok-bg:    #16301F;
+    --bad:      #F0736A;
+    --bad-bg:   #351A1B;
+    --warn:     #DFA53C;
+    --warn-bg:  #322612;
+    --info:     #86A6E8;
+    --info-bg:  #1A2237;
+    --left:     #86A6E8;
+    --right:    #E5A63F;
+    --spine:    #8A93A6;
+    --shadow:   0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px 96px; }
+
+  /* ---- masthead ---- */
+  header { padding: 56px 0 32px; border-bottom: 2px solid var(--ink); }
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 14px;
+  }
+  h1 {
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: clamp(30px, 5.2vw, 46px); line-height: 1.06; letter-spacing: -.02em;
+    font-weight: 600; margin: 0 0 16px; text-wrap: balance;
+  }
+  .standfirst {
+    font-size: 18px; color: var(--ink-2); max-width: 62ch; margin: 0 0 26px;
+    text-wrap: pretty;
+  }
+  .envline {
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px; color: var(--muted);
+    display: flex; flex-wrap: wrap; gap: 6px 18px;
+  }
+  .envline b { color: var(--ink-2); font-weight: 600; }
+
+  /* ---- section rhythm ---- */
+  section { padding-top: 52px; }
+  h2 {
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink);
+    margin: 0 0 6px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: baseline; gap: 12px;
+  }
+  h2 .num { color: var(--accent); font-variant-numeric: tabular-nums; }
+  .lede { color: var(--muted); font-size: 15px; margin: 14px 0 24px; max-width: 66ch; }
+  h3 {
+    font-size: 16.5px; font-weight: 650; margin: 30px 0 8px; letter-spacing: -.005em;
+  }
+  p { margin: 0 0 14px; max-width: 68ch; text-wrap: pretty; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px;
+  }
+  code {
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: .88em; background: var(--sunken); color: var(--ink-2);
+    padding: .12em .38em; border-radius: 3px;
+  }
+
+  /* ---- headline findings ---- */
+  .findings { display: grid; gap: 14px; margin-top: 26px; }
+  @media (min-width: 700px) { .findings { grid-template-columns: 1fr 1fr; } }
+  .finding {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 8px; padding: 18px 20px 20px; box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .finding h3 { margin: 0; font-size: 15.5px; line-height: 1.35; }
+  .finding p { margin: 0; font-size: 14.2px; color: var(--ink-2); }
+  .chip {
+    align-self: flex-start;
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
+    font-weight: 600; padding: 3px 8px; border-radius: 4px;
+  }
+  .chip.fixed { background: var(--ok-bg);  color: var(--ok); }
+  .chip.ready { background: var(--info-bg); color: var(--info); }
+  .chip.run   { background: var(--warn-bg); color: var(--warn); }
+  .chip.dec   { background: var(--bad-bg);  color: var(--bad); }
+
+  /* ---- tables ---- */
+  .tw { overflow-x: auto; margin: 22px 0; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line-soft); }
+  thead th {
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 11px; letter-spacing: .07em; text-transform: uppercase;
+    color: var(--muted); font-weight: 600; background: var(--sunken);
+    border-bottom: 1px solid var(--line); white-space: nowrap;
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums;
+               font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace; }
+  td.mono { font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace; font-size: 12.6px; }
+  .tag { font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+         font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
+  .tag.ok  { color: var(--ok); }
+  .tag.run { color: var(--warn); }
+  tr.hi td { background: var(--warn-bg); }
+
+  /* throughput bar embedded in the table */
+  .bar { display: block; height: 5px; border-radius: 3px; background: var(--accent); opacity: .85; }
+  .barcell { width: 132px; }
+
+  /* ---- body-order diagram ---- */
+  .order { margin: 24px 0; display: grid; gap: 20px; }
+  .orderrow {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 8px; padding: 16px 18px 18px; box-shadow: var(--shadow);
+  }
+  .orderrow .cap {
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 4px;
+  }
+  .orderrow .verdict { font-size: 14px; color: var(--ink-2); margin-bottom: 14px; }
+  .idx { display: flex; flex-wrap: wrap; gap: 4px; }
+  .idx span {
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 11px; font-variant-numeric: tabular-nums;
+    width: 25px; height: 25px; display: grid; place-items: center;
+    border-radius: 4px; border: 1px solid transparent; color: #fff; font-weight: 600;
+  }
+  .idx .L { background: var(--left); }
+  .idx .R { background: var(--right); }
+  .idx .S { background: var(--spine); }
+  .idx .foot { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 14px;
+    font-size: 12.5px; color: var(--muted);
+  }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px;
+              margin-right: 6px; vertical-align: baseline; }
+
+  /* ---- callout ---- */
+  .callout {
+    border-left: 3px solid var(--accent); background: var(--surface);
+    padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0;
+    border-top: 1px solid var(--line); border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout.warn { border-left-color: var(--bad); }
+
+  pre {
+    background: var(--sunken); border: 1px solid var(--line); border-radius: 8px;
+    padding: 14px 16px; overflow-x: auto; margin: 18px 0;
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 12.8px; line-height: 1.62; color: var(--ink-2);
+  }
+  pre code { background: none; padding: 0; font-size: inherit; }
+
+  ol.dec { counter-reset: d; list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; }
+  ol.dec li {
+    counter-increment: d; position: relative; padding-left: 42px;
+    max-width: 70ch;
+  }
+  ol.dec li::before {
+    content: counter(d, decimal-leading-zero);
+    position: absolute; left: 0; top: 1px;
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 12px; font-weight: 600; color: var(--accent);
+    border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px;
+    background: var(--surface);
+  }
+  ol.dec b { font-weight: 650; }
+
+  footer {
+    margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--line);
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 12px; color: var(--muted);
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Environment report · grounded adaptive motion curricula</p>
+  <h1>CLIMB Phase Zero</h1>
+  <p class="standfirst">
+    The training stack is installed and measured, the motion bank is being rebuilt, and
+    three silent data-corruption bugs were caught before any of them could invalidate
+    the experiment matrix.
+  </p>
+  <div class="envline">
+    <span><b>2026-08-15</b></span>
+    <span>RTX 5090 · sm_120 · 32 GiB</span>
+    <span>driver 590.48.01 / CUDA 13.1</span>
+    <span>20 cores · 93 GB</span>
+  </div>
+</header>
+
+<section>
+  <h2><span class="num">01</span> What changed</h2>
+  <p class="lede">Four findings that alter the plan as written.</p>
+
+  <div class="findings">
+    <div class="finding">
+      <span class="chip fixed">Caught &amp; fixed</span>
+      <h3>Every existing motion file was silently wrong</h3>
+      <p>All 7,901 pre-existing G1 <code>.npz</code> files use Isaac&nbsp;Lab breadth-first
+      body order; mjlab needs MuJoCo depth-first. Same shape, so it loads, trains, and
+      reports plausible rewards — against the wrong links.</p>
+    </div>
+    <div class="finding">
+      <span class="chip fixed">Caught &amp; fixed</span>
+      <h3>The AMASS retargets are unusable as shipped</h3>
+      <p>That directory mixes six frame rates encoded per filename — one
+      <code>--input-fps</code> retimes <b>59% of the bank</b> — and stores root height
+      <i>relative</i>, burying the robot 0.75 m into the floor.</p>
+    </div>
+    <div class="finding">
+      <span class="chip fixed">Fixed</span>
+      <h3>mjlab could not be installed at all</h3>
+      <p>Not a stale venv — its lockfile pinned a MuJoCo nightly that has been deleted
+      from the index (HTTP 404). Resolved by moving to v1.6.0, which also aligns
+      mujoco-warp with Newton at 3.11.0.</p>
+    </div>
+    <div class="finding">
+      <span class="chip ready">Measured</span>
+      <h3>Compute is 6–13× cheaper than budgeted</h3>
+      <p>0.45 s/iteration at 4,096 envs → <b>3.8 GPU-hours per run</b>, against the
+      plan's assumed 24–48. The full matrix is ~169 GPU-hours, not 1,080–2,160.</p>
+    </div>
+    <div class="finding">
+      <span class="chip dec">Needs a decision</span>
+      <h3>H2 contradicts the prior evidence</h3>
+      <p>Three earlier results on this machine tested essentially this mechanism and
+      found null-to-adverse. The plan cites none of them. See §07.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">02</span> Installed and verified</h2>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Subsystem</th><th>Location</th><th>State</th><th>Evidence</th></tr></thead>
+    <tbody>
+      <tr><td>Newton</td><td class="mono">/home/robotixx/newton</td><td><span class="tag ok">Ready</span></td><td class="mono">6142 tests OK, 167 skipped</td></tr>
+      <tr><td>Newton on 5090</td><td class="mono">.venv py3.12.13</td><td><span class="tag ok">Ready</span></td><td class="mono">sm_120, robot_g1 exit 0</td></tr>
+      <tr><td>mjlab v1.6.0</td><td class="mono">/data/robotixx/climb/mjlab-1.6.0</td><td><span class="tag ok">Ready</span></td><td class="mono">torch 2.9.0+cu128, cap (12,0)</td></tr>
+      <tr><td>Tracking task</td><td class="mono">Mjlab-Tracking-Flat-Unitree-G1</td><td><span class="tag ok">Ready</span></td><td class="mono">10-iter train exit 0</td></tr>
+      <tr><td>Motion validator</td><td class="mono">tools/validate_motion_npz.py</td><td><span class="tag ok">Ready</span></td><td class="mono">A/B against mjlab reference</td></tr>
+      <tr><td>Bank converter</td><td class="mono">tools/build_motion_bank.py</td><td><span class="tag ok">Ready</span></td><td class="mono">bit-equivalent to reference</td></tr>
+      <tr><td>Ground aligner</td><td class="mono">tools/ground_align_bank.py</td><td><span class="tag ok">Ready</span></td><td class="mono">idempotent; no-op on 2nd pass</td></tr>
+      <tr><td>Difficulty featurizer</td><td class="mono">tools/featurize_motions.py</td><td><span class="tag ok">Ready</span></td><td class="mono">28 covariates · atlas in §05</td></tr>
+      <tr><td>LAFAN1 bank</td><td class="mono">bank/lafan1</td><td><span class="tag ok">Ready</span></td><td class="mono">40 clips · 2.45 h · 0 failures</td></tr>
+      <tr><td>LAFAN1 (GMR)</td><td class="mono">bank/lafan1_gmr</td><td><span class="tag ok">Ready</span></td><td class="mono">77 clips · 4.60 h · +14 families</td></tr>
+      <tr><td>AMASS bank</td><td class="mono">bank/amass</td><td><span class="tag ok">Ready</span></td><td class="mono">10,705 clips · 36.56 h · 2 rejects</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout">
+    <p>The existing <code>/home/robotixx/mjlab</code> checkout was <b>not modified</b> — no
+    commits, no branch switch, no dropped stash. v1.6.0 lives in a git worktree on
+    <code>/data</code>, so both lines coexist and the worktree can be removed in one command.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">03</span> Measured throughput</h2>
+  <p class="lede">
+    Single clip, quiet GPU, steady-state mean over the back half of 30 iterations,
+    <code>num_steps_per_env = 24</code>. Baseline occupancy was 3.4 GiB (desktop plus a
+    pre-existing Isaac Lab job), so mjlab's own peak at 16k envs is about 6.2 GiB.
+  </p>
+
+  <div class="tw">
+  <table>
+    <thead><tr>
+      <th class="n">Envs</th><th class="n">s/iter</th><th class="n">Steps/s</th>
+      <th class="barcell">Throughput</th><th class="n">Peak VRAM</th><th class="n">30k-iter run</th>
+    </tr></thead>
+    <tbody>
+      <tr><td class="n">1,024</td><td class="n">0.349</td><td class="n">70,358</td>
+          <td><span class="bar" style="width:18%"></span></td><td class="n">4.6 GiB</td><td class="n">2.9 h</td></tr>
+      <tr><td class="n">2,048</td><td class="n">0.381</td><td class="n">128,906</td>
+          <td><span class="bar" style="width:33%"></span></td><td class="n">4.9 GiB</td><td class="n">3.2 h</td></tr>
+      <tr class="hi"><td class="n">4,096</td><td class="n">0.451</td><td class="n">218,114</td>
+          <td><span class="bar" style="width:56%"></span></td><td class="n">5.6 GiB</td><td class="n">3.8 h</td></tr>
+      <tr><td class="n">8,192</td><td class="n">0.617</td><td class="n">318,497</td>
+          <td><span class="bar" style="width:82%"></span></td><td class="n">7.0 GiB</td><td class="n">5.1 h</td></tr>
+      <tr><td class="n">16,384</td><td class="n">1.008</td><td class="n">390,095</td>
+          <td><span class="bar" style="width:100%"></span></td><td class="n">9.4 GiB</td><td class="n">8.4 h</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><b>VRAM is not the constraint</b> on a 32 GiB card — throughput saturation is.
+  4k→8k buys 1.46×; 8k→16k only 1.22×. 4,096 envs is the efficiency sweet spot.</p>
+
+  <h3>What this does to the matrix</h3>
+  <p>At 4,096 envs and 3.8 h per run, against a Phase-2 window of 46 days:</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Design</th><th class="n">Runs</th><th class="n">GPU-h</th>
+      <th class="n">Days @100%</th><th class="n">Days @50%</th></tr></thead>
+    <tbody>
+      <tr><td>As written — 3 bank × 5 sampler × 3 seeds</td><td class="n">45</td><td class="n">169</td><td class="n">7.0</td><td class="n">14.1</td></tr>
+      <tr class="hi"><td><b>5 seeds</b> — 3 × 5 × 5</td><td class="n">75</td><td class="n">282</td><td class="n">11.7</td><td class="n">23.5</td></tr>
+      <tr><td>5 seeds + 30% ablations</td><td class="n">~98</td><td class="n">367</td><td class="n">15.3</td><td class="n">30.6</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout">
+    <p>Three seeds cannot produce a significant result: the minimum achievable one-sided
+    sign-flip <i>p</i> at n=3 is 0.125, and the standing guardrail requires ≥5. <b>The
+    compute objection to running 5 seeds does not survive measurement</b> — the 5-seed
+    design fits with headroom even at 50% duty.</p>
+  </div>
+
+  <p><b>Caveats.</b> Single-clip measurement. A multi-clip bank adds motion tensors to
+  VRAM (~12 MiB per two-minute clip; 800 short AMASS clips ≈ 0.8 GiB, still comfortable)
+  and may change reset behaviour. Whether 30k iterations is the right convergence budget
+  for a <i>multi-clip</i> policy is untested — calibrate before freezing the matrix.</p>
+</section>
+
+<section>
+  <h2><span class="num">04</span> Three silent corruptions</h2>
+  <p class="lede">
+    mjlab's <code>MotionLoader</code> indexes <code>body_pos_w</code> with indices from the
+    compiled MuJoCo model and validates nothing. There is no <code>body_names</code> key in
+    the schema and no assertion anywhere in the tracking task.
+  </p>
+
+  <div class="order">
+    <div class="orderrow">
+      <div class="cap">mjlab · g1.xml compiled · depth-first</div>
+      <div class="verdict">Whole limbs stay contiguous. Feet land at index <b>6</b> and <b>12</b>.</div>
+      <div class="idx" role="img" aria-label="Depth-first body order: pelvis, six left-leg bodies, six right-leg bodies, three spine bodies, seven left-arm bodies, seven right-arm bodies">
+        <span class="S">0</span>
+        <span class="L">1</span><span class="L">2</span><span class="L">3</span><span class="L">4</span><span class="L">5</span><span class="L foot">6</span>
+        <span class="R">7</span><span class="R">8</span><span class="R">9</span><span class="R">10</span><span class="R">11</span><span class="R foot">12</span>
+        <span class="S">13</span><span class="S">14</span><span class="S">15</span>
+        <span class="L">16</span><span class="L">17</span><span class="L">18</span><span class="L">19</span><span class="L">20</span><span class="L">21</span><span class="L">22</span>
+        <span class="R">23</span><span class="R">24</span><span class="R">25</span><span class="R">26</span><span class="R">27</span><span class="R">28</span><span class="R">29</span>
+      </div>
+    </div>
+
+    <div class="orderrow">
+      <div class="cap">every pre-existing .npz · breadth-first</div>
+      <div class="verdict">Mirrored left/right pairs level by level. Feet land at <b>18</b> and <b>19</b>.</div>
+      <div class="idx" role="img" aria-label="Breadth-first body order: pelvis, then alternating left and right bodies with spine bodies interleaved at the first three levels">
+        <span class="S">0</span>
+        <span class="L">1</span><span class="R">2</span><span class="S">3</span>
+        <span class="L">4</span><span class="R">5</span><span class="S">6</span>
+        <span class="L">7</span><span class="R">8</span><span class="S">9</span>
+        <span class="L">10</span><span class="R">11</span>
+        <span class="L">12</span><span class="R">13</span>
+        <span class="L">14</span><span class="R">15</span>
+        <span class="L">16</span><span class="R">17</span>
+        <span class="L foot">18</span><span class="R foot">19</span>
+        <span class="L">20</span><span class="R">21</span>
+        <span class="L">22</span><span class="R">23</span>
+        <span class="L">24</span><span class="R">25</span>
+        <span class="L">26</span><span class="R">27</span>
+        <span class="L">28</span><span class="R">29</span>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--left)"></i>left side</span>
+        <span><i style="background:var(--right)"></i>right side</span>
+        <span><i style="background:var(--spine)"></i>pelvis / spine</span>
+        <span><i style="border:2px solid var(--ink);background:transparent"></i>ankle-roll (feet)</span>
+      </div>
+    </div>
+  </div>
+
+  <p>Both layouts are exactly 30 bodies × 29 joints, so shapes match, the file loads
+  cleanly, training runs, and reward curves look plausible — while every tracking target
+  is bound to the wrong link.</p>
+
+  <h3>The discriminator</h3>
+  <p>The validator classifies on the pelvis-frame lateral offset of three
+  <b>proximal</b> bodies. Their origins sit at fixed or hinge-invariant transforms from
+  the pelvis, so their pelvis-frame y does not move whatever the robot is doing. Measured
+  across all 40 LAFAN1 clips — falls, fights and jumps included — the spread is exactly
+  zero:</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Order</th><th class="n">y[1]</th><th class="n">y[2]</th><th class="n">y[7]</th></tr></thead>
+    <tbody>
+      <tr><td>depth-first</td><td class="n">+0.0645</td><td class="n"><b>+0.1165</b></td><td class="n">−0.0645</td></tr>
+      <tr><td>breadth-first</td><td class="n">+0.0645</td><td class="n"><b>−0.0645</b></td><td class="n">+0.1238</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><code>sign(y[2])</code> alone separates them. Two weaker heuristics were tried and
+  rejected: <i>"the two lowest bodies are the feet"</i> misfires on kneeling and sitting
+  motions; <i>whole-limb mean y plus correlation against the neutral pose</i> wrongly
+  rejected 7 of the first 549 AMASS conversions — all legitimate calibration T-poses,
+  <code>Lie_Down</code>, and martial-arts kicks, i.e. exactly the clips whose legs cross
+  the midline.</p>
+
+  <div class="callout">
+    <p>The lesson generalises: a motion-bank validator has to be invariant to pose, because
+    the hard clips — the ones a curriculum most wants — are precisely the ones that break
+    pose-dependent heuristics.</p>
+  </div>
+
+  <h3>Proof the rebuilt pipeline is correct</h3>
+  <p>mjlab publishes a reference export of <code>lafan1_dance1_subject1</code>. Converting
+  the same source CSV through the new pipeline and diffing against it:</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Key</th><th class="n">Max absolute difference</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">joint_pos, joint_vel</td><td class="n">0.0 &nbsp;(exact)</td></tr>
+      <tr><td class="mono">body_pos_w</td><td class="n">4.8e−07</td></tr>
+      <tr><td class="mono">body_quat_w</td><td class="n">2.4e−07</td></tr>
+      <tr><td class="mono">body_lin_vel_w</td><td class="n">3.6e−06</td></tr>
+      <tr><td class="mono">body_ang_vel_w</td><td class="n">5.7e−06</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Float32 round-off. The pipeline reproduces mjlab's own numerics, and the full loop is
+  closed end to end: CSV → converter → validator PASS → mjlab trains on it.</p>
+
+  <h3>Final bank</h3>
+  <p><b>10,822 clips, 43.6 hours</b> of validated G1 motion in 13.1 GiB.</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Bank</th><th class="n">Clips</th><th class="n">Duration</th>
+      <th class="n">Median clip</th><th class="n">On disk</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">lafan1</td><td class="n">40</td><td class="n">2.45 h</td><td class="n">241 s</td><td class="n">0.74 GiB</td></tr>
+      <tr><td class="mono">lafan1_gmr</td><td class="n">77</td><td class="n">4.60 h</td><td class="n">238 s</td><td class="n">1.38 GiB</td></tr>
+      <tr><td class="mono">amass</td><td class="n">10,705</td><td class="n">36.56 h</td><td class="n">7.3 s</td><td class="n">11.00 GiB</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout">
+    <p><b>Clips and hours are not interchangeable.</b> AMASS clips have a median of
+    <b>7.3 s</b> against LAFAN1's 238 s, so an 800-clip AMASS bank is roughly 1.6 h of
+    motion while 77 LAFAN1 clips are 4.6 h. The experiment matrix specifies bank size in
+    clips — worth pinning down which quantity the scaling axis is actually meant to be
+    before it is frozen.</p>
+  </div>
+
+  <div class="callout warn">
+    <p><b>Do not merge the two LAFAN1 sets.</b> <code>bank/lafan1</code> (40 clips) and
+    <code>bank/lafan1_gmr</code> (77 clips) are different retargetings of the same source
+    motions and overlap on 40 names. Mixing them puts two retargeting pipelines inside a
+    single experimental condition.</p>
+  </div>
+
+  <p>The GMR set is worth the trouble: it validated 77/77 at <b>4.60 hours</b> — the full
+  official LAFAN1 duration the plan assumes, versus 2.45 h from the other retarget — and it
+  unlocks 14 families absent from the 40-clip set: <code>ground1/2</code>,
+  <code>obstacles1–6</code>, <code>push1</code>, <code>pushAndFall1</code>,
+  <code>pushAndStumble1</code>, <code>aiming1/2</code>, <code>multipleActions1</code>.
+  Precisely the low-posture, multi-contact and recovery motions the plan wants for its hard
+  set and its gentler hardware demos.</p>
+
+  <h3>A second silent corruption: the AMASS retargets do not share a frame rate</h3>
+  <p>mjlab's converter takes a single <code>--input-fps</code>, and the obvious reading of
+  <code>train_converted_complete/</code> is that it is 120 fps throughout. It is not — the
+  rate is encoded per file in the name, and the directory mixes six of them:</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Suffix</th><th class="n">Clips</th><th>Effect if read as 120 fps</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">_120_</td><td class="n">4,403</td><td>correct</td></tr>
+      <tr class="hi"><td class="mono">_100_</td><td class="n">4,165</td><td><b>20% too fast</b></td></tr>
+      <tr class="hi"><td class="mono">_60_</td><td class="n">642</td><td><b>2× too fast</b></td></tr>
+      <tr class="hi"><td class="mono">_250_</td><td class="n">56</td><td><b>~2× too slow</b></td></tr>
+      <tr class="hi"><td class="mono">_59_ , _150_</td><td class="n">22</td><td>wrong</td></tr>
+      <tr><td>GRAB (no suffix)</td><td class="n">~1,400</td><td>unknown; treated as 120</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout warn">
+    <p>Converting the directory at one rate silently retimes <b>59% of the bank</b>. Nothing
+    errors — the clip just plays at the wrong speed, and because velocity and acceleration
+    are finite-differenced during conversion, every kinematic and dynamic feature, and every
+    tracking target the policy sees, is wrong by that factor. It is the timing analogue of
+    the body-order bug: the shapes stay valid, so nothing catches it.</p>
+  </div>
+
+  <p><code>--infer-fps</code> now reads the rate per clip from the filename and records it in
+  the manifest, falling back to <code>--input-fps</code> (and reporting how often) for names
+  that carry none. Verified on a 250 fps clip: 7,471 input frames now yield 29.9 s of output
+  instead of the 62 s a 120 fps reading produced. The first build was stopped and audited
+  rather than trusted — of 4,261 clips already written, 3,597 came from genuine 120 fps
+  sources and were kept; the 664 mis-timed ones were deleted and requeued.</p>
+
+  <h3>A third: the AMASS retargets store root height relative</h3>
+  <p>Root z in <code>train_converted_complete/*.csv</code> averages <b>−0.004 m</b>. In the
+  LAFAN1 CSVs, which use the identical column layout, it averages <b>+0.767 m</b>. The AMASS
+  files record height relative to the standing pose; the LAFAN1 files record it absolutely.
+  Converted as-is the G1 is buried to the pelvis — on a "Stand" clip the shins sit 0.51 m
+  below the floor plane and the deepest geom 0.79 m below it. The body-order validator
+  passes these files, correctly: the ordering is fine, only the height is wrong.</p>
+
+  <p>The fix needs no re-conversion. A root-height change is a rigid vertical translation,
+  so it applies to a finished npz — every body moves by the same amount and joint angles,
+  orientations and all velocities are untouched. <code>ground_align_bank.py</code> shifts
+  each clip by the 1st percentile of its lower foot's clearance, so a clip with genuine
+  flight phases aligns on its touchdowns rather than its apex.</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Bank</th><th class="n">Median offset</th><th>Reading</th></tr></thead>
+    <tbody>
+      <tr><td>LAFAN1</td><td class="n">−0.012 m</td><td>already grounded</td></tr>
+      <tr class="hi"><td>AMASS</td><td class="n"><b>−0.752 m</b></td><td>buried by the missing standing pelvis height</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>That AMASS median is the standing pelvis height almost exactly — the signature of this
+  specific bug rather than of scattered retargeting noise. <b>LAFAN1 is deliberately left
+  unaligned:</b> its 12 mm penetration is present in mjlab's own published reference export
+  too, and that bank is currently bit-equivalent to it. Trading a verified match against
+  upstream for 12 mm is a bad deal; the AMASS bank has no such reference and needs the
+  shift.</p>
+</section>
+
+<section>
+  <h2><span class="num">05</span> First difficulty-atlas result</h2>
+  <p class="lede">
+    The offline half of the RQ1 atlas — the per-clip covariates H1 rests on —
+    computed over all 40 LAFAN1 clips. Means by family, sorted by flight fraction.
+  </p>
+
+  <div class="tw">
+  <table>
+    <thead><tr>
+      <th>Family</th><th class="n">n</th><th class="n">Flight</th><th class="n">Ground</th><th class="n">Dbl sup</th><th class="n">CoM spd p95</th><th class="n">GRF max (bw)</th><th class="n">μ p95</th><th class="n">L peak</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>sprint1</td><td class="n">2</td><td class="n">0.089</td><td class="n">0.000</td><td class="n">0.597</td><td class="n">3.77</td><td class="n">2.64</td><td class="n">0.69</td><td class="n">6.71</td></tr>
+      <tr><td>jumps1</td><td class="n">3</td><td class="n">0.087</td><td class="n">0.064</td><td class="n">0.399</td><td class="n">1.43</td><td class="n">2.82</td><td class="n">0.59</td><td class="n">6.07</td></tr>
+      <tr><td>run2</td><td class="n">2</td><td class="n">0.070</td><td class="n">0.000</td><td class="n">0.302</td><td class="n">2.83</td><td class="n">2.87</td><td class="n">0.71</td><td class="n">6.28</td></tr>
+      <tr><td>run1</td><td class="n">2</td><td class="n">0.060</td><td class="n">0.000</td><td class="n">0.258</td><td class="n">2.65</td><td class="n">1.94</td><td class="n">0.62</td><td class="n">5.26</td></tr>
+      <tr><td>walk3</td><td class="n">5</td><td class="n">0.054</td><td class="n">0.043</td><td class="n">0.611</td><td class="n">1.02</td><td class="n">1.60</td><td class="n">0.20</td><td class="n">3.30</td></tr>
+      <tr><td>fallAndGetUp2</td><td class="n">2</td><td class="n">0.044</td><td class="n">0.504</td><td class="n">0.568</td><td class="n">1.63</td><td class="n">2.45</td><td class="n">0.31</td><td class="n">6.60</td></tr>
+      <tr><td>fight1</td><td class="n">3</td><td class="n">0.042</td><td class="n">0.003</td><td class="n">0.451</td><td class="n">1.71</td><td class="n">2.37</td><td class="n">0.78</td><td class="n">8.04</td></tr>
+      <tr><td>fightAndSports1</td><td class="n">2</td><td class="n">0.039</td><td class="n">0.002</td><td class="n">0.590</td><td class="n">1.48</td><td class="n">2.60</td><td class="n">0.70</td><td class="n">8.45</td></tr>
+      <tr><td>dance2</td><td class="n">5</td><td class="n">0.039</td><td class="n">0.002</td><td class="n">0.536</td><td class="n">0.87</td><td class="n">3.18</td><td class="n">0.50</td><td class="n">5.99</td></tr>
+      <tr><td>fallAndGetUp1</td><td class="n">3</td><td class="n">0.033</td><td class="n">0.387</td><td class="n">0.496</td><td class="n">1.97</td><td class="n">2.44</td><td class="n">0.43</td><td class="n">7.01</td></tr>
+      <tr><td>dance1</td><td class="n">3</td><td class="n">0.016</td><td class="n">0.000</td><td class="n">0.510</td><td class="n">0.98</td><td class="n">2.09</td><td class="n">0.43</td><td class="n">8.54</td></tr>
+      <tr><td>fallAndGetUp3</td><td class="n">1</td><td class="n">0.015</td><td class="n">0.163</td><td class="n">0.596</td><td class="n">1.14</td><td class="n">1.81</td><td class="n">0.41</td><td class="n">6.25</td></tr>
+      <tr><td>walk2</td><td class="n">3</td><td class="n">0.008</td><td class="n">0.015</td><td class="n">0.605</td><td class="n">1.31</td><td class="n">1.84</td><td class="n">0.26</td><td class="n">4.37</td></tr>
+      <tr><td>walk1</td><td class="n">3</td><td class="n">0.001</td><td class="n">0.000</td><td class="n">0.646</td><td class="n">1.29</td><td class="n">1.63</td><td class="n">0.27</td><td class="n">3.36</td></tr>
+      <tr><td>walk4</td><td class="n">1</td><td class="n">0.000</td><td class="n">0.000</td><td class="n">0.805</td><td class="n">0.64</td><td class="n">1.44</td><td class="n">0.15</td><td class="n">2.11</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout">
+    <p><b>The families dissociate — which is what H1 predicts.</b> <code>sprint1</code>
+    leads flight fraction and CoM speed (3.77 m/s) yet sits mid-pack on friction demand and
+    angular momentum; <code>dance1</code> has the <i>lowest</i> CoM speed of any non-walk
+    family and the <i>highest</i> angular momentum (8.54); <code>fight1</code> tops friction
+    demand at μ≈0.78; <code>dance2</code> tops peak GRF at 3.2 bodyweights. Ranking by
+    kinematic magnitude gives a materially different ordering than ranking by dynamic
+    feasibility, so there is real signal for the RQ1 regression rather than one latent
+    "intensity" axis.</p>
+  </div>
+
+  <p>Double support falls monotonically from 0.81 (<code>walk4</code>) to 0.26
+  (<code>run1</code>) — the gait physics working. And <code>fallAndGetUp</code> carries a
+  signature no other family has: it is the only group with substantial non-foot ground
+  contact — 0.504, 0.387 and 0.163 against ~0.00 for everything but <code>jumps1</code>
+  (0.064) and <code>walk3</code> (0.043) — while sitting mid-range on every kinematic axis.
+  That is the multi-contact regime the plan wants for its hard set, and no kinematic
+  feature identifies it.</p>
+
+  <h3>Retarget quality is now a measured covariate</h3>
+  <p>The same machinery ranks the two retargets against each other:</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Retarget</th><th class="n">Median foot clearance</th>
+      <th class="n">Median max penetration</th><th class="n">Non-foot ground</th></tr></thead>
+    <tbody>
+      <tr><td>whole_body_tracking</td><td class="n"><b>+3.3 mm</b></td><td class="n">23.5 mm</td><td class="n">0.000</td></tr>
+      <tr><td>GMR</td><td class="n">+20.9 mm</td><td class="n">96.3 mm</td><td class="n">0.011</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>The whole_body_tracking retarget is roughly 4× better grounded on both measures. That
+  argues for a concrete bank policy: prefer the wbt clips for the 15 families it covers,
+  take GMR only for the 14 it uniquely provides, and carry
+  <code>foot_clearance_p50</code> as a covariate so the quality gap can be regressed out
+  rather than silently confounding a bank-size effect.</p>
+
+  <h3>Two measurement bugs found while building this</h3>
+  <p>Both were caught by checking family ordering against physics rather than assuming it:</p>
+  <ul>
+    <li><b>Joint-torque utilisation was invalid and has been removed.</b> Retargeted mocap
+      does not place the feet consistently on the terrain — most frames report
+      <code>ncon = 0</code> — so MuJoCo's constraint solve contributes nothing and inverse
+      dynamics dumps the full 327 N bodyweight into the root residual. One standing frame
+      produced 354 N·m at a 139 N·m motor. Replaced with quantities that are well defined
+      without a consistent contact state: required friction coefficient, vertical GRF in
+      bodyweights, and CoP margin, computed with contacts explicitly disabled so the
+      free-joint block of <code>qfrc_inverse</code> <i>is</i> the required ground wrench.</li>
+    <li><b>Contact is now measured, not inferred.</b> Three successive height heuristics
+      each failed on a different family: <i>"the two lowest bodies are the feet"</i>
+      misfires on kneeling and sitting; a <code>min</code> foot-height ground reference is
+      destroyed by one penetrating frame (GMR dips to −6 mm on <code>fight1</code>, making
+      95% of it read as flight); a low percentile over all bodies is meaningless while
+      lying down and pushed <code>walk2</code> to 0.36 flight. The terrain is a plane at
+      exactly z = 0 and an exact <code>mj_geomDistance</code> query costs ~0.1 s for a
+      13k-frame clip, so every frame is now queried against real collision geometry. No
+      ground estimation remains.</li>
+  </ul>
+
+  <h3>The two retargets are not interchangeable — and the atlas proves it</h3>
+  <p>With exact contact, cross-retarget rank agreement over the 15 shared families splits
+  sharply:</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Feature</th><th class="n">Spearman ρ</th></tr></thead>
+    <tbody>
+      <tr><td>non-foot ground contact</td><td class="n"><b>+0.964</b></td></tr>
+      <tr><td>required friction μ</td><td class="n"><b>+0.918</b></td></tr>
+      <tr class="hi"><td>flight fraction</td><td class="n"><b>+0.150</b></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout warn">
+    <p>The flight disagreement is a property of the data, not the tool. Median lower-foot
+    clearance is <b>+3.3 mm</b> for the whole_body_tracking retarget and <b>+20.9 mm</b> for
+    GMR — <b>GMR floats the robot about 2 cm off the floor</b>, so its feet rarely enter the
+    2 cm contact band and every contact-derived feature is inflated.
+    <code>walk4</code> reads 91% airborne under GMR and 0% under wbt.</p>
+    <p>This is now exposed as the <code>foot_clearance_p1 / p50 / penetration_max</code>
+    covariates — which is exactly the "retargeting residual magnitude" feature §3.3 asks
+    for. <b>GMR clips need a per-clip z-offset correction before use as tracking
+    references</b>; a policy trained on them would learn to hover. The correction is
+    deliberately not applied automatically, since it alters the reference the policy
+    tracks.</p>
+  </div>
+
+  <p>Caveat: the support polygon is approximated by the two ankle-roll positions, ignoring
+  the ~0.2 × 0.1 m foot area, so CoP margins run pessimistic by about half a foot length.</p>
+
+
+  <h3>Over the full 10,705-clip bank: what H1 actually gets</h3>
+  <p>Spearman ρ of every feature against <code>com_speed_p95</code>, the obvious kinematic
+  "intensity" proxy a naive difficulty ordering would use:</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Feature</th><th>Family</th><th class="n">ρ vs CoM speed</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">required_mu_p95</td><td>dyn</td><td class="n">+0.706</td></tr>
+      <tr><td class="mono">vert_force_bw_max</td><td>dyn</td><td class="n">+0.640</td></tr>
+      <tr><td class="mono">contact_switch_rate</td><td>dyn</td><td class="n">+0.577</td></tr>
+      <tr><td class="mono">flight_phase_frac</td><td>dyn</td><td class="n">+0.503</td></tr>
+      <tr><td class="mono">joint_vel_p95</td><td>kin</td><td class="n">+0.480</td></tr>
+      <tr><td class="mono">support_margin_mean</td><td>dyn</td><td class="n">−0.446</td></tr>
+      <tr><td class="mono">jerk_p95</td><td>kin</td><td class="n">+0.398</td></tr>
+      <tr><td class="mono">com_height_range</td><td>kin</td><td class="n">+0.375</td></tr>
+      <tr><td class="mono">angmom_peak</td><td>kin</td><td class="n">+0.363</td></tr>
+      <tr><td class="mono">cop_margin_mean</td><td>dyn</td><td class="n">−0.255</td></tr>
+      <tr class="hi"><td class="mono"><b>nonfoot_ground_frac</b></td><td>dyn</td><td class="n"><b>−0.104</b></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout">
+    <p>No feature exceeds ρ = 0.71, so none is redundant with speed. The row that matters
+    for H1 is the last: <b>the multi-contact axis is essentially orthogonal to kinematic
+    intensity.</b> A curriculum ordered by "how fast and big is this motion" does not merely
+    under-weight low-posture and multi-contact clips — it carries almost no information
+    about them. That is a concrete pre-training argument for the §3.3 featurisation over
+    clip length or CoM speed, measured on 10,705 clips rather than asserted.</p>
+  </div>
+
+  <h3>20% of the bank is physically untrackable</h3>
+  <p>Geometric validity is not physical validity. These clips have correct body order,
+  correct timing and correct grounding, and still demand things no controller can deliver —
+  kinematic retargeting carries no dynamics constraint, so it will happily produce a motion
+  needing friction coefficient 13 or 43 bodyweights of ground reaction. Left in, they occupy
+  the hard tail of the difficulty atlas for entirely the wrong reason.</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Screen</th><th class="n">Rejected</th><th class="n">Share</th></tr></thead>
+    <tbody>
+      <tr><td>hovers &gt;5 cm on the median frame</td><td class="n">1,138</td><td class="n">10.6%</td></tr>
+      <tr><td>joint speed beyond G1 actuators (&gt;30 rad/s)</td><td class="n">1,001</td><td class="n">9.4%</td></tr>
+      <tr><td>demands friction coefficient &gt; 1.0</td><td class="n">300</td><td class="n">2.8%</td></tr>
+      <tr><td>peak ground reaction &gt; 5 bodyweights</td><td class="n">122</td><td class="n">1.1%</td></tr>
+      <tr><td>sinks &gt;10 cm into the floor</td><td class="n">16</td><td class="n">0.1%</td></tr>
+      <tr><td>shorter than 1 s</td><td class="n">31</td><td class="n">0.3%</td></tr>
+      <tr class="hi"><td><b>any screen</b></td><td class="n"><b>2,185</b></td><td class="n"><b>20.4%</b></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><b>8,520 clips / 26.89 h survive.</b> <code>tools/screen_bank.py</code> emits that list
+  plus difficulty-stratified tiers for the bank-size axis, stratified on a rank-averaged
+  composite of the <i>dynamic</i> features rather than clip length: 50 clips / 0.17 h,
+  200 / 0.61 h, 800 / 2.54 h.</p>
+
+  <div class="callout warn">
+    <p><b>A design question the plan should settle.</b> The 800-clip cell holds 2.54 h of
+    motion, while the 77-clip LAFAN1 bank holds 4.60 h. The bank-size axis as specified
+    scales clip count 16× and hours 15×, but its top end is still less total motion than
+    Tier A. If the intended manipulation is <i>diversity</i>, that is fine and should be
+    said; if it is <i>scale</i>, the axis does not deliver it.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">06</span> First training result</h2>
+  <p class="lede">
+    Everything above is instrumentation. This is the first actual experiment, and it
+    changes what the plan should do next.
+  </p>
+
+  <h3>The multi-clip capability now exists</h3>
+  <p><code>climb/</code> is an mjlab extension — the §7 deliverable — adding the axis CLIMB
+  needs. <code>MotionBank</code> concatenates clips and keeps a per-clip offset table, so
+  <code>time_steps</code> becomes a global index and all ~20 of mjlab's accessors work
+  unchanged; only the clip axis is new, since mjlab already samples the start frame
+  <i>within</i> a clip.</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Task</th><th>Sampler</th><th>Verified</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">Climb-…-G1</td><td>uniform clip, uniform frame</td><td class="mono">top-1 = 0.0200 = 1/50, entropy 1.000</td></tr>
+      <tr><td class="mono">Climb-…-G1-Adaptive</td><td>clip ∝ failure EMA + ε/N</td><td class="mono">entropy 1.000→0.933, top-1 0.020→0.112</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Uniform means uniform over <i>clips</i>, not frames: the bank spans 3.7 s to 264 s, so
+  frame-uniform would weight by duration and quietly make the control arm a length-weighted
+  curriculum. Baseline run — 4000 iterations, 4096 envs, 50 clips, ~57 min — took mean reward
+  1.2 → 22.4 and episode length 60 → 409 steps.</p>
+
+  <h3>The headroom gate decides whether the matrix is interpretable</h3>
+  <p>One frozen policy, evaluated across three banks, 16 episodes per clip:</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Bank</th><th class="n">Mean survival</th><th class="n">Frontier (≥0.20)</th>
+      <th class="n">Mastered (≥0.30)</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr class="hi"><td class="mono">tier_50</td><td class="n">0.915</td><td class="n">0.060</td><td class="n">0.880</td><td><span class="tag" style="color:var(--bad)">FAIL</span> nothing left to learn</td></tr>
+      <tr><td class="mono">tier_hard50</td><td class="n">0.603</td><td class="n"><b>0.480</b></td><td class="n">0.380</td><td><span class="tag ok">PASS</span></td></tr>
+      <tr><td class="mono">tier_mixed100</td><td class="n">0.746</td><td class="n"><b>0.230</b></td><td class="n">0.640</td><td><span class="tag ok">PASS</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout">
+    <p>Two banks clear the SIM-D1 gate that four prior candidates failed. The gate is not a
+    formality: on <code>tier_50</code> the policy masters 88% of clips after 4000 iterations
+    — 13% of a full run — so an adaptive sampler there has nothing to prioritise between, and
+    any sampler comparison run on it returns an uninterpretable null. That is the same shape
+    as the prior program's SIM-M3 result.</p>
+    <p><b>Bank construction, not sampler design, is what buys headroom.</b> Stratifying evenly
+    across the difficulty composite produced a bank that is too easy; the hardest decile
+    produced a real frontier. That is a concrete prescription the plan currently lacks.</p>
+  </div>
+
+  <h3>H1: partially supported — and the half that fails is the interesting half</h3>
+  <p>Measured difficulty regressed on the offline atlas over <code>tier_mixed100</code>
+  (n = 100, 5-fold cross-validated, ridge = 1.0):</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Feature set</th><th class="n">k</th><th class="n">CV R²</th><th class="n">CV ρ</th></tr></thead>
+    <tbody>
+      <tr><td>clip length alone</td><td class="n">1</td><td class="n">−0.039</td><td class="n">−0.144</td></tr>
+      <tr class="hi"><td>kinematic magnitude</td><td class="n">5</td><td class="n"><b>+0.263</b></td><td class="n"><b>+0.744</b></td></tr>
+      <tr><td>dynamic feasibility</td><td class="n">6</td><td class="n">+0.212</td><td class="n">+0.706</td></tr>
+      <tr><td>kinematic + dynamic</td><td class="n">11</td><td class="n">+0.265</td><td class="n">+0.699</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>H1's two clauses come apart. <b>"Better than clip length alone" is strongly
+  supported</b> — length is worse than predicting the mean (ρ = −0.14) while the atlas
+  reaches ρ ≈ 0.74 out of fold, so the featurisation earns its place. <b>"Dynamic beats
+  kinematic magnitude" is not supported here</b>: kinematic is marginally ahead, and
+  combining the two adds essentially nothing (+0.265 vs +0.263), which says they are largely
+  redundant on this bank rather than complementary.</p>
+
+  <p>One seed, one policy, one bank, 4000 of 30,000 iterations, n = 100. A direction, not a
+  result — but the direction the paper should be pressure-testing, and now cheap to test
+  properly.</p>
+
+  <h3>Three measurement errors caught along the way</h3>
+  <p>Each produced confident, plausible, wrong numbers:</p>
+  <ol class="dec">
+    <li><b>Scrambled per-clip assignment.</b> <code>arange(n) % n_clips</code> interleaves
+      clips across envs, but <code>reshape(n_clips, k)</code> groups <i>consecutive</i> envs,
+      so each "clip" row averaged k different clips. Aggregate means stayed correct, which is
+      why it survived a first look. Caught because the hard and easy halves of a mixed bank
+      came out with identical mean difficulty (0.364 vs 0.371) after measuring 0.380 vs 0.886
+      when evaluated separately.</li>
+    <li><b>Difficulty measured at the wrong unit.</b> Starting every episode at frame 0 makes
+      a clip's 16 episodes near-identical, so survival collapses to 0 or 1 and the frontier
+      band empties. Sampling start points <i>within</i> the clip — matching how training and
+      any curriculum sample — moved <code>tier_hard50</code> from frontier 0.100 (fail) to
+      0.480 (pass).</li>
+    <li><b>A 6%-support predictor detonating the regression.</b>
+      <code>nonfoot_ground_frac</code> is nonzero in 6 of 100 clips; folds whose training
+      split held few of them gave held-out clips enormous z-scores, taking the dynamic set
+      from R² +0.21 to <b>−142</b> while its own rank correlation was −0.04. Now excluded by
+      a minimum-support rule applied before any set is scored.</li>
+  </ol>
+</section>
+
+<section>
+  <h2><span class="num">07</span> Where the plan and the evidence disagree</h2>
+  <p class="lede">This is the one item that needs a decision rather than a command.</p>
+
+  <p>H2 claims a ≥2–3× compute reduction from grounded adaptive sampling. The prior
+  SONIC track-B program on this machine tested essentially that mechanism and recorded
+  three non-supporting results:</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Result</th><th>Finding</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">SIM-M3</td><td>adaptive vs uniform, mean Δ MPJPE-G <b>+0.111</b> (worse), 1/3 seeds improved, permutation <i>p</i> = 0.875 — preregistered effect gate <b>FAIL</b></td></tr>
+      <tr><td class="mono">SIM-D1</td><td>four candidate banks built, all four failed or were invalidated; frontier fractions 0/2, 0/24, 6/41, and a 9/28 pass voided on a root-XY drift guard</td></tr>
+      <tr><td class="mono">ZPD pilot</td><td>the literal <code>E[p(1−p)]</code> frontier utility CLIMB §3.4 proposes; mechanism demonstrably activated (608 vs 283 effective bins) and still lost all four normalized-AUC metrics</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>The baseline is stronger than "uniform"</h3>
+  <p>mjlab already ships BeyondMimic-style adaptive sampling upstream, over ~1&nbsp;s bins
+  within a clip: a failure-count EMA (<code>adaptive_alpha</code>), non-causal kernel
+  smoothing (<code>adaptive_lambda</code>), and <code>adaptive_uniform_ratio = 0.1</code> —
+  an ε-uniform floor that is <b>already a crude grounding term</b>. Collapse diagnostics
+  (<code>sampling_entropy</code>, <code>sampling_top1_prob</code>,
+  <code>sampling_top1_bin</code>) are already logged.</p>
+
+  <h3>So CLIMB's real delta is narrower — and better posed</h3>
+  <p>The segment axis exists. What does not exist anywhere is the <b>clip axis</b>
+  (<code>MotionLoader</code> loads exactly one file), the <b>horizon axis</b>, and the
+  <b>grounding term</b> as anything richer than ε-uniform.</p>
+
+  <div class="callout">
+    <p>That argues for making <b>grounding vs ε-uniform at matched frontier</b> the primary
+    contrast rather than grounded-adaptive vs uniform. It is the only genuinely new part,
+    and the frontier term it would be bolted onto has already tested null-to-adverse twice
+    on this researcher's own data.</p>
+    <p>It also argues for adding a <b>dataset-headroom gate to Phase 0</b> (frontier
+    fraction ≥ 0.20 against a fixed reference policy). Frontier fraction — not spread — was
+    the binding constraint in three of four prior failures, and measuring it costs a
+    fraction of one matrix cell while determining whether the other 44 are interpretable.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">08</span> Reproducing this</h2>
+<pre><code># Newton
+cd /home/robotixx/newton &amp;&amp; uv sync --extra dev
+uv run -m newton.examples robot_g1 --viewer null --num-frames 30
+uv run --extra dev -m newton.tests -j 4 --no-cache-clear
+
+# mjlab v1.6.0 (worktree; the existing checkout is untouched)
+cd /data/robotixx/climb/mjlab-1.6.0
+UV_CACHE_DIR=/data/robotixx/climb/.uv-cache uv sync --extra cu128 --group dev
+.venv/bin/list-envs | grep Tracking
+
+# always validate before training on a motion
+.venv/bin/python /data/robotixx/climb/tools/validate_motion_npz.py --dir BANK --quiet
+
+# build a bank  (input-fps: 30 for LAFAN1 retargets, 120 for AMASS)
+MUJOCO_GL=egl .venv/bin/python /data/robotixx/climb/tools/build_motion_bank.py \
+  --input-dir CSV_DIR --output-dir BANK --input-fps 30
+
+# throughput / VRAM curve
+/data/robotixx/climb/tools/bench_throughput.sh MOTION.npz 30 1024 2048 4096 8192 16384</code></pre>
+</section>
+
+<section>
+  <h2><span class="num">09</span> Open decisions</h2>
+  <ol class="dec">
+    <li><b>Re-specify the matrix at 5 seeds?</b> The compute objection does not survive
+      measurement; three seeds cannot reach significance.</li>
+    <li><b>Make the grounding term the primary contrast</b> rather than an ablation.</li>
+    <li><b>Add the SIM-D1 headroom gate to Phase 0</b> before committing to the matrix.</li>
+    <li><b>Is a physical G1 actually available, and when?</b> Two Phase-0 exit criteria and
+      all of Phase 3 depend on it; only an SDK checkout and a LAN address are visible
+      from here.</li>
+    <li><b>Disk.</b> <code>/</code> is at 91%; ~95 GB sits in the uv and pip caches. Not
+      pruned — the uv cache holds the only local copy of the now-404 MuJoCo wheel, so
+      pruning forecloses ever rebuilding the old mjlab lock.</li>
+    <li><b>A stray user-site torch</b> (2.5.1+cu124) shadows every python3.10 environment
+      and breaks the <code>gmr</code> conda env: it reports <code>is_available() = True</code>,
+      then fails on sm_120 kernels. Left in place — renaming it affects other projects.</li>
+  </ol>
+</section>
+
+<footer>
+  Sources: /data/robotixx/climb/reports/SETUP_AND_FINDINGS.md · workspace README at
+  /data/robotixx/climb/README.md · plan under test /home/robotixx/newton/fable.md
+</footer>
+
+</div>

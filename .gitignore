@@ -1,0 +1,17 @@
+# heavy / environment / external
+bank/
+logs/
+mjlab-1.6.0/
+bridge/
+outputs/
+# refeas is released separately as its own repo
+refeas/
+__pycache__/
+*.pyc
+*.pt
+*.onnx
+# bulky raw run data: keep aggregated json/csv/md/png, drop per-world arrays & per-clip shards
+reports/**/*.npz
+reports/feasibility_all/json/
+reports/feasibility_e3/json/
+reports/clip44_gate.html

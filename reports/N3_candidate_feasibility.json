@@ -1,0 +1,242 @@
+{
+ "BMLmovi_Subject_36_F_MoSh_Subject_36_F_2_poses_120_jpos": {
+  "frames": 450,
+  "infeasible_frac": 0.08888888888888889,
+  "nocontact_frac": 0.08888888888888889,
+  "tau_ratio_med": 0.54
+ },
+ "BMLmovi_Subject_27_F_MoSh_Subject_27_F_5_poses_120_jpos": {
+  "frames": 529,
+  "infeasible_frac": 0.20793950850661624,
+  "nocontact_frac": 0.19659735349716445,
+  "tau_ratio_med": 0.75
+ },
+ "BMLmovi_Subject_66_F_MoSh_Subject_66_F_11_poses_120_jpos": {
+  "frames": 727,
+  "infeasible_frac": 0.0577716643741403,
+  "nocontact_frac": 0.05639614855570839,
+  "tau_ratio_med": 1.47
+ },
+ "BMLmovi_Subject_11_F_MoSh_Subject_11_F_21_poses_120_jpos": {
+  "frames": 882,
+  "infeasible_frac": 0.1961451247165533,
+  "nocontact_frac": 0.1836734693877551,
+  "tau_ratio_med": 0.52
+ },
+ "BMLmovi_Subject_60_F_MoSh_Subject_60_F_6_poses_120_jpos": {
+  "frames": 610,
+  "infeasible_frac": 0.17049180327868851,
+  "nocontact_frac": 0.17049180327868851,
+  "tau_ratio_med": 0.75
+ },
+ "BMLmovi_Subject_51_F_MoSh_Subject_51_F_12_poses_120_jpos": {
+  "frames": 510,
+  "infeasible_frac": 0.19607843137254902,
+  "nocontact_frac": 0.16862745098039217,
+  "tau_ratio_med": 0.58
+ },
+ "BMLmovi_Subject_70_F_MoSh_Subject_70_F_20_poses_120_jpos": {
+  "frames": 572,
+  "infeasible_frac": 0.1853146853146853,
+  "nocontact_frac": 0.17832167832167833,
+  "tau_ratio_med": 0.53
+ },
+ "BMLmovi_Subject_43_F_MoSh_Subject_43_F_15_poses_120_jpos": {
+  "frames": 682,
+  "infeasible_frac": 0.09090909090909091,
+  "nocontact_frac": 0.09090909090909091,
+  "tau_ratio_med": 1.2149999999999999
+ },
+ "BMLmovi_Subject_62_F_MoSh_Subject_62_F_6_poses_120_jpos": {
+  "frames": 564,
+  "infeasible_frac": 0.09042553191489362,
+  "nocontact_frac": 0.06560283687943262,
+  "tau_ratio_med": 0.67
+ },
+ "BMLmovi_Subject_8_F_MoSh_Subject_8_F_6_poses_120_jpos": {
+  "frames": 595,
+  "infeasible_frac": 0.21008403361344538,
+  "nocontact_frac": 0.1865546218487395,
+  "tau_ratio_med": 0.77
+ },
+ "BMLmovi_Subject_39_F_MoSh_Subject_39_F_8_poses_120_jpos": {
+  "frames": 760,
+  "infeasible_frac": 0.3671052631578947,
+  "nocontact_frac": 0.15789473684210525,
+  "tau_ratio_med": 0.68
+ },
+ "BMLmovi_Subject_41_F_MoSh_Subject_41_F_20_poses_120_jpos": {
+  "frames": 502,
+  "infeasible_frac": 0.27689243027888444,
+  "nocontact_frac": 0.17729083665338646,
+  "tau_ratio_med": 0.41
+ },
+ "BMLmovi_Subject_74_F_MoSh_Subject_74_F_13_poses_120_jpos": {
+  "frames": 510,
+  "infeasible_frac": 0.10588235294117647,
+  "nocontact_frac": 0.0803921568627451,
+  "tau_ratio_med": 0.57
+ },
+ "BMLmovi_Subject_67_F_MoSh_Subject_67_F_3_poses_120_jpos": {
+  "frames": 554,
+  "infeasible_frac": 0.11010830324909747,
+  "nocontact_frac": 0.11010830324909747,
+  "tau_ratio_med": 0.385
+ },
+ "CMU_22_23_Rory_22_03_poses_120_jpos": {
+  "frames": 338,
+  "infeasible_frac": 0.21301775147928995,
+  "nocontact_frac": 0.21301775147928995,
+  "tau_ratio_med": 0.34
+ },
+ "Eyes_Japan_Dataset_hamada_pose-11-bended_knees-hamada_poses_120_jpos": {
+  "frames": 1488,
+  "infeasible_frac": 0.05779569892473118,
+  "nocontact_frac": 0.051075268817204304,
+  "tau_ratio_med": 0.28
+ },
+ "BMLmovi_Subject_32_F_MoSh_Subject_32_F_1_poses_120_jpos": {
+  "frames": 604,
+  "infeasible_frac": 0.076158940397351,
+  "nocontact_frac": 0.076158940397351,
+  "tau_ratio_med": 0.6
+ },
+ "BMLmovi_Subject_72_F_MoSh_Subject_72_F_21_poses_120_jpos": {
+  "frames": 609,
+  "infeasible_frac": 0.21510673234811165,
+  "nocontact_frac": 0.16912972085385877,
+  "tau_ratio_med": 0.61
+ },
+ "BMLmovi_Subject_31_F_MoSh_Subject_31_F_20_poses_120_jpos": {
+  "frames": 537,
+  "infeasible_frac": 0.1527001862197393,
+  "nocontact_frac": 0.1527001862197393,
+  "tau_ratio_med": 0.81
+ },
+ "KIT_3_kneel_down_to_crawl02_poses_100_jpos": {
+  "frames": 263,
+  "infeasible_frac": 0.07604562737642585,
+  "nocontact_frac": 0.07604562737642585,
+  "tau_ratio_med": 0.53
+ },
+ "Eyes_Japan_Dataset_kawaguchi_sitdown_standup-11-one_knee_drawn_up-kawaguchi_poses_120_jpos": {
+  "frames": 1000,
+  "infeasible_frac": 0.049,
+  "nocontact_frac": 0.039,
+  "tau_ratio_med": 0.26
+ },
+ "BMLmovi_Subject_6_F_MoSh_Subject_6_F_3_poses_120_jpos": {
+  "frames": 637,
+  "infeasible_frac": 0.09733124018838304,
+  "nocontact_frac": 0.09733124018838304,
+  "tau_ratio_med": 1.91
+ },
+ "CMU_107_107_08_poses_60_jpos": {
+  "frames": 690,
+  "infeasible_frac": 0.09710144927536232,
+  "nocontact_frac": 0.09710144927536232,
+  "tau_ratio_med": 0.405
+ },
+ "KIT_3_kneel_down_to_crawl01_poses_100_jpos": {
+  "frames": 322,
+  "infeasible_frac": 0.052795031055900624,
+  "nocontact_frac": 0.052795031055900624,
+  "tau_ratio_med": 1.9649999999999999
+ },
+ "BMLmovi_Subject_17_F_MoSh_Subject_17_F_5_poses_120_jpos": {
+  "frames": 555,
+  "infeasible_frac": 0.1045045045045045,
+  "nocontact_frac": 0.0990990990990991,
+  "tau_ratio_med": 1.51
+ },
+ "ACCAD_Male2MartialArtsStances_c3d_D13_-crouch_to_ready_poses_120_jpos": {
+  "frames": 188,
+  "infeasible_frac": 0.03723404255319149,
+  "nocontact_frac": 0.031914893617021274,
+  "tau_ratio_med": 0.28
+ },
+ "KIT_3_kneel_down_to_crawl07_poses_100_jpos": {
+  "frames": 303,
+  "infeasible_frac": 0.056105610561056105,
+  "nocontact_frac": 0.056105610561056105,
+  "tau_ratio_med": 0.38
+ },
+ "BMLmovi_Subject_45_F_MoSh_Subject_45_F_20_poses_120_jpos": {
+  "frames": 537,
+  "infeasible_frac": 0.18994413407821228,
+  "nocontact_frac": 0.18994413407821228,
+  "tau_ratio_med": 0.54
+ },
+ "BMLmovi_Subject_24_F_MoSh_Subject_24_F_11_poses_120_jpos": {
+  "frames": 512,
+  "infeasible_frac": 0.19140625,
+  "nocontact_frac": 0.173828125,
+  "tau_ratio_med": 0.59
+ },
+ "BMLmovi_Subject_30_F_MoSh_Subject_30_F_18_poses_120_jpos": {
+  "frames": 602,
+  "infeasible_frac": 0.1362126245847176,
+  "nocontact_frac": 0.1362126245847176,
+  "tau_ratio_med": 0.55
+ },
+ "Eyes_Japan_Dataset_shiono_sitdown_standup-11-one_knee_drawn_up-shiono_poses_120_jpos": {
+  "frames": 1417,
+  "infeasible_frac": 0.05786873676781934,
+  "nocontact_frac": 0.05575158786167961,
+  "tau_ratio_med": 0.28
+ },
+ "ACCAD_Male2MartialArtsStances_c3d_D14_-ready_to_crouch_poses_120_jpos": {
+  "frames": 167,
+  "infeasible_frac": 0.1497005988023952,
+  "nocontact_frac": 0.12574850299401197,
+  "tau_ratio_med": 0.34
+ },
+ "KIT_3_kneel_down_to_crawl08_poses_100_jpos": {
+  "frames": 248,
+  "infeasible_frac": 0.06048387096774194,
+  "nocontact_frac": 0.06048387096774194,
+  "tau_ratio_med": 0.37
+ },
+ "KIT_3_kneel_down_to_crawl03_poses_100_jpos": {
+  "frames": 290,
+  "infeasible_frac": 0.034482758620689655,
+  "nocontact_frac": 0.034482758620689655,
+  "tau_ratio_med": 1.62
+ },
+ "CMU_111_111_03_poses_120_jpos": {
+  "frames": 635,
+  "infeasible_frac": 0.25826771653543307,
+  "nocontact_frac": 0.25826771653543307,
+  "tau_ratio_med": 0.79
+ },
+ "KIT_3_kneel_down_to_crawl04_poses_100_jpos": {
+  "frames": 271,
+  "infeasible_frac": 0.03690036900369004,
+  "nocontact_frac": 0.03690036900369004,
+  "tau_ratio_med": 0.39
+ },
+ "BMLmovi_Subject_48_F_MoSh_Subject_48_F_16_poses_120_jpos": {
+  "frames": 522,
+  "infeasible_frac": 0.19923371647509577,
+  "nocontact_frac": 0.18582375478927204,
+  "tau_ratio_med": 0.56
+ },
+ "Eyes_Japan_Dataset_kaiwa_pose-11-bended_knees-kaiwa_poses_120_jpos": {
+  "frames": 1500,
+  "infeasible_frac": 0.035333333333333335,
+  "nocontact_frac": 0.032,
+  "tau_ratio_med": 0.22
+ },
+ "KIT_3_kneel_up_from_crawl07_poses_100_jpos": {
+  "frames": 307,
+  "infeasible_frac": 0.035830618892508145,
+  "nocontact_frac": 0.035830618892508145,
+  "tau_ratio_med": 0.35
+ },
+ "KIT_3_kneel_down_to_crawl05_poses_100_jpos": {
+  "frames": 246,
+  "infeasible_frac": 0.04878048780487805,
+  "nocontact_frac": 0.04878048780487805,
+  "tau_ratio_med": 0.36
+ }
+}

@@ -1,0 +1,66 @@
+{
+  "arms": [
+    "adaptive",
+    "grounded",
+    "uniform"
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "iters": [
+    0,
+    500,
+    1000,
+    1500,
+    2000,
+    2500,
+    3000,
+    3500,
+    3999
+  ],
+  "adaptive": {
+    "final": 0.7804,
+    "aulc": 0.6403,
+    "iters_to_target": null,
+    "target": 0.81,
+    "censored": true
+  },
+  "grounded": {
+    "final": 0.8246,
+    "aulc": 0.6956,
+    "iters_to_target": 3999,
+    "target": 0.81,
+    "censored": false
+  },
+  "uniform": {
+    "final": 0.8096,
+    "aulc": 0.6979,
+    "iters_to_target": null,
+    "target": 0.81,
+    "censored": true
+  },
+  "paired": {
+    "uniform_vs_adaptive": {
+      "n_seeds": 3,
+      "mean_delta": 0.0292,
+      "wins_for_uniform": 3,
+      "p_one_sided": 0.125,
+      "p_floor": 0.125,
+      "seed_sd": 0.00144,
+      "cohens_dz": 20.207,
+      "t_stat": 35.0
+    },
+    "uniform_vs_grounded": {
+      "n_seeds": 3,
+      "mean_delta": -0.015,
+      "wins_for_uniform": 0,
+      "p_one_sided": 1.0,
+      "p_floor": 0.125,
+      "seed_sd": 0.00781,
+      "cohens_dz": -1.922,
+      "t_stat": -3.328
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "n_clips": 100,
+  "target": "difficulty",
+  "univariate_spearman": {
+    "duration_s": -0.0518,
+    "com_speed_p95": 0.0146,
+    "com_height_range": -0.0727,
+    "joint_vel_p95": 0.0151,
+    "jerk_p95": 0.0304,
+    "angmom_peak": 0.1217,
+    "required_mu_p95": 0.0458,
+    "vert_force_bw_max": 0.0834,
+    "contact_switch_rate": 0.0682,
+    "flight_phase_frac": -0.0075,
+    "nonfoot_ground_frac": 0.0083,
+    "support_margin_mean": 0.0236,
+    "cop_margin_mean": -0.006
+  },
+  "cv": {
+    "length": {
+      "features": [
+        "duration_s"
+      ],
+      "cv_r2": -0.0522,
+      "cv_spearman": -0.2437
+    },
+    "kinematic": {
+      "features": [
+        "com_speed_p95",
+        "com_height_range",
+        "joint_vel_p95",
+        "jerk_p95",
+        "angmom_peak"
+      ],
+      "cv_r2": -0.0495,
+      "cv_spearman": 0.0112
+    },
+    "dynamic": {
+      "features": [
+        "required_mu_p95",
+        "vert_force_bw_max",
+        "contact_switch_rate",
+        "flight_phase_frac",
+        "nonfoot_ground_frac",
+        "support_margin_mean",
+        "cop_margin_mean"
+      ],
+      "cv_r2": -77.0575,
+      "cv_spearman": -0.3391
+    },
+    "kinematic+dynamic": {
+      "features": [
+        "com_speed_p95",
+        "com_height_range",
+        "joint_vel_p95",
+        "jerk_p95",
+        "angmom_peak",
+        "required_mu_p95",
+        "vert_force_bw_max",
+        "contact_switch_rate",
+        "flight_phase_frac",
+        "nonfoot_ground_frac",
+        "support_margin_mean",
+        "cop_margin_mean"
+      ],
+      "cv_r2": -2.9224,
+      "cv_spearman": -0.1099
+    },
+    "all+length": {
+      "features": [
+        "duration_s",
+        "com_speed_p95",
+        "com_height_range",
+        "joint_vel_p95",
+        "jerk_p95",
+        "angmom_peak",
+        "required_mu_p95",
+        "vert_force_bw_max",
+        "contact_switch_rate",
+        "flight_phase_frac",
+        "nonfoot_ground_frac",
+        "support_margin_mean",
+        "cop_margin_mean"
+      ],
+      "cv_r2": -4.814,
+      "cv_spearman": -0.1205
+    }
+  }
+}

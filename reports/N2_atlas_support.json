@@ -1,0 +1,210 @@
+{
+ "bank": "/data/robotixx/climb/bank/tiers/tier_mixed100.txt",
+ "kernel_h": 1.1619066183205808,
+ "category_composition": {
+  "quiet": {
+   "clips": 31,
+   "duration_share": 0.2274516651322264
+  },
+  "locomotion": {
+   "clips": 43,
+   "duration_share": 0.6226388139306009
+  },
+  "ground": {
+   "clips": 2,
+   "duration_share": 0.03173116606876409
+  },
+  "dynamic": {
+   "clips": 24,
+   "duration_share": 0.11817835486840852
+  }
+ },
+ "T1": {
+  "fixed_start": {
+   "n": 100,
+   "loo_spearman_intrinsic": 0.47067506750675064,
+   "loo_spearman_intrinsic+support": 0.4487608760876087,
+   "rho_resid_knn": 0.6053525352535253,
+   "rho_resid_logdensity": -0.5784938493849384,
+   "rho_resid_catmass": -0.2462286228622862,
+   "clip44_rank_residual": 43,
+   "clip44_rank_knn": 8,
+   "clip44_rank_lowdensity": 23,
+   "clip44_difficulty": 1.0,
+   "top_residual_clips": [
+    [
+     "KIT_3_stomp_right02_poses_100_jpos",
+     0.916,
+     0.91,
+     "quiet"
+    ],
+    [
+     "KIT_950_Wipe_Head_Horizontal_01_poses_100_jpos",
+     0.849,
+     1.42,
+     "quiet"
+    ],
+    [
+     "DFaust_67_50027_50027_one_leg_jump_poses_60_jpos",
+     0.769,
+     1.5,
+     "quiet"
+    ],
+    [
+     "KIT_883_wipe_leg_bigcircle01_poses_100_jpos",
+     0.765,
+     1.41,
+     "quiet"
+    ],
+    [
+     "CMU_78_78_35_poses_120_jpos",
+     0.742,
+     2.33,
+     "dynamic"
+    ],
+    [
+     "ACCAD_Male2Walking_c3d_B20_-__Walk_with_box_poses_120_jpos",
+     0.724,
+     3.02,
+     "dynamic"
+    ]
+   ]
+  },
+  "random_start": {
+   "n": 100,
+   "loo_spearman_intrinsic": 0.507986798679868,
+   "loo_spearman_intrinsic+support": 0.49406540654065406,
+   "rho_resid_knn": 0.5441344134413441,
+   "rho_resid_logdensity": -0.5607200720072008,
+   "rho_resid_catmass": -0.3496549654965497,
+   "clip44_rank_residual": 14,
+   "clip44_rank_knn": 8,
+   "clip44_rank_lowdensity": 23,
+   "clip44_difficulty": 0.75,
+   "top_residual_clips": [
+    [
+     "KIT_950_Wipe_Head_Horizontal_01_poses_100_jpos",
+     0.823,
+     1.42,
+     "quiet"
+    ],
+    [
+     "Eyes_Japan_Dataset_hamada_jump-07-rope_double-hamada_poses_120_jpos",
+     0.753,
+     1.79,
+     "locomotion"
+    ],
+    [
+     "KIT_883_wipe_leg_bigcircle01_poses_100_jpos",
+     0.695,
+     1.41,
+     "quiet"
+    ],
+    [
+     "ACCAD_Male2Running_c3d_C5_-_walk_to_run_poses_120_jpos",
+     0.664,
+     2.11,
+     "dynamic"
+    ],
+    [
+     "DFaust_67_50027_50027_one_leg_jump_poses_60_jpos",
+     0.643,
+     1.5,
+     "quiet"
+    ],
+    [
+     "DFaust_67_50025_50025_one_leg_jump_poses_60_jpos",
+     0.55,
+     1.59,
+     "quiet"
+    ]
+   ]
+  }
+ },
+ "T2": {
+  "uniform->adaptive": {
+   "intrinsic": 0.5787098709870986,
+   "intrinsic+support": 0.5834623462346233,
+   "intrinsic_loo": 0.49741374137413735,
+   "intrinsic+support_loo": 0.49030903090309025,
+   "perm_mean": 0.582341614161416,
+   "perm_p95": 0.6099555955595558,
+   "p_perm": 0.455
+  },
+  "uniform->grounded": {
+   "intrinsic": 0.6234743474347434,
+   "intrinsic+support": 0.6423762376237623,
+   "intrinsic_loo": 0.5451905190519051,
+   "intrinsic+support_loo": 0.5597119711971196,
+   "perm_mean": 0.6265385538553855,
+   "perm_p95": 0.6500684068406839,
+   "p_perm": 0.125
+  },
+  "adaptive->uniform": {
+   "intrinsic": 0.5674167416741673,
+   "intrinsic+support": 0.5844944494449443,
+   "intrinsic_loo": 0.47662766276627666,
+   "intrinsic+support_loo": 0.47477947794779474,
+   "perm_mean": 0.5766473447344733,
+   "perm_p95": 0.6009078907890787,
+   "p_perm": 0.24
+  },
+  "adaptive->grounded": {
+   "intrinsic": 0.6369876987698769,
+   "intrinsic+support": 0.6553975397539754,
+   "intrinsic_loo": 0.5538193819381938,
+   "intrinsic+support_loo": 0.5515511551155116,
+   "perm_mean": 0.6421157515751574,
+   "perm_p95": 0.6639657965796578,
+   "p_perm": 0.13
+  },
+  "grounded->uniform": {
+   "intrinsic": 0.5435343534353435,
+   "intrinsic+support": 0.5749894989498948,
+   "intrinsic_loo": 0.47764776477647763,
+   "intrinsic+support_loo": 0.4829522952295229,
+   "perm_mean": 0.5527560156015601,
+   "perm_p95": 0.5763948394839482,
+   "p_perm": 0.08
+  },
+  "grounded->adaptive": {
+   "intrinsic": 0.5864386438643864,
+   "intrinsic+support": 0.5952595259525951,
+   "intrinsic_loo": 0.5237683768376837,
+   "intrinsic+support_loo": 0.5009060906090609,
+   "perm_mean": 0.5944092409240923,
+   "perm_p95": 0.6216633663366335,
+   "p_perm": 0.37
+  },
+  "direct_uniform": {
+   "rho_knn": 0.3418781878187819,
+   "rho_logdens": -0.23206720672067205,
+   "rho_catmass": -0.11714371437143713
+  },
+  "direct_adaptive": {
+   "rho_knn": 0.3694569456945694,
+   "rho_logdens": -0.312019201920192,
+   "rho_catmass": -0.16583258325832584
+  },
+  "direct_grounded": {
+   "rho_knn": 0.4119771977197719,
+   "rho_logdens": -0.30787878787878786,
+   "rho_catmass": -0.17443744374437445
+  }
+ },
+ "support_of_clip44": {
+  "knn_dist": 2.7586797813357045,
+  "support_density": 0.011518716970017264,
+  "category": "ground",
+  "category_mass": 0.0317311660687641,
+  "duration_s": 9.98
+ },
+ "extra_bank": {
+  "path": "/data/robotixx/climb/bank/tiers/tier_800.txt",
+  "n": 800,
+  "kernel_h": 0.7275979467725686,
+  "csv": "/data/robotixx/climb/reports/support_features_tier_800.csv",
+  "n_common_with_bank": 13,
+  "clip44_support_800": null
+ }
+}

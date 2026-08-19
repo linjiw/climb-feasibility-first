@@ -1,0 +1,1654 @@
+{
+ "BMLmovi_Subject_74_F_MoSh_Subject_74_F_13_poses_120_jpos": {
+  "deep_frac": 0.23529411764705882,
+  "worst_pen": -0.047539240177175125,
+  "top_pairs": [
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    22
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    15
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    13
+   ]
+  ]
+ },
+ "CMU_78_78_35_poses_120_jpos": {
+  "deep_frac": 0.05263157894736842,
+  "worst_pen": -0.0803237001869383,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    2
+   ]
+  ]
+ },
+ "BMLmovi_Subject_27_F_MoSh_Subject_27_F_5_poses_120_jpos": {
+  "deep_frac": 0.18867924528301888,
+  "worst_pen": -0.07403887632139922,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    22
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    19
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    16
+   ]
+  ]
+ },
+ "KIT_950_Wipe_Head_Horizontal_01_poses_100_jpos": {
+  "deep_frac": 0.6,
+  "worst_pen": -0.021428950333092944,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    65
+   ],
+   [
+    [
+     "right_hip",
+     "right_wrist"
+    ],
+    64
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    60
+   ]
+  ]
+ },
+ "KIT_3_kneel_down_to_crawl02_poses_100_jpos": {
+  "deep_frac": 0.0,
+  "worst_pen": -0.003411709933490041,
+  "top_pairs": [
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    2
+   ],
+   [
+    [
+     "right_shin",
+     "right_hand"
+    ],
+    1
+   ]
+  ]
+ },
+ "CMU_35_35_25_poses_120_jpos": {
+  "deep_frac": 0.0,
+  "worst_pen": 0.0,
+  "top_pairs": []
+ },
+ "Eyes_Japan_Dataset_kaiwa_accident-05-damage_right_arm-kaiwa_poses_120_jpos": {
+  "deep_frac": 0.8366666666666667,
+  "worst_pen": -0.07331644132517463,
+  "top_pairs": [
+   [
+    [
+     "torso",
+     "left_wrist"
+    ],
+    151
+   ],
+   [
+    [
+     "torso",
+     "left_elbow_yaw"
+    ],
+    135
+   ],
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    82
+   ]
+  ]
+ },
+ "CMU_118_118_19_poses_120_jpos": {
+  "deep_frac": 0.6274509803921569,
+  "worst_pen": -0.07560445760354821,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    31
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    29
+   ],
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    25
+   ]
+  ]
+ },
+ "CMU_76_76_02_poses_120_jpos": {
+  "deep_frac": 0.1958762886597938,
+  "worst_pen": -0.029436768890995293,
+  "top_pairs": [
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    19
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    12
+   ]
+  ]
+ },
+ "CMU_20_21_Justin1_20_09_poses_120_jpos": {
+  "deep_frac": 0.0,
+  "worst_pen": 0.0,
+  "top_pairs": []
+ },
+ "ACCAD_s011_walkdog_poses_120_jpos": {
+  "deep_frac": 0.09202453987730061,
+  "worst_pen": -0.0697286489326151,
+  "top_pairs": [
+   [
+    [
+     "left_hand",
+     "right_hand"
+    ],
+    12
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    8
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    2
+   ]
+  ]
+ },
+ "BMLmovi_Subject_17_F_MoSh_Subject_17_F_5_poses_120_jpos": {
+  "deep_frac": 0.16216216216216217,
+  "worst_pen": -0.051103961798022644,
+  "top_pairs": [
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    17
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    11
+   ],
+   [
+    [
+     "right_hip",
+     "right_wrist"
+    ],
+    10
+   ]
+  ]
+ },
+ "KIT_3_kneel_down_to_crawl03_poses_100_jpos": {
+  "deep_frac": 0.05172413793103448,
+  "worst_pen": -0.029935569680038368,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    3
+   ],
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    2
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    2
+   ]
+  ]
+ },
+ "KIT_3_kneel_down_to_crawl01_poses_100_jpos": {
+  "deep_frac": 0.015384615384615385,
+  "worst_pen": -0.03300766660636019,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    2
+   ],
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    1
+   ],
+   [
+    [
+     "right_shin",
+     "right_hand"
+    ],
+    1
+   ]
+  ]
+ },
+ "CMU_135_135_02_poses_120_jpos": {
+  "deep_frac": 0.20276497695852536,
+  "worst_pen": -0.06969789790267877,
+  "top_pairs": [
+   [
+    [
+     "left_hand",
+     "right_hand"
+    ],
+    47
+   ],
+   [
+    [
+     "torso",
+     "right_wrist"
+    ],
+    32
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    17
+   ]
+  ]
+ },
+ "ACCAD_Male2MartialArtsStances_c3d_D14_-ready_to_crouch_poses_120_jpos": {
+  "deep_frac": 0.0,
+  "worst_pen": 0.0,
+  "top_pairs": []
+ },
+ "Eyes_Japan_Dataset_kawaguchi_sitdown_standup-11-one_knee_drawn_up-kawaguchi_poses_120_jpos": {
+  "deep_frac": 0.625,
+  "worst_pen": -0.07539465476062666,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    120
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    114
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    98
+   ]
+  ]
+ },
+ "ACCAD_Male2Running_c3d_C24_-_quick_sidestep_left_poses_120_jpos": {
+  "deep_frac": 0.1,
+  "worst_pen": -0.02802785249956835,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    2
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    2
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    1
+   ]
+  ]
+ },
+ "ACCAD_Male2MartialArtsStances_c3d_D13_-crouch_to_ready_poses_120_jpos": {
+  "deep_frac": 0.0,
+  "worst_pen": 0.0,
+  "top_pairs": []
+ },
+ "BMLmovi_Subject_45_F_MoSh_Subject_45_F_20_poses_120_jpos": {
+  "deep_frac": 0.48148148148148145,
+  "worst_pen": -0.07259787909599678,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    43
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    30
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    23
+   ]
+  ]
+ },
+ "ACCAD_Male2Running_c3d_C18_-_run_to_hop_to_walk_poses_120_jpos": {
+  "deep_frac": 0.043478260869565216,
+  "worst_pen": -0.0410994349497506,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    4
+   ]
+  ]
+ },
+ "BMLmovi_Subject_43_F_MoSh_Subject_43_F_15_poses_120_jpos": {
+  "deep_frac": 0.24817518248175183,
+  "worst_pen": -0.03809814539115928,
+  "top_pairs": [
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    27
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    17
+   ],
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    14
+   ]
+  ]
+ },
+ "GRAB_s5_cylinderlarge_inspect_1": {
+  "deep_frac": 0.08695652173913043,
+  "worst_pen": -0.045065661517277145,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    9
+   ],
+   [
+    [
+     "left_foot2",
+     "right_foot6"
+    ],
+    7
+   ],
+   [
+    [
+     "left_foot3",
+     "right_foot6"
+    ],
+    6
+   ]
+  ]
+ },
+ "BMLmovi_Subject_72_F_MoSh_Subject_72_F_21_poses_120_jpos": {
+  "deep_frac": 0.10655737704918032,
+  "worst_pen": -0.03203209442444837,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    11
+   ],
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    7
+   ],
+   [
+    [
+     "right_thigh",
+     "right_wrist"
+    ],
+    5
+   ]
+  ]
+ },
+ "BMLmovi_Subject_62_F_MoSh_Subject_62_F_6_poses_120_jpos": {
+  "deep_frac": 0.10619469026548672,
+  "worst_pen": -0.05399791100676976,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    6
+   ],
+   [
+    [
+     "left_shin",
+     "left_hand"
+    ],
+    5
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    3
+   ]
+  ]
+ },
+ "BMLmovi_Subject_36_F_MoSh_Subject_36_F_2_poses_120_jpos": {
+  "deep_frac": 0.3111111111111111,
+  "worst_pen": -0.049016946319349726,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    24
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    16
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    13
+   ]
+  ]
+ },
+ "Eyes_Japan_Dataset_shiono_sitdown_standup-11-one_knee_drawn_up-shiono_poses_120_jpos": {
+  "deep_frac": 0.676056338028169,
+  "worst_pen": -0.08795544591512432,
+  "top_pairs": [
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    124
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    117
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    111
+   ]
+  ]
+ },
+ "Eyes_Japan_Dataset_kaiwa_walk-29-look_down-kaiwa_poses_120_jpos": {
+  "deep_frac": 0.17905405405405406,
+  "worst_pen": -0.028430307150772174,
+  "top_pairs": [
+   [
+    [
+     "left_foot2",
+     "right_foot5"
+    ],
+    31
+   ],
+   [
+    [
+     "left_foot2",
+     "right_foot6"
+    ],
+    31
+   ],
+   [
+    [
+     "left_foot3",
+     "right_foot5"
+    ],
+    31
+   ]
+  ]
+ },
+ "BMLmovi_Subject_48_F_MoSh_Subject_48_F_16_poses_120_jpos": {
+  "deep_frac": 0.06666666666666667,
+  "worst_pen": -0.030265213995596056,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    8
+   ]
+  ]
+ },
+ "Eyes_Japan_Dataset_hamada_pose-11-bended_knees-hamada_poses_120_jpos": {
+  "deep_frac": 0.7483221476510067,
+  "worst_pen": -0.0935765915821598,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    211
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    204
+   ],
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    177
+   ]
+  ]
+ },
+ "CMU_127_127_15_poses_120_jpos": {
+  "deep_frac": 0.0,
+  "worst_pen": -0.009805691816449066,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    1
+   ]
+  ]
+ },
+ "KIT_3_kneel_down_to_crawl04_poses_100_jpos": {
+  "deep_frac": 0.18181818181818182,
+  "worst_pen": -0.03006112987316928,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    11
+   ],
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    7
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    7
+   ]
+  ]
+ },
+ "BMLmovi_Subject_41_F_MoSh_Subject_41_F_20_poses_120_jpos": {
+  "deep_frac": 0.21782178217821782,
+  "worst_pen": -0.04659829004535132,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    20
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    7
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    5
+   ]
+  ]
+ },
+ "GRAB_s2_stanfordbunny_pick_all": {
+  "deep_frac": 0.0,
+  "worst_pen": 0.0,
+  "top_pairs": []
+ },
+ "CMU_111_111_03_poses_120_jpos": {
+  "deep_frac": 0.15748031496062992,
+  "worst_pen": -0.05428097998143287,
+  "top_pairs": [
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    20
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    19
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    13
+   ]
+  ]
+ },
+ "BMLmovi_Subject_70_F_MoSh_Subject_70_F_20_poses_120_jpos": {
+  "deep_frac": 0.22608695652173913,
+  "worst_pen": -0.045109805062952146,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    17
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    12
+   ],
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    11
+   ]
+  ]
+ },
+ "DFaust_67_50007_50007_running_on_spot_poses_60_jpos": {
+  "deep_frac": 0.02197802197802198,
+  "worst_pen": -0.011026376958527373,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    4
+   ]
+  ]
+ },
+ "CMU_131_131_01_poses_120_jpos": {
+  "deep_frac": 0.1927710843373494,
+  "worst_pen": -0.07476272348710625,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    18
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    17
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    9
+   ]
+  ]
+ },
+ "Eyes_Japan_Dataset_kudo_jump-04-horizontal-kudo_poses_250_jpos": {
+  "deep_frac": 0.1,
+  "worst_pen": -0.0758479874792094,
+  "top_pairs": [
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    38
+   ],
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    19
+   ],
+   [
+    [
+     "right_hip",
+     "right_wrist"
+    ],
+    5
+   ]
+  ]
+ },
+ "Eyes_Japan_Dataset_kawaguchi_accident-02-dodge_fast-kawaguchi_poses_120_jpos": {
+  "deep_frac": 0.12790697674418605,
+  "worst_pen": -0.05855933530938321,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    31
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    23
+   ],
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    10
+   ]
+  ]
+ },
+ "KIT_3_kneel_up_from_crawl07_poses_100_jpos": {
+  "deep_frac": 0.11290322580645161,
+  "worst_pen": -0.06867160947741327,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    7
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    6
+   ],
+   [
+    [
+     "right_hip",
+     "right_wrist"
+    ],
+    3
+   ]
+  ]
+ },
+ "BMLmovi_Subject_30_F_MoSh_Subject_30_F_18_poses_120_jpos": {
+  "deep_frac": 0.08264462809917356,
+  "worst_pen": -0.0364621835674924,
+  "top_pairs": [
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    7
+   ],
+   [
+    [
+     "left_hand",
+     "right_hand"
+    ],
+    6
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    2
+   ]
+  ]
+ },
+ "BMLmovi_Subject_32_F_MoSh_Subject_32_F_1_poses_120_jpos": {
+  "deep_frac": 0.09090909090909091,
+  "worst_pen": -0.01989607589549893,
+  "top_pairs": [
+   [
+    [
+     "left_foot2",
+     "right_foot5"
+    ],
+    12
+   ],
+   [
+    [
+     "left_foot2",
+     "right_foot6"
+    ],
+    12
+   ],
+   [
+    [
+     "left_foot3",
+     "right_foot6"
+    ],
+    12
+   ]
+  ]
+ },
+ "BMLmovi_Subject_51_F_MoSh_Subject_51_F_12_poses_120_jpos": {
+  "deep_frac": 0.22549019607843138,
+  "worst_pen": -0.0879289780745954,
+  "top_pairs": [
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    14
+   ],
+   [
+    [
+     "right_thigh",
+     "right_wrist"
+    ],
+    9
+   ],
+   [
+    [
+     "right_hip",
+     "right_wrist"
+    ],
+    9
+   ]
+  ]
+ },
+ "BMLmovi_Subject_31_F_MoSh_Subject_31_F_20_poses_120_jpos": {
+  "deep_frac": 0.39814814814814814,
+  "worst_pen": -0.07427895867490675,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    31
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    30
+   ],
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    17
+   ]
+  ]
+ },
+ "CMU_55_55_15_poses_120_jpos": {
+  "deep_frac": 0.04579207920792079,
+  "worst_pen": -0.060899370657058666,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    71
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    2
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    2
+   ]
+  ]
+ },
+ "CMU_107_107_08_poses_60_jpos": {
+  "deep_frac": 0.15217391304347827,
+  "worst_pen": -0.062309367115508975,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    21
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    12
+   ],
+   [
+    [
+     "left_thigh",
+     "left_wrist"
+    ],
+    7
+   ]
+  ]
+ },
+ "KIT_3_kneel_down_to_crawl07_poses_100_jpos": {
+  "deep_frac": 0.09836065573770492,
+  "worst_pen": -0.025797883073914007,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    10
+   ],
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    5
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    4
+   ]
+  ]
+ },
+ "ACCAD_Male2Walking_c3d_B20_-__Walk_with_box_poses_120_jpos": {
+  "deep_frac": 0.0,
+  "worst_pen": 0.0,
+  "top_pairs": []
+ },
+ "CMU_91_91_43_poses_120_jpos": {
+  "deep_frac": 0.42105263157894735,
+  "worst_pen": -0.05103421376592425,
+  "top_pairs": [
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    7
+   ],
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    7
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    6
+   ]
+  ]
+ },
+ "Eyes_Japan_Dataset_kaiwa_gesture_etc-48-medium_drum-kaiwa_poses_120_jpos": {
+  "deep_frac": 0.6433333333333333,
+  "worst_pen": -0.08757759900842005,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    158
+   ],
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    142
+   ],
+   [
+    [
+     "left_thigh",
+     "left_wrist"
+    ],
+    115
+   ]
+  ]
+ },
+ "Eyes_Japan_Dataset_kaiwa_pose-11-bended_knees-kaiwa_poses_120_jpos": {
+  "deep_frac": 0.71,
+  "worst_pen": -0.06951110199559486,
+  "top_pairs": [
+   [
+    [
+     "left_hand",
+     "right_hand"
+    ],
+    116
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    50
+   ],
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    43
+   ]
+  ]
+ },
+ "BMLmovi_Subject_8_F_MoSh_Subject_8_F_6_poses_120_jpos": {
+  "deep_frac": 0.01680672268907563,
+  "worst_pen": -0.016480217026416576,
+  "top_pairs": [
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    4
+   ]
+  ]
+ },
+ "BMLmovi_Subject_24_F_MoSh_Subject_24_F_11_poses_120_jpos": {
+  "deep_frac": 0.2524271844660194,
+  "worst_pen": -0.05697618754154072,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    20
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    16
+   ],
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    13
+   ]
+  ]
+ },
+ "KIT_3_kneel_down_to_crawl08_poses_100_jpos": {
+  "deep_frac": 0.06,
+  "worst_pen": -0.024385059491904476,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    5
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    4
+   ],
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    3
+   ]
+  ]
+ },
+ "BMLmovi_Subject_39_F_MoSh_Subject_39_F_8_poses_120_jpos": {
+  "deep_frac": 0.07894736842105263,
+  "worst_pen": -0.03126242873345035,
+  "top_pairs": [
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    12
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    10
+   ],
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    9
+   ]
+  ]
+ },
+ "KIT_359_walking_medium03_poses_100_jpos": {
+  "deep_frac": 0.660377358490566,
+  "worst_pen": -0.048454751523815356,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    35
+   ],
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    33
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    24
+   ]
+  ]
+ },
+ "BMLmovi_Subject_8_F_MoSh_Subject_8_F_15_poses_120_jpos": {
+  "deep_frac": 0.0,
+  "worst_pen": -0.002875461318655473,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    3
+   ]
+  ]
+ },
+ "CMU_54_54_24_poses_120_jpos": {
+  "deep_frac": 0.0,
+  "worst_pen": -0.009421502763714501,
+  "top_pairs": [
+   [
+    [
+     "left_foot1",
+     "right_foot6"
+    ],
+    2
+   ],
+   [
+    [
+     "left_foot2",
+     "right_foot6"
+    ],
+    2
+   ],
+   [
+    [
+     "left_foot1",
+     "right_foot4"
+    ],
+    1
+   ]
+  ]
+ },
+ "CMU_22_23_Rory_22_03_poses_120_jpos": {
+  "deep_frac": 0.47058823529411764,
+  "worst_pen": -0.0558335107306471,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    35
+   ],
+   [
+    [
+     "left_thigh",
+     "left_wrist"
+    ],
+    31
+   ]
+  ]
+ },
+ "BMLmovi_Subject_67_F_MoSh_Subject_67_F_3_poses_120_jpos": {
+  "deep_frac": 0.4144144144144144,
+  "worst_pen": -0.059600076356744726,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    28
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    28
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    18
+   ]
+  ]
+ },
+ "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos": {
+  "deep_frac": 0.3,
+  "worst_pen": -0.07339860637276847,
+  "top_pairs": [
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    24
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    20
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    15
+   ]
+  ]
+ },
+ "BMLmovi_Subject_6_F_MoSh_Subject_6_F_3_poses_120_jpos": {
+  "deep_frac": 0.0625,
+  "worst_pen": -0.040914852179558744,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_wrist"
+    ],
+    5
+   ],
+   [
+    [
+     "right_thigh",
+     "right_wrist"
+    ],
+    4
+   ],
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    4
+   ]
+  ]
+ },
+ "KIT_3_kneel_down_to_crawl05_poses_100_jpos": {
+  "deep_frac": 0.02,
+  "worst_pen": -0.017027072278986186,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    1
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    1
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    1
+   ]
+  ]
+ },
+ "GRAB_s3_mug_drink_3": {
+  "deep_frac": 0.15584415584415584,
+  "worst_pen": -0.021789217013995,
+  "top_pairs": [
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    24
+   ],
+   [
+    [
+     "left_hip",
+     "left_wrist"
+    ],
+    16
+   ],
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    1
+   ]
+  ]
+ },
+ "BMLhandball_S07_Expert_Trial_upper_left_right_037_poses_120_jpos": {
+  "deep_frac": 0.17164179104477612,
+  "worst_pen": -0.06950232769817581,
+  "top_pairs": [
+   [
+    [
+     "left_hand",
+     "right_hand"
+    ],
+    10
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    10
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    7
+   ]
+  ]
+ },
+ "BMLmovi_Subject_60_F_MoSh_Subject_60_F_6_poses_120_jpos": {
+  "deep_frac": 0.16393442622950818,
+  "worst_pen": -0.07826712668129909,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    22
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    18
+   ],
+   [
+    [
+     "right_hip",
+     "right_hand"
+    ],
+    9
+   ]
+  ]
+ },
+ "BMLmovi_Subject_11_F_MoSh_Subject_11_F_21_poses_120_jpos": {
+  "deep_frac": 0.3107344632768362,
+  "worst_pen": -0.07822886738708143,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    51
+   ],
+   [
+    [
+     "left_shin",
+     "left_hand"
+    ],
+    27
+   ],
+   [
+    [
+     "left_hip",
+     "left_hand"
+    ],
+    21
+   ]
+  ]
+ },
+ "BMLmovi_Subject_81_F_MoSh_Subject_81_F_20_poses_120_jpos": {
+  "deep_frac": 0.07692307692307693,
+  "worst_pen": -0.02328164854309929,
+  "top_pairs": [
+   [
+    [
+     "left_wrist",
+     "right_wrist"
+    ],
+    5
+   ]
+  ]
+ },
+ "CMU_64_64_09_poses_120_jpos": {
+  "deep_frac": 0.8421052631578947,
+  "worst_pen": -0.05879334705905595,
+  "top_pairs": [
+   [
+    [
+     "left_hand",
+     "right_hand"
+    ],
+    34
+   ],
+   [
+    [
+     "head",
+     "right_wrist"
+    ],
+    3
+   ],
+   [
+    [
+     "left_hand",
+     "right_wrist"
+    ],
+    2
+   ]
+  ]
+ },
+ "BMLmovi_Subject_66_F_MoSh_Subject_66_F_11_poses_120_jpos": {
+  "deep_frac": 0.06164383561643835,
+  "worst_pen": -0.061866762649092015,
+  "top_pairs": [
+   [
+    [
+     "left_thigh",
+     "left_hand"
+    ],
+    6
+   ],
+   [
+    [
+     "left_shin",
+     "left_hand"
+    ],
+    5
+   ],
+   [
+    [
+     "right_thigh",
+     "right_hand"
+    ],
+    3
+   ]
+  ]
+ }
+}

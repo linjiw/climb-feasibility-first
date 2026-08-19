@@ -1,0 +1,325 @@
+<title>Physics-Grounded Humanoid Tracking</title>
+<style>
+  :root {
+    --ground:#F6F7F9; --surface:#FFFFFF; --sunken:#EDEFF3;
+    --line:#DCE0E8; --line-soft:#E8EBF0;
+    --ink:#161A22; --ink-2:#3A4252; --muted:#5D6678;
+    --accent:#A2650B;
+    --ok:#1C6F47; --ok-bg:#E4F1EA; --bad:#A62019; --bad-bg:#FAE6E4;
+    --warn:#8A5A00; --warn-bg:#F8EEDA; --info:#2C4C8C; --info-bg:#E5EAF6;
+    --shadow:0 1px 2px rgba(20,26,40,.05), 0 4px 14px rgba(20,26,40,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:#10131A; --surface:#181C25; --sunken:#1F242F;
+      --line:#2C323F; --line-soft:#242A35;
+      --ink:#E7EAF0; --ink-2:#BFC6D4; --muted:#939CAF;
+      --accent:#E5A63F;
+      --ok:#55BE8A; --ok-bg:#16301F; --bad:#F0736A; --bad-bg:#351A1B;
+      --warn:#DFA53C; --warn-bg:#322612; --info:#86A6E8; --info-bg:#1A2237;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:#10131A; --surface:#181C25; --sunken:#1F242F;
+    --line:#2C323F; --line-soft:#242A35;
+    --ink:#E7EAF0; --ink-2:#BFC6D4; --muted:#939CAF;
+    --accent:#E5A63F;
+    --ok:#55BE8A; --ok-bg:#16301F; --bad:#F0736A; --bad-bg:#351A1B;
+    --warn:#DFA53C; --warn-bg:#322612; --info:#86A6E8; --info-bg:#1A2237;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--ground); color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:16px; line-height:1.62; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:900px; margin:0 auto; padding:0 24px 96px; }
+  header { padding:56px 0 32px; border-bottom:2px solid var(--ink); }
+  .eyebrow { font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
+  h1 { font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:clamp(30px,5.2vw,46px); line-height:1.06; letter-spacing:-.02em; font-weight:600; margin:0 0 16px; text-wrap:balance; }
+  .standfirst { font-size:18px; color:var(--ink-2); max-width:62ch; margin:0 0 26px; text-wrap:pretty; }
+  .envline { font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:12.5px; color:var(--muted); display:flex; flex-wrap:wrap; gap:6px 18px; }
+  section { padding-top:52px; }
+  h2 { font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:13px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; margin:0 0 6px; padding-bottom:10px; border-bottom:1px solid var(--line); display:flex; align-items:baseline; gap:12px; }
+  h2 .num { color:var(--accent); font-variant-numeric:tabular-nums; }
+  .lede { color:var(--muted); font-size:15px; margin:14px 0 24px; max-width:66ch; }
+  h3 { font-size:16.5px; font-weight:650; margin:30px 0 8px; }
+  p { margin:0 0 14px; max-width:68ch; text-wrap:pretty; }
+  code { font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:.88em; background:var(--sunken); color:var(--ink-2); padding:.12em .38em; border-radius:3px; }
+  .tw { overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:8px; background:var(--surface); }
+  table { border-collapse:collapse; width:100%; font-size:14px; }
+  th,td { text-align:left; padding:10px 14px; border-bottom:1px solid var(--line-soft); vertical-align:top; }
+  thead th { font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted); font-weight:600; background:var(--sunken); border-bottom:1px solid var(--line); white-space:nowrap; }
+  tbody tr:last-child td { border-bottom:0; }
+  td.n { text-align:right; font-variant-numeric:tabular-nums; font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; }
+  td.mono { font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:12.6px; }
+  .tag { font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; font-weight:600; padding:2px 7px; border-radius:4px; white-space:nowrap; }
+  .tag.ok { background:var(--ok-bg); color:var(--ok); } .tag.bad { background:var(--bad-bg); color:var(--bad); }
+  .tag.warn { background:var(--warn-bg); color:var(--warn); } .tag.info { background:var(--info-bg); color:var(--info); }
+  .callout { border-left:3px solid var(--accent); background:var(--surface); padding:16px 20px; margin:24px 0; border-radius:0 8px 8px 0; border-top:1px solid var(--line); border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .callout.warn { border-left-color:var(--bad); } .callout.good { border-left-color:var(--ok); }
+  .callout p:last-child { margin-bottom:0; }
+  .thrust { background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:20px 22px 18px; margin:22px 0; box-shadow:var(--shadow); }
+  .thrust h3 { margin-top:0; font-size:17px; }
+  .thrust .kv { display:grid; grid-template-columns:110px 1fr; gap:6px 14px; font-size:14px; margin:12px 0 0; }
+  .thrust .kv dt { font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); padding-top:3px; }
+  .thrust .kv dd { margin:0; color:var(--ink-2); }
+  ol.dec { counter-reset:d; list-style:none; padding:0; margin:22px 0 0; display:grid; gap:12px; }
+  ol.dec li { counter-increment:d; position:relative; padding-left:42px; max-width:70ch; }
+  ol.dec li::before { content:counter(d,decimal-leading-zero); position:absolute; left:0; top:1px; font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:12px; font-weight:600; color:var(--accent); border:1px solid var(--line); border-radius:4px; padding:1px 6px; background:var(--surface); }
+  /* the story arc */
+  .arc { display:grid; gap:0; margin:24px 0; border:1px solid var(--line); border-radius:8px; background:var(--surface); overflow:hidden; }
+  .arc .row { display:grid; grid-template-columns:130px 1fr; gap:14px; padding:14px 18px; border-bottom:1px solid var(--line-soft); }
+  .arc .row:last-child { border-bottom:0; }
+  .arc .when { font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:12px; color:var(--muted); padding-top:2px; }
+  .arc .what { font-size:14.5px; color:var(--ink-2); }
+  .arc .what b { color:var(--ink); }
+  .arc .drift { background:var(--warn-bg); }
+  footer { margin-top:64px; padding-top:22px; border-top:1px solid var(--line); font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace; font-size:12px; color:var(--muted); }
+  @media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important} }
+</style>
+
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Research status · honest retrospective · proposal</p>
+  <h1>Physics-Grounded Humanoid Tracking</h1>
+  <p class="standfirst">
+    Where the work went, why it drifted from Newton, and a proposal that puts Newton's
+    actual distinctive capabilities — multi-solver physics under one model, batched
+    dynamics, differentiability — at the centre of stability, sim2real, and motion
+    understanding.
+  </p>
+  <div class="envline">
+    <span><b>2026-08-17</b></span><span>Newton 1.6.0.dev0 · mujoco-warp 3.11.0</span>
+    <span>RTX 5090</span><span>SONIC release ONNX on disk</span>
+  </div>
+</header>
+
+<section>
+  <h2><span class="num">01</span> The story so far, told straight</h2>
+  <p class="lede">
+    You started with a new physics library and a goal: use it to make humanoid research
+    better — more stable policies, better sim2real, deeper understanding of RL training
+    and of the physics of motion. Here is what actually happened.
+  </p>
+
+  <div class="arc">
+    <div class="row"><div class="when">Phase 0</div><div class="what"><b>Environment.</b> Newton installed and verified (6142 tests, sm_120). mjlab found unfixable at its commit — lock pinned a purged MuJoCo nightly — rebuilt at v1.6.0. Both stacks aligned on mujoco-warp 3.11.0.</div></div>
+    <div class="row"><div class="when">Phase 0</div><div class="what"><b>Data.</b> 10,822 clips / 43.6 h of validated G1 motion. Three silent corruptions caught: breadth-first body order in every pre-existing file, six mixed frame rates read as one, root height stored relative. Each trained plausible reward curves against wrong data.</div></div>
+    <div class="row"><div class="when">Phase 0</div><div class="what"><b>Atlas.</b> Physics-feature featurisation of 10,705 clips. Predicts per-clip difficulty out-of-fold at ρ ≈ 0.74; clip length does not (ρ = −0.14). Multi-contact axis orthogonal to kinematic intensity (ρ = −0.10).</div></div>
+    <div class="row"><div class="when">Exp-1</div><div class="what"><b>Multi-clip capability</b> built as an mjlab extension. Uniform vs error-adaptive: adaptive loses on 3/3 seeds because it collapses 87–89% of mass onto one clip; the "10% uniform floor" is arithmetically not a floor. <b>Filed upstream</b> against mjlab (#1153) and BeyondMimic (#73).</div></div>
+    <div class="row"><div class="when">Exp-2</div><div class="what"><b>Grounded arm.</b> Fixes the collapse (≫ adaptive), matches uniform on AULC, edges it on endpoint. Branch B. Advisor's v2 plan queues E3/E4/E10 on samplers.</div></div>
+    <div class="row drift"><div class="when">throughout</div><div class="what"><b>Newton's role: substrate only.</b> It ran the G1 example and stood in as an inverse-dynamics engine — via raw MuJoCo, not even Newton's own <code>ArticulationView</code>. Every research question was asked and answered inside mjlab. Nothing that was learned <i>required</i> Newton.</div></div>
+  </div>
+
+  <div class="callout warn">
+    <p><b>The drift is real and worth naming.</b> The curriculum line produced genuine
+    findings — an upstream bug in two libraries, a measured collapse mechanism, a
+    reinterpretation of your prior SIM-M3 null. But it is a <i>sampling</i> paper that
+    could have been done in mjlab alone. Newton was installed, verified, and then not
+    used for anything it is uniquely good at.</p>
+  </div>
+
+  <p>What is <i>not</i> lost: the bank, the hygiene tooling, the atlas methodology, the
+  realized-exposure ledger discipline, and the pre-registration practice all carry over
+  intact. And two of the curriculum findings turn out to be the strongest arguments for
+  the redirect — see §03.</p>
+</section>
+
+<section>
+  <h2><span class="num">02</span> What Newton actually offers, verified</h2>
+  <p class="lede">From the recon and the install — capabilities confirmed on this machine, with the caveats that matter.</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>Capability</th><th>State</th><th>Why it matters for humanoids</th></tr></thead>
+    <tbody>
+      <tr><td><b>Nine solvers under one <code>Model</code></b><br><span class="mono">MuJoCo (MJWarp), MuJoCo-CPU, Featherstone, XPBD, VBD, Kamino, SemiImplicit, ImplicitMPM, Style3D</span></td><td><span class="tag ok">verified</span></td><td>The same G1 model, the same reference motion, <i>different physics</i>. No other stack offers this in one API. It is a sim2sim ladder — and, more interestingly, a physics <i>ensemble</i>.</td></tr>
+      <tr><td><b>Frozen-ONNX policy evaluation</b><br><span class="mono">warp_nn.OnnxRuntime, robot_policy example, joint-order remap</span></td><td><span class="tag ok">verified</span></td><td>Runs G1 policies with no PyTorch. SONIC's released <code>model_encoder/decoder.onnx</code> and WBC-Walk/Balance are on disk. Path exists to run SONIC in Newton.</td></tr>
+      <tr><td><b>Batched GPU dynamics</b><br><span class="mono">ArticulationView: inverse dynamics, mass matrix, Jacobians across worlds</span></td><td><span class="tag ok">verified</span></td><td>Per-frame torque, inertia, contact-Jacobian for thousands of (motion × parameter) worlds at once. The atlas was computed with raw MuJoCo; this is the tool it should have used.</td></tr>
+      <tr><td><b>Differentiable simulation</b><br><span class="mono">Warp backward passes; differentiable_contacts.py</span></td><td><span class="tag warn">present, unverified at G1 scale</span></td><td>Gradients of tracking error w.r.t. friction, mass, contact stiffness, actuator gains. Sensitivity maps, gradient system-ID. Must be spiked before relying on it — mjlab disables <code>enable_backward</code>, and 68-geom contact backward is untested here.</td></tr>
+      <tr><td><b>Richer contact models</b><br><span class="mono">hydroelastic, SDF, soft contacts; panda_hydro example</span></td><td><span class="tag ok">verified present</span></td><td>Foot–ground contact is the primary humanoid sim2real gap. Contact-model variation is a physics axis MuJoCo alone cannot span.</td></tr>
+      <tr><td><b>Solver-space randomisation</b></td><td><span class="tag info">enabled by the above; nobody has done it</span></td><td>Train against a <i>distribution over physics engines</i>, not just parameters. fable.md v1 named this as a "future chapter" and it never happened.</td></tr>
+      <tr><td>Isaac Lab 3.0 / <code>isaaclab_newton</code></td><td><span class="tag bad">not installed</span></td><td>Max Isaac Lab here is 2.3.2. Not required for anything below.</td></tr>
+      <tr><td>PhysX backend</td><td><span class="tag bad">does not exist</span></td><td>Newton FAQ: "No." The v1 plan's third ladder rung was never real. Multi-solver <i>within Newton</i> replaces it and is stronger.</td></tr>
+      <tr><td>RL training loop</td><td><span class="tag bad">none</span></td><td>Newton is not a trainer. <b>mjlab remains the training stack.</b> Newton's role is evaluation, analysis, and — via ONNX — deployment-side physics.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">03</span> The two findings that point the way</h2>
+  <p class="lede">Buried in the curriculum results are two facts about <i>physics</i>, not sampling.</p>
+
+  <h3>Difficulty is a motion property that reference-motion features do not capture</h3>
+  <p>Two independently trained policies rank clips by difficulty at <b>ρ = 0.832</b>. So
+  "how hard is this motion for a G1" is largely intrinsic to the motion. But the atlas —
+  kinematic magnitude plus dynamic feasibility computed from the <i>reference</i> alone —
+  transfers at only ρ = 0.567. It captures two-thirds of the available signal and misses
+  the rest.</p>
+
+  <p>The clearest miss: the clip every adaptive sampler collapsed onto, in all six runs
+  (clip #44), has measured survival 0.31 against a bank mean of 0.89 — and its atlas
+  profile is <i>benign</i>: μ = 0.18, peak GRF = 1.42, both low. Whatever makes it hard
+  is not in the reference kinematics or in reference-frame inverse dynamics.</p>
+
+  <div class="callout">
+    <p><b>Hypothesis:</b> what the atlas misses is the <i>interaction</i> — motion × robot
+    × contact physics — which cannot be read off the reference and can only be measured
+    by simulating it. That is exactly what Newton makes cheap: run the reference through
+    several physics models and see where they disagree.</p>
+  </div>
+
+  <h3>The frontier is temporal, and forgetting is measurable</h3>
+  <p>69% of clips cross the frontier band but each dwells only ~16% of the run in it.
+  Downward crossings — clips relearned and re-lost — order with coverage: uniform 5.6,
+  grounded 7.7, adaptive 10.3 per 1k iterations. These are properties of the
+  <i>learning dynamics</i>, and the ledger tooling that measured them transfers directly
+  to asking the same questions about physics parameters instead of clips.</p>
+</section>
+
+<section>
+  <h2><span class="num">04</span> Proposal</h2>
+  <p class="lede">
+    <b>Thesis.</b> A humanoid tracking policy's stability and its sim2real transfer are
+    governed by <i>where in a motion the physics is fragile</i> — segments whose outcome
+    changes under small changes to contact, actuation, or the integrator. Newton's
+    multi-solver, batched, differentiable simulation lets that fragility be measured
+    per frame and per body, before deployment, and then used three ways: to diagnose
+    why controllers like SONIC fail on specific motions, to train against physics
+    ensembles rather than parameter jitter, and to build a physics-grounded difficulty
+    atlas that actually transfers.
+  </p>
+
+  <div class="thrust">
+    <h3>Thrust 1 — Physics fragility maps: multi-solver disagreement as a diagnostic</h3>
+    <p>Run each reference motion, under a frozen tracker, through Newton's solver set —
+    MJWarp, MuJoCo-CPU, Featherstone, XPBD — and record per-frame, per-body divergence.
+    Where solvers agree the physics is well-conditioned; where they diverge, the outcome
+    depends on modelling choices no simulator gets exactly right, and that is where
+    real-robot failure should concentrate.</p>
+    <dl class="kv">
+      <dt>Hypothesis</dt><dd>H-F1: per-frame solver disagreement predicts real-world tracking failure better than any reference-only feature. H-F2: adding disagreement features to the atlas lifts cross-policy transfer from 0.567 toward the 0.832 ceiling.</dd>
+      <dt>Newton</dt><dd>Same <code>Model</code>, swap <code>SolverMuJoCo</code> / <code>SolverFeatherstone</code> / <code>SolverXPBD</code>. Frozen ONNX policy via <code>warp_nn</code>. Contact-model variation (default vs hydroelastic) as a second axis.</dd>
+      <dt>Feasibility gate</dt><dd>Does clip #44 show elevated disagreement where the benign atlas did not? One clip, four solvers, an afternoon. If not, H-F1 is in trouble early and cheaply.</dd>
+      <dt>Assets reused</dt><dd>The 10,822-clip bank; the Exp-1/2 checkpoints as frozen trackers; the SONIC release ONNX for a controller nobody here trained.</dd>
+    </dl>
+  </div>
+
+  <div class="thrust">
+    <h3>Thrust 2 — Solver-space robustness: train against physics ensembles</h3>
+    <p>Standard domain randomisation jitters parameters inside one physics model. That
+    cannot cover error <i>in the model itself</i> — a different contact solver, a
+    different integrator, a different actuator abstraction. Newton makes the engine a
+    randomisable variable. The question is whether policies trained against a solver
+    ensemble transfer better than parameter-DR policies, and whether the gain lands on
+    exactly the fragile segments Thrust 1 identifies.</p>
+    <dl class="kv">
+      <dt>Hypothesis</dt><dd>H-S1: sim2sim degradation across held-out solvers is a better predictor of sim2real degradation than parameter-DR width. H-S2: solver-ensemble training reduces held-out-solver degradation at matched compute.</dd>
+      <dt>Newton</dt><dd>Evaluation-side first: every mjlab checkpoint evaluated across all solvers (cheap, no training). Training-side is harder — mjlab trains in MJWarp only — so ensemble training would proceed by <i>solver-mixed evaluation-driven curriculum</i> or by a Newton-side rollout worker. This is the thrust with the most engineering risk and it should be sequenced last.</dd>
+      <dt>Feasibility gate</dt><dd>Do the Exp-1/2 checkpoints degrade differently across solvers at all? If uniform/grounded/adaptive all lose the same fraction under Featherstone, solver-space carries no signal about the policy and H-S1 dies cheaply.</dd>
+      <dt>Honest caveat</dt><dd>PhysX is not available. Solver-space robustness is a <i>proxy</i> for sim2real, not sim2real. The real-G1 loop through SONIC's deploy path is the only ground truth, and it needs hardware access I cannot verify from here.</dd>
+    </dl>
+  </div>
+
+  <div class="thrust">
+    <h3>Thrust 3 — Differentiable sensitivity: what does the policy actually depend on?</h3>
+    <p>If Newton's backward pass works at G1 scale, tracking error becomes differentiable
+    with respect to friction, link mass, contact stiffness, and PD gains. That gives a
+    per-motion sensitivity vector — a physics-grounded description of <i>why</i> a clip
+    is hard — and, over training, a picture of which physical dependencies the policy
+    acquires and when.</p>
+    <dl class="kv">
+      <dt>Hypothesis</dt><dd>H-D1: clips with high sensitivity to contact stiffness are the ones that fail sim2real; those sensitive only to gains do not. H-D2: sensitivity structure explains the atlas's transfer gap (0.567 → 0.832).</dd>
+      <dt>Newton</dt><dd><code>wp.Tape</code> through <code>SolverMuJoCo</code> or <code>SolverFeatherstone</code>; <code>differentiable_contacts.py</code>. Requires <code>enable_backward=True</code>, which mjlab turns off.</dd>
+      <dt>Feasibility gate</dt><dd><b>Hard gate, spike first.</b> Does d(tracking error)/d(friction) come back finite and stable for a 10 s G1 clip with 68 contact geoms? Unknown. If no, Thrust 3 degrades to finite-difference sensitivity — still useful, far more expensive — and the proposal says so up front rather than at month three.</dd>
+    </dl>
+  </div>
+
+  <h3>How the thrusts fit together</h3>
+  <p>Thrust 1 produces the fragility map. Thrust 3 explains it in terms of physical
+  parameters. Thrust 2 uses it to make policies robust where it matters. The atlas
+  becomes a physics-grounded object with a measured transfer ceiling to aim at, and the
+  curriculum work reappears as an <i>application</i>: sample where the physics is
+  fragile, not where the failure count is high — which is a principled answer to the
+  attractor problem (clip #44 attracts mass because it is hard <i>for reasons the
+  sampler cannot see</i>).</p>
+</section>
+
+<section>
+  <h2><span class="num">05</span> SONIC and whole-body control</h2>
+  <p>SONIC ships released ONNX policies and its own MuJoCo harness
+  (<code>gear_sonic/utils/mujoco_sim</code>, <code>decoupled_wbc/sim2mujoco</code>). Newton
+  runs ONNX G1 policies natively. So the concrete integration is:</p>
+  <ol class="dec">
+    <li><b>SONIC-in-Newton conformance.</b> Load the release encoder/decoder in Newton's
+      <code>robot_policy</code> path, match the observation contract (64D token + hands,
+      per the SONIC dataset contract on disk), and confirm it tracks a LAFAN1 clip in
+      <code>SolverMuJoCo</code> as it does in SONIC's own MuJoCo harness. This is the
+      conformance gate the LUCID harness philosophy already asks for.</li>
+    <li><b>SONIC fragility map.</b> Run the release policy through the solver set over the
+      LAFAN1 bank. Where does a state-of-the-art WBC controller's behaviour depend on the
+      physics engine? That is a diagnosis of <i>its</i> stability envelope, produced with
+      no training and no hardware — and it is exactly the "analyse deep into stability"
+      the original goal asked for.</li>
+    <li><b>Compare against the CLIMB trackers.</b> Same clips, same solvers: does a
+      generalist trained on 100 clips have a different fragility profile than SONIC's
+      42M-parameter, 100M-frame policy? If SONIC is fragile in the same places, fragility
+      is a property of the motion; if not, it is a property of the training recipe. Both
+      answers are papers.</li>
+  </ol>
+  <div class="callout good">
+    <p>None of steps 1–3 trains anything. They are evaluation-only, run on frozen assets
+    already on this machine, and each is a few GPU-hours. They can start this week
+    without touching the LUCID priority window.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">06</span> Feasibility spikes before committing</h2>
+  <p class="lede">Each is under a day and answers a question that could sink a thrust. Run them in this order.</p>
+  <div class="tw">
+  <table>
+    <thead><tr><th>#</th><th>Spike</th><th>Kills</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td class="n">S1</td><td>Load one Exp-1 checkpoint (exported to ONNX) into Newton; track <code>walk1_subject1</code> under <code>SolverMuJoCo</code>; confirm survival matches mjlab's eval within noise.</td><td>the whole evaluation-side plan, if Newton and mjlab disagree on the same solver</td><td>½ day</td></tr>
+      <tr><td class="n">S2</td><td>Same clip, same policy, under <code>SolverFeatherstone</code> and <code>SolverXPBD</code>. Does it survive at all? Do the solvers rank clips differently?</td><td>Thrust 1, if the non-MuJoCo solvers cannot handle a contact-rich humanoid</td><td>½ day</td></tr>
+      <tr><td class="n">S3</td><td>Clip #44 under four solvers. Is disagreement elevated where the atlas is benign?</td><td>H-F1's first prediction</td><td>hours, after S2</td></tr>
+      <tr><td class="n">S4</td><td>SONIC release ONNX in Newton on one clip; conformance against SONIC's own MuJoCo harness.</td><td>the SONIC integration</td><td>1 day (obs contract is the risk)</td></tr>
+      <tr><td class="n">S5</td><td><code>wp.Tape</code> backward through 100 steps of G1 tracking; is d(error)/d(friction) finite?</td><td>Thrust 3 as differentiable; falls back to finite differences</td><td>1 day, highest uncertainty</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">07</span> What this means for the plan already in motion</h2>
+  <p>The advisor's v2 queue — E10 (freshness/liveness/cap), E3 (800-clip diversity), E4
+  (long horizon) — is pre-registered and sound <i>as a sampling study</i>. It is not
+  wrong; it is narrower than the original goal. Two ways to hold both:</p>
+  <ol class="dec">
+    <li><b>Keep the curriculum line as the mjlab-side experiment and let it inherit the
+      physics.</b> Thrust 1's fragility score becomes an L3 prior that is <i>measured</i>
+      rather than read off the reference — which is what A3 said the atlas needed. E10's
+      cap arm and a fragility-weighted arm can share controls.</li>
+    <li><b>Run the Newton evaluation-side thrusts in parallel now</b>, since they need no
+      training and no LUCID window. By the time E3 runs post-Sept-15, S1–S4 will have
+      said whether the physics story holds — and if it does, the paper's spine is
+      physics fragility with curriculum as one application, not the reverse.</li>
+  </ol>
+  <div class="callout">
+    <p><b>The decision I am asking for</b> is not "abandon CLIMB". It is whether to
+    re-centre the thesis on Newton's physics capabilities — with the sampler work as
+    supporting evidence — and to fund the five spikes above this week. My recommendation
+    is yes: the strongest findings so far are already about physics, the tooling to test
+    it is on disk, and the evaluation-side work costs no training compute.</p>
+  </div>
+</section>
+
+<footer>
+  Companion documents: CLIMB Phase Zero · Sampler Collapse · plan/RESEARCH_PLAN_v2.md ·
+  plan/BRANCH_DECISION.md · workspace /data/robotixx/climb
+</footer>
+
+</div>

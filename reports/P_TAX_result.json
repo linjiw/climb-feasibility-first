@@ -1,0 +1,80 @@
+{
+ "tool": "selfpen_screen.py",
+ "stride": 2,
+ "thresh": 0.01,
+ "T1": {
+  "fixed": {
+   "n": 100,
+   "partial_r": -0.15597276249291295,
+   "ci": [
+    -0.38350334771899075,
+    0.022410135170093104
+   ],
+   "raw_spearman": -0.19353135313531353
+  },
+  "random": {
+   "n": 100,
+   "partial_r": -0.14140050093308545,
+   "ci": [
+    -0.36613863400015895,
+    0.02007229562062522
+   ],
+   "raw_spearman": -0.1823462346234623
+  }
+ },
+ "T2": {
+  "train_fixed": {
+   "n": 100,
+   "partial_r": -0.006165434016823606,
+   "ci": [
+    -0.28261210382449786,
+    0.11354447499663275
+   ],
+   "raw_spearman": -0.06923492349234923
+  },
+  "train_random": {
+   "n": 100,
+   "partial_r": -0.05491542962867963,
+   "ci": [
+    -0.29543457472591655,
+    0.11264665650602834
+   ],
+   "raw_spearman": -0.11327932793279327
+  },
+  "heldout_uniform": {
+   "n": 100,
+   "partial_r": -0.03929009980796948,
+   "ci": [
+    -0.3243510399609743,
+    0.07159920537394075
+   ],
+   "raw_spearman": -0.07951995199519951,
+   "ci_excludes_zero_positive": false
+  },
+  "heldout_adaptive": {
+   "n": 100,
+   "partial_r": -0.15053394181234786,
+   "ci": [
+    -0.4007860259995621,
+    -0.031507244828141594
+   ],
+   "raw_spearman": -0.2181218121812181,
+   "ci_excludes_zero_positive": false
+  },
+  "heldout_grounded": {
+   "n": 100,
+   "partial_r": -0.08888652220574605,
+   "ci": [
+    -0.39148086979816155,
+    -0.025739666651500643
+   ],
+   "raw_spearman": -0.15656765676567658,
+   "ci_excludes_zero_positive": false
+  }
+ },
+ "sealed_rule": {
+  "needed": "positive CI excluding zero on >=2 heldout arms",
+  "arms_passing": 0,
+  "paper_claim": false
+ }
+}

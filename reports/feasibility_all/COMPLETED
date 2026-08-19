@@ -1,0 +1,4 @@
+exit_code=0
+finished_utc=2026-08-18 (see logs/screen_all.log)
+cmd=tools/screen_feasibility.sh screen_all.txt reports/feasibility_all 8
+note=retroactive sentinel added 2026-08-19 per GLOBAL_EVAL_ADDENDUM

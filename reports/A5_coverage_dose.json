@@ -1,0 +1,111 @@
+{
+  "n_runs": 9,
+  "arms": [
+    "adaptive",
+    "grounded",
+    "uniform"
+  ],
+  "runs": [
+    {
+      "arm": "adaptive",
+      "seed": 1,
+      "aulc": 0.6416066516629156,
+      "final": 0.78375,
+      "mean_entropy": 0.37702172500000003,
+      "min_entropy": 0.1424,
+      "max_top1": 0.8842,
+      "mean_top1": 0.497959775
+    },
+    {
+      "arm": "adaptive",
+      "seed": 2,
+      "aulc": 0.6287953238309577,
+      "final": 0.785,
+      "mean_entropy": 0.39210467500000007,
+      "min_entropy": 0.1534,
+      "max_top1": 0.8698,
+      "mean_top1": 0.4881765
+    },
+    {
+      "arm": "adaptive",
+      "seed": 3,
+      "aulc": 0.6505910852713178,
+      "final": 0.7725,
+      "mean_entropy": 0.401590725,
+      "min_entropy": 0.1199,
+      "max_top1": 0.8927,
+      "mean_top1": 0.47931345
+    },
+    {
+      "arm": "grounded",
+      "seed": 1,
+      "aulc": 0.7020788009502376,
+      "final": 0.8225,
+      "mean_entropy": 0.613732775,
+      "min_entropy": 0.4509,
+      "max_top1": 0.568,
+      "mean_top1": 0.33907665
+    },
+    {
+      "arm": "grounded",
+      "seed": 2,
+      "aulc": 0.6819209489872468,
+      "final": 0.83625,
+      "mean_entropy": 0.6200063250000001,
+      "min_entropy": 0.4154,
+      "max_top1": 0.6491,
+      "mean_top1": 0.3283767
+    },
+    {
+      "arm": "grounded",
+      "seed": 3,
+      "aulc": 0.7029408914728682,
+      "final": 0.815,
+      "mean_entropy": 0.5956386749999999,
+      "min_entropy": 0.3943,
+      "max_top1": 0.6963,
+      "mean_top1": 0.35991154999999997
+    },
+    {
+      "arm": "uniform",
+      "seed": 1,
+      "aulc": 0.7028650912728182,
+      "final": 0.81375,
+      "mean_entropy": 1.0,
+      "min_entropy": 1.0,
+      "max_top1": 0.01,
+      "mean_top1": 0.01
+    },
+    {
+      "arm": "uniform",
+      "seed": 2,
+      "aulc": 0.6980196611652912,
+      "final": 0.8125,
+      "mean_entropy": 1.0,
+      "min_entropy": 1.0,
+      "max_top1": 0.01,
+      "mean_top1": 0.01
+    },
+    {
+      "arm": "uniform",
+      "seed": 3,
+      "aulc": 0.6928605588897224,
+      "final": 0.8025,
+      "mean_entropy": 1.0,
+      "min_entropy": 1.0,
+      "max_top1": 0.01,
+      "mean_top1": 0.01
+    }
+  ],
+  "correlations": {
+    "mean_entropy~aulc": 0.5333,
+    "mean_entropy~final": 0.4333,
+    "min_entropy~aulc": 0.5333,
+    "min_entropy~final": 0.4667,
+    "max_top1~aulc": -0.6333,
+    "max_top1~final": -0.5333,
+    "within_adaptive": 0.5,
+    "within_grounded": -1.0,
+    "within_uniform": -1.0
+  }
+}
