@@ -1,0 +1,120 @@
+{
+ "total": {
+  "n": 2443,
+  "auto_recoverable": 1607,
+  "pct": 65.8,
+  "mean_infeas_after": 0.032,
+  "mean_offset_max_m": 0.157
+ },
+ "matrix": {
+  "10-25%": {
+   "n": 864,
+   "auto_recoverable": 632,
+   "pct": 73.1,
+   "mean_infeas_after": 0.031,
+   "mean_offset_max_m": 0.077
+  },
+  ">25%": {
+   "n": 1579,
+   "auto_recoverable": 975,
+   "pct": 61.7,
+   "mean_infeas_after": 0.032,
+   "mean_offset_max_m": 0.201
+  }
+ },
+ "by_category": {
+  "dynamic": {
+   "n": 471,
+   "auto_recoverable": 241,
+   "pct": 51.2,
+   "mean_infeas_after": 0.067,
+   "mean_offset_max_m": 0.095
+  },
+  "ground": {
+   "n": 69,
+   "auto_recoverable": 47,
+   "pct": 68.1,
+   "mean_infeas_after": 0.072,
+   "mean_offset_max_m": 0.106
+  },
+  "locomotion": {
+   "n": 1368,
+   "auto_recoverable": 886,
+   "pct": 64.8,
+   "mean_infeas_after": 0.022,
+   "mean_offset_max_m": 0.199
+  },
+  "quiet": {
+   "n": 535,
+   "auto_recoverable": 433,
+   "pct": 80.9,
+   "mean_infeas_after": 0.021,
+   "mean_offset_max_m": 0.11
+  }
+ },
+ "by_source": {
+  "ACCAD": {
+   "n": 96,
+   "auto_recoverable": 65,
+   "pct": 67.7,
+   "mean_infeas_after": 0.042,
+   "mean_offset_max_m": 0.095
+  },
+  "BMLhandball": {
+   "n": 174,
+   "auto_recoverable": 161,
+   "pct": 92.5,
+   "mean_infeas_after": 0.013,
+   "mean_offset_max_m": 0.069
+  },
+  "BMLmovi": {
+   "n": 213,
+   "auto_recoverable": 190,
+   "pct": 89.2,
+   "mean_infeas_after": 0.017,
+   "mean_offset_max_m": 0.086
+  },
+  "CMU": {
+   "n": 787,
+   "auto_recoverable": 434,
+   "pct": 55.1,
+   "mean_infeas_after": 0.051,
+   "mean_offset_max_m": 0.138
+  },
+  "CNRS": {
+   "n": 79,
+   "auto_recoverable": 52,
+   "pct": 65.8,
+   "mean_infeas_after": 0.017,
+   "mean_offset_max_m": 0.139
+  },
+  "Eyes": {
+   "n": 170,
+   "auto_recoverable": 127,
+   "pct": 74.7,
+   "mean_infeas_after": 0.022,
+   "mean_offset_max_m": 0.116
+  },
+  "HUMAN4D": {
+   "n": 67,
+   "auto_recoverable": 42,
+   "pct": 62.7,
+   "mean_infeas_after": 0.046,
+   "mean_offset_max_m": 0.124
+  },
+  "KIT": {
+   "n": 685,
+   "auto_recoverable": 420,
+   "pct": 61.3,
+   "mean_infeas_after": 0.02,
+   "mean_offset_max_m": 0.261
+  },
+  "Transitions": {
+   "n": 95,
+   "auto_recoverable": 70,
+   "pct": 73.7,
+   "mean_infeas_after": 0.025,
+   "mean_offset_max_m": 0.101
+  }
+ }
+}

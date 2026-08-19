@@ -66,9 +66,12 @@ root adjustment.
 | Transitions jump | 0.22 → 0.02 | 16.2 cm, +1.68 m/s added vel | ❌ correctly refused — the budget catches over-repair of genuine ballistics |
 | CMU_76 control (feasible) | 0.00 → 0.00 | 0.0 cm | ✅ no-op on healthy clips, as required |
 
-**Census over all 2,442 flagged clips is running** (background, sentinel:
-`reports/repair_census/`); it will give the headline the trade-off analysis needs: *X % of the
-22.8 % is recoverable by a 3-second automatic repair; only the remainder needs pruning.* The
+**Census complete** (2,443 flagged clips, sentinel `reports/repair_census/COMPLETED`;
+2×2 table `reports/repair_census/summary.md`): **65.8 % auto-recoverable** under the ≤ 15 cm /
+≤ 5 %-residual budget — 73.1 % of the 10–25 % band, 61.7 % of the > 25 % band; by category:
+quiet 80.9 %, ground 68.1 %, locomotion 64.8 %, dynamic 51.2 % (ballistics correctly refused);
+by source: BMLhandball 92.5 %, BMLmovi 89.2 %, CNRS 65.8 %, CMU 55.1 %. So roughly **two-thirds
+of the 22.8 % contamination is a 3-second script; one-third needs upstream regeneration** — The
 trade-off then stops being rhetorical: prune costs distribution coverage exactly where the bank
 is thinnest (ground-contact = 3.2 % of training duration — pruning its flagged 39 % makes the N3
 problem worse), repair keeps it at ~zero marginal cost, and the census quantifies the split per

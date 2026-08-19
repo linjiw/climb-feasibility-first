@@ -1,0 +1,31 @@
+census records: 2443
+# Repair census — 2×2 main table (auto-generated)
+
+| severity stratum | n | auto-recoverable (root projection, ≤15 cm, ≤5 % residual) | needs higher-order repair or refusal |
+|---|---:|---:|---:|
+| flagged >10% of frames | 864 | **632 (73.1 %)** | 232 (26.9 %) |
+| flagged >25% of frames | 1579 | **975 (61.7 %)** | 604 (38.3 %) |
+| **all flagged** | **2443** | **1607 (65.8 %)** | 836 |
+
+## By category
+
+| category | n | auto-recoverable |
+|---|---:|---:|
+| dynamic | 471 | 241 (51.2 %) |
+| ground | 69 | 47 (68.1 %) |
+| locomotion | 1368 | 886 (64.8 %) |
+| quiet | 535 | 433 (80.9 %) |
+
+## By source (n ≥ 30)
+
+| source | n | auto-recoverable |
+|---|---:|---:|
+| ACCAD | 96 | 65 (67.7 %) |
+| BMLhandball | 174 | 161 (92.5 %) |
+| BMLmovi | 213 | 190 (89.2 %) |
+| CMU | 787 | 434 (55.1 %) |
+| CNRS | 79 | 52 (65.8 %) |
+| Eyes | 170 | 127 (74.7 %) |
+| HUMAN4D | 67 | 42 (62.7 %) |
+| KIT | 685 | 420 (61.3 %) |
+| Transitions | 95 | 70 (73.7 %) |

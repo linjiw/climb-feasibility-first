@@ -202,8 +202,12 @@ pre-training screen (Apache-2.0, github.com/linjiw/refeas; version hash pinned i
 evaluation policy). (ii) **contact-projection repair**
 (`tools/repair_contact_projection.py`) — recovers the root-floating defect class in ~3 s/clip
 [measured: the attractor 0.13 → 0.00 at 8.2 cm; a 100 %-flagged subset's walks 0.66 → 0.01] while
-refusing genuine ballistics via an over-repair budget; the census over all 2,442 flagged clips is
-aggregating [pending 🕐; `reports/repair_census/`]. (iii) **evaluation & monitoring protocols** —
+refusing genuine ballistics via an over-repair budget. Census over every flagged clip [measured;
+`reports/repair_census/summary.md`, sentinel present]: **65.8 % of the 2,443 flagged clips are
+auto-recoverable** (73.1 % of the 10–25 %-flagged band, 61.7 % of the > 25 % band; ground
+category 68.1 %, quiet 80.9 %, dynamic 51.2 % — the last correctly depressed by refused
+ballistics). The practical split for the community: roughly two-thirds of the contamination is a
+3-second script; one-third needs upstream re-retargeting or higher-order (IK/time-warp) repair. (iii) **evaluation & monitoring protocols** —
 stratified-start evaluation, feasibility-stratified endpoints (sealed policy `a93a87a0`), the
 Appendix-A coupling checklist, and the pre-registered rollout-only infeasibility detector
 [pending 🕐, P-SIGN `c7916e8c`].
