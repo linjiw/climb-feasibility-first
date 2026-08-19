@@ -4,6 +4,17 @@ Updated 2026-08-19. **v5 (`RESEARCH_PLAN_v5.md`, sealed `4d490cf8…`) is author
 evaluation policy, D2 spin-out, D3 new seals, D4 writing-first window to Sept 15. v4's freeze
 discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 
+## Publication state (2026-08-20, on Linji's instruction)
+
+Both repos **public**: github.com/linjiw/climb-feasibility-first (project, page, drafts, sealed
+record) and github.com/linjiw/refeas (tool, v0.1.0). GitHub Pages live:
+**https://linjiw.github.io/climb-feasibility-first/** (source `docs/`, branch master). Root
+README rewritten as the public front door with a reviewer guide (RESULTS_LOG → prereg table →
+companion+review → RED_TEAM → STATUS); the old operational README preserved as `WORKSPACE.md`.
+Flagship sections assembled into `paper/flagship/DRAFT_full.md` (section files remain the source
+of truth). An external reviewing agent is expected; its guidance lands as a future directive.
+Upstream note drafts remain **NOT FILED** (visible in-repo as drafts) pending Linji's approval.
+
 ## v6 directive (2026-08-20, `ADVISOR_DIRECTIVE_2026-08-20_v6.md` `98b78d9c…`) — task ledger
 
 | task | state | output |
