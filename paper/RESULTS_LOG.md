@@ -23,3 +23,7 @@
 | N5 replication: r = 0.92; 6/6 sign agreement > 5 mm; #44 motor +12.8 [+11.2,+14.2]; windows +0.3/+15.0/+26.8 (s0), −1.4/+16.0/+20.4 (s1) | §9 | `reports/G1/run1_seed1/g1_v2_summary.json`, `plan/N5_RESULT.md` | replication (exploratory label) |
 | oracle precondition: playback survives all (err 4–13 mm); PD-follow dies on all incl. easy; kneel offsets its only survivals | §8.1 | `reports/N3_env_admits_*.csv`, `plan/N3_PRECONDITION_env_admits.md` | precondition |
 | refeas demo: hover clip flags 45 % airborne/infeasible, 1.77 s free-fall-equivalent | companion | `refeas/examples/demo_hover_brief.json` (repo tag v0.1.0) | tool validation |
+| F2 figure (collapse timeline + concentration bars) | §3, F2 | `paper/figures/f2_collapse.py` → `.png/.pdf`; data `reports/campaign/*.csv`, `reports/A5_coverage_dose.json` | figure |
+| F4 figure (prevalence category × source) | §6, companion Fig 2 | `paper/figures/f4_prevalence.py` → `.png/.pdf`; data `reports/feasibility_all/feasibility.csv` | figure |
+| F5 figure (transfer lift with perm baselines) | §7 | `paper/figures/f5_transfer.py` → `.png/.pdf`; data `reports/N2_atlas_support.json`, `reports/N_atlas_v21.json` | figure |
+| citation verification (12 refs live-checked 2026-08-20) | §2 | arXiv 2508.08241, 2601.22074, 2511.07820, 2010.03934, 2109.07431, 2008.08880, 2502.01143, 2510.01708, 2510.02252; PHC ICCV'23; MaskedMimic doi 10.1145/3687951; GMR github | verification |

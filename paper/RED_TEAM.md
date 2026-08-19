@@ -28,3 +28,6 @@ protocol bug (start-offset averaging).
 Open items to close during the pass: #3 (issue threads), #4 (limitation wording), #8 (manual
 inspection of extreme-source clips), #11 (pending-tense wording), plus a fresh sweep of any new
 text written after this date.
+
+| 14 | Related-work positioning (§2) | misattributed sampler lineage; invented refs | 12 citations live-verified 2026-08-20 (arXiv/DOI listed in RESULTS_LOG); ○-marked standards flagged for final bib pass; LUCID explicitly flagged internal | ⏳ final bib pass |
+| 15 | "Screen catches what kinematic QC cannot" (§2, §6) | GMR/Retargeting-Matters criteria might already catch it | their criteria are clearance/sliding/self-intersection — the airborne descent has *good* clearance by construction; state as: complementary, dynamic vs kinematic | ✅ wording in S2 |

@@ -9,7 +9,7 @@ discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 | item | state | where |
 |---|---|---|
 | D1 GLOBAL_EVAL_ADDENDUM | **sealed** `a93a87a0…` (threshold provenance cited; worked example recorded; conflicts with N3/E3 seals flagged §Conflicts; 12→20 family-count correction recorded) | `plan/GLOBAL_EVAL_ADDENDUM.md` |
-| P-SIGN pre-registration | **sealed** `c7916e8c…` — 12 named family clips + 12 controls, 3 criteria; GPU gap capacity only | `plan/PREREGISTRATION_P_SIGN.md` |
+| P-SIGN pre-registration | **sealed** `c7916e8c…`; harness built (`tools/p_sign_gate.py`, `tools/analyze_p_sign.py`, clip lists in plan/); gap watcher armed (≥7 GB free + util<60% ×3 checks) | `plan/PREREGISTRATION_P_SIGN.md` |
 | P-TAX pre-registration + run | **sealed `7960057a…` and run — NULL as sealed** (0/3 heldout arms positive; significant CIs negative). Hygiene finding only | `plan/P_TAX_RESULT.md`, `reports/P_TAX_result.json` |
 | D2a tool repo | **done**: `refeas/` v0.1.0, Apache-2.0, G1 worked example (synthetic hover flags 45 %), schema documented, git tag | `refeas/` (commit 865e93a) |
 | D2c upstream drafts | **drafted, NOT filed — await Linji's approval**: wbt/BeyondMimic retarget note + dataset advisory (CNRS/Transitions); repro figure + screen JSON attached | `reports/upstream_drafts/` |
@@ -17,6 +17,17 @@ discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 | D4 flagship §3–§6 | **prose complete** (§3 collapse/non-floor, §4 grounded repair with D1 strata, §5 anatomy with the withdrawal narrated, §6 screen at scale incl. P-TAX null); §7 and §9 also complete-with-slots; §8 slots structured; pre-registration table built | `paper/flagship/`, `paper/00_outline.md` |
 | Results log / red team / parking | opened: `paper/RESULTS_LOG.md` (every paper number → artifact), `paper/RED_TEAM.md` (13 rows, 4 open items for the Sept pass), `plan/PARKING.md` (6 parked ideas) | |
 | Sentinels | `tools/with_sentinel.sh`; retroactive sentinels on both screen runs | `reports/feasibility_*/COMPLETED` |
+
+## Aug 23–Sept 5 tranche — progress (updated 2026-08-20)
+
+| item | state |
+|---|---|
+| Flagship §1 Introduction | **complete** (`paper/flagship/S1_intro.md`) — chain + decomposition + contributions |
+| Flagship §2 Related work | **complete (draft)** — 12 citations live-verified (BeyondMimic 2508.08241, mjlab 2601.22074, SONIC 2511.07820/SciRobotics, PLR 2010.03934, PHC, MaskedMimic, PhysCap, ASAP, PolySim, GMR, Retargeting Matters 2510.02252, contact-aware retargeting 2109.07431); ○-standards queued for bib pass; LUCID flagged internal |
+| Flagship §10 Limitations | **complete** — incl. the solver-ensemble descope rationale |
+| Figures F2/F4/F5 | **generated** with recorded scripts + data paths (`paper/figures/`) |
+| P-SIGN harness | **built** (`tools/p_sign_gate.py` + sealed analysis `tools/analyze_p_sign.py`); gap watcher armed; GPU currently saturated (30.4/32.6 GB, 89 %, LUCID jobs) so not run |
+| Companion note | figure refs wired; prose v0.1 stands; submit-ready pass next |
 
 ## Next scheduled
 

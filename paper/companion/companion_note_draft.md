@@ -62,8 +62,7 @@ across two IC seeds). A control clip from the same bank is supported at every fr
 Eyes-Japan 23 %, BMLhandball 27 %, CMU 40 %, ACCAD 42 %, HUMAN4D 55 %, Transitions 90 %, CNRS
 100 %. The spread under one pipeline and one robot is the argument that this is a
 pipeline × source-convention interaction. Caveat paragraph: dynamic category inflated by real
-flight; ground category's 39 % cannot be, and is the #44 family writ large. Figure 2 = category ×
-source heat/bar panel (`paper/figures/f4_prevalence.py`).]
+flight; ground category's 39 % cannot be, and is the #44 family writ large. Figure 2 = `paper/figures/f4_prevalence.png` (generated).]
 
 ## 5. Downstream costs
 
@@ -97,7 +96,7 @@ hover clip that the screen flags at 45 % infeasible, output schema table, Apache
 [Repo link on release; version hash pinned in the project's sealed evaluation policy.]
 
 ---
-*Figures to generate: F1 anatomy (adapt repro script), F2 prevalence panel. Numbers frozen as of
+*Figures: F1 anatomy = `reports/upstream_drafts/clip44_airborne_repro.png` (regen script in repo); F2 prevalence = `paper/figures/f4_prevalence.png` (done). Numbers frozen as of
 2026-08-19; artifact paths in `paper/RESULTS_LOG.md`. Author list / acknowledgements TBD with
 Linji. The two upstream notes (`reports/upstream_drafts/`) are drafts awaiting approval and are
 cross-referenced, not duplicated, here.*
