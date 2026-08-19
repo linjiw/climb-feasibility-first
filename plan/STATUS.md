@@ -25,6 +25,11 @@ companion+review → RED_TEAM → STATUS); the old operational README preserved 
 Flagship sections assembled into `paper/flagship/DRAFT_full.md` (section files remain the source
 of truth). An external reviewing agent is expected; its guidance lands as a future directive.
 Upstream note drafts remain **NOT FILED** (visible in-repo as drafts) pending Linji's approval.
+Both drafts now **render as typeset pages on the site** (2026-08-21): `docs/companion.html` and
+`docs/flagship.html`, generated from the markdown sources by `tools/render_paper_html.py`
+(figures injected at content anchors; print stylesheet = PDF via browser print). The HTML is
+generated output — edit the markdown, re-run the renderer, commit both. index.html hero/footer
+link to them (commit `7c5caa2`).
 
 ## v6 directive (2026-08-20, `ADVISOR_DIRECTIVE_2026-08-20_v6.md` `98b78d9c…`) — task ledger
 
