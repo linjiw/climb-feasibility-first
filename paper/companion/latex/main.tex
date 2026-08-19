@@ -1,0 +1,27 @@
+% Companion note — arXiv skeleton. Content source of truth: ../companion_note_draft.md (v0.3).
+% Fill: author list + acks (Linji), figures fig1=clip44_airborne_repro, fig2=f4_prevalence, fig3=f_census_repair.
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,booktabs,amsmath,hyperref,xcolor}
+\newcommand{\statuslabel}[1]{\textsc{\small[#1]}}   % sealed-pass / sealed-fail-kept / measured / exploratory / pending
+\title{Auditing Dynamic Feasibility of Retargeted Humanoid Motion Data}
+\author{Linji Wang$^{1}$ \and ...\thanks{Author list and acknowledgements TBD.}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+% ← paste Abstract from companion_note_draft.md (keep status labels via \statuslabel{})
+\end{abstract}
+\section{The failure class kinematic QC cannot see}      % §1
+\begin{figure}[t]\centering\includegraphics[width=\linewidth]{fig1_anatomy.png}
+\caption{...\statuslabel{measured}}\end{figure}
+\section{The screen}                                     % §2 (incl. gap/bound sensitivity)
+\section{Validation on the clip that mattered}           % §3
+\section{Prevalence}                                     % §4 (+ Table 1/2; fig2)
+\section{Downstream costs}                                % §5 (+ 5b deployment implications)
+\section{The harness had to be proven first}             % §6 (version pins)
+\section{Recommendations}                                 % §7
+\section{Deliverables and economics}                      % §8 (+ fig3 census)
+\appendix
+\section{Coupling-error taxonomy}                         % Appendix A (table)
+\end{document}

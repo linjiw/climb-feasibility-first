@@ -1,6 +1,6 @@
 # CLIMB flagship — assembled working draft (with slots)
 
-*Assembled 2026-08-20 from `paper/flagship/S*.md` (single source of truth: the section files).
+*Assembled 2026-08-21 (adds A2/A3 appendices, census-informed §6) from `paper/flagship/S*.md` (single source of truth: the section files).
 Title NOT final — five candidates under review in `paper/00_outline.md`. Status labels:
 sealed ✓ / sealed ✗ (kept) / measured / exploratory / pending 🕐. Every number's artifact path:
 `paper/RESULTS_LOG.md`. Slots (§8 N3/N7/E3; §9 P-SIGN; §7 E3) state what was sealed, what would
@@ -80,13 +80,27 @@ to the community now, independent of how those slots resolve — and the paper i
 either outcome is reportable without revision of any earlier claim.
 
 **Contributions.** (1) A mechanism-level diagnosis of failure-adaptive curriculum collapse in
-humanoid tracking, including the non-floor derivation, with upstream fixes filed. (2) A
-coverage-grounded repair that provably floors exposure and rescues failure-weighted sampling.
-(3) The feasibility × support × intrinsic decomposition of tracking difficulty, with a released
-~1 CPU-s/clip dynamic-feasibility screen, bank-scale prevalence, and the demonstration that
+humanoid tracking, including the non-floor derivation, with upstream fixes filed — and the
+exposure accounting that quantifies the cost: the shipped sampler spends a mean 48.8 % of all
+clip draws (peak 87–89 %) on a single impossible clip [measured;
+`reports/wasted_exposure_accounting.json`]. (2) A coverage-grounded repair that provably floors
+exposure and rescues failure-weighted sampling. (3) The feasibility × support × intrinsic
+decomposition of tracking difficulty, with bank-scale prevalence and the demonstration that
 feasibility is the transferable component of difficulty. (4) An audit methodology for
 simulation-based robot learning — dual-stack conformance, stratified-start evaluation, calibrated
-paired-rollout sensitivity, and a sealed prediction ledger — released as tools and protocols.
+paired-rollout sensitivity, and a sealed prediction ledger. The data-engineering economics frame
+all four: screening the entire 10,705-clip bank costs ~3 CPU-hours and repairing a recoverable
+clip ~3 CPU-seconds, against the 10³–10⁴ GPU-hours of the training runs they protect — four to
+five orders of magnitude between the audit and the asset it defends.
+
+**Released deliverables (three, distinct in where they sit in the pipeline):**
+(i) **refeas** — the offline pre-training screen (contact-free inverse dynamics + torque-limited
+contact LP, ~1 CPU-s/clip); (ii) **contact-projection repair** — the lightweight geometric fix
+for the recoverable fraction of flagged clips (root projection onto the contact manifold, with an
+over-repair budget that refuses genuine ballistics); (iii) **evaluation & monitoring protocols**
+— stratified-start evaluation, feasibility-stratified endpoints, the dual-stack conformance
+checklist, and (pending its pre-registered test 🕐) the rollout-only sign-reversal detector as a
+runtime guard.
 
 ---
 
@@ -369,6 +383,15 @@ kneel/crawl phase trackable and to leave the descent unlearnable; a later repair
 projects the transition back onto contact and predicts the descent becomes learnable and the
 motor-strength sign reversal disappears.
 
+**Deployment implication (measured in sim; hardware phenomenology predicted, labeled).** Tracking
+the airborne descent saturates zero actuators until contact, then pins 5/29 at ≥ 98 % force range
+within 0.6 s, in 8/8 replicates (`reports/effort_sat_at_fall.json`) — an unplanned ~0.3 m fall
+onto wrists and knees at every attempt. With G1 having shown no physics parameter changes the
+outcome [sealed ✗, kept] and the sign-reversal indicating gain increases make such segments
+*worse* [exploratory; P-SIGN pending 🕐], the screen functions as a pre-deployment safety filter:
+1 CPU-second per clip against impact retries, current-limit bursts, and wasted DR budget on
+unfixable segments.
+
 ---
 
 # 7. Difficulty that transfers (complete except the E3 slot)
@@ -647,6 +670,82 @@ same-solver residual is what makes the fragility instrument of §5 (N5) interpre
 protocol is reusable: any second physics implementation coupled to an RL harness should be held to
 per-substep paired stepping with an independent referee, not to end-of-episode metrics, which
 matched throughout.
+
+---
+
+# Appendix A2. Instrument calibration detail (N5)
+
+*All numbers: `reports/G1/run0/g1_v2_summary.json`, `reports/G1/run1_seed1/g1_v2_summary.json`,
+`plan/N5_RESULT.md`. Labels as marked.*
+
+**Why the folded statistic fails [measured].** Two integrations of identical physics from
+identical states (the §5.1-certified pair) diverge by 2.5–8.4 mm of body-position error within
+seconds — closed-loop tracking is chaotic with a ~1–2 s Lyapunov horizon at the millimetre scale.
+Mean |φ⁺ − φ⁻| along paired trajectories therefore measures divergence, not mechanism: every G1
+intervention effect (3–19 mm) sat at that floor, which is why the sealed 5× rule reported nothing.
+
+**The three calibrated statistics.** **S** = E_replicates[mean_t(φ⁺ − φ⁻)] with paired-bootstrap
+95 % CIs (2,000 draws) — signed, so chaos cancels in expectation and shrinks with R;
+**D** = W1(pooled φ⁺, pooled φ⁻) − W1(identical-physics pair); **T** = paired first-termination
+shift and per-foot contact-onset shift. Resolution rule: |S| > 2× the floor CI half-width with
+the CI excluding zero.
+
+**Floor behaviour [measured].** With R = 8 the identical-physics floor is ≈ 0 ± 1 mm on long
+clips (−0.1 [−0.9, +0.5] on the attractor; +0.2 [−1.0, +1.5] on the easy control) — the unbiased
+noise reference every effect is read against, published per run.
+
+**Resolved effects [exploratory labels; two independent IC-seed sets].** Motor ±15 %: resolved on
+5/6 clips, spanning −14.2 mm (helps, high-dynamic clip) to +11.5/+12.8 mm (hurts, the impossible
+clip — the sign reversal, airborne-window-localised in both sets: +15.0/+16.0 mm airborne vs
++0.3/−1.4 mm standing). Delay +20 ms: resolved on the dynamic clips (+11.9/+9.8 mm) and advances
+the attractor's fall by 0.51 ± 0.14 s. Stiffness/CoM/condim: 2–3 mm class, mostly unresolved.
+Contact onsets move ≤ 0.03 s under every intervention — no intervention changes *when* feet land,
+only what happens after.
+
+**Replication [measured].** Across seed sets: Pearson r = 0.92 over all 36 (axis, clip) effects;
+6/6 sign agreement on every effect above 5 mm; 2–4 mm effects flip sign exactly as their CIs
+permit. The instrument is reproducible where it claims resolution and says so where it does not.
+
+**What a future fragility design inherits.** Signed replicate means, R ≥ 8, published per-run
+floor, δ sized so target effects clear ~2 mm, and reference-derived (not rollout-derived) windows
+for any localisation claim — the exact configuration P-SIGN is sealed under [pending 🕐].
+
+---
+
+# Appendix A3. Screen validation detail
+
+*Artifacts: `reports/N1_clip44_knee_id.json`, `reports/N1_CMU76_knee_id.json`,
+`reports/N1_gap_sensitivity.json`, `reports/upstream_drafts/CNRS_AUDIT.md`,
+`reports/repair_census/summary.json`. Labels as marked.*
+
+**Internal controls [measured].** Within the attractor clip itself the screen's phases align with
+mechanics: standing and kneeling phases report 0 N torque-limited residual (the kneel even under
+the simulator's frictionless-knee contact model); only the transitions flag. The matched-easy
+control is supported at every frame (τ/limit p95 = 0.66). The synthetic hover demo (a standing
+pose translated upward) flags at exactly its constructed 45 %.
+
+**Parameter sensitivity [measured; found by adversarial review, reported as found].** The contact
+gap is a real choice with two failure modes: at 3 cm the feasible control itself flags 42 %
+(the bank carries a ~3 cm systematic stance-clearance offset from retarget ground alignment); at
+10 cm the screen degenerates (airborne geometry is granted as contact and the attractor's descent
+reads 0 %). 6 cm sits between the failure modes — above the bank's clearance offset, below
+bridgeable distance. The ½-weight bound is insensitive (flag mass 15.1/13.1/12.5 % at
+0.25/0.5/0.75× weight) because unsupported force concentrates near 1× weight. Flight is exempt by
+construction (free fall demands no support), verified on a jump clip whose ballistic phases do
+not flag while its floating preparation frames do.
+
+**External validation [measured].** (i) Hand-checks of the extreme sources: the 100 %-flagged
+subset is ordinary walking whose output floats 6–8 cm — screen verdict reproduced end-to-end from
+raw npz. (ii) The rollout-only sign-reversal localises to screen-flagged windows in two
+independent seed sets without the rollouts ever seeing the screen. (iii) The repair census closes
+the loop constructively: lowering the root exactly where the screen says support is missing
+removes the flag in 65.8 % of 2,443 clips (residual ≤ 5 %), is a no-op on feasible controls, and
+is correctly *refused* by the over-repair budget on genuine ballistics — a screen that flagged
+noise would not respond to a targeted geometric fix this way.
+
+**Known limits.** Plane-only terrain; embodiment-relative verdicts; q̈ from smoothed central
+differences (5-frame) — velocity-spike artifacts (one observed 40 rad/s glitch) are a separate QC
+class the screen does not target.
 
 ---
 

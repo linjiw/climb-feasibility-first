@@ -75,7 +75,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
 </style>
 
 <div class="hero"><div class="wrap">
-  <span class="eyebrow">CLIMB · Robotixx · project page · updated 2026-08-20</span>
+  <span class="eyebrow">CLIMB · Robotixx · project page · updated 2026-08-21</span>
   <h1>The hardest clip in the bank asks the robot to hover.</h1>
   <p class="sub">Generalist humanoid tracking trains on tens of thousands of retargeted mocap clips, steered by
   failure-adaptive curricula and scored on averaged survival. We audited that pipeline end to end on a Unitree G1 —
@@ -86,6 +86,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
     <div class="stat"><div class="v">87–89 %</div><div class="k">of a failure-adaptive sampler's exposure collapses onto one clip — the same clip in 3/3 seeds</div></div>
     <div class="stat"><div class="v">~329 N</div><div class="k">≈ full body weight unsupported for 1 s in that clip's retargeted descent: no contact within 6 cm</div></div>
     <div class="stat"><div class="v">22.8 %</div><div class="k">of 10,705 retargeted clips are dynamically infeasible for &gt;10 % of frames (by source: 0.1 → 100 %)</div></div>
+    <div class="stat"><div class="v">65.8 %</div><div class="k">of flagged clips auto-repaired by a 3-second root-projection onto the contact manifold (2,443-clip census)</div></div>
     <div class="stat"><div class="v">0.567 → 0.609</div><div class="k">cross-policy difficulty transfer once feasibility features join the atlas (perm p = 0.01)</div></div>
   </div>
 </div></div>
@@ -316,6 +317,11 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       <p>Contact-free inverse dynamics + torque-limited contact LP. ~1 CPU-second per clip; MuJoCo + SciPy only; Apache-2.0;
       G1 worked example (a synthetic hover the screen flags at 45 % infeasible). Screen before training; ship per-clip flags with datasets.</p>
       <span class="ev">github.com/linjiw/refeas · v0.1.0</span></div>
+    <div class="card"><h3>Contact-projection repair</h3>
+      <p>The lightweight fix for the recoverable two-thirds: lower the root onto the contact manifold exactly where support
+      is missing (~3 s/clip, joints untouched, over-repair budget refuses genuine ballistics). The attractor: 0.13 → 0.00
+      infeasible; a 100 %-flagged source subset's walks: 0.66 → 0.01. Census: 65.8 % of 2,443 flagged clips recovered.</p>
+      <span class="ev">tools/repair_contact_projection.py · reports/repair_census/summary.md</span></div>
     <div class="card"><h3>Stratified-start evaluation</h3>
       <p>Survival per (clip, start-offset) with fixed windows — the protocol that exposed the "0.31 survival" artifact and now
       generates every difficulty label in the project.</p><span class="ev">tools/eval_stratified.py</span></div>
