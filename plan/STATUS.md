@@ -4,6 +4,25 @@ Updated 2026-08-19. **v5 (`RESEARCH_PLAN_v5.md`, sealed `4d490cf8…`) is author
 evaluation policy, D2 spin-out, D3 new seals, D4 writing-first window to Sept 15. v4's freeze
 discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 
+## v6 directive (2026-08-20, `ADVISOR_DIRECTIVE_2026-08-20_v6.md` `98b78d9c…`) — task ledger
+
+| task | state | output |
+|---|---|---|
+| consistency-sweep | **done, table empty** — (a) 6/6 direction vs 4/6 significance split stated everywhere; (b) d_z=20 replaced by per-seed Δ +0.030/+0.028/+0.030; (c) "dual-engine" → dual-stack same-engine with pins named; (d) 329/327 pairing verified vs artifact (median 328.6 N) | `paper/CONSISTENCY_SWEEP_2026-08-20.md` |
+| coupling-taxonomy | **done** — 9 error classes × (symptom, detector, S1 instance); ships as companion Appendix A + refeas docs | `paper/companion/appendix_coupling_taxonomy.md`, `refeas/docs/COUPLING_TAXONOMY.md` |
+| cnrs-audit | **done — verdict: CNRS = ingest (ordinary walks floating 6–8 cm; subset-wide root-height convention); Transitions = mixed (acrobatic content, flagged frames are non-ballistic floating, severity 22 % vs 57–66 %)**; advisory reworded; upstream drafts remain NOT FILED pending approval | `reports/upstream_drafts/CNRS_AUDIT.md` |
+| n3-preflight (P1) | **done** — frozen `tools/analyze_n3.py` (sha `b118b2d3…`), 4-branch synthetic dry-run passes, all 16 neighbours confirmed ≤ 0.10 infeasible with support metrics, decision tree written; s2/s3 stratified baselines flagged as pre-unblinding requirement | `plan/N3_PREFLIGHT.md`, `reports/N3_ground16_preflight.csv` |
+| psign-prep (P2) | **done** — analysis frozen (sha `db538a9b…`), 3-branch synthetic dry-run passes, mechanism hypothesis + N7 falsifier written; verified no P-SIGN outcomes exist; gap watcher still waiting (GPU ~89 %) | `plan/P_SIGN_PREP.md` |
+| threshold-audit | **spec only (as directed)** — λ-injection design, TOST bounds ±1/32 on the sealed primary, negative framing: bugs #6/#8/#9 sit 1.3–110,000× above the threshold; #11 shows why a q̇ threshold can't replace bidirectionality checks | `plan/SPEC_threshold_audit.md` |
+| newton-1.0-recert | **spec only (as directed)** — version-note flagged (GA line vs checkout metadata; commit hash is the pin), 6-step protocol identical to S1, float32-geometry class marked predicted-sensitive | `plan/SPEC_newton_recert.md` |
+| companion-review (P0) | **done — 2 majors found and fixed same day** (ephemeral gap-sensitivity artifact → durable `reports/N1_gap_sensitivity.json`, and the "6–11 points" error → 6.0–8.4/8.4–11.8 corrected in 4 documents); 5 minors fixed; **zero unresolved majors** | `paper/companion/REVIEW_2026-08-20.md` |
+| companion note (P0) | **v0.2 submit-candidate**: full prose, every claim labelled, every number pathed, pins in header, taxonomy appendix, gap/bound sensitivity honestly stated | `paper/companion/companion_note_draft.md` |
+| upstream-drafts (P3) | unblocked by cnrs-audit; drafts updated; **awaiting Linji approval to file** | `reports/upstream_drafts/` |
+
+P0 DoD check: numbers pathed ✓ · labels ✓ · taxonomy appendix ✓ · versions pinned ✓ ·
+sweep table empty ✓ · review zero majors ✓ → **companion is submit-ready pending Linji's
+author/scope pass and figure typesetting.**
+
 ## v5 Aug 19–22 tranche — status
 
 | item | state | where |
