@@ -4,6 +4,17 @@ Updated 2026-08-19. **v5 (`RESEARCH_PLAN_v5.md`, sealed `4d490cf8…`) is author
 evaluation policy, D2 spin-out, D3 new seals, D4 writing-first window to Sept 15. v4's freeze
 discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 
+## Payoff directive (2026-08-21, Linji): approvals and launches
+
+| item | state |
+|---|---|
+| **E-HYG approved** ("完全批准") → **sealed** `a5494b7c…` + frozen analysis `5f8eb56e…` (4-branch synthetic dry-run passes, incl. the VOLUME branch that catches "just fewer clips") | `plan/PREREGISTRATION_E_HYG.md`, `tools/analyze_ehyg.py`, `plan/E_HYG_FREEZE.sha256` |
+| Banks/lists sealed by hash: tier_800_pruned (701 clips; tier_800 is 12.4 % flagged — a *lower bound* vs raw 22.8 %), zs_ground_feasible (60), zs_dynamic_feasible (60) | `bank/tiers/` |
+| **N3 + E-HYG chain launched** per "立刻", reconciled with the GPU rule via the gap-gated shared queue (waits ≥ 14 GB, nice priority, never preempts LUCID). Hash-verified resume-safety step PASSED (aug lists, frozen analyses, composed tiers, s2/s3 checkpoints). Order: s2/s3 stratified baselines → N3 keystone → N3 evals → E-HYG. Sentinels throughout. | `tools/n3_ehyg_chain.sh`, `logs/campaign/n3_verify.log` |
+| Repair census: 2,442 flagged clips, running (~1.3k done); **2×2 aggregator armed** (severity × auto-recoverable) → fills the main table + companion §8 on sentinel | `tools/aggregate_repair_census.py`, `reports/repair_census/` |
+| Narrative: efficiency cliff (3 CPU-h vs 10³–10⁴ GPU-h) + exposure ledger (adaptive mean 48.8 % of draws on the impossible clip) into S1 contributions & companion §8; **three deliverables** named (refeas · contact-projection repair · eval/monitoring protocols) in S1, companion §8, README | commit `f124d71` |
+| N7 draft extended: repair (R1) vs prune (R2) arms; seals post-N3 with readout numbers; sign-reversal falsifier carried in | `plan/N7_DRAFT_repair.md` |
+
 ## Publication state (2026-08-20, on Linji's instruction)
 
 Both repos **public**: github.com/linjiw/climb-feasibility-first (project, page, drafts, sealed
