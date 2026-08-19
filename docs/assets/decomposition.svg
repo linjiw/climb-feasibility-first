@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420" font-family="IBM Plex Sans, Helvetica, Arial, sans-serif" font-size="14">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5F6E78"/>
+    </marker>
+  </defs>
+  <rect width="980" height="420" fill="#FFFFFF"/>
+  <text x="490" y="34" text-anchor="middle" font-size="19" font-weight="600" fill="#16212A">Where a tracking policy fails on a clip: difficulty = feasibility × support × intrinsic</text>
+  <text x="490" y="56" text-anchor="middle" font-size="12.5" fill="#5F6E78">each axis has its own measurement and its own fix; the attractor of failure-adaptive sampling sat at the corner of all three</text>
+
+  <!-- three columns -->
+  <g>
+    <rect x="40" y="86" width="280" height="250" rx="8" fill="#F2F4F5" stroke="#D5DDE1"/>
+    <text x="180" y="112" text-anchor="middle" font-size="16" font-weight="600" fill="#0B7285">Feasibility</text>
+    <text x="180" y="132" text-anchor="middle" font-size="12" fill="#5F6E78">can any controller do this on this robot?</text>
+    <text x="56" y="162" font-size="12.5" fill="#16212A" font-weight="600">measure</text>
+    <text x="56" y="180" font-size="12.5" fill="#16212A">contact-free inverse dynamics +</text>
+    <text x="56" y="196" font-size="12.5" fill="#16212A">torque-limited contact LP → unsupported</text>
+    <text x="56" y="212" font-size="12.5" fill="#16212A">wrench, airborne fraction (≈1 s/clip)</text>
+    <text x="56" y="242" font-size="12.5" fill="#16212A" font-weight="600">fix</text>
+    <text x="56" y="260" font-size="12.5" fill="#16212A">repair the transition (project onto</text>
+    <text x="56" y="276" font-size="12.5" fill="#16212A">contact) or exclude; upstream note to</text>
+    <text x="56" y="292" font-size="12.5" fill="#16212A">the retargeting pipeline</text>
+    <text x="56" y="322" font-size="12" fill="#B3261E">#44: descent 0.75–1.75 s airborne, 329 N unsupported</text>
+  </g>
+  <g>
+    <rect x="350" y="86" width="280" height="250" rx="8" fill="#F2F4F5" stroke="#D5DDE1"/>
+    <text x="490" y="112" text-anchor="middle" font-size="16" font-weight="600" fill="#0B7285">Support</text>
+    <text x="490" y="132" text-anchor="middle" font-size="12" fill="#5F6E78">has the training bank anything like it?</text>
+    <text x="366" y="162" font-size="12.5" fill="#16212A" font-weight="600">measure</text>
+    <text x="366" y="180" font-size="12.5" fill="#16212A">kNN distance and duration-weighted</text>
+    <text x="366" y="196" font-size="12.5" fill="#16212A">density in atlas space, relative to the</text>
+    <text x="366" y="212" font-size="12.5" fill="#16212A">bank; category mass</text>
+    <text x="366" y="242" font-size="12.5" fill="#16212A" font-weight="600">fix</text>
+    <text x="366" y="260" font-size="12.5" fill="#16212A">composition: add feasible neighbours</text>
+    <text x="366" y="276" font-size="12.5" fill="#16212A">(N3), then coverage-grounded sampling</text>
+    <text x="366" y="292" font-size="12.5" fill="#16212A">so the sampler cannot collapse (E3)</text>
+    <text x="366" y="322" font-size="12" fill="#B3261E">#44: kneel/crawl = 3.2 % of the bank; 8th-lowest support</text>
+  </g>
+  <g>
+    <rect x="660" y="86" width="280" height="250" rx="8" fill="#F2F4F5" stroke="#D5DDE1"/>
+    <text x="800" y="112" text-anchor="middle" font-size="16" font-weight="600" fill="#0B7285">Intrinsic</text>
+    <text x="800" y="132" text-anchor="middle" font-size="12" fill="#5F6E78">how hard is it once it is feasible and seen?</text>
+    <text x="676" y="162" font-size="12.5" fill="#16212A" font-weight="600">measure</text>
+    <text x="676" y="180" font-size="12.5" fill="#16212A">reference atlas: kinematics, contact</text>
+    <text x="676" y="196" font-size="12.5" fill="#16212A">switching, required μ, GRF, support</text>
+    <text x="676" y="212" font-size="12.5" fill="#16212A">margin; calibrated fragility (N5)</text>
+    <text x="676" y="242" font-size="12.5" fill="#16212A" font-weight="600">fix</text>
+    <text x="676" y="260" font-size="12.5" fill="#16212A">curriculum on a capped simplex;</text>
+    <text x="676" y="276" font-size="12.5" fill="#16212A">robustness training on the resolved</text>
+    <text x="676" y="292" font-size="12.5" fill="#16212A">mechanisms (delay, motor strength)</text>
+    <text x="676" y="322" font-size="12" fill="#B3261E">#44: no ±δ changes survival; ρ atlas→difficulty 0.57–0.83</text>
+  </g>
+
+  <!-- arrows to bottom bar -->
+  <line x1="180" y1="336" x2="300" y2="372" stroke="#5F6E78" stroke-width="1.4" marker-end="url(#arr)"/>
+  <line x1="490" y1="336" x2="490" y2="372" stroke="#5F6E78" stroke-width="1.4" marker-end="url(#arr)"/>
+  <line x1="800" y1="336" x2="680" y2="372" stroke="#5F6E78" stroke-width="1.4" marker-end="url(#arr)"/>
+  <rect x="120" y="376" width="740" height="34" rx="6" fill="#E1F0F3" stroke="#0B7285"/>
+  <text x="490" y="398" text-anchor="middle" font-size="13" fill="#16212A">a failure-weighted sampler that cannot tell the three apart collapses onto the corner; a coverage floor keeps it from doing so</text>
+</svg>

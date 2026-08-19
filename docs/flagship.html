@@ -1,0 +1,853 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLIMB — Flagship Working Draft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F8F8;--paper:#FFFFFF;--ink:#1A2530;--muted:#5C6B75;--rule:#DCE2E6;--accent:#0B7285;--code:#EFF2F3}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#10161A;--paper:#171F25;--ink:#E5EAED;--muted:#94A3AC;--rule:#2A363E;--accent:#4CC3D5;--code:#202A31}}
+:root[data-theme="dark"]{--bg:#10161A;--paper:#171F25;--ink:#E5EAED;--muted:#94A3AC;--rule:#2A363E;--accent:#4CC3D5;--code:#202A31}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.62}
+.sheet{max-width:47rem;margin:2.2rem auto 5rem;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:3.2rem 3.4rem}
+nav{font-family:"IBM Plex Sans",sans-serif;font-size:.85rem;max-width:47rem;margin:1.2rem auto 0;padding:0 .4rem;display:flex;gap:1.4rem}
+nav a{color:var(--accent)}
+.banner{font-family:"IBM Plex Sans",sans-serif;font-size:.82rem;color:var(--muted);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:0 5px 5px 0;padding:.6rem .9rem;margin:0 0 2rem;background:var(--bg)}
+h1{font-size:1.9rem;font-weight:700;line-height:1.18;letter-spacing:-.01em;text-wrap:balance;margin:.2rem 0 1rem}
+.sheet h1:not(:first-of-type){font-size:1.32rem;font-weight:600;margin:2.8rem 0 .8rem;border-top:1px solid var(--rule);padding-top:2.2rem}
+h2{font-size:1.28rem;font-weight:600;margin:2.4rem 0 .7rem;text-wrap:balance}
+h3{font-size:1.05rem;font-weight:600;margin:1.8rem 0 .5rem}
+p{margin:.85rem 0}
+em{font-style:italic} strong{font-weight:600}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
+code{font-family:"IBM Plex Mono",monospace;font-size:.8em;background:var(--code);padding:.06em .32em;border-radius:3px}
+hr{border:0;border-top:1px solid var(--rule);margin:2.6rem 0}
+.tablewrap{overflow-x:auto;margin:1.1rem 0}
+table{border-collapse:collapse;font-family:"IBM Plex Sans",sans-serif;font-size:.82rem;font-variant-numeric:tabular-nums;width:100%}
+th,td{border:1px solid var(--rule);padding:.4rem .55rem;text-align:left;vertical-align:top}
+th{background:var(--bg);font-weight:600;color:var(--muted)}
+figure{margin:1.6rem -1.2rem;padding:.7rem;border:1px solid var(--rule);border-radius:6px;background:var(--paper)}
+figure.wide{margin:1.6rem -2.2rem}
+figure img{width:100%;height:auto;display:block;border-radius:3px;background:#fff}
+figcaption{font-family:"IBM Plex Sans",sans-serif;font-size:.82rem;color:var(--muted);margin-top:.55rem;line-height:1.45}
+blockquote{margin:1rem 0;padding:.2rem 1rem;border-left:3px solid var(--rule);color:var(--muted)}
+@media (max-width:720px){.sheet{padding:1.6rem 1.1rem;margin-top:.8rem} figure,figure.wide{margin:1.4rem 0}}
+@media print{body{background:#fff;font-size:11pt} .sheet{border:0;margin:0;max-width:100%;padding:0} nav{display:none} figure,figure.wide{margin:1rem 0;break-inside:avoid} a{color:inherit;text-decoration:none}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<nav><a href="index.html">← CLIMB project page</a><a href="companion.html">companion note →</a><a href="https://github.com/linjiw/climb-feasibility-first">repository</a><span style="color:var(--muted)">print this page for a PDF</span></nav>
+<div class="sheet">
+<div class="banner">Working draft with slots (title not final; five candidates under review). Sections §8 (N3/N7/E3) and the P-SIGN slot in §9 are sealed-and-scheduled — they state predictions and fill dates and do no load-bearing work. The sealed record (pre-registration table) is included in full, including the failed gate, the withdrawn verdict, and the kept nulls.</div>
+<h1>CLIMB flagship — assembled working draft (with slots)</h1>
+<p><em>Assembled 2026-08-21 (adds A2/A3 appendices, census-informed §6) from <code>paper/flagship/S*.md</code> (single source of truth: the section files).
+Title NOT final — five candidates under review in <code>paper/00_outline.md</code>. Status labels:
+sealed ✓ / sealed ✗ (kept) / measured / exploratory / pending 🕐. Every number's artifact path:
+<code>paper/RESULTS_LOG.md</code>. Slots (§8 N3/N7/E3; §9 P-SIGN; §7 E3) state what was sealed, what would
+confirm or refute it, and when they fill — none do load-bearing work. Figures F1–F7 and their
+generating scripts: <code>paper/00_outline.md</code> §Figures. Red-team audit: <code>paper/RED_TEAM.md</code>.</em></p>
+<hr />
+<h1>1. Introduction</h1>
+<p>Generalist humanoid motion tracking has converged on a recipe: retarget a large mocap corpus to
+the robot, train a tracking policy over the whole bank in massively parallel simulation, and steer
+training with a curriculum that samples harder motions more often. The recipe scales — trackers now
+follow tens of thousands of clips — and each of its stages trusts the one before it: the curriculum
+trusts that failure means <em>hard</em>, the trainer trusts that the references are <em>achievable</em>, and the
+benchmark trusts that averaged survival measures <em>skill</em>. This paper is an end-to-end audit of that
+chain on a Unitree G1, and its central finding is that the chain's core quantity — per-clip
+difficulty — conflates three different things that no stage of the standard pipeline can tell
+apart:</p>
+<p><strong>difficulty = feasibility × support × intrinsic.</strong></p>
+<figure class="wide"><img src="assets/decomposition.svg" alt="Figure F1"><figcaption>Figure F1 — the decomposition spine: each factor has its own measurement and its own fix.</figcaption></figure>
+
+<p>A clip can fail because no controller could track it on this robot (<em>feasibility</em>: the retargeted
+reference demands forces that no available contact can supply); because the training bank contains
+nothing like it (<em>support</em>); or because it is genuinely demanding (<em>intrinsic</em>: speed, contact
+switching, friction). Each factor has its own measurement — a per-frame contact-feasibility screen,
+a bank-relative density, a reference atlas — and its own fix: repair or exclusion, bank
+composition, and curriculum or robustness training. A failure-weighted sampler that cannot
+distinguish them collapses onto the corner where all three coincide.</p>
+<p>We found that corner empirically. A failure-adaptive sampler of the family used by current
+open-source trackers concentrated 87–89 % of its exposure on a single kneel-and-crawl clip in
+three of three seeds — the same clip every time — and <em>lost</em> to uniform sampling on held-out
+survival (0.780 vs 0.810, 3/3 seeds). Part of the cause is a bug with reach: the sampler's
+advertised uniform-mixing floor is added to <em>counts</em>, so the true floor is ε/(Σq+ε) &lt; 1 % and
+shrinks with environment count; we derive this, file it upstream, and repair it with a one-line
+normalise-then-mix that provably floors exposure (§3–4). But the deeper cause took three
+instruments to find. A pre-registered physics-fragility gate — 1,440 paired counterfactual worlds
+across action delay, motor strength, friction, contact stiffness, contact model, and center of
+mass — failed its own sealed criteria: <em>nothing</em> moved the clip's survival (§5). What finally
+explained it was a per-frame feasibility test of the reference itself: for a full second of the
+retargeted descent, no part of the robot is within 6 cm of the floor while the pelvis drops
+0.35 m — roughly the robot's entire weight (~329 N) has nothing to push on. The clip is
+impossible, its feasible kneeling core is absent from the bank (3.2 % of training duration), and
+the sampler weighted it precisely because failure was guaranteed.</p>
+<p>Screening the full 10,705-clip bank (~1 CPU-second per clip) shows this is not an anecdote:
+<strong>22.8 % of clips are dynamically infeasible for more than 10 % of their frames</strong>, ranging from
+0.1 % to 100 % across source datasets under a single retargeting pipeline — a pipeline property,
+not a difficulty gradient — and contaminating 29 of our own 100 evaluation clips (§6). Adding
+feasibility features to a reference-difficulty model produces the first cross-policy transfer gain
+that survives a permutation baseline (Spearman 0.567 → 0.609, p = 0.01): feasibility is the
+component of difficulty that belongs to the clip rather than to any particular training run (§7).</p>
+<p>The audit itself required two methodological instruments that we release with the paper. First, a
+dual-stack conformance protocol: before any physics claim, the <em>same</em> engine (MuJoCo Warp 3.11.0)
+was reached through a second integration stack — Newton (commit <code>7bb6d02d</code>) via its SolverMuJoCo
+path, against mjlab v1.6.0 driving it directly, with classic MuJoCo 3.11.0 (C) as a third referee —
+and driven to per-substep agreement (|Δq̇| ≤ 3×10⁻⁵)
+— which surfaced four silent integration errors whose combined effect, a 40-point survival fork,
+we had initially misread as a finding and here explicitly withdraw (§5.1, Appendix A1). Second, a
+calibrated sensitivity statistic: paired-trajectory differences are chaos-dominated at the
+millimetre scale within seconds, and only signed replicate-mean effects measured against a
+published identical-physics floor resolve mechanism effects (6–14 mm, replicated across seeds at
+r = 0.92; §9).</p>
+<p>Because this project's history is a catalogue of plausible findings that dissolved under audit —
+a transfer gap that was an observation bug, a curriculum deficit that was a sampler bug, a
+"hardest clip" that was a data bug — every interpretive claim in this paper was hash-sealed before
+its numbers existed, and the full ledger, including the failed gate, the withdrawn verdict, and
+three nulls, is a first-class exhibit. Two causal confirmations are sealed and scheduled rather
+than done, and are presented as slots with their pass criteria and pre-listed null responses:
+composition causality (does adding 16 screened kneel/crawl clips make the feasible phase
+trackable?) and support moderation at scale (an 800-clip bank with <em>named clips predicted to get
+worse</em>). We believe the decomposition, the screen, the repair, and the audit discipline are useful
+to the community now, independent of how those slots resolve — and the paper is written so that
+either outcome is reportable without revision of any earlier claim.</p>
+<p><strong>Contributions.</strong> (1) A mechanism-level diagnosis of failure-adaptive curriculum collapse in
+humanoid tracking, including the non-floor derivation, with upstream fixes filed — and the
+exposure accounting that quantifies the cost: the shipped sampler spends a mean 48.8 % of all
+clip draws (peak 87–89 %) on a single impossible clip [measured;
+<code>reports/wasted_exposure_accounting.json</code>]. (2) A coverage-grounded repair that provably floors
+exposure and rescues failure-weighted sampling. (3) The feasibility × support × intrinsic
+decomposition of tracking difficulty, with bank-scale prevalence and the demonstration that
+feasibility is the transferable component of difficulty. (4) An audit methodology for
+simulation-based robot learning — dual-stack conformance, stratified-start evaluation, calibrated
+paired-rollout sensitivity, and a sealed prediction ledger. The data-engineering economics frame
+all four: screening the entire 10,705-clip bank costs ~3 CPU-hours and repairing a recoverable
+clip ~3 CPU-seconds, against the 10³–10⁴ GPU-hours of the training runs they protect — four to
+five orders of magnitude between the audit and the asset it defends.</p>
+<p><strong>Released deliverables (three, distinct in where they sit in the pipeline):</strong>
+(i) <strong>refeas</strong> — the offline pre-training screen (contact-free inverse dynamics + torque-limited
+contact LP, ~1 CPU-s/clip); (ii) <strong>contact-projection repair</strong> — the lightweight geometric fix
+for the recoverable fraction of flagged clips (root projection onto the contact manifold, with an
+over-repair budget that refuses genuine ballistics); (iii) <strong>evaluation &amp; monitoring protocols</strong>
+— stratified-start evaluation, feasibility-stratified endpoints, the dual-stack conformance
+checklist, and (pending its pre-registered test 🕐) the rollout-only sign-reversal detector as a
+runtime guard.</p>
+<hr />
+<h1>2. Related work</h1>
+<p><em>Citation status: entries marked ✓ were verified against arXiv/publisher pages on 2026-08-20
+(this session); entries marked ○ are standard references cited from memory with high confidence,
+to be re-verified in the final bibliography pass. None are invented; anything unverifiable is
+flagged inline.</em></p>
+<p><strong>Adaptive sampling and prioritisation.</strong> Prioritised experience replay ○ [Schaul et al.,
+ICLR 2016, arXiv:1511.05952] introduced loss-proportional sampling with explicit α/β corrections
+for the bias it creates; Prioritised Level Replay ✓ [Jiang, Grefenstette &amp; Rocktäschel, ICML 2021,
+arXiv:2010.03934] prioritises <em>levels</em> by estimated learning potential and is explicit about
+staleness and replay-vs-explore mixing. The humanoid-tracking samplers we audit are descendants of
+these ideas without their safeguards: BeyondMimic ✓ [Liao et al., arXiv:2508.08241] introduced the
+failure-EMA bin sampler that mjlab ✓ [Zakka et al., arXiv:2601.22074; github.com/mujocolab/mjlab]
+re-implements at clip level, and both carry the additive ε/N term whose non-floor we derive in §3
+(filed as mjlab #1153 and whole_body_tracking #73). Our grounded repair is the PLR-style insight —
+mix on the distribution simplex, not in the score — applied to this family. Unlike the UED line,
+our contribution is not a new sampler but the demonstration that in this domain the priority
+signal itself conflates infeasibility, missing support, and difficulty (§5–7).</p>
+<p><strong>Generalist humanoid motion tracking.</strong> Physics-based motion imitation scaled from single-clip
+policies ○ [DeepMimic; Peng et al., TOG 2018, arXiv:1804.02717] to bank-scale controllers: PHC ✓
+[Luo et al., ICCV 2023] imitates ~10k AMASS clips with fail-state recovery; MaskedMimic ✓
+[Tessler et al., SIGGRAPH Asia 2024, doi:10.1145/3687951] unifies control as motion inpainting.
+On hardware, the current wave — H2O/OmniH2O ○ [He et al., 2024], ExBody ○ [Cheng et al., 2024],
+HumanPlus ○ [Fu et al., 2024], BeyondMimic ✓ (above), and SONIC ✓ [NVIDIA GEAR; arXiv:2511.07820,
+Science Robotics 2026; 700 h of mocap, 42 M parameters] — trains trackers over ever-larger
+retargeted corpora. All of these inherit the assumption our audit targets: that per-clip failure
+rates measure difficulty. Our results are complementary to this line, not competitive with it —
+the screen, the strata, and the sampler repair apply to any of these training stacks. ASAP ✓
+[He et al., RSS 2025, arXiv:2502.01143] and SPI-Active ✓ [sampling-based active system
+identification for legged sim-to-real] address the <em>dynamics</em> gap post-training; PolySim ✓
+[arXiv:2510.01708] randomises across heterogeneous simulators during training. We descoped our
+own solver-ensemble program (§10) after conformance auditing showed harness error dominates
+engine disagreement at the scales involved.</p>
+<p><strong>Retargeting and physical plausibility.</strong> Contact-aware retargeting ✓ [Villegas et al.,
+ICCV 2021, arXiv:2109.07431] preserves self-contacts and prevents interpenetration for character
+animation; PhysCap ✓ [Shimada et al., SIGGRAPH Asia 2020, arXiv:2008.08880] and successors impose
+physics on captured motion (foot-sliding, floor penetration, unnatural lean). For robots,
+GMR ✓ [Ze et al., ICRA 2026, github.com/YanjieZe/GMR] and <em>Retargeting Matters</em> ✓
+[arXiv:2510.02252] show retargeting choices dominate downstream tracking quality and explicitly
+target foot sliding, penetration, and self-intersection. Our feasibility screen is the missing
+<em>dynamic</em> complement to these kinematic criteria: it asks not whether the pose sequence looks
+clean but whether the wrench it demands can be supplied by any admissible contact forces within
+actuator limits — the failure class that produced our 22.8 % prevalence and that none of the
+above checks detect (a clip can have perfect clearance and zero self-intersection while airborne
+at 1 g). The two systematic artifacts we document (airborne transitions from unreachable
+postures; hand–hip interpenetration taxing self-collision rewards) are actionable inside any of
+these retargeting pipelines.</p>
+<p><strong>Exposure auditing and evaluation methodology.</strong> Our sealed-prediction ledger and the
+stratified-start protocol follow the pre-registration norm from empirical sciences rather than a
+specific robotics lineage; within robot learning, the closest practice is the reporting-hygiene
+line in RL evaluation ○ [e.g., Agarwal et al., NeurIPS 2021 "statistical precipice",
+arXiv:2108.13264]. The companion exposure-audit methodology (LUCID — <em>internal companion project,
+unpublished; flagged: not externally verifiable</em>) studies training-exposure accounting for
+sim-to-real prediction; the LUCID-correlation is this paper's one forward bridge to hardware and
+carries a small-N caveat wherever cited.</p>
+<hr />
+<h1>3. Failure-adaptive sampling collapses, and its uniform floor is not a floor</h1>
+<p><strong>Claim class: sealed-confirmatory</strong> (campaign design pre-registered in Plan v2; adjudication <code>plan/BRANCH_DECISION.md</code>; artifacts <code>reports/campaign_summary_3arm.json</code>, <code>reports/A5_coverage_dose.json</code>, <code>reports/A7_attractor.json</code>).</p>
+<p><strong>Setup.</strong> Unitree G1 motion tracking in mjlab (MuJoCo-Warp), 4096 environments, 4000 PPO iterations,
+tier_mixed100 (100 clips, 1260 s) from a validated 10,822-clip AMASS/LAFAN1 bank; held-out evaluation
+on 100 disjoint clips, 8 episodes per clip, 3 seeds per arm. Three samplers: uniform over clips;
+failure-adaptive (BeyondMimic-style bin sampling, probability ∝ failure EMA + ε/N); grounded
+(normalise-then-mix: (1−ρ)·softmax-normalised failure weights + ρ·uniform, ρ = 0.10).</p>
+<p><strong>Collapse.</strong> The adaptive arm concentrates 87–89 % of its sampling mass on a single clip
+(top-1 mass max 0.884 / 0.870 / 0.893, mean entropy 0.38–0.40) in all three seeds — and it is the same
+clip in all three (BMLmovi_Subject_64_9, "#44"). Uniform holds entropy 1.0 by construction; grounded
+holds 0.60–0.62 with top-1 ≤ 0.57–0.70. Held-out survival at 4000 iterations: adaptive 0.780 ± 0.006,
+grounded 0.825 ± 0.009, uniform 0.810 ± 0.005; area under the learning curve 0.640 / 0.696 / 0.698.
+Uniform beats adaptive in 3/3 seeds — per-seed Δ(uniform − adaptive) at iteration 3999: +0.0300 / +0.0275 / +0.0300 (mean +0.0292; recomputed from <code>reports/campaign/*_it3999.csv</code>); the standardized d_z = 20.2 (<code>reports/campaign_summary_3arm.json</code>) merely reflects the 0.0014 seed s.d. and is footnoted, not headlined — at n = 3 the permutation floor is p = 0.125 and the sign test is 3/3. Grounded matches uniform on the primary
+(AULC −0.002) and edges it on the endpoint (+0.015, 3/3 seeds) — Branch B, pre-registered.</p>
+<p><strong>The non-floor.</strong> The upstream sampler mixes an ε/N term <em>additively into counts</em>, so the effective
+uniform share is ε/(Σq + ε): with N = 100 clips and realistic failure rates the floor is below 1 %,
+and it shrinks with num_envs because Σq scales with the number of environments contributing failures.
+The parameter is documented as a floor; it is not one. Filed as mjlab #1153 and
+whole_body_tracking #73 with the derivation and a minimal reproduction; the grounded sampler is the
+one-line repair.</p>
+<p><strong>What the attractor is.</strong> #44 is a kneel/crawl clip (non-foot ground contact 61 % of frames, 99.7th
+percentile of the bank; the training bank has 3.2 % of its duration in that category). Its measured
+survival was 0.31 under random start offsets and 0.00 from frame 0 — the first is an artefact of
+start-offset averaging (episodes that begin after its ground segment survive), which is why every
+difficulty label in this paper uses stratified starts. Under the frame-0 protocol it is unlearnable
+for every policy we trained; the sampler that weights by failure therefore never lets go of it.
+Section 5 establishes that this is neither physics fragility nor merely coverage: the reference is physically impossible on its descent. Under the D1 evaluation policy (<code>plan/GLOBAL_EVAL_ADDENDUM.md</code>), the survival numbers above are the sealed all-clips secondaries; the feasible-only primaries are in §4.</p>
+<hr />
+<h1>4. Grounded repair: normalise-then-mix restores coverage without giving up prioritisation</h1>
+<p><strong>Claim class: sealed-confirmatory</strong> (pre-registration A2, sha <code>37daa8a9…</code>, sealed 2026-08-16
+before the grounded arm's final evaluation existed; adjudication <code>plan/BRANCH_DECISION.md</code>).
+Strata per <code>plan/GLOBAL_EVAL_ADDENDUM.md</code> (sealed <code>a93a87a0…</code>): feasible-only primary, all-clips
+secondary, infeasible-only descriptive.</p>
+<p><strong>The repair.</strong> The upstream sampler adds its uniform term into <em>counts</em>: p ∝ q + ε/N, so the
+uniform share is ε/(Σq + ε) — vanishing exactly when failures are plentiful (§3). Grounded
+sampling normalises first and mixes on the simplex: p = (1 − ρ)·softmax(failure weights) + ρ·u,
+ρ = 0.10 — a true, scale-invariant floor. One line of code; the same failure signal.</p>
+<p><strong>Effect on exposure (the mechanism variable).</strong> Over 3 seeds × 4,000 iterations
+(<code>reports/A5_coverage_dose.json</code>): mean sampling entropy 0.60–0.62 vs adaptive's 0.38–0.40; top-1
+clip mass max 0.57–0.70 vs 0.87–0.89. The attractor is the same clip in all six adaptive/grounded
+runs (<code>reports/A7_attractor.json</code>) — grounding does not change <em>what</em> the sampler wants, it bounds
+what it can <em>spend</em>.</p>
+<figure class="wide"><img src="assets/f2_collapse.png" alt="Figure F2 [sealed ✓]"><figcaption>Figure F2 [sealed ✓] — collapse and its cost: held-out survival (3 seeds, min–max band) and exposure concentration. reports/campaign/*.csv, reports/A5_coverage_dose.json.</figcaption></figure>
+
+<p><strong>Effect on performance.</strong> Held-out survival at iteration 3999 (3 seeds, seed-mean ± sd where
+sealed; <code>reports/campaign_summary_3arm.json</code>, <code>reports/N_atlas_v21.json</code>):</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>arm</th>
+<th style="text-align: right;">feasible-only (primary, 71 clips)</th>
+<th style="text-align: right;">all 100 (secondary, sealed record)</th>
+<th style="text-align: right;">infeasible-only (descriptive, 29)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adaptive</td>
+<td style="text-align: right;">0.811</td>
+<td style="text-align: right;">0.780 ± 0.006</td>
+<td style="text-align: right;">0.705</td>
+</tr>
+<tr>
+<td>uniform</td>
+<td style="text-align: right;">0.834</td>
+<td style="text-align: right;">0.810 ± 0.005</td>
+<td style="text-align: right;">0.750</td>
+</tr>
+<tr>
+<td>grounded</td>
+<td style="text-align: right;"><strong>0.859</strong></td>
+<td style="text-align: right;"><strong>0.825 ± 0.009</strong></td>
+<td style="text-align: right;">0.741</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sealed adjudication (all-clips, as registered): grounded ≫ adaptive (AULC +0.055, endpoint +0.044,
+3/3 seeds) — <strong>coverage-grounding rescues failure-weighted adaptivity from collapse</strong>. Against
+uniform, the sealed primary (AULC) is a match (0.6956 vs 0.6979, −0.3 % relative); the endpoint
+favours grounded (+0.015, 3/3 seeds) but is secondary, and the sealed verdict is <strong>Branch B:
+grounded ≈ uniform</strong> at 100 clips. The registered co-primary (iterations-to-0.810) is reported as
+<strong>uninformative by construction</strong>: the target was uniform's own rounded-up endpoint mean, which
+censors uniform at its own bar — a registration defect we document rather than exploit
+(<code>plan/BRANCH_DECISION.md</code>).</p>
+<p><strong>The stratified re-analysis sharpens the mechanism</strong> (exploratory; strata computed 2026-08-18,
+<code>plan/ATLAS_v21_RESULT.md</code> §2b): grounded's endpoint edge over uniform is <strong>+0.025 on feasible
+clips and −0.009 on infeasible ones</strong>. A curriculum can only help where success is possible; no
+sampler can teach a policy to track a reference that asks the robot to hover (§5–6). This is also
+the honest frame for the sealed Branch B: at 100 clips, 29 % of the <em>evaluation</em> mass sat in a
+stratum where the compared samplers cannot differ except by noise.</p>
+<p><strong>What remains open, and is sealed.</strong> Whether prioritisation beats uniform when the bank is
+diverse enough for coverage to bind is E3's question (800 clips), sealed with bidirectional
+support-moderation predictions including named clips that should get <em>worse</em>
+(<code>plan/PREREGISTRATION_E3_addendum_v2.md</code>, <code>2c38845b…</code>). Whether <em>composition</em> — not sampling —
+is the causal fix for the attractor's family is N3's question, sealed with its null follow-ups
+(<code>plan/PREREGISTRATION_N3_coverage.md</code>, <code>af1b7c9f…</code>). Both slots are in §8.</p>
+<hr />
+<h1>5. Anatomy of an attractor: from "hardest clip" to "impossible reference"</h1>
+<p>The clip every adaptive run collapsed onto (§3) looked, at first, like the most interesting object
+in the bank: a kneel-down-to-crawl motion at the 99.7th percentile of non-foot ground contact,
+failing at 0.31 survival while the bank averaged 0.89. Three successive instruments each destroyed
+one hypothesis about it. We present them in order because the <em>order</em> is the method: physics
+claims were not permitted until the harness was proven, and data claims were not permitted until
+physics was excluded.</p>
+<h2>5.1 First, prove the instrument: same-solver conformance (G0)</h2>
+<p>To ask physics questions we coupled a second implementation — Newton's SolverMuJoCo — to the
+training environment so that the environment kept observations, the frozen policy, actions and
+terminations while the second stack integrated the dynamics. Both sides run the <em>same</em>
+MuJoCo-Warp 3.11.0 (mjlab v1.6.0 directly; Newton commit <code>7bb6d02d</code>, warp-lang 1.16.0, via
+SolverMuJoCo — pins in <code>plan/PREREGISTRATION_G1_clip44.md</code>), so the sealed prediction was
+agreement to seed noise. Instead: survival
+0.44–0.72 vs 1.00 on a mastered clip, with identical mean tracking error, across six runs.</p>
+<p>Under the standing rule that <strong>any same-solver discrepancy is integration error until proven
+otherwise</strong>, a four-stage elimination (full model diff; static/spinning bias forces from identical
+states; per-substep paired stepping through the forking window with MuJoCo-C as a third referee; a
+<em>shadow</em> solver stepping the other engine's own trajectory) located four silent integration errors
+— none of them physics, all of them instructive, and one of them (the initially reported
+"contact-event fork at step 298") a previously <em>published-internally</em> finding that we hereby state
+as <strong>withdrawn</strong>: it was the 6.0-second clip's wrap-around teleport, visible only to the engine
+that was allowed to overwrite it. The four errors and the protocol are Appendix A1; after the
+fixes the two implementations agree at 1.000/1.000 vs 1.000/1.000 survival, Δerror ≤ 1 mm,
+per-substep |Δq̇| ≤ 3 × 10⁻⁵ rad/s (<code>plan/S1_RESULT.md</code>, <code>reports/S1_*_absorb.json</code>). Everything
+downstream inherits this floor.</p>
+<h2>5.2 Then ask physics: the pre-registered fragility gate (G1) — negative</h2>
+<p>Sealed before the run (<code>plan/PREREGISTRATION_G1_clip44.md</code>, <code>41e4b20c…</code> + addendum <code>2a9ceaca…</code>):
+if the attractor's difficulty is a physics-parameter sensitivity, paired ±δ counterfactual worlds
+— action delay +20 ms, motor strength ±15 %, foot friction 0.4/0.8, contact stiffness 12/28 ms,
+torso CoM ±2 cm, and non-foot contacts made frictional — should show elevated fragility on the
+contact axes relative to matched-easy controls, localised before failure. 480 + 480 + 480 worlds
+(intervention arm, contact-model arm, same-solver floor arm), 6 clips, 8 replicate ICs.</p>
+<p><strong>The gate fails on its sealed criteria</strong> (<code>plan/G1_RESULT.md</code>, <code>reports/G1/run0/</code>): the predicted
+axes reach 1.30–1.33× the matched-easy fragility (needed ≥ 2×); no (clip, axis) reaches the sealed
+5× same-solver floor; and <strong>termination fragility is zero everywhere</strong> — the clip dies 8/8 in all
+ten configurations, at every start offset inside its ground segment, with 0.0–0.2 % actuator
+saturation until the fall. Physics-parameter sensitivity cannot explain a failure that no physics
+parameter modulates. (The gate also surfaced one exploratory anomaly — a sign reversal on the
+motor axis unique to this clip — which §9 develops with the calibrated instrument.)</p>
+<h2>5.3 Then ask the data: contact-feasibility of the reference (N1) — verdict</h2>
+<p>Per-frame inverse dynamics with contacts disabled gives the base wrench the environment must
+supply; a torque-limited LP over friction cones at the contacts actually available (within 6 cm of
+the plane) gives the smallest unsupported remainder (<code>tools/n1_knee_id.py</code>,
+<code>reports/N1_clip44_knee_id.json</code>). The verdict is unambiguous: in the descent, 0.75–1.75 s, <strong>no
+collision geom is within 6 cm of the floor</strong> — the retargeted feet float 7–10 cm up while the
+pelvis falls 0.79 → 0.40 m — leaving ~329 N ≈ the robot's full weight (327 N) unsupported in 86 %
+of those frames; the rise repeats it at 8.0–8.5 s. The kneel/crawl <em>between</em> is fully supportable
+within actuator limits, even under the simulator's own frictionless-knee contact model. The
+matched-easy control is supported at every frame. Kinematically the clip is ordinary — zero
+joint-limit violations, ≤ 5.6 rad/s — which is exactly why kinematic QC and the kinematic half of
+our atlas could not see it. Mechanism: the human sits back onto the heels; the robot's leg cannot
+fold that far; the retarget resolves the conflict by lifting the legs instead of lowering the root.</p>
+<figure class="wide"><img src="assets/f3_anatomy.png" alt="Figure F3"><figcaption>Figure F3 — anatomy of the attractor: (a) airborne reference frames [measured]; (b) unsupported wrench [measured]; (c) stratified-start deaths [measured]; (d) the sealed-negative physics gate at the same-solver floor [sealed ✗, kept].</figcaption></figure>
+
+<p><strong>Resolution.</strong> The attractor decomposes into (i) a physically impossible transition — a data
+defect, family-wide: 20 of its 40 nearest kneel/crawl neighbours exceed the 10 %-infeasible-frame
+threshold (<code>reports/N3_candidate_feasibility.json</code>; the "12/40" first reported in
+<code>plan/N1_RESULT.md</code> was an informal stricter cut, corrected in <code>plan/GLOBAL_EVAL_ADDENDUM.md</code>) —
+and (ii) a feasible skill (kneeling, crawling) occupying 3.2 % of the training bank's duration, on
+which the policy was never trained. The failure-weighted sampler cannot distinguish "impossible"
+from "hard" from "unseen"; it poured 87–89 % of its exposure into the one clip where those three
+coincide. The earlier "0.31 survival" was itself an artifact of start-offset averaging — episodes
+beginning after the ground segment survived — which is why every difficulty label from here on
+uses the stratified-start protocol (§6). Whether adding <em>feasible</em> members of this family to the
+bank makes the feasible phase trackable is the sealed N3 keystone (§8); whether <em>repairing</em> the
+impossible transition makes the descent trackable is N7, to be sealed after N3 reads out.</p>
+<hr />
+<h1>6. The feasibility screen at scale (compressed; method and full tables in the companion note)</h1>
+<p><strong>Method.</strong> For each frame of a retargeted reference: (i) q, q̇ from the clip and q̈ by central
+differences; (ii) contact-free inverse dynamics (MuJoCo <code>mj_inverse</code>, contacts disabled) → the
+6-D base wrench W the environment must supply and the joint torques with no contact; (iii) candidate
+contacts = collision geoms within 6 cm of the plane (<code>mj_geomDistance</code>, nearest point);
+(iv) contact forces in pyramidal friction cones (μ 0.6, or frictionless non-foot geoms for the sim
+model) that best explain W — an NNLS for the unconstrained residual and a torque-limited LP for the
+smallest unsupported wrench achievable within actuator force ranges. Per-clip features: airborne
+fraction (no candidate contact), infeasible fraction (torque-limited unsupported wrench &gt; ½ weight),
+unsupported impulse per weight, torque-infeasible fraction. ~1 s per clip on one CPU core.</p>
+<p><strong>#44.</strong> Standing (0–0.75 s): supported. <strong>Descent 0.75–1.75 s: no collision geom within 6 cm of the
+floor</strong> — the feet float 7–10 cm above it while the pelvis falls 0.79 → 0.40 m — leaving 329 N ≈ body
+weight (327 N) unsupported in 86 % of frames; the retargeted human sat back onto the heels, the G1's
+leg cannot fold that far, and the retarget lifted the whole leg. Kneel/crawl 1.75–7.25 s: fully
+supportable by shins, thighs, hands and feet within actuator limits, even with frictionless knees.
+Rise 8.0–8.5 s: airborne again (250–330 N). The policy's tracking error starts growing exactly at
+0.75 s and every world dies at 2.2–3.0 s. Kinematically the clip is ordinary (no joint-limit
+violations, ≤ 5.6 rad/s), which is why the atlas's kinematic features could not see it.</p>
+<p><strong>Prevalence</strong> (10,705 clips, ~1 CPU-s each; <code>reports/feasibility_all/prevalence_report.txt</code>,
+sentinel <code>reports/feasibility_all/COMPLETED</code>): <strong>22.8 % of the bank exceeds 10 % dynamically
+infeasible frames</strong> — ground-contact category 39 %, dynamic 59 %, locomotion 25 %, quiet 13 % —
+and by source dataset the rate spans <strong>0.1 % (GRAB) to 100 % (CNRS)</strong>, Transitions 90 %, CMU 40 %.
+A three-orders-of-magnitude spread across sources under one pipeline and one robot is a
+pipeline × source property, not a difficulty gradient. Of the attractor's 40 nearest kneel/crawl
+neighbours, 20 exceed the threshold; the KIT kneel_down_to_crawl clips sit at 3–8 %.</p>
+<figure class="wide"><img src="assets/f4_prevalence.png" alt="Figure F4 [measured]"><figcaption>Figure F4 [measured] — prevalence by category × source: 0.1 % → 100 % under one pipeline. reports/feasibility_all/.</figcaption></figure>
+
+<p><strong>Evaluation-set contamination.</strong> 29 of our own 100 held-out clips are flagged. They score 6.0–8.4 points below each policy's
+all-clips aggregate (8.4–11.8 below its feasible stratum; <code>reports/N_atlas_v21.json</code>) and cannot
+separate samplers (§4). Policy, sealed before any new
+number existed (<code>plan/GLOBAL_EVAL_ADDENDUM.md</code>, <code>a93a87a0…</code>): primary endpoints on the
+feasible-only stratum, all-clips secondary, infeasible-only descriptive; the threshold's
+provenance (it predates the policy) is recorded in the seal. We do not swap the evaluation set
+mid-project.</p>
+<p><strong>A second hygiene finding, and a null.</strong> Reference poses also carry hand–hip interpenetration
+(&gt; 1 cm on a median 13 % of frames; 53 % of clips exceed 10 %), so the self-collision penalty is
+charged against accurate tracking. Sealed test P-TAX (<code>plan/PREREGISTRATION_P_TAX.md</code>,
+<code>7960057a…</code>) asked whether this tax predicts difficulty beyond the feasibility flag: <strong>it does
+not</strong> (heldout partial ρ −0.04 to −0.15, no positive CI excluding zero on any arm — sealed rule
+0/3; <code>plan/P_TAX_RESULT.md</code>, <code>reports/P_TAX_result.json</code>). It remains a recommendation — audit
+reward terms against the reference, not only the policy — and nothing more.</p>
+<p><strong>Consequence for the argument</strong> (details §5, slots §8)<strong>.</strong> #44 decomposes into a physically impossible transition and a
+feasible skill the bank does not contain. The two are separable by start offset, and the
+pre-registered composition experiment (N3) conditions on it: augmentation is predicted to make the
+kneel/crawl phase trackable and to leave the descent unlearnable; a later repair experiment (N7)
+projects the transition back onto contact and predicts the descent becomes learnable and the
+motor-strength sign reversal disappears.</p>
+<p><strong>Deployment implication (measured in sim; hardware phenomenology predicted, labeled).</strong> Tracking
+the airborne descent saturates zero actuators until contact, then pins 5/29 at ≥ 98 % force range
+within 0.6 s, in 8/8 replicates (<code>reports/effort_sat_at_fall.json</code>) — an unplanned ~0.3 m fall
+onto wrists and knees at every attempt. With G1 having shown no physics parameter changes the
+outcome [sealed ✗, kept] and the sign-reversal indicating gain increases make such segments
+<em>worse</em> [exploratory; P-SIGN pending 🕐], the screen functions as a pre-deployment safety filter:
+1 CPU-second per clip against impact retries, current-limit bursts, and wasted DR budget on
+unfixable segments.</p>
+<hr />
+<h1>7. Difficulty that transfers (complete except the E3 slot)</h1>
+<p><strong>The question.</strong> A difficulty atlas is useful only if it describes the <em>motion</em>, not one training
+run. Two policies rank held-out difficulty at ρ = 0.832 (<code>reports/A3_atlas_transfer.json</code>); a
+reference-kinematics/dynamics atlas fit on one policy predicted the other at ρ = 0.567–0.579 —
+below the pre-registered 0.6 bar (sealed criterion; outcome recorded as a miss). What closes the
+gap?</p>
+<p><strong>Support alone does not (sealed prediction, null).</strong> Bank-relative support features (kNN distance
+and duration-weighted density in atlas space, category mass) were pre-registered
+(<code>plan/N2_RESULT.md</code>) with two claims: atlas residuals concentrate on low-support clips — <strong>holds</strong>,
+ρ(|resid|, kNN) = +0.60 / +0.54 (exploratory-confirmed on both start protocols) — and transfer
+lifts above 0.567 — <strong>null</strong>: +0.00 to +0.03, inside a 200-draw random-feature baseline
+(<code>reports/N2_atlas_support.json</code>). Diagnosis, stated in advance of E3: with a single training
+bank, support is collinear with the intrinsic coordinates; it becomes a distinct object only when
+the bank changes. That is E3's sealed test (slot, §8).</p>
+<p><strong>Feasibility does (sealed prediction, met).</strong> Atlas v2.1 added three screen features
+(<code>infeasible_frac</code>, <code>airborne_frac</code>, unsupported impulse per weight), pre-registered
+(<code>plan/PREREGISTRATION_ATLAS_v21.md</code>, <code>9b1a2c78…</code>) with predicted transfer lift ≥ +0.03 at
+permutation p &lt; 0.05. Result (<code>reports/N_atlas_v21.json</code>, <code>plan/ATLAS_v21_RESULT.md</code>):</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>transfer (A3 protocol)</th>
+<th style="text-align: right;">intrinsic</th>
+<th style="text-align: right;">+ feasibility</th>
+<th style="text-align: right;">random-3 p95</th>
+<th style="text-align: right;">perm p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adaptive → uniform</td>
+<td style="text-align: right;">0.567</td>
+<td style="text-align: right;"><strong>0.609</strong></td>
+<td style="text-align: right;">0.602</td>
+<td style="text-align: right;"><strong>0.010</strong></td>
+</tr>
+<tr>
+<td>uniform → adaptive</td>
+<td style="text-align: right;">0.579</td>
+<td style="text-align: right;">0.616</td>
+<td style="text-align: right;">0.607</td>
+<td style="text-align: right;">0.030</td>
+</tr>
+<tr>
+<td>grounded → uniform</td>
+<td style="text-align: right;">0.544</td>
+<td style="text-align: right;">0.580</td>
+<td style="text-align: right;">0.577</td>
+<td style="text-align: right;">0.045</td>
+</tr>
+<tr>
+<td>grounded → adaptive</td>
+<td style="text-align: right;">0.586</td>
+<td style="text-align: right;">0.633</td>
+<td style="text-align: right;">0.626</td>
+<td style="text-align: right;">0.015</td>
+</tr>
+<tr>
+<td>→ grounded (2 pairs)</td>
+<td style="text-align: right;">0.623 / 0.637</td>
+<td style="text-align: right;">0.638 / 0.655</td>
+<td style="text-align: right;">n.s.</td>
+<td style="text-align: right;">0.24 / 0.16</td>
+</tr>
+</tbody>
+</table></div>
+<p>All six pairs move in the predicted direction; four clear the permutation baseline —
+<strong>feasibility is the first feature family that transfers across policies</strong>, because it is a
+property of the reference on the robot, not of any training run. Direct correlations:
+ρ(held-out difficulty, <code>infeasible_frac</code>) = +0.37 / +0.48 / +0.50 per arm. The two companion
+predictions were <strong>not</strong> met and are reported as sealed misses: within-bank LOO fit did not
+improve (F1 — at 100 clips the screen features are collinear with the atlas's contact proxies,
+which were their shadows all along), and the residual's correlation with infeasibility did not
+vanish under a linear model (F3, half-met: support keeps explaining the misses).</p>
+<figure class="wide"><img src="assets/f5_transfer.png" alt="Figure F5"><figcaption>Figure F5 — transfer lift: intrinsic vs +support [sealed null, kept] vs +feasibility [sealed ✓], against random-feature permutation baselines. reports/N_atlas_v21.json.</figcaption></figure>
+
+<p><strong>Where this leaves the decomposition.</strong> Intrinsic features predict within-policy difficulty
+(LOO ρ 0.47–0.51 training tier, 0.70+ on the original RQ1 protocol); feasibility adds the
+cross-policy component; support is measured, predictive in the raw (ρ up to +0.41), and awaiting
+its uncontaminated test. <strong>[E3 SLOT — sealed predictions <code>2c38845b…</code>: per-clip Δdifficulty
+(800−100) vs Δlog-support ρ ≤ −0.25; all 22 named dynamic held-out clips lose support and are
+predicted to get harder; H2b-S support-moderation of the grounded−uniform gap; fills after the
+Sept-15+ E3 run.]</strong></p>
+<hr />
+<h1>8. Causal tests (slots — structure fixed now, numbers fill on the Sept-15+ schedule)</h1>
+<p>Everything before this section is observational or mechanistic. Three sealed interventions close
+the loop. Each slot states: what was sealed, what would confirm or refute it, when it fills.</p>
+<h2>8.1 N3 — composition causality (keystone) [SLOT]</h2>
+<p><strong>Sealed</strong> 2026-08-19-era (<code>plan/PREREGISTRATION_N3_coverage.md</code>, <code>af1b7c9f…</code>; precondition
+<code>plan/N3_PRECONDITION_env_admits.md</code>, <code>3c331e18…</code> — terminations verified not to fire on the
+reference; naive PD-follow shown uninformative; contact-supported dynamics verified). Design:
+tier_mixed100 + <strong>ground16</strong> (16 nearest <em>feasibility-screened</em> kneel/crawl neighbours) vs
++ <strong>random16</strong>; uniform ×2 seeds (keystone), adaptive ×1, random-control ×1; stratified-start
+evaluation.</p>
+<p><strong>Confirms coverage-causality iff</strong> E1: attractor kneel/crawl-phase survival (offsets {2,3,4,6} s)
+rises from 0.000 (baseline, <code>reports/N3_baseline_uniform-s1_strat.csv</code>) to ≥ 0.25 in both keystone
+seeds, <strong>and</strong> E4: the random16 control stays &lt; 0.10. E2 (no regression on easy/held-out), E3
+(the adaptive sampler's top-1 mass releases below 0.5 as the family becomes learnable), E5
+(training-set family improvement) are secondary. The descent offsets {0,1} s are predicted to
+remain ≤ 0.25 — augmentation cannot fix an airborne reference; that is N7's job.</p>
+<p><strong>Pre-listed null follow-ups (verbatim from the seal's precondition):</strong> (1) exposure mass
+insufficient — grounded targeting of the family, one seed; (2) within-family start-phase
+curriculum — start training episodes inside the feasible phase, one seed; (3) reward tax on the
+reference — checked via the oracle's per-term reward rates (<code>r_self_collisions</code>, <code>r_joint_limit</code>)
+before touching any weight. None of these expands the bank.</p>
+<p><strong>Fills:</strong> first GPU block after Sept 15; resume-safety check (frozen config re-loaded,
+hash-checked, seeds confirmed) before relaunch; realized GPU-hours recorded and used to re-plan
+the remaining budget.</p>
+<h2>8.2 N7 — repair the impossible [SLOT, seal pending N3 readout]</h2>
+<p>Draft on file (<code>plan/N7_DRAFT_repair.md</code>): contact-restoring projection of the attractor family's
+airborne transitions (lower the root, re-solve leg IK, time-warp within original vertical-velocity
+bounds; verify with the screen to ≤ 5 % infeasible frames and no new interpenetration). Sealed
+predictions will include: the repaired descent becomes learnable in the augmented bank; the §9
+motor-strength sign reversal <em>vanishes</em> on the repaired clip; unrepaired family descents do not
+improve in the same run. Converts "exclude the impossible" into "repair the impossible" and closes
+the feasibility axis causally rather than by omission.</p>
+<h2>8.3 E3 — support moderation at scale [SLOT]</h2>
+<p><strong>Sealed</strong> (<code>plan/PREREGISTRATION_E3_addendum.md</code> <code>f7929136…</code> + v2 <code>2c38845b…</code> + the D1 policy
+<code>a93a87a0…</code>): uniform-800 ×3 vs grounded-800 ×3 (+ ≤1 adaptive demo, optional LP arm);
+bank-invariant support (clean-bank z-space, fixed kernel h = 2.00); <strong>bidirectional named
+predictions</strong> — the 22 dynamic held-out clips all lose support 100→800 and are predicted to get
+<em>harder</em> (P-A, the risky half); the 20 largest support gainers get easier (P-B); grounded's
+advantage concentrates on the losers (P-D, H2b-S: ρ(Δᴳ⁻ᵁ, Δlog-support) ≤ −0.25). Feasible-only
+primary endpoints per D1; bank composition (ground 3.2 % → 0.65 %, dynamic 11.8 % → 1.9 %) is an
+analysed variable; feasibility flags are a launch gate (already computed for all 900 clips,
+<code>reports/feasibility_e3/feasibility.csv</code>, sentinel present).</p>
+<p><strong>Fills:</strong> after N3 in the Sept-15+ GPU order; results freeze Dec 1.</p>
+<hr />
+<h1>9. A calibrated instrument for physics sensitivity (complete except the P-SIGN slot)</h1>
+<p><strong>Why an instrument section exists.</strong> The G1 gate (§5.2) produced a methodological finding that
+outranks its negative: the natural fragility statistic — mean |φ⁺ − φ⁻| along paired
+single trajectories — is <strong>chaos-dominated</strong>. Two runs of <em>identical</em> physics from identical
+states (the conformance pair of §5.1) already diverge by 2.5–8.4 mm of body-position error within
+seconds; closed-loop humanoid tracking has a Lyapunov horizon of ~1–2 s at the millimetre scale.
+Every intervention effect in the pre-registered analysis (0.003–0.019 m) sat at that floor, which
+is why nothing could be reported under the sealed 5× rule. An instrument that folds the sign
+measures divergence, not mechanism.</p>
+<p><strong>The calibration</strong> (<code>tools/analyze_g1_v2.py</code>; <code>reports/G1/run0/g1_v2_*</code>; labelled <em>instrument
+calibration</em>, not a re-adjudication of G1). Three replacements, each with the floor measured
+identically from the stock-engine arm: <strong>S</strong>, the signed replicate-mean effect
+E_r[mean_t(φ⁺ − φ⁻)] with paired-bootstrap CIs (chaos averages out; shrinks with R); <strong>D</strong>, the
+Wasserstein-1 distance between pooled φ distributions minus the identical-physics W1; <strong>T</strong>,
+paired timing statistics (first-termination shift, contact-onset shift). Resolution criterion:
+|S| &gt; 2× the floor CI half-width with the CI excluding zero.</p>
+<p><strong>What it resolves</strong> (R = 8): the floor drops to ≈ 0 ± 1 mm on long clips, and mechanism effects
+of 6–14 mm stand clear of it — motor strength on 5/6 clips, delay on the dynamic clips
+(+11.9 mm on the 99th-percentile-speed clip), while stiffness/CoM/condim sit at 2–3 mm and
+contact onsets never move (≤ 0.03 s under every intervention). Timing adds a phase channel: +20 ms
+of action delay brings the attractor's fall forward by 0.51 ± 0.14 s.</p>
+<p><strong>It replicates.</strong> An independent replicate set (IC seed 1, <code>reports/G1/run1_seed1/</code>): Pearson
+r = 0.92 across the 36 (axis, clip) signed effects, and <strong>6/6 sign agreement on every effect
+above 5 mm</strong>; 2–4 mm effects flip sign exactly as their CIs permit (<code>plan/N5_RESULT.md</code>). The
+instrument is reproducible where it claims resolution and says so where it does not.</p>
+<p><strong>The one anomaly it certifies</strong> (exploratory, two supporting cases): on the impossible clip —
+and only there — <strong>+15 % motor strength makes tracking worse</strong> (+11.5 / +12.8 mm across seeds,
+CIs excluding zero) while helping every other clip (−2.6 to −14.2 mm). Windowed against the N1
+contact flags, the reversal is absent while the reference is supportable (+0.3 / −1.4 mm),
+switches on in the airborne window (+15.0 / +16.0 mm), and persists into its aftermath. Reading:
+<em>a stronger robot executes an untrackable reference harder.</em> If general, this is a rollout-only
+infeasibility detector — no inverse dynamics, no model of the reference, just paired rollouts.</p>
+<p><strong>[P-SIGN SLOT — sealed <code>c7916e8c…</code> (<code>plan/PREREGISTRATION_P_SIGN.md</code>): ≥ +5 mm airborne-window
+effect with CI excluding zero on ≥ 8 of the 12 named family clips; &lt; 2 mm on ≥ 8 of 12 feasible
+matched controls; ≥ 3× airborne/standing localisation. Pass → this paragraph becomes a
+"rollout-only infeasibility detector" subsection and a candidate runtime guard (deployment: when
+tightening gains worsens a segment, suspect the reference, not the controller). Fail → the
+anomaly stays exactly this one paragraph. Runs in genuine GPU gap capacity; fills when run.]</strong></p>
+<hr />
+<h1>10. Limitations and scope</h1>
+<p><strong>One robot, one embodiment.</strong> Every number is Unitree G1. The screen's verdicts are
+embodiment-relative by construction (a clip infeasible for the G1's leg fold may be feasible for a
+robot with different limits); prevalence rates will differ per robot, though the 0.1–100 %
+per-source spread suggests the pipeline-property conclusion is robust.</p>
+<p><strong>One task configuration.</strong> One reward set (BeyondMimic-style tracking terms), one termination
+set, one PPO configuration, one action space (position targets at 50 Hz). The P-TAX null (§6)
+shows the reward's reference-interpenetration tax does not confound difficulty <em>here</em>; other
+reward configurations were not tested.</p>
+<p><strong>Survival-centric endpoints.</strong> Difficulty = 1 − survival throughout. Tracking-error endpoints
+correlate but were not sealed as primaries. The stratified-start protocol removes the worst
+survival artifact (start-offset averaging) but survival remains a coarse instrument.</p>
+<p><strong>Horizon.</strong> Exp-1/2 trained 4,000 iterations at 4,096 environments; the adaptive-vs-uniform gap
+could in principle close at much longer horizons (an E4 cell is sealed but unscheduled). Branch B
+("grounded ≈ uniform" at 100 clips) is a bounded claim at this scale, not an asymptotic one.</p>
+<p><strong>Simulation only.</strong> No hardware in this paper. The sign-reversal signature (§9) is proposed as a
+deployment-time diagnostic but is untested off-simulator; the sealed P-SIGN test is itself
+simulation. The LUCID-correlation — whether our simulated exposure audit predicts a companion
+project's sim-to-real degradation — is the one bridge on the roadmap, and its N is small (few
+policies, few motions); we state that caveat wherever it is cited.</p>
+<p><strong>Causal slots pending.</strong> N3 (composition) and E3 (support at scale) are sealed with pass criteria
+and pre-listed null responses but not run at submission of this draft; §8 presents them as slots.
+The decomposition's feasibility axis is causally closed only down to measurement (N1) and
+prediction transfer (§7); the repair experiment (N7) that would close it interventionally is
+sealed-after-N3 by design.</p>
+<p><strong>Descoped: the solver-ensemble program.</strong> This project began with the hypothesis that
+disagreement across physics engines could serve as an uncertainty oracle for sim-to-real. We
+descoped it for three reasons, in order of discovery: (i) same-solver conformance consumed the
+error budget — four silent integration errors produced larger effects than any cross-solver
+difference we intended to measure, and until a harness passes per-substep conformance,
+cross-solver disagreement measures the harness; (ii) the fragility gate showed single-trajectory
+divergence is chaos-dominated at exactly the scales an ensemble would integrate over; (iii) the
+attractor that motivated the program dissolved into a data defect. The second engine earned a
+different role — referee (conformance), measurement backend (the batched inverse-dynamics/LP
+screen), and instrument floor (N5) — and we report that plainly rather than as the program
+originally imagined.</p>
+<p><strong>Bank provenance.</strong> One retargeting pipeline's output (whole_body_tracking → G1) was screened at
+scale; the two-retargeter comparison on shared source clips is parked. Claims about <em>source</em> mocap
+quality are explicitly out of scope: the screen certifies the retargeted output on the target
+robot.</p>
+<hr />
+<h1>Exhibit: the sealed record (every pre-registration, hash, prediction, outcome)</h1>
+<p>All hashes sha256 (truncated); seal files in <code>plan/</code>, hash manifests in <code>plan/*.sha256</code>.
+Outcomes: ✅ confirmed · ❌ refuted/null (as sealed) · ⚠ uninformative by registration defect ·
+🕐 slot (sealed, not yet run) · ⬅ withdrawn.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>seal</th>
+<th>hash</th>
+<th>sealed</th>
+<th>primary prediction</th>
+<th>outcome</th>
+<th>artifacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A2 (Exp-2 grounded arm)</td>
+<td><code>37daa8a9</code></td>
+<td>2026-08-16</td>
+<td>grounded beats/matches uniform on AULC; beats adaptive</td>
+<td>✅ grounded ≫ adaptive (AULC +0.055, 3/3 seeds); grounded ≈ uniform (Branch B, AULC −0.002)</td>
+<td><code>plan/BRANCH_DECISION.md</code>, <code>reports/campaign_summary_3arm.json</code></td>
+</tr>
+<tr>
+<td>A2 co-primary (iters-to-target)</td>
+<td>〃</td>
+<td>〃</td>
+<td>grounded reaches uniform's endpoint sooner</td>
+<td>⚠ target was uniform's own rounded-up mean → uniform censored at its own bar; reported as uninformative, no compute-reduction claim</td>
+<td><code>plan/BRANCH_DECISION.md</code></td>
+</tr>
+<tr>
+<td>E10 (α/cap 2×2)</td>
+<td><code>dc207877</code></td>
+<td>2026-08-17</td>
+<td>(frozen before running)</td>
+<td>🕐 frozen per v4/v5</td>
+<td><code>plan/PREREGISTRATION_E10.md</code></td>
+</tr>
+<tr>
+<td>S1 conformance verdict</td>
+<td>— (result, not seal)</td>
+<td>2026-08-17</td>
+<td>Newton ≡ mjlab to seed noise</td>
+<td>⬅ <strong>initial "PASS with a contact-event fork that is itself a fragility measurement" withdrawn</strong>: the fork was four integration errors (#8–11); after fixes 1.000/1.000 vs 1.000/1.000</td>
+<td><code>plan/S1_RESULT.md</code> (revised in place with the withdrawal recorded), <code>reports/S1_*_absorb.json</code></td>
+</tr>
+<tr>
+<td>G1 clip-#44 gate</td>
+<td><code>41e4b20c</code> + addendum <code>2a9ceaca</code></td>
+<td>2026-08-17</td>
+<td>contact-model &amp; CoM fragility ≥ 2× matched-easy, ≥ 5× same-solver floor, pre-failure localisation</td>
+<td>❌ <strong>gate fails as sealed</strong>: 1.30–1.33× on predicted axes; nothing reaches 5× floor; termination fragility zero everywhere</td>
+<td><code>plan/G1_RESULT.md</code>, <code>reports/G1/run0/</code></td>
+</tr>
+<tr>
+<td>N2 support features</td>
+<td>(in <code>plan/N2_RESULT.md</code>, pre-stated)</td>
+<td>2026-08-18</td>
+<td>residuals concentrate on low support ✚ transfer lifts above 0.567</td>
+<td>✅ residuals (ρ +0.60/+0.54) / ❌ transfer (+0.00–0.03, inside noise baseline) — the honest split</td>
+<td><code>reports/N2_atlas_support.json</code></td>
+</tr>
+<tr>
+<td>N3 coverage causality</td>
+<td><code>af1b7c9f</code> (+ precondition <code>3c331e18</code>)</td>
+<td>2026-08-18</td>
+<td>attractor kneel/crawl-phase survival 0.000 → ≥ 0.25 in 2/2 keystone seeds; random16 control &lt; 0.10</td>
+<td>🕐 chain paused (CPU-only rule); first GPU block after Sept 15</td>
+<td><code>reports/N3_baseline_uniform-s1_strat.csv</code></td>
+</tr>
+<tr>
+<td>E3 addendum (support moderation)</td>
+<td><code>f7929136</code></td>
+<td>2026-08-18</td>
+<td>H2b → support-moderation; stratified starts; composition analysed</td>
+<td>🕐 post-Sept-15</td>
+<td>—</td>
+</tr>
+<tr>
+<td>E3 addendum v2 (bidirectional, named)</td>
+<td><code>2c38845b</code></td>
+<td>2026-08-18</td>
+<td>22 named dynamic clips get <em>harder</em> at 800; 20 named gainers easier; ρ(Δᴳ⁻ᵁ, Δsupport) ≤ −0.25</td>
+<td>🕐 post-Sept-15</td>
+<td><code>reports/support_change_heldout100_100to800.csv</code></td>
+</tr>
+<tr>
+<td>Atlas v2.1 feasibility features</td>
+<td><code>9b1a2c78</code></td>
+<td>2026-08-18</td>
+<td>F1 within-bank lift ≥ +0.05 / F2 transfer lift ≥ +0.03 at p &lt; 0.05 / F3 residual anatomy</td>
+<td>❌ F1 / ✅ <strong>F2 (0.567 → 0.609, p = 0.010; all six pairs positive)</strong> / half F3</td>
+<td><code>reports/N_atlas_v21.json</code>, <code>plan/ATLAS_v21_RESULT.md</code></td>
+</tr>
+<tr>
+<td>D1 evaluation policy</td>
+<td><code>a93a87a0</code></td>
+<td>2026-08-19</td>
+<td>(policy, not prediction) feasible-only primary; threshold provenance cited</td>
+<td>— sealed before N3 relaunch / any E3 number</td>
+<td><code>plan/GLOBAL_EVAL_ADDENDUM.md</code></td>
+</tr>
+<tr>
+<td>P-SIGN sign-reversal generality</td>
+<td><code>c7916e8c</code></td>
+<td>2026-08-19</td>
+<td>≥ 8/12 family clips ≥ +5 mm airborne (CI&gt;0); ≥ 8/12 controls &lt; 2 mm; ≥ 3× localisation</td>
+<td>🕐 GPU gap capacity</td>
+<td><code>plan/PREREGISTRATION_P_SIGN.md</code></td>
+</tr>
+<tr>
+<td>P-TAX reward-tax relevance</td>
+<td><code>7960057a</code></td>
+<td>2026-08-19</td>
+<td>tax → difficulty partial CI &gt; 0 on ≥ 2 heldout arms</td>
+<td>❌ <strong>null as sealed</strong> (0/3; significant CIs are <em>negative</em>) — hygiene finding only</td>
+<td><code>plan/P_TAX_RESULT.md</code>, <code>reports/P_TAX_result.json</code></td>
+</tr>
+<tr>
+<td>Research plan v5</td>
+<td><code>4d490cf8</code></td>
+<td>2026-08-19</td>
+<td>(directive encoding)</td>
+<td>—</td>
+<td><code>plan/RESEARCH_PLAN_v5.md</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Also on the record without seals (results that changed course): the atlas transfer criterion miss
+(ρ 0.567 &lt; 0.6 sealed bar, <code>reports/A3_atlas_transfer.json</code>); the H4→H4-r sign correction and the
+A2 target defect (<code>plan/ADDENDUM_2026-08-16.md</code>); the "0.31 survival" start-offset artifact and
+the 12→20 family-count correction (<code>plan/GLOBAL_EVAL_ADDENDUM.md</code>).</p>
+<hr />
+<h1>Appendix A1. Same-solver conformance: the elimination protocol and four silent integration errors</h1>
+<p>We coupled Newton's SolverMuJoCo (MuJoCo-Warp 3.11.0) to mjlab's environment so that mjlab keeps
+observations, the frozen policy, actions and terminations while Newton integrates the physics —
+MuJoCo state ↔ MuJoCo state through <code>solver.mjw_data</code>, one Newton substep per mjlab <code>sim.step()</code>.
+Both sides run the same MuJoCo-Warp version, so the pre-registered prediction was agreement to seed
+noise. Instead the mastered clip KIT_1226 read survival 0.44–0.72 on Newton against 1.00 on mjlab in
+six runs, with the same mean tracking error (Δ ≤ 1 mm) and a fork at control step ~298.</p>
+<p><strong>Protocol.</strong> (i) A complete model diff of the two compiled MJWarp models — every <code>opt.*</code> field, the
+contact pair-filter matrix (469 robot–robot + 33 ground pairs), joints, actuators, geometry.
+(ii) Static and spinning bias-force comparison from identical (q, q̇). (iii) Per-substep paired
+stepping: from identical (q, q̇, ctrl, warm-start) at every substep of the forking window, one step
+in each engine, comparing q̈, constraint forces, contact counts. (iv) Contact-set diffs with
+<strong>MuJoCo-C as a third referee</strong> stepping the same pre-state. (v) A <strong>shadow</strong> solver: mjlab's engine
+stepping <em>Newton's own trajectory</em> substep by substep during a Newton-driven rollout.</p>
+<p><strong>Findings.</strong> Four integration errors, all silent, none physics:
+1. mjlab's startup domain randomisation (torso CoM ±2.5/5/5 cm, foot μ 0.3–1.2) is written into
+   <code>env.sim.wp_model</code> after compile and never reaches the spec; Newton was integrating the nominal
+   robot — a 3.3 N·m base gravity-torque residual, visible only as a ~1 cm whole-body CoM shift.
+   Fix: mirror the DR-expanded fields by name and recompute derived constants (residual → 3e-6).
+2. Newton's MJCF import rounds geometry through float32 transforms (geom quaternions 4e-7 off,
+   body positions 3e-7). MuJoCo includes a contact iff dist &lt; 0, and a lightly loaded foot capsule
+   rests at dist ≈ 0: the offset decides whether a <em>frictional</em> contact exists. At every disagreeing
+   substep Newton carried exactly one extra ground–foot contact at dist −0.0; MuJoCo-C agreed with
+   mjlab to 1e-3 and with Newton not at all (0.05–3.3 rad/s). Fix: copy the reference's exact float32
+   geometry into Newton's model (0 mismatches over 300 steps × 8 worlds).
+3. The motion command teleports the robot after <code>reset()</code> computed its observation; the first
+   action was a random kick.
+4. The coupling was one-directional. KIT_1226 is a 6.0 s clip; step 299 is its <em>wrap</em>, where the
+   motion command teleports the robot onto a fresh reference by writing qpos/qvel into mjlab's sim.
+   mjlab's arm got teleported; Newton's arm had the write overwritten by its own physics one substep
+   later and chased a reference that had jumped. Auto-resets and push events write state the same
+   way. Fix: absorb any environment-side state write into the solver at the start of each substep.</p>
+<p>After the fixes: KIT_1226 1.000/1.000 vs 1.000/1.000 (Δerr −0.5 mm), clip #44 0.000 vs 0.000
+(Δerr +1 mm), per-substep |Δq̇| ≤ 3e-5 across the whole window, contact counts identical. The
+same-solver residual is what makes the fragility instrument of §5 (N5) interpretable, and the
+protocol is reusable: any second physics implementation coupled to an RL harness should be held to
+per-substep paired stepping with an independent referee, not to end-of-episode metrics, which
+matched throughout.</p>
+<hr />
+<h1>Appendix A2. Instrument calibration detail (N5)</h1>
+<p><em>All numbers: <code>reports/G1/run0/g1_v2_summary.json</code>, <code>reports/G1/run1_seed1/g1_v2_summary.json</code>,
+<code>plan/N5_RESULT.md</code>. Labels as marked.</em></p>
+<p><strong>Why the folded statistic fails [measured].</strong> Two integrations of identical physics from
+identical states (the §5.1-certified pair) diverge by 2.5–8.4 mm of body-position error within
+seconds — closed-loop tracking is chaotic with a ~1–2 s Lyapunov horizon at the millimetre scale.
+Mean |φ⁺ − φ⁻| along paired trajectories therefore measures divergence, not mechanism: every G1
+intervention effect (3–19 mm) sat at that floor, which is why the sealed 5× rule reported nothing.</p>
+<p><strong>The three calibrated statistics.</strong> <strong>S</strong> = E_replicates[mean_t(φ⁺ − φ⁻)] with paired-bootstrap
+95 % CIs (2,000 draws) — signed, so chaos cancels in expectation and shrinks with R;
+<strong>D</strong> = W1(pooled φ⁺, pooled φ⁻) − W1(identical-physics pair); <strong>T</strong> = paired first-termination
+shift and per-foot contact-onset shift. Resolution rule: |S| &gt; 2× the floor CI half-width with
+the CI excluding zero.</p>
+<p><strong>Floor behaviour [measured].</strong> With R = 8 the identical-physics floor is ≈ 0 ± 1 mm on long
+clips (−0.1 [−0.9, +0.5] on the attractor; +0.2 [−1.0, +1.5] on the easy control) — the unbiased
+noise reference every effect is read against, published per run.</p>
+<p><strong>Resolved effects [exploratory labels; two independent IC-seed sets].</strong> Motor ±15 %: resolved on
+5/6 clips, spanning −14.2 mm (helps, high-dynamic clip) to +11.5/+12.8 mm (hurts, the impossible
+clip — the sign reversal, airborne-window-localised in both sets: +15.0/+16.0 mm airborne vs
++0.3/−1.4 mm standing). Delay +20 ms: resolved on the dynamic clips (+11.9/+9.8 mm) and advances
+the attractor's fall by 0.51 ± 0.14 s. Stiffness/CoM/condim: 2–3 mm class, mostly unresolved.
+Contact onsets move ≤ 0.03 s under every intervention — no intervention changes <em>when</em> feet land,
+only what happens after.</p>
+<p><strong>Replication [measured].</strong> Across seed sets: Pearson r = 0.92 over all 36 (axis, clip) effects;
+6/6 sign agreement on every effect above 5 mm; 2–4 mm effects flip sign exactly as their CIs
+permit. The instrument is reproducible where it claims resolution and says so where it does not.</p>
+<p><strong>What a future fragility design inherits.</strong> Signed replicate means, R ≥ 8, published per-run
+floor, δ sized so target effects clear ~2 mm, and reference-derived (not rollout-derived) windows
+for any localisation claim — the exact configuration P-SIGN is sealed under [pending 🕐].</p>
+<hr />
+<h1>Appendix A3. Screen validation detail</h1>
+<p><em>Artifacts: <code>reports/N1_clip44_knee_id.json</code>, <code>reports/N1_CMU76_knee_id.json</code>,
+<code>reports/N1_gap_sensitivity.json</code>, <code>reports/upstream_drafts/CNRS_AUDIT.md</code>,
+<code>reports/repair_census/summary.json</code>. Labels as marked.</em></p>
+<p><strong>Internal controls [measured].</strong> Within the attractor clip itself the screen's phases align with
+mechanics: standing and kneeling phases report 0 N torque-limited residual (the kneel even under
+the simulator's frictionless-knee contact model); only the transitions flag. The matched-easy
+control is supported at every frame (τ/limit p95 = 0.66). The synthetic hover demo (a standing
+pose translated upward) flags at exactly its constructed 45 %.</p>
+<p><strong>Parameter sensitivity [measured; found by adversarial review, reported as found].</strong> The contact
+gap is a real choice with two failure modes: at 3 cm the feasible control itself flags 42 %
+(the bank carries a ~3 cm systematic stance-clearance offset from retarget ground alignment); at
+10 cm the screen degenerates (airborne geometry is granted as contact and the attractor's descent
+reads 0 %). 6 cm sits between the failure modes — above the bank's clearance offset, below
+bridgeable distance. The ½-weight bound is insensitive (flag mass 15.1/13.1/12.5 % at
+0.25/0.5/0.75× weight) because unsupported force concentrates near 1× weight. Flight is exempt by
+construction (free fall demands no support), verified on a jump clip whose ballistic phases do
+not flag while its floating preparation frames do.</p>
+<p><strong>External validation [measured].</strong> (i) Hand-checks of the extreme sources: the 100 %-flagged
+subset is ordinary walking whose output floats 6–8 cm — screen verdict reproduced end-to-end from
+raw npz. (ii) The rollout-only sign-reversal localises to screen-flagged windows in two
+independent seed sets without the rollouts ever seeing the screen. (iii) The repair census closes
+the loop constructively: lowering the root exactly where the screen says support is missing
+removes the flag in 65.8 % of 2,443 clips (residual ≤ 5 %), is a no-op on feasible controls, and
+is correctly <em>refused</em> by the over-repair budget on genuine ballistics — a screen that flagged
+noise would not respond to a targeted geometric fix this way.</p>
+<p><strong>Known limits.</strong> Plane-only terrain; embodiment-relative verdicts; q̈ from smoothed central
+differences (5-frame) — velocity-spike artifacts (one observed 40 rad/s glitch) are a separate QC
+class the screen does not target.</p>
+<hr />
+</div></body></html>
