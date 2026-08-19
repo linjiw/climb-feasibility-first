@@ -24,3 +24,25 @@ Predictions (to be sealed with numbers from N3's readout):
 - unrepaired family clips do not improve on their descent phases in the same run (specificity).
 Null follow-ups: repair too aggressive (kneel changes) → measure joint-space distance to original;
 policy capacity → none claimed.
+
+## Extension 2026-08-20 (before sealing; per Linji's repair-vs-prune directive)
+
+**Operator now exists and is validated** (`tools/repair_contact_projection.py`; #44: 0.13→0.00
+at 8.2 cm max root adjustment; CNRS walk 0.66→0.01; correctly refuses genuine ballistics;
+no-op on feasible controls). The full flagged-bank census is running
+(`reports/repair_census/`).
+
+**Arms (revised; to be sealed with N3's readout numbers):**
+- R1 **repair**: N3's augmented bank with the #44-family flagged clips *repaired* (operator
+  output, screen-verified ≤ 5 % infeasible), 1 seed;
+- R2 **prune**: same bank with those flagged clips *removed*, 1 seed — the repair-vs-prune
+  causal comparison at matched compute;
+- comparator: N3's keystone arms (flagged clips present, unrepaired).
+
+**Predictions to seal (numbers fixed after N3 reads out):** repaired descent phases become
+learnable (stratified-start survival at offsets {0,1} s rises above the N3 keystone's, which N3
+predicts stays ≤ 0.25); the motor-strength sign reversal vanishes on repaired clips (airborne-
+window S within ±2 mm of the per-run floor — also the P-SIGN mechanism's falsifier,
+`plan/P_SIGN_PREP.md` §2); prune arm matches repair on non-ground categories but loses on
+ground-category zero-shot (held-out feasible ground clips) — the distribution-coverage cost of
+pruning made measurable.

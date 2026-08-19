@@ -1,0 +1,18 @@
+{
+ "mixed100": {
+  "flagged_clips": 25,
+  "clip_draw_share_to_flagged": 0.25,
+  "expected_infeasible_frame_share_clip_uniform": 0.060597414125868776,
+  "infeasible_frame_share_duration_weighted": 0.05623988063113113
+ },
+ "adaptive": {
+  "mean_top1_mass": 0.4884832416666667,
+  "exposure_to_impossible_clip_mean": 0.4884832416666667,
+  "note": "#44 infeasible frames 13%, but zero-survivable from any ground-segment start: exposure past the first failure point yields no gradient signal on later phases"
+ },
+ "bank": {
+  "flagged_clip_share": 0.228,
+  "flagged_duration_share": 0.274,
+  "mean_infeasible_frame_share": 0.0982353180851696
+ }
+}

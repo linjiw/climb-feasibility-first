@@ -198,3 +198,22 @@ causality `af1b7c9f` 🕐; E3 support moderation `2c38845b` 🕐; P-SIGN `c7916e
 (seal pending N3). Figures: F1 anatomy, F2 prevalence — scripts + data in `paper/RESULTS_LOG.md`.
 Author list / acknowledgements TBD with Linji. Upstream note drafts are separate documents
 awaiting approval (`reports/upstream_drafts/`).*
+
+## 5b. What tracking an infeasible reference does — measured in sim, predicted for hardware
+
+*(Added v0.3, 2026-08-20; requires review before submission — logged in REVIEW addendum.)*
+
+Measured [`reports/effort_sat_at_fall.json`, from `reports/G1/run0/armA.npz`]: tracking the
+airborne descent, **zero of 29 actuators saturate at any point in the supported phase; within
+0.6 s of the post-airborne contact event, 5/29 actuators (wrists, waist) pin at ≥ 98 % of force
+range, in 8/8 replicates**. The failure mode is not gradual degradation — it is a commanded hover
+ending in an unplanned ~0.3 m fall onto joints that are not landing gear (estimated ~2.4 m/s
+touchdown, ~95 J to dissipate [estimate]). Predicted hardware phenomenology [exploratory,
+sim-grounded, no hardware claims]: impact loading on wrists/knees at every attempt of the
+segment; current/thermal-limit bursts invisible in average torque; and — per the sign-reversal
+mechanism [exploratory; `plan/P_SIGN_PREP.md`] — *gain increases make these segments worse*, so
+the standard sim-to-real reflex of stiffening the controller is counter-productive exactly here.
+The G1 gate adds a fourth cost [sealed ✗, kept]: no physics randomisation changes the outcome, so
+DR budget spent on these segments buys nothing. Practical consequence: the screen is a
+1-CPU-second **pre-deployment safety filter**, and its runtime complement — flag a segment when
+tightening gains worsens tracking — is exactly the pre-registered P-SIGN detector [pending 🕐].

@@ -49,3 +49,12 @@ pre-registered composition experiment (N3) conditions on it: augmentation is pre
 kneel/crawl phase trackable and to leave the descent unlearnable; a later repair experiment (N7)
 projects the transition back onto contact and predicts the descent becomes learnable and the
 motor-strength sign reversal disappears.
+
+**Deployment implication (measured in sim; hardware phenomenology predicted, labeled).** Tracking
+the airborne descent saturates zero actuators until contact, then pins 5/29 at ≥ 98 % force range
+within 0.6 s, in 8/8 replicates (`reports/effort_sat_at_fall.json`) — an unplanned ~0.3 m fall
+onto wrists and knees at every attempt. With G1 having shown no physics parameter changes the
+outcome [sealed ✗, kept] and the sign-reversal indicating gain increases make such segments
+*worse* [exploratory; P-SIGN pending 🕐], the screen functions as a pre-deployment safety filter:
+1 CPU-second per clip against impact retries, current-limit bursts, and wasted DR budget on
+unfixable segments.
