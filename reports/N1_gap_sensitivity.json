@@ -1,0 +1,52 @@
+{
+ "note": "MAJOR-1 fix: durable gap-sensitivity artifact; brief screen at gap 0.03/0.06/0.10 for the anatomized clip and its control",
+ "rows": [
+  {
+   "clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+   "gap": 0.03,
+   "airborne_frac": 0.250501002004008,
+   "infeasible_frac": 0.250501002004008,
+   "unsupported_impulse_per_weight_s": 2.7109551457148426
+  },
+  {
+   "clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+   "gap": 0.06,
+   "airborne_frac": 0.12424849699398798,
+   "infeasible_frac": 0.13026052104208416,
+   "unsupported_impulse_per_weight_s": 1.4070037286398622
+  },
+  {
+   "clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+   "gap": 0.1,
+   "airborne_frac": 0.0,
+   "infeasible_frac": 0.0,
+   "unsupported_impulse_per_weight_s": 0.10345588674812939
+  },
+  {
+   "clip": "CMU_76_76_02_poses_120_jpos",
+   "gap": 0.03,
+   "airborne_frac": 0.41237113402061853,
+   "infeasible_frac": 0.4247422680412371,
+   "unsupported_impulse_per_weight_s": 4.5684221561657585
+  },
+  {
+   "clip": "CMU_76_76_02_poses_120_jpos",
+   "gap": 0.06,
+   "airborne_frac": 0.0,
+   "infeasible_frac": 0.0,
+   "unsupported_impulse_per_weight_s": 0.16632800847779822
+  },
+  {
+   "clip": "CMU_76_76_02_poses_120_jpos",
+   "gap": 0.1,
+   "airborne_frac": 0.0,
+   "infeasible_frac": 0.0,
+   "unsupported_impulse_per_weight_s": 0.12940699398609035
+  }
+ ],
+ "bound_sensitivity_clip44": {
+  "frac_gt_0.25xW": 0.15120967741935484,
+  "frac_gt_0.5xW": 0.1310483870967742,
+  "frac_gt_0.75xW": 0.125
+ }
+}

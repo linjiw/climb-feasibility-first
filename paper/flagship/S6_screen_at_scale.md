@@ -27,8 +27,9 @@ A three-orders-of-magnitude spread across sources under one pipeline and one rob
 pipeline × source property, not a difficulty gradient. Of the attractor's 40 nearest kneel/crawl
 neighbours, 20 exceed the threshold; the KIT kneel_down_to_crawl clips sit at 3–8 %.
 
-**Evaluation-set contamination.** 29 of our own 100 held-out clips are flagged. They depress every
-policy's aggregate by 6–11 points and cannot separate samplers (§4). Policy, sealed before any new
+**Evaluation-set contamination.** 29 of our own 100 held-out clips are flagged. They score 6.0–8.4 points below each policy's
+all-clips aggregate (8.4–11.8 below its feasible stratum; `reports/N_atlas_v21.json`) and cannot
+separate samplers (§4). Policy, sealed before any new
 number existed (`plan/GLOBAL_EVAL_ADDENDUM.md`, `a93a87a0…`): primary endpoints on the
 feasible-only stratum, all-clips secondary, infeasible-only descriptive; the threshold's
 provenance (it predates the policy) is recorded in the seal. We do not swap the evaluation set

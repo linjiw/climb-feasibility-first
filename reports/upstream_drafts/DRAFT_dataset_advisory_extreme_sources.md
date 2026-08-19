@@ -26,9 +26,22 @@ limits? Clip flag: > 10 % of frames infeasible (unsupported wrench > ½ robot we
 | **all** | **10,705** | **22.8 %** |
 
 A 0.1 %-to-100 % spread across sources under one retargeting pipeline and one robot is not a
-motion-difficulty gradient; it indicates a source-convention × pipeline interaction (candidates:
-ground-plane definition, units/scale, skeleton conventions, subject calibration) that converts
-entire subsets into references no controller could track.
+motion-difficulty gradient. Hand-checks (2026-08-20, `CNRS_AUDIT.md`) pin the mechanisms:
+
+- **CNRS (100 % flagged):** the clips are *ordinary fast walks* (6.9–7.4 m of root travel in
+  5–7 s) whose retargeted trajectory rides ~4–5 cm high — in the median frame **no part of the
+  robot is within 6 cm of the floor** (median lowest-geom clearance 6.2–7.7 cm; feet dip to
+  contact only momentarily). The source motion is fine; the output floats. This is a subset-wide
+  root-height/leg-length convention interaction — the "lift the limb instead of lowering the
+  root" failure expressed continuously.
+- **Transitions (90 % flagged):** genuinely acrobatic content (airkicks, jumps, twists), so the
+  rate over-indexes on content — but the screen already exempts true ballistic flight (a body in
+  free fall demands no support), so the flagged frames are *non-ballistic floating* around
+  take-off and landing; per-clip severity is moderate (e.g. jump-in-place: 22 % infeasible vs
+  CNRS's 57–66 %).
+
+One secondary QC observation (exploratory, one clip): a 40 rad/s joint-velocity spike in
+CNRS_283_-01_L_1 — a retarget glitch class our screen does not target.
 
 ## Why it matters
 
@@ -36,14 +49,18 @@ These clips enter humanoid-tracking training banks silently: they pass kinematic
 velocities, smoothness). Downstream they (a) poison failure-adaptive samplers — a failure-weighted
 curriculum locks onto motions that are impossible rather than hard (documented case:
 whole_body_tracking #73 companion); (b) contaminate evaluation sets — in our 100-clip held-out
-set, 29 clips are flagged and depress every policy's score by 6–11 points; (c) corrupt difficulty
+set, 29 clips are flagged and score 6.0–8.4 points below each policy's all-clips aggregate; (c) corrupt difficulty
 labels used for curricula and benchmarks.
 
 ## Ask
 
 - Treat per-robot dynamic feasibility as a release-time QC dimension alongside kinematic checks
   (tool: refeas v0.1.0, Apache-2.0, ~1 CPU-s/clip).
-- For CNRS and Transitions specifically: a conventions audit before further retarget releases.
+- For CNRS-class defects: a per-source *root-height/contact consistency pass* (stance feet should
+  touch the floor during locomotion) would catch entire subsets wholesale; per-clip flags catch
+  the remainder.
+- For Transitions-class content: report airborne and infeasible fractions separately (the screen
+  distinguishes them; free fall is exempt from the infeasible flag).
 - We are demonstrating an artifact of the *retargeted output*; the source mocap itself may be
   fine — the advisory is about the pairing.
 

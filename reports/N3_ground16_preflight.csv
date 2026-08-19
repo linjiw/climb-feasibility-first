@@ -1,0 +1,17 @@
+clip,infeasible_frac,knn_dist_vs_mixed100,support_density,duration_s
+BMLmovi_Subject_36_F_MoSh_Subject_36_F_2_poses_120_jpos,0.0889,2.060,0.02058,9.0
+BMLmovi_Subject_66_F_MoSh_Subject_66_F_11_poses_120_jpos,0.0578,2.531,0.01482,14.5
+BMLmovi_Subject_43_F_MoSh_Subject_43_F_15_poses_120_jpos,0.0909,2.625,0.01676,13.6
+BMLmovi_Subject_62_F_MoSh_Subject_62_F_6_poses_120_jpos,0.0904,2.244,0.01528,11.3
+Eyes_Japan_Dataset_hamada_pose-11-bended_knees-hamada_poses_120_jpos,0.0578,2.433,0.01562,29.8
+BMLmovi_Subject_32_F_MoSh_Subject_32_F_1_poses_120_jpos,0.0762,2.686,0.00835,12.1
+KIT_3_kneel_down_to_crawl02_poses_100_jpos,0.0760,2.645,0.01046,5.3
+Eyes_Japan_Dataset_kawaguchi_sitdown_standup-11-one_knee_drawn_up-kawaguchi_poses_120_jpos,0.0490,2.542,0.01363,20.0
+BMLmovi_Subject_6_F_MoSh_Subject_6_F_3_poses_120_jpos,0.0973,2.608,0.01159,12.7
+CMU_107_107_08_poses_60_jpos,0.0971,2.238,0.02162,13.8
+KIT_3_kneel_down_to_crawl01_poses_100_jpos,0.0528,2.718,0.00812,6.4
+ACCAD_Male2MartialArtsStances_c3d_D13_-crouch_to_ready_poses_120_jpos,0.0372,2.282,0.02388,3.8
+KIT_3_kneel_down_to_crawl07_poses_100_jpos,0.0561,2.768,0.00958,6.1
+Eyes_Japan_Dataset_shiono_sitdown_standup-11-one_knee_drawn_up-shiono_poses_120_jpos,0.0579,2.497,0.01623,28.3
+KIT_3_kneel_down_to_crawl08_poses_100_jpos,0.0605,2.861,0.00963,5.0
+KIT_3_kneel_down_to_crawl03_poses_100_jpos,0.0345,2.883,0.00887,5.8

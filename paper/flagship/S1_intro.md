@@ -45,8 +45,10 @@ that survives a permutation baseline (Spearman 0.567 → 0.609, p = 0.01): feasi
 component of difficulty that belongs to the clip rather than to any particular training run (§7).
 
 The audit itself required two methodological instruments that we release with the paper. First, a
-dual-engine conformance protocol: before any physics claim, a second implementation of the *same*
-simulator was coupled to the training harness and driven to per-substep agreement (|Δq̇| ≤ 3×10⁻⁵)
+dual-stack conformance protocol: before any physics claim, the *same* engine (MuJoCo Warp 3.11.0)
+was reached through a second integration stack — Newton (commit `7bb6d02d`) via its SolverMuJoCo
+path, against mjlab v1.6.0 driving it directly, with classic MuJoCo 3.11.0 (C) as a third referee —
+and driven to per-substep agreement (|Δq̇| ≤ 3×10⁻⁵)
 — which surfaced four silent integration errors whose combined effect, a 40-point survival fork,
 we had initially misread as a finding and here explicitly withdraw (§5.1, Appendix A1). Second, a
 calibrated sensitivity statistic: paired-trajectory differences are chaos-dominated at the
@@ -72,5 +74,5 @@ coverage-grounded repair that provably floors exposure and rescues failure-weigh
 (3) The feasibility × support × intrinsic decomposition of tracking difficulty, with a released
 ~1 CPU-s/clip dynamic-feasibility screen, bank-scale prevalence, and the demonstration that
 feasibility is the transferable component of difficulty. (4) An audit methodology for
-simulation-based robot learning — dual-engine conformance, stratified-start evaluation, calibrated
+simulation-based robot learning — dual-stack conformance, stratified-start evaluation, calibrated
 paired-rollout sensitivity, and a sealed prediction ledger — released as tools and protocols.

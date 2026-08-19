@@ -13,7 +13,7 @@ failure-adaptive (BeyondMimic-style bin sampling, probability ∝ failure EMA + 
 clip in all three (BMLmovi_Subject_64_9, "#44"). Uniform holds entropy 1.0 by construction; grounded
 holds 0.60–0.62 with top-1 ≤ 0.57–0.70. Held-out survival at 4000 iterations: adaptive 0.780 ± 0.006,
 grounded 0.825 ± 0.009, uniform 0.810 ± 0.005; area under the learning curve 0.640 / 0.696 / 0.698.
-Uniform beats adaptive in 3/3 seeds (Δ +0.029, d_z = 20); grounded matches uniform on the primary
+Uniform beats adaptive in 3/3 seeds — per-seed Δ(uniform − adaptive) at iteration 3999: +0.0300 / +0.0275 / +0.0300 (mean +0.0292; recomputed from `reports/campaign/*_it3999.csv`); the standardized d_z = 20.2 (`reports/campaign_summary_3arm.json`) merely reflects the 0.0014 seed s.d. and is footnoted, not headlined — at n = 3 the permutation floor is p = 0.125 and the sign test is 3/3. Grounded matches uniform on the primary
 (AULC −0.002) and edges it on the endpoint (+0.015, 3/3 seeds) — Branch B, pre-registered.
 
 **The non-floor.** The upstream sampler mixes an ε/N term *additively into counts*, so the effective

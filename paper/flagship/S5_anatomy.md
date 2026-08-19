@@ -11,8 +11,10 @@ physics was excluded.
 
 To ask physics questions we coupled a second implementation — Newton's SolverMuJoCo — to the
 training environment so that the environment kept observations, the frozen policy, actions and
-terminations while the second engine integrated the dynamics. Both sides run the *same*
-MuJoCo-Warp version, so the sealed prediction was agreement to seed noise. Instead: survival
+terminations while the second stack integrated the dynamics. Both sides run the *same*
+MuJoCo-Warp 3.11.0 (mjlab v1.6.0 directly; Newton commit `7bb6d02d`, warp-lang 1.16.0, via
+SolverMuJoCo — pins in `plan/PREREGISTRATION_G1_clip44.md`), so the sealed prediction was
+agreement to seed noise. Instead: survival
 0.44–0.72 vs 1.00 on a mastered clip, with identical mean tracking error, across six runs.
 
 Under the standing rule that **any same-solver discrepancy is integration error until proven

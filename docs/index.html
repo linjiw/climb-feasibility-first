@@ -103,7 +103,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
     <div class="card"><h3>Scheduler layer</h3><p>The failure-adaptive sampler's advertised uniform floor is
       <em>additive in counts</em> — the real floor is ε/(Σq+ε) &lt; 1 % and shrinks with the number of environments.
       Collapse is the default, not the exception.</p><span class="ev">mjlab #1153 · whole_body_tracking #73</span></div>
-    <div class="card"><h3>Harness layer</h3><p>Four silent integration errors made two runs of the <em>same physics engine</em>
+    <div class="card"><h3>Harness layer</h3><p>Four silent integration errors made the <em>same physics engine</em> — MuJoCo Warp 3.11.0, reached through two integration stacks (mjlab v1.6.0 directly; Newton 7bb6d02d via SolverMuJoCo) —
       disagree by 40 points of survival: unmirrored domain randomisation, float32 geometry deciding knife-edge contacts,
       a stale first observation, one-directional state coupling.</p><span class="ev">plan/S1_RESULT.md · errors #8–11</span></div>
     <div class="card"><h3>Data layer</h3><p>Retargets pass kinematic QC — joint limits, velocities, smoothness — while being
@@ -120,8 +120,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
   <h2>Five acts, each killing the previous explanation</h2>
   <div class="acts">
     <div class="act bug"><h3>Act 1 — A curriculum loses to uniform sampling</h3>
-      <p>Three seeds of failure-adaptive training under-perform plain uniform (held-out survival 0.780 vs 0.810, 3/3 seeds,
-      d<sub>z</sub> = 20) while pouring 87–89 % of exposure onto a single kneel-and-crawl clip. Deriving the sampler's math
+      <p>Three seeds of failure-adaptive training under-perform plain uniform (held-out survival 0.780 vs 0.810; per-seed Δ = +0.030/+0.028/+0.030) while pouring 87–89 % of exposure onto a single kneel-and-crawl clip. Deriving the sampler's math
       exposes the non-floor; both upstream repos notified.</p><span class="who">sealed-confirmatory · Exp-1 · reports/campaign_summary_3arm.json</span></div>
     <div class="act"><h3>Act 2 — A one-line repair restores coverage</h3>
       <p>Normalise-then-mix (a true 10 % floor on the simplex) keeps the same failure signal but bounds what it can spend:
@@ -223,8 +222,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
   retargeting fix); support by bank-relative kNN density and fixed by composition; intrinsic difficulty by the reference
   atlas and addressed by curricula and robustness training.</figcaption></figure>
   <div class="callout"><p><b>Why this matters beyond one robot:</b> feasibility turned out to be the only difficulty
-  component that <em>transfers across policies</em> (Spearman 0.567 → 0.609, permutation p = 0.010; positive on all six
-  transfer pairs) — because it is a property of the reference on the robot, not of any training run. Difficulty labels,
+  component that <em>transfers across policies</em> (Spearman 0.567 → 0.609 on the headline pair, permutation p = 0.010; direction positive on 6/6 transfer pairs, 4/6 significant beyond a random-feature baseline — the two →grounded pairs move +0.015/+0.018 but do not clear it) — because it is a property of the reference on the robot, not of any training run. Difficulty labels,
   benchmark rankings, and curricula built without it inherit a policy-specific bias.</p></div>
 </section>
 
@@ -260,7 +258,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       A rollout-only infeasibility detector, if it generalises: P-SIGN is sealed with named clips and three pass criteria.</p>
       <span class="ev">PREREGISTRATION_P_SIGN.md c7916e8c</span></div>
     <div class="card"><h3>Conformance harness <span class="pill sealed">closed ✓</span></h3>
-      <p>A validated dual-engine instrument: per-substep |Δq̇| ≤ 3×10⁻⁵ after eliminating four silent integration errors —
+      <p>A validated dual-stack, same-engine instrument (MuJoCo Warp 3.11.0 via mjlab v1.6.0 and via Newton 7bb6d02d; classic MuJoCo 3.11.0 C as third referee): per-substep |Δq̇| ≤ 3×10⁻⁵ after eliminating four silent integration errors —
       with the elimination protocol (paired substeps, third referee, shadow solver) as reusable method.</p>
       <span class="ev">S1_RESULT.md · S1_*_absorb.json</span></div>
   </div>
