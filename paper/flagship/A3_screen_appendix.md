@@ -25,10 +25,23 @@ subset is ordinary walking whose output floats 6–8 cm — screen verdict repro
 raw npz. (ii) The rollout-only sign-reversal localises to screen-flagged windows in two
 independent seed sets without the rollouts ever seeing the screen. (iii) The repair census closes
 the loop constructively: lowering the root exactly where the screen says support is missing
-removes the flag in 65.8 % of 2,443 clips (residual ≤ 5 %), is a no-op on feasible controls, and
+removes the flag in 1,606 of the strict 2,442 flagged clips (65.8%, residual ≤ 5 %; C4), is a no-op on feasible controls, and
 is correctly *refused* by the over-repair budget on genuine ballistics — a screen that flagged
 noise would not respond to a targeted geometric fix this way.
 
-**Known limits.** Plane-only terrain; embodiment-relative verdicts; q̈ from smoothed central
+**Cross-implementation validation [measured; §6].** The strongest external check is a second,
+independently written implementation of the same method (different codebase, different G1 MJCF,
+μ 0.7 rather than 0.6) applied to a different production bank. It returns 0.14 % of 4,950 clips
+above the 10 %-infeasible threshold — a screen carrying a systematic bug, or one that conflated
+flight with infeasibility, would not return near-zero on a bank that contains 111 clips above
+10 % airborne frames and 7 `kneeling_loop_*` clips at airborne fraction 1.000 with infeasible
+fraction 0.000. The same run is a discrimination test the method passes in the other direction:
+those kneeling loops carry their weight on the knees and are supportable at every frame.
+
+**Known limits.** Plane-only terrain — and the second bank makes the cost concrete: its flagged
+box jumps (four of its seven flagged clips) are unsupportable only because the 50 cm box they use is
+absent from the screened scene
+(a scene/reference mismatch, not a retarget defect, and not repairable by root projection).
+Embodiment-relative verdicts; q̈ from smoothed central
 differences (5-frame) — velocity-spike artifacts (one observed 40 rad/s glitch) are a separate QC
 class the screen does not target.

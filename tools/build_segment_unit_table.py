@@ -6,10 +6,17 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
+import sys
 from pathlib import Path
 from typing import Any
 
 import numpy as np
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+
+from climb.dfrp import sha256_file as dfrp_sha256_file
+from climb.dfrp import validate_dfrp_manifest
 
 SCHEMA = "segment_unit_table/1"
 
@@ -68,11 +75,27 @@ def build_manifest(
     sidecar_dir: Path,
     *,
     horizon_steps: int,
+    dfrp_manifest_path: Path | None = None,
 ) -> dict[str, Any]:
     """Validate exact sidecars and return a canonical training-unit manifest."""
     if horizon_steps <= 0:
         raise ValueError("horizon_steps must be positive")
     names = read_names(clips_path)
+    dfrp_rows: dict[str, dict[str, Any]] | None = None
+    dfrp_payload_sha256: str | None = None
+    dfrp_file_sha256: str | None = None
+    if dfrp_manifest_path is not None:
+        dfrp_manifest = json.loads(dfrp_manifest_path.read_text())
+        validate_dfrp_manifest(dfrp_manifest)
+        dfrp_rows = {row["name"]: row for row in dfrp_manifest["clips"]}
+        missing = [name for name in names if name not in dfrp_rows]
+        if missing:
+            raise ValueError(
+                f"{len(missing)} clips are absent from the DFRP manifest, "
+                f"e.g. {missing[:3]}"
+            )
+        dfrp_payload_sha256 = dfrp_manifest["payload_sha256"]
+        dfrp_file_sha256 = dfrp_sha256_file(dfrp_manifest_path)
     sources: list[dict[str, Any]] = []
     source_units: list[dict[str, Any]] = []
     admissible_units: list[dict[str, Any]] = []
@@ -89,6 +112,22 @@ def build_manifest(
             frames = len(archive["joint_pos"])
             fps = float(np.asarray(archive["fps"]).reshape(-1)[0])
         sidecar = json.loads(sidecar_path.read_text())
+        dfrp_row = dfrp_rows[name] if dfrp_rows is not None else None
+        if dfrp_row is not None:
+            if not dfrp_row.get("training_eligible"):
+                raise ValueError(f"{name}: DFRP route is not training-ready")
+            if dfrp_row.get("route") not in (
+                "raw_feasible",
+                "repair_primary",
+                "segment_only",
+            ):
+                raise ValueError(f"{name}: DFRP route cannot enter training")
+            training_motion = dfrp_row.get("training_motion") or {}
+            if training_motion.get("sha256") != sha256_file(motion_path):
+                raise ValueError(f"{name}: motion does not match the DFRP route")
+            training_sidecar = dfrp_row.get("training_sidecar") or {}
+            if training_sidecar.get("sha256") != sha256_file(sidecar_path):
+                raise ValueError(f"{name}: sidecar does not match the DFRP route")
         required = (
             "source_screen_sha256",
             "reducer_sha256",
@@ -129,21 +168,27 @@ def build_manifest(
         if not isinstance(records, list) or len(records) != len(feasible):
             raise ValueError(f"{name}: segment record table is misaligned")
 
-        sources.append(
-            {
-                "clip_id": clip_id,
-                "clip": name,
-                "frames": frames,
-                "fps": fps,
-                "motion_sha256": sha256_file(motion_path),
-                "sidecar_sha256": sha256_file(sidecar_path),
-                "source_screen_sha256": sidecar["source_screen_sha256"],
-                "reducer_sha256": sidecar["reducer_sha256"],
-                "guard_s": sidecar["guard_s"],
-                "guard_mode": sidecar["guard_mode"],
-                "severity": sidecar["severity"],
-            }
-        )
+        source = {
+            "clip_id": clip_id,
+            "clip": name,
+            "frames": frames,
+            "fps": fps,
+            "motion_sha256": sha256_file(motion_path),
+            "sidecar_sha256": sha256_file(sidecar_path),
+            "source_screen_sha256": sidecar["source_screen_sha256"],
+            "reducer_sha256": sidecar["reducer_sha256"],
+            "guard_s": sidecar["guard_s"],
+            "guard_mode": sidecar["guard_mode"],
+            "severity": sidecar["severity"],
+        }
+        if dfrp_row is not None:
+            source.update(
+                {
+                    "dfrp_manifest_payload_sha256": dfrp_payload_sha256,
+                    "dfrp_route": dfrp_row["route"],
+                }
+            )
+        sources.append(source)
         for (start, stop), record in zip(feasible, records, strict=True):
             if (
                 int(record.get("start_frame", -1)) != start
@@ -183,7 +228,7 @@ def build_manifest(
         "source_units": source_units,
         "admissible_units": admissible_units,
     }
-    return {
+    result = {
         "schema_version": SCHEMA,
         "classification": "unsealed v2 runtime input; exact support fails closed",
         "clips_sha256": sha256_file(clips_path),
@@ -200,6 +245,13 @@ def build_manifest(
             ),
         },
     }
+    if dfrp_manifest_path is not None:
+        result["dfrp"] = {
+            "manifest_path": str(dfrp_manifest_path.resolve()),
+            "manifest_file_sha256": dfrp_file_sha256,
+            "manifest_payload_sha256": dfrp_payload_sha256,
+        }
+    return result
 
 
 def main() -> int:
@@ -208,6 +260,11 @@ def main() -> int:
     parser.add_argument("--bank", type=Path, required=True)
     parser.add_argument("--sidecars", type=Path, required=True)
     parser.add_argument("--horizon-steps", type=int, required=True)
+    parser.add_argument(
+        "--dfrp-manifest",
+        type=Path,
+        help="optional dfrp_bank_manifest/1; every selected source must be training-ready",
+    )
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     manifest = build_manifest(
@@ -215,6 +272,9 @@ def main() -> int:
         args.bank.resolve(),
         args.sidecars.resolve(),
         horizon_steps=args.horizon_steps,
+        dfrp_manifest_path=(
+            args.dfrp_manifest.resolve() if args.dfrp_manifest else None
+        ),
     )
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(manifest, indent=1) + "\n")

@@ -10,6 +10,7 @@ from typing import Any, Literal
 
 import torch
 
+from .dfrp import sha256_file, validate_dfrp_manifest
 from .segment_curriculum import (
     AdmissibleStarts,
     SamplingConcentration,
@@ -63,6 +64,26 @@ class SegmentSampler:
         self.manifest = json.loads(self.manifest_path.read_text())
         if self.manifest.get("schema_version") != "segment_unit_table/1":
             raise ValueError("unsupported segment unit-table schema")
+        dfrp_link = self.manifest.get("dfrp")
+        if dfrp_link is not None:
+            dfrp_path = Path(dfrp_link["manifest_path"])
+            if not dfrp_path.is_file():
+                raise FileNotFoundError(f"missing DFRP manifest {dfrp_path}")
+            if sha256_file(dfrp_path) != dfrp_link["manifest_file_sha256"]:
+                raise ValueError("DFRP manifest file hash mismatch")
+            dfrp_manifest = json.loads(dfrp_path.read_text())
+            validate_dfrp_manifest(dfrp_manifest)
+            if (
+                dfrp_manifest["payload_sha256"]
+                != dfrp_link["manifest_payload_sha256"]
+            ):
+                raise ValueError("DFRP manifest payload identity mismatch")
+            if any(
+                source.get("dfrp_manifest_payload_sha256")
+                != dfrp_manifest["payload_sha256"]
+                for source in self.manifest["sources"]
+            ):
+                raise ValueError("segment sources disagree on DFRP provenance")
         frozen_table = {
             "horizon_steps": self.manifest["horizon_steps"],
             "sources": self.manifest["sources"],

@@ -90,7 +90,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
     <div class="stat"><div class="v">87–89 %</div><div class="k">of a failure-adaptive sampler's exposure collapses onto one clip — the same clip in 3/3 seeds</div></div>
     <div class="stat"><div class="v">~329 N</div><div class="k">≈ full body weight unsupported for 1 s in that clip's retargeted descent: no contact within 6 cm</div></div>
     <div class="stat"><div class="v">22.8 %</div><div class="k">of one 10,705-clip AMASS→G1 corpus/pipeline is dynamically infeasible; a second production stack measures 0.14 %</div></div>
-    <div class="stat"><div class="v">65.8 %</div><div class="k">of flagged clips auto-repaired by a 3-second root-projection onto the contact manifold (2,443-clip census)</div></div>
+    <div class="stat"><div class="v">65.8 %</div><div class="k">of the strict 2,442 flagged clips recovered by the legacy ≤15 cm root projection; only 26.4% fit the new 8 cm tier</div></div>
     <div class="stat"><div class="v">0.567 → 0.609</div><div class="k">cross-policy difficulty transfer once feasibility features join the atlas (perm p = 0.01)</div></div>
   </div>
   <div class="heroctas">
@@ -265,10 +265,9 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       <p>Paired |Δφ| is chaos-dominated (identical physics differs 2.5–8 mm in seconds). Signed replicate-means over a published
       identical-physics floor resolve 6–14 mm effects; replication across IC seeds r = 0.92, 6/6 sign agreement above 5 mm.</p>
       <span class="ev">g1_v2_summary.json · N5_RESULT.md</span></div>
-    <div class="card"><h3>Sign-reversal signature <span class="pill slot">sealed 🕐</span></h3>
-      <p>On the impossible clip only, +15 % motor strength <em>worsens</em> tracking — exactly inside the airborne window, in both seeds.
-      A rollout-only infeasibility detector, if it generalises: P-SIGN is sealed with named clips and three pass criteria.</p>
-      <span class="ev">PREREGISTRATION_P_SIGN.md c7916e8c</span></div>
+    <div class="card"><h3>Sign-reversal signature <span class="pill neg">sealed ✗</span></h3>
+      <p>P-SIGN failed: family 7/12, clean controls 4/12, airborne localisation 2/7. The clip-44 reversal remains exploratory, but the rollout-only infeasibility detector claim is rejected.</p>
+      <span class="ev">P_SIGN_RESULT.md · p_sign_summary.json</span></div>
     <div class="card"><h3>Conformance harness <span class="pill sealed">closed ✓</span></h3>
       <p>A validated dual-stack, same-engine instrument (MuJoCo Warp 3.11.0 via mjlab v1.6.0 and via Newton 7bb6d02d; classic MuJoCo 3.11.0 C as third referee): per-substep |Δq̇| ≤ 3×10⁻⁵ after eliminating four silent integration errors —
       with the elimination protocol (paired substeps, third referee, shadow solver) as reusable method.</p>
@@ -334,8 +333,8 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
     <div class="card"><h3>Contact-projection repair</h3>
       <p>The lightweight fix for the recoverable two-thirds: lower the root onto the contact manifold exactly where support
       is missing (~3 s/clip, joints untouched, over-repair budget refuses genuine ballistics). The attractor: 0.13 → 0.00
-      infeasible; a 100 %-flagged source subset's walks: 0.66 → 0.01. Census: 65.8 % of 2,443 flagged clips recovered.</p>
-      <span class="ev">tools/repair_contact_projection.py · reports/repair_census/summary.md</span></div>
+      infeasible; a 100 %-flagged source subset's walks: 0.66 → 0.01. Strict-set correction: 1,606/2,442 (65.8%) recover through the legacy 15 cm budget.</p>
+      <span class="ev">tools/repair_contact_projection.py · reports/dfrp_v0/census/summary.md · correction C4</span></div>
     <div class="card"><h3>Stratified-start evaluation</h3>
       <p>The sealed fixed-offset harness exposed the "0.31 survival" artifact. A post-outcome audit found unpaired startup
       randomization, clipped duplicate offsets, and reset-contaminated terminal quality metrics; a paired per-episode v2 is now required.</p>
@@ -404,7 +403,28 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
 </section>
 
 <section>
-  <span class="numeral">09 · Newton direction</span>
+  <span class="numeral">09 · DFRP v0 CPU gate</span>
+  <h2>Repair candidates are not training data until provenance and exact support agree <span class="pill expl">measured implementation</span></h2>
+  <p class="kicker">DFRP v0 connects the feasibility screen, two-tier repair, quarantine reasons, and exact segment-native starts in one hash-verified contract. No new GPU training was run.</p>
+  <div class="grid">
+    <div class="card"><h3>Strict routing audit</h3>
+      <p>The strict &gt;10% rule flags 2,442 clips. Legacy root projection puts 644 (26.4%) inside the new 8 cm tier and another 962 in the exploratory 8–15 cm tier.</p>
+      <span class="ev">reports/dfrp_v0/census/summary.json</span></div>
+    <div class="card"><h3>Nothing leaks into training</h3>
+      <p>All bank-wide recovered files predate the new IK/contact qualification and lack exact repaired sidecars. DFRP records them but promotes zero; missing evidence fails closed.</p>
+      <span class="ev">dfrp_bank_manifest/1 · training_eligible = 0</span></div>
+    <div class="card"><h3>Root+IK development gate</h3>
+      <p>One short repair moves 39.8 mm, reduces infeasibility 0.1010→0.0303, keeps joint limits, and closes its selected contact to 0.992 mm. A feasible control is byte-identical.</p>
+      <span class="ev">reports/dfrp_v0/dev_panel/</span></div>
+    <div class="card"><h3>Exact MJLab handoff</h3>
+      <p>The two-clip view yields 76 legal 50-step starts. The unit builder and runtime verify motion, sidecar, DFRP payload, and unit-table identities before sampling.</p>
+      <span class="ev">plan/DFRP_V0_RESULT_2026-08-21.md</span></div>
+  </div>
+  <div class="callout"><p><strong>Integrity correction C4:</strong> the historical 2,443-row repair directory contains one feasible no-op control. The strict result is 1,606/2,442, still 65.8% rounded; old artifacts remain unchanged.</p></div>
+</section>
+
+<section>
+  <span class="numeral">10 · Newton direction</span>
   <h2>Use physics as validated information, not as another source of divergence <span class="pill slot">next gate</span></h2>
   <p class="kicker">The pilot fixed the MDP and evaluator, but its adaptive treatment was almost identical to control.
   The revised program asks whether Newton-measured segment fragility adds predictive and training value beyond exact hygiene

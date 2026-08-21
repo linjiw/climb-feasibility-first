@@ -1,0 +1,112 @@
+{
+ "schema_version": "segment_unit_table/1",
+ "classification": "unsealed v2 runtime input; exact support fails closed",
+ "clips_sha256": "3d26bb38cee19940ee09f75279f9980b281255ad11bfd00f1e3a52e9aa02cc0b",
+ "builder_sha256": "0d7a38ab2ad791a08aade6b0bccb5f03f52cbbdd487ae830f4783657c9d583dd",
+ "horizon_steps": 50,
+ "sources": [
+  {
+   "clip_id": 0,
+   "clip": "BMLmovi_Subject_3_F_MoSh_Subject_3_F_21_poses_120_jpos",
+   "frames": 80,
+   "fps": 50.0,
+   "motion_sha256": "9bfd4f57bc09ad055294592d651f76a804727fe1ec2dbe7dd7346ce668bd80ed",
+   "sidecar_sha256": "1b4bf48a3f7c257bd3d9cb8833fe8674c72e5a9b86a11af9f71938d2b9d9e874",
+   "source_screen_sha256": "7a1d3d9c074c7f6a4fed7ec1ac192ecbd87c72a439c7a805c2f126a5f1f1eb7b",
+   "reducer_sha256": "5c46376599812bf081c5d26aa5153b23d3dee93b9aaedf192ca6e995b2d2f224",
+   "guard_s": 0.0,
+   "guard_mode": "symmetric",
+   "severity": "severe",
+   "dfrp_manifest_payload_sha256": "5a6897dd2cb9a0fe7205d9a6f30143c219677e092d6ecc19fec9bc0a4e6ba992",
+   "dfrp_route": "raw_feasible"
+  },
+  {
+   "clip_id": 1,
+   "clip": "CMU_108_108_10_poses_120_jpos",
+   "frames": 99,
+   "fps": 50.0,
+   "motion_sha256": "abd4e67a8ede9018e2d156184879546614218f6f053ab42edb530f05a19147c1",
+   "sidecar_sha256": "5fd6ae307194bb9f267e941965a2fbd4d9fcac6d46a5cd1a531a1a495cfa8ebc",
+   "source_screen_sha256": "60bc6dd18ce65d494cf2efc37f7e52d49dada94667c0433495eef72f48d8a523",
+   "reducer_sha256": "5c46376599812bf081c5d26aa5153b23d3dee93b9aaedf192ca6e995b2d2f224",
+   "guard_s": 0.0,
+   "guard_mode": "symmetric",
+   "severity": "severe",
+   "dfrp_manifest_payload_sha256": "5a6897dd2cb9a0fe7205d9a6f30143c219677e092d6ecc19fec9bc0a4e6ba992",
+   "dfrp_route": "repair_primary"
+  }
+ ],
+ "source_units": [
+  {
+   "unit_id": 0,
+   "clip_id": 0,
+   "clip": "BMLmovi_Subject_3_F_MoSh_Subject_3_F_21_poses_120_jpos",
+   "segment_start": 0,
+   "segment_stop": 80,
+   "admissible_start_first": 0,
+   "admissible_start_stop": 30,
+   "legal_start_count": 30,
+   "unsupported_ratio_mean": 0.013162054271845174,
+   "unsupported_ratio_p95": 0.06950971053900114,
+   "unsupported_ratio_max": 0.11465204069551548
+  },
+  {
+   "unit_id": 1,
+   "clip_id": 1,
+   "clip": "CMU_108_108_10_poses_120_jpos",
+   "segment_start": 3,
+   "segment_stop": 99,
+   "admissible_start_first": 3,
+   "admissible_start_stop": 49,
+   "legal_start_count": 46,
+   "unsupported_ratio_mean": 0.08482021666232399,
+   "unsupported_ratio_p95": 0.3156752853816526,
+   "unsupported_ratio_max": 0.4671688484873271
+  }
+ ],
+ "admissible_units": [
+  {
+   "unit_id": 0,
+   "clip_id": 0,
+   "clip": "BMLmovi_Subject_3_F_MoSh_Subject_3_F_21_poses_120_jpos",
+   "segment_start": 0,
+   "segment_stop": 80,
+   "admissible_start_first": 0,
+   "admissible_start_stop": 30,
+   "legal_start_count": 30,
+   "unsupported_ratio_mean": 0.013162054271845174,
+   "unsupported_ratio_p95": 0.06950971053900114,
+   "unsupported_ratio_max": 0.11465204069551548,
+   "table_index": 0,
+   "deployment_mass": 30
+  },
+  {
+   "unit_id": 1,
+   "clip_id": 1,
+   "clip": "CMU_108_108_10_poses_120_jpos",
+   "segment_start": 3,
+   "segment_stop": 99,
+   "admissible_start_first": 3,
+   "admissible_start_stop": 49,
+   "legal_start_count": 46,
+   "unsupported_ratio_mean": 0.08482021666232399,
+   "unsupported_ratio_p95": 0.3156752853816526,
+   "unsupported_ratio_max": 0.4671688484873271,
+   "table_index": 1,
+   "deployment_mass": 46
+  }
+ ],
+ "unit_table_sha256": "e40c70ff7884d51b914fe90751ac2b1d3a3576ec5f1535d8d14c2dcc58d13f3b",
+ "counts": {
+  "clips": 2,
+  "source_units": 2,
+  "admissible_units": 2,
+  "discarded_short_units": 0,
+  "legal_starts": 76
+ },
+ "dfrp": {
+  "manifest_path": "/data/robotixx/climb/reports/dfrp_v0/dev_panel/manifest.json",
+  "manifest_file_sha256": "45046952653701819a7d9bf684a185c3d45233680f6b310e46e93e603d213a1d",
+  "manifest_payload_sha256": "5a6897dd2cb9a0fe7205d9a6f30143c219677e092d6ecc19fec9bc0a4e6ba992"
+ }
+}

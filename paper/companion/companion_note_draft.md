@@ -20,13 +20,17 @@ wrench the environment must supply, then a torque-limited linear program over fr
 the contacts within reach. On a 10,705-clip AMASS→Unitree-G1 bank [measured], 22.8 % of clips
 demand unsupported forces exceeding half the robot's weight for more than 10 % of their frames;
 the rate varies from 0.1 % to 100 % across source datasets under a single retargeting pipeline,
-marking it as a pipeline property rather than a motion property. We validate the screen on the
-clip that broke a failure-adaptive training curriculum: a kneel whose retargeted descent is
-airborne for a full second (median 329 N unsupported against a 327 N robot weight) [measured],
+marking it as a corpus-and-pipeline property rather than a motion property. A second production bank — the
+4,950-clip BONES-SEED corpus that trains SONIC, screened by an independent re-implementation on a
+pre-registered test — returns **0.14 %** [measured], which settles the reading: prevalence belongs
+to a particular corpus-and-pipeline pairing, must be measured per corpus rather than assumed from
+another, and at ≤ 1 CPU-second per clip is cheap enough to be a standing release gate. We validate
+the screen on the clip that broke a failure-adaptive training curriculum: a kneel whose retargeted
+descent is airborne for a full second (median 329 N unsupported against a 327 N robot weight) [measured],
 which a pre-registered physics-parameter gate could not rescue in any of ten configurations
-[sealed ✗, kept], and whose flagged windows are corroborated in two seed-sets by a rollout-only signature —
-increasing motor strength worsens tracking precisely inside them [exploratory; generality
-pre-registered, pending]. We quantify downstream costs: contaminated evaluation sets
+[sealed ✗, kept]. A two-seed rollout anomaly — increasing motor strength worsens tracking inside
+the flagged window — does not generalize: its sealed family/control test fails all three criteria
+[sealed ✗, kept]. We quantify downstream costs: contaminated evaluation sets
 (29/100 held-out clips) [measured], poisoned failure-weighted samplers [sealed ✓], and difficulty
 labels that transfer across policies only once feasibility features are added (Spearman
 0.567 → 0.609 on the headline pair, permutation p = 0.010; direction positive on 6/6 pairs, 4/6
@@ -110,9 +114,11 @@ seconds; `reports/G1/run0/g1_v2_summary.json`), **+15 % motor strength worsens b
 tracking by +15.0/+16.0 mm exactly inside the screen-flagged airborne window and ≈ 0 mm
 (+0.3/−1.4) in the supported standing window, replicated across two IC-seed sets
 (instrument-wide agreement across all 36 axis×clip effects: r = 0.92)** [exploratory — two cases; `plan/N5_RESULT.md`,
-`reports/G1/run1_seed1/g1_v2_summary.json`]. A generality test on 12 family clips vs 12 feasible
-controls is pre-registered with three pass criteria [pending 🕐; `plan/PREREGISTRATION_P_SIGN.md`
-`c7916e8c`] and does no load-bearing work in this note.
+`reports/G1/run1_seed1/g1_v2_summary.json`]. The sealed generality test on 12 family clips versus
+12 feasible controls fails: 7/12 family clips pass the +5 mm criterion (needed 8), only 4/12
+controls stay within 2 mm (needed 8), and just 2/7 positive cases are airborne-localised
+[sealed ✗, kept; `reports/P_SIGN/run0/p_sign_summary.json`, `plan/P_SIGN_RESULT.md`]. The anomaly
+therefore supplies no rollout-only detector claim.
 
 ## 4. Prevalence
 
@@ -139,6 +145,43 @@ acrobatic content whose *flagged frames* are non-ballistic floating around take-
 content-inflated the same way; the ground category's 39 % cannot be, and is the attractor's
 family writ large. *Figure 2 [measured]: `paper/figures/f4_prevalence.png` (script
 `f4_prevalence.py`, data `reports/feasibility_all/feasibility.csv`).*
+
+### A second bank, a second pipeline [measured; pre-registered]
+
+The 22.8 % above is a measurement of one pipeline, and reporting it alone would invite the
+inference that retargeted humanoid banks are generically ~20 % broken. They are not. The same
+method, re-implemented independently against a different G1 model file
+(`g1_29dof_rev_1_0.xml`, sha `15a330f1…`; μ 0.7 rather than 0.6, same 6 cm gap, same ½-weight
+bound), was run over every clip of the BONES-SEED bank consumed by SONIC:
+
+| bank | clips | > 10 % infeasible | > 10 % airborne | flagged duration share |
+|---|---:|---:|---:|---:|
+| AMASS → whole_body_tracking → G1 (this note) | 10,705 | **22.8 %** (2,442) | 23.5 % (2,512) | 27.4 % |
+| BONES-SEED `robot_filtered` → G1 (SONIC) | 4,950 | **0.14 %** (7) | 2.24 % (111) | 0.09 % |
+
+The measurement was registered before it was run, with its consequence pre-committed — a rate under
+10 % descopes a planned feasibility-hygiene training ablation on that stack — and the ablation has
+been descoped (P10, `GR00T-WholeBodyControl/docs/prediction_register.md`;
+screen `gear_sonic/research/hygiene/screen.py`; 4,950 clips in 131.7 s wall on 8 CPU workers,
+0 failures, 0.145 CPU-s/clip = 0.84 ms per screened frame).
+
+Two things must be said about it, in this order. First, the class is **not absent** from the
+cleaner bank: seven clips exceed the threshold, five of them jumps — four named for the 50 cm box they
+jump onto or off, which is absent from the flat scene, plus a high jump; the remaining two are a
+kick-back (`kick_back_001`, 0.47 infeasible) and a burpee. These passed both kinematic QC and a
+shipped release filter, and they are a real data defect, though a different one (a scene/reference mismatch whose fix is terrain or
+exclusion; root projection is the wrong operator, §8). Second, and this is the finding: **prevalence
+is a property of a particular corpus and pipeline, not of the practice of retargeting**, so it has
+to be measured per corpus and can be, in minutes. That is what turns the screen from a one-off audit into
+a release gate. The comparison bounds generality rather than isolating a cause — two source
+corpora, two implementations of one method, a release filter on one side only — and the controlled
+version (two retargeters over the same source clips) is not run.
+
+The same run is also the clearest evidence for keeping `airborne_frac` and `infeasible_frac` as
+separate axes rather than collapsing them into one "grounded" flag: seven `kneeling_loop_*` clips
+sit at airborne fraction 1.000 with infeasible fraction 0.000 — feet 7–9 cm off the floor for the
+entire clip, weight carried on the knees, supportable at every frame. A filter reading "airborne"
+as "broken" would delete exactly the rare ground-contact behaviour these banks are short of.
 
 ## 5. Downstream costs
 
@@ -177,7 +220,10 @@ against Newton 1.0 GA (which changed the collision stack) is specified as future
 
 ## 7. Recommendations
 
-1. **Screen before training** (~1 CPU-s/clip); publish per-clip feasibility flags with datasets.
+1. **Screen before training** (~1 CPU-s/clip) and **measure prevalence on your own corpus** — the
+   two banks screened here differ by a factor of 160 (§4), so no published rate transfers; publish
+   per-clip feasibility flags with datasets and re-run the screen as a release gate on every new
+   corpus.
 2. **Report feasibility-stratified endpoints**; never average survival over start offsets that
    straddle infeasible segments.
 3. **Retargeting pipelines**: resolve unreachable postures by root-height/contact projection, not
@@ -185,8 +231,12 @@ against Newton 1.0 GA (which changed the collision stack) is specified as future
    terms against the reference itself.
 4. **Couplings**: certify any second physics stack at the substep level against the Appendix-A
    checklist before believing closed-loop differences; pin and publish both stack versions.
-5. For flagged-but-wanted motions: repair, don't just drop [pending 🕐 — repair experiment
-   sealed-after-N3, `plan/N7_DRAFT_repair.md`].
+5. For flagged-but-wanted motions, prefer repair or segment eligibility over blind deletion:
+   clip pruning at 12.4% contamination produced a sealed null with feasible heldout Δ −0.0101,
+   while segment curation retains feasible material. Repair-all produced a positive deployed-
+   reference contrast (+0.0397) but missed its +0.05 benefit and coverage gates; raw-reference
+   policy transfer was −0.0036 [sealed ✗ + measured, `plan/E_HYG_RESULT.md`,
+   `plan/N7_RESULT.md`].
 
 ## 8. Deliverables and economics
 
@@ -194,8 +244,9 @@ against Newton 1.0 GA (which changed the collision stack) is specified as future
 for this entire bank — and the geometric repair ~3 CPU-seconds per recoverable clip, against
 training runs of 10³–10⁴ GPU-hours (SONIC-scale: 21,000 GPU-hours). Feasibility hygiene is four
 to five orders of magnitude cheaper than the training it protects, and the exposure it reclaims
-is not marginal: a failure-weighted sampler spent a mean 48.8 % of its draws on one impossible
-clip [measured; `reports/wasted_exposure_accounting.json`].
+is not marginal: a failure-weighted sampler concentrated a mean 48.8 % of its draws on a single
+clip, at least 21.9 % of them on the impossible one [measured;
+`reports/wasted_exposure_accounting.json`].
 
 **Three deliverables, at three pipeline stages:** (i) **refeas v0.1.0** — the offline
 pre-training screen (Apache-2.0, github.com/linjiw/refeas; version hash pinned in the sealed
@@ -203,23 +254,55 @@ evaluation policy). (ii) **contact-projection repair**
 (`tools/repair_contact_projection.py`) — recovers the root-floating defect class in ~3 s/clip
 [measured: the attractor 0.13 → 0.00 at 8.2 cm; a 100 %-flagged subset's walks 0.66 → 0.01] while
 refusing genuine ballistics via an over-repair budget. Census over every flagged clip [measured;
-`reports/repair_census/summary.md`, sentinel present]: **65.8 % of the 2,443 flagged clips are
-auto-recoverable** (73.1 % of the 10–25 %-flagged band, 61.7 % of the > 25 % band; ground
+`reports/repair_census/summary.md`, sentinel present; membership correction C4]: **65.8 % of the
+strict 2,442 flagged clips (1,606) are auto-recoverable** under the legacy 15 cm budget (the
+historical 2,443-row directory additionally contains one feasible no-op control; 73.1 % of its
+10–25 % band, 61.7 % of its > 25 % band; ground
 category 68.1 %, quiet 80.9 %, dynamic 51.2 % — the last correctly depressed by refused
-ballistics). The practical split for the community: roughly two-thirds of the contamination is a
-3-second script; one-third needs upstream re-retargeting or higher-order (IK/time-warp) repair. (iii) **evaluation & monitoring protocols** —
+ballistics). The practical split **on this bank**: roughly two-thirds of the contamination is a
+3-second script; one-third needs upstream re-retargeting or higher-order (IK/time-warp) repair.
+That split is no more portable than the prevalence: where the defect class is scene mismatch rather
+than root float — the second bank's box jumps (§4) — this operator is the wrong one and the
+recoverable fraction would be near zero. (iii) **evaluation & monitoring protocols** —
 stratified-start evaluation, feasibility-stratified endpoints (sealed policy `a93a87a0`), the
-Appendix-A coupling checklist, and the pre-registered rollout-only infeasibility detector
-[pending 🕐, P-SIGN `c7916e8c`].
+Appendix-A coupling checklist. The proposed rollout-only infeasibility detector is explicitly not
+a deliverable: P-SIGN rejects it [sealed ✗, `plan/P_SIGN_RESULT.md`].
+
+**Segment-level curation, and why its value is framework-dependent** [measured;
+`reports/segments_tier800/segments_guard0.csv`, `…_guard1.0.csv`, reducer `tools/screen_segments.py`].
+Pruning and repair are not the only options: a flagged clip is usually mostly feasible. Re-screening
+the 99 flagged clips of an 800-clip training tier at segment resolution (99 clips in 45 s wall on 6
+nice'd CPU workers) — contiguous severe windows, guard-band expansion, minimum-length filtering,
+projection onto the sampler's bin grid — gives:
+
+| reference lookahead in the observation | recovered of the flagged 20.2 min | sampler bins usable | clips lost end-to-end |
+|---|---:|---:|---:|
+| **0 s** (current anchor only) | **12.5 min = 61.7 %** | 584 / 1,259 | **3 / 99** |
+| **1.0 s** (10 future frames × 0.1 s) | 5.8 min = 28.9 % | 305 / 1,259 | 26 / 99 |
+
+Against the whole tier (152.4 min), clip-level pruning discards 13.3 % of its duration while
+segment curation hands back 8.2 % at guard 0 s and 3.8 % at guard 1.0 s. Identical screen, identical
+clips: **the value of segment-level curation falls as the policy's reference lookahead grows** — the
+guard band is a property of the training framework, not of the data. Clip-level pruning is therefore
+a lower bound on what feasibility hygiene can buy. Caveats carried: the 1.0 s minimum segment length
+and the strict bin-eligibility rule (any severe frame disqualifies a bin) are choices, not
+measurements, and these are *duration* recoveries — no policy has yet been trained on curated
+segments. The related clip-pruning training arm is a sealed null: feasible heldout survival
+0.918→0.907 (Δ −0.0101, one-sided permutation p=0.951), with zero-shot ground Δ −0.0354 inside
+its pre-registered coverage-cost bracket (`reports/E_HYG_result.json`,
+`plan/E_HYG_RESULT.md`). This makes segment-level eligibility, which keeps feasible portions,
+the sharper next training test; it does not turn the duration measurement into a performance
+claim.
 
 ## Appendix A — coupling-error taxonomy
 
 (→ `appendix_coupling_taxonomy.md`, shipped verbatim; also `refeas/docs/COUPLING_TAXONOMY.md`.)
 
 ---
-*Pre-registered future work referenced with hashes, none load-bearing here: N3 composition
-causality `af1b7c9f` 🕐; E3 support moderation `2c38845b` 🕐; P-SIGN `c7916e8c` 🕐; N7 repair
-(seal pending N3). Figures: F1 anatomy, F2 prevalence — scripts + data in `paper/RESULTS_LOG.md`.
+*Completed sealed work retained here: N3 `af1b7c9f` mixed outcome; E-HYG `a5494b7c` null;
+P-SIGN `c7916e8c` fail; soft FGAS `3521c80e` implementation-gate fail; N7 repair `90da8a08`
+joint fail. Pending work: E3 support moderation `2c38845b` 🕐 and a separately sealed segment-native
+follow-up under the v2 lifecycle/evaluator. Figures: F1 anatomy, F2 prevalence — scripts + data in `paper/RESULTS_LOG.md`.
 Author list / acknowledgements TBD with Linji. Upstream note drafts are separate documents
 awaiting approval (`reports/upstream_drafts/`).*
 
@@ -229,15 +312,17 @@ awaiting approval (`reports/upstream_drafts/`).*
 
 Measured [`reports/effort_sat_at_fall.json`, from `reports/G1/run0/armA.npz`]: tracking the
 airborne descent, **zero of 29 actuators saturate at any point in the supported phase; within
-0.6 s of the post-airborne contact event, 5/29 actuators (wrists, waist) pin at ≥ 98 % of force
-range, in 8/8 replicates**. The failure mode is not gradual degradation — it is a commanded hover
+0.6 s of losing foot support, ≥ 4/29 actuators pin at ≥ 98 % of force
+range in 8/8 replicates — exactly 5/29 in 7/8, mean 16.8 %**. The failure mode is not gradual degradation — it is a commanded hover
 ending in an unplanned ~0.3 m fall onto joints that are not landing gear (estimated ~2.4 m/s
 touchdown, ~95 J to dissipate [estimate]). Predicted hardware phenomenology [exploratory,
 sim-grounded, no hardware claims]: impact loading on wrists/knees at every attempt of the
-segment; current/thermal-limit bursts invisible in average torque; and — per the sign-reversal
-mechanism [exploratory; `plan/P_SIGN_PREP.md`] — *gain increases make these segments worse*, so
-the standard sim-to-real reflex of stiffening the controller is counter-productive exactly here.
+segment; current/thermal-limit bursts invisible in average torque. The proposed gain-response
+diagnostic does **not** survive its sealed test: P-SIGN finds the predicted sign in 7/12 family
+clips, only 4/12 clean controls, and airborne localisation in 2/7 positives
+[`reports/P_SIGN/run0/p_sign_summary.json`]. Thus gain increases can worsen the original segment,
+but the response is not specific enough to diagnose infeasible references.
 The G1 gate adds a fourth cost [sealed ✗, kept]: no physics randomisation changes the outcome, so
 DR budget spent on these segments buys nothing. Practical consequence: the screen is a
-1-CPU-second **pre-deployment safety filter**, and its runtime complement — flag a segment when
-tightening gains worsens tracking — is exactly the pre-registered P-SIGN detector [pending 🕐].
+1-CPU-second **pre-deployment safety filter**. There is no validated runtime complement; using
+gain response as one would contradict the sealed P-SIGN fail.

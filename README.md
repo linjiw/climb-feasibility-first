@@ -14,8 +14,9 @@ it?), and *intrinsic* hardness — and samplers, harnesses, and benchmarks that 
 apart silently optimise the wrong objective. Headline results (each labelled and artifact-pathed
 in the drafts): failure-adaptive sampling collapses onto a single clip whose retargeted descent
 is *physically impossible* (median 329 N unsupported vs a 327 N robot); a one-line
-normalise-then-mix repairs the sampler; **22.8 % of a 10,705-clip retargeted bank is dynamically
-infeasible for > 10 % of frames** (0.1 %→100 % by source under one retargeter); and feasibility
+normalise-then-mix repairs the sampler; **22.8 % of one 10,705-clip AMASS→G1 corpus/pipeline is
+dynamically infeasible for > 10 % of frames** (0.1 %→100 % by source under one retargeter, versus
+0.14 % in a second production corpus/pipeline); and feasibility
 features are the first that make difficulty labels transfer across policies (Spearman
 0.567 → 0.609 on the headline pair, permutation p = 0.010).
 
@@ -61,14 +62,22 @@ training logs/checkpoints, and the mjlab/Newton environments.
 
 MuJoCo 3.11.0 (C) · MuJoCo Warp 3.11.0 · mjlab v1.6.0 · Newton commit `7bb6d02d` · warp-lang
 1.16.0 · Unitree G1 `g1.xml` sha `febdcbef…` (`plan/PREREGISTRATION_G1_clip44.md` §Pins).
-Re-certification against Newton 1.0 GA is specified (`plan/SPEC_newton_recert.md`), not yet run.
+The closed conformance certificate remains tied to that historical commit. New work targets a
+fresh isolated Newton v1.5.0 environment; the existing bridge currently reports a 1.6.0.dev0
+package and is not the recertification environment (`plan/NEWTON_SEGMENT_DIRECTION_2026-08-21.md`).
 
-## Status (2026-08-20)
+## Status (2026-08-21)
 
 Done: sampler collapse + non-floor (sealed ✓; upstream mjlab #1153 / whole_body_tracking #73),
 grounded repair (sealed ✓), dual-stack conformance |Δq̇| ≤ 3×10⁻⁵ (measured, four coupling errors
 documented incl. one withdrawn verdict), G1 physics gate (sealed ✗, kept), airborne-reference
 verdict (measured), 10.7k-clip prevalence (measured), atlas v2.1 transfer (sealed ✓/✗ split),
-calibrated instrument + replication (exploratory label), P-TAX (sealed null). Pending 🕐 (sealed,
-scheduled): N3 composition causality → N7 repair → E3 support moderation (first GPU block after
-Sept 15); P-SIGN (gap watcher armed). Results freeze Dec 1; RSS 2027 target.
+calibrated instrument + replication (exploratory label), P-TAX (sealed null), N3 (mixed: targeted
+endpoints pass, regression stop), E-HYG (sealed pruning null), P-SIGN (sealed fail), soft FGAS
+(primary not confirmed; implementation gate failed), and N7 (positive +0.0397 deployment contrast,
+but benefit/coverage gates fail and raw-reference policy transfer is null). DFRP v0 now has a
+fail-closed manifest, root/contact-IK operator, exact-segment integration, a two-clip CPU gate, and
+a strict legacy routing audit (644/2,442 within 8 cm; none of the legacy repairs is automatically
+training-ready). Pending 🕐: a separately sealed segment-native follow-up under the corrected
+lifecycle/evaluator, Newton v1.5 predictive gate, and E3 support moderation. Results
+freeze Dec 1; RSS 2027 target.

@@ -136,7 +136,20 @@ footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;color:var(--muted);f
 </section>
 
 <section>
-  <span class="num">05 · Newton as the next information source</span>
+  <span class="num">05 · DFRP v0 CPU gate</span>
+  <h2>Make repair provenance and exact support one training contract</h2>
+  <p class="kicker">The next step is not another seed. DFRP now routes every clip under explicit 10%, 5%, and 8/15 cm thresholds, then separately proves whether the selected motion has hash-matched, full-horizon-safe starts.</p>
+  <div class="grid">
+    <div class="card"><h3>Fail-closed manifest</h3><p><code>dfrp_bank_manifest/1</code> hashes the motion, screen, repair, model, and exact sidecar. Scientific repair candidacy never implies training readiness.</p><span class="tag">artifact contract</span></div>
+    <div class="card"><h3>Two-tier repair</h3><p>644/2,442 strict-flagged legacy clips fit an 8 cm displacement budget; another 962 fit 8–15 cm. All remain qualification-incomplete until newly repaired and exactly rescreened.</p><span class="tag">26.4% primary budget</span></div>
+    <div class="card"><h3>Root + contact IK</h3><p>On the first flagged development clip, infeasibility falls 0.1010→0.0303 with 39.8 mm root motion, 11 IK frames, joint limits intact, and 0.992 mm contact residual.</p><span class="tag">CPU measured</span></div>
+    <div class="card"><h3>Exact MJLab handoff</h3><p>A feasible byte-identical control and the repaired clip produce two verified units and 76 legal 50-step starts. Runtime rechecks both DFRP and unit-table identities.</p><span class="tag">training-ready panel</span></div>
+  </div>
+  <div class="callout warn"><p><strong>Claim boundary.</strong> The 8 cm bank-wide count reclassifies legacy root-only files; it is not a root+IK recovery rate. Zero legacy repairs are automatically promoted to training.</p></div>
+</section>
+
+<section>
+  <span class="num">06 · Newton as the next information source</span>
   <h2>Measure where feasible motion is physically fragile</h2>
   <p class="kicker">Feasibility tells us what not to train on. Newton can tell us which remaining feasible segments are sensitive to deployable physics axes—and whether that information predicts failure before PPO spends on it.</p>
   <div class="grid">
@@ -150,7 +163,7 @@ footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;color:var(--muted);f
 </section>
 
 <section>
-  <span class="num">06 · Next causal experiment</span>
+  <span class="num">07 · Next causal experiment</span>
   <h2>Four fresh arms isolate where any benefit comes from</h2>
   <p class="kicker">The design separates data hygiene, online allocation, and Newton physics information. Every arm gets matched compute and the same terminal-safe evaluator.</p>
   <div class="arms">
@@ -166,13 +179,14 @@ footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;color:var(--muted);f
 </section>
 
 <section>
-  <span class="num">07 · Evidence and implementation</span>
+  <span class="num">08 · Evidence and implementation</span>
   <h2>Trace every number</h2>
   <ul class="sources">
     <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/SEGMENT_NATIVE_PILOT_RESULT_2026-08-20.md">Exploratory pilot result and decision</a></li>
     <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/reports/segment_v2_pilot/result.json">Machine-readable paired result</a></li>
     <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/reports/segment_v2_smoke/timeline_trace.json">Vectorized GPU lifecycle trace</a></li>
     <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/NEWTON_SEGMENT_DIRECTION_2026-08-21.md">Newton-grounded direction addendum</a></li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/DFRP_V0_RESULT_2026-08-21.md">DFRP v0 CPU result and claim boundaries</a></li>
     <li><a href="https://github.com/newton-physics/newton/releases/tag/v1.5.0">Newton v1.5.0 release</a>, <a href="https://newton-physics.github.io/newton/stable/solvers/index.html">solver feature matrix</a>, and <a href="https://newton-physics.github.io/newton/stable/concepts/collisions.html">collision pipeline</a></li>
   </ul>
 </section>

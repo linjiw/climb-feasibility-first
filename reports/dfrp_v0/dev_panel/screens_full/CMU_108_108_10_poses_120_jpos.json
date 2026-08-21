@@ -1,0 +1,9985 @@
+{
+ "clip": "CMU_108_108_10_poses_120_jpos",
+ "fps": 50.0,
+ "gap": 0.06,
+ "mu": 0.6,
+ "model": "refeas/examples/g1_flat.xml",
+ "total_mass_kg": 33.341142,
+ "bins": {
+  "real": [
+   {
+    "t": "0.00-0.25",
+    "root_z": 0.76,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision"
+    ],
+    "unsup_F_med": 18.5,
+    "unsup_F_max": 213.9,
+    "unsup_M_med": 6.7,
+    "tau_ratio_p50": 0.64,
+    "tau_ratio_max": 1.24,
+    "frames_over_limit": 2,
+    "tl_unsup_F_med": 28.1,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      1.24
+     ],
+     [
+      "left_hip_roll_joint",
+      0.28
+     ]
+    ]
+   },
+   {
+    "t": "0.25-0.50",
+    "root_z": 0.8,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision",
+     "right_foot1_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision",
+     "right_foot7_collision"
+    ],
+    "unsup_F_med": 31.0,
+    "unsup_F_max": 58.7,
+    "unsup_M_med": 10.2,
+    "tau_ratio_p50": 0.33,
+    "tau_ratio_max": 0.78,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": 42.1,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.78
+     ],
+     [
+      "right_knee_joint",
+      0.4
+     ]
+    ]
+   },
+   {
+    "t": "0.50-0.75",
+    "root_z": 0.79,
+    "contacts": [
+     "right_foot1_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision",
+     "right_foot7_collision"
+    ],
+    "unsup_F_med": 13.8,
+    "unsup_F_max": 17.7,
+    "unsup_M_med": 5.0,
+    "tau_ratio_p50": 0.63,
+    "tau_ratio_max": 1.03,
+    "frames_over_limit": 1,
+    "tl_unsup_F_med": 22.8,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      1.03
+     ],
+     [
+      "right_knee_joint",
+      0.32
+     ]
+    ]
+   },
+   {
+    "t": "0.75-1.00",
+    "root_z": 0.77,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision"
+    ],
+    "unsup_F_med": 20.9,
+    "unsup_F_max": 97.8,
+    "unsup_M_med": 7.3,
+    "tau_ratio_p50": 0.39,
+    "tau_ratio_max": 0.61,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": 32.3,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.61
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.53
+     ]
+    ]
+   },
+   {
+    "t": "1.00-1.25",
+    "root_z": 0.79,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision"
+    ],
+    "unsup_F_med": 5.1,
+    "unsup_F_max": 18.5,
+    "unsup_M_med": 1.8,
+    "tau_ratio_p50": 0.44,
+    "tau_ratio_max": 0.61,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": 8.0,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.61
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.58
+     ]
+    ]
+   },
+   {
+    "t": "1.25-1.50",
+    "root_z": 0.76,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision",
+     "right_foot1_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision",
+     "right_foot7_collision"
+    ],
+    "unsup_F_med": 12.4,
+    "unsup_F_max": 26.2,
+    "unsup_M_med": 4.4,
+    "tau_ratio_p50": 0.39,
+    "tau_ratio_max": 1.07,
+    "frames_over_limit": 1,
+    "tl_unsup_F_med": 19.4,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      1.07
+     ],
+     [
+      "right_hip_pitch_joint",
+      1.06
+     ]
+    ]
+   },
+   {
+    "t": "1.50-1.75",
+    "root_z": 0.77,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision",
+     "right_foot1_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision",
+     "right_foot7_collision"
+    ],
+    "unsup_F_med": 0.0,
+    "unsup_F_max": 25.6,
+    "unsup_M_med": 0.0,
+    "tau_ratio_p50": 0.43,
+    "tau_ratio_max": 0.79,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": 0.0,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.79
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.78
+     ]
+    ]
+   },
+   {
+    "t": "1.75-2.00",
+    "root_z": 0.76,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision",
+     "right_foot1_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision",
+     "right_foot7_collision"
+    ],
+    "unsup_F_med": 0.0,
+    "unsup_F_max": 103.1,
+    "unsup_M_med": 0.0,
+    "tau_ratio_p50": 0.45,
+    "tau_ratio_max": 0.93,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": 0.0,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.93
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.88
+     ]
+    ]
+   }
+  ],
+  "sim": [
+   {
+    "t": "0.00-0.25",
+    "root_z": 0.76,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision"
+    ],
+    "unsup_F_med": 18.5,
+    "unsup_F_max": 213.9,
+    "unsup_M_med": 6.7,
+    "tau_ratio_p50": 0.64,
+    "tau_ratio_max": 1.24,
+    "frames_over_limit": 2,
+    "tl_unsup_F_med": 28.1,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      1.24
+     ],
+     [
+      "left_hip_roll_joint",
+      0.28
+     ]
+    ]
+   },
+   {
+    "t": "0.25-0.50",
+    "root_z": 0.8,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision",
+     "right_foot1_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision",
+     "right_foot7_collision"
+    ],
+    "unsup_F_med": 31.0,
+    "unsup_F_max": 58.7,
+    "unsup_M_med": 10.2,
+    "tau_ratio_p50": 0.33,
+    "tau_ratio_max": 0.78,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": 42.1,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.78
+     ],
+     [
+      "right_knee_joint",
+      0.4
+     ]
+    ]
+   },
+   {
+    "t": "0.50-0.75",
+    "root_z": 0.79,
+    "contacts": [
+     "right_foot1_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision",
+     "right_foot7_collision"
+    ],
+    "unsup_F_med": 13.8,
+    "unsup_F_max": 17.7,
+    "unsup_M_med": 5.0,
+    "tau_ratio_p50": 0.63,
+    "tau_ratio_max": 1.03,
+    "frames_over_limit": 1,
+    "tl_unsup_F_med": 22.8,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      1.03
+     ],
+     [
+      "right_knee_joint",
+      0.32
+     ]
+    ]
+   },
+   {
+    "t": "0.75-1.00",
+    "root_z": 0.77,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision"
+    ],
+    "unsup_F_med": 20.9,
+    "unsup_F_max": 97.8,
+    "unsup_M_med": 7.3,
+    "tau_ratio_p50": 0.39,
+    "tau_ratio_max": 0.61,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": 32.3,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.61
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.53
+     ]
+    ]
+   },
+   {
+    "t": "1.00-1.25",
+    "root_z": 0.79,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision"
+    ],
+    "unsup_F_med": 5.1,
+    "unsup_F_max": 18.5,
+    "unsup_M_med": 1.8,
+    "tau_ratio_p50": 0.44,
+    "tau_ratio_max": 0.61,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": 8.0,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.61
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.58
+     ]
+    ]
+   },
+   {
+    "t": "1.25-1.50",
+    "root_z": 0.76,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision",
+     "right_foot1_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision",
+     "right_foot7_collision"
+    ],
+    "unsup_F_med": 12.4,
+    "unsup_F_max": 26.2,
+    "unsup_M_med": 4.4,
+    "tau_ratio_p50": 0.39,
+    "tau_ratio_max": 1.07,
+    "frames_over_limit": 1,
+    "tl_unsup_F_med": 19.4,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      1.07
+     ],
+     [
+      "right_hip_pitch_joint",
+      1.06
+     ]
+    ]
+   },
+   {
+    "t": "1.50-1.75",
+    "root_z": 0.77,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision",
+     "right_foot1_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision",
+     "right_foot7_collision"
+    ],
+    "unsup_F_med": 0.0,
+    "unsup_F_max": 25.6,
+    "unsup_M_med": 0.0,
+    "tau_ratio_p50": 0.43,
+    "tau_ratio_max": 0.79,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": 0.0,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.79
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.78
+     ]
+    ]
+   },
+   {
+    "t": "1.75-2.00",
+    "root_z": 0.76,
+    "contacts": [
+     "left_foot1_collision",
+     "left_foot2_collision",
+     "left_foot3_collision",
+     "left_foot4_collision",
+     "left_foot5_collision",
+     "left_foot6_collision",
+     "left_foot7_collision",
+     "right_foot1_collision",
+     "right_foot2_collision",
+     "right_foot3_collision",
+     "right_foot4_collision",
+     "right_foot5_collision",
+     "right_foot6_collision",
+     "right_foot7_collision"
+    ],
+    "unsup_F_med": 0.0,
+    "unsup_F_max": 103.1,
+    "unsup_M_med": 0.0,
+    "tau_ratio_p50": 0.45,
+    "tau_ratio_max": 0.93,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": 0.0,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.93
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.88
+     ]
+    ]
+   }
+  ]
+ },
+ "frames": [
+  {
+   "t": 0.0,
+   "W_force": [
+    -290.11,
+    -13.79,
+    177.13
+   ],
+   "W_torque_body": [
+    0.86,
+    -20.51,
+    0.98
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.004
+    ],
+    [
+     "left_foot2_collision",
+     0.0007
+    ],
+    [
+     "left_foot3_collision",
+     0.0001
+    ],
+    [
+     "left_foot4_collision",
+     0.0007
+    ],
+    [
+     "left_foot5_collision",
+     0.0019
+    ],
+    [
+     "left_foot6_collision",
+     0.0038
+    ],
+    [
+     "left_foot7_collision",
+     0.0085
+    ]
+   ],
+   "root_z": 0.762,
+   "real": {
+    "unsupported_force_N": 213.9,
+    "unsupported_torque_Nm": 65.3,
+    "max_tau_ratio": 0.81,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.81
+     ],
+     [
+      "waist_pitch_joint",
+      0.44
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.36
+     ]
+    ],
+    "contact_normal_force_N": 137.4,
+    "tl_unsupported_force_N": 304.3,
+    "tl_unsupported_torque_Nm": 3.8
+   },
+   "sim": {
+    "unsupported_force_N": 213.9,
+    "unsupported_torque_Nm": 65.3,
+    "max_tau_ratio": 0.81,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.81
+     ],
+     [
+      "waist_pitch_joint",
+      0.44
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.36
+     ]
+    ],
+    "contact_normal_force_N": 137.4,
+    "tl_unsupported_force_N": 304.3,
+    "tl_unsupported_torque_Nm": 3.8
+   }
+  },
+  {
+   "t": 0.02,
+   "W_force": [
+    -274.58,
+    -13.49,
+    99.72
+   ],
+   "W_torque_body": [
+    -0.43,
+    -12.32,
+    2.06
+   ],
+   "n_contacts": 2,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0594
+    ],
+    [
+     "left_foot3_collision",
+     0.0597
+    ]
+   ],
+   "root_z": 0.79,
+   "real": {
+    "unsupported_force_N": 204.3,
+    "unsupported_torque_Nm": 49.8,
+    "max_tau_ratio": 0.65,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.65
+     ],
+     [
+      "waist_pitch_joint",
+      0.45
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.34
+     ]
+    ],
+    "contact_normal_force_N": 119.4,
+    "tl_unsupported_force_N": 268.5,
+    "tl_unsupported_torque_Nm": 2.1
+   },
+   "sim": {
+    "unsupported_force_N": 204.3,
+    "unsupported_torque_Nm": 49.8,
+    "max_tau_ratio": 0.65,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.65
+     ],
+     [
+      "waist_pitch_joint",
+      0.45
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.34
+     ]
+    ],
+    "contact_normal_force_N": 119.4,
+    "tl_unsupported_force_N": 268.5,
+    "tl_unsupported_torque_Nm": 2.1
+   }
+  },
+  {
+   "t": 0.04,
+   "W_force": [
+    -265.03,
+    -5.08,
+    116.87
+   ],
+   "W_torque_body": [
+    -1.87,
+    -8.29,
+    1.23
+   ],
+   "n_contacts": 5,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0536
+    ],
+    [
+     "left_foot3_collision",
+     0.054
+    ],
+    [
+     "left_foot4_collision",
+     0.0553
+    ],
+    [
+     "left_foot5_collision",
+     0.0571
+    ],
+    [
+     "left_foot6_collision",
+     0.0592
+    ]
+   ],
+   "root_z": 0.776,
+   "real": {
+    "unsupported_force_N": 188.6,
+    "unsupported_torque_Nm": 53.6,
+    "max_tau_ratio": 0.68,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.68
+     ],
+     [
+      "waist_pitch_joint",
+      0.47
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.36
+     ]
+    ],
+    "contact_normal_force_N": 128.1,
+    "tl_unsupported_force_N": 260.0,
+    "tl_unsupported_torque_Nm": 1.2
+   },
+   "sim": {
+    "unsupported_force_N": 188.6,
+    "unsupported_torque_Nm": 53.6,
+    "max_tau_ratio": 0.68,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.68
+     ],
+     [
+      "waist_pitch_joint",
+      0.47
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.36
+     ]
+    ],
+    "contact_normal_force_N": 128.1,
+    "tl_unsupported_force_N": 260.0,
+    "tl_unsupported_torque_Nm": 1.2
+   }
+  },
+  {
+   "t": 0.06,
+   "W_force": [
+    -134.82,
+    16.09,
+    217.28
+   ],
+   "W_torque_body": [
+    -4.01,
+    2.7,
+    -0.16
+   ],
+   "n_contacts": 6,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0585
+    ],
+    [
+     "left_foot2_collision",
+     0.0488
+    ],
+    [
+     "left_foot3_collision",
+     0.0493
+    ],
+    [
+     "left_foot4_collision",
+     0.0509
+    ],
+    [
+     "left_foot5_collision",
+     0.0529
+    ],
+    [
+     "left_foot6_collision",
+     0.0554
+    ]
+   ],
+   "root_z": 0.763,
+   "real": {
+    "unsupported_force_N": 93.9,
+    "unsupported_torque_Nm": 32.6,
+    "max_tau_ratio": 0.41,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.41
+     ],
+     [
+      "waist_pitch_joint",
+      0.32
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.24
+     ]
+    ],
+    "contact_normal_force_N": 216.1,
+    "tl_unsupported_force_N": 140.9,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 93.9,
+    "unsupported_torque_Nm": 32.6,
+    "max_tau_ratio": 0.41,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.41
+     ],
+     [
+      "waist_pitch_joint",
+      0.32
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.24
+     ]
+    ],
+    "contact_normal_force_N": 216.1,
+    "tl_unsupported_force_N": 140.9,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.08,
+   "W_force": [
+    -1.06,
+    32.12,
+    319.1
+   ],
+   "W_torque_body": [
+    -3.5,
+    14.78,
+    -0.8
+   ],
+   "n_contacts": 6,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0544
+    ],
+    [
+     "left_foot2_collision",
+     0.0439
+    ],
+    [
+     "left_foot3_collision",
+     0.0443
+    ],
+    [
+     "left_foot4_collision",
+     0.0458
+    ],
+    [
+     "left_foot5_collision",
+     0.0478
+    ],
+    [
+     "left_foot6_collision",
+     0.0502
+    ]
+   ],
+   "root_z": 0.753,
+   "real": {
+    "unsupported_force_N": 8.5,
+    "unsupported_torque_Nm": 3.0,
+    "max_tau_ratio": 0.38,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_knee_joint",
+      0.38
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.3
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.24
+     ]
+    ],
+    "contact_normal_force_N": 318.8,
+    "tl_unsupported_force_N": 12.7,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 8.5,
+    "unsupported_torque_Nm": 3.0,
+    "max_tau_ratio": 0.38,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_knee_joint",
+      0.38
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.3
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.24
+     ]
+    ],
+    "contact_normal_force_N": 318.8,
+    "tl_unsupported_force_N": 12.7,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.1,
+   "W_force": [
+    58.95,
+    38.11,
+    454.85
+   ],
+   "W_torque_body": [
+    -0.4,
+    15.91,
+    -1.11
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0505
+    ],
+    [
+     "left_foot2_collision",
+     0.0403
+    ],
+    [
+     "left_foot3_collision",
+     0.0406
+    ],
+    [
+     "left_foot4_collision",
+     0.0419
+    ],
+    [
+     "left_foot5_collision",
+     0.0437
+    ],
+    [
+     "left_foot6_collision",
+     0.0459
+    ],
+    [
+     "left_foot7_collision",
+     0.0587
+    ]
+   ],
+   "root_z": 0.745,
+   "real": {
+    "unsupported_force_N": 7.4,
+    "unsupported_torque_Nm": 2.7,
+    "max_tau_ratio": 0.46,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.46
+     ],
+     [
+      "left_knee_joint",
+      0.4
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.35
+     ]
+    ],
+    "contact_normal_force_N": 455.2,
+    "tl_unsupported_force_N": 11.3,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 7.4,
+    "unsupported_torque_Nm": 2.7,
+    "max_tau_ratio": 0.46,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.46
+     ],
+     [
+      "left_knee_joint",
+      0.4
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.35
+     ]
+    ],
+    "contact_normal_force_N": 455.2,
+    "tl_unsupported_force_N": 11.3,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.12,
+   "W_force": [
+    44.94,
+    34.84,
+    579.08
+   ],
+   "W_torque_body": [
+    3.52,
+    7.27,
+    -1.02
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0481
+    ],
+    [
+     "left_foot2_collision",
+     0.0395
+    ],
+    [
+     "left_foot3_collision",
+     0.0398
+    ],
+    [
+     "left_foot4_collision",
+     0.041
+    ],
+    [
+     "left_foot5_collision",
+     0.0426
+    ],
+    [
+     "left_foot6_collision",
+     0.0445
+    ],
+    [
+     "left_foot7_collision",
+     0.0555
+    ]
+   ],
+   "root_z": 0.741,
+   "real": {
+    "unsupported_force_N": 18.5,
+    "unsupported_torque_Nm": 6.7,
+    "max_tau_ratio": 0.6,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.6
+     ],
+     [
+      "left_knee_joint",
+      0.5
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.41
+     ]
+    ],
+    "contact_normal_force_N": 579.3,
+    "tl_unsupported_force_N": 28.1,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 18.5,
+    "unsupported_torque_Nm": 6.7,
+    "max_tau_ratio": 0.6,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.6
+     ],
+     [
+      "left_knee_joint",
+      0.5
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.41
+     ]
+    ],
+    "contact_normal_force_N": 579.3,
+    "tl_unsupported_force_N": 28.1,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.14,
+   "W_force": [
+    30.89,
+    25.15,
+    598.86
+   ],
+   "W_torque_body": [
+    7.44,
+    2.24,
+    -0.1
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.048
+    ],
+    [
+     "left_foot2_collision",
+     0.0424
+    ],
+    [
+     "left_foot3_collision",
+     0.0429
+    ],
+    [
+     "left_foot4_collision",
+     0.044
+    ],
+    [
+     "left_foot5_collision",
+     0.0455
+    ],
+    [
+     "left_foot6_collision",
+     0.0471
+    ],
+    [
+     "left_foot7_collision",
+     0.0548
+    ]
+   ],
+   "root_z": 0.742,
+   "real": {
+    "unsupported_force_N": 31.0,
+    "unsupported_torque_Nm": 11.2,
+    "max_tau_ratio": 0.64,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.64
+     ],
+     [
+      "left_knee_joint",
+      0.52
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.41
+     ]
+    ],
+    "contact_normal_force_N": 597.9,
+    "tl_unsupported_force_N": 47.2,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 31.0,
+    "unsupported_torque_Nm": 11.2,
+    "max_tau_ratio": 0.64,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.64
+     ],
+     [
+      "left_knee_joint",
+      0.52
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.41
+     ]
+    ],
+    "contact_normal_force_N": 597.9,
+    "tl_unsupported_force_N": 47.2,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.16,
+   "W_force": [
+    15.1,
+    15.7,
+    554.53
+   ],
+   "W_torque_body": [
+    10.44,
+    -0.79,
+    1.07
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0501
+    ],
+    [
+     "left_foot2_collision",
+     0.0495
+    ],
+    [
+     "left_foot3_collision",
+     0.0504
+    ],
+    [
+     "left_foot4_collision",
+     0.0516
+    ],
+    [
+     "left_foot5_collision",
+     0.0529
+    ],
+    [
+     "left_foot6_collision",
+     0.054
+    ],
+    [
+     "left_foot7_collision",
+     0.0568
+    ]
+   ],
+   "root_z": 0.747,
+   "real": {
+    "unsupported_force_N": 38.3,
+    "unsupported_torque_Nm": 13.7,
+    "max_tau_ratio": 0.6,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.6
+     ],
+     [
+      "left_knee_joint",
+      0.48
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.36
+     ]
+    ],
+    "contact_normal_force_N": 551.7,
+    "tl_unsupported_force_N": 58.4,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 38.3,
+    "unsupported_torque_Nm": 13.7,
+    "max_tau_ratio": 0.6,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.6
+     ],
+     [
+      "left_knee_joint",
+      0.48
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.36
+     ]
+    ],
+    "contact_normal_force_N": 551.7,
+    "tl_unsupported_force_N": 58.4,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.18,
+   "W_force": [
+    -3.25,
+    11.54,
+    491.32
+   ],
+   "W_torque_body": [
+    12.36,
+    -4.08,
+    1.78
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.052
+    ],
+    [
+     "left_foot2_collision",
+     0.0516
+    ],
+    [
+     "left_foot3_collision",
+     0.052
+    ],
+    [
+     "left_foot4_collision",
+     0.0529
+    ],
+    [
+     "left_foot5_collision",
+     0.054
+    ],
+    [
+     "left_foot6_collision",
+     0.0552
+    ],
+    [
+     "left_foot7_collision",
+     0.0573
+    ]
+   ],
+   "root_z": 0.755,
+   "real": {
+    "unsupported_force_N": 4.2,
+    "unsupported_torque_Nm": 1.6,
+    "max_tau_ratio": 1.24,
+    "n_over_limit": 1,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      1.24
+     ],
+     [
+      "left_hip_roll_joint",
+      0.28
+     ],
+     [
+      "left_knee_joint",
+      0.22
+     ]
+    ],
+    "contact_normal_force_N": 491.2,
+    "tl_unsupported_force_N": 25.3,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 4.2,
+    "unsupported_torque_Nm": 1.6,
+    "max_tau_ratio": 1.24,
+    "n_over_limit": 1,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      1.24
+     ],
+     [
+      "left_hip_roll_joint",
+      0.28
+     ],
+     [
+      "left_knee_joint",
+      0.22
+     ]
+    ],
+    "contact_normal_force_N": 491.2,
+    "tl_unsupported_force_N": 25.3,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.2,
+   "W_force": [
+    -20.46,
+    11.18,
+    419.69
+   ],
+   "W_torque_body": [
+    13.09,
+    -7.08,
+    1.83
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.054
+    ],
+    [
+     "left_foot2_collision",
+     0.0511
+    ],
+    [
+     "left_foot3_collision",
+     0.0505
+    ],
+    [
+     "left_foot4_collision",
+     0.0509
+    ],
+    [
+     "left_foot5_collision",
+     0.0518
+    ],
+    [
+     "left_foot6_collision",
+     0.0533
+    ],
+    [
+     "left_foot7_collision",
+     0.0572
+    ]
+   ],
+   "root_z": 0.765,
+   "real": {
+    "unsupported_force_N": 6.2,
+    "unsupported_torque_Nm": 2.3,
+    "max_tau_ratio": 1.07,
+    "n_over_limit": 1,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      1.07
+     ],
+     [
+      "left_hip_roll_joint",
+      0.22
+     ],
+     [
+      "left_knee_joint",
+      0.18
+     ]
+    ],
+    "contact_normal_force_N": 419.4,
+    "tl_unsupported_force_N": 15.2,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 6.2,
+    "unsupported_torque_Nm": 2.3,
+    "max_tau_ratio": 1.07,
+    "n_over_limit": 1,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      1.07
+     ],
+     [
+      "left_hip_roll_joint",
+      0.22
+     ],
+     [
+      "left_knee_joint",
+      0.18
+     ]
+    ],
+    "contact_normal_force_N": 419.4,
+    "tl_unsupported_force_N": 15.2,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.22,
+   "W_force": [
+    -36.71,
+    8.04,
+    326.64
+   ],
+   "W_torque_body": [
+    13.08,
+    -11.38,
+    1.24
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0561
+    ],
+    [
+     "left_foot2_collision",
+     0.0503
+    ],
+    [
+     "left_foot3_collision",
+     0.0486
+    ],
+    [
+     "left_foot4_collision",
+     0.0483
+    ],
+    [
+     "left_foot5_collision",
+     0.0491
+    ],
+    [
+     "left_foot6_collision",
+     0.0511
+    ],
+    [
+     "left_foot7_collision",
+     0.0573
+    ]
+   ],
+   "root_z": 0.778,
+   "real": {
+    "unsupported_force_N": 5.6,
+    "unsupported_torque_Nm": 2.1,
+    "max_tau_ratio": 0.82,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.82
+     ],
+     [
+      "left_hip_roll_joint",
+      0.16
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 326.3,
+    "tl_unsupported_force_N": 10.3,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 5.6,
+    "unsupported_torque_Nm": 2.1,
+    "max_tau_ratio": 0.82,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.82
+     ],
+     [
+      "left_hip_roll_joint",
+      0.16
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 326.3,
+    "tl_unsupported_force_N": 10.3,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.24,
+   "W_force": [
+    -51.19,
+    -0.79,
+    216.18
+   ],
+   "W_torque_body": [
+    12.84,
+    -17.81,
+    0.22
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.058
+    ],
+    [
+     "left_foot2_collision",
+     0.0488
+    ],
+    [
+     "left_foot3_collision",
+     0.0459
+    ],
+    [
+     "left_foot4_collision",
+     0.045
+    ],
+    [
+     "left_foot5_collision",
+     0.0456
+    ],
+    [
+     "left_foot6_collision",
+     0.0482
+    ],
+    [
+     "left_foot7_collision",
+     0.0571
+    ]
+   ],
+   "root_z": 0.791,
+   "real": {
+    "unsupported_force_N": 2.1,
+    "unsupported_torque_Nm": 1.0,
+    "max_tau_ratio": 0.52,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.52
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.11
+     ],
+     [
+      "waist_roll_joint",
+      0.09
+     ]
+    ],
+    "contact_normal_force_N": 216.1,
+    "tl_unsupported_force_N": 3.7,
+    "tl_unsupported_torque_Nm": 0.1
+   },
+   "sim": {
+    "unsupported_force_N": 2.1,
+    "unsupported_torque_Nm": 1.0,
+    "max_tau_ratio": 0.52,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.52
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.11
+     ],
+     [
+      "waist_roll_joint",
+      0.09
+     ]
+    ],
+    "contact_normal_force_N": 216.1,
+    "tl_unsupported_force_N": 3.7,
+    "tl_unsupported_torque_Nm": 0.1
+   }
+  },
+  {
+   "t": 0.26,
+   "W_force": [
+    -43.89,
+    -5.67,
+    131.25
+   ],
+   "W_torque_body": [
+    11.88,
+    -14.85,
+    -0.69
+   ],
+   "n_contacts": 6,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0474
+    ],
+    [
+     "left_foot3_collision",
+     0.0433
+    ],
+    [
+     "left_foot4_collision",
+     0.0417
+    ],
+    [
+     "left_foot5_collision",
+     0.0422
+    ],
+    [
+     "left_foot6_collision",
+     0.0455
+    ],
+    [
+     "left_foot7_collision",
+     0.0573
+    ]
+   ],
+   "root_z": 0.804,
+   "real": {
+    "unsupported_force_N": 1.6,
+    "unsupported_torque_Nm": 1.0,
+    "max_tau_ratio": 0.28,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.28
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.11
+     ],
+     [
+      "left_shoulder_pitch_joint",
+      0.1
+     ]
+    ],
+    "contact_normal_force_N": 131.4,
+    "tl_unsupported_force_N": 2.3,
+    "tl_unsupported_torque_Nm": 0.8
+   },
+   "sim": {
+    "unsupported_force_N": 1.6,
+    "unsupported_torque_Nm": 1.0,
+    "max_tau_ratio": 0.28,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.28
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.11
+     ],
+     [
+      "left_shoulder_pitch_joint",
+      0.1
+     ]
+    ],
+    "contact_normal_force_N": 131.4,
+    "tl_unsupported_force_N": 2.3,
+    "tl_unsupported_torque_Nm": 0.8
+   }
+  },
+  {
+   "t": 0.28,
+   "W_force": [
+    -14.35,
+    -1.34,
+    71.68
+   ],
+   "W_torque_body": [
+    10.25,
+    -0.17,
+    -1.09
+   ],
+   "n_contacts": 5,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0479
+    ],
+    [
+     "left_foot3_collision",
+     0.0427
+    ],
+    [
+     "left_foot4_collision",
+     0.0407
+    ],
+    [
+     "left_foot5_collision",
+     0.0414
+    ],
+    [
+     "left_foot6_collision",
+     0.0454
+    ]
+   ],
+   "root_z": 0.816,
+   "real": {
+    "unsupported_force_N": 4.7,
+    "unsupported_torque_Nm": 1.5,
+    "max_tau_ratio": 0.2,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.2
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.18
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 71.9,
+    "tl_unsupported_force_N": 7.3,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 4.7,
+    "unsupported_torque_Nm": 1.5,
+    "max_tau_ratio": 0.2,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.2
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.18
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 71.9,
+    "tl_unsupported_force_N": 7.3,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.3,
+   "W_force": [
+    3.54,
+    6.88,
+    26.92
+   ],
+   "W_torque_body": [
+    7.54,
+    7.79,
+    -1.0
+   ],
+   "n_contacts": 5,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0524
+    ],
+    [
+     "left_foot3_collision",
+     0.0465
+    ],
+    [
+     "left_foot4_collision",
+     0.0443
+    ],
+    [
+     "left_foot5_collision",
+     0.0452
+    ],
+    [
+     "left_foot6_collision",
+     0.05
+    ]
+   ],
+   "root_z": 0.824,
+   "real": {
+    "unsupported_force_N": 9.4,
+    "unsupported_torque_Nm": 3.1,
+    "max_tau_ratio": 0.27,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.27
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.24
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.15
+     ]
+    ],
+    "contact_normal_force_N": 27.5,
+    "tl_unsupported_force_N": 12.9,
+    "tl_unsupported_torque_Nm": 1.0
+   },
+   "sim": {
+    "unsupported_force_N": 9.4,
+    "unsupported_torque_Nm": 3.1,
+    "max_tau_ratio": 0.27,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.27
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.24
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.15
+     ]
+    ],
+    "contact_normal_force_N": 27.5,
+    "tl_unsupported_force_N": 12.9,
+    "tl_unsupported_torque_Nm": 1.0
+   }
+  },
+  {
+   "t": 0.32,
+   "W_force": [
+    19.32,
+    20.48,
+    43.78
+   ],
+   "W_torque_body": [
+    4.07,
+    13.03,
+    0.07
+   ],
+   "n_contacts": 4,
+   "contacts": [
+    [
+     "left_foot3_collision",
+     0.0538
+    ],
+    [
+     "left_foot4_collision",
+     0.0515
+    ],
+    [
+     "left_foot5_collision",
+     0.0527
+    ],
+    [
+     "left_foot6_collision",
+     0.058
+    ]
+   ],
+   "root_z": 0.83,
+   "real": {
+    "unsupported_force_N": 18.6,
+    "unsupported_torque_Nm": 5.8,
+    "max_tau_ratio": 0.29,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.29
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.28
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.14
+     ]
+    ],
+    "contact_normal_force_N": 41.2,
+    "tl_unsupported_force_N": 26.1,
+    "tl_unsupported_torque_Nm": 0.2
+   },
+   "sim": {
+    "unsupported_force_N": 18.6,
+    "unsupported_torque_Nm": 5.8,
+    "max_tau_ratio": 0.29,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.29
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.28
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.14
+     ]
+    ],
+    "contact_normal_force_N": 41.2,
+    "tl_unsupported_force_N": 26.1,
+    "tl_unsupported_torque_Nm": 0.2
+   }
+  },
+  {
+   "t": 0.34,
+   "W_force": [
+    48.98,
+    41.93,
+    129.68
+   ],
+   "W_torque_body": [
+    -0.37,
+    21.7,
+    2.22
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0303
+    ],
+    [
+     "left_foot2_collision",
+     0.0118
+    ],
+    [
+     "left_foot3_collision",
+     0.0059
+    ],
+    [
+     "left_foot4_collision",
+     0.0039
+    ],
+    [
+     "left_foot5_collision",
+     0.005
+    ],
+    [
+     "left_foot6_collision",
+     0.0102
+    ],
+    [
+     "left_foot7_collision",
+     0.0279
+    ]
+   ],
+   "root_z": 0.807,
+   "real": {
+    "unsupported_force_N": 42.5,
+    "unsupported_torque_Nm": 12.9,
+    "max_tau_ratio": 0.33,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.33
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.26
+     ],
+     [
+      "left_knee_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 122.9,
+    "tl_unsupported_force_N": 59.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 42.5,
+    "unsupported_torque_Nm": 12.9,
+    "max_tau_ratio": 0.33,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.33
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.26
+     ],
+     [
+      "left_knee_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 122.9,
+    "tl_unsupported_force_N": 59.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.36,
+   "W_force": [
+    46.48,
+    52.4,
+    195.12
+   ],
+   "W_torque_body": [
+    -3.18,
+    10.42,
+    3.89
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0289
+    ],
+    [
+     "left_foot2_collision",
+     0.0108
+    ],
+    [
+     "left_foot3_collision",
+     0.0051
+    ],
+    [
+     "left_foot4_collision",
+     0.0031
+    ],
+    [
+     "left_foot5_collision",
+     0.0043
+    ],
+    [
+     "left_foot6_collision",
+     0.0095
+    ],
+    [
+     "left_foot7_collision",
+     0.0271
+    ]
+   ],
+   "root_z": 0.805,
+   "real": {
+    "unsupported_force_N": 58.7,
+    "unsupported_torque_Nm": 18.0,
+    "max_tau_ratio": 0.26,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.26
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.17
+     ],
+     [
+      "left_knee_joint",
+      0.15
+     ]
+    ],
+    "contact_normal_force_N": 185.6,
+    "tl_unsupported_force_N": 83.9,
+    "tl_unsupported_torque_Nm": 1.0
+   },
+   "sim": {
+    "unsupported_force_N": 58.7,
+    "unsupported_torque_Nm": 18.0,
+    "max_tau_ratio": 0.26,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.26
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.17
+     ],
+     [
+      "left_knee_joint",
+      0.15
+     ]
+    ],
+    "contact_normal_force_N": 185.6,
+    "tl_unsupported_force_N": 83.9,
+    "tl_unsupported_torque_Nm": 1.0
+   }
+  },
+  {
+   "t": 0.38,
+   "W_force": [
+    0.13,
+    36.94,
+    247.52
+   ],
+   "W_torque_body": [
+    -0.44,
+    -20.42,
+    4.89
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0145
+    ],
+    [
+     "right_foot2_collision",
+     0.0057
+    ],
+    [
+     "right_foot3_collision",
+     0.0035
+    ],
+    [
+     "right_foot4_collision",
+     0.0034
+    ],
+    [
+     "right_foot5_collision",
+     0.005
+    ],
+    [
+     "right_foot6_collision",
+     0.0084
+    ],
+    [
+     "right_foot7_collision",
+     0.0184
+    ]
+   ],
+   "root_z": 0.801,
+   "real": {
+    "unsupported_force_N": 47.6,
+    "unsupported_torque_Nm": 15.0,
+    "max_tau_ratio": 0.33,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.33
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.31
+     ],
+     [
+      "waist_roll_joint",
+      0.16
+     ]
+    ],
+    "contact_normal_force_N": 239.9,
+    "tl_unsupported_force_N": 69.6,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 47.6,
+    "unsupported_torque_Nm": 15.0,
+    "max_tau_ratio": 0.33,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.33
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.31
+     ],
+     [
+      "waist_roll_joint",
+      0.16
+     ]
+    ],
+    "contact_normal_force_N": 239.9,
+    "tl_unsupported_force_N": 69.6,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.4,
+   "W_force": [
+    -15.58,
+    22.69,
+    306.55
+   ],
+   "W_torque_body": [
+    2.73,
+    -36.07,
+    3.23
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0131
+    ],
+    [
+     "right_foot2_collision",
+     0.0052
+    ],
+    [
+     "right_foot3_collision",
+     0.0031
+    ],
+    [
+     "right_foot4_collision",
+     0.0029
+    ],
+    [
+     "right_foot5_collision",
+     0.0041
+    ],
+    [
+     "right_foot6_collision",
+     0.007
+    ],
+    [
+     "right_foot7_collision",
+     0.0156
+    ]
+   ],
+   "root_z": 0.793,
+   "real": {
+    "unsupported_force_N": 46.9,
+    "unsupported_torque_Nm": 14.9,
+    "max_tau_ratio": 0.43,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.43
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.43
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.18
+     ]
+    ],
+    "contact_normal_force_N": 298.0,
+    "tl_unsupported_force_N": 59.9,
+    "tl_unsupported_torque_Nm": 6.3
+   },
+   "sim": {
+    "unsupported_force_N": 46.9,
+    "unsupported_torque_Nm": 14.9,
+    "max_tau_ratio": 0.43,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.43
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.43
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.18
+     ]
+    ],
+    "contact_normal_force_N": 298.0,
+    "tl_unsupported_force_N": 59.9,
+    "tl_unsupported_torque_Nm": 6.3
+   }
+  },
+  {
+   "t": 0.42,
+   "W_force": [
+    -8.57,
+    9.42,
+    362.9
+   ],
+   "W_torque_body": [
+    3.28,
+    -34.21,
+    2.71
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0118
+    ],
+    [
+     "right_foot2_collision",
+     0.0048
+    ],
+    [
+     "right_foot3_collision",
+     0.003
+    ],
+    [
+     "right_foot4_collision",
+     0.0029
+    ],
+    [
+     "right_foot5_collision",
+     0.0042
+    ],
+    [
+     "right_foot6_collision",
+     0.0069
+    ],
+    [
+     "right_foot7_collision",
+     0.0148
+    ]
+   ],
+   "root_z": 0.783,
+   "real": {
+    "unsupported_force_N": 42.5,
+    "unsupported_torque_Nm": 13.8,
+    "max_tau_ratio": 0.53,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.53
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.41
+     ],
+     [
+      "right_ankle_roll_joint",
+      0.2
+     ]
+    ],
+    "contact_normal_force_N": 354.8,
+    "tl_unsupported_force_N": 53.3,
+    "tl_unsupported_torque_Nm": 7.8
+   },
+   "sim": {
+    "unsupported_force_N": 42.5,
+    "unsupported_torque_Nm": 13.8,
+    "max_tau_ratio": 0.53,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.53
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.41
+     ],
+     [
+      "right_ankle_roll_joint",
+      0.2
+     ]
+    ],
+    "contact_normal_force_N": 354.8,
+    "tl_unsupported_force_N": 53.3,
+    "tl_unsupported_torque_Nm": 7.8
+   }
+  },
+  {
+   "t": 0.44,
+   "W_force": [
+    -14.31,
+    -13.07,
+    423.53
+   ],
+   "W_torque_body": [
+    4.56,
+    -35.32,
+    3.53
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0101
+    ],
+    [
+     "right_foot2_collision",
+     0.0032
+    ],
+    [
+     "right_foot3_collision",
+     0.0016
+    ],
+    [
+     "right_foot4_collision",
+     0.0019
+    ],
+    [
+     "right_foot5_collision",
+     0.0035
+    ],
+    [
+     "right_foot6_collision",
+     0.0066
+    ],
+    [
+     "right_foot7_collision",
+     0.0151
+    ]
+   ],
+   "root_z": 0.772,
+   "real": {
+    "unsupported_force_N": 35.1,
+    "unsupported_torque_Nm": 11.5,
+    "max_tau_ratio": 0.63,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.63
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.39
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.25
+     ]
+    ],
+    "contact_normal_force_N": 417.2,
+    "tl_unsupported_force_N": 45.3,
+    "tl_unsupported_torque_Nm": 6.9
+   },
+   "sim": {
+    "unsupported_force_N": 35.1,
+    "unsupported_torque_Nm": 11.5,
+    "max_tau_ratio": 0.63,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.63
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.39
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.25
+     ]
+    ],
+    "contact_normal_force_N": 417.2,
+    "tl_unsupported_force_N": 45.3,
+    "tl_unsupported_torque_Nm": 6.9
+   }
+  },
+  {
+   "t": 0.46,
+   "W_force": [
+    -6.23,
+    -39.55,
+    487.25
+   ],
+   "W_torque_body": [
+    9.09,
+    -26.85,
+    3.98
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0109
+    ],
+    [
+     "right_foot2_collision",
+     0.0036
+    ],
+    [
+     "right_foot3_collision",
+     0.0019
+    ],
+    [
+     "right_foot4_collision",
+     0.0021
+    ],
+    [
+     "right_foot5_collision",
+     0.0037
+    ],
+    [
+     "right_foot6_collision",
+     0.0069
+    ],
+    [
+     "right_foot7_collision",
+     0.0157
+    ]
+   ],
+   "root_z": 0.761,
+   "real": {
+    "unsupported_force_N": 26.8,
+    "unsupported_torque_Nm": 8.9,
+    "max_tau_ratio": 0.72,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.72
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.32
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.3
+     ]
+    ],
+    "contact_normal_force_N": 483.1,
+    "tl_unsupported_force_N": 39.0,
+    "tl_unsupported_torque_Nm": 0.9
+   },
+   "sim": {
+    "unsupported_force_N": 26.8,
+    "unsupported_torque_Nm": 8.9,
+    "max_tau_ratio": 0.72,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.72
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.32
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.3
+     ]
+    ],
+    "contact_normal_force_N": 483.1,
+    "tl_unsupported_force_N": 39.0,
+    "tl_unsupported_torque_Nm": 0.9
+   }
+  },
+  {
+   "t": 0.48,
+   "W_force": [
+    22.06,
+    -52.02,
+    542.92
+   ],
+   "W_torque_body": [
+    10.08,
+    -7.64,
+    3.5
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0126
+    ],
+    [
+     "right_foot2_collision",
+     0.005
+    ],
+    [
+     "right_foot3_collision",
+     0.003
+    ],
+    [
+     "right_foot4_collision",
+     0.0029
+    ],
+    [
+     "right_foot5_collision",
+     0.0041
+    ],
+    [
+     "right_foot6_collision",
+     0.007
+    ],
+    [
+     "right_foot7_collision",
+     0.0155
+    ]
+   ],
+   "root_z": 0.754,
+   "real": {
+    "unsupported_force_N": 18.1,
+    "unsupported_torque_Nm": 6.2,
+    "max_tau_ratio": 0.78,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.78
+     ],
+     [
+      "right_knee_joint",
+      0.4
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.35
+     ]
+    ],
+    "contact_normal_force_N": 540.4,
+    "tl_unsupported_force_N": 27.8,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 18.1,
+    "unsupported_torque_Nm": 6.2,
+    "max_tau_ratio": 0.78,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.78
+     ],
+     [
+      "right_knee_joint",
+      0.4
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.35
+     ]
+    ],
+    "contact_normal_force_N": 540.4,
+    "tl_unsupported_force_N": 27.8,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.5,
+   "W_force": [
+    37.65,
+    -56.47,
+    582.6
+   ],
+   "W_torque_body": [
+    9.04,
+    2.48,
+    3.08
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0118
+    ],
+    [
+     "right_foot2_collision",
+     0.0049
+    ],
+    [
+     "right_foot3_collision",
+     0.003
+    ],
+    [
+     "right_foot4_collision",
+     0.0028
+    ],
+    [
+     "right_foot5_collision",
+     0.0038
+    ],
+    [
+     "right_foot6_collision",
+     0.0063
+    ],
+    [
+     "right_foot7_collision",
+     0.0138
+    ]
+   ],
+   "root_z": 0.749,
+   "real": {
+    "unsupported_force_N": 12.7,
+    "unsupported_torque_Nm": 4.9,
+    "max_tau_ratio": 0.87,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.87
+     ],
+     [
+      "right_knee_joint",
+      0.47
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.36
+     ]
+    ],
+    "contact_normal_force_N": 581.0,
+    "tl_unsupported_force_N": 22.8,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 12.7,
+    "unsupported_torque_Nm": 4.9,
+    "max_tau_ratio": 0.87,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.87
+     ],
+     [
+      "right_knee_joint",
+      0.47
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.36
+     ]
+    ],
+    "contact_normal_force_N": 581.0,
+    "tl_unsupported_force_N": 22.8,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.52,
+   "W_force": [
+    49.58,
+    -52.78,
+    561.59
+   ],
+   "W_torque_body": [
+    5.71,
+    9.25,
+    1.15
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0107
+    ],
+    [
+     "right_foot2_collision",
+     0.0047
+    ],
+    [
+     "right_foot3_collision",
+     0.003
+    ],
+    [
+     "right_foot4_collision",
+     0.0026
+    ],
+    [
+     "right_foot5_collision",
+     0.0033
+    ],
+    [
+     "right_foot6_collision",
+     0.0053
+    ],
+    [
+     "right_foot7_collision",
+     0.0115
+    ]
+   ],
+   "root_z": 0.747,
+   "real": {
+    "unsupported_force_N": 9.8,
+    "unsupported_torque_Nm": 3.3,
+    "max_tau_ratio": 0.95,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.95
+     ],
+     [
+      "right_knee_joint",
+      0.43
+     ],
+     [
+      "right_hip_roll_joint",
+      0.34
+     ]
+    ],
+    "contact_normal_force_N": 560.7,
+    "tl_unsupported_force_N": 15.2,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 9.8,
+    "unsupported_torque_Nm": 3.3,
+    "max_tau_ratio": 0.95,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.95
+     ],
+     [
+      "right_knee_joint",
+      0.43
+     ],
+     [
+      "right_hip_roll_joint",
+      0.34
+     ]
+    ],
+    "contact_normal_force_N": 560.7,
+    "tl_unsupported_force_N": 15.2,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.54,
+   "W_force": [
+    65.87,
+    -40.02,
+    472.37
+   ],
+   "W_torque_body": [
+    0.56,
+    15.65,
+    -1.62
+   ],
+   "n_contacts": 5,
+   "contacts": [
+    [
+     "right_foot2_collision",
+     0.0591
+    ],
+    [
+     "right_foot3_collision",
+     0.0588
+    ],
+    [
+     "right_foot4_collision",
+     0.0589
+    ],
+    [
+     "right_foot5_collision",
+     0.0591
+    ],
+    [
+     "right_foot6_collision",
+     0.0596
+    ]
+   ],
+   "root_z": 0.768,
+   "real": {
+    "unsupported_force_N": 16.3,
+    "unsupported_torque_Nm": 5.7,
+    "max_tau_ratio": 1.03,
+    "n_over_limit": 1,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      1.03
+     ],
+     [
+      "right_knee_joint",
+      0.32
+     ],
+     [
+      "right_hip_roll_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 469.9,
+    "tl_unsupported_force_N": 26.1,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 16.3,
+    "unsupported_torque_Nm": 5.7,
+    "max_tau_ratio": 1.03,
+    "n_over_limit": 1,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      1.03
+     ],
+     [
+      "right_knee_joint",
+      0.32
+     ],
+     [
+      "right_hip_roll_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 469.9,
+    "tl_unsupported_force_N": 26.1,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.56,
+   "W_force": [
+    68.06,
+    -25.54,
+    402.51
+   ],
+   "W_torque_body": [
+    -5.99,
+    17.99,
+    -3.96
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0563
+    ],
+    [
+     "right_foot2_collision",
+     0.0548
+    ],
+    [
+     "right_foot3_collision",
+     0.0544
+    ],
+    [
+     "right_foot4_collision",
+     0.0544
+    ],
+    [
+     "right_foot5_collision",
+     0.0548
+    ],
+    [
+     "right_foot6_collision",
+     0.0554
+    ],
+    [
+     "right_foot7_collision",
+     0.0573
+    ]
+   ],
+   "root_z": 0.772,
+   "real": {
+    "unsupported_force_N": 1.2,
+    "unsupported_torque_Nm": 0.5,
+    "max_tau_ratio": 0.9,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.9
+     ],
+     [
+      "right_knee_joint",
+      0.28
+     ],
+     [
+      "right_hip_roll_joint",
+      0.23
+     ]
+    ],
+    "contact_normal_force_N": 402.5,
+    "tl_unsupported_force_N": 2.1,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 1.2,
+    "unsupported_torque_Nm": 0.5,
+    "max_tau_ratio": 0.9,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.9
+     ],
+     [
+      "right_knee_joint",
+      0.28
+     ],
+     [
+      "right_hip_roll_joint",
+      0.23
+     ]
+    ],
+    "contact_normal_force_N": 402.5,
+    "tl_unsupported_force_N": 2.1,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.58,
+   "W_force": [
+    58.37,
+    -17.91,
+    359.94
+   ],
+   "W_torque_body": [
+    -9.24,
+    14.34,
+    -4.81
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0533
+    ],
+    [
+     "right_foot2_collision",
+     0.0509
+    ],
+    [
+     "right_foot3_collision",
+     0.0504
+    ],
+    [
+     "right_foot4_collision",
+     0.0505
+    ],
+    [
+     "right_foot5_collision",
+     0.0511
+    ],
+    [
+     "right_foot6_collision",
+     0.0522
+    ],
+    [
+     "right_foot7_collision",
+     0.0551
+    ]
+   ],
+   "root_z": 0.778,
+   "real": {
+    "unsupported_force_N": 9.9,
+    "unsupported_torque_Nm": 3.7,
+    "max_tau_ratio": 0.84,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.84
+     ],
+     [
+      "right_knee_joint",
+      0.23
+     ],
+     [
+      "right_hip_roll_joint",
+      0.18
+     ]
+    ],
+    "contact_normal_force_N": 360.4,
+    "tl_unsupported_force_N": 18.6,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 9.9,
+    "unsupported_torque_Nm": 3.7,
+    "max_tau_ratio": 0.84,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.84
+     ],
+     [
+      "right_knee_joint",
+      0.23
+     ],
+     [
+      "right_hip_roll_joint",
+      0.18
+     ]
+    ],
+    "contact_normal_force_N": 360.4,
+    "tl_unsupported_force_N": 18.6,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.6,
+   "W_force": [
+    47.6,
+    -14.74,
+    312.58
+   ],
+   "W_torque_body": [
+    -9.56,
+    11.2,
+    -5.39
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0512
+    ],
+    [
+     "right_foot2_collision",
+     0.0476
+    ],
+    [
+     "right_foot3_collision",
+     0.0468
+    ],
+    [
+     "right_foot4_collision",
+     0.0469
+    ],
+    [
+     "right_foot5_collision",
+     0.0478
+    ],
+    [
+     "right_foot6_collision",
+     0.0494
+    ],
+    [
+     "right_foot7_collision",
+     0.0539
+    ]
+   ],
+   "root_z": 0.785,
+   "real": {
+    "unsupported_force_N": 16.4,
+    "unsupported_torque_Nm": 6.1,
+    "max_tau_ratio": 0.72,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.72
+     ],
+     [
+      "right_knee_joint",
+      0.19
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.15
+     ]
+    ],
+    "contact_normal_force_N": 312.8,
+    "tl_unsupported_force_N": 26.9,
+    "tl_unsupported_torque_Nm": 1.6
+   },
+   "sim": {
+    "unsupported_force_N": 16.4,
+    "unsupported_torque_Nm": 6.1,
+    "max_tau_ratio": 0.72,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.72
+     ],
+     [
+      "right_knee_joint",
+      0.19
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.15
+     ]
+    ],
+    "contact_normal_force_N": 312.8,
+    "tl_unsupported_force_N": 26.9,
+    "tl_unsupported_torque_Nm": 1.6
+   }
+  },
+  {
+   "t": 0.62,
+   "W_force": [
+    27.72,
+    -12.38,
+    278.57
+   ],
+   "W_torque_body": [
+    -7.52,
+    4.55,
+    -4.71
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0499
+    ],
+    [
+     "right_foot2_collision",
+     0.0448
+    ],
+    [
+     "right_foot3_collision",
+     0.0437
+    ],
+    [
+     "right_foot4_collision",
+     0.0439
+    ],
+    [
+     "right_foot5_collision",
+     0.045
+    ],
+    [
+     "right_foot6_collision",
+     0.0473
+    ],
+    [
+     "right_foot7_collision",
+     0.0534
+    ]
+   ],
+   "root_z": 0.792,
+   "real": {
+    "unsupported_force_N": 17.7,
+    "unsupported_torque_Nm": 6.7,
+    "max_tau_ratio": 0.63,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.63
+     ],
+     [
+      "right_knee_joint",
+      0.15
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.15
+     ]
+    ],
+    "contact_normal_force_N": 278.0,
+    "tl_unsupported_force_N": 28.8,
+    "tl_unsupported_torque_Nm": 2.7
+   },
+   "sim": {
+    "unsupported_force_N": 17.7,
+    "unsupported_torque_Nm": 6.7,
+    "max_tau_ratio": 0.63,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.63
+     ],
+     [
+      "right_knee_joint",
+      0.15
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.15
+     ]
+    ],
+    "contact_normal_force_N": 278.0,
+    "tl_unsupported_force_N": 28.8,
+    "tl_unsupported_torque_Nm": 2.7
+   }
+  },
+  {
+   "t": 0.64,
+   "W_force": [
+    3.44,
+    -11.35,
+    267.01
+   ],
+   "W_torque_body": [
+    -4.06,
+    -3.8,
+    -3.0
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0499
+    ],
+    [
+     "right_foot2_collision",
+     0.0432
+    ],
+    [
+     "right_foot3_collision",
+     0.0415
+    ],
+    [
+     "right_foot4_collision",
+     0.0417
+    ],
+    [
+     "right_foot5_collision",
+     0.0432
+    ],
+    [
+     "right_foot6_collision",
+     0.0461
+    ],
+    [
+     "right_foot7_collision",
+     0.0542
+    ]
+   ],
+   "root_z": 0.8,
+   "real": {
+    "unsupported_force_N": 16.3,
+    "unsupported_torque_Nm": 6.4,
+    "max_tau_ratio": 0.6,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.6
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.15
+     ],
+     [
+      "right_knee_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 265.7,
+    "tl_unsupported_force_N": 25.5,
+    "tl_unsupported_torque_Nm": 2.7
+   },
+   "sim": {
+    "unsupported_force_N": 16.3,
+    "unsupported_torque_Nm": 6.4,
+    "max_tau_ratio": 0.6,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.6
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.15
+     ],
+     [
+      "right_knee_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 265.7,
+    "tl_unsupported_force_N": 25.5,
+    "tl_unsupported_torque_Nm": 2.7
+   }
+  },
+  {
+   "t": 0.66,
+   "W_force": [
+    -11.2,
+    -9.36,
+    242.96
+   ],
+   "W_torque_body": [
+    -1.77,
+    -7.0,
+    -1.87
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0511
+    ],
+    [
+     "right_foot2_collision",
+     0.0424
+    ],
+    [
+     "right_foot3_collision",
+     0.0402
+    ],
+    [
+     "right_foot4_collision",
+     0.0404
+    ],
+    [
+     "right_foot5_collision",
+     0.0421
+    ],
+    [
+     "right_foot6_collision",
+     0.0457
+    ],
+    [
+     "right_foot7_collision",
+     0.0559
+    ]
+   ],
+   "root_z": 0.806,
+   "real": {
+    "unsupported_force_N": 15.3,
+    "unsupported_torque_Nm": 5.8,
+    "max_tau_ratio": 0.53,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.53
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.14
+     ],
+     [
+      "right_knee_joint",
+      0.11
+     ]
+    ],
+    "contact_normal_force_N": 241.2,
+    "tl_unsupported_force_N": 23.5,
+    "tl_unsupported_torque_Nm": 2.3
+   },
+   "sim": {
+    "unsupported_force_N": 15.3,
+    "unsupported_torque_Nm": 5.8,
+    "max_tau_ratio": 0.53,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.53
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.14
+     ],
+     [
+      "right_knee_joint",
+      0.11
+     ]
+    ],
+    "contact_normal_force_N": 241.2,
+    "tl_unsupported_force_N": 23.5,
+    "tl_unsupported_torque_Nm": 2.3
+   }
+  },
+  {
+   "t": 0.68,
+   "W_force": [
+    -15.86,
+    -7.25,
+    206.41
+   ],
+   "W_torque_body": [
+    -1.01,
+    -5.34,
+    -1.38
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.053
+    ],
+    [
+     "right_foot2_collision",
+     0.0423
+    ],
+    [
+     "right_foot3_collision",
+     0.0396
+    ],
+    [
+     "right_foot4_collision",
+     0.0396
+    ],
+    [
+     "right_foot5_collision",
+     0.0415
+    ],
+    [
+     "right_foot6_collision",
+     0.0458
+    ],
+    [
+     "right_foot7_collision",
+     0.058
+    ]
+   ],
+   "root_z": 0.812,
+   "real": {
+    "unsupported_force_N": 13.8,
+    "unsupported_torque_Nm": 5.0,
+    "max_tau_ratio": 0.43,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.43
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.14
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.11
+     ]
+    ],
+    "contact_normal_force_N": 204.3,
+    "tl_unsupported_force_N": 21.0,
+    "tl_unsupported_torque_Nm": 1.7
+   },
+   "sim": {
+    "unsupported_force_N": 13.8,
+    "unsupported_torque_Nm": 5.0,
+    "max_tau_ratio": 0.43,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.43
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.14
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.11
+     ]
+    ],
+    "contact_normal_force_N": 204.3,
+    "tl_unsupported_force_N": 21.0,
+    "tl_unsupported_torque_Nm": 1.7
+   }
+  },
+  {
+   "t": 0.7,
+   "W_force": [
+    -17.8,
+    -7.52,
+    174.42
+   ],
+   "W_torque_body": [
+    -0.52,
+    -2.9,
+    -0.72
+   ],
+   "n_contacts": 6,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0558
+    ],
+    [
+     "right_foot2_collision",
+     0.0433
+    ],
+    [
+     "right_foot3_collision",
+     0.04
+    ],
+    [
+     "right_foot4_collision",
+     0.0397
+    ],
+    [
+     "right_foot5_collision",
+     0.0418
+    ],
+    [
+     "right_foot6_collision",
+     0.0466
+    ]
+   ],
+   "root_z": 0.815,
+   "real": {
+    "unsupported_force_N": 11.9,
+    "unsupported_torque_Nm": 4.0,
+    "max_tau_ratio": 0.34,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.34
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.15
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.14
+     ]
+    ],
+    "contact_normal_force_N": 172.2,
+    "tl_unsupported_force_N": 17.8,
+    "tl_unsupported_torque_Nm": 0.9
+   },
+   "sim": {
+    "unsupported_force_N": 11.9,
+    "unsupported_torque_Nm": 4.0,
+    "max_tau_ratio": 0.34,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.34
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.15
+     ],
+     [
+      "right_shoulder_pitch_joint",
+      0.14
+     ]
+    ],
+    "contact_normal_force_N": 172.2,
+    "tl_unsupported_force_N": 17.8,
+    "tl_unsupported_torque_Nm": 0.9
+   }
+  },
+  {
+   "t": 0.72,
+   "W_force": [
+    -18.25,
+    -10.45,
+    150.15
+   ],
+   "W_torque_body": [
+    0.02,
+    -1.28,
+    0.04
+   ],
+   "n_contacts": 6,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0596
+    ],
+    [
+     "right_foot2_collision",
+     0.0452
+    ],
+    [
+     "right_foot3_collision",
+     0.0412
+    ],
+    [
+     "right_foot4_collision",
+     0.0407
+    ],
+    [
+     "right_foot5_collision",
+     0.0428
+    ],
+    [
+     "right_foot6_collision",
+     0.0481
+    ]
+   ],
+   "root_z": 0.816,
+   "real": {
+    "unsupported_force_N": 11.5,
+    "unsupported_torque_Nm": 3.6,
+    "max_tau_ratio": 0.27,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.27
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.18
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.14
+     ]
+    ],
+    "contact_normal_force_N": 147.8,
+    "tl_unsupported_force_N": 16.8,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 11.5,
+    "unsupported_torque_Nm": 3.6,
+    "max_tau_ratio": 0.27,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.27
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.18
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.14
+     ]
+    ],
+    "contact_normal_force_N": 147.8,
+    "tl_unsupported_force_N": 16.8,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.74,
+   "W_force": [
+    -16.19,
+    -14.32,
+    141.73
+   ],
+   "W_torque_body": [
+    0.75,
+    -2.03,
+    0.82
+   ],
+   "n_contacts": 5,
+   "contacts": [
+    [
+     "right_foot2_collision",
+     0.0479
+    ],
+    [
+     "right_foot3_collision",
+     0.0433
+    ],
+    [
+     "right_foot4_collision",
+     0.0425
+    ],
+    [
+     "right_foot5_collision",
+     0.0446
+    ],
+    [
+     "right_foot6_collision",
+     0.0502
+    ]
+   ],
+   "root_z": 0.815,
+   "real": {
+    "unsupported_force_N": 16.9,
+    "unsupported_torque_Nm": 5.3,
+    "max_tau_ratio": 0.23,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.23
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.21
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.17
+     ]
+    ],
+    "contact_normal_force_N": 137.8,
+    "tl_unsupported_force_N": 24.9,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 16.9,
+    "unsupported_torque_Nm": 5.3,
+    "max_tau_ratio": 0.23,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.23
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.21
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.17
+     ]
+    ],
+    "contact_normal_force_N": 137.8,
+    "tl_unsupported_force_N": 24.9,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.76,
+   "W_force": [
+    -7.58,
+    -17.79,
+    158.24
+   ],
+   "W_torque_body": [
+    1.71,
+    -4.77,
+    1.84
+   ],
+   "n_contacts": 5,
+   "contacts": [
+    [
+     "right_foot2_collision",
+     0.0509
+    ],
+    [
+     "right_foot3_collision",
+     0.0457
+    ],
+    [
+     "right_foot4_collision",
+     0.0446
+    ],
+    [
+     "right_foot5_collision",
+     0.0466
+    ],
+    [
+     "right_foot6_collision",
+     0.0524
+    ]
+   ],
+   "root_z": 0.81,
+   "real": {
+    "unsupported_force_N": 32.6,
+    "unsupported_torque_Nm": 10.3,
+    "max_tau_ratio": 0.26,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.26
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.23
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.17
+     ]
+    ],
+    "contact_normal_force_N": 149.5,
+    "tl_unsupported_force_N": 48.0,
+    "tl_unsupported_torque_Nm": 0.4
+   },
+   "sim": {
+    "unsupported_force_N": 32.6,
+    "unsupported_torque_Nm": 10.3,
+    "max_tau_ratio": 0.26,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.26
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.23
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.17
+     ]
+    ],
+    "contact_normal_force_N": 149.5,
+    "tl_unsupported_force_N": 48.0,
+    "tl_unsupported_torque_Nm": 0.4
+   }
+  },
+  {
+   "t": 0.78,
+   "W_force": [
+    9.39,
+    -19.61,
+    202.99
+   ],
+   "W_torque_body": [
+    2.67,
+    -8.01,
+    3.27
+   ],
+   "n_contacts": 5,
+   "contacts": [
+    [
+     "right_foot2_collision",
+     0.0539
+    ],
+    [
+     "right_foot3_collision",
+     0.0482
+    ],
+    [
+     "right_foot4_collision",
+     0.0467
+    ],
+    [
+     "right_foot5_collision",
+     0.0485
+    ],
+    [
+     "right_foot6_collision",
+     0.0545
+    ]
+   ],
+   "root_z": 0.802,
+   "real": {
+    "unsupported_force_N": 60.8,
+    "unsupported_torque_Nm": 19.3,
+    "max_tau_ratio": 0.34,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.34
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.24
+     ],
+     [
+      "right_knee_joint",
+      0.19
+     ]
+    ],
+    "contact_normal_force_N": 184.3,
+    "tl_unsupported_force_N": 90.7,
+    "tl_unsupported_torque_Nm": 1.3
+   },
+   "sim": {
+    "unsupported_force_N": 60.8,
+    "unsupported_torque_Nm": 19.3,
+    "max_tau_ratio": 0.34,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.34
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.24
+     ],
+     [
+      "right_knee_joint",
+      0.19
+     ]
+    ],
+    "contact_normal_force_N": 184.3,
+    "tl_unsupported_force_N": 90.7,
+    "tl_unsupported_torque_Nm": 1.3
+   }
+  },
+  {
+   "t": 0.8,
+   "W_force": [
+    30.76,
+    -18.94,
+    270.05
+   ],
+   "W_torque_body": [
+    3.13,
+    -10.45,
+    4.73
+   ],
+   "n_contacts": 5,
+   "contacts": [
+    [
+     "right_foot2_collision",
+     0.0578
+    ],
+    [
+     "right_foot3_collision",
+     0.0515
+    ],
+    [
+     "right_foot4_collision",
+     0.0497
+    ],
+    [
+     "right_foot5_collision",
+     0.0514
+    ],
+    [
+     "right_foot6_collision",
+     0.0576
+    ]
+   ],
+   "root_z": 0.793,
+   "real": {
+    "unsupported_force_N": 97.8,
+    "unsupported_torque_Nm": 31.2,
+    "max_tau_ratio": 0.45,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.45
+     ],
+     [
+      "right_knee_joint",
+      0.29
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.25
+     ]
+    ],
+    "contact_normal_force_N": 236.6,
+    "tl_unsupported_force_N": 148.5,
+    "tl_unsupported_torque_Nm": 2.2
+   },
+   "sim": {
+    "unsupported_force_N": 97.8,
+    "unsupported_torque_Nm": 31.2,
+    "max_tau_ratio": 0.45,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.45
+     ],
+     [
+      "right_knee_joint",
+      0.29
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.25
+     ]
+    ],
+    "contact_normal_force_N": 236.6,
+    "tl_unsupported_force_N": 148.5,
+    "tl_unsupported_torque_Nm": 2.2
+   }
+  },
+  {
+   "t": 0.82,
+   "W_force": [
+    51.5,
+    -15.99,
+    347.08
+   ],
+   "W_torque_body": [
+    2.36,
+    -10.83,
+    5.52
+   ],
+   "n_contacts": 9,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0578
+    ],
+    [
+     "left_foot2_collision",
+     0.0509
+    ],
+    [
+     "left_foot3_collision",
+     0.0508
+    ],
+    [
+     "left_foot4_collision",
+     0.0515
+    ],
+    [
+     "left_foot5_collision",
+     0.0524
+    ],
+    [
+     "left_foot6_collision",
+     0.0537
+    ],
+    [
+     "right_foot3_collision",
+     0.057
+    ],
+    [
+     "right_foot4_collision",
+     0.0549
+    ],
+    [
+     "right_foot5_collision",
+     0.0566
+    ]
+   ],
+   "root_z": 0.782,
+   "real": {
+    "unsupported_force_N": 19.4,
+    "unsupported_torque_Nm": 6.7,
+    "max_tau_ratio": 0.61,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.61
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.53
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.28
+     ]
+    ],
+    "contact_normal_force_N": 346.9,
+    "tl_unsupported_force_N": 28.9,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 19.4,
+    "unsupported_torque_Nm": 6.7,
+    "max_tau_ratio": 0.61,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.61
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.53
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.28
+     ]
+    ],
+    "contact_normal_force_N": 346.9,
+    "tl_unsupported_force_N": 28.9,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.84,
+   "W_force": [
+    69.83,
+    -9.91,
+    420.25
+   ],
+   "W_torque_body": [
+    -0.86,
+    -8.38,
+    5.24
+   ],
+   "n_contacts": 6,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0532
+    ],
+    [
+     "left_foot2_collision",
+     0.0436
+    ],
+    [
+     "left_foot3_collision",
+     0.0438
+    ],
+    [
+     "left_foot4_collision",
+     0.045
+    ],
+    [
+     "left_foot5_collision",
+     0.0467
+    ],
+    [
+     "left_foot6_collision",
+     0.0487
+    ]
+   ],
+   "root_z": 0.771,
+   "real": {
+    "unsupported_force_N": 28.7,
+    "unsupported_torque_Nm": 9.7,
+    "max_tau_ratio": 0.28,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_yaw_joint",
+      0.28
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.27
+     ],
+     [
+      "left_knee_joint",
+      0.22
+     ]
+    ],
+    "contact_normal_force_N": 416.3,
+    "tl_unsupported_force_N": 45.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 28.7,
+    "unsupported_torque_Nm": 9.7,
+    "max_tau_ratio": 0.28,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_yaw_joint",
+      0.28
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.27
+     ],
+     [
+      "left_knee_joint",
+      0.22
+     ]
+    ],
+    "contact_normal_force_N": 416.3,
+    "tl_unsupported_force_N": 45.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.86,
+   "W_force": [
+    84.4,
+    -0.01,
+    478.3
+   ],
+   "W_torque_body": [
+    -5.84,
+    -3.77,
+    4.16
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0501
+    ],
+    [
+     "left_foot2_collision",
+     0.0385
+    ],
+    [
+     "left_foot3_collision",
+     0.0388
+    ],
+    [
+     "left_foot4_collision",
+     0.0403
+    ],
+    [
+     "left_foot5_collision",
+     0.0424
+    ],
+    [
+     "left_foot6_collision",
+     0.045
+    ],
+    [
+     "left_foot7_collision",
+     0.0597
+    ]
+   ],
+   "root_z": 0.762,
+   "real": {
+    "unsupported_force_N": 26.2,
+    "unsupported_torque_Nm": 9.0,
+    "max_tau_ratio": 0.36,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_yaw_joint",
+      0.36
+     ],
+     [
+      "left_knee_joint",
+      0.3
+     ],
+     [
+      "left_hip_roll_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 475.0,
+    "tl_unsupported_force_N": 41.6,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 26.2,
+    "unsupported_torque_Nm": 9.0,
+    "max_tau_ratio": 0.36,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_yaw_joint",
+      0.36
+     ],
+     [
+      "left_knee_joint",
+      0.3
+     ],
+     [
+      "left_hip_roll_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 475.0,
+    "tl_unsupported_force_N": 41.6,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.88,
+   "W_force": [
+    92.4,
+    10.64,
+    512.93
+   ],
+   "W_torque_body": [
+    -9.5,
+    1.2,
+    2.68
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0467
+    ],
+    [
+     "left_foot2_collision",
+     0.0329
+    ],
+    [
+     "left_foot3_collision",
+     0.0332
+    ],
+    [
+     "left_foot4_collision",
+     0.0348
+    ],
+    [
+     "left_foot5_collision",
+     0.0372
+    ],
+    [
+     "left_foot6_collision",
+     0.0401
+    ],
+    [
+     "left_foot7_collision",
+     0.0573
+    ]
+   ],
+   "root_z": 0.757,
+   "real": {
+    "unsupported_force_N": 22.4,
+    "unsupported_torque_Nm": 7.9,
+    "max_tau_ratio": 0.39,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_yaw_joint",
+      0.39
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.38
+     ],
+     [
+      "left_hip_roll_joint",
+      0.36
+     ]
+    ],
+    "contact_normal_force_N": 510.5,
+    "tl_unsupported_force_N": 35.7,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 22.4,
+    "unsupported_torque_Nm": 7.9,
+    "max_tau_ratio": 0.39,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_yaw_joint",
+      0.39
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.38
+     ],
+     [
+      "left_hip_roll_joint",
+      0.36
+     ]
+    ],
+    "contact_normal_force_N": 510.5,
+    "tl_unsupported_force_N": 35.7,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.9,
+   "W_force": [
+    92.57,
+    18.4,
+    519.02
+   ],
+   "W_torque_body": [
+    -9.36,
+    4.94,
+    1.09
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0442
+    ],
+    [
+     "left_foot2_collision",
+     0.0293
+    ],
+    [
+     "left_foot3_collision",
+     0.0294
+    ],
+    [
+     "left_foot4_collision",
+     0.0309
+    ],
+    [
+     "left_foot5_collision",
+     0.0332
+    ],
+    [
+     "left_foot6_collision",
+     0.0361
+    ],
+    [
+     "left_foot7_collision",
+     0.0541
+    ]
+   ],
+   "root_z": 0.756,
+   "real": {
+    "unsupported_force_N": 14.6,
+    "unsupported_torque_Nm": 5.3,
+    "max_tau_ratio": 0.47,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.47
+     ],
+     [
+      "left_hip_roll_joint",
+      0.4
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.39
+     ]
+    ],
+    "contact_normal_force_N": 517.8,
+    "tl_unsupported_force_N": 22.9,
+    "tl_unsupported_torque_Nm": 0.2
+   },
+   "sim": {
+    "unsupported_force_N": 14.6,
+    "unsupported_torque_Nm": 5.3,
+    "max_tau_ratio": 0.47,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.47
+     ],
+     [
+      "left_hip_roll_joint",
+      0.4
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.39
+     ]
+    ],
+    "contact_normal_force_N": 517.8,
+    "tl_unsupported_force_N": 22.9,
+    "tl_unsupported_torque_Nm": 0.2
+   }
+  },
+  {
+   "t": 0.92,
+   "W_force": [
+    86.32,
+    23.1,
+    496.84
+   ],
+   "W_torque_body": [
+    -5.75,
+    6.75,
+    -0.16
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0432
+    ],
+    [
+     "left_foot2_collision",
+     0.0291
+    ],
+    [
+     "left_foot3_collision",
+     0.0291
+    ],
+    [
+     "left_foot4_collision",
+     0.0305
+    ],
+    [
+     "left_foot5_collision",
+     0.0326
+    ],
+    [
+     "left_foot6_collision",
+     0.0353
+    ],
+    [
+     "left_foot7_collision",
+     0.0523
+    ]
+   ],
+   "root_z": 0.757,
+   "real": {
+    "unsupported_force_N": 5.9,
+    "unsupported_torque_Nm": 2.3,
+    "max_tau_ratio": 0.49,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.49
+     ],
+     [
+      "left_hip_roll_joint",
+      0.39
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.35
+     ]
+    ],
+    "contact_normal_force_N": 497.0,
+    "tl_unsupported_force_N": 8.8,
+    "tl_unsupported_torque_Nm": 1.1
+   },
+   "sim": {
+    "unsupported_force_N": 5.9,
+    "unsupported_torque_Nm": 2.3,
+    "max_tau_ratio": 0.49,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.49
+     ],
+     [
+      "left_hip_roll_joint",
+      0.39
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.35
+     ]
+    ],
+    "contact_normal_force_N": 497.0,
+    "tl_unsupported_force_N": 8.8,
+    "tl_unsupported_torque_Nm": 1.1
+   }
+  },
+  {
+   "t": 0.94,
+   "W_force": [
+    75.83,
+    25.72,
+    453.9
+   ],
+   "W_torque_body": [
+    -0.48,
+    6.68,
+    -0.76
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0435
+    ],
+    [
+     "left_foot2_collision",
+     0.0309
+    ],
+    [
+     "left_foot3_collision",
+     0.0309
+    ],
+    [
+     "left_foot4_collision",
+     0.0322
+    ],
+    [
+     "left_foot5_collision",
+     0.0341
+    ],
+    [
+     "left_foot6_collision",
+     0.0365
+    ],
+    [
+     "left_foot7_collision",
+     0.0518
+    ]
+   ],
+   "root_z": 0.761,
+   "real": {
+    "unsupported_force_N": 9.9,
+    "unsupported_torque_Nm": 3.4,
+    "max_tau_ratio": 0.45,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.45
+     ],
+     [
+      "left_hip_roll_joint",
+      0.34
+     ],
+     [
+      "left_knee_joint",
+      0.31
+     ]
+    ],
+    "contact_normal_force_N": 454.9,
+    "tl_unsupported_force_N": 15.1,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 9.9,
+    "unsupported_torque_Nm": 3.4,
+    "max_tau_ratio": 0.45,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.45
+     ],
+     [
+      "left_hip_roll_joint",
+      0.34
+     ],
+     [
+      "left_knee_joint",
+      0.31
+     ]
+    ],
+    "contact_normal_force_N": 454.9,
+    "tl_unsupported_force_N": 15.1,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.96,
+   "W_force": [
+    63.22,
+    25.83,
+    401.13
+   ],
+   "W_torque_body": [
+    5.14,
+    5.51,
+    -0.72
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0444
+    ],
+    [
+     "left_foot2_collision",
+     0.0334
+    ],
+    [
+     "left_foot3_collision",
+     0.0334
+    ],
+    [
+     "left_foot4_collision",
+     0.0346
+    ],
+    [
+     "left_foot5_collision",
+     0.0363
+    ],
+    [
+     "left_foot6_collision",
+     0.0384
+    ],
+    [
+     "left_foot7_collision",
+     0.0518
+    ]
+   ],
+   "root_z": 0.767,
+   "real": {
+    "unsupported_force_N": 14.6,
+    "unsupported_torque_Nm": 5.0,
+    "max_tau_ratio": 0.39,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.39
+     ],
+     [
+      "left_knee_joint",
+      0.27
+     ],
+     [
+      "left_hip_roll_joint",
+      0.26
+     ]
+    ],
+    "contact_normal_force_N": 402.1,
+    "tl_unsupported_force_N": 22.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 14.6,
+    "unsupported_torque_Nm": 5.0,
+    "max_tau_ratio": 0.39,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.39
+     ],
+     [
+      "left_knee_joint",
+      0.27
+     ],
+     [
+      "left_hip_roll_joint",
+      0.26
+     ]
+    ],
+    "contact_normal_force_N": 402.1,
+    "tl_unsupported_force_N": 22.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 0.98,
+   "W_force": [
+    50.12,
+    22.41,
+    348.18
+   ],
+   "W_torque_body": [
+    10.12,
+    4.13,
+    -0.33
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0458
+    ],
+    [
+     "left_foot2_collision",
+     0.0364
+    ],
+    [
+     "left_foot3_collision",
+     0.0364
+    ],
+    [
+     "left_foot4_collision",
+     0.0373
+    ],
+    [
+     "left_foot5_collision",
+     0.0386
+    ],
+    [
+     "left_foot6_collision",
+     0.0404
+    ],
+    [
+     "left_foot7_collision",
+     0.0517
+    ]
+   ],
+   "root_z": 0.774,
+   "real": {
+    "unsupported_force_N": 17.6,
+    "unsupported_torque_Nm": 6.1,
+    "max_tau_ratio": 0.34,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.34
+     ],
+     [
+      "left_knee_joint",
+      0.22
+     ],
+     [
+      "left_hip_roll_joint",
+      0.2
+     ]
+    ],
+    "contact_normal_force_N": 349.1,
+    "tl_unsupported_force_N": 27.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 17.6,
+    "unsupported_torque_Nm": 6.1,
+    "max_tau_ratio": 0.34,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.34
+     ],
+     [
+      "left_knee_joint",
+      0.22
+     ],
+     [
+      "left_hip_roll_joint",
+      0.2
+     ]
+    ],
+    "contact_normal_force_N": 349.1,
+    "tl_unsupported_force_N": 27.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.0,
+   "W_force": [
+    37.01,
+    14.89,
+    301.79
+   ],
+   "W_torque_body": [
+    13.67,
+    2.93,
+    0.14
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0471
+    ],
+    [
+     "left_foot2_collision",
+     0.0396
+    ],
+    [
+     "left_foot3_collision",
+     0.0395
+    ],
+    [
+     "left_foot4_collision",
+     0.0402
+    ],
+    [
+     "left_foot5_collision",
+     0.0412
+    ],
+    [
+     "left_foot6_collision",
+     0.0425
+    ],
+    [
+     "left_foot7_collision",
+     0.0514
+    ]
+   ],
+   "root_z": 0.78,
+   "real": {
+    "unsupported_force_N": 18.5,
+    "unsupported_torque_Nm": 6.3,
+    "max_tau_ratio": 0.3,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.3
+     ],
+     [
+      "left_knee_joint",
+      0.19
+     ],
+     [
+      "left_ankle_roll_joint",
+      0.16
+     ]
+    ],
+    "contact_normal_force_N": 302.4,
+    "tl_unsupported_force_N": 27.6,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 18.5,
+    "unsupported_torque_Nm": 6.3,
+    "max_tau_ratio": 0.3,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.3
+     ],
+     [
+      "left_knee_joint",
+      0.19
+     ],
+     [
+      "left_ankle_roll_joint",
+      0.16
+     ]
+    ],
+    "contact_normal_force_N": 302.4,
+    "tl_unsupported_force_N": 27.6,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.02,
+   "W_force": [
+    24.05,
+    5.07,
+    265.59
+   ],
+   "W_torque_body": [
+    15.46,
+    1.95,
+    0.63
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0479
+    ],
+    [
+     "left_foot2_collision",
+     0.0426
+    ],
+    [
+     "left_foot3_collision",
+     0.0425
+    ],
+    [
+     "left_foot4_collision",
+     0.043
+    ],
+    [
+     "left_foot5_collision",
+     0.0436
+    ],
+    [
+     "left_foot6_collision",
+     0.0446
+    ],
+    [
+     "left_foot7_collision",
+     0.0508
+    ]
+   ],
+   "root_z": 0.786,
+   "real": {
+    "unsupported_force_N": 16.4,
+    "unsupported_torque_Nm": 5.6,
+    "max_tau_ratio": 0.27,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.27
+     ],
+     [
+      "left_knee_joint",
+      0.15
+     ],
+     [
+      "left_ankle_roll_joint",
+      0.14
+     ]
+    ],
+    "contact_normal_force_N": 265.4,
+    "tl_unsupported_force_N": 24.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 16.4,
+    "unsupported_torque_Nm": 5.6,
+    "max_tau_ratio": 0.27,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.27
+     ],
+     [
+      "left_knee_joint",
+      0.15
+     ],
+     [
+      "left_ankle_roll_joint",
+      0.14
+     ]
+    ],
+    "contact_normal_force_N": 265.4,
+    "tl_unsupported_force_N": 24.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.04,
+   "W_force": [
+    12.14,
+    -2.86,
+    240.68
+   ],
+   "W_torque_body": [
+    15.18,
+    1.21,
+    1.05
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0486
+    ],
+    [
+     "left_foot2_collision",
+     0.0457
+    ],
+    [
+     "left_foot3_collision",
+     0.0457
+    ],
+    [
+     "left_foot4_collision",
+     0.0459
+    ],
+    [
+     "left_foot5_collision",
+     0.0463
+    ],
+    [
+     "left_foot6_collision",
+     0.0468
+    ],
+    [
+     "left_foot7_collision",
+     0.0502
+    ]
+   ],
+   "root_z": 0.79,
+   "real": {
+    "unsupported_force_N": 13.4,
+    "unsupported_torque_Nm": 4.5,
+    "max_tau_ratio": 0.25,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.25
+     ],
+     [
+      "left_knee_joint",
+      0.13
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.09
+     ]
+    ],
+    "contact_normal_force_N": 240.2,
+    "tl_unsupported_force_N": 19.5,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 13.4,
+    "unsupported_torque_Nm": 4.5,
+    "max_tau_ratio": 0.25,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.25
+     ],
+     [
+      "left_knee_joint",
+      0.13
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.09
+     ]
+    ],
+    "contact_normal_force_N": 240.2,
+    "tl_unsupported_force_N": 19.5,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.06,
+   "W_force": [
+    2.23,
+    -5.63,
+    227.25
+   ],
+   "W_torque_body": [
+    12.55,
+    0.67,
+    1.26
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0493
+    ],
+    [
+     "left_foot2_collision",
+     0.0489
+    ],
+    [
+     "left_foot3_collision",
+     0.049
+    ],
+    [
+     "left_foot4_collision",
+     0.0491
+    ],
+    [
+     "left_foot5_collision",
+     0.0492
+    ],
+    [
+     "left_foot6_collision",
+     0.0493
+    ],
+    [
+     "left_foot7_collision",
+     0.0498
+    ]
+   ],
+   "root_z": 0.794,
+   "real": {
+    "unsupported_force_N": 10.6,
+    "unsupported_torque_Nm": 3.6,
+    "max_tau_ratio": 0.24,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.24
+     ],
+     [
+      "left_knee_joint",
+      0.11
+     ],
+     [
+      "left_hip_roll_joint",
+      0.09
+     ]
+    ],
+    "contact_normal_force_N": 226.6,
+    "tl_unsupported_force_N": 15.3,
+    "tl_unsupported_torque_Nm": 0.4
+   },
+   "sim": {
+    "unsupported_force_N": 10.6,
+    "unsupported_torque_Nm": 3.6,
+    "max_tau_ratio": 0.24,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.24
+     ],
+     [
+      "left_knee_joint",
+      0.11
+     ],
+     [
+      "left_hip_roll_joint",
+      0.09
+     ]
+    ],
+    "contact_normal_force_N": 226.6,
+    "tl_unsupported_force_N": 15.3,
+    "tl_unsupported_torque_Nm": 0.4
+   }
+  },
+  {
+   "t": 1.08,
+   "W_force": [
+    -5.19,
+    -3.27,
+    224.65
+   ],
+   "W_torque_body": [
+    8.07,
+    0.24,
+    1.12
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0486
+    ],
+    [
+     "left_foot2_collision",
+     0.0479
+    ],
+    [
+     "left_foot3_collision",
+     0.0477
+    ],
+    [
+     "left_foot4_collision",
+     0.0476
+    ],
+    [
+     "left_foot5_collision",
+     0.0476
+    ],
+    [
+     "left_foot6_collision",
+     0.0477
+    ],
+    [
+     "left_foot7_collision",
+     0.0483
+    ]
+   ],
+   "root_z": 0.795,
+   "real": {
+    "unsupported_force_N": 2.9,
+    "unsupported_torque_Nm": 1.4,
+    "max_tau_ratio": 0.44,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.44
+     ],
+     [
+      "left_ankle_roll_joint",
+      0.12
+     ],
+     [
+      "left_hip_roll_joint",
+      0.11
+     ]
+    ],
+    "contact_normal_force_N": 224.5,
+    "tl_unsupported_force_N": 6.2,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 2.9,
+    "unsupported_torque_Nm": 1.4,
+    "max_tau_ratio": 0.44,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.44
+     ],
+     [
+      "left_ankle_roll_joint",
+      0.12
+     ],
+     [
+      "left_hip_roll_joint",
+      0.11
+     ]
+    ],
+    "contact_normal_force_N": 224.5,
+    "tl_unsupported_force_N": 6.2,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.1,
+   "W_force": [
+    -10.19,
+    2.36,
+    231.14
+   ],
+   "W_torque_body": [
+    2.99,
+    -0.1,
+    0.58
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0476
+    ],
+    [
+     "left_foot2_collision",
+     0.0462
+    ],
+    [
+     "left_foot3_collision",
+     0.0456
+    ],
+    [
+     "left_foot4_collision",
+     0.0453
+    ],
+    [
+     "left_foot5_collision",
+     0.0453
+    ],
+    [
+     "left_foot6_collision",
+     0.0455
+    ],
+    [
+     "left_foot7_collision",
+     0.0467
+    ]
+   ],
+   "root_z": 0.795,
+   "real": {
+    "unsupported_force_N": 5.1,
+    "unsupported_torque_Nm": 1.8,
+    "max_tau_ratio": 0.45,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.45
+     ],
+     [
+      "left_ankle_roll_joint",
+      0.13
+     ],
+     [
+      "left_hip_roll_joint",
+      0.12
+     ]
+    ],
+    "contact_normal_force_N": 230.8,
+    "tl_unsupported_force_N": 8.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 5.1,
+    "unsupported_torque_Nm": 1.8,
+    "max_tau_ratio": 0.45,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.45
+     ],
+     [
+      "left_ankle_roll_joint",
+      0.13
+     ],
+     [
+      "left_hip_roll_joint",
+      0.12
+     ]
+    ],
+    "contact_normal_force_N": 230.8,
+    "tl_unsupported_force_N": 8.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.12,
+   "W_force": [
+    -13.38,
+    8.68,
+    243.89
+   ],
+   "W_torque_body": [
+    -1.27,
+    -0.22,
+    -0.16
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0468
+    ],
+    [
+     "left_foot2_collision",
+     0.0445
+    ],
+    [
+     "left_foot3_collision",
+     0.0437
+    ],
+    [
+     "left_foot4_collision",
+     0.0432
+    ],
+    [
+     "left_foot5_collision",
+     0.0431
+    ],
+    [
+     "left_foot6_collision",
+     0.0436
+    ],
+    [
+     "left_foot7_collision",
+     0.0454
+    ]
+   ],
+   "root_z": 0.793,
+   "real": {
+    "unsupported_force_N": 7.2,
+    "unsupported_torque_Nm": 2.4,
+    "max_tau_ratio": 0.49,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.49
+     ],
+     [
+      "left_hip_roll_joint",
+      0.15
+     ],
+     [
+      "left_ankle_roll_joint",
+      0.14
+     ]
+    ],
+    "contact_normal_force_N": 243.2,
+    "tl_unsupported_force_N": 12.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 7.2,
+    "unsupported_torque_Nm": 2.4,
+    "max_tau_ratio": 0.49,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.49
+     ],
+     [
+      "left_hip_roll_joint",
+      0.15
+     ],
+     [
+      "left_ankle_roll_joint",
+      0.14
+     ]
+    ],
+    "contact_normal_force_N": 243.2,
+    "tl_unsupported_force_N": 12.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.14,
+   "W_force": [
+    -15.99,
+    13.23,
+    259.0
+   ],
+   "W_torque_body": [
+    -3.81,
+    -0.2,
+    -0.72
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0459
+    ],
+    [
+     "left_foot2_collision",
+     0.0428
+    ],
+    [
+     "left_foot3_collision",
+     0.0417
+    ],
+    [
+     "left_foot4_collision",
+     0.0411
+    ],
+    [
+     "left_foot5_collision",
+     0.041
+    ],
+    [
+     "left_foot6_collision",
+     0.0416
+    ],
+    [
+     "left_foot7_collision",
+     0.0442
+    ]
+   ],
+   "root_z": 0.791,
+   "real": {
+    "unsupported_force_N": 9.9,
+    "unsupported_torque_Nm": 3.3,
+    "max_tau_ratio": 0.57,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.57
+     ],
+     [
+      "left_hip_roll_joint",
+      0.17
+     ],
+     [
+      "left_ankle_roll_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 257.9,
+    "tl_unsupported_force_N": 14.5,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 9.9,
+    "unsupported_torque_Nm": 3.3,
+    "max_tau_ratio": 0.57,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.57
+     ],
+     [
+      "left_hip_roll_joint",
+      0.17
+     ],
+     [
+      "left_ankle_roll_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 257.9,
+    "tl_unsupported_force_N": 14.5,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.16,
+   "W_force": [
+    -19.47,
+    15.68,
+    274.29
+   ],
+   "W_torque_body": [
+    -4.7,
+    -0.8,
+    -0.92
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0448
+    ],
+    [
+     "left_foot2_collision",
+     0.0409
+    ],
+    [
+     "left_foot3_collision",
+     0.0396
+    ],
+    [
+     "left_foot4_collision",
+     0.0389
+    ],
+    [
+     "left_foot5_collision",
+     0.0389
+    ],
+    [
+     "left_foot6_collision",
+     0.0397
+    ],
+    [
+     "left_foot7_collision",
+     0.0431
+    ],
+    [
+     "right_foot2_collision",
+     0.0491
+    ],
+    [
+     "right_foot3_collision",
+     0.0472
+    ],
+    [
+     "right_foot4_collision",
+     0.0479
+    ],
+    [
+     "right_foot5_collision",
+     0.0501
+    ],
+    [
+     "right_foot6_collision",
+     0.0543
+    ]
+   ],
+   "root_z": 0.787,
+   "real": {
+    "unsupported_force_N": 0.7,
+    "unsupported_torque_Nm": 0.2,
+    "max_tau_ratio": 0.4,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.4
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.27
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.26
+     ]
+    ],
+    "contact_normal_force_N": 274.3,
+    "tl_unsupported_force_N": 1.1,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.7,
+    "unsupported_torque_Nm": 0.2,
+    "max_tau_ratio": 0.4,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.4
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.27
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.26
+     ]
+    ],
+    "contact_normal_force_N": 274.3,
+    "tl_unsupported_force_N": 1.1,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.18,
+   "W_force": [
+    -24.36,
+    17.87,
+    291.5
+   ],
+   "W_torque_body": [
+    -4.93,
+    -3.13,
+    -0.92
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0438
+    ],
+    [
+     "left_foot2_collision",
+     0.0391
+    ],
+    [
+     "left_foot3_collision",
+     0.0375
+    ],
+    [
+     "left_foot4_collision",
+     0.0368
+    ],
+    [
+     "left_foot5_collision",
+     0.0368
+    ],
+    [
+     "left_foot6_collision",
+     0.0379
+    ],
+    [
+     "left_foot7_collision",
+     0.0421
+    ],
+    [
+     "right_foot2_collision",
+     0.038
+    ],
+    [
+     "right_foot3_collision",
+     0.0354
+    ],
+    [
+     "right_foot4_collision",
+     0.036
+    ],
+    [
+     "right_foot5_collision",
+     0.0384
+    ],
+    [
+     "right_foot6_collision",
+     0.0433
+    ]
+   ],
+   "root_z": 0.782,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.4,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.4
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.35
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.34
+     ]
+    ],
+    "contact_normal_force_N": 291.5,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.4,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.4
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.35
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.34
+     ]
+    ],
+    "contact_normal_force_N": 291.5,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.2,
+   "W_force": [
+    -29.02,
+    21.03,
+    313.08
+   ],
+   "W_torque_body": [
+    -5.34,
+    -7.38,
+    -1.15
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0433
+    ],
+    [
+     "left_foot2_collision",
+     0.0376
+    ],
+    [
+     "left_foot3_collision",
+     0.0357
+    ],
+    [
+     "left_foot4_collision",
+     0.0349
+    ],
+    [
+     "left_foot5_collision",
+     0.0351
+    ],
+    [
+     "left_foot6_collision",
+     0.0365
+    ],
+    [
+     "left_foot7_collision",
+     0.0417
+    ],
+    [
+     "right_foot2_collision",
+     0.0302
+    ],
+    [
+     "right_foot3_collision",
+     0.0272
+    ],
+    [
+     "right_foot4_collision",
+     0.0277
+    ],
+    [
+     "right_foot5_collision",
+     0.0303
+    ],
+    [
+     "right_foot6_collision",
+     0.0357
+    ]
+   ],
+   "root_z": 0.777,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.46,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.46
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.45
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.38
+     ]
+    ],
+    "contact_normal_force_N": 313.1,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.46,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.46
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.45
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.38
+     ]
+    ],
+    "contact_normal_force_N": 313.1,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.22,
+   "W_force": [
+    -30.78,
+    25.13,
+    338.44
+   ],
+   "W_torque_body": [
+    -5.79,
+    -12.47,
+    -1.88
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0432
+    ],
+    [
+     "left_foot2_collision",
+     0.0362
+    ],
+    [
+     "left_foot3_collision",
+     0.0339
+    ],
+    [
+     "left_foot4_collision",
+     0.033
+    ],
+    [
+     "left_foot5_collision",
+     0.0332
+    ],
+    [
+     "left_foot6_collision",
+     0.035
+    ],
+    [
+     "left_foot7_collision",
+     0.0414
+    ],
+    [
+     "right_foot2_collision",
+     0.0246
+    ],
+    [
+     "right_foot3_collision",
+     0.0215
+    ],
+    [
+     "right_foot4_collision",
+     0.0219
+    ],
+    [
+     "right_foot5_collision",
+     0.0245
+    ],
+    [
+     "right_foot6_collision",
+     0.0301
+    ]
+   ],
+   "root_z": 0.771,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.61,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.61
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.58
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.33
+     ]
+    ],
+    "contact_normal_force_N": 338.4,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.61,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.61
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.58
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.33
+     ]
+    ],
+    "contact_normal_force_N": 338.4,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.24,
+   "W_force": [
+    -28.62,
+    29.86,
+    364.1
+   ],
+   "W_torque_body": [
+    -5.57,
+    -16.96,
+    -2.86
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0437
+    ],
+    [
+     "left_foot2_collision",
+     0.035
+    ],
+    [
+     "left_foot3_collision",
+     0.0322
+    ],
+    [
+     "left_foot4_collision",
+     0.031
+    ],
+    [
+     "left_foot5_collision",
+     0.0314
+    ],
+    [
+     "left_foot6_collision",
+     0.0336
+    ],
+    [
+     "left_foot7_collision",
+     0.0417
+    ],
+    [
+     "right_foot2_collision",
+     0.0205
+    ],
+    [
+     "right_foot3_collision",
+     0.0176
+    ],
+    [
+     "right_foot4_collision",
+     0.0181
+    ],
+    [
+     "right_foot5_collision",
+     0.0206
+    ],
+    [
+     "right_foot6_collision",
+     0.0258
+    ]
+   ],
+   "root_z": 0.766,
+   "real": {
+    "unsupported_force_N": 3.2,
+    "unsupported_torque_Nm": 1.1,
+    "max_tau_ratio": 0.45,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.45
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.33
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 364.3,
+    "tl_unsupported_force_N": 4.8,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 3.2,
+    "unsupported_torque_Nm": 1.1,
+    "max_tau_ratio": 0.45,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.45
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.33
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 364.3,
+    "tl_unsupported_force_N": 4.8,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.26,
+   "W_force": [
+    -23.33,
+    33.09,
+    385.35
+   ],
+   "W_torque_body": [
+    -3.89,
+    -19.48,
+    -3.38
+   ],
+   "n_contacts": 13,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.045
+    ],
+    [
+     "left_foot2_collision",
+     0.0343
+    ],
+    [
+     "left_foot3_collision",
+     0.0307
+    ],
+    [
+     "left_foot4_collision",
+     0.0293
+    ],
+    [
+     "left_foot5_collision",
+     0.0298
+    ],
+    [
+     "left_foot6_collision",
+     0.0325
+    ],
+    [
+     "left_foot7_collision",
+     0.0426
+    ],
+    [
+     "right_foot1_collision",
+     0.0598
+    ],
+    [
+     "right_foot2_collision",
+     0.0193
+    ],
+    [
+     "right_foot3_collision",
+     0.0168
+    ],
+    [
+     "right_foot4_collision",
+     0.0172
+    ],
+    [
+     "right_foot5_collision",
+     0.0194
+    ],
+    [
+     "right_foot6_collision",
+     0.0239
+    ]
+   ],
+   "root_z": 0.761,
+   "real": {
+    "unsupported_force_N": 10.3,
+    "unsupported_torque_Nm": 3.5,
+    "max_tau_ratio": 0.44,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.44
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.41
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.37
+     ]
+    ],
+    "contact_normal_force_N": 385.8,
+    "tl_unsupported_force_N": 15.7,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 10.3,
+    "unsupported_torque_Nm": 3.5,
+    "max_tau_ratio": 0.44,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.44
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.41
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.37
+     ]
+    ],
+    "contact_normal_force_N": 385.8,
+    "tl_unsupported_force_N": 15.7,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.28,
+   "W_force": [
+    -16.28,
+    31.43,
+    397.69
+   ],
+   "W_torque_body": [
+    -0.31,
+    -19.24,
+    -3.02
+   ],
+   "n_contacts": 13,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0482
+    ],
+    [
+     "left_foot2_collision",
+     0.0348
+    ],
+    [
+     "left_foot3_collision",
+     0.0304
+    ],
+    [
+     "left_foot4_collision",
+     0.0286
+    ],
+    [
+     "left_foot5_collision",
+     0.0291
+    ],
+    [
+     "left_foot6_collision",
+     0.0326
+    ],
+    [
+     "left_foot7_collision",
+     0.045
+    ],
+    [
+     "right_foot1_collision",
+     0.0559
+    ],
+    [
+     "right_foot2_collision",
+     0.0226
+    ],
+    [
+     "right_foot3_collision",
+     0.0205
+    ],
+    [
+     "right_foot4_collision",
+     0.0208
+    ],
+    [
+     "right_foot5_collision",
+     0.0225
+    ],
+    [
+     "right_foot6_collision",
+     0.0261
+    ]
+   ],
+   "root_z": 0.757,
+   "real": {
+    "unsupported_force_N": 16.8,
+    "unsupported_torque_Nm": 5.8,
+    "max_tau_ratio": 0.48,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.48
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.46
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.28
+     ]
+    ],
+    "contact_normal_force_N": 398.2,
+    "tl_unsupported_force_N": 25.9,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 16.8,
+    "unsupported_torque_Nm": 5.8,
+    "max_tau_ratio": 0.48,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.48
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.46
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.28
+     ]
+    ],
+    "contact_normal_force_N": 398.2,
+    "tl_unsupported_force_N": 25.9,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.3,
+   "W_force": [
+    -8.14,
+    24.04,
+    400.5
+   ],
+   "W_torque_body": [
+    4.64,
+    -16.51,
+    -1.94
+   ],
+   "n_contacts": 14,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0543
+    ],
+    [
+     "left_foot2_collision",
+     0.0379
+    ],
+    [
+     "left_foot3_collision",
+     0.0325
+    ],
+    [
+     "left_foot4_collision",
+     0.0303
+    ],
+    [
+     "left_foot5_collision",
+     0.031
+    ],
+    [
+     "left_foot6_collision",
+     0.0352
+    ],
+    [
+     "left_foot7_collision",
+     0.0504
+    ],
+    [
+     "right_foot1_collision",
+     0.0568
+    ],
+    [
+     "right_foot2_collision",
+     0.0296
+    ],
+    [
+     "right_foot3_collision",
+     0.0277
+    ],
+    [
+     "right_foot4_collision",
+     0.0276
+    ],
+    [
+     "right_foot5_collision",
+     0.0287
+    ],
+    [
+     "right_foot6_collision",
+     0.0315
+    ],
+    [
+     "right_foot7_collision",
+     0.0596
+    ]
+   ],
+   "root_z": 0.755,
+   "real": {
+    "unsupported_force_N": 13.0,
+    "unsupported_torque_Nm": 4.6,
+    "max_tau_ratio": 0.63,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.63
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.62
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.27
+     ]
+    ],
+    "contact_normal_force_N": 401.0,
+    "tl_unsupported_force_N": 20.1,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 13.0,
+    "unsupported_torque_Nm": 4.6,
+    "max_tau_ratio": 0.63,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.63
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.62
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.27
+     ]
+    ],
+    "contact_normal_force_N": 401.0,
+    "tl_unsupported_force_N": 20.1,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.32,
+   "W_force": [
+    1.06,
+    12.83,
+    397.58
+   ],
+   "W_torque_body": [
+    9.51,
+    -12.29,
+    -0.76
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0455
+    ],
+    [
+     "left_foot3_collision",
+     0.0393
+    ],
+    [
+     "left_foot4_collision",
+     0.0369
+    ],
+    [
+     "left_foot5_collision",
+     0.0377
+    ],
+    [
+     "left_foot6_collision",
+     0.0428
+    ],
+    [
+     "right_foot1_collision",
+     0.0585
+    ],
+    [
+     "right_foot2_collision",
+     0.0358
+    ],
+    [
+     "right_foot3_collision",
+     0.0339
+    ],
+    [
+     "right_foot4_collision",
+     0.0334
+    ],
+    [
+     "right_foot5_collision",
+     0.0339
+    ],
+    [
+     "right_foot6_collision",
+     0.0359
+    ],
+    [
+     "right_foot7_collision",
+     0.0587
+    ]
+   ],
+   "root_z": 0.755,
+   "real": {
+    "unsupported_force_N": 14.6,
+    "unsupported_torque_Nm": 5.2,
+    "max_tau_ratio": 1.07,
+    "n_over_limit": 2,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      1.07
+     ],
+     [
+      "right_hip_pitch_joint",
+      1.06
+     ],
+     [
+      "left_knee_joint",
+      0.38
+     ]
+    ],
+    "contact_normal_force_N": 397.9,
+    "tl_unsupported_force_N": 22.5,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 14.6,
+    "unsupported_torque_Nm": 5.2,
+    "max_tau_ratio": 1.07,
+    "n_over_limit": 2,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      1.07
+     ],
+     [
+      "right_hip_pitch_joint",
+      1.06
+     ],
+     [
+      "left_knee_joint",
+      0.38
+     ]
+    ],
+    "contact_normal_force_N": 397.9,
+    "tl_unsupported_force_N": 22.5,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.34,
+   "W_force": [
+    10.37,
+    -0.66,
+    392.11
+   ],
+   "W_torque_body": [
+    13.04,
+    -7.8,
+    -0.04
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0591
+    ],
+    [
+     "left_foot3_collision",
+     0.0523
+    ],
+    [
+     "left_foot4_collision",
+     0.0499
+    ],
+    [
+     "left_foot5_collision",
+     0.051
+    ],
+    [
+     "left_foot6_collision",
+     0.0566
+    ],
+    [
+     "right_foot1_collision",
+     0.0583
+    ],
+    [
+     "right_foot2_collision",
+     0.0383
+    ],
+    [
+     "right_foot3_collision",
+     0.0364
+    ],
+    [
+     "right_foot4_collision",
+     0.0356
+    ],
+    [
+     "right_foot5_collision",
+     0.0356
+    ],
+    [
+     "right_foot6_collision",
+     0.037
+    ],
+    [
+     "right_foot7_collision",
+     0.0565
+    ]
+   ],
+   "root_z": 0.756,
+   "real": {
+    "unsupported_force_N": 11.9,
+    "unsupported_torque_Nm": 4.3,
+    "max_tau_ratio": 0.57,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.57
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.55
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 392.3,
+    "tl_unsupported_force_N": 18.6,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 11.9,
+    "unsupported_torque_Nm": 4.3,
+    "max_tau_ratio": 0.57,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.57
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.55
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 392.3,
+    "tl_unsupported_force_N": 18.6,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.36,
+   "W_force": [
+    17.72,
+    -14.36,
+    383.96
+   ],
+   "W_torque_body": [
+    14.5,
+    -4.19,
+    0.24
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0559
+    ],
+    [
+     "right_foot2_collision",
+     0.0377
+    ],
+    [
+     "right_foot3_collision",
+     0.0357
+    ],
+    [
+     "right_foot4_collision",
+     0.0348
+    ],
+    [
+     "right_foot5_collision",
+     0.0347
+    ],
+    [
+     "right_foot6_collision",
+     0.0357
+    ],
+    [
+     "right_foot7_collision",
+     0.0531
+    ]
+   ],
+   "root_z": 0.757,
+   "real": {
+    "unsupported_force_N": 26.2,
+    "unsupported_torque_Nm": 9.2,
+    "max_tau_ratio": 0.39,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_knee_joint",
+      0.39
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.33
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 381.1,
+    "tl_unsupported_force_N": 40.9,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 26.2,
+    "unsupported_torque_Nm": 9.2,
+    "max_tau_ratio": 0.39,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_knee_joint",
+      0.39
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.33
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 381.1,
+    "tl_unsupported_force_N": 40.9,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.38,
+   "W_force": [
+    21.8,
+    -24.68,
+    372.15
+   ],
+   "W_torque_body": [
+    13.53,
+    -2.21,
+    0.44
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0519
+    ],
+    [
+     "right_foot2_collision",
+     0.0354
+    ],
+    [
+     "right_foot3_collision",
+     0.0335
+    ],
+    [
+     "right_foot4_collision",
+     0.0327
+    ],
+    [
+     "right_foot5_collision",
+     0.0325
+    ],
+    [
+     "right_foot6_collision",
+     0.0334
+    ],
+    [
+     "right_foot7_collision",
+     0.0491
+    ]
+   ],
+   "root_z": 0.76,
+   "real": {
+    "unsupported_force_N": 14.3,
+    "unsupported_torque_Nm": 4.9,
+    "max_tau_ratio": 0.39,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_knee_joint",
+      0.39
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.34
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.24
+     ]
+    ],
+    "contact_normal_force_N": 371.0,
+    "tl_unsupported_force_N": 22.5,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 14.3,
+    "unsupported_torque_Nm": 4.9,
+    "max_tau_ratio": 0.39,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_knee_joint",
+      0.39
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.34
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.24
+     ]
+    ],
+    "contact_normal_force_N": 371.0,
+    "tl_unsupported_force_N": 22.5,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.4,
+   "W_force": [
+    23.05,
+    -29.5,
+    356.77
+   ],
+   "W_torque_body": [
+    10.3,
+    -1.74,
+    0.75
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0478
+    ],
+    [
+     "right_foot2_collision",
+     0.0332
+    ],
+    [
+     "right_foot3_collision",
+     0.0316
+    ],
+    [
+     "right_foot4_collision",
+     0.0308
+    ],
+    [
+     "right_foot5_collision",
+     0.0307
+    ],
+    [
+     "right_foot6_collision",
+     0.0315
+    ],
+    [
+     "right_foot7_collision",
+     0.0454
+    ]
+   ],
+   "root_z": 0.763,
+   "real": {
+    "unsupported_force_N": 4.9,
+    "unsupported_torque_Nm": 1.7,
+    "max_tau_ratio": 0.33,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_knee_joint",
+      0.33
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.3
+     ],
+     [
+      "right_hip_roll_joint",
+      0.24
+     ]
+    ],
+    "contact_normal_force_N": 356.4,
+    "tl_unsupported_force_N": 7.3,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 4.9,
+    "unsupported_torque_Nm": 1.7,
+    "max_tau_ratio": 0.33,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_knee_joint",
+      0.33
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.3
+     ],
+     [
+      "right_hip_roll_joint",
+      0.24
+     ]
+    ],
+    "contact_normal_force_N": 356.4,
+    "tl_unsupported_force_N": 7.3,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.42,
+   "W_force": [
+    22.65,
+    -29.22,
+    338.66
+   ],
+   "W_torque_body": [
+    5.81,
+    -2.21,
+    1.07
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0446
+    ],
+    [
+     "right_foot2_collision",
+     0.0318
+    ],
+    [
+     "right_foot3_collision",
+     0.0305
+    ],
+    [
+     "right_foot4_collision",
+     0.0299
+    ],
+    [
+     "right_foot5_collision",
+     0.0298
+    ],
+    [
+     "right_foot6_collision",
+     0.0306
+    ],
+    [
+     "right_foot7_collision",
+     0.0428
+    ]
+   ],
+   "root_z": 0.768,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.27,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_knee_joint",
+      0.27
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.24
+     ],
+     [
+      "right_hip_roll_joint",
+      0.23
+     ]
+    ],
+    "contact_normal_force_N": 338.7,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.27,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_knee_joint",
+      0.27
+     ],
+     [
+      "right_hip_yaw_joint",
+      0.24
+     ],
+     [
+      "right_hip_roll_joint",
+      0.23
+     ]
+    ],
+    "contact_normal_force_N": 338.7,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.44,
+   "W_force": [
+    22.42,
+    -25.26,
+    319.78
+   ],
+   "W_torque_body": [
+    1.16,
+    -2.94,
+    1.34
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0416
+    ],
+    [
+     "right_foot2_collision",
+     0.0304
+    ],
+    [
+     "right_foot3_collision",
+     0.0294
+    ],
+    [
+     "right_foot4_collision",
+     0.0289
+    ],
+    [
+     "right_foot5_collision",
+     0.029
+    ],
+    [
+     "right_foot6_collision",
+     0.0297
+    ],
+    [
+     "right_foot7_collision",
+     0.0405
+    ]
+   ],
+   "root_z": 0.772,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.27,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.27
+     ],
+     [
+      "right_knee_joint",
+      0.21
+     ],
+     [
+      "right_hip_roll_joint",
+      0.2
+     ]
+    ],
+    "contact_normal_force_N": 319.8,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.27,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.27
+     ],
+     [
+      "right_knee_joint",
+      0.21
+     ],
+     [
+      "right_hip_roll_joint",
+      0.2
+     ]
+    ],
+    "contact_normal_force_N": 319.8,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.46,
+   "W_force": [
+    23.74,
+    -19.31,
+    302.89
+   ],
+   "W_torque_body": [
+    -3.06,
+    -3.33,
+    1.46
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0385
+    ],
+    [
+     "right_foot2_collision",
+     0.029
+    ],
+    [
+     "right_foot3_collision",
+     0.0281
+    ],
+    [
+     "right_foot4_collision",
+     0.0278
+    ],
+    [
+     "right_foot5_collision",
+     0.0279
+    ],
+    [
+     "right_foot6_collision",
+     0.0287
+    ],
+    [
+     "right_foot7_collision",
+     0.0381
+    ]
+   ],
+   "root_z": 0.775,
+   "real": {
+    "unsupported_force_N": 6.6,
+    "unsupported_torque_Nm": 2.2,
+    "max_tau_ratio": 0.3,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.3
+     ],
+     [
+      "right_knee_joint",
+      0.18
+     ],
+     [
+      "right_hip_roll_joint",
+      0.17
+     ]
+    ],
+    "contact_normal_force_N": 303.3,
+    "tl_unsupported_force_N": 9.7,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 6.6,
+    "unsupported_torque_Nm": 2.2,
+    "max_tau_ratio": 0.3,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.3
+     ],
+     [
+      "right_knee_joint",
+      0.18
+     ],
+     [
+      "right_hip_roll_joint",
+      0.17
+     ]
+    ],
+    "contact_normal_force_N": 303.3,
+    "tl_unsupported_force_N": 9.7,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.48,
+   "W_force": [
+    26.0,
+    -13.62,
+    289.87
+   ],
+   "W_torque_body": [
+    -6.57,
+    -3.18,
+    1.37
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.036
+    ],
+    [
+     "right_foot2_collision",
+     0.0281
+    ],
+    [
+     "right_foot3_collision",
+     0.0275
+    ],
+    [
+     "right_foot4_collision",
+     0.0273
+    ],
+    [
+     "right_foot5_collision",
+     0.0275
+    ],
+    [
+     "right_foot6_collision",
+     0.0282
+    ],
+    [
+     "right_foot7_collision",
+     0.0361
+    ]
+   ],
+   "root_z": 0.778,
+   "real": {
+    "unsupported_force_N": 14.5,
+    "unsupported_torque_Nm": 4.9,
+    "max_tau_ratio": 0.29,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.29
+     ],
+     [
+      "right_knee_joint",
+      0.18
+     ],
+     [
+      "right_hip_roll_joint",
+      0.15
+     ]
+    ],
+    "contact_normal_force_N": 290.4,
+    "tl_unsupported_force_N": 21.1,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 14.5,
+    "unsupported_torque_Nm": 4.9,
+    "max_tau_ratio": 0.29,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.29
+     ],
+     [
+      "right_knee_joint",
+      0.18
+     ],
+     [
+      "right_hip_roll_joint",
+      0.15
+     ]
+    ],
+    "contact_normal_force_N": 290.4,
+    "tl_unsupported_force_N": 21.1,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.5,
+   "W_force": [
+    27.08,
+    -10.19,
+    281.2
+   ],
+   "W_torque_body": [
+    -8.82,
+    -2.72,
+    1.1
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0343
+    ],
+    [
+     "right_foot2_collision",
+     0.0283
+    ],
+    [
+     "right_foot3_collision",
+     0.0279
+    ],
+    [
+     "right_foot4_collision",
+     0.0278
+    ],
+    [
+     "right_foot5_collision",
+     0.028
+    ],
+    [
+     "right_foot6_collision",
+     0.0286
+    ],
+    [
+     "right_foot7_collision",
+     0.0347
+    ]
+   ],
+   "root_z": 0.78,
+   "real": {
+    "unsupported_force_N": 20.2,
+    "unsupported_torque_Nm": 6.8,
+    "max_tau_ratio": 0.28,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.28
+     ],
+     [
+      "right_knee_joint",
+      0.17
+     ],
+     [
+      "right_hip_roll_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 281.4,
+    "tl_unsupported_force_N": 29.5,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 20.2,
+    "unsupported_torque_Nm": 6.8,
+    "max_tau_ratio": 0.28,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.28
+     ],
+     [
+      "right_knee_joint",
+      0.17
+     ],
+     [
+      "right_hip_roll_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 281.4,
+    "tl_unsupported_force_N": 29.5,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.52,
+   "W_force": [
+    25.73,
+    -9.35,
+    276.82
+   ],
+   "W_torque_body": [
+    -9.44,
+    -2.08,
+    0.74
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0334
+    ],
+    [
+     "right_foot2_collision",
+     0.0296
+    ],
+    [
+     "right_foot3_collision",
+     0.0294
+    ],
+    [
+     "right_foot4_collision",
+     0.0294
+    ],
+    [
+     "right_foot5_collision",
+     0.0296
+    ],
+    [
+     "right_foot6_collision",
+     0.03
+    ],
+    [
+     "right_foot7_collision",
+     0.034
+    ]
+   ],
+   "root_z": 0.78,
+   "real": {
+    "unsupported_force_N": 23.8,
+    "unsupported_torque_Nm": 8.0,
+    "max_tau_ratio": 0.28,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.28
+     ],
+     [
+      "right_knee_joint",
+      0.18
+     ],
+     [
+      "right_hip_roll_joint",
+      0.12
+     ]
+    ],
+    "contact_normal_force_N": 276.5,
+    "tl_unsupported_force_N": 34.9,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 23.8,
+    "unsupported_torque_Nm": 8.0,
+    "max_tau_ratio": 0.28,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.28
+     ],
+     [
+      "right_knee_joint",
+      0.18
+     ],
+     [
+      "right_hip_roll_joint",
+      0.12
+     ]
+    ],
+    "contact_normal_force_N": 276.5,
+    "tl_unsupported_force_N": 34.9,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.54,
+   "W_force": [
+    21.96,
+    -10.09,
+    276.32
+   ],
+   "W_torque_body": [
+    -8.55,
+    -1.24,
+    0.37
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.033
+    ],
+    [
+     "right_foot2_collision",
+     0.0317
+    ],
+    [
+     "right_foot3_collision",
+     0.0317
+    ],
+    [
+     "right_foot4_collision",
+     0.0318
+    ],
+    [
+     "right_foot5_collision",
+     0.032
+    ],
+    [
+     "right_foot6_collision",
+     0.0322
+    ],
+    [
+     "right_foot7_collision",
+     0.0338
+    ]
+   ],
+   "root_z": 0.781,
+   "real": {
+    "unsupported_force_N": 25.6,
+    "unsupported_torque_Nm": 8.6,
+    "max_tau_ratio": 0.28,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.28
+     ],
+     [
+      "right_knee_joint",
+      0.18
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 275.3,
+    "tl_unsupported_force_N": 37.8,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 25.6,
+    "unsupported_torque_Nm": 8.6,
+    "max_tau_ratio": 0.28,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.28
+     ],
+     [
+      "right_knee_joint",
+      0.18
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.13
+     ]
+    ],
+    "contact_normal_force_N": 275.3,
+    "tl_unsupported_force_N": 37.8,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.56,
+   "W_force": [
+    15.81,
+    -11.66,
+    279.09
+   ],
+   "W_torque_body": [
+    -6.45,
+    -0.41,
+    0.06
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0326
+    ],
+    [
+     "right_foot2_collision",
+     0.0324
+    ],
+    [
+     "right_foot3_collision",
+     0.0325
+    ],
+    [
+     "right_foot4_collision",
+     0.0326
+    ],
+    [
+     "right_foot5_collision",
+     0.0328
+    ],
+    [
+     "right_foot6_collision",
+     0.0329
+    ],
+    [
+     "right_foot7_collision",
+     0.0333
+    ]
+   ],
+   "root_z": 0.78,
+   "real": {
+    "unsupported_force_N": 6.7,
+    "unsupported_torque_Nm": 2.2,
+    "max_tau_ratio": 0.7,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.7
+     ],
+     [
+      "right_hip_roll_joint",
+      0.13
+     ],
+     [
+      "right_knee_joint",
+      0.07
+     ]
+    ],
+    "contact_normal_force_N": 279.0,
+    "tl_unsupported_force_N": 10.7,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 6.7,
+    "unsupported_torque_Nm": 2.2,
+    "max_tau_ratio": 0.7,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.7
+     ],
+     [
+      "right_hip_roll_joint",
+      0.13
+     ],
+     [
+      "right_knee_joint",
+      0.07
+     ]
+    ],
+    "contact_normal_force_N": 279.0,
+    "tl_unsupported_force_N": 10.7,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.58,
+   "W_force": [
+    7.78,
+    -13.89,
+    284.69
+   ],
+   "W_torque_body": [
+    -3.52,
+    0.19,
+    -0.09
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0319
+    ],
+    [
+     "right_foot2_collision",
+     0.0311
+    ],
+    [
+     "right_foot3_collision",
+     0.031
+    ],
+    [
+     "right_foot4_collision",
+     0.031
+    ],
+    [
+     "right_foot5_collision",
+     0.0312
+    ],
+    [
+     "right_foot6_collision",
+     0.0315
+    ],
+    [
+     "right_foot7_collision",
+     0.0325
+    ]
+   ],
+   "root_z": 0.779,
+   "real": {
+    "unsupported_force_N": 7.6,
+    "unsupported_torque_Nm": 2.6,
+    "max_tau_ratio": 0.69,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.69
+     ],
+     [
+      "right_hip_roll_joint",
+      0.15
+     ],
+     [
+      "right_ankle_roll_joint",
+      0.1
+     ]
+    ],
+    "contact_normal_force_N": 284.3,
+    "tl_unsupported_force_N": 11.4,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 7.6,
+    "unsupported_torque_Nm": 2.6,
+    "max_tau_ratio": 0.69,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.69
+     ],
+     [
+      "right_hip_roll_joint",
+      0.15
+     ],
+     [
+      "right_ankle_roll_joint",
+      0.1
+     ]
+    ],
+    "contact_normal_force_N": 284.3,
+    "tl_unsupported_force_N": 11.4,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.6,
+   "W_force": [
+    -0.6,
+    -16.63,
+    292.22
+   ],
+   "W_torque_body": [
+    -0.33,
+    0.57,
+    0.05
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "right_foot1_collision",
+     0.0314
+    ],
+    [
+     "right_foot2_collision",
+     0.03
+    ],
+    [
+     "right_foot3_collision",
+     0.0296
+    ],
+    [
+     "right_foot4_collision",
+     0.0296
+    ],
+    [
+     "right_foot5_collision",
+     0.0298
+    ],
+    [
+     "right_foot6_collision",
+     0.0303
+    ],
+    [
+     "right_foot7_collision",
+     0.0318
+    ]
+   ],
+   "root_z": 0.777,
+   "real": {
+    "unsupported_force_N": 9.0,
+    "unsupported_torque_Nm": 3.0,
+    "max_tau_ratio": 0.7,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.7
+     ],
+     [
+      "right_hip_roll_joint",
+      0.17
+     ],
+     [
+      "right_ankle_roll_joint",
+      0.12
+     ]
+    ],
+    "contact_normal_force_N": 291.5,
+    "tl_unsupported_force_N": 13.1,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 9.0,
+    "unsupported_torque_Nm": 3.0,
+    "max_tau_ratio": 0.7,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.7
+     ],
+     [
+      "right_hip_roll_joint",
+      0.17
+     ],
+     [
+      "right_ankle_roll_joint",
+      0.12
+     ]
+    ],
+    "contact_normal_force_N": 291.5,
+    "tl_unsupported_force_N": 13.1,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.62,
+   "W_force": [
+    -8.57,
+    -20.47,
+    299.77
+   ],
+   "W_torque_body": [
+    2.65,
+    0.93,
+    0.45
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0534
+    ],
+    [
+     "left_foot3_collision",
+     0.0516
+    ],
+    [
+     "left_foot4_collision",
+     0.0513
+    ],
+    [
+     "left_foot5_collision",
+     0.052
+    ],
+    [
+     "left_foot6_collision",
+     0.054
+    ],
+    [
+     "right_foot1_collision",
+     0.0312
+    ],
+    [
+     "right_foot2_collision",
+     0.0291
+    ],
+    [
+     "right_foot3_collision",
+     0.0285
+    ],
+    [
+     "right_foot4_collision",
+     0.0284
+    ],
+    [
+     "right_foot5_collision",
+     0.0286
+    ],
+    [
+     "right_foot6_collision",
+     0.0293
+    ],
+    [
+     "right_foot7_collision",
+     0.0315
+    ]
+   ],
+   "root_z": 0.774,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.42,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.42
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.09
+     ],
+     [
+      "left_knee_joint",
+      0.08
+     ]
+    ],
+    "contact_normal_force_N": 299.8,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.42,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.42
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.09
+     ],
+     [
+      "left_knee_joint",
+      0.08
+     ]
+    ],
+    "contact_normal_force_N": 299.8,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.64,
+   "W_force": [
+    -16.9,
+    -25.6,
+    304.9
+   ],
+   "W_torque_body": [
+    5.05,
+    1.13,
+    0.92
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0357
+    ],
+    [
+     "left_foot3_collision",
+     0.0328
+    ],
+    [
+     "left_foot4_collision",
+     0.0321
+    ],
+    [
+     "left_foot5_collision",
+     0.0329
+    ],
+    [
+     "left_foot6_collision",
+     0.0358
+    ],
+    [
+     "right_foot1_collision",
+     0.0316
+    ],
+    [
+     "right_foot2_collision",
+     0.0287
+    ],
+    [
+     "right_foot3_collision",
+     0.0279
+    ],
+    [
+     "right_foot4_collision",
+     0.0276
+    ],
+    [
+     "right_foot5_collision",
+     0.0279
+    ],
+    [
+     "right_foot6_collision",
+     0.0288
+    ],
+    [
+     "right_foot7_collision",
+     0.0317
+    ]
+   ],
+   "root_z": 0.771,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.4,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.4
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.33
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.28
+     ]
+    ],
+    "contact_normal_force_N": 304.9,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.4,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.4
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.33
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.28
+     ]
+    ],
+    "contact_normal_force_N": 304.9,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.66,
+   "W_force": [
+    -26.32,
+    -30.12,
+    307.89
+   ],
+   "W_torque_body": [
+    6.58,
+    0.12,
+    1.19
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0239
+    ],
+    [
+     "left_foot3_collision",
+     0.02
+    ],
+    [
+     "left_foot4_collision",
+     0.019
+    ],
+    [
+     "left_foot5_collision",
+     0.0198
+    ],
+    [
+     "left_foot6_collision",
+     0.0235
+    ],
+    [
+     "right_foot1_collision",
+     0.0323
+    ],
+    [
+     "right_foot2_collision",
+     0.0286
+    ],
+    [
+     "right_foot3_collision",
+     0.0274
+    ],
+    [
+     "right_foot4_collision",
+     0.0271
+    ],
+    [
+     "right_foot5_collision",
+     0.0274
+    ],
+    [
+     "right_foot6_collision",
+     0.0286
+    ],
+    [
+     "right_foot7_collision",
+     0.0323
+    ]
+   ],
+   "root_z": 0.768,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.43,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.43
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.35
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 307.9,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.43,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.43
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.35
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 307.9,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.68,
+   "W_force": [
+    -36.05,
+    -32.54,
+    313.12
+   ],
+   "W_torque_body": [
+    7.51,
+    -3.09,
+    1.3
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0168
+    ],
+    [
+     "left_foot3_collision",
+     0.0123
+    ],
+    [
+     "left_foot4_collision",
+     0.011
+    ],
+    [
+     "left_foot5_collision",
+     0.0118
+    ],
+    [
+     "left_foot6_collision",
+     0.0161
+    ],
+    [
+     "right_foot1_collision",
+     0.0331
+    ],
+    [
+     "right_foot2_collision",
+     0.0285
+    ],
+    [
+     "right_foot3_collision",
+     0.027
+    ],
+    [
+     "right_foot4_collision",
+     0.0266
+    ],
+    [
+     "right_foot5_collision",
+     0.027
+    ],
+    [
+     "right_foot6_collision",
+     0.0284
+    ],
+    [
+     "right_foot7_collision",
+     0.0331
+    ]
+   ],
+   "root_z": 0.764,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.43,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.43
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.38
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.34
+     ]
+    ],
+    "contact_normal_force_N": 313.1,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.43,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_ankle_pitch_joint",
+      0.43
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.38
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.34
+     ]
+    ],
+    "contact_normal_force_N": 313.1,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.7,
+   "W_force": [
+    -42.89,
+    -33.9,
+    326.24
+   ],
+   "W_torque_body": [
+    8.7,
+    -7.98,
+    1.8
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0122
+    ],
+    [
+     "left_foot3_collision",
+     0.0073
+    ],
+    [
+     "left_foot4_collision",
+     0.0058
+    ],
+    [
+     "left_foot5_collision",
+     0.0067
+    ],
+    [
+     "left_foot6_collision",
+     0.0113
+    ],
+    [
+     "right_foot1_collision",
+     0.0339
+    ],
+    [
+     "right_foot2_collision",
+     0.0282
+    ],
+    [
+     "right_foot3_collision",
+     0.0265
+    ],
+    [
+     "right_foot4_collision",
+     0.026
+    ],
+    [
+     "right_foot5_collision",
+     0.0264
+    ],
+    [
+     "right_foot6_collision",
+     0.0282
+    ],
+    [
+     "right_foot7_collision",
+     0.0339
+    ]
+   ],
+   "root_z": 0.76,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.48,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.48
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.45
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.41
+     ]
+    ],
+    "contact_normal_force_N": 326.2,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.48,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.48
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.45
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.41
+     ]
+    ],
+    "contact_normal_force_N": 326.2,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.72,
+   "W_force": [
+    -43.46,
+    -33.61,
+    346.47
+   ],
+   "W_torque_body": [
+    10.2,
+    -13.13,
+    2.91
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot2_collision",
+     0.0079
+    ],
+    [
+     "left_foot3_collision",
+     0.0029
+    ],
+    [
+     "left_foot4_collision",
+     0.0015
+    ],
+    [
+     "left_foot5_collision",
+     0.0024
+    ],
+    [
+     "left_foot6_collision",
+     0.0069
+    ],
+    [
+     "right_foot1_collision",
+     0.0346
+    ],
+    [
+     "right_foot2_collision",
+     0.0276
+    ],
+    [
+     "right_foot3_collision",
+     0.0255
+    ],
+    [
+     "right_foot4_collision",
+     0.025
+    ],
+    [
+     "right_foot5_collision",
+     0.0256
+    ],
+    [
+     "right_foot6_collision",
+     0.0277
+    ],
+    [
+     "right_foot7_collision",
+     0.0347
+    ]
+   ],
+   "root_z": 0.756,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.62,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.62
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.61
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.35
+     ]
+    ],
+    "contact_normal_force_N": 346.5,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.62,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "right_hip_pitch_joint",
+      0.62
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.61
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.35
+     ]
+    ],
+    "contact_normal_force_N": 346.5,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.74,
+   "W_force": [
+    -36.81,
+    -29.29,
+    369.54
+   ],
+   "W_torque_body": [
+    11.17,
+    -17.47,
+    3.98
+   ],
+   "n_contacts": 14,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0546
+    ],
+    [
+     "left_foot2_collision",
+     0.0046
+    ],
+    [
+     "left_foot3_collision",
+     0.0002
+    ],
+    [
+     "left_foot4_collision",
+     -0.0011
+    ],
+    [
+     "left_foot5_collision",
+     -0.0003
+    ],
+    [
+     "left_foot6_collision",
+     0.0038
+    ],
+    [
+     "left_foot7_collision",
+     0.0534
+    ],
+    [
+     "right_foot1_collision",
+     0.0357
+    ],
+    [
+     "right_foot2_collision",
+     0.0273
+    ],
+    [
+     "right_foot3_collision",
+     0.0247
+    ],
+    [
+     "right_foot4_collision",
+     0.024
+    ],
+    [
+     "right_foot5_collision",
+     0.0248
+    ],
+    [
+     "right_foot6_collision",
+     0.0275
+    ],
+    [
+     "right_foot7_collision",
+     0.036
+    ]
+   ],
+   "root_z": 0.752,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.79,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.79
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.78
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.3
+     ]
+    ],
+    "contact_normal_force_N": 369.5,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.79,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.79
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.78
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.3
+     ]
+    ],
+    "contact_normal_force_N": 369.5,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.76,
+   "W_force": [
+    -23.94,
+    -20.78,
+    388.94
+   ],
+   "W_torque_body": [
+    10.25,
+    -19.71,
+    4.24
+   ],
+   "n_contacts": 14,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0433
+    ],
+    [
+     "left_foot2_collision",
+     0.0041
+    ],
+    [
+     "left_foot3_collision",
+     0.0008
+    ],
+    [
+     "left_foot4_collision",
+     0.0
+    ],
+    [
+     "left_foot5_collision",
+     0.0009
+    ],
+    [
+     "left_foot6_collision",
+     0.0044
+    ],
+    [
+     "left_foot7_collision",
+     0.0437
+    ],
+    [
+     "right_foot1_collision",
+     0.0375
+    ],
+    [
+     "right_foot2_collision",
+     0.0272
+    ],
+    [
+     "right_foot3_collision",
+     0.0241
+    ],
+    [
+     "right_foot4_collision",
+     0.0232
+    ],
+    [
+     "right_foot5_collision",
+     0.0242
+    ],
+    [
+     "right_foot6_collision",
+     0.0274
+    ],
+    [
+     "right_foot7_collision",
+     0.0378
+    ]
+   ],
+   "root_z": 0.748,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.65,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.65
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.62
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.27
+     ]
+    ],
+    "contact_normal_force_N": 388.9,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.65,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.65
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.62
+     ],
+     [
+      "right_ankle_pitch_joint",
+      0.27
+     ]
+    ],
+    "contact_normal_force_N": 388.9,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.78,
+   "W_force": [
+    -5.63,
+    -8.72,
+    399.55
+   ],
+   "W_torque_body": [
+    6.94,
+    -18.85,
+    3.13
+   ],
+   "n_contacts": 14,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0375
+    ],
+    [
+     "left_foot2_collision",
+     0.0065
+    ],
+    [
+     "left_foot3_collision",
+     0.0043
+    ],
+    [
+     "left_foot4_collision",
+     0.0043
+    ],
+    [
+     "left_foot5_collision",
+     0.0055
+    ],
+    [
+     "left_foot6_collision",
+     0.0087
+    ],
+    [
+     "left_foot7_collision",
+     0.0406
+    ],
+    [
+     "right_foot1_collision",
+     0.04
+    ],
+    [
+     "right_foot2_collision",
+     0.0273
+    ],
+    [
+     "right_foot3_collision",
+     0.0235
+    ],
+    [
+     "right_foot4_collision",
+     0.0226
+    ],
+    [
+     "right_foot5_collision",
+     0.0239
+    ],
+    [
+     "right_foot6_collision",
+     0.0279
+    ],
+    [
+     "right_foot7_collision",
+     0.0409
+    ]
+   ],
+   "root_z": 0.745,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.71,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.71
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.66
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.28
+     ]
+    ],
+    "contact_normal_force_N": 399.6,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.71,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.71
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.66
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.28
+     ]
+    ],
+    "contact_normal_force_N": 399.6,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.8,
+   "W_force": [
+    14.8,
+    6.92,
+    399.56
+   ],
+   "W_torque_body": [
+    1.61,
+    -15.24,
+    1.31
+   ],
+   "n_contacts": 14,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0394
+    ],
+    [
+     "left_foot2_collision",
+     0.0121
+    ],
+    [
+     "left_foot3_collision",
+     0.0104
+    ],
+    [
+     "left_foot4_collision",
+     0.0108
+    ],
+    [
+     "left_foot5_collision",
+     0.0124
+    ],
+    [
+     "left_foot6_collision",
+     0.0155
+    ],
+    [
+     "left_foot7_collision",
+     0.0444
+    ],
+    [
+     "right_foot1_collision",
+     0.0449
+    ],
+    [
+     "right_foot2_collision",
+     0.0293
+    ],
+    [
+     "right_foot3_collision",
+     0.0248
+    ],
+    [
+     "right_foot4_collision",
+     0.0239
+    ],
+    [
+     "right_foot5_collision",
+     0.0258
+    ],
+    [
+     "right_foot6_collision",
+     0.031
+    ],
+    [
+     "right_foot7_collision",
+     0.0473
+    ]
+   ],
+   "root_z": 0.745,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.93,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.93
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.88
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.34
+     ]
+    ],
+    "contact_normal_force_N": 399.6,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.93,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.93
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.88
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.34
+     ]
+    ],
+    "contact_normal_force_N": 399.6,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.82,
+   "W_force": [
+    32.64,
+    22.84,
+    393.53
+   ],
+   "W_torque_body": [
+    -3.81,
+    -10.26,
+    0.07
+   ],
+   "n_contacts": 14,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0404
+    ],
+    [
+     "left_foot2_collision",
+     0.0162
+    ],
+    [
+     "left_foot3_collision",
+     0.0151
+    ],
+    [
+     "left_foot4_collision",
+     0.016
+    ],
+    [
+     "left_foot5_collision",
+     0.0179
+    ],
+    [
+     "left_foot6_collision",
+     0.0212
+    ],
+    [
+     "left_foot7_collision",
+     0.0477
+    ],
+    [
+     "right_foot1_collision",
+     0.0554
+    ],
+    [
+     "right_foot2_collision",
+     0.0372
+    ],
+    [
+     "right_foot3_collision",
+     0.0319
+    ],
+    [
+     "right_foot4_collision",
+     0.0307
+    ],
+    [
+     "right_foot5_collision",
+     0.0328
+    ],
+    [
+     "right_foot6_collision",
+     0.0388
+    ],
+    [
+     "right_foot7_collision",
+     0.0578
+    ]
+   ],
+   "root_z": 0.747,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.19,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_roll_joint",
+      0.19
+     ],
+     [
+      "left_knee_joint",
+      0.17
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.17
+     ]
+    ],
+    "contact_normal_force_N": 393.5,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.19,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_roll_joint",
+      0.19
+     ],
+     [
+      "left_knee_joint",
+      0.17
+     ],
+     [
+      "left_hip_pitch_joint",
+      0.17
+     ]
+    ],
+    "contact_normal_force_N": 393.5,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.84,
+   "W_force": [
+    45.15,
+    33.49,
+    385.43
+   ],
+   "W_torque_body": [
+    -7.2,
+    -5.43,
+    0.08
+   ],
+   "n_contacts": 12,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0399
+    ],
+    [
+     "left_foot2_collision",
+     0.0171
+    ],
+    [
+     "left_foot3_collision",
+     0.0164
+    ],
+    [
+     "left_foot4_collision",
+     0.0175
+    ],
+    [
+     "left_foot5_collision",
+     0.0196
+    ],
+    [
+     "left_foot6_collision",
+     0.023
+    ],
+    [
+     "left_foot7_collision",
+     0.0486
+    ],
+    [
+     "right_foot2_collision",
+     0.051
+    ],
+    [
+     "right_foot3_collision",
+     0.045
+    ],
+    [
+     "right_foot4_collision",
+     0.0435
+    ],
+    [
+     "right_foot5_collision",
+     0.0456
+    ],
+    [
+     "right_foot6_collision",
+     0.0521
+    ]
+   ],
+   "root_z": 0.75,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.42,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.42
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.39
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.22
+     ]
+    ],
+    "contact_normal_force_N": 385.4,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.42,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.42
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.39
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.22
+     ]
+    ],
+    "contact_normal_force_N": 385.4,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.86,
+   "W_force": [
+    52.21,
+    36.75,
+    375.48
+   ],
+   "W_torque_body": [
+    -7.72,
+    -1.64,
+    0.54
+   ],
+   "n_contacts": 8,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0373
+    ],
+    [
+     "left_foot2_collision",
+     0.0154
+    ],
+    [
+     "left_foot3_collision",
+     0.0148
+    ],
+    [
+     "left_foot4_collision",
+     0.016
+    ],
+    [
+     "left_foot5_collision",
+     0.0183
+    ],
+    [
+     "left_foot6_collision",
+     0.0217
+    ],
+    [
+     "left_foot7_collision",
+     0.0466
+    ],
+    [
+     "right_foot4_collision",
+     0.0593
+    ]
+   ],
+   "root_z": 0.753,
+   "real": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.41,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.41
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.39
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.35
+     ]
+    ],
+    "contact_normal_force_N": 375.5,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 0.0,
+    "unsupported_torque_Nm": 0.0,
+    "max_tau_ratio": 0.41,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.41
+     ],
+     [
+      "right_hip_pitch_joint",
+      0.39
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.35
+     ]
+    ],
+    "contact_normal_force_N": 375.5,
+    "tl_unsupported_force_N": 0.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.88,
+   "W_force": [
+    89.59,
+    33.81,
+    361.21
+   ],
+   "W_torque_body": [
+    -5.84,
+    3.73,
+    -0.01
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0342
+    ],
+    [
+     "left_foot2_collision",
+     0.0126
+    ],
+    [
+     "left_foot3_collision",
+     0.012
+    ],
+    [
+     "left_foot4_collision",
+     0.0131
+    ],
+    [
+     "left_foot5_collision",
+     0.0153
+    ],
+    [
+     "left_foot6_collision",
+     0.0186
+    ],
+    [
+     "left_foot7_collision",
+     0.043
+    ]
+   ],
+   "root_z": 0.756,
+   "real": {
+    "unsupported_force_N": 7.5,
+    "unsupported_torque_Nm": 2.6,
+    "max_tau_ratio": 0.37,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.37
+     ],
+     [
+      "left_hip_roll_joint",
+      0.29
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.24
+     ]
+    ],
+    "contact_normal_force_N": 362.6,
+    "tl_unsupported_force_N": 11.4,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 7.5,
+    "unsupported_torque_Nm": 2.6,
+    "max_tau_ratio": 0.37,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.37
+     ],
+     [
+      "left_hip_roll_joint",
+      0.29
+     ],
+     [
+      "left_hip_yaw_joint",
+      0.24
+     ]
+    ],
+    "contact_normal_force_N": 362.6,
+    "tl_unsupported_force_N": 11.4,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.9,
+   "W_force": [
+    156.62,
+    26.56,
+    342.07
+   ],
+   "W_torque_body": [
+    -2.48,
+    10.55,
+    -0.88
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0323
+    ],
+    [
+     "left_foot2_collision",
+     0.0113
+    ],
+    [
+     "left_foot3_collision",
+     0.0106
+    ],
+    [
+     "left_foot4_collision",
+     0.0117
+    ],
+    [
+     "left_foot5_collision",
+     0.0137
+    ],
+    [
+     "left_foot6_collision",
+     0.0169
+    ],
+    [
+     "left_foot7_collision",
+     0.0405
+    ]
+   ],
+   "root_z": 0.76,
+   "real": {
+    "unsupported_force_N": 56.1,
+    "unsupported_torque_Nm": 19.1,
+    "max_tau_ratio": 0.33,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.33
+     ],
+     [
+      "left_hip_roll_joint",
+      0.27
+     ],
+     [
+      "left_knee_joint",
+      0.26
+     ]
+    ],
+    "contact_normal_force_N": 350.8,
+    "tl_unsupported_force_N": 83.9,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 56.1,
+    "unsupported_torque_Nm": 19.1,
+    "max_tau_ratio": 0.33,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_ankle_pitch_joint",
+      0.33
+     ],
+     [
+      "left_hip_roll_joint",
+      0.27
+     ],
+     [
+      "left_knee_joint",
+      0.26
+     ]
+    ],
+    "contact_normal_force_N": 350.8,
+    "tl_unsupported_force_N": 83.9,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.92,
+   "W_force": [
+    219.74,
+    19.25,
+    322.53
+   ],
+   "W_torque_body": [
+    0.95,
+    16.33,
+    -1.23
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0319
+    ],
+    [
+     "left_foot2_collision",
+     0.0116
+    ],
+    [
+     "left_foot3_collision",
+     0.0109
+    ],
+    [
+     "left_foot4_collision",
+     0.0119
+    ],
+    [
+     "left_foot5_collision",
+     0.0138
+    ],
+    [
+     "left_foot6_collision",
+     0.0167
+    ],
+    [
+     "left_foot7_collision",
+     0.0395
+    ]
+   ],
+   "root_z": 0.764,
+   "real": {
+    "unsupported_force_N": 103.1,
+    "unsupported_torque_Nm": 35.0,
+    "max_tau_ratio": 0.46,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.46
+     ],
+     [
+      "left_knee_joint",
+      0.31
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.3
+     ]
+    ],
+    "contact_normal_force_N": 336.1,
+    "tl_unsupported_force_N": 152.8,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 103.1,
+    "unsupported_torque_Nm": 35.0,
+    "max_tau_ratio": 0.46,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.46
+     ],
+     [
+      "left_knee_joint",
+      0.31
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.3
+     ]
+    ],
+    "contact_normal_force_N": 336.1,
+    "tl_unsupported_force_N": 152.8,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.94,
+   "W_force": [
+    203.13,
+    13.9,
+    307.16
+   ],
+   "W_torque_body": [
+    3.14,
+    14.46,
+    -0.62
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0317
+    ],
+    [
+     "left_foot2_collision",
+     0.012
+    ],
+    [
+     "left_foot3_collision",
+     0.0113
+    ],
+    [
+     "left_foot4_collision",
+     0.0122
+    ],
+    [
+     "left_foot5_collision",
+     0.0139
+    ],
+    [
+     "left_foot6_collision",
+     0.0168
+    ],
+    [
+     "left_foot7_collision",
+     0.0387
+    ]
+   ],
+   "root_z": 0.768,
+   "real": {
+    "unsupported_force_N": 102.0,
+    "unsupported_torque_Nm": 34.5,
+    "max_tau_ratio": 0.46,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.46
+     ],
+     [
+      "left_shoulder_pitch_joint",
+      0.29
+     ],
+     [
+      "left_knee_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 318.1,
+    "tl_unsupported_force_N": 149.8,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 102.0,
+    "unsupported_torque_Nm": 34.5,
+    "max_tau_ratio": 0.46,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.46
+     ],
+     [
+      "left_shoulder_pitch_joint",
+      0.29
+     ],
+     [
+      "left_knee_joint",
+      0.29
+     ]
+    ],
+    "contact_normal_force_N": 318.1,
+    "tl_unsupported_force_N": 149.8,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  },
+  {
+   "t": 1.96,
+   "W_force": [
+    189.23,
+    11.39,
+    297.8
+   ],
+   "W_torque_body": [
+    4.14,
+    12.87,
+    -0.41
+   ],
+   "n_contacts": 7,
+   "contacts": [
+    [
+     "left_foot1_collision",
+     0.0306
+    ],
+    [
+     "left_foot2_collision",
+     0.0114
+    ],
+    [
+     "left_foot3_collision",
+     0.0106
+    ],
+    [
+     "left_foot4_collision",
+     0.0115
+    ],
+    [
+     "left_foot5_collision",
+     0.0131
+    ],
+    [
+     "left_foot6_collision",
+     0.0159
+    ],
+    [
+     "left_foot7_collision",
+     0.0372
+    ]
+   ],
+   "root_z": 0.772,
+   "real": {
+    "unsupported_force_N": 100.7,
+    "unsupported_torque_Nm": 33.9,
+    "max_tau_ratio": 0.45,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.45
+     ],
+     [
+      "left_shoulder_pitch_joint",
+      0.28
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.28
+     ]
+    ],
+    "contact_normal_force_N": 306.3,
+    "tl_unsupported_force_N": 147.0,
+    "tl_unsupported_torque_Nm": 0.0
+   },
+   "sim": {
+    "unsupported_force_N": 100.7,
+    "unsupported_torque_Nm": 33.9,
+    "max_tau_ratio": 0.45,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_hip_pitch_joint",
+      0.45
+     ],
+     [
+      "left_shoulder_pitch_joint",
+      0.28
+     ],
+     [
+      "left_ankle_pitch_joint",
+      0.28
+     ]
+    ],
+    "contact_normal_force_N": 306.3,
+    "tl_unsupported_force_N": 147.0,
+    "tl_unsupported_torque_Nm": 0.0
+   }
+  }
+ ]
+}

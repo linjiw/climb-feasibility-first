@@ -1,0 +1,59 @@
+{
+ "schema_version": "dfrp_census_summary/1",
+ "classification": "unsealed measured routing audit; legacy repair qualification is incomplete",
+ "manifest_payload_sha256": "6b41fc24f31c9b5abc87d6683dbfd02c61059656eb45e1ea1339f61c3d332d34",
+ "thresholds": {
+  "contact_gap_m": 0.06,
+  "flag_infeasible_frac": 0.1,
+  "recovered_infeasible_frac": 0.05,
+  "primary_root_offset_m": 0.08,
+  "exploratory_root_offset_m": 0.15,
+  "horizon_steps": 50,
+  "ik_contact_residual_m": 0.01
+ },
+ "counts": {
+  "clips": 10705,
+  "flagged": 2442,
+  "training_eligible": 0,
+  "by_route": {
+   "repair_exploratory": 962,
+   "quarantine": 836,
+   "raw_feasible": 8263,
+   "repair_primary": 644
+  },
+  "by_reason": {
+   "root_offset_above_primary_budget": 962,
+   "no_legal_raw_segment": 836,
+   "residual_infeasibility": 432,
+   "exact_training_support_not_ready": 8907,
+   "repair_qualification_incomplete": 644,
+   "root_offset_above_exploratory_budget": 527
+  }
+ },
+ "strict_flagged": 2442,
+ "primary_8cm_legacy_candidates": 644,
+ "primary_8cm_legacy_candidate_frac": 0.26371826371826373,
+ "additional_8to15cm_exploratory": 962,
+ "additional_8to15cm_exploratory_frac": 0.3939393939393939,
+ "combined_recovered_through_15cm": 1606,
+ "combined_recovered_through_15cm_frac": 0.6576576576576577,
+ "primary_qualification_complete": 0,
+ "offset_primary_m": {
+  "mean": 0.06093707846905592,
+  "p50": 0.06475799853321877,
+  "p95": 0.07864385279091368,
+  "max": 0.07998694034059053
+ },
+ "offset_exploratory_m": {
+  "mean": 0.10550345282505237,
+  "p50": 0.10297557533599236,
+  "p95": 0.1410404885922206,
+  "max": 0.14863393695000016
+ },
+ "integrity": {
+  "flagged_missing_repair_records": [],
+  "repair_records_outside_strict_flag_set": [
+   "CMU_76_76_02_poses_120_jpos"
+  ]
+ }
+}

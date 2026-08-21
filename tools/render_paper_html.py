@@ -61,7 +61,7 @@ FIGS = {
         ("(script\n`f4_prevalence.py`",
          "assets/f4_prevalence.png",
          "Figure 2 [measured] — prevalence by category and source, AMASS→Unitree-G1 under one retargeter. reports/feasibility_all/feasibility.csv.", True),
-        ("`reports/repair_census/summary.md`, sentinel present]: **65.8",
+        ("strict 2,442 flagged clips (1,606) are auto-recoverable",
          "assets/f_census_repair.png",
          "Figure 3 [measured] — the repair census: two-thirds of flagged clips are a 3-second fix. reports/repair_census/summary.json.", False),
     ],
@@ -75,7 +75,7 @@ FIGS = {
         ("lifting the legs instead of lowering the root.",
          "assets/f3_anatomy.png",
          "Figure F3 — anatomy of the attractor: (a) airborne reference frames [measured]; (b) unsupported wrench [measured]; (c) stratified-start deaths [measured]; (d) the sealed-negative physics gate at the same-solver floor [sealed ✗, kept].", True),
-        ("pipeline × source property, not a difficulty gradient.",
+        ("source-corpus × pipeline property, not a difficulty gradient.",
          "assets/f4_prevalence.png",
          "Figure F4 [measured] — prevalence by category × source: 0.1 % → 100 % under one pipeline. reports/feasibility_all/.", True),
         ("**feasibility is the first feature family that transfers across policies**",
@@ -119,8 +119,8 @@ if __name__ == "__main__":
            ("flagship.html", "flagship draft →"))
     render("paper/flagship/DRAFT_full.md", "docs/flagship.html", "flagship",
            "CLIMB — Flagship Working Draft",
-           "Working draft with slots (title not final; five candidates under review). Sections §8 (N3/N7/E3) and the "
-           "P-SIGN slot in §9 are sealed-and-scheduled — they state predictions and fill dates and do no load-bearing "
-           "work. The sealed record (pre-registration table) is included in full, including the failed gate, the "
-           "withdrawn verdict, and the kept nulls.",
+           "Working draft with pending experiments (title not final; five candidates under review). N3 is mixed, "
+           "E-HYG is null, P-SIGN failed, soft FGAS failed its implementation gate, and N7 failed "
+           "its joint rule as sealed; E3 remains pending. Pending results do no load-bearing work. The sealed record is included in full, including the "
+           "failed gate, the withdrawn verdict, and the kept nulls.",
            ("companion.html", "companion note →"))
