@@ -1,0 +1,17 @@
+{
+ "schema_version": "segment_eval_output/1",
+ "classification": "unsealed paired segment-v2 evaluation",
+ "policy": "uniform",
+ "checkpoint": "/data/robotixx/climb/reports/segment_v2_pilot/training/segment_v2_pilot/2026-08-20_23-21-07_uniform-penalty10-pilot200-s20260820/model_199.pt",
+ "checkpoint_sha256": "84da3b706ad344efc8cf77423e1c540c4e74d7eea5122b6c83338498ec25075b",
+ "unit_table_sha256": "2aaeaa741959eabbfc9510a18820f9745bc7e879dfa423423385e835b6f120a6",
+ "conditions_sha256": "f449c8ee212964bc1802eb1e2ed834a137ec581c4bba839582ae627ffb7beedc",
+ "environment_seed": 20260820,
+ "initial_state_sha256": "2454a68932417d36e7b0b267b1962ecf6727f8aed89146741c46a1aba83642dc",
+ "startup_randomization_sha256": "eb29d1544679ca536ae047c3389700a5eeba7fafa8c8aacbbbddfb1d30b1f093",
+ "worlds": 504,
+ "success_rate": 0.6746032238006592,
+ "mean_survival_s": 0.9010714721679688,
+ "summary": "/data/robotixx/climb/reports/segment_v2_pilot/eval_uniform.csv",
+ "trajectory": "/data/robotixx/climb/reports/segment_v2_pilot/eval_uniform_trajectory.csv"
+}

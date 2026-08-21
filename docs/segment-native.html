@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How CLIMB turns physics-feasible motion segments into auditable humanoid tracking trials, what the first GPU pilot measured, and where Newton enters next.">
+<title>Segment-native training · CLIMB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F6F7;--surface:#FFF;--ink:#15222B;--muted:#5C6B75;--rule:#D8DFE3;--accent:#0B7285;--accent-soft:#E2F0F3;--hero:#0E2A33;--hero-ink:#EAF4F6;--hero-muted:#9DBDC6;--good:#2E7D4F;--good-soft:#E3F1E8;--amber:#A96815;--amber-soft:#F7EEDC;--bad:#B3261E;--bad-soft:#F8E4E2;--code:#EAEFF1}
+@media(prefers-color-scheme:dark){:root{--bg:#0F1518;--surface:#161E23;--ink:#E4EAEC;--muted:#93A4AD;--rule:#27333A;--accent:#49C2D4;--accent-soft:#123039;--hero:#0A2027;--hero-ink:#EAF4F6;--hero-muted:#8FB3BC;--good:#57B781;--good-soft:#14301F;--amber:#E2A33A;--amber-soft:#3A2E14;--bad:#E4776E;--bad-soft:#3B1A18;--code:#1E282D}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.58 "IBM Plex Sans",system-ui,sans-serif}
+.wrap{max-width:72rem;margin:auto;padding:0 1.4rem}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;line-height:1.14;text-wrap:balance;margin:0}
+p{max-width:72ch} a{color:var(--accent);text-underline-offset:2px} a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+code,.mono{font-family:"IBM Plex Mono",monospace;font-size:.85em;background:var(--code);padding:.08em .32em;border-radius:3px}
+.eyebrow{font:500 .75rem "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+.top{background:var(--hero);color:var(--hero-ink);padding:1rem 0;border-bottom:1px solid #21434d}
+.top .wrap{display:flex;justify-content:space-between;gap:1rem;align-items:center}.top a{color:var(--hero-muted);text-decoration:none}.top a:hover{color:var(--hero-ink)}
+.hero{background:var(--hero);color:var(--hero-ink);padding:3rem 0 3.5rem}
+.hero .eyebrow{color:var(--hero-muted)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.7rem);max-width:20ch;margin-top:.45rem;letter-spacing:-.015em}
+.hero .sub{color:var(--hero-muted);font-size:1.15rem;max-width:66ch;margin:1rem 0 0}.hero .sub strong{color:var(--hero-ink)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1px;background:#1e4450;border:1px solid #1e4450;border-radius:8px;overflow:hidden;margin-top:2rem}
+.stat{background:#123540;padding:1rem 1.1rem}.stat .v{font:600 1.65rem "Source Serif 4",serif;color:#8FD8E4;font-variant-numeric:tabular-nums}.stat .k{color:var(--hero-muted);font-size:.82rem;line-height:1.35;margin-top:.25rem}
+main{padding-bottom:4rem}section{padding-top:3.2rem}.num{display:block;color:var(--accent);font:500 .75rem "IBM Plex Mono",monospace;letter-spacing:.09em;text-transform:uppercase;margin-bottom:.5rem}
+h2{font-size:1.8rem;margin-bottom:.5rem}.kicker{color:var(--muted);margin:.35rem 0 1.4rem}
+.verdicts{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.35rem}.verdict{border:1px solid var(--rule);border-radius:8px;padding:1rem 1.15rem;background:var(--surface)}.verdict.keep{border-top:4px solid var(--good)}.verdict.hold{border-top:4px solid var(--amber)}.verdict h3{font-size:1.08rem}.verdict p{color:var(--muted);margin:.45rem 0 0;font-size:.94rem}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:.7rem;margin-top:1.5rem;counter-reset:step}.flow-step{position:relative;background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1rem;min-height:9.5rem}.flow-step:before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--accent-soft);color:var(--accent);font:500 .75rem "IBM Plex Mono",monospace;margin-bottom:.65rem}.flow-step:not(:last-child):after{content:"→";position:absolute;right:-.65rem;top:4.2rem;color:var(--accent);z-index:2;font-weight:600}.flow-step h3{font-size:1rem}.flow-step p{font-size:.84rem;color:var(--muted);line-height:1.45;margin:.4rem 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1rem;margin-top:1.4rem}.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.1rem 1.2rem}.card h3{font-size:1.08rem}.card p{color:var(--muted);font-size:.94rem;margin:.45rem 0 0}.tag{display:inline-block;margin-top:.65rem;border-radius:999px;padding:.16rem .55rem;font:500 .68rem "IBM Plex Mono",monospace;background:var(--accent-soft);color:var(--accent)}
+.callout{border-left:3px solid var(--accent);background:var(--accent-soft);padding:.9rem 1.1rem;border-radius:0 8px 8px 0;margin-top:1.35rem;max-width:78ch}.callout.warn{border-color:var(--amber);background:var(--amber-soft)}.callout p{margin:.2rem 0;font-size:.95rem}
+.scroll{overflow-x:auto;margin-top:1.3rem}table{border-collapse:collapse;width:100%;background:var(--surface);font-size:.9rem;font-variant-numeric:tabular-nums}th,td{border:1px solid var(--rule);padding:.55rem .7rem;text-align:right}th{text-align:left;color:var(--muted);background:var(--bg);font-weight:500;font-size:.82rem}td:first-child{text-align:left}.good{color:var(--good);font-weight:600}.neutral{color:var(--amber);font-weight:600}.small{font-size:.84rem;color:var(--muted)}
+.arms{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:1.35rem}.arm{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1rem}.arm .id{font:600 1.3rem "Source Serif 4",serif;color:var(--accent)}.arm h3{font-size:1rem;margin-top:.2rem}.arm p{font-size:.84rem;color:var(--muted);margin:.4rem 0 0}
+.sources{font-size:.86rem;color:var(--muted)}.sources li{margin:.45rem 0}
+footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;color:var(--muted);font-size:.88rem}.links{display:flex;gap:1.2rem;flex-wrap:wrap}
+@media(max-width:850px){.flow{grid-template-columns:1fr 1fr}.flow-step:not(:last-child):after{display:none}.arms{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.verdicts,.flow,.arms{grid-template-columns:1fr}.top .wrap{align-items:flex-start;flex-direction:column}.hero{padding-top:2rem}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav class="top" aria-label="Project navigation"><div class="wrap">
+  <span class="eyebrow">CLIMB · research checkpoint · 2026-08-21</span>
+  <a href="index.html">← Project overview</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">Segment-native v2 · unsealed exploratory result</span>
+  <h1>Train on the hard motion—not on an impossible transition.</h1>
+  <p class="sub">We turned offline physics screening into an exact motion-tracking lifecycle:
+  <strong>feasible start segments, fixed-horizon trials, conditional outcome attribution,
+  bounded sampling, and paired terminal-safe evaluation.</strong> The pipeline now works on GPU.
+  The first policy result is promising on two quality channels and inconclusive on survival.</p>
+  <div class="stats" aria-label="Pilot summary">
+    <div class="stat"><div class="v">4.92 M</div><div class="k">total PPO transitions across two matched 512-environment arms</div></div>
+    <div class="stat"><div class="v">0</div><div class="k">invalid starts, escaped reference frames, or censored resets</div></div>
+    <div class="stat"><div class="v">+0.79 pp</div><div class="k">adaptive success delta; interval crosses zero</div></div>
+    <div class="stat"><div class="v">−4.20 mm</div><div class="k">common-survivor body-position error delta; exploratory</div></div>
+  </div>
+</div></header>
+
+<main class="wrap">
+<section>
+  <span class="num">01 · Claim boundary</span>
+  <h2>What changed—and what has not been established</h2>
+  <p class="kicker">The engineering result and the policy result are different claims. Keeping them separate is the point of the audit.</p>
+  <div class="verdicts">
+    <div class="verdict keep"><h3>Keep: a valid training experiment now exists</h3>
+      <p>The command never samples a known-invalid start, never teleports through a continuing PPO transition,
+      attributes each outcome to a stable segment unit, caps concentration, and records terminal metrics before reset.</p></div>
+    <div class="verdict hold"><h3>Hold: no confirmed survival benefit yet</h3>
+      <p>One seed improved success by 0.79 percentage points, but the unit-clustered interval spans −5.36 to +7.14.
+      The treatment itself was only 1.40% total-variation from control.</p></div>
+  </div>
+</section>
+
+<section>
+  <span class="num">02 · Method in the training loop</span>
+  <h2>From a physics screen to a clean PPO transition</h2>
+  <p class="kicker">The method acts before and during training. Offline physics defines admissible support;
+  online learning allocates exposure only inside that support.</p>
+  <div class="flow" aria-label="Segment-native training pipeline">
+    <div class="flow-step"><h3>Screen reference forces</h3><p>Contact-free inverse dynamics and contact capacity identify unsupported frames. This is hygiene, not a policy score.</p></div>
+    <div class="flow-step"><h3>Build exact units</h3><p>Contiguous feasible frame intervals become stable units. The table retains 42 units and 4,679 legal 50-step starts.</p></div>
+    <div class="flow-step"><h3>Sample a safe horizon</h3><p>Every proposal satisfies the complete future window. Known-invalid probability is exactly zero.</p></div>
+    <div class="flow-step"><h3>Track and terminate</h3><p>The reference advances from s+1 through s+50, then emits an explicit timeout before any wrap or teleport.</p></div>
+    <div class="flow-step"><h3>Credit and rebalance</h3><p>Completed outcomes update stable unit statistics on a fixed clock. Exploration and 5%/25% unit/clip caps remain enforced.</p></div>
+  </div>
+  <div class="grid">
+    <div class="card"><h3>Why exact segments matter</h3><p>A 90%-feasible one-second bin still sampled its known-bad 10% in the old design. Frame-exact support recovers the good boundary material while making invalid exposure zero.</p><span class="tag">support contract</span></div>
+    <div class="card"><h3>Why fixed horizons matter</h3><p>Changing start distributions changed time-to-clip-end. The old command could teleport at a wrap without a terminal transition. Every new 1.0-second trial ends explicitly.</p><span class="tag">MDP contract</span></div>
+    <div class="card"><h3>Why conditional outcomes matter</h3><p>Raw failure arrivals mix difficulty with sampling frequency and episode duration. Attempts and failures now estimate conditional difficulty for the unit actually visited.</p><span class="tag">attribution contract</span></div>
+  </div>
+</section>
+
+<section>
+  <span class="num">03 · GPU training quality</span>
+  <h2>The implementation trained; the first reward did not</h2>
+  <p class="kicker">A bounded pilot caught a second failure mode before scale-up: the original net reward made early termination cheaper than tracking the full horizon.</p>
+  <div class="callout warn"><p><strong>Debug finding.</strong> The first policy drove mean episode length from roughly 21 to 5.5 of 50 steps while its return improved.
+  That was reward hacking, not curriculum learning. A symmetric, failure-only −10 event cost restored segment completions and was used in both final arms.</p></div>
+  <div class="scroll"><table>
+    <thead><tr><th>Training telemetry</th><th>Exact-uniform</th><th>Adaptive</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td>PPO transitions</td><td>2,457,600</td><td>2,457,600</td><td>matched compute</td></tr>
+      <tr><td>Environments × iterations</td><td>512 × 200</td><td>512 × 200</td><td>same seed/config</td></tr>
+      <tr><td>Final-batch episode length / 50</td><td>36.52</td><td>34.68</td><td>training telemetry, not evaluation</td></tr>
+      <tr><td>Cumulative failure rate</td><td>0.9141</td><td>0.9162</td><td>still a hard panel</td></tr>
+      <tr><td>Invalid / censored counters</td><td class="good">0 / 0</td><td class="good">0 / 0</td><td>mechanism gate passed</td></tr>
+      <tr><td>Final top unit / clip mass</td><td>0.05 / 0.25</td><td>0.05 / 0.25</td><td>caps held exactly</td></tr>
+      <tr><td>Adaptive TV from control</td><td>0</td><td class="neutral">0.0140</td><td>treatment too weak</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">The checkpoint stores sampler statistics and RNG state, but not a bit-exact full simulator continuation. Resume is correctly labeled sampler-equivalent only.</p>
+</section>
+
+<section>
+  <span class="num">04 · Paired evaluation</span>
+  <h2>Identical worlds expose a quality signal, not a survival conclusion</h2>
+  <p class="kicker">Each policy saw the same 42 units, three phases, four replicates, seed, initial state, and startup domain randomization: 504 worlds per policy. Quality is compared only on 22,321 frames where both policies were still active.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Endpoint</th><th>Uniform</th><th>Adaptive</th><th>Adaptive − uniform</th><th>Unit-bootstrap 95% interval</th></tr></thead>
+    <tbody>
+      <tr><td>Success</td><td>0.6746</td><td>0.6825</td><td>+0.0079</td><td class="neutral">[−0.0536,+0.0714]</td></tr>
+      <tr><td>Mean survival</td><td>0.9011 s</td><td>0.9126 s</td><td>+0.0115 s</td><td class="neutral">[−0.0100,+0.0346]</td></tr>
+      <tr><td>Body-position error</td><td colspan="2">paired common-survivor frames</td><td class="good">−0.00420 m</td><td class="good">[−0.00663,−0.00190]</td></tr>
+      <tr><td>Anchor-orientation error</td><td colspan="2">paired common-survivor frames</td><td class="good">−0.02795 rad</td><td class="good">[−0.03966,−0.01628]</td></tr>
+      <tr><td>Anchor-position error</td><td colspan="2">paired common-survivor frames</td><td>−0.00517 m</td><td class="neutral">[−0.01247,+0.00233]</td></tr>
+      <tr><td>Mechanical work / actuator</td><td colspan="2">paired common-survivor frames</td><td>−0.00246 J</td><td class="neutral">[−0.00545,+0.00046]</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><p><strong>Best current interpretation.</strong> Exact segment training is operational, and adaptive allocation may improve local pose/orientation quality.
+  It has not yet shown a reliable survival advantage. More seeds would be premature until the adaptive distribution materially differs from control.</p></div>
+</section>
+
+<section>
+  <span class="num">05 · Newton as the next information source</span>
+  <h2>Measure where feasible motion is physically fragile</h2>
+  <p class="kicker">Feasibility tells us what not to train on. Newton can tell us which remaining feasible segments are sensitive to deployable physics axes—and whether that information predicts failure before PPO spends on it.</p>
+  <div class="grid">
+    <div class="card"><h3>Canonical-state probes</h3><p>Start every physics variant from the same saved policy state and run only 0.25–0.50 seconds. This prevents long-horizon closed-loop chaos from becoming the signal.</p><span class="tag">resynchronize</span></div>
+    <div class="card"><h3>Determinism before noise</h3><p>Newton v1.5 supports more reliable deterministic multi-world/contact workflows. Same-configuration repeats must match before an explicit paired noise ensemble estimates uncertainty.</p><span class="tag">measure the floor</span></div>
+    <div class="card"><h3>Actuation before exotic solvers</h3><p>Delay and DC-motor saturation map directly to G1 deployment. Then compare MuJoCo and Newton contact generation. Cross-solver labels wait for conformance.</p><span class="tag">axis-specific vector</span></div>
+    <div class="card"><h3>Predict held-out degradation</h3><p>A fragility vector earns a training role only if it predicts a held-out physics axis or policy beyond kinematics and the screen. Solver disagreement alone is not physical truth.</p><span class="tag">kill gate</span></div>
+  </div>
+  <div class="callout warn"><p><strong>Current limitation.</strong> Newton's current solver matrix does not mark <code>SolverMuJoCo</code> differentiable, and differentiable contact kinematics remain experimental.
+  The first benefit study uses deterministic finite swaps; differentiability is a later, solver-specific spike.</p></div>
+</section>
+
+<section>
+  <span class="num">06 · Next causal experiment</span>
+  <h2>Four fresh arms isolate where any benefit comes from</h2>
+  <p class="kicker">The design separates data hygiene, online allocation, and Newton physics information. Every arm gets matched compute and the same terminal-safe evaluator.</p>
+  <div class="arms">
+    <div class="arm"><span class="id">G0</span><h3>Unmasked grounded</h3><p>Fresh baseline. Measures the cost and benefit of removing invalid starts.</p></div>
+    <div class="arm"><span class="id">G1</span><h3>Exact-feasible uniform</h3><p>Deployment prior over safe units. G1−G0 is the hygiene effect.</p></div>
+    <div class="arm"><span class="id">G2</span><h3>Learning progress</h3><p>Online progress/uncertainty replaces saturated raw failure. G2−G1 is allocation value.</p></div>
+    <div class="arm"><span class="id">G3</span><h3>Newton-grounded</h3><p>Add only a validated fragility vector. G3−G2 is incremental physics information.</p></div>
+  </div>
+  <div class="verdicts">
+    <div class="verdict keep"><h3>Advance only if</h3><p>The Newton vector predicts held-out degradation, curriculum TV stays in a predeclared informative band, and G3 improves survival/AULC without a common-survivor quality regression.</p></div>
+    <div class="verdict hold"><h3>Stop or reframe if</h3><p>Conformance fails, physics features do not add held-out prediction, or G3 does not beat G2. Newton can remain a diagnostic instrument without becoming a curriculum claim.</p></div>
+  </div>
+</section>
+
+<section>
+  <span class="num">07 · Evidence and implementation</span>
+  <h2>Trace every number</h2>
+  <ul class="sources">
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/SEGMENT_NATIVE_PILOT_RESULT_2026-08-20.md">Exploratory pilot result and decision</a></li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/reports/segment_v2_pilot/result.json">Machine-readable paired result</a></li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/reports/segment_v2_smoke/timeline_trace.json">Vectorized GPU lifecycle trace</a></li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/NEWTON_SEGMENT_DIRECTION_2026-08-21.md">Newton-grounded direction addendum</a></li>
+    <li><a href="https://github.com/newton-physics/newton/releases/tag/v1.5.0">Newton v1.5.0 release</a>, <a href="https://newton-physics.github.io/newton/stable/solvers/index.html">solver feature matrix</a>, and <a href="https://newton-physics.github.io/newton/stable/concepts/collisions.html">collision pipeline</a></li>
+  </ul>
+</section>
+</main>
+
+<footer><div class="wrap"><div class="links">
+  <a href="index.html">project overview</a>
+  <a href="companion.html">companion note</a>
+  <a href="flagship.html">flagship draft</a>
+  <a href="https://github.com/linjiw/climb-feasibility-first">repository</a>
+</div><p>Claim labels: sealed · measured · exploratory · pending. This page reports an unsealed one-seed pilot and a pending design revision.</p></div></footer>
+</body>
+</html>

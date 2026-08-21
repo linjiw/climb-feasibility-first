@@ -1,0 +1,456 @@
+{
+ "schema_version": "segment_pilot_analysis/1",
+ "classification": "unsealed exploratory paired pilot",
+ "pairing": {
+  "unit_table_sha256": "2aaeaa741959eabbfc9510a18820f9745bc7e879dfa423423385e835b6f120a6",
+  "conditions_sha256": "f449c8ee212964bc1802eb1e2ed834a137ec581c4bba839582ae627ffb7beedc",
+  "environment_seed": 20260820,
+  "initial_state_sha256": "2454a68932417d36e7b0b267b1962ecf6727f8aed89146741c46a1aba83642dc",
+  "startup_randomization_sha256": "eb29d1544679ca536ae047c3389700a5eeba7fafa8c8aacbbbddfb1d30b1f093",
+  "worlds": 504
+ },
+ "uniform": {
+  "checkpoint": "/data/robotixx/climb/reports/segment_v2_pilot/training/segment_v2_pilot/2026-08-20_23-21-07_uniform-penalty10-pilot200-s20260820/model_199.pt",
+  "success_rate": 0.6746032238006592,
+  "mean_survival_s": 0.9010714721679688
+ },
+ "adaptive": {
+  "checkpoint": "/data/robotixx/climb/reports/segment_v2_pilot/training/segment_v2_pilot/2026-08-20_23-27-06_adaptive-penalty10-pilot200-s20260820/model_199.pt",
+  "success_rate": 0.682539701461792,
+  "mean_survival_s": 0.9125794219970703
+ },
+ "cluster_bootstrap": {
+  "resamples": 10000,
+  "cluster": "canonical segment unit_id",
+  "seed": 20260820,
+  "endpoints": {
+   "adaptive_minus_uniform_success": {
+    "estimate": 0.007936507936507933,
+    "ci95_low": -0.05357142857142856,
+    "ci95_high": 0.07142857142857142,
+    "units": 42
+   },
+   "adaptive_minus_uniform_survival_s": {
+    "estimate": 0.011507936507936512,
+    "ci95_low": -0.010000992063492063,
+    "ci95_high": 0.03464384920634919,
+    "units": 42
+   }
+  },
+  "common_survivor_frame_quality": {
+   "adaptive_minus_uniform_error_body_pos_m": {
+    "estimate": -0.004197385343622824,
+    "ci95_low": -0.006625742322066374,
+    "ci95_high": -0.0018968847153343468,
+    "units": 42
+   },
+   "adaptive_minus_uniform_error_anchor_pos_m": {
+    "estimate": -0.00516986695321892,
+    "ci95_low": -0.012465774152438174,
+    "ci95_high": 0.002334407391588933,
+    "units": 42
+   },
+   "adaptive_minus_uniform_error_anchor_rot_rad": {
+    "estimate": -0.027952443619986066,
+    "ci95_low": -0.03966371775232972,
+    "ci95_high": -0.0162775433345376,
+    "units": 42
+   },
+   "adaptive_minus_uniform_error_joint_pos_l2": {
+    "estimate": -0.035378154917934904,
+    "ci95_low": -0.07880712219160937,
+    "ci95_high": 0.010341888770929616,
+    "units": 42
+   },
+   "adaptive_minus_uniform_mechanical_work_per_actuator_j": {
+    "estimate": -0.0024588041721868787,
+    "ci95_low": -0.0054468984760386845,
+    "ci95_high": 0.0004586179231327122,
+    "units": 42
+   }
+  }
+ },
+ "common_survivor_frames": 22321,
+ "uniform_survivor_frames": 22707,
+ "adaptive_survivor_frames": 22997,
+ "per_unit": [
+  {
+   "unit_id": 0,
+   "clip_id": 0,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 0.6666666666666666,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 0.9366666666666665
+  },
+  {
+   "unit_id": 1,
+   "clip_id": 0,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 2,
+   "clip_id": 1,
+   "worlds": 12,
+   "uniform_success": 0.5833333333333334,
+   "adaptive_success": 0.8333333333333334,
+   "uniform_survival_s": 0.735,
+   "adaptive_survival_s": 0.9966666666666667
+  },
+  {
+   "unit_id": 6,
+   "clip_id": 1,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 7,
+   "clip_id": 2,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 9,
+   "clip_id": 2,
+   "worlds": 12,
+   "uniform_success": 0.0,
+   "adaptive_success": 0.0,
+   "uniform_survival_s": 0.31499999999999995,
+   "adaptive_survival_s": 0.4483333333333334
+  },
+  {
+   "unit_id": 10,
+   "clip_id": 2,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 11,
+   "clip_id": 3,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 0.75,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 0.9966666666666667
+  },
+  {
+   "unit_id": 12,
+   "clip_id": 3,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 13,
+   "clip_id": 3,
+   "worlds": 12,
+   "uniform_success": 0.8333333333333334,
+   "adaptive_success": 0.9166666666666666,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 0.9983333333333334
+  },
+  {
+   "unit_id": 14,
+   "clip_id": 3,
+   "worlds": 12,
+   "uniform_success": 0.6666666666666666,
+   "adaptive_success": 0.75,
+   "uniform_survival_s": 0.9516666666666667,
+   "adaptive_survival_s": 0.9833333333333334
+  },
+  {
+   "unit_id": 15,
+   "clip_id": 4,
+   "worlds": 12,
+   "uniform_success": 0.6666666666666666,
+   "adaptive_success": 0.6666666666666666,
+   "uniform_survival_s": 0.9983333333333334,
+   "adaptive_survival_s": 0.9833333333333334
+  },
+  {
+   "unit_id": 16,
+   "clip_id": 4,
+   "worlds": 12,
+   "uniform_success": 0.6666666666666666,
+   "adaptive_success": 0.6666666666666666,
+   "uniform_survival_s": 0.945,
+   "adaptive_survival_s": 0.9233333333333333
+  },
+  {
+   "unit_id": 19,
+   "clip_id": 4,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 22,
+   "clip_id": 4,
+   "worlds": 12,
+   "uniform_success": 0.9166666666666666,
+   "adaptive_success": 0.8333333333333334,
+   "uniform_survival_s": 0.9966666666666667,
+   "adaptive_survival_s": 0.9933333333333333
+  },
+  {
+   "unit_id": 26,
+   "clip_id": 4,
+   "worlds": 12,
+   "uniform_success": 0.5,
+   "adaptive_success": 0.08333333333333333,
+   "uniform_survival_s": 0.9783333333333334,
+   "adaptive_survival_s": 0.9316666666666666
+  },
+  {
+   "unit_id": 28,
+   "clip_id": 4,
+   "worlds": 12,
+   "uniform_success": 0.08333333333333333,
+   "adaptive_success": 0.3333333333333333,
+   "uniform_survival_s": 0.9250000000000002,
+   "adaptive_survival_s": 0.9083333333333332
+  },
+  {
+   "unit_id": 33,
+   "clip_id": 4,
+   "worlds": 12,
+   "uniform_success": 0.0,
+   "adaptive_success": 0.08333333333333333,
+   "uniform_survival_s": 0.7633333333333333,
+   "adaptive_survival_s": 0.8383333333333334
+  },
+  {
+   "unit_id": 40,
+   "clip_id": 4,
+   "worlds": 12,
+   "uniform_success": 0.75,
+   "adaptive_success": 0.4166666666666667,
+   "uniform_survival_s": 0.9933333333333333,
+   "adaptive_survival_s": 0.9566666666666667
+  },
+  {
+   "unit_id": 41,
+   "clip_id": 4,
+   "worlds": 12,
+   "uniform_success": 0.75,
+   "adaptive_success": 0.75,
+   "uniform_survival_s": 0.9816666666666666,
+   "adaptive_survival_s": 0.9766666666666667
+  },
+  {
+   "unit_id": 42,
+   "clip_id": 4,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 43,
+   "clip_id": 5,
+   "worlds": 12,
+   "uniform_success": 0.0,
+   "adaptive_success": 0.0,
+   "uniform_survival_s": 0.5233333333333334,
+   "adaptive_survival_s": 0.5433333333333333
+  },
+  {
+   "unit_id": 45,
+   "clip_id": 5,
+   "worlds": 12,
+   "uniform_success": 0.3333333333333333,
+   "adaptive_success": 0.3333333333333333,
+   "uniform_survival_s": 0.5066666666666665,
+   "adaptive_survival_s": 0.5149999999999998
+  },
+  {
+   "unit_id": 46,
+   "clip_id": 5,
+   "worlds": 12,
+   "uniform_success": 0.3333333333333333,
+   "adaptive_success": 0.3333333333333333,
+   "uniform_survival_s": 0.5466666666666667,
+   "adaptive_survival_s": 0.5633333333333334
+  },
+  {
+   "unit_id": 47,
+   "clip_id": 6,
+   "worlds": 12,
+   "uniform_success": 0.6666666666666666,
+   "adaptive_success": 0.75,
+   "uniform_survival_s": 0.9483333333333333,
+   "adaptive_survival_s": 0.9616666666666668
+  },
+  {
+   "unit_id": 50,
+   "clip_id": 6,
+   "worlds": 12,
+   "uniform_success": 0.4166666666666667,
+   "adaptive_success": 0.4166666666666667,
+   "uniform_survival_s": 0.8049999999999998,
+   "adaptive_survival_s": 0.7966666666666669
+  },
+  {
+   "unit_id": 54,
+   "clip_id": 6,
+   "worlds": 12,
+   "uniform_success": 0.6666666666666666,
+   "adaptive_success": 0.3333333333333333,
+   "uniform_survival_s": 0.8816666666666667,
+   "adaptive_survival_s": 0.8466666666666667
+  },
+  {
+   "unit_id": 57,
+   "clip_id": 6,
+   "worlds": 12,
+   "uniform_success": 0.5,
+   "adaptive_success": 0.5,
+   "uniform_survival_s": 0.9283333333333333,
+   "adaptive_survival_s": 0.9266666666666667
+  },
+  {
+   "unit_id": 61,
+   "clip_id": 6,
+   "worlds": 12,
+   "uniform_success": 0.6666666666666666,
+   "adaptive_success": 0.6666666666666666,
+   "uniform_survival_s": 0.9083333333333333,
+   "adaptive_survival_s": 0.87
+  },
+  {
+   "unit_id": 63,
+   "clip_id": 6,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 64,
+   "clip_id": 7,
+   "worlds": 12,
+   "uniform_success": 0.75,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 0.9950000000000001,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 65,
+   "clip_id": 7,
+   "worlds": 12,
+   "uniform_success": 0.5833333333333334,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 0.9716666666666667,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 67,
+   "clip_id": 7,
+   "worlds": 12,
+   "uniform_success": 0.5833333333333334,
+   "adaptive_success": 0.5833333333333334,
+   "uniform_survival_s": 0.8616666666666667,
+   "adaptive_survival_s": 0.8766666666666666
+  },
+  {
+   "unit_id": 68,
+   "clip_id": 7,
+   "worlds": 12,
+   "uniform_success": 0.25,
+   "adaptive_success": 0.75,
+   "uniform_survival_s": 0.8116666666666666,
+   "adaptive_survival_s": 0.9700000000000001
+  },
+  {
+   "unit_id": 69,
+   "clip_id": 7,
+   "worlds": 12,
+   "uniform_success": 0.8333333333333334,
+   "adaptive_success": 0.9166666666666666,
+   "uniform_survival_s": 0.9933333333333333,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 70,
+   "clip_id": 7,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 72,
+   "clip_id": 7,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 77,
+   "clip_id": 8,
+   "worlds": 12,
+   "uniform_success": 1.0,
+   "adaptive_success": 1.0,
+   "uniform_survival_s": 1.0,
+   "adaptive_survival_s": 1.0
+  },
+  {
+   "unit_id": 78,
+   "clip_id": 8,
+   "worlds": 12,
+   "uniform_success": 0.25,
+   "adaptive_success": 0.8333333333333334,
+   "uniform_survival_s": 0.9733333333333333,
+   "adaptive_survival_s": 0.9966666666666667
+  },
+  {
+   "unit_id": 79,
+   "clip_id": 8,
+   "worlds": 12,
+   "uniform_success": 0.6666666666666666,
+   "adaptive_success": 0.6666666666666666,
+   "uniform_survival_s": 0.7316666666666668,
+   "adaptive_survival_s": 0.9616666666666666
+  },
+  {
+   "unit_id": 80,
+   "clip_id": 9,
+   "worlds": 12,
+   "uniform_success": 0.8333333333333334,
+   "adaptive_success": 0.6666666666666666,
+   "uniform_survival_s": 0.9916666666666667,
+   "adaptive_survival_s": 0.9700000000000001
+  },
+  {
+   "unit_id": 81,
+   "clip_id": 9,
+   "worlds": 12,
+   "uniform_success": 0.5833333333333334,
+   "adaptive_success": 0.16666666666666666,
+   "uniform_survival_s": 0.8833333333333333,
+   "adaptive_survival_s": 0.6583333333333333
+  }
+ ]
+}
