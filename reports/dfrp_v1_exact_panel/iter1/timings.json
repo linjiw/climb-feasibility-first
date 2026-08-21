@@ -1,0 +1,316 @@
+{
+ "schema_version": "dfrp_exact_panel_timings/1",
+ "classification": "unsealed measured CPU timing artifact",
+ "selection_payload_sha256": "900c2dbff2cfd709aefb9b308ac2980710efaa2a16c076206bda6fafe723a355",
+ "repair_tool_sha256": "40c367ad18894f6a7cf2ef83bc85d2765b68cbce9830dbe1d866417c32c597da",
+ "config": {
+  "gap_m": 0.06,
+  "clearance_m": 0.003,
+  "smoothing_s": 0.24,
+  "flag_infeasible_frac": 0.1
+ },
+ "elapsed_s": 97.12295055389404,
+ "failures": [],
+ "clips": [
+  {
+   "name": "BMLmovi_Subject_1_F_MoSh_Subject_1_F_13_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.2364414650946856,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/BMLmovi_Subject_1_F_MoSh_Subject_1_F_13_poses_120_jpos.log",
+   "motion_sha256": "dbafd8c75a2e84c87fb04cfb2dd6c1d95d00ee195967a65089e0b954c0a2f57c",
+   "record_sha256": "f249ed21b4698031c713cfe31e1b14fd44b48a73ecd71d9d8170a7797b9f0119"
+  },
+  {
+   "name": "Transitions_mocap_mazen_c3d_punchboxing_walk_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.824142826721072,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/Transitions_mocap_mazen_c3d_punchboxing_walk_poses_120_jpos.log",
+   "motion_sha256": "01372106df2d3826adfc4f66740ac9330b3c367ccf1ce6777cd15bf75619576d",
+   "record_sha256": "ab4088ca06f55c52f78ff15d1045e3fda82e88a77e2ed65e2a1df279697912d3"
+  },
+  {
+   "name": "BMLmovi_Subject_39_F_MoSh_Subject_39_F_7_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.748467780649662,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/BMLmovi_Subject_39_F_MoSh_Subject_39_F_7_poses_120_jpos.log",
+   "motion_sha256": "6c26c409d70c930c36852f28aac8fd38d0404c0ccc258bc83b3d5cbea640db42",
+   "record_sha256": "785649a7ad8cf0df614e3d153761fd42002413e83de169e5f47f46e6c5b36a0f"
+  },
+  {
+   "name": "ACCAD_Female1Walking_c3d_B14_-_walk_turn_right_(135)_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.9936618357896805,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/ACCAD_Female1Walking_c3d_B14_-_walk_turn_right_(135)_poses_120_jpos.log",
+   "motion_sha256": "8c3d5a0b88ae1b38daca71e9aae87415c4ad4e9bbefc7263ae354ce0af1f1991",
+   "record_sha256": "54e70de71c26ffdd9bfa8af7adce45b7dc19addf696618673edecbe858a991fc"
+  },
+  {
+   "name": "SFU_0018_0018_DanceTurns001_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.41143443249166,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/SFU_0018_0018_DanceTurns001_poses_120_jpos.log",
+   "motion_sha256": "28f3462419ed00c9bf81e684c43b907fe65af39a5b88b223745355c26d9967d0",
+   "record_sha256": "cfa75cf5518ab3cfac39e6781841ac83ac951c3192cd56d72ca62f84a8c14984"
+  },
+  {
+   "name": "KIT_3_throw_right05_poses_100_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.2382953744381666,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/KIT_3_throw_right05_poses_100_jpos.log",
+   "motion_sha256": "2f23086f5603eaf1376d8bda2a7cc6053a006dff7f326f4ff62bb903c89c6001",
+   "record_sha256": "289c8a934ea484a59ac0717b677bc196799c8d24925508bc70f0bdfd460398fe"
+  },
+  {
+   "name": "BMLmovi_Subject_6_F_MoSh_Subject_6_F_7_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.0806740829721093,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/BMLmovi_Subject_6_F_MoSh_Subject_6_F_7_poses_120_jpos.log",
+   "motion_sha256": "59d40acaed2d4768bef4d53efd3acf24ca99e72f5cca29fc8f4930175c6c5de2",
+   "record_sha256": "cf34e9e74cc06678d23919c7a9596f0a135221cba6d3835b74bfafd7dbc8eb2d"
+  },
+  {
+   "name": "CMU_06_06_08_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 1.6376521345227957,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/CMU_06_06_08_poses_120_jpos.log",
+   "motion_sha256": "2a4ddfb32130607acb0d389ee94e0213436d5d441d1c53eb6ebb09ae015523e3",
+   "record_sha256": "2586a1e64338a72a0bcc6c8a585d490cb49a70fd3b90d7559445ba2dc1b0040e"
+  },
+  {
+   "name": "BMLmovi_Subject_76_F_MoSh_Subject_76_F_12_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.835506197065115,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/BMLmovi_Subject_76_F_MoSh_Subject_76_F_12_poses_120_jpos.log",
+   "motion_sha256": "7f49b86def78d0a68d6336a11983684d5bc166f629a73764fcf78eda30cf9b87",
+   "record_sha256": "f417b47877306ec9a99d8aed32216851eda76abcc471a2ae1223c1de982e37aa"
+  },
+  {
+   "name": "CMU_20_21_rory1_20_10_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 1.9270779732614756,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/CMU_20_21_rory1_20_10_poses_120_jpos.log",
+   "motion_sha256": "d7332f27b5e4662207b356ce3579d958db43fc8f012e460e3b0fb658780b0b38",
+   "record_sha256": "e82cf9170b7e3af685e694f7b659e902a4e28e673bb8349f6eb55bebb895d212"
+  },
+  {
+   "name": "ACCAD_Male1General_c3d_General_A5_-_Pick_Up_Box_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.2501054368913174,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/ACCAD_Male1General_c3d_General_A5_-_Pick_Up_Box_poses_120_jpos.log",
+   "motion_sha256": "b88e4deaf0462667f94f5905cc7d73e5a39ddd7d7755b7a766bb742ad77bc45f",
+   "record_sha256": "9fcfb5a7bc9ce379a4bbe403bde3d2bf92a24d362a8369a63921f0e90ba3cb55"
+  },
+  {
+   "name": "BMLhandball_S07_Expert_Trial_upper_right_left_195_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 3.4983273139223456,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/BMLhandball_S07_Expert_Trial_upper_right_left_195_poses_120_jpos.log",
+   "motion_sha256": "996ed0202902488a1866475b6036f81de2625c6009bd34e76f682ffac7a556c2",
+   "record_sha256": "0d95d6277642e1fe8662b1886df2f64dc5d542fb3e46c0ae6039148d29da0423"
+  },
+  {
+   "name": "CMU_137_137_20_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 3.9983790470287204,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/CMU_137_137_20_poses_120_jpos.log",
+   "motion_sha256": "39dab8838297ae922f4ade8a4e8f0eca5fb8ab86c4e5bbd8d6f59d8f85c7f5dc",
+   "record_sha256": "2491d277869cea0a63f24a851c701a620b0ebeb927d48e338e7e37919e718abd"
+  },
+  {
+   "name": "BMLmovi_Subject_60_F_MoSh_Subject_60_F_10_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.598969799466431,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/BMLmovi_Subject_60_F_MoSh_Subject_60_F_10_poses_120_jpos.log",
+   "motion_sha256": "aee51c38ff59d61bf429f4ff68e86ea9ce3358e67a33b1fc75b90e8dea94e253",
+   "record_sha256": "f6bcf5e8c5316413b3b19dd0d94bdbad2b4526ab5e18585e57bac45b97b2a077"
+  },
+  {
+   "name": "BMLmovi_Subject_39_F_MoSh_Subject_39_F_2_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.6536161238327622,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/BMLmovi_Subject_39_F_MoSh_Subject_39_F_2_poses_120_jpos.log",
+   "motion_sha256": "c4fe97e43e4bf281de42349b194734736acd4c3e2306d1199e649c9e55179b60",
+   "record_sha256": "e7c4dc343aed1f3060bd1ac6d90427c617805f69a53c8c7183c819a86ee09fc2"
+  },
+  {
+   "name": "CMU_18_19_Justin_18_06_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 1.7948740096762776,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/CMU_18_19_Justin_18_06_poses_120_jpos.log",
+   "motion_sha256": "6fadefb42537f34aabb054fda952227815736c7c84cc12a039afeb3d45138540",
+   "record_sha256": "0c073152a97484554f34ca48339ace11f95f20efc5ccbb4618c7786229cf4f7c"
+  },
+  {
+   "name": "KIT_167_walking_run03_poses_100_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 1.654228450730443,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/KIT_167_walking_run03_poses_100_jpos.log",
+   "motion_sha256": "0e2c3a123d75fe69808775ce4f465d3df43d15d787f25d35e509c34452ff6bc2",
+   "record_sha256": "c03fb8b6c7dffa3a9e71ccfc6ee1aa33f4d0528f17e5f0039d690d008a3080b6"
+  },
+  {
+   "name": "Transitions_mocap_mazen_c3d_walkbackwards_turntwist180_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 3.100015224888921,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/Transitions_mocap_mazen_c3d_walkbackwards_turntwist180_poses_120_jpos.log",
+   "motion_sha256": "797af4aa965fe34490642640453d5b33a626494184329ed4ae39653a0b9a8ff5",
+   "record_sha256": "51f7fc45cdf14df0ef648f874501744d8cfc6c7f3074066377511d653ff2428f"
+  },
+  {
+   "name": "SFU_0005_0005_SideSkip001_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 3.11570396553725,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/SFU_0005_0005_SideSkip001_poses_120_jpos.log",
+   "motion_sha256": "96b54057cb32ee41d18baddaa576d575cc10df5930ac74a4921659d366f8308f",
+   "record_sha256": "bf3244a28d2df106a34bc148bdf99bb95255f1657e1e790c118c137e94de364a"
+  },
+  {
+   "name": "CMU_32_32_10_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 18.49941315688193,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/CMU_32_32_10_poses_120_jpos.log",
+   "motion_sha256": "c7b9ffb8617b29df58872489c29525f42a3f6f0c54661af89275008fa0ca1a12",
+   "record_sha256": "6fb95743ef54d7fbe3c27fde31acdfed84b4ebe01734a0b0c1a1870a133e828d"
+  },
+  {
+   "name": "BMLhandball_S07_Expert_Trial_upper_right_left_213_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 3.5545038459822536,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/BMLhandball_S07_Expert_Trial_upper_right_left_213_poses_120_jpos.log",
+   "motion_sha256": "de76cba7597cf5631f3198645c1d3d25e1cc1324321d1c23b36d8f839686e706",
+   "record_sha256": "1fbaea97eea5b0c574d0770129aadadd080279b6225c0eda3412648214bc3f84"
+  },
+  {
+   "name": "BMLmovi_Subject_47_F_MoSh_Subject_47_F_15_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.092300044372678,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/BMLmovi_Subject_47_F_MoSh_Subject_47_F_15_poses_120_jpos.log",
+   "motion_sha256": "a195912f2ee9ecc96f908ca6ec0363b7f341e123c141114d5c7af257150f049f",
+   "record_sha256": "98f7977850205f0032218c309ddc32acfea349ebac7d6c51e4076f5244dc6236"
+  },
+  {
+   "name": "CMU_22_23_Rory_22_03_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.536564750596881,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/CMU_22_23_Rory_22_03_poses_120_jpos.log",
+   "motion_sha256": "9fad86dbadb770f61589d63c3135a1eff00e6ac6105c9a9debb5f40c8f648d38",
+   "record_sha256": "132365e630560ce36e641119315fccb03c3164f7ca7163985b994e27fde4d290"
+  },
+  {
+   "name": "BMLhandball_S02_Novice_Trial_upper_left_140_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.2990953223779798,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/BMLhandball_S02_Novice_Trial_upper_left_140_poses_120_jpos.log",
+   "motion_sha256": "9e2368b6f3e888f137a7b4163b4141a763080384b1a3ab03d95a6209d8df8b93",
+   "record_sha256": "c2e498644980680a754796ab648fe318de3248b34070219460169d212d79a649"
+  },
+  {
+   "name": "Eyes_Japan_Dataset_kanno_walk-03-sneak-kanno_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 8.167012219317257,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/Eyes_Japan_Dataset_kanno_walk-03-sneak-kanno_poses_120_jpos.log",
+   "motion_sha256": "0f4bd8eb1146c71ca437951a283c1cf41826c1c5004f5249e3a2357b1b2c7da2",
+   "record_sha256": "8d7726351cd73c7c4518e8bf4f0afba0b2828b470f5b60499c1f41a5eef089c7"
+  },
+  {
+   "name": "KIT_513_seesaw_up02_poses_100_jpos",
+   "role": "flagged_primary_candidate",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.8036206159740686,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/KIT_513_seesaw_up02_poses_100_jpos.log",
+   "motion_sha256": "72703fcf7aec3f9aaee608ca2ae0b2677f263fe2acba45acf33e38e8f5db5382",
+   "record_sha256": "85ead65de6574e3b3e78e995aad49a9542f1773893cea46657dd502d85e9c083"
+  },
+  {
+   "name": "BMLmovi_Subject_69_F_MoSh_Subject_69_F_11_poses_120_jpos",
+   "role": "raw_feasible_control",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 2.130401716567576,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/BMLmovi_Subject_69_F_MoSh_Subject_69_F_11_poses_120_jpos.log",
+   "motion_sha256": "85beb7a2bd96099b51918603e9a3f405e6fe231e5eb540c4d5a7ef6259df0ae0",
+   "record_sha256": "6f6ee02fed8def115b0f5b7d4aa3b1f675984a38c62debc4310c213c7a886415"
+  },
+  {
+   "name": "CMU_108_108_14_poses_120_jpos",
+   "role": "raw_feasible_control",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 1.2454147087410092,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/CMU_108_108_14_poses_120_jpos.log",
+   "motion_sha256": "d466e540adeaed70de9709cad2eec4cd81a1a3c42114af71364f1468a7f42c87",
+   "record_sha256": "8c6fcd89826f5d6750e794c3f0cdb3c72603956c2307d903b21f9d7eaa9b4330"
+  },
+  {
+   "name": "BMLhandball_S06_Novice_Trial_upper_left_187_poses_120_jpos",
+   "role": "raw_feasible_control",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 3.3046758761629462,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/BMLhandball_S06_Novice_Trial_upper_left_187_poses_120_jpos.log",
+   "motion_sha256": "c947f1ba33675af5b7674fdce8bbc78fab1544d4c59f1adb558989bebcfeb390",
+   "record_sha256": "c3c3facd86841bf1efd25442719ef931c4592855d0622ec7e4bb9712b80c96da"
+  },
+  {
+   "name": "KIT_675_walk_with_handrail_right07_poses_100_jpos",
+   "role": "raw_feasible_control",
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 1.8670486193150282,
+   "log": "reports/dfrp_v1_exact_panel/iter1/logs/KIT_675_walk_with_handrail_right07_poses_100_jpos.log",
+   "motion_sha256": "385728da8427ef5175dc4b422dc4e63a2546aa6c8a77bededbe4b4d33611ca42",
+   "record_sha256": "c89ad91d4217b2f96c0959abc0b96c1db7a0d1b9e9030c8c5018bc59bc07cd4e"
+  }
+ ]
+}

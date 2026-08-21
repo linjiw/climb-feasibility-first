@@ -1,0 +1,27 @@
+{
+  "schema_version": "autoresearch_handoff/1",
+  "status": "pass",
+  "classification": "unsealed measured CPU implementation result; no policy claim",
+  "objective": "Validate exact DFRP root/contact-IK repair on a frozen, source-diverse panel and promote only hash-bound exact-ready outputs.",
+  "decision": "Keep iteration 1 strict repair entry, source-motion sidecar binding, and exact frame partitions; promote only the curated 26-clip view.",
+  "result": {
+    "flagged_exact_ready": 22,
+    "flagged_total": 26,
+    "controls_byte_identical": 4,
+    "controls_total": 4,
+    "admissible_units": 36,
+    "legal_starts": 10561
+  },
+  "hashes": {
+    "selection_payload_sha256": "900c2dbff2cfd709aefb9b308ac2980710efaa2a16c076206bda6fafe723a355",
+    "full_manifest_payload_sha256": "ca505482ccda7b6d1096f054c8535eff58063bc78af34ed0ace1235427eec175",
+    "curated_manifest_payload_sha256": "d2a733b983df011dd35a1987f2b2bc7bf1f82bbb17e3b6070f0514d5f2ff7218",
+    "unit_table_sha256": "0df66390ceb6c9258c64c50bb4c31a9ee33d0412a3635d8dab72f0b789bdd2ff",
+    "repair_tool_sha256": "40c367ad18894f6a7cf2ef83bc85d2765b68cbce9830dbe1d866417c32c597da"
+  },
+  "next_gate": {
+    "name": "Newton v1.5 isolated recertification",
+    "plan": "plan/NEWTON_SEGMENT_DIRECTION_2026-08-21.md",
+    "scope": "Create a fresh isolated environment, pin Newton/Warp/MuJoCo/MuJoCo Warp, and recertify placement, first observation, action, state, and contact timing on one easy and one contact-rich exact unit before any predictive or training study."
+  }
+}

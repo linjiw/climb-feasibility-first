@@ -1,0 +1,163 @@
+{
+ "clip": "CMU_20_21_rory1_20_10_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 216,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 1.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.08333333333333333,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.08333333333333333,
+ "severe_frac_guarded": 0.08333333333333333,
+ "feasible_frac_kept": 0.3888888888888889,
+ "n_severe_windows": 8,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   84
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 84,
+   "unsupported_ratio_mean": 0.14113484222251774,
+   "unsupported_ratio_p95": 0.400059187333552,
+   "unsupported_ratio_max": 0.42711706893769363
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   1.68
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   84,
+   88
+  ],
+  [
+   90,
+   92
+  ],
+  [
+   95,
+   96
+  ],
+  [
+   102,
+   103
+  ],
+  [
+   130,
+   132
+  ],
+  [
+   161,
+   162
+  ],
+  [
+   167,
+   173
+  ],
+  [
+   201,
+   202
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   84,
+   88
+  ],
+  [
+   90,
+   92
+  ],
+  [
+   95,
+   96
+  ],
+  [
+   102,
+   103
+  ],
+  [
+   130,
+   132
+  ],
+  [
+   161,
+   162
+  ],
+  [
+   167,
+   173
+  ],
+  [
+   201,
+   202
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   84,
+   216
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   1.68,
+   1.76
+  ],
+  [
+   1.8,
+   1.84
+  ],
+  [
+   1.9,
+   1.92
+  ],
+  [
+   2.04,
+   2.06
+  ],
+  [
+   2.6,
+   2.64
+  ],
+  [
+   3.22,
+   3.24
+  ],
+  [
+   3.34,
+   3.46
+  ],
+  [
+   4.02,
+   4.04
+  ]
+ ],
+ "n_bins": 5,
+ "n_bins_eligible": 1,
+ "bin_eligible_frac": 0.2,
+ "bin_eligible": [
+  1,
+  0,
+  0,
+  0,
+  0
+ ],
+ "unsupported_ratio_p95": 0.5191444402692941,
+ "source_screen_sha256": "99b9d22dc0063b9feb316d7d38e48f9c6332c67f45434e7bd2c67e9eaa49d748",
+ "source_motion_sha256": "d7332f27b5e4662207b356ce3579d958db43fc8f012e460e3b0fb658780b0b38",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

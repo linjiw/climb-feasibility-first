@@ -1,0 +1,126 @@
+{
+ "clip": "BMLmovi_Subject_69_F_MoSh_Subject_69_F_11_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 259,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 1.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.007722007722007722,
+ "infeasible_frac": 0.011583011583011582,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.011583011583011582,
+ "severe_frac_guarded": 0.011583011583011582,
+ "feasible_frac_kept": 0.9884169884169884,
+ "n_severe_windows": 2,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   83
+  ],
+  [
+   84,
+   135
+  ],
+  [
+   137,
+   259
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 83,
+   "unsupported_ratio_mean": 0.058377688062410574,
+   "unsupported_ratio_p95": 0.3696687530798605,
+   "unsupported_ratio_max": 0.49896568110688333
+  },
+  {
+   "start_frame": 84,
+   "stop_frame": 135,
+   "unsupported_ratio_mean": 0.07557143137294997,
+   "unsupported_ratio_p95": 0.42910437097641596,
+   "unsupported_ratio_max": 0.4827615260219172
+  },
+  {
+   "start_frame": 137,
+   "stop_frame": 259,
+   "unsupported_ratio_mean": 0.017687739961288487,
+   "unsupported_ratio_p95": 0.1007867872407378,
+   "unsupported_ratio_max": 0.12993897945491753
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   1.66
+  ],
+  [
+   1.68,
+   2.7
+  ],
+  [
+   2.74,
+   5.18
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   83,
+   84
+  ],
+  [
+   135,
+   137
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   83,
+   84
+  ],
+  [
+   135,
+   137
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   83,
+   84
+  ],
+  [
+   135,
+   137
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   1.66,
+   1.68
+  ],
+  [
+   2.7,
+   2.74
+  ]
+ ],
+ "n_bins": 6,
+ "n_bins_eligible": 4,
+ "bin_eligible_frac": 0.6666666666666666,
+ "bin_eligible": [
+  1,
+  0,
+  0,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.33279665679218284,
+ "source_screen_sha256": "a8738c58ca7584e2f25f8b4922cff44f78585c15a1531a3fc64e9a7aa94eac38",
+ "source_motion_sha256": "85beb7a2bd96099b51918603e9a3f405e6fe231e5eb540c4d5a7ef6259df0ae0",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

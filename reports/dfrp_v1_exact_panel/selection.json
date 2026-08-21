@@ -1,0 +1,299 @@
+{
+ "schema_version": "dfrp_exact_panel_selection/1",
+ "classification": "unsealed deterministic CPU repair panel",
+ "seed": "dfrp-v1-exact-panel-2026-08-21",
+ "source_manifest": "reports/dfrp_v0/census/manifest.json",
+ "source_manifest_sha256": "8b3e72526fcc7dfa7086e261c3f24ef18edb704073417cb6be11c162d20fb608",
+ "source_manifest_payload_sha256": "6b41fc24f31c9b5abc87d6683dbfd02c61059656eb45e1ea1339f61c3d332d34",
+ "rules": {
+  "rare_offset_max_m": 0.02,
+  "regular_offset_edges_m": [
+   0.02,
+   0.04,
+   0.06,
+   0.08
+  ],
+  "severity_split": 0.2,
+  "flagged_per_regular_cell": 4,
+  "controls": 4,
+  "selection": "source-diverse then seeded SHA-256"
+ },
+ "counts": {
+  "flagged": 26,
+  "controls": 4,
+  "total": 30
+ },
+ "clips": [
+  {
+   "name": "BMLmovi_Subject_1_F_MoSh_Subject_1_F_13_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "rare_le_2cm",
+   "source": "BMLmovi",
+   "frames": 285,
+   "infeasible_frac_before": 0.10877192982456141,
+   "legacy_offset_max_m": 0.01998977093291278
+  },
+  {
+   "name": "Transitions_mocap_mazen_c3d_punchboxing_walk_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "rare_le_2cm",
+   "source": "Transitions",
+   "frames": 406,
+   "infeasible_frac_before": 0.11330049261083744,
+   "legacy_offset_max_m": 0.018997108749933756
+  },
+  {
+   "name": "BMLmovi_Subject_39_F_MoSh_Subject_39_F_7_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "2to4cm_10to20pct",
+   "source": "BMLmovi",
+   "frames": 379,
+   "infeasible_frac_before": 0.14511873350923482,
+   "legacy_offset_max_m": 0.036399094872274274
+  },
+  {
+   "name": "ACCAD_Female1Walking_c3d_B14_-_walk_turn_right_(135)_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "2to4cm_10to20pct",
+   "source": "ACCAD",
+   "frames": 448,
+   "infeasible_frac_before": 0.13839285714285715,
+   "legacy_offset_max_m": 0.034172973826719605
+  },
+  {
+   "name": "SFU_0018_0018_DanceTurns001_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "2to4cm_10to20pct",
+   "source": "SFU",
+   "frames": 303,
+   "infeasible_frac_before": 0.11551155115511551,
+   "legacy_offset_max_m": 0.023863292615563237
+  },
+  {
+   "name": "KIT_3_throw_right05_poses_100_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "2to4cm_10to20pct",
+   "source": "KIT",
+   "frames": 269,
+   "infeasible_frac_before": 0.11524163568773234,
+   "legacy_offset_max_m": 0.03905255975636959
+  },
+  {
+   "name": "BMLmovi_Subject_6_F_MoSh_Subject_6_F_7_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "2to4cm_over20pct",
+   "source": "BMLmovi",
+   "frames": 222,
+   "infeasible_frac_before": 0.34234234234234234,
+   "legacy_offset_max_m": 0.03235694456785624
+  },
+  {
+   "name": "CMU_06_06_08_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "2to4cm_over20pct",
+   "source": "CMU",
+   "frames": 143,
+   "infeasible_frac_before": 0.2097902097902098,
+   "legacy_offset_max_m": 0.03717979008075785
+  },
+  {
+   "name": "BMLmovi_Subject_76_F_MoSh_Subject_76_F_12_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "2to4cm_over20pct",
+   "source": "BMLmovi",
+   "frames": 387,
+   "infeasible_frac_before": 0.21963824289405684,
+   "legacy_offset_max_m": 0.036421351395067546
+  },
+  {
+   "name": "CMU_20_21_rory1_20_10_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "2to4cm_over20pct",
+   "source": "CMU",
+   "frames": 216,
+   "infeasible_frac_before": 0.25462962962962965,
+   "legacy_offset_max_m": 0.03264002592286315
+  },
+  {
+   "name": "ACCAD_Male1General_c3d_General_A5_-_Pick_Up_Box_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "4to6cm_10to20pct",
+   "source": "ACCAD",
+   "frames": 235,
+   "infeasible_frac_before": 0.1276595744680851,
+   "legacy_offset_max_m": 0.04959709002011245
+  },
+  {
+   "name": "BMLhandball_S07_Expert_Trial_upper_right_left_195_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "4to6cm_10to20pct",
+   "source": "BMLhandball",
+   "frames": 513,
+   "infeasible_frac_before": 0.1111111111111111,
+   "legacy_offset_max_m": 0.05990291040942741
+  },
+  {
+   "name": "CMU_137_137_20_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "4to6cm_10to20pct",
+   "source": "CMU",
+   "frames": 668,
+   "infeasible_frac_before": 0.14820359281437126,
+   "legacy_offset_max_m": 0.0583895885258087
+  },
+  {
+   "name": "BMLmovi_Subject_60_F_MoSh_Subject_60_F_10_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "4to6cm_10to20pct",
+   "source": "BMLmovi",
+   "frames": 350,
+   "infeasible_frac_before": 0.16857142857142857,
+   "legacy_offset_max_m": 0.0532053796113773
+  },
+  {
+   "name": "BMLmovi_Subject_39_F_MoSh_Subject_39_F_2_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "4to6cm_over20pct",
+   "source": "BMLmovi",
+   "frames": 374,
+   "infeasible_frac_before": 0.3609625668449198,
+   "legacy_offset_max_m": 0.05535684154980791
+  },
+  {
+   "name": "CMU_18_19_Justin_18_06_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "4to6cm_over20pct",
+   "source": "CMU",
+   "frames": 170,
+   "infeasible_frac_before": 0.2823529411764706,
+   "legacy_offset_max_m": 0.04928948569943317
+  },
+  {
+   "name": "KIT_167_walking_run03_poses_100_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "4to6cm_over20pct",
+   "source": "KIT",
+   "frames": 147,
+   "infeasible_frac_before": 0.2108843537414966,
+   "legacy_offset_max_m": 0.04501057955241512
+  },
+  {
+   "name": "Transitions_mocap_mazen_c3d_walkbackwards_turntwist180_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "4to6cm_over20pct",
+   "source": "Transitions",
+   "frames": 444,
+   "infeasible_frac_before": 0.22522522522522523,
+   "legacy_offset_max_m": 0.05217823392154675
+  },
+  {
+   "name": "SFU_0005_0005_SideSkip001_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "6to8cm_10to20pct",
+   "source": "SFU",
+   "frames": 452,
+   "infeasible_frac_before": 0.14601769911504425,
+   "legacy_offset_max_m": 0.06770337007372343
+  },
+  {
+   "name": "CMU_32_32_10_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "6to8cm_10to20pct",
+   "source": "CMU",
+   "frames": 3309,
+   "infeasible_frac_before": 0.11242067089755213,
+   "legacy_offset_max_m": 0.07786480237971563
+  },
+  {
+   "name": "BMLhandball_S07_Expert_Trial_upper_right_left_213_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "6to8cm_10to20pct",
+   "source": "BMLhandball",
+   "frames": 548,
+   "infeasible_frac_before": 0.145985401459854,
+   "legacy_offset_max_m": 0.07592647944299132
+  },
+  {
+   "name": "BMLmovi_Subject_47_F_MoSh_Subject_47_F_15_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "6to8cm_10to20pct",
+   "source": "BMLmovi",
+   "frames": 224,
+   "infeasible_frac_before": 0.19196428571428573,
+   "legacy_offset_max_m": 0.07276978425946226
+  },
+  {
+   "name": "CMU_22_23_Rory_22_03_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "6to8cm_over20pct",
+   "source": "CMU",
+   "frames": 338,
+   "infeasible_frac_before": 0.21301775147928995,
+   "legacy_offset_max_m": 0.074059679948416
+  },
+  {
+   "name": "BMLhandball_S02_Novice_Trial_upper_left_140_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "6to8cm_over20pct",
+   "source": "BMLhandball",
+   "frames": 266,
+   "infeasible_frac_before": 0.39849624060150374,
+   "legacy_offset_max_m": 0.06484784171614125
+  },
+  {
+   "name": "Eyes_Japan_Dataset_kanno_walk-03-sneak-kanno_poses_120_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "6to8cm_over20pct",
+   "source": "Eyes",
+   "frames": 1529,
+   "infeasible_frac_before": 0.32047089601046436,
+   "legacy_offset_max_m": 0.0685195002676544
+  },
+  {
+   "name": "KIT_513_seesaw_up02_poses_100_jpos",
+   "role": "flagged_primary_candidate",
+   "stratum": "6to8cm_over20pct",
+   "source": "KIT",
+   "frames": 352,
+   "infeasible_frac_before": 0.26136363636363635,
+   "legacy_offset_max_m": 0.07451175751987375
+  },
+  {
+   "name": "BMLmovi_Subject_69_F_MoSh_Subject_69_F_11_poses_120_jpos",
+   "role": "raw_feasible_control",
+   "stratum": "control_BMLmovi",
+   "source": "BMLmovi",
+   "frames": 259,
+   "infeasible_frac_before": 0.011583011583011582,
+   "legacy_offset_max_m": null
+  },
+  {
+   "name": "CMU_108_108_14_poses_120_jpos",
+   "role": "raw_feasible_control",
+   "stratum": "control_CMU",
+   "source": "CMU",
+   "frames": 73,
+   "infeasible_frac_before": 0.0958904109589041,
+   "legacy_offset_max_m": null
+  },
+  {
+   "name": "BMLhandball_S06_Novice_Trial_upper_left_187_poses_120_jpos",
+   "role": "raw_feasible_control",
+   "stratum": "control_BMLhandball",
+   "source": "BMLhandball",
+   "frames": 487,
+   "infeasible_frac_before": 0.012320328542094456,
+   "legacy_offset_max_m": null
+  },
+  {
+   "name": "KIT_675_walk_with_handrail_right07_poses_100_jpos",
+   "role": "raw_feasible_control",
+   "stratum": "control_KIT",
+   "source": "KIT",
+   "frames": 191,
+   "infeasible_frac_before": 0.0,
+   "legacy_offset_max_m": null
+  }
+ ],
+ "payload_sha256": "900c2dbff2cfd709aefb9b308ac2980710efaa2a16c076206bda6fafe723a355"
+}

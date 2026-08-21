@@ -75,9 +75,10 @@ verdict (measured), 10.7k-clip prevalence (measured), atlas v2.1 transfer (seale
 calibrated instrument + replication (exploratory label), P-TAX (sealed null), N3 (mixed: targeted
 endpoints pass, regression stop), E-HYG (sealed pruning null), P-SIGN (sealed fail), soft FGAS
 (primary not confirmed; implementation gate failed), and N7 (positive +0.0397 deployment contrast,
-but benefit/coverage gates fail and raw-reference policy transfer is null). DFRP v0 now has a
-fail-closed manifest, root/contact-IK operator, exact-segment integration, a two-clip CPU gate, and
-a strict legacy routing audit (644/2,442 within 8 cm; none of the legacy repairs is automatically
-training-ready). Pending 🕐: a separately sealed segment-native follow-up under the corrected
-lifecycle/evaluator, Newton v1.5 predictive gate, and E3 support moderation. Results
+but benefit/coverage gates fail and raw-reference policy transfer is null). DFRP v1 now has a
+fail-closed, source-motion-bound exact contract: a frozen CPU panel admits 22/26 flagged repairs
+and 4/4 byte-identical controls, yielding 36 units and 10,561 legal starts; four failures remain
+excluded, and this is not a bank-wide recovery or policy claim. Pending 🕐: Newton v1.5 isolated
+recertification and its no-training predictive gate, a separately sealed segment-native follow-up
+under the corrected lifecycle/evaluator, and E3 support moderation. Results
 freeze Dec 1; RSS 2027 target.

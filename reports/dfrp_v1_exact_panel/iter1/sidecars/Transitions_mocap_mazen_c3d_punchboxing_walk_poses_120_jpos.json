@@ -1,0 +1,143 @@
+{
+ "clip": "Transitions_mocap_mazen_c3d_punchboxing_walk_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 406,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 1.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.05172413793103448,
+ "torque_infeasible_frac": 0.022167487684729065,
+ "severe_frac": 0.07389162561576355,
+ "severe_frac_guarded": 0.07389162561576355,
+ "feasible_frac_kept": 0.6059113300492611,
+ "n_severe_windows": 6,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   160,
+   406
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 160,
+   "stop_frame": 406,
+   "unsupported_ratio_mean": 0.04316882364789197,
+   "unsupported_ratio_p95": 0.14453800597014652,
+   "unsupported_ratio_max": 0.3029871262113489
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   3.2,
+   8.12
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   33,
+   38
+  ],
+  [
+   42,
+   44
+  ],
+  [
+   58,
+   63
+  ],
+  [
+   83,
+   92
+  ],
+  [
+   125,
+   132
+  ],
+  [
+   158,
+   160
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   33,
+   38
+  ],
+  [
+   42,
+   44
+  ],
+  [
+   58,
+   63
+  ],
+  [
+   83,
+   92
+  ],
+  [
+   125,
+   132
+  ],
+  [
+   158,
+   160
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   0,
+   160
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   0.66,
+   0.76
+  ],
+  [
+   0.84,
+   0.88
+  ],
+  [
+   1.16,
+   1.26
+  ],
+  [
+   1.66,
+   1.84
+  ],
+  [
+   2.5,
+   2.64
+  ],
+  [
+   3.16,
+   3.2
+  ]
+ ],
+ "n_bins": 9,
+ "n_bins_eligible": 5,
+ "bin_eligible_frac": 0.5555555555555556,
+ "bin_eligible": [
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.504468979060268,
+ "source_screen_sha256": "5538a175c72c428c6f2183604053287bfd7d53d02e161920feff0e50871ab682",
+ "source_motion_sha256": "01372106df2d3826adfc4f66740ac9330b3c367ccf1ce6777cd15bf75619576d",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

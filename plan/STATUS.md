@@ -1,10 +1,10 @@
 # CLIMB / feasibility-first — status against Research Plan v5
 
-Updated 2026-08-20. **v5 (`RESEARCH_PLAN_v5.md`, sealed `4d490cf8…`) is authoritative**: D1
+Updated 2026-08-21. **v5 (`RESEARCH_PLAN_v5.md`, sealed `4d490cf8…`) is authoritative**: D1
 evaluation policy, D2 spin-out, D3 new seals, D4 writing-first window to Sept 15. v4's freeze
 discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 
-## State as of 2026-08-20 (writing-side snapshot — what a reader needs to know first)
+## State as of 2026-08-21 (writing-side snapshot — what a reader needs to know first)
 
 | item | state | where |
 |---|---|---|
@@ -17,6 +17,7 @@ discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 | **Segment- vs clip-level curation measured** | On `tier_800`'s 99 flagged clips (20.2 min of 152.4 min): guard 0 s recovers 12.5 min (61.7 %), 584/1,259 bins, 3/99 clips lost; guard 1.0 s recovers 5.8 min (28.9 %), 305/1,259 bins, 26/99 lost. Bank-level: pruning discards 13.3 % of duration, curation returns 8.2 % / 3.8 %. Generalisable claim carried into the drafts: **the value of segment-level curation falls as the policy's reference lookahead grows** — the guard band is a property of the framework, not the data. Carried as a **duration** claim only — no training arm has consumed curated segments — with `--min-seg-s 1.0` and strict bin eligibility labelled as choices, not measurements (`RED_TEAM` row 21, open by construction). Landed in flagship §6, companion §8, `RESULTS_LOG`; figure F9 is a written candidate, not drawn. | `reports/segments_tier800/`, `tools/screen_segments.py`, `plan/FGAS_DIRECTIVE_2026-08-19.md` |
 | **Contamination / hygiene measurement** | Bank prevalence **done** (22.8 % of 10,705). Legacy repair recovers 1,606/2,442 strict-flagged clips through 15 cm (65.8 %); C4 corrects the historical 2,443-row directory's extra feasible control. Tier-level pruning **done** (`tier_800_pruned`, 701 clips). | `reports/feasibility_all/`, `reports/dfrp_v0/census/`, `paper/CORRECTIONS_2026-08-21_DFRP.md` |
 | **DFRP v0 CPU gate** | Artifact contract, root/contact-IK operator, exact-unit integration, two-clip training-ready view, and strict full-bank legacy routing audit complete. 644/2,442 (26.4 %) fit the 8 cm displacement tier, but all bank-wide legacy repairs remain qualification-incomplete and zero are promoted to training. | `plan/DFRP_V0_RESULT_2026-08-21.md`, `reports/dfrp_v0/` |
+| **DFRP v1 exact panel passes** | Unsealed frozen CPU panel: 22/26 flagged repairs are exact-ready and all 4 controls are byte-identical/ready. The curated view contains 26 clips, 36 units, and 10,561 legal 50-step starts. Two residual-infeasibility and two IK-qualification failures remain excluded. This validates the implementation gate only—not a bank-wide recovery rate or policy benefit. | `plan/DFRP_V1_EXACT_PANEL_RESULT_2026-08-21.md`, `reports/dfrp_v1_exact_panel/` |
 | **Corrections applied** | C1 exposure attribution (the impossible clip's share bracketed [21.9 %, 48.8 %]; the JSON key was copied), C2 saturation-at-fall (≥ 4/29 in 8/8, exactly 5/29 in 7/8, mean 16.8 %), C3 per-actuator identity **withdrawn** (not recoverable from the artifact). All three fixed in place across `RESULTS_LOG`, flagship, companion, payoff plan, `RED_TEAM` row 18. | `paper/CORRECTIONS_2026-08-19.md` |
 | **Open artifact-hygiene item** | The second bank's 4,950-row per-clip screen CSV was not found in accessible `/tmp` paths; the durable record is still only the P10 register entry. It needs a durable path + sentinel before submission. The public-site prose and rendered drafts are now synchronized with the 2026-08-20 outcomes and per-corpus prevalence framing. | flagged in `paper/CONSISTENCY_SWEEP_2026-08-20.md` |
 

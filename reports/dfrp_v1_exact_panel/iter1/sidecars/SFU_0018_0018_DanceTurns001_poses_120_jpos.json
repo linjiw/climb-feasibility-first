@@ -1,0 +1,172 @@
+{
+ "clip": "SFU_0018_0018_DanceTurns001_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 303,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 1.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0297029702970297,
+ "torque_infeasible_frac": 0.1188118811881188,
+ "severe_frac": 0.1485148514851485,
+ "severe_frac_guarded": 0.1485148514851485,
+ "feasible_frac_kept": 0.5412541254125413,
+ "n_severe_windows": 7,
+ "n_feasible_segments": 2,
+ "feasible_segments_frames": [
+  [
+   111,
+   225
+  ],
+  [
+   253,
+   303
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 111,
+   "stop_frame": 225,
+   "unsupported_ratio_mean": 0.13165540766649952,
+   "unsupported_ratio_p95": 0.3585551486017754,
+   "unsupported_ratio_max": 0.4411810525963436
+  },
+  {
+   "start_frame": 253,
+   "stop_frame": 303,
+   "unsupported_ratio_mean": 0.0346524327798126,
+   "unsupported_ratio_p95": 0.15805165983345792,
+   "unsupported_ratio_max": 0.31643963231962274
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   2.22,
+   4.5
+  ],
+  [
+   5.06,
+   6.06
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   31,
+   38
+  ],
+  [
+   70,
+   79
+  ],
+  [
+   102,
+   109
+  ],
+  [
+   110,
+   111
+  ],
+  [
+   225,
+   235
+  ],
+  [
+   240,
+   244
+  ],
+  [
+   246,
+   253
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   31,
+   38
+  ],
+  [
+   70,
+   79
+  ],
+  [
+   102,
+   109
+  ],
+  [
+   110,
+   111
+  ],
+  [
+   225,
+   235
+  ],
+  [
+   240,
+   244
+  ],
+  [
+   246,
+   253
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   0,
+   111
+  ],
+  [
+   225,
+   253
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   0.62,
+   0.76
+  ],
+  [
+   1.4,
+   1.58
+  ],
+  [
+   2.04,
+   2.18
+  ],
+  [
+   2.2,
+   2.22
+  ],
+  [
+   4.5,
+   4.7
+  ],
+  [
+   4.8,
+   4.88
+  ],
+  [
+   4.92,
+   5.06
+  ]
+ ],
+ "n_bins": 7,
+ "n_bins_eligible": 2,
+ "bin_eligible_frac": 0.2857142857142857,
+ "bin_eligible": [
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  1
+ ],
+ "unsupported_ratio_p95": 0.37972755878354714,
+ "source_screen_sha256": "3d0809872da309afba2f39645486f25fe2196716fe315b960ba692c43bbd1011",
+ "source_motion_sha256": "28f3462419ed00c9bf81e684c43b907fe65af39a5b88b223745355c26d9967d0",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

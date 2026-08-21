@@ -1,0 +1,65 @@
+{
+ "clip": "BMLhandball_S07_Expert_Trial_upper_right_left_213_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 548,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 1.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0,
+ "severe_frac_guarded": 0.0,
+ "feasible_frac_kept": 1.0,
+ "n_severe_windows": 0,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   548
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 548,
+   "unsupported_ratio_mean": 0.04804450526741421,
+   "unsupported_ratio_p95": 0.1595650667706387,
+   "unsupported_ratio_max": 0.3207199751722553
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   10.96
+  ]
+ ],
+ "severe_windows_frames": [],
+ "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
+ "severe_windows_s": [],
+ "n_bins": 11,
+ "n_bins_eligible": 11,
+ "bin_eligible_frac": 1.0,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.1595650667706387,
+ "source_screen_sha256": "b4babb4b4f6bc47272f44d9decce266bd32be859e9fb1c367d59f3dc64d2cfcc",
+ "source_motion_sha256": "de76cba7597cf5631f3198645c1d3d25e1cc1324321d1c23b36d8f839686e706",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

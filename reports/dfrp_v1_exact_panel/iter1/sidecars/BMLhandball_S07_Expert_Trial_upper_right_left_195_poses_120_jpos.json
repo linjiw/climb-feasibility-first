@@ -1,0 +1,131 @@
+{
+ "clip": "BMLhandball_S07_Expert_Trial_upper_right_left_195_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 513,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 1.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.005847953216374269,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.005847953216374269,
+ "severe_frac_guarded": 0.005847953216374269,
+ "feasible_frac_kept": 0.9941520467836257,
+ "n_severe_windows": 2,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   243
+  ],
+  [
+   245,
+   411
+  ],
+  [
+   412,
+   513
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 243,
+   "unsupported_ratio_mean": 0.02573741722323693,
+   "unsupported_ratio_p95": 0.227408500984865,
+   "unsupported_ratio_max": 0.4861246525489856
+  },
+  {
+   "start_frame": 245,
+   "stop_frame": 411,
+   "unsupported_ratio_mean": 0.09605170400500927,
+   "unsupported_ratio_p95": 0.40762622201945603,
+   "unsupported_ratio_max": 0.49315664437831064
+  },
+  {
+   "start_frame": 412,
+   "stop_frame": 513,
+   "unsupported_ratio_mean": 0.11801214010599792,
+   "unsupported_ratio_p95": 0.24611971402637323,
+   "unsupported_ratio_max": 0.46227702808431836
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   4.86
+  ],
+  [
+   4.9,
+   8.22
+  ],
+  [
+   8.24,
+   10.26
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   243,
+   245
+  ],
+  [
+   411,
+   412
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   243,
+   245
+  ],
+  [
+   411,
+   412
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   243,
+   245
+  ],
+  [
+   411,
+   412
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   4.86,
+   4.9
+  ],
+  [
+   8.22,
+   8.24
+  ]
+ ],
+ "n_bins": 11,
+ "n_bins_eligible": 9,
+ "bin_eligible_frac": 0.8181818181818182,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.29644431642232466,
+ "source_screen_sha256": "12ed307dc2b37218c31c3fd8267ac82d55156086bc8b2ab72e89fee1b2e3521d",
+ "source_motion_sha256": "996ed0202902488a1866475b6036f81de2625c6009bd34e76f682ffac7a556c2",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}
