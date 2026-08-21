@@ -1,0 +1,11 @@
+ITERATION: N7 redesign and freeze after N3/P-SIGN/E-HYG
+DATE: 2026-08-20
+DESIGN: matched keep/repair N=800 plus N-confounded prune comparator
+PRIMARY: 2x2 policy/reference cross on frozen flagged99
+GATES: deployed delta >=0.05 with motion-bootstrap lower CI >0; heldout >=-0.03;
+       ground R-K >=-0.03 and R-P >=0.03
+SEEDS: one; motion uncertainty only, no population-level training claim
+PREREGISTRATION: 90da8a08508d0b5a75d3718a712178bd92502223e240c99b12cc4817e6d9edc5
+FREEZE MANIFEST: 88a88c0cb633ca32a94acd37d8c72ddb31138c2cf48c38d0b1580d1d1a7c7b99
+CHECK: sha256sum -c plan/N7_FREEZE.sha256: all OK
+RESULT: sealed and queued behind FGAS; no N7 training or outcome.

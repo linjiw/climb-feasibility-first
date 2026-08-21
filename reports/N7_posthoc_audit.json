@@ -1,0 +1,178 @@
+{
+ "analysis": "exploratory N7 post-outcome audit; frozen decision unchanged",
+ "decomposition": {
+  "deployment_repair_repaired_minus_keep_raw": {
+   "motions": 99,
+   "control_mean": 0.7904040404040404,
+   "treatment_mean": 0.8300865800865801,
+   "paired_delta": 0.039682539682539694,
+   "motion_bootstrap_95ci": [
+    0.015331890331890335,
+    0.06583694083694083
+   ]
+  },
+  "training_transfer_repair_raw_minus_keep_raw": {
+   "motions": 99,
+   "control_mean": 0.7904040404040404,
+   "treatment_mean": 0.7867965367965367,
+   "paired_delta": -0.0036075036075036066,
+   "motion_bootstrap_95ci": [
+    -0.017857142857142853,
+    0.01028138528138528
+   ]
+  },
+  "reference_only_keep_repaired_minus_keep_raw": {
+   "motions": 99,
+   "control_mean": 0.7904040404040404,
+   "treatment_mean": 0.8136724386724389,
+   "paired_delta": 0.02326839826839827,
+   "motion_bootstrap_95ci": [
+    0.0021645021645021714,
+    0.045634920634920646
+   ]
+  },
+  "policy_by_reference_interaction": 0.02002164502164503,
+  "identity_check": 0.0
+ },
+ "repair_heterogeneity": {
+  "by_manifest_stratum": {
+   "repaired_certified": {
+    "motions": 78,
+    "mean_deployment_delta": 0.01602564102564103,
+    "mean_training_transfer_delta": -0.006181318681318679,
+    "mean_reference_only_delta": 0.005265567765567773,
+    "mean_interaction": 0.016941391941391933,
+    "mean_infeasible_before": 0.23415569794646757,
+    "mean_infeasible_after": 0.005038160911809633,
+    "mean_offset_max_m": 0.07814675325747665
+   },
+   "repaired_over_budget": {
+    "motions": 11,
+    "mean_deployment_delta": 0.2305194805194805,
+    "mean_training_transfer_delta": 0.008116883116883123,
+    "mean_reference_only_delta": 0.16396103896103897,
+    "mean_interaction": 0.05844155844155843,
+    "mean_infeasible_before": 0.3306038899868656,
+    "mean_infeasible_after": 0.02630790862947202,
+    "mean_offset_max_m": 0.2928671309782962
+   },
+   "repaired_residual": {
+    "motions": 10,
+    "mean_deployment_delta": 0.014285714285714287,
+    "mean_training_transfer_delta": 0.0035714285714285644,
+    "mean_reference_only_delta": 0.008928571428571428,
+    "mean_interaction": 0.001785714285714296,
+    "mean_infeasible_before": 0.2316135369485703,
+    "mean_infeasible_after": 0.113807625677944,
+    "mean_offset_max_m": 0.06258674526835928
+   }
+  },
+  "motions_improved_tied_worse": {
+   "improved": 29,
+   "tied": 57,
+   "worse": 13
+  }
+ },
+ "heldout_integrity": {
+  "training_overlap_count": 8,
+  "training_overlap": [
+   "ACCAD_Male2MartialArtsKicks_c3d_G3_-_front_kick_poses_120_jpos",
+   "BMLmovi_Subject_24_F_MoSh_Subject_24_F_2_poses_120_jpos",
+   "CMU_122_122_55_poses_120_jpos",
+   "CMU_138_138_25_poses_120_jpos",
+   "CMU_16_16_35_poses_120_jpos",
+   "CMU_78_78_31_poses_120_jpos",
+   "Eyes_Japan_Dataset_kanno_accident-02-dodge_fast-kanno_poses_120_jpos",
+   "KIT_424_seesaw04_poses_100_jpos"
+  ],
+  "populations": {
+   "all100": {
+    "motions": 100,
+    "control_mean": 0.8925,
+    "treatment_mean": 0.8821428571428571,
+    "paired_delta": -0.010357142857142856,
+    "motion_bootstrap_95ci": [
+     -0.029285714285714283,
+     0.002321428571428575
+    ]
+   },
+   "disjoint92": {
+    "motions": 92,
+    "control_mean": 0.8918866459627329,
+    "treatment_mean": 0.8796583850931677,
+    "paired_delta": -0.012228260869565214,
+    "motion_bootstrap_95ci": [
+     -0.031638198757763976,
+     0.0011645962732919274
+    ]
+   },
+   "feasible71": {
+    "motions": 71,
+    "control_mean": 0.9175050301810864,
+    "treatment_mean": 0.9044265593561367,
+    "paired_delta": -0.013078470824949697,
+    "motion_bootstrap_95ci": [
+     -0.03697183098591549,
+     0.002263581488933604
+    ]
+   },
+   "feasible_disjoint68": {
+    "motions": 68,
+    "control_mean": 0.9143907563025211,
+    "treatment_mean": 0.9007352941176471,
+    "paired_delta": -0.013655462184873946,
+    "motion_bootstrap_95ci": [
+     -0.0391281512605042,
+     0.0023634453781512625
+    ]
+   }
+  }
+ },
+ "offset_protocol": {
+  "flagged99": {
+   "motions": 99,
+   "scheduled_offset_rows": 693,
+   "duplicate_clipped_rows": 63,
+   "duplicate_clipped_row_fraction": 0.09090909090909091,
+   "motions_with_duplicate_starts": 35,
+   "duration_weighted_window_coverage": 0.6260863829015287,
+   "mean_motion_window_coverage": 0.8514972423793941,
+   "minimum_motion_window_coverage": 0.18887362637362637
+  },
+  "heldout100": {
+   "motions": 100,
+   "scheduled_offset_rows": 700,
+   "duplicate_clipped_rows": 79,
+   "duplicate_clipped_row_fraction": 0.11285714285714285,
+   "motions_with_duplicate_starts": 40,
+   "duration_weighted_window_coverage": 0.526760686755431,
+   "mean_motion_window_coverage": 0.8247789530457571,
+   "minimum_motion_window_coverage": 0.06022777047744196
+  },
+  "feasible_hard20": {
+   "motions": 20,
+   "scheduled_offset_rows": 140,
+   "duplicate_clipped_rows": 15,
+   "duplicate_clipped_row_fraction": 0.10714285714285714,
+   "motions_with_duplicate_starts": 9,
+   "duration_weighted_window_coverage": 0.3095088408644401,
+   "mean_motion_window_coverage": 0.6770367491405564,
+   "minimum_motion_window_coverage": 0.06022777047744196
+  },
+  "zs_ground60": {
+   "motions": 60,
+   "scheduled_offset_rows": 420,
+   "duplicate_clipped_rows": 22,
+   "duplicate_clipped_row_fraction": 0.05238095238095238,
+   "motions_with_duplicate_starts": 17,
+   "duration_weighted_window_coverage": 0.7332517589476905,
+   "mean_motion_window_coverage": 0.896427353445356,
+   "minimum_motion_window_coverage": 0.28306742151312403
+  }
+ },
+ "scope": {
+  "classification": "post-hoc exploratory",
+  "sealed_n7_result_replaced": false,
+  "motion_bootstrap_is_not_training_seed_uncertainty": true
+ }
+}

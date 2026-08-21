@@ -1,0 +1,80 @@
+{
+ "analysis": "N7 repair-all versus keep/prune, seed 1",
+ "flagged99": {
+  "deployment_repair_vs_keep": {
+   "motions": 99,
+   "control_mean": 0.7904040404040404,
+   "treatment_mean": 0.8300865800865801,
+   "paired_delta": 0.039682539682539694,
+   "motion_bootstrap_95ci": [
+    0.015331890331890335,
+    0.06583694083694083
+   ]
+  },
+  "training_transfer_on_raw_references": {
+   "motions": 99,
+   "control_mean": 0.7904040404040404,
+   "treatment_mean": 0.7867965367965367,
+   "paired_delta": -0.0036075036075036066,
+   "motion_bootstrap_95ci": [
+    -0.017857142857142853,
+    0.01028138528138528
+   ]
+  },
+  "reference_only_under_keep_policy": {
+   "motions": 99,
+   "control_mean": 0.7904040404040404,
+   "treatment_mean": 0.8136724386724389,
+   "paired_delta": 0.02326839826839827,
+   "motion_bootstrap_95ci": [
+    0.0021645021645021714,
+    0.045634920634920646
+   ]
+  },
+  "policy_by_reference_interaction": 0.020021645021645013
+ },
+ "heldout100": {
+  "motions": 100,
+  "control_mean": 0.8925,
+  "treatment_mean": 0.8821428571428571,
+  "paired_delta": -0.010357142857142856,
+  "motion_bootstrap_95ci": [
+   -0.029285714285714283,
+   0.002321428571428575
+  ]
+ },
+ "zs_ground_feasible": {
+  "repair_vs_keep": {
+   "motions": 60,
+   "control_mean": 0.469047619047619,
+   "treatment_mean": 0.44910714285714287,
+   "paired_delta": -0.019940476190476192,
+   "motion_bootstrap_95ci": [
+    -0.03869047619047619,
+    -0.000892857142857142
+   ]
+  },
+  "repair_vs_prune": {
+   "motions": 60,
+   "control_mean": 0.4336309523809524,
+   "treatment_mean": 0.44910714285714287,
+   "paired_delta": 0.015476190476190477,
+   "motion_bootstrap_95ci": [
+    -0.00505952380952381,
+    0.03571428571428572
+   ]
+  }
+ },
+ "decision": {
+  "repair_benefit": false,
+  "no_heldout_regression": true,
+  "coverage_preserved_vs_prune": false,
+  "overall_pass": false,
+  "rules": {
+   "primary": "flagged99 deployment delta >= 0.05 and motion CI low > 0",
+   "no_regression": "heldout100 delta >= -0.03",
+   "coverage": "repair-keep >= -0.03 and repair-prune >= 0.03 on zs_ground"
+  },
+  "scope": "one seed; motion bootstrap is not seed uncertainty"
+ }
+}

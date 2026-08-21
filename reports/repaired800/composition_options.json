@@ -1,0 +1,43 @@
+{
+ "generated_utc": "2026-08-19T20:36:44Z",
+ "metric": "infeasible frames / total frames, using the screen's infeasible_frac x frames; 'after' values from reports/repair_census/json/*.json",
+ "contamination_share": {
+  "flagged99_share_of_tier800_infeasible_frames": 84.5,
+  "fail21_share_of_tier800_infeasible_frames": 26.0,
+  "fail21_share_of_flagged_infeasible_frames": 30.8,
+  "flagged99_share_of_tier800_frames": 13.27,
+  "fail21_share_of_tier800_frames": 3.4
+ },
+ "options": {
+  "tier_800_raw": {
+   "N": 800,
+   "frames": 457072,
+   "infeasible_frames": 17931,
+   "pct": 3.923
+  },
+  "tier_800_pruned": {
+   "N": 701,
+   "frames": 396435,
+   "infeasible_frames": 2771,
+   "pct": 0.699
+  },
+  "A_keep_original_21": {
+   "N": 800,
+   "frames": 457072,
+   "infeasible_frames": 7732,
+   "pct": 1.692
+  },
+  "B_drop_21": {
+   "N": 779,
+   "frames": 441514,
+   "infeasible_frames": 3064,
+   "pct": 0.694
+  },
+  "C_repair_all_99": {
+   "N": 800,
+   "frames": 457072,
+   "infeasible_frames": 4129,
+   "pct": 0.903
+  }
+ }
+}

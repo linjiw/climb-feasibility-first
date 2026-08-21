@@ -1,0 +1,5 @@
+  synthetic A_confirm: E1 True E4 True -> causal=True  (expected True) OK
+  synthetic B_dose_null: E1 False E4 True -> causal=False  (expected False) OK
+  synthetic C_one_seed: E1 False E4 True -> causal=False  (expected False) OK
+  synthetic D_nonspecific: E1 True E4 False -> causal=False  (expected False) OK
+synthetic dry-run: all 4 branches decide as sealed. No real data touched.

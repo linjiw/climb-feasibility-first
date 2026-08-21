@@ -1,0 +1,4 @@
+exit_code=0
+started_utc=2026-08-20T05:24:22Z
+finished_utc=2026-08-20T05:24:52Z
+cmd=/data/robotixx/climb/bridge/.venv/bin/python /data/robotixx/climb/tools/p_sign_gate.py --checkpoint /data/robotixx/climb/logs/rsl_rl/g1_tracking/2026-08-15_20-29-21_uniform-mixed100-s1/model_3999.pt --out /data/robotixx/climb/reports/P_SIGN/run0

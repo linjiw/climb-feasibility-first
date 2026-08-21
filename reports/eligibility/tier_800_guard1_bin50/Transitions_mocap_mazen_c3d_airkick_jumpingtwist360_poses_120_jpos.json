@@ -1,0 +1,76 @@
+{
+ "airborne_frac": 0.323943661971831,
+ "bin_eligible": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.25,
+ "bin_frames": 50,
+ "bin_score": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.98,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.3725,
+ "clip": "Transitions_mocap_mazen_c3d_airkick_jumpingtwist360_poses_120_jpos",
+ "feasible_frac_kept": 0.29295774647887324,
+ "feasible_segments_s": [
+  [
+   5.02,
+   7.1
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 355,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.29014084507042254,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 8,
+ "n_bins_eligible": 2,
+ "n_feasible_segments": 1,
+ "n_severe_windows": 5,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/Transitions_mocap_mazen_c3d_airkick_jumpingtwist360_poses_120_jpos.json",
+ "severe_frac": 0.29014084507042254,
+ "severe_frac_guarded": 0.6563380281690141,
+ "severe_windows_s": [
+  [
+   1.36,
+   2.4
+  ],
+  [
+   2.46,
+   2.48
+  ],
+  [
+   2.58,
+   2.64
+  ],
+  [
+   2.8,
+   3.28
+  ],
+  [
+   3.56,
+   4.02
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.35066218714821
+}

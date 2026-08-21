@@ -1,0 +1,162 @@
+{
+ "airborne_frac": 0.10177865612648221,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  0,
+  1,
+  1,
+  0,
+  0,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.5238095238095238,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.8,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.14,
+  1.0,
+  1.0,
+  0.98,
+  1.0,
+  1.0,
+  0.76,
+  0.84,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.6914285714285715,
+ "clip": "HUMAN4D_Subject3_4_Carine_INF_Dancing_S3S4_01_poses_120_jpos",
+ "feasible_frac_kept": 0.6798418972332015,
+ "feasible_segments_s": [
+  [
+   0.0,
+   4.8
+  ],
+  [
+   10.86,
+   13.22
+  ],
+  [
+   13.24,
+   16.76
+  ],
+  [
+   17.16,
+   20.24
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1012,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.11857707509881422,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 21,
+ "n_bins_eligible": 11,
+ "n_feasible_segments": 4,
+ "n_severe_windows": 17,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/HUMAN4D_Subject3_4_Carine_INF_Dancing_S3S4_01_poses_120_jpos.json",
+ "severe_frac": 0.12944664031620554,
+ "severe_frac_guarded": 0.12944664031620554,
+ "severe_windows_s": [
+  [
+   4.8,
+   5.06
+  ],
+  [
+   5.34,
+   5.62
+  ],
+  [
+   5.9,
+   6.22
+  ],
+  [
+   6.5,
+   6.88
+  ],
+  [
+   7.18,
+   7.2
+  ],
+  [
+   8.06,
+   8.1
+  ],
+  [
+   8.4,
+   8.86
+  ],
+  [
+   8.92,
+   9.04
+  ],
+  [
+   9.12,
+   9.16
+  ],
+  [
+   10.0,
+   10.02
+  ],
+  [
+   10.1,
+   10.2
+  ],
+  [
+   10.24,
+   10.36
+  ],
+  [
+   10.56,
+   10.68
+  ],
+  [
+   10.72,
+   10.86
+  ],
+  [
+   13.22,
+   13.24
+  ],
+  [
+   16.76,
+   16.8
+  ],
+  [
+   17.02,
+   17.16
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.010869565217391304,
+ "unsupported_ratio_p95": 0.9739920161165425
+}

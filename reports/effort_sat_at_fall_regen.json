@@ -1,0 +1,199 @@
+{
+ "_script": "tools/analyze_sat_at_fall.py",
+ "_regenerates": "reports/effort_sat_at_fall.json",
+ "_saturation_definition": "closed-loop actuator saturation: |actuator_force| >= 0.98 * actuator_forcerange upper bound, fraction of 29 actuators, per control step (tools/g1_clip44_gate.py rollout()). NOT the open-loop tau/limit > 1.0 definition of tools/n1_knee_id.py, and NOT the SONIC definition. The three are not interchangeable.",
+ "inputs": {
+  "run_dir": "reports/G1/run0",
+  "arm": "A",
+  "clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+  "clip_index_in_gate": 0,
+  "config": "base",
+  "worlds": [
+   0,
+   10,
+   20,
+   30,
+   40,
+   50,
+   60,
+   70
+  ],
+  "replicates": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "step_dt": 0.02,
+  "horizon_steps": 500,
+  "checkpoint": "/data/robotixx/climb/logs/rsl_rl/g1_tracking/2026-08-15_20-29-21_uniform-mixed100-s1/model_3999.pt",
+  "alive_only": true
+ },
+ "termination": {
+  "death_step": [
+   149,
+   150,
+   150,
+   147,
+   148,
+   145,
+   149,
+   145
+  ],
+  "death_time_s": [
+   2.98,
+   3.0,
+   3.0,
+   2.94,
+   2.96,
+   2.9,
+   2.98,
+   2.9
+  ],
+  "all_worlds_terminate_before_fall_window_end": true
+ },
+ "fixed_window": {
+  "definition": "supported: t < 2.0 s; fall: 2.2 s <= t <= 3.0 s (hard-coded constants, matching the shipped artifact's keys)",
+  "argmax_step_fall": [
+   141,
+   140,
+   141,
+   138,
+   139,
+   142,
+   141,
+   134
+  ],
+  "argmax_time_fall_s": [
+   2.82,
+   2.8,
+   2.82,
+   2.76,
+   2.78,
+   2.84,
+   2.82,
+   2.68
+  ],
+  "sat_frac_max_pre": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "sat_frac_max_fall": [
+   0.17241379618644714,
+   0.17241379618644714,
+   0.17241379618644714,
+   0.17241379618644714,
+   0.17241379618644714,
+   0.17241379618644714,
+   0.17241379618644714,
+   0.13793103396892548
+  ],
+  "n_actuators_pre": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "n_actuators_fall": [
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   4
+  ],
+  "mean_pre": 0.0,
+  "mean_fall": 0.16810345090925694,
+  "worlds_at_5_of_29_fall": 7,
+  "worlds_with_any_fall_saturation": 8,
+  "worlds_with_any_pre_saturation": 0
+ },
+ "contact_derived_window": {
+  "definition": "support-loss onset = earliest alive step from which the foot-contact duty cycle over the next 0.2 s stays < 0.5 until termination; supported: steps before onset; fall: onset .. onset + 0.6 s, clipped at termination",
+  "support_loss_onset_step": [
+   126,
+   126,
+   127,
+   124,
+   125,
+   123,
+   126,
+   124
+  ],
+  "support_loss_onset_time_s": [
+   2.52,
+   2.52,
+   2.54,
+   2.48,
+   2.5,
+   2.46,
+   2.52,
+   2.48
+  ],
+  "sat_frac_max_pre": [
+   0.0,
+   0.0,
+   0.03448275849223137,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "sat_frac_max_fall": [
+   0.17241379618644714,
+   0.17241379618644714,
+   0.17241379618644714,
+   0.17241379618644714,
+   0.17241379618644714,
+   0.17241379618644714,
+   0.17241379618644714,
+   0.13793103396892548
+  ],
+  "n_actuators_pre": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "n_actuators_fall": [
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   5,
+   4
+  ],
+  "mean_pre": 0.004310344811528921,
+  "mean_fall": 0.16810345090925694,
+  "worlds_at_5_of_29_fall": 7,
+  "worlds_with_any_fall_saturation": 8,
+  "worlds_with_any_pre_saturation": 1
+ },
+ "not_recoverable_from_this_artifact": [
+  "which actuators saturate (the papers say 'wrists, waist'): g1_clip44_gate.py reduces over the actuator axis with .mean(dim=1) before storing, so per-actuator identity is absent from the .npz. Verifying that phrase requires a new GPU rollout.",
+  "a landing/touchdown contact event: every replicate terminates while root_z is still decreasing, so the data contain no post-airborne landing contact."
+ ]
+}

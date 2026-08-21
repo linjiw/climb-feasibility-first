@@ -1,0 +1,71 @@
+{
+ "airborne_frac": 0.10877192982456141,
+ "bin_eligible": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "bin_eligible_frac": 0.0,
+ "bin_frames": 50,
+ "bin_score": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "bin_score_mean": 0.0,
+ "clip": "BMLmovi_Subject_1_F_MoSh_Subject_1_F_13_poses_120_jpos",
+ "feasible_frac_kept": 0.0,
+ "feasible_segments_s": [],
+ "fps": 50.0,
+ "frames": 285,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.10877192982456141,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 6,
+ "n_bins_eligible": 0,
+ "n_feasible_segments": 0,
+ "n_severe_windows": 6,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/BMLmovi_Subject_1_F_MoSh_Subject_1_F_13_poses_120_jpos.json",
+ "severe_frac": 0.10877192982456141,
+ "severe_frac_guarded": 0.887719298245614,
+ "severe_windows_s": [
+  [
+   0.6,
+   0.72
+  ],
+  [
+   1.38,
+   1.48
+  ],
+  [
+   2.88,
+   3.0
+  ],
+  [
+   3.14,
+   3.24
+  ],
+  [
+   3.8,
+   3.9
+  ],
+  [
+   3.98,
+   4.06
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.8052547860902631
+}

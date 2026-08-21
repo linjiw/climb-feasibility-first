@@ -1,0 +1,60 @@
+{
+ "airborne_frac": 0.031007751937984496,
+ "bin_eligible": [
+  1,
+  0,
+  0,
+  0,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.5,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  0.4,
+  0.0,
+  0.44,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.64,
+ "clip": "KIT_359_walking_medium10_poses_100_jpos",
+ "feasible_frac_kept": 0.5813953488372093,
+ "feasible_segments_s": [
+  [
+   0.0,
+   1.4
+  ],
+  [
+   3.56,
+   5.16
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 258,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.031007751937984496,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 6,
+ "n_bins_eligible": 3,
+ "n_feasible_segments": 2,
+ "n_severe_windows": 1,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/KIT_359_walking_medium10_poses_100_jpos.json.gz",
+ "severe_frac": 0.031007751937984496,
+ "severe_frac_guarded": 0.4186046511627907,
+ "severe_windows_s": [
+  [
+   2.4,
+   2.56
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.3593959302335423
+}

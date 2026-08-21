@@ -1,0 +1,265 @@
+{
+ "diagnosis": "soft-mask accounting reconstruction",
+ "flat_projection": {
+  "hard_rejected_start_mass": 0.10268981315796329,
+  "clip_level_flagged_mass": 0.123259884763111,
+  "top_clip": "KIT_572_wave_left10_poses_100_jpos",
+  "top_clip_mass": 0.01263533210696596,
+  "top_clip_flagged": false
+ },
+ "preexisting_grounded_failure_preflight": [
+  {
+   "seed": 1,
+   "available": false,
+   "reason": "grounded baseline predates per-checkpoint exposure ledgers"
+  },
+  {
+   "seed": 2,
+   "available": false,
+   "reason": "grounded baseline predates per-checkpoint exposure ledgers"
+  },
+  {
+   "seed": 3,
+   "available": false,
+   "reason": "grounded baseline predates per-checkpoint exposure ledgers"
+  }
+ ],
+ "max_final_reconstruction_error": 0.002101832839753459,
+ "seeds": [
+  {
+   "seed": 1,
+   "final_logged_mass": 0.2649,
+   "final_reconstructed_mass": 0.2646532057546766,
+   "absolute_error": 0.00024679424532342287,
+   "top_contributors": [
+    {
+     "clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+     "contribution": 0.19448949348541997,
+     "sampling_mass": 0.6183768510818481,
+     "conditional_rejected": 0.31451612903225806,
+     "infeasible_frac": 0.12830188679245283,
+     "soft_mean": 0.7018867924528301
+    },
+    {
+     "clip": "CMU_135_135_02_poses_120_jpos",
+     "contribution": 0.017554652423258293,
+     "sampling_mass": 0.03296704217791557,
+     "conditional_rejected": 0.5324909747292419,
+     "infeasible_frac": 0.2878228782287823,
+     "soft_mean": 0.511070110701107
+    },
+    {
+     "clip": "Eyes_Japan_Dataset_hamada_jump-07-rope_double-hamada_poses_120_jpos",
+     "contribution": 0.01557834262918369,
+     "sampling_mass": 0.09583041071891785,
+     "conditional_rejected": 0.1625615763546798,
+     "infeasible_frac": 0.18,
+     "soft_mean": 0.6766666666666666
+    },
+    {
+     "clip": "CMU_20_21_Justin1_20_09_poses_120_jpos",
+     "contribution": 0.0052856485008710785,
+     "sampling_mass": 0.017407402396202087,
+     "conditional_rejected": 0.30364372469635625,
+     "infeasible_frac": 0.01838235294117647,
+     "soft_mean": 0.9080882352941176
+    },
+    {
+     "clip": "DFaust_67_50027_50027_one_leg_jump_poses_60_jpos",
+     "contribution": 0.003661496303627424,
+     "sampling_mass": 0.015991024672985077,
+     "conditional_rejected": 0.22897196261682243,
+     "infeasible_frac": 0.004651162790697674,
+     "soft_mean": 0.9953488372093023
+    }
+   ],
+   "counterfactuals": {
+    "soft_power_1_observed": {
+     "hard_rejected_start_mass": 0.26465321515705265,
+     "clip_level_flagged_mass": 0.7912683444528489,
+     "top_clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+     "top_clip_mass": 0.6183768739019265,
+     "top_clip_flagged": true
+    },
+    "soft_power_2": {
+     "hard_rejected_start_mass": 0.20678565520605313,
+     "clip_level_flagged_mass": 0.7604395985244957,
+     "top_clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+     "top_clip_mass": 0.6050894303977795,
+     "top_clip_flagged": true
+    },
+    "hard_bin_start": {
+     "hard_rejected_start_mass": 0.0,
+     "clip_level_flagged_mass": 0.7674944944535914,
+     "top_clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+     "top_clip_mass": 0.5907366671254847,
+     "top_clip_flagged": true
+    },
+    "clip_flag_gate": {
+     "hard_rejected_start_mass": 0.15065069961169533,
+     "clip_level_flagged_mass": 0.0,
+     "top_clip": "CMU_20_21_Justin1_20_09_poses_120_jpos",
+     "top_clip_mass": 0.12219329590449693,
+     "top_clip_flagged": false
+    }
+   }
+  },
+  {
+   "seed": 2,
+   "final_logged_mass": 0.2414,
+   "final_reconstructed_mass": 0.24350183283975346,
+   "absolute_error": 0.002101832839753459,
+   "top_contributors": [
+    {
+     "clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+     "contribution": 0.11833778985085026,
+     "sampling_mass": 0.37625348567962646,
+     "conditional_rejected": 0.31451612903225806,
+     "infeasible_frac": 0.12830188679245283,
+     "soft_mean": 0.7018867924528301
+    },
+    {
+     "clip": "CMU_135_135_02_poses_120_jpos",
+     "contribution": 0.06635145845718762,
+     "sampling_mass": 0.12460578978061676,
+     "conditional_rejected": 0.5324909747292419,
+     "infeasible_frac": 0.2878228782287823,
+     "soft_mean": 0.511070110701107
+    },
+    {
+     "clip": "DFaust_67_50027_50027_one_leg_jump_poses_60_jpos",
+     "contribution": 0.01368012667468218,
+     "sampling_mass": 0.05974585935473442,
+     "conditional_rejected": 0.22897196261682243,
+     "infeasible_frac": 0.004651162790697674,
+     "soft_mean": 0.9953488372093023
+    },
+    {
+     "clip": "Eyes_Japan_Dataset_hamada_jump-07-rope_double-hamada_poses_120_jpos",
+     "contribution": 0.010318071274040955,
+     "sampling_mass": 0.06347177177667618,
+     "conditional_rejected": 0.1625615763546798,
+     "infeasible_frac": 0.18,
+     "soft_mean": 0.6766666666666666
+    },
+    {
+     "clip": "CMU_20_21_Justin1_20_09_poses_120_jpos",
+     "contribution": 0.005375843887266359,
+     "sampling_mass": 0.017704445868730545,
+     "conditional_rejected": 0.30364372469635625,
+     "infeasible_frac": 0.01838235294117647,
+     "soft_mean": 0.9080882352941176
+    }
+   ],
+   "counterfactuals": {
+    "soft_power_1_observed": {
+     "hard_rejected_start_mass": 0.24350182450511734,
+     "clip_level_flagged_mass": 0.6152961837047997,
+     "top_clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+     "top_clip_mass": 0.37625347225784045,
+     "top_clip_flagged": true
+    },
+    "soft_power_2": {
+     "hard_rejected_start_mass": 0.17777332080108518,
+     "clip_level_flagged_mass": 0.5389334500431135,
+     "top_clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+     "top_clip_mass": 0.3506715295282178,
+     "top_clip_flagged": true
+    },
+    "hard_bin_start": {
+     "hard_rejected_start_mass": 0.0,
+     "clip_level_flagged_mass": 0.5497561993584106,
+     "top_clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+     "top_clip_mass": 0.3479906226050285,
+     "top_clip_flagged": true
+    },
+    "clip_flag_gate": {
+     "hard_rejected_start_mass": 0.10000240956921462,
+     "clip_level_flagged_mass": 0.0,
+     "top_clip": "DFaust_67_50025_50025_one_leg_jump_poses_60_jpos",
+     "top_clip_mass": 0.25379245840427694,
+     "top_clip_flagged": false
+    }
+   }
+  },
+  {
+   "seed": 3,
+   "final_logged_mass": 0.2019,
+   "final_reconstructed_mass": 0.20051201612599814,
+   "absolute_error": 0.0013879838740018524,
+   "top_contributors": [
+    {
+     "clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+     "contribution": 0.06983509960193787,
+     "sampling_mass": 0.22203980386257172,
+     "conditional_rejected": 0.31451612903225806,
+     "infeasible_frac": 0.12830188679245283,
+     "soft_mean": 0.7018867924528301
+    },
+    {
+     "clip": "CMU_135_135_02_poses_120_jpos",
+     "contribution": 0.06026983805780807,
+     "sampling_mass": 0.11318471282720566,
+     "conditional_rejected": 0.5324909747292419,
+     "infeasible_frac": 0.2878228782287823,
+     "soft_mean": 0.511070110701107
+    },
+    {
+     "clip": "Eyes_Japan_Dataset_hamada_jump-07-rope_double-hamada_poses_120_jpos",
+     "contribution": 0.015936355982801596,
+     "sampling_mass": 0.09803273528814316,
+     "conditional_rejected": 0.1625615763546798,
+     "infeasible_frac": 0.18,
+     "soft_mean": 0.6766666666666666
+    },
+    {
+     "clip": "CMU_131_131_01_poses_120_jpos",
+     "contribution": 0.009268402068082951,
+     "sampling_mass": 0.01752307265996933,
+     "conditional_rejected": 0.5289256198347108,
+     "infeasible_frac": 0.2584541062801932,
+     "soft_mean": 0.5845410628019324
+    },
+    {
+     "clip": "CMU_55_55_15_poses_120_jpos",
+     "contribution": 0.008808868123115448,
+     "sampling_mass": 0.07756049185991287,
+     "conditional_rejected": 0.11357416529830323,
+     "infeasible_frac": 0.04134686803664273,
+     "soft_mean": 0.9046793760831889
+    }
+   ],
+   "counterfactuals": {
+    "soft_power_1_observed": {
+     "hard_rejected_start_mass": 0.20051201033745433,
+     "clip_level_flagged_mass": 0.5034180901090499,
+     "top_clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+     "top_clip_mass": 0.22203979712777738,
+     "top_clip_flagged": true
+    },
+    "soft_power_2": {
+     "hard_rejected_start_mass": 0.1368068200444497,
+     "clip_level_flagged_mass": 0.4144984692182468,
+     "top_clip": "DFaust_67_50025_50025_one_leg_jump_poses_60_jpos",
+     "top_clip_mass": 0.25427312030346577,
+     "top_clip_flagged": false
+    },
+    "hard_bin_start": {
+     "hard_rejected_start_mass": 0.0,
+     "clip_level_flagged_mass": 0.4247944890409919,
+     "top_clip": "DFaust_67_50025_50025_one_leg_jump_poses_60_jpos",
+     "top_clip_mass": 0.25391799996403186,
+     "top_clip_flagged": false
+    },
+    "clip_flag_gate": {
+     "hard_rejected_start_mass": 0.0661553071554795,
+     "clip_level_flagged_mass": 0.0,
+     "top_clip": "DFaust_67_50025_50025_one_leg_jump_poses_60_jpos",
+     "top_clip_mass": 0.43973213703113356,
+     "top_clip_flagged": false
+    }
+   }
+  }
+ ],
+ "conclusion": "Telemetry matches the frozen sampler: this is not a stalled run or an accounting fault. Failure adaptation overwhelms a clip-mean soft multiplier and shifts mass toward partially eligible clips, so the flat projection is not a late-run bound. A hard-bin start mask makes rejected-start mass zero, but can legitimately retain clip-level flagged leaders because it preserves their feasible segments."
+}

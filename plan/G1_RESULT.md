@@ -50,8 +50,11 @@ Clip-level fragility (mean |Δ body_pos_err| over paired-alive frames, ratio to 
 | 8.0 s (rising) | 2.4–3.3 s | 10.4–11.3 s | ee_body_pos / anchor_ori |
 
 Body-position error grows monotonically from 0.037 m at t = 0 to 0.20 m by 2.0 s while actuator
-saturation stays at 0.0–0.2 % — the collapse at 2.75–3.0 s is when wrists/waist finally saturate,
-*after* tracking is already lost. Teleported into any ground-support pose the policy loses the
+saturation stays at 0.0–0.2 % — the collapse at 2.75–3.0 s is when actuators finally saturate,
+*after* tracking is already lost. (Corrected 2026-08-19: *which* actuators is not recoverable —
+`tools/g1_clip44_gate.py:242` averages over the actuator axis before storage, and no array in
+`reports/G1/run0/arm*.npz` carries a 29-length axis. The earlier "wrists/waist" attribution was
+not measured and is withdrawn.) Teleported into any ground-support pose the policy loses the
 pelvis height within 0.5–0.9 s.
 
 Reading: this is not a physics-parameter sensitivity and not torque limitation. It is the policy

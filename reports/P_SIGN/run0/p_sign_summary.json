@@ -1,0 +1,601 @@
+{
+ "seal": "plan/PREREGISTRATION_P_SIGN.md c7916e8c",
+ "clips": {
+  "BMLmovi_Subject_39_F_MoSh_Subject_39_F_8_poses_120_jpos": {
+   "family": true,
+   "airborne_steps": 64,
+   "standing_steps": 222,
+   "airborne": {
+    "S_mm": -4.917392099741846,
+    "ci_mm": [
+     -5.953782492724713,
+     -3.894488472724334
+    ],
+    "n": 8
+   },
+   "standing": {
+    "S_mm": -2.3589818010805175,
+    "ci_mm": [
+     -3.2190486643230543,
+     -1.4183328605213337
+    ],
+    "n": 8
+   },
+   "passes_i": false,
+   "passes_iii": false
+  },
+  "BMLmovi_Subject_41_F_MoSh_Subject_41_F_20_poses_120_jpos": {
+   "family": true,
+   "airborne_steps": 108,
+   "standing_steps": 315,
+   "airborne": {
+    "S_mm": 15.210602548904717,
+    "ci_mm": [
+     13.851667026756331,
+     16.53870368900243
+    ],
+    "n": 8
+   },
+   "standing": {
+    "S_mm": -2.917254008934833,
+    "ci_mm": [
+     -4.322554493046482,
+     -1.4059508168429615
+    ],
+    "n": 8
+   },
+   "passes_i": true,
+   "passes_iii": true
+  },
+  "CMU_111_111_03_poses_120_jpos": {
+   "family": true,
+   "airborne_steps": 117,
+   "standing_steps": 359,
+   "airborne": {
+    "S_mm": 3.7737605489382986,
+    "ci_mm": [
+     1.7431512272196414,
+     5.874618252710205
+    ],
+    "n": 8
+   },
+   "standing": {
+    "S_mm": -4.355087548901793,
+    "ci_mm": [
+     -5.916157198953442,
+     -2.7070572978118443
+    ],
+    "n": 8
+   },
+   "passes_i": false,
+   "passes_iii": false
+  },
+  "BMLmovi_Subject_72_F_MoSh_Subject_72_F_21_poses_120_jpos": {
+   "family": true,
+   "airborne_steps": 142,
+   "standing_steps": 246,
+   "airborne": {
+    "S_mm": 15.14577737543732,
+    "ci_mm": [
+     14.120532097877003,
+     16.05054909014143
+    ],
+    "n": 8
+   },
+   "standing": {
+    "S_mm": 6.513463245937601,
+    "ci_mm": [
+     5.1456617591611575,
+     7.965486015018541
+    ],
+    "n": 8
+   },
+   "passes_i": true,
+   "passes_iii": false
+  },
+  "CMU_22_23_Rory_22_03_poses_120_jpos": {
+   "family": true,
+   "airborne_steps": 88,
+   "standing_steps": 192,
+   "airborne": {
+    "S_mm": -4.108056386030512,
+    "ci_mm": [
+     -8.264294524542493,
+     0.1260456651834829
+    ],
+    "n": 8
+   },
+   "standing": {
+    "S_mm": 28.85600086301565,
+    "ci_mm": [
+     24.364381609484553,
+     33.13190257176757
+    ],
+    "n": 8
+   },
+   "passes_i": false,
+   "passes_iii": false
+  },
+  "BMLmovi_Subject_8_F_MoSh_Subject_8_F_6_poses_120_jpos": {
+   "family": true,
+   "airborne_steps": 122,
+   "standing_steps": 374,
+   "airborne": {
+    "S_mm": 15.347189386375248,
+    "ci_mm": [
+     13.704005628824234,
+     17.059428969514556
+    ],
+    "n": 8
+   },
+   "standing": {
+    "S_mm": -0.9451770965824835,
+    "ci_mm": [
+     -3.1103626068215817,
+     1.2233837333042175
+    ],
+    "n": 8
+   },
+   "passes_i": true,
+   "passes_iii": true
+  },
+  "BMLmovi_Subject_27_F_MoSh_Subject_27_F_5_poses_120_jpos": {
+   "family": true,
+   "airborne_steps": 124,
+   "standing_steps": 359,
+   "airborne": {
+    "S_mm": 12.352000165265054,
+    "ci_mm": [
+     8.45360135572264,
+     16.247212208691046
+    ],
+    "n": 8
+   },
+   "standing": {
+    "S_mm": -12.38604186073644,
+    "ci_mm": [
+     -15.283174812793732,
+     -8.385888565862846
+    ],
+    "n": 8
+   },
+   "passes_i": true,
+   "passes_iii": false
+  },
+  "BMLmovi_Subject_48_F_MoSh_Subject_48_F_16_poses_120_jpos": {
+   "family": true,
+   "airborne_steps": 116,
+   "standing_steps": 365,
+   "airborne": {
+    "S_mm": 2.2730498312739655,
+    "ci_mm": [
+     0.8896696661395254,
+     3.5059883521171287
+    ],
+    "n": 8
+   },
+   "standing": {
+    "S_mm": 3.362915405887179,
+    "ci_mm": [
+     -0.2694967115530744,
+     7.048003308591428
+    ],
+    "n": 8
+   },
+   "passes_i": false,
+   "passes_iii": false
+  },
+  "BMLmovi_Subject_51_F_MoSh_Subject_51_F_12_poses_120_jpos": {
+   "family": true,
+   "airborne_steps": 115,
+   "standing_steps": 366,
+   "airborne": {
+    "S_mm": 10.561078495811671,
+    "ci_mm": [
+     9.157507368945517,
+     11.840554536320269
+    ],
+    "n": 8
+   },
+   "standing": {
+    "S_mm": 5.025238904636353,
+    "ci_mm": [
+     1.2949970401678002,
+     8.544910495766084
+    ],
+    "n": 8
+   },
+   "passes_i": true,
+   "passes_iii": false
+  },
+  "BMLmovi_Subject_11_F_MoSh_Subject_11_F_21_poses_120_jpos": {
+   "family": true,
+   "airborne_steps": 133,
+   "standing_steps": 363,
+   "airborne": {
+    "S_mm": 0.6747303523297887,
+    "ci_mm": [
+     -1.2968667669156273,
+     2.830792188524356
+    ],
+    "n": 8
+   },
+   "standing": {
+    "S_mm": -14.159224811010063,
+    "ci_mm": [
+     -22.424991009756923,
+     -3.609549428801998
+    ],
+    "n": 8
+   },
+   "passes_i": false,
+   "passes_iii": false
+  },
+  "BMLmovi_Subject_24_F_MoSh_Subject_24_F_11_poses_120_jpos": {
+   "family": true,
+   "airborne_steps": 117,
+   "standing_steps": 373,
+   "airborne": {
+    "S_mm": 14.74267989397049,
+    "ci_mm": [
+     12.886998010799289,
+     16.450055642053485
+    ],
+    "n": 8
+   },
+   "standing": {
+    "S_mm": 9.616286552045494,
+    "ci_mm": [
+     8.459226369450334,
+     10.775969663518481
+    ],
+    "n": 8
+   },
+   "passes_i": true,
+   "passes_iii": false
+  },
+  "BMLmovi_Subject_45_F_MoSh_Subject_45_F_20_poses_120_jpos": {
+   "family": true,
+   "airborne_steps": 121,
+   "standing_steps": 379,
+   "airborne": {
+    "S_mm": 7.414481166051701,
+    "ci_mm": [
+     5.446320823102724,
+     9.241682285210118
+    ],
+    "n": 8
+   },
+   "standing": {
+    "S_mm": 16.565879835980013,
+    "ci_mm": [
+     9.541521594655933,
+     23.195026675239205
+    ],
+    "n": 8
+   },
+   "passes_i": true,
+   "passes_iii": false
+  },
+  "BMLmovi_Subject_36_F_MoSh_Subject_36_F_2_poses_120_jpos": {
+   "family": false,
+   "whole": {
+    "S_mm": 3.0156520879245363,
+    "ci_mm": [
+     0.27027270734834025,
+     6.091768766054884
+    ],
+    "n": 8
+   },
+   "passes_ii": false
+  },
+  "BMLmovi_Subject_66_F_MoSh_Subject_66_F_11_poses_120_jpos": {
+   "family": false,
+   "whole": {
+    "S_mm": 4.047143826028332,
+    "ci_mm": [
+     0.6236262830498164,
+     7.097548570891377
+    ],
+    "n": 8
+   },
+   "passes_ii": false
+  },
+  "BMLmovi_Subject_43_F_MoSh_Subject_43_F_15_poses_120_jpos": {
+   "family": false,
+   "whole": {
+    "S_mm": 3.130662169496645,
+    "ci_mm": [
+     1.530210308601454,
+     4.93252387709617
+    ],
+    "n": 8
+   },
+   "passes_ii": false
+  },
+  "BMLmovi_Subject_62_F_MoSh_Subject_62_F_6_poses_120_jpos": {
+   "family": false,
+   "whole": {
+    "S_mm": 1.9274387741461396,
+    "ci_mm": [
+     -2.1007486302551115,
+     5.997348833261639
+    ],
+    "n": 8
+   },
+   "passes_ii": true
+  },
+  "Eyes_Japan_Dataset_hamada_pose-11-bended_knees-hamada_poses_120_jpos": {
+   "family": false,
+   "whole": {
+    "S_mm": 0.9131762435572455,
+    "ci_mm": [
+     -0.46066815716585546,
+     2.545878183991589
+    ],
+    "n": 8
+   },
+   "passes_ii": true
+  },
+  "BMLmovi_Subject_32_F_MoSh_Subject_32_F_1_poses_120_jpos": {
+   "family": false,
+   "whole": {
+    "S_mm": -1.7695832793833688,
+    "ci_mm": [
+     -6.8078211770625785,
+     2.7588100096181725
+    ],
+    "n": 8
+   },
+   "passes_ii": true
+  },
+  "KIT_3_kneel_down_to_crawl02_poses_100_jpos": {
+   "family": false,
+   "whole": {
+    "S_mm": 2.5718926372064743,
+    "ci_mm": [
+     -0.5052484325460682,
+     5.416312372290122
+    ],
+    "n": 8
+   },
+   "passes_ii": false
+  },
+  "Eyes_Japan_Dataset_kawaguchi_sitdown_standup-11-one_knee_drawn_up-kawaguchi_poses_120_jpos": {
+   "family": false,
+   "whole": {
+    "S_mm": -4.930469789542258,
+    "ci_mm": [
+     -5.525207311438862,
+     -4.2139532350120135
+    ],
+    "n": 8
+   },
+   "passes_ii": false
+  },
+  "BMLmovi_Subject_6_F_MoSh_Subject_6_F_3_poses_120_jpos": {
+   "family": false,
+   "whole": {
+    "S_mm": 5.040725402068347,
+    "ci_mm": [
+     3.856079250545008,
+     6.183229378075339
+    ],
+    "n": 8
+   },
+   "passes_ii": false
+  },
+  "CMU_107_107_08_poses_60_jpos": {
+   "family": false,
+   "whole": {
+    "S_mm": -0.27343731198925525,
+    "ci_mm": [
+     -1.5879369177127955,
+     1.146727056038798
+    ],
+    "n": 8
+   },
+   "passes_ii": true
+  },
+  "KIT_3_kneel_down_to_crawl01_poses_100_jpos": {
+   "family": false,
+   "whole": {
+    "S_mm": 3.8881412183400244,
+    "ci_mm": [
+     1.0665412402886432,
+     6.699522418784909
+    ],
+    "n": 8
+   },
+   "passes_ii": false
+  },
+  "ACCAD_Male2MartialArtsStances_c3d_D13_-crouch_to_ready_poses_120_jpos": {
+   "family": false,
+   "whole": {
+    "S_mm": 9.848279063589871,
+    "ci_mm": [
+     4.619285580702126,
+     15.99399268452543
+    ],
+    "n": 8
+   },
+   "passes_ii": false
+  }
+ },
+ "floor": {
+  "BMLmovi_Subject_39_F_MoSh_Subject_39_F_8_poses_120_jpos": {
+   "mean_mm": -0.42904896690743044,
+   "ci_mm": [
+    -1.5395380361951538,
+    0.5879416639800183
+   ]
+  },
+  "BMLmovi_Subject_41_F_MoSh_Subject_41_F_20_poses_120_jpos": {
+   "mean_mm": -0.23323992718360387,
+   "ci_mm": [
+    -0.8831864197418327,
+    0.5733476406021506
+   ]
+  },
+  "CMU_111_111_03_poses_120_jpos": {
+   "mean_mm": 0.6693026716675377,
+   "ci_mm": [
+    -0.061474980611819774,
+    1.5317359387154283
+   ]
+  },
+  "BMLmovi_Subject_72_F_MoSh_Subject_72_F_21_poses_120_jpos": {
+   "mean_mm": -1.9801051093963906,
+   "ci_mm": [
+    -3.954583934682887,
+    0.3515819738822746
+   ]
+  },
+  "CMU_22_23_Rory_22_03_poses_120_jpos": {
+   "mean_mm": 1.2878325360361487,
+   "ci_mm": [
+    -1.0491032269783318,
+    3.546988159359898
+   ]
+  },
+  "BMLmovi_Subject_8_F_MoSh_Subject_8_F_6_poses_120_jpos": {
+   "mean_mm": 0.8238631271524355,
+   "ci_mm": [
+    -0.8654071589262458,
+    2.3579220607643947
+   ]
+  },
+  "BMLmovi_Subject_27_F_MoSh_Subject_27_F_5_poses_120_jpos": {
+   "mean_mm": -0.21132761321496218,
+   "ci_mm": [
+    -2.6604678510921076,
+    2.3143908263591575
+   ]
+  },
+  "BMLmovi_Subject_48_F_MoSh_Subject_48_F_16_poses_120_jpos": {
+   "mean_mm": -0.5921488391322782,
+   "ci_mm": [
+    -2.3978771969268564,
+    1.3542542710638368
+   ]
+  },
+  "BMLmovi_Subject_51_F_MoSh_Subject_51_F_12_poses_120_jpos": {
+   "mean_mm": 0.899707610187761,
+   "ci_mm": [
+    -0.9550012660838547,
+    2.9281050426789053
+   ]
+  },
+  "BMLmovi_Subject_11_F_MoSh_Subject_11_F_21_poses_120_jpos": {
+   "mean_mm": -1.9872543489327654,
+   "ci_mm": [
+    -6.399296889139805,
+    2.9946153234050126
+   ]
+  },
+  "BMLmovi_Subject_24_F_MoSh_Subject_24_F_11_poses_120_jpos": {
+   "mean_mm": -1.1565589654765063,
+   "ci_mm": [
+    -3.135366233181003,
+    0.44307524115651986
+   ]
+  },
+  "BMLmovi_Subject_45_F_MoSh_Subject_45_F_20_poses_120_jpos": {
+   "mean_mm": 0.5352629086701199,
+   "ci_mm": [
+    -1.5990022948244587,
+    3.214305217989022
+   ]
+  },
+  "BMLmovi_Subject_36_F_MoSh_Subject_36_F_2_poses_120_jpos": {
+   "mean_mm": -2.296082257089438,
+   "ci_mm": [
+    -5.484743068791431,
+    0.6027162108694012
+   ]
+  },
+  "BMLmovi_Subject_66_F_MoSh_Subject_66_F_11_poses_120_jpos": {
+   "mean_mm": -1.768158143022447,
+   "ci_mm": [
+    -3.478685540267179,
+    0.11136300599900978
+   ]
+  },
+  "BMLmovi_Subject_43_F_MoSh_Subject_43_F_15_poses_120_jpos": {
+   "mean_mm": -2.371514226979343,
+   "ci_mm": [
+    -3.837468231722596,
+    -0.9938530547515261
+   ]
+  },
+  "BMLmovi_Subject_62_F_MoSh_Subject_62_F_6_poses_120_jpos": {
+   "mean_mm": -0.031893010600470006,
+   "ci_mm": [
+    -3.4135277703171596,
+    2.779863399337043
+   ]
+  },
+  "Eyes_Japan_Dataset_hamada_pose-11-bended_knees-hamada_poses_120_jpos": {
+   "mean_mm": -0.07537016426795162,
+   "ci_mm": [
+    -0.6084164034291462,
+    0.42940453204209905
+   ]
+  },
+  "BMLmovi_Subject_32_F_MoSh_Subject_32_F_1_poses_120_jpos": {
+   "mean_mm": -1.5244396054185927,
+   "ci_mm": [
+    -4.767762344272342,
+    2.0632928040868115
+   ]
+  },
+  "KIT_3_kneel_down_to_crawl02_poses_100_jpos": {
+   "mean_mm": 0.18388886383036152,
+   "ci_mm": [
+    -2.33692505826184,
+    2.242277355981058
+   ]
+  },
+  "Eyes_Japan_Dataset_kawaguchi_sitdown_standup-11-one_knee_drawn_up-kawaguchi_poses_120_jpos": {
+   "mean_mm": -0.4207368228890118,
+   "ci_mm": [
+    -1.2070993079532855,
+    0.14388924578270218
+   ]
+  },
+  "BMLmovi_Subject_6_F_MoSh_Subject_6_F_3_poses_120_jpos": {
+   "mean_mm": 0.31598055375070544,
+   "ci_mm": [
+    -0.6919446355595937,
+    1.2861294011372568
+   ]
+  },
+  "CMU_107_107_08_poses_60_jpos": {
+   "mean_mm": 0.34393606074445415,
+   "ci_mm": [
+    -1.0000766795201343,
+    1.8248578944167078
+   ]
+  },
+  "KIT_3_kneel_down_to_crawl01_poses_100_jpos": {
+   "mean_mm": 0.2361251026741229,
+   "ci_mm": [
+    -1.9167729366017738,
+    2.617256628582254
+   ]
+  },
+  "ACCAD_Male2MartialArtsStances_c3d_D13_-crouch_to_ready_poses_120_jpos": {
+   "mean_mm": 0.8127194523694925,
+   "ci_mm": [
+    -3.3537167715621763,
+    5.292842090602789
+   ]
+  }
+ },
+ "verdict": {
+  "i_family_pass": "7/12 (need >=8)",
+  "ii_controls_pass": "4/12 (need >=8)",
+  "iii_localised_among_i": "2",
+  "PASS": false
+ }
+}

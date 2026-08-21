@@ -37,6 +37,9 @@ def climb_g1_tracking_env_cfg(
     motion_files: list[str] | None = None,
     sampling_mode: str = "uniform",
     clip_uniform_ratio: float = 0.1,
+    eligibility_path: str | None = None,
+    eligibility_mode: str = "off",
+    eligibility_hard_threshold: float = 0.5,
     play: bool = False,
 ):
     """G1 flat tracking over a multi-clip bank."""
@@ -49,8 +52,16 @@ def climb_g1_tracking_env_cfg(
     shared = {
         f.name: getattr(base, f.name)
         for f in dataclasses.fields(base)
-        if f.name not in ("motion_files", "clip_uniform_ratio",
-                          "clip_adaptive_alpha", "sampling_mode")
+        if f.name
+        not in (
+            "motion_files",
+            "clip_uniform_ratio",
+            "clip_adaptive_alpha",
+            "eligibility_path",
+            "eligibility_mode",
+            "eligibility_hard_threshold",
+            "sampling_mode",
+        )
     }
     files = list(motion_files or [])
     # train.py refuses to start a tracking task whose motion_file is empty.
@@ -62,5 +73,8 @@ def climb_g1_tracking_env_cfg(
         motion_files=files,
         sampling_mode=sampling_mode,  # type: ignore[arg-type]
         clip_uniform_ratio=clip_uniform_ratio,
+        eligibility_path=eligibility_path,
+        eligibility_mode=eligibility_mode,  # type: ignore[arg-type]
+        eligibility_hard_threshold=eligibility_hard_threshold,
     )
     return cfg

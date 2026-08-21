@@ -1,0 +1,9 @@
+ITERATION: host-visible frozen FGAS launch
+DATE: 2026-08-20
+COMMAND: tools/run_fgas_campaign.sh (host GPU execution)
+FROZEN BUNDLE: reports/FGAS/_frozen/20260820T152154Z
+GATE: physical GPU 0, 30992 MiB free
+RUN: fgas-soft-mixed100-s1
+RUN DIRECTORY: logs/rsl_rl/g1_tracking/2026-08-20_11-21-57_fgas-soft-mixed100-s1
+INTEGRITY: model_0 exposure records eligibility_mode=soft and set hash bd742558d72bad2e37a65953cb7ec028e23092df7d9699b33549848aa72519e3
+STATUS AT LOG: training active; no partial scientific outcome inspected.

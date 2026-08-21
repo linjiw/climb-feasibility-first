@@ -33,4 +33,6 @@ permit. The instrument is reproducible where it claims resolution and says so wh
 
 **What a future fragility design inherits.** Signed replicate means, R ≥ 8, published per-run
 floor, δ sized so target effects clear ~2 mm, and reference-derived (not rollout-derived) windows
-for any localisation claim — the exact configuration P-SIGN is sealed under [pending 🕐].
+for any localisation claim. P-SIGN used that exact configuration and failed its joint rule
+[sealed ✗; `reports/P_SIGN/run0/p_sign_summary.json`], showing that calibration alone does not
+make a mechanism-specific signature general or specific.

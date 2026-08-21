@@ -1,0 +1,23 @@
+ITERATION: FGAS sampler integration and frozen campaign
+DATE: 2026-08-20
+TARGET: improve feasible-hard20 survival by >=0.05 with bootstrap lower CI >0
+
+IMPLEMENTED
+- eligibility sidecars mask both clip selection and within-clip starts
+- soft mode retains partially feasible segments; no-sidecar path is draw-identical
+- exposure ledger records exact joint rejected mass and sidecar identity
+- active masking is restricted to grounded sampling
+
+CPU VERIFICATION
+- tests/test_fgas_sampling.py: 8 passed
+- ruff format/check: pass
+- ty check climb: pass
+- full mixed100 sidecar contract: 100/100 clips loaded
+- projected rejected mass: off 0.2898404; hard 0.0; soft 0.1026898
+
+FREEZE
+- preregistration: 3521c80e03acc9888ec1ff729533c584a3a390639314146a97b643729ac27d43
+- freeze manifest: c943d4825b7eec2db24715165806633a129de459ee3c6d398ae34417a9ecd6dd
+- sha256sum -c plan/FGAS_FREEZE.sha256: all OK
+
+RESULT: apparatus PASS; scientific outcome pending.

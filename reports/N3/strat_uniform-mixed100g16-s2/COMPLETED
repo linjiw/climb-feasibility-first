@@ -1,0 +1,4 @@
+exit_code=0
+started_utc=2026-08-20T06:45:31Z
+finished_utc=2026-08-20T06:45:39Z
+cmd=/data/robotixx/climb/bridge/.venv/bin/python /data/robotixx/climb/tools/eval_stratified.py --offsets 0,1,2,3,4,6,8 --window 3 --episodes 8 --checkpoint /data/robotixx/climb/logs/rsl_rl/g1_tracking/2026-08-20_00-44-33_uniform-mixed100g16-s2/model_3999.pt --clips /data/robotixx/climb/plan/N3_probe_clips.txt --out /data/robotixx/climb/reports/N3_uniform-mixed100g16-s2_strat.csv

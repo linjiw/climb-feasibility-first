@@ -1,0 +1,1 @@
+{"clip": "calib_ballistic", "frames": 60, "fps": 50.0, "gap": 0.06, "airborne_frac": 1.0, "infeasible_frac": 0.16666666666666666, "unsupported_impulse_Ns": 162.096, "unsupported_impulse_per_weight_s": 0.49559032502880734, "torque_infeasible_frac": 0.0, "max_tau_ratio_p95": 0.18, "sim_infeasible_frac": 0.16666666666666666}

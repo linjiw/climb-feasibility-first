@@ -1,0 +1,172 @@
+{
+ "airborne_frac": 0.13773584905660377,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.5,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  0.5,
+  0.92,
+  1.0,
+  0.42,
+  0.0,
+  0.78,
+  1.0,
+  0.26,
+  0.0,
+  0.06,
+  1.0,
+  0.9,
+  0.0,
+  0.84,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.7127272727272728,
+ "clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+ "feasible_frac_kept": 0.7018867924528301,
+ "feasible_segments_s": [
+  [
+   0.0,
+   3.16
+  ],
+  [
+   3.66,
+   4.92
+  ],
+  [
+   5.0,
+   6.42
+  ],
+  [
+   8.22,
+   10.26
+  ],
+  [
+   12.94,
+   14.9
+  ],
+  [
+   16.16,
+   21.2
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1060,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.12830188679245283,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 22,
+ "n_bins_eligible": 11,
+ "n_feasible_segments": 6,
+ "n_severe_windows": 17,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos.json.gz",
+ "severe_frac": 0.12830188679245283,
+ "severe_frac_guarded": 0.12830188679245283,
+ "severe_windows_s": [
+  [
+   3.16,
+   3.28
+  ],
+  [
+   3.32,
+   3.38
+  ],
+  [
+   3.48,
+   3.66
+  ],
+  [
+   4.92,
+   5.0
+  ],
+  [
+   6.42,
+   6.48
+  ],
+  [
+   7.46,
+   7.7
+  ],
+  [
+   7.82,
+   7.88
+  ],
+  [
+   8.02,
+   8.22
+  ],
+  [
+   10.26,
+   10.46
+  ],
+  [
+   10.58,
+   10.9
+  ],
+  [
+   11.44,
+   11.88
+  ],
+  [
+   12.38,
+   12.42
+  ],
+  [
+   12.78,
+   12.8
+  ],
+  [
+   12.86,
+   12.94
+  ],
+  [
+   14.9,
+   15.06
+  ],
+  [
+   15.6,
+   15.84
+  ],
+  [
+   15.94,
+   16.16
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.0619836356156613
+}

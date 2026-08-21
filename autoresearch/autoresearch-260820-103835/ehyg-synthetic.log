@@ -1,0 +1,5 @@
+  synthetic CONFIRM: P1=True P2=True -> confirmed=True OK
+  synthetic VOLUME: P1=True P2=False -> confirmed=False OK
+  synthetic NULL: P1=False P2=True -> confirmed=False OK
+  synthetic ZS_BREACH: P1=True P2=True -> confirmed=True OK (P3 in_bracket=False as designed: reported, not adjudicated)
+E-HYG synthetic dry-run: all 4 branches decide as sealed. No real data touched.

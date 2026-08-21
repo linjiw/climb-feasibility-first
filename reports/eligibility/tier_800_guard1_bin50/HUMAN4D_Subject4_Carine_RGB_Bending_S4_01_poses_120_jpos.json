@@ -1,0 +1,144 @@
+{
+ "airborne_frac": 0.023769100169779286,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "bin_eligible_frac": 0.125,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  0.62,
+  0.0,
+  0.0,
+  0.0,
+  0.56,
+  0.44,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "bin_score_mean": 0.19250000000000003,
+ "clip": "HUMAN4D_Subject4_Carine_RGB_Bending_S4_01_poses_120_jpos",
+ "feasible_frac_kept": 0.1960950764006791,
+ "feasible_segments_s": [
+  [
+   0.0,
+   3.62
+  ],
+  [
+   7.44,
+   8.44
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1178,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.023769100169779286,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 24,
+ "n_bins_eligible": 3,
+ "n_feasible_segments": 2,
+ "n_severe_windows": 13,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/HUMAN4D_Subject4_Carine_RGB_Bending_S4_01_poses_120_jpos.json.gz",
+ "severe_frac": 0.06536502546689305,
+ "severe_frac_guarded": 0.7597623089983022,
+ "severe_windows_s": [
+  [
+   4.62,
+   4.68
+  ],
+  [
+   5.94,
+   6.44
+  ],
+  [
+   9.44,
+   9.56
+  ],
+  [
+   10.74,
+   10.8
+  ],
+  [
+   11.16,
+   11.26
+  ],
+  [
+   13.6,
+   13.72
+  ],
+  [
+   13.9,
+   13.94
+  ],
+  [
+   14.94,
+   15.04
+  ],
+  [
+   17.36,
+   17.44
+  ],
+  [
+   17.58,
+   17.64
+  ],
+  [
+   18.72,
+   18.86
+  ],
+  [
+   20.86,
+   20.96
+  ],
+  [
+   22.12,
+   22.18
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.04159592529711375,
+ "unsupported_ratio_p95": 0.2170745303835093
+}

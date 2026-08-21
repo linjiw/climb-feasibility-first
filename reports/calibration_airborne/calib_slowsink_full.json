@@ -1,0 +1,3966 @@
+{
+ "clip": "calib_slowsink",
+ "fps": 50.0,
+ "gap": 0.06,
+ "mu": 0.6,
+ "model": "/tmp/s1_92m6phn7/g1_compiled.xml.mj.xml",
+ "total_mass_kg": 33.341142,
+ "bins": {
+  "real": [
+   {
+    "t": "0.00-0.25",
+    "root_z": 1.35,
+    "contacts": [],
+    "unsup_F_med": 327.1,
+    "unsup_F_max": 327.1,
+    "unsup_M_med": 4.1,
+    "tau_ratio_p50": 0.05,
+    "tau_ratio_max": 0.05,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": null,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ]
+    ]
+   },
+   {
+    "t": "0.25-0.50",
+    "root_z": 1.27,
+    "contacts": [],
+    "unsup_F_med": 327.1,
+    "unsup_F_max": 327.1,
+    "unsup_M_med": 4.1,
+    "tau_ratio_p50": 0.05,
+    "tau_ratio_max": 0.05,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": null,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ]
+    ]
+   },
+   {
+    "t": "0.50-0.75",
+    "root_z": 1.2,
+    "contacts": [],
+    "unsup_F_med": 327.1,
+    "unsup_F_max": 327.1,
+    "unsup_M_med": 4.1,
+    "tau_ratio_p50": 0.05,
+    "tau_ratio_max": 0.05,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": null,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ]
+    ]
+   },
+   {
+    "t": "0.75-1.00",
+    "root_z": 1.12,
+    "contacts": [],
+    "unsup_F_med": 327.1,
+    "unsup_F_max": 327.1,
+    "unsup_M_med": 4.1,
+    "tau_ratio_p50": 0.05,
+    "tau_ratio_max": 0.05,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": null,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ]
+    ]
+   },
+   {
+    "t": "1.00-1.25",
+    "root_z": 1.06,
+    "contacts": [],
+    "unsup_F_med": 332.1,
+    "unsup_F_max": 377.1,
+    "unsup_M_med": 4.2,
+    "tau_ratio_p50": 0.06,
+    "tau_ratio_max": 0.06,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": null,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.06
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ]
+    ]
+   }
+  ],
+  "sim": [
+   {
+    "t": "0.00-0.25",
+    "root_z": 1.35,
+    "contacts": [],
+    "unsup_F_med": 327.1,
+    "unsup_F_max": 327.1,
+    "unsup_M_med": 4.1,
+    "tau_ratio_p50": 0.05,
+    "tau_ratio_max": 0.05,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": null,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ]
+    ]
+   },
+   {
+    "t": "0.25-0.50",
+    "root_z": 1.27,
+    "contacts": [],
+    "unsup_F_med": 327.1,
+    "unsup_F_max": 327.1,
+    "unsup_M_med": 4.1,
+    "tau_ratio_p50": 0.05,
+    "tau_ratio_max": 0.05,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": null,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ]
+    ]
+   },
+   {
+    "t": "0.50-0.75",
+    "root_z": 1.2,
+    "contacts": [],
+    "unsup_F_med": 327.1,
+    "unsup_F_max": 327.1,
+    "unsup_M_med": 4.1,
+    "tau_ratio_p50": 0.05,
+    "tau_ratio_max": 0.05,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": null,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ]
+    ]
+   },
+   {
+    "t": "0.75-1.00",
+    "root_z": 1.12,
+    "contacts": [],
+    "unsup_F_med": 327.1,
+    "unsup_F_max": 327.1,
+    "unsup_M_med": 4.1,
+    "tau_ratio_p50": 0.05,
+    "tau_ratio_max": 0.05,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": null,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ]
+    ]
+   },
+   {
+    "t": "1.00-1.25",
+    "root_z": 1.06,
+    "contacts": [],
+    "unsup_F_med": 332.1,
+    "unsup_F_max": 377.1,
+    "unsup_M_med": 4.2,
+    "tau_ratio_p50": 0.06,
+    "tau_ratio_max": 0.06,
+    "frames_over_limit": 0,
+    "tl_unsup_F_med": null,
+    "tl_infeasible_frames": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.06
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ]
+    ]
+   }
+  ]
+ },
+ "frames": [
+  {
+   "t": 0.0,
+   "W_force": [
+    0.0,
+    0.0,
+    277.06
+   ],
+   "W_torque_body": [
+    -1.7,
+    -3.05,
+    0.05
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.383,
+   "real": {
+    "unsupported_force_N": 277.1,
+    "unsupported_torque_Nm": 3.5,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 277.1,
+    "unsupported_torque_Nm": 3.5,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.02,
+   "W_force": [
+    0.0,
+    0.0,
+    277.06
+   ],
+   "W_torque_body": [
+    -1.7,
+    -3.05,
+    0.05
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.377,
+   "real": {
+    "unsupported_force_N": 277.1,
+    "unsupported_torque_Nm": 3.5,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 277.1,
+    "unsupported_torque_Nm": 3.5,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.04,
+   "W_force": [
+    0.0,
+    0.0,
+    277.06
+   ],
+   "W_torque_body": [
+    -1.7,
+    -3.05,
+    0.05
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.371,
+   "real": {
+    "unsupported_force_N": 277.1,
+    "unsupported_torque_Nm": 3.5,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 277.1,
+    "unsupported_torque_Nm": 3.5,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.06,
+   "W_force": [
+    0.0,
+    0.0,
+    297.07
+   ],
+   "W_torque_body": [
+    -1.83,
+    -3.27,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.365,
+   "real": {
+    "unsupported_force_N": 297.1,
+    "unsupported_torque_Nm": 3.7,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 297.1,
+    "unsupported_torque_Nm": 3.7,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.08,
+   "W_force": [
+    0.0,
+    0.0,
+    317.07
+   ],
+   "W_torque_body": [
+    -1.95,
+    -3.49,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.359,
+   "real": {
+    "unsupported_force_N": 317.1,
+    "unsupported_torque_Nm": 4.0,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 317.1,
+    "unsupported_torque_Nm": 4.0,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.1,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.353,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.12,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.347,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.14,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.341,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.16,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.335,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.18,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.329,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.2,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.323,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.22,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.317,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.24,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.311,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.26,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.305,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.28,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.299,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.3,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.293,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.32,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.287,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.34,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.281,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.36,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.275,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.38,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.269,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.4,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.263,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.42,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.257,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.44,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.251,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.46,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.245,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.48,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.239,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.5,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.233,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.52,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.227,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.54,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.221,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.56,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.215,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.58,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.209,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.6,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.203,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.62,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.197,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.64,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.191,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.66,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.185,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.68,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.179,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.7,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.173,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.72,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.167,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.74,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.161,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.76,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.155,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.78,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.149,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.8,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.143,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.82,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.137,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.84,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.131,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.86,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.125,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.88,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.119,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.9,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.113,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.92,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.107,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.94,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.101,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.96,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.095,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 0.98,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.089,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 1.0,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.083,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 1.02,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.077,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 1.04,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.071,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 1.06,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.065,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 1.08,
+   "W_force": [
+    0.0,
+    0.0,
+    327.08
+   ],
+   "W_torque_body": [
+    -2.01,
+    -3.6,
+    0.06
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.059,
+   "real": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 327.1,
+    "unsupported_torque_Nm": 4.1,
+    "max_tau_ratio": 0.05,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.03
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 1.1,
+   "W_force": [
+    0.0,
+    0.0,
+    337.08
+   ],
+   "W_torque_body": [
+    -2.07,
+    -3.71,
+    0.07
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.053,
+   "real": {
+    "unsupported_force_N": 337.1,
+    "unsupported_torque_Nm": 4.3,
+    "max_tau_ratio": 0.06,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.06
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.04
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 337.1,
+    "unsupported_torque_Nm": 4.3,
+    "max_tau_ratio": 0.06,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.06
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.04
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.04
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 1.12,
+   "W_force": [
+    0.0,
+    0.0,
+    357.08
+   ],
+   "W_torque_body": [
+    -2.2,
+    -3.93,
+    0.07
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.047,
+   "real": {
+    "unsupported_force_N": 357.1,
+    "unsupported_torque_Nm": 4.5,
+    "max_tau_ratio": 0.06,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.06
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.04
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 357.1,
+    "unsupported_torque_Nm": 4.5,
+    "max_tau_ratio": 0.06,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.06
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.04
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 1.14,
+   "W_force": [
+    0.0,
+    0.0,
+    377.09
+   ],
+   "W_torque_body": [
+    -2.32,
+    -4.15,
+    0.07
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.041,
+   "real": {
+    "unsupported_force_N": 377.1,
+    "unsupported_torque_Nm": 4.8,
+    "max_tau_ratio": 0.06,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.06
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.04
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 377.1,
+    "unsupported_torque_Nm": 4.8,
+    "max_tau_ratio": 0.06,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.06
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.04
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 1.16,
+   "W_force": [
+    0.0,
+    0.0,
+    377.09
+   ],
+   "W_torque_body": [
+    -2.32,
+    -4.15,
+    0.07
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.035,
+   "real": {
+    "unsupported_force_N": 377.1,
+    "unsupported_torque_Nm": 4.8,
+    "max_tau_ratio": 0.06,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.06
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.04
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 377.1,
+    "unsupported_torque_Nm": 4.8,
+    "max_tau_ratio": 0.06,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.06
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.04
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  },
+  {
+   "t": 1.18,
+   "W_force": [
+    0.0,
+    0.0,
+    377.09
+   ],
+   "W_torque_body": [
+    -2.32,
+    -4.15,
+    0.07
+   ],
+   "n_contacts": 0,
+   "contacts": [],
+   "root_z": 1.029,
+   "real": {
+    "unsupported_force_N": 377.1,
+    "unsupported_torque_Nm": 4.8,
+    "max_tau_ratio": 0.06,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.06
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.04
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   },
+   "sim": {
+    "unsupported_force_N": 377.1,
+    "unsupported_torque_Nm": 4.8,
+    "max_tau_ratio": 0.06,
+    "n_over_limit": 0,
+    "worst": [
+     [
+      "left_shoulder_roll_joint",
+      0.06
+     ],
+     [
+      "right_shoulder_roll_joint",
+      0.05
+     ],
+     [
+      "right_wrist_pitch_joint",
+      0.04
+     ]
+    ],
+    "contact_normal_force_N": 0.0,
+    "tl_unsupported_force_N": null,
+    "tl_unsupported_torque_Nm": null
+   }
+  }
+ ]
+}

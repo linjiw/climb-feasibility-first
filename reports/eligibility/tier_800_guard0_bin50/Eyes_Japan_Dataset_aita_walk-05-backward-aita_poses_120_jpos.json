@@ -1,0 +1,164 @@
+{
+ "airborne_frac": 0.043333333333333335,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.6666666666666666,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.36,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.9,
+  0.92,
+  0.0,
+  0.0,
+  0.86,
+  0.94,
+  0.68,
+  0.0,
+  0.96,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.8539999999999999,
+ "clip": "Eyes_Japan_Dataset_aita_walk-05-backward-aita_poses_120_jpos",
+ "feasible_frac_kept": 0.854,
+ "feasible_segments_s": [
+  [
+   0.0,
+   4.24
+  ],
+  [
+   4.88,
+   10.56
+  ],
+  [
+   10.66,
+   11.92
+  ],
+  [
+   14.14,
+   15.2
+  ],
+  [
+   15.26,
+   16.68
+  ],
+  [
+   18.04,
+   30.0
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1500,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.051333333333333335,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 30,
+ "n_bins_eligible": 20,
+ "n_feasible_segments": 6,
+ "n_severe_windows": 11,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/Eyes_Japan_Dataset_aita_walk-05-backward-aita_poses_120_jpos.json.gz",
+ "severe_frac": 0.051333333333333335,
+ "severe_frac_guarded": 0.051333333333333335,
+ "severe_windows_s": [
+  [
+   4.24,
+   4.72
+  ],
+  [
+   4.74,
+   4.88
+  ],
+  [
+   10.56,
+   10.66
+  ],
+  [
+   11.92,
+   12.02
+  ],
+  [
+   12.12,
+   12.24
+  ],
+  [
+   13.06,
+   13.08
+  ],
+  [
+   13.46,
+   13.48
+  ],
+  [
+   14.08,
+   14.14
+  ],
+  [
+   15.2,
+   15.26
+  ],
+  [
+   16.68,
+   16.74
+  ],
+  [
+   17.66,
+   18.04
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.5234553569994455
+}

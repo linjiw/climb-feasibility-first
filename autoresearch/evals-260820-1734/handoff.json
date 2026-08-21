@@ -1,0 +1,78 @@
+{
+ "schema_version": "autoresearch_handoff/1",
+ "iteration": "evals-260820-1734",
+ "status": "complete",
+ "classification": "exploratory evaluator, routing, and segment-runtime development; sealed FGAS/N7 conclusions unchanged",
+ "outcomes": {
+  "repair_pilot_trials": 3296,
+  "clean_control_trials": 672,
+  "repair_full_window_motions": 29,
+  "deployment_success_delta": 0.1354679802955665,
+  "deployment_success_motion_bootstrap_95ci": [
+   0.05049261083743861,
+   0.23648399014778082
+  ],
+  "raw_policy_success_delta": 0.023399014778325067,
+  "raw_policy_success_motion_bootstrap_95ci": [
+   -0.012315270935960854,
+   0.08251231527093617
+  ],
+  "interpretation": "repair-panel deployment gain is mainly reference-side and concentrated in over-budget repairs; policy-only transfer remains unresolved"
+ },
+ "kept": [
+  "strict paired evaluator and joint-success analyzer",
+  "stable exact unit IDs and fixed-clock conditional sufficient statistics",
+  "deterministic CPU-float64 unit/clip cap projection",
+  "integer-frame sidecars with continuous unsupported-force summaries",
+  "fail-closed hash-frozen unit-table builder",
+  "checkpointable dedicated-RNG segment sampler"
+ ],
+ "verification": {
+  "focused_tests_passed": 37,
+  "ruff": "pass",
+  "ty": "pass",
+  "evaluator_synthetic": "pass",
+  "analyzer_synthetic": "pass",
+  "cap_randomized_certificates": 4000,
+  "cap_10k_unit_1k_clip_latency_s": 0.0546,
+  "fgas_freeze": "pass",
+  "n7_freeze": "pass",
+  "git_diff_check": "pass",
+  "active_climb_processes": 0
+ },
+ "artifacts": {
+  "pilot_result": {
+   "path": "reports/eval_v2_pilot/result.json",
+   "sha256": "c9e7a02884c194e8d2e5a87ed158b2cffe14ff5512af5e45c50219c86f11a996"
+  },
+  "repair_conditions": {
+   "path": "reports/eval_v2_pilot/conditions.json",
+   "sha256": "7a0b7f51843ce0667ac6ce17c5ccfe986a6cc13b86f60e573f238596335860df"
+  },
+  "control_conditions": {
+   "path": "reports/eval_v2_pilot/control_conditions.json",
+   "sha256": "a6c42bf1366980f58b078911f768adfbb2f526e70fdaeaeab97dcc41362c262c"
+  },
+  "smoke_unit_table": {
+   "path": "reports/segment_v2_smoke/unit_table.json",
+   "sha256": "d80e228c1e44f7c669e033cba2bd7f774ff1fb4d5c6bdf39d1da5b7405584b16",
+   "unit_table_sha256": "2aaeaa741959eabbfc9510a18820f9745bc7e879dfa423423385e835b6f120a6",
+   "admissible_units": 42,
+   "legal_starts": 4679
+  }
+ },
+ "next_target": {
+  "objective": "implement a separate unsealed segment-native command and time_out=True boundary termination, then run the simulator timeline trace before training",
+  "required_trace": [
+   "sampled placement frame s",
+   "first policy observation frame s+1",
+   "reward reference frames s+1 through s+H",
+   "timeout before segment_stop",
+   "PPO timeout bootstrap",
+   "new unit only after a done/reset transition",
+   "zero realized invalid frames and invalid-attributed failures"
+  ],
+  "training_authorized": false,
+  "remaining_metric_gap": "robot-versus-common-reference contact timing"
+ }
+}

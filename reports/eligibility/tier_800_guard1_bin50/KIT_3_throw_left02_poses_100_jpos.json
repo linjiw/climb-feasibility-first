@@ -1,0 +1,58 @@
+{
+ "airborne_frac": 0.0,
+ "bin_eligible": [
+  0,
+  0,
+  0,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.4,
+ "bin_frames": 50,
+ "bin_score": [
+  0.0,
+  0.0,
+  0.26,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.45199999999999996,
+ "clip": "KIT_3_throw_left02_poses_100_jpos",
+ "feasible_frac_kept": 0.42436974789915966,
+ "feasible_segments_s": [
+  [
+   2.74,
+   4.76
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 238,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.02100840336134454,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 5,
+ "n_bins_eligible": 2,
+ "n_feasible_segments": 1,
+ "n_severe_windows": 2,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/KIT_3_throw_left02_poses_100_jpos.json.gz",
+ "severe_frac": 0.02100840336134454,
+ "severe_frac_guarded": 0.4579831932773109,
+ "severe_windows_s": [
+  [
+   1.56,
+   1.64
+  ],
+  [
+   1.72,
+   1.74
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.42346349057419636
+}

@@ -99,30 +99,78 @@ def main() -> int:
     alive = torch.ones(N, dtype=torch.bool, device=dev)
     done_ok = torch.zeros(N, dtype=torch.bool, device=dev)
     surv_steps = torch.zeros(N, device=dev)
+    # Actuator-effort headroom: fraction of force-limited actuators at >= 98% of
+    # their force range (definition shared with tools/climb_eval.py and the S1
+    # harness tools/g1_clip44_gate.py). SCHEMA CONTRACT: the three columns this
+    # adds are APPENDED to the end of every row and no existing column is
+    # renamed, reordered or retyped. tools/analyze_ehyg.py and
+    # tools/analyze_n3.py are sha256-verified by the campaign chain and read
+    # these CSVs with csv.DictReader keyed by name, so trailing columns are
+    # invisible to them; inserting or renaming one would break a sealed
+    # analysis.
+    frange_hi = torch.tensor(
+        env.sim.mj_model.actuator_forcerange[:, 1].copy(), dtype=torch.float32, device=dev
+    )
+    limited = frange_hi > 0
+    n_limited = int(limited.sum())
+    sat_thresh = 0.98 * frange_hi
+    if n_limited == 0:
+        print("[strat] WARNING: no actuator declares a force range; effort_sat -> nan")
+    sat_sum = torch.zeros(N, device=dev)
+    sat_n = torch.zeros(N, device=dev)
+    sat_peak = torch.zeros(N, device=dev)
+    sat_end = torch.zeros(N, device=dev)
     with torch.inference_mode():
         for k in range(H):
             obs, _, _, _ = wrapped.step(policy(obs))
             failed = env.termination_manager.terminated.bool()
             reached = (k + 1) >= horizon_env
             surv_steps += alive.float()
+            # Same `alive` mask as surv_steps, read before this step retires
+            # anyone: dead envs contribute 0 and sat_end holds the torque state
+            # at the last live step (i.e. at the fall).
+            sat = (
+                (env.sim.data.actuator_force.abs() >= sat_thresh) & limited
+            ).float().sum(dim=1) / max(n_limited, 1)
+            sat = torch.where(alive, sat, torch.zeros_like(sat))
+            sat_sum += sat
+            sat_n += alive.float()
+            sat_peak = torch.maximum(sat_peak, sat)
+            sat_end = torch.where(alive, sat, sat_end)
             done_ok |= alive & reached & ~failed
             alive &= ~(failed | reached)
             if not alive.any():
                 break
     ok = (done_ok | alive).float().cpu().numpy()
     ss = (surv_steps * env.step_dt).cpu().numpy()
+    sat_mean_w = (sat_sum / sat_n.clamp(min=1)).cpu().numpy()
+    sat_peak_w = sat_peak.cpu().numpy()
+    sat_end_w = sat_end.cpu().numpy()
+
+    def _sat(x) -> float:
+        """nan, not 0.0, when the model declares no force limit to saturate."""
+        return float("nan") if n_limited == 0 else round(float(x), 5)
+
     rows = []
     import numpy as np
     for ci, name in enumerate(names):
         per_off = []
+        per_off_sat = []
         for oi, o in enumerate(offsets):
             idx = [i for i, (c, oo) in enumerate(layout) if c == ci and oo == oi]
             s = float(ok[idx].mean()); ms = float(ss[idx].mean())
             per_off.append(s)
+            sm = _sat(sat_mean_w[idx].mean())
+            per_off_sat.append(sm)
             rows.append({"clip": name, "offset_s": o, "survival": round(s, 4), "mean_survival_s": round(ms, 3), "n": len(idx),
-                         "window_s": round(float(horizon_env[idx[0]].item() * env.step_dt), 2)})
-        rows.append({"clip": name, "offset_s": "mean", "survival": round(float(np.mean(per_off)), 4), "mean_survival_s": "", "n": len(offsets) * K, "window_s": args.window})
-        print(f"  {name[:50]:52s} " + " ".join(f"{o:g}s:{s:.2f}" for o, s in zip(offsets, per_off)) + f"  | mean {np.mean(per_off):.3f}")
+                         "window_s": round(float(horizon_env[idx[0]].item() * env.step_dt), 2),
+                         # appended columns -- see the SCHEMA CONTRACT note above
+                         "effort_sat_mean": sm,
+                         "effort_sat_peak": _sat(sat_peak_w[idx].mean()),
+                         "effort_sat_at_end": _sat(sat_end_w[idx].mean())})
+        rows.append({"clip": name, "offset_s": "mean", "survival": round(float(np.mean(per_off)), 4), "mean_survival_s": "", "n": len(offsets) * K, "window_s": args.window,
+                     "effort_sat_mean": _sat(np.mean(per_off_sat)), "effort_sat_peak": "", "effort_sat_at_end": ""})
+        print(f"  {name[:50]:52s} " + " ".join(f"{o:g}s:{s:.2f}" for o, s in zip(offsets, per_off)) + f"  | mean {np.mean(per_off):.3f} sat {np.mean(per_off_sat):.3f}")
     with open(args.out, "w") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
     print("[strat] wrote", args.out)

@@ -1,0 +1,148 @@
+{
+ "airborne_frac": 0.01866251944012442,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.6923076923076923,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.54,
+  0.88,
+  0.0,
+  0.44,
+  1.0,
+  1.0,
+  1.0,
+  0.86,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.92,
+  1.0,
+  0.88,
+  0.92,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.9015384615384614,
+ "clip": "Eyes_Japan_Dataset_kawaguchi_accident-02-dodge_fast-kawaguchi_poses_120_jpos",
+ "feasible_frac_kept": 0.9004665629860031,
+ "feasible_segments_s": [
+  [
+   0.0,
+   5.02
+  ],
+  [
+   5.48,
+   6.88
+  ],
+  [
+   8.56,
+   12.7
+  ],
+  [
+   12.84,
+   17.06
+  ],
+  [
+   17.14,
+   19.88
+  ],
+  [
+   20.08,
+   25.72
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1286,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.028771384136858476,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 26,
+ "n_bins_eligible": 18,
+ "n_feasible_segments": 6,
+ "n_severe_windows": 9,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/Eyes_Japan_Dataset_kawaguchi_accident-02-dodge_fast-kawaguchi_poses_120_jpos.json.gz",
+ "severe_frac": 0.03188180404354588,
+ "severe_frac_guarded": 0.03188180404354588,
+ "severe_windows_s": [
+  [
+   5.02,
+   5.12
+  ],
+  [
+   5.46,
+   5.48
+  ],
+  [
+   6.88,
+   7.12
+  ],
+  [
+   8.06,
+   8.12
+  ],
+  [
+   8.5,
+   8.56
+  ],
+  [
+   12.7,
+   12.84
+  ],
+  [
+   17.06,
+   17.14
+  ],
+  [
+   19.88,
+   19.96
+  ],
+  [
+   20.04,
+   20.08
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.003110419906687403,
+ "unsupported_ratio_p95": 0.32714048945120416
+}

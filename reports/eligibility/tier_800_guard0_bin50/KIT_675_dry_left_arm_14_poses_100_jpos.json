@@ -1,0 +1,100 @@
+{
+ "airborne_frac": 0.01651376146788991,
+ "bin_eligible": [
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.9090909090909091,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  0.46,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.64,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.9590909090909091,
+ "clip": "KIT_675_dry_left_arm_14_poses_100_jpos",
+ "feasible_frac_kept": 0.9587155963302753,
+ "feasible_segments_s": [
+  [
+   0.0,
+   2.08
+  ],
+  [
+   2.62,
+   19.24
+  ],
+  [
+   19.6,
+   21.8
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1090,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.04128440366972477,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 22,
+ "n_bins_eligible": 20,
+ "n_feasible_segments": 3,
+ "n_severe_windows": 2,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/KIT_675_dry_left_arm_14_poses_100_jpos.json.gz",
+ "severe_frac": 0.04128440366972477,
+ "severe_frac_guarded": 0.04128440366972477,
+ "severe_windows_s": [
+  [
+   2.08,
+   2.62
+  ],
+  [
+   19.24,
+   19.6
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.13015299659754898
+}

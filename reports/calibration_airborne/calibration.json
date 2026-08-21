@@ -1,0 +1,75 @@
+{
+ "model": "/tmp/s1_92m6phn7/g1_compiled.xml.mj.xml",
+ "gap": 0.06,
+ "flag_threshold_frac": 0.1,
+ "cases": {
+  "calib_ballistic": {
+   "expect": "PASS",
+   "brief": {
+    "clip": "calib_ballistic",
+    "frames": 60,
+    "fps": 50.0,
+    "gap": 0.06,
+    "airborne_frac": 1.0,
+    "infeasible_frac": 0.16666666666666666,
+    "unsupported_impulse_Ns": 162.096,
+    "unsupported_impulse_per_weight_s": 0.49559032502880734,
+    "torque_infeasible_frac": 0.0,
+    "max_tau_ratio_p95": 0.18,
+    "sim_infeasible_frac": 0.16666666666666666
+   },
+   "verdict_raw": "FLAG",
+   "interior_unsup_F_median_N": 0.0,
+   "interior_unsup_F_max_N": 0.0,
+   "interior_frac_over_half_weight": 0.0
+  },
+  "calib_hover": {
+   "expect": "FLAG",
+   "brief": {
+    "clip": "calib_hover",
+    "frames": 60,
+    "fps": 50.0,
+    "gap": 0.06,
+    "airborne_frac": 1.0,
+    "infeasible_frac": 1.0,
+    "unsupported_impulse_Ns": 392.5199999999999,
+    "unsupported_impulse_per_weight_s": 1.2000858403680994,
+    "torque_infeasible_frac": 0.0,
+    "max_tau_ratio_p95": 0.05,
+    "sim_infeasible_frac": 1.0
+   },
+   "verdict_raw": "FLAG",
+   "interior_unsup_F_median_N": 327.1,
+   "interior_unsup_F_max_N": 327.1,
+   "interior_frac_over_half_weight": 1.0
+  },
+  "calib_slowsink": {
+   "expect": "FLAG",
+   "brief": {
+    "clip": "calib_slowsink",
+    "frames": 60,
+    "fps": 50.0,
+    "gap": 0.06,
+    "airborne_frac": 1.0,
+    "infeasible_frac": 1.0,
+    "unsupported_impulse_Ns": 392.52,
+    "unsupported_impulse_per_weight_s": 1.2000858403680996,
+    "torque_infeasible_frac": 0.0,
+    "max_tau_ratio_p95": 0.06,
+    "sim_infeasible_frac": 1.0
+   },
+   "verdict_raw": "FLAG",
+   "interior_unsup_F_median_N": 327.1,
+   "interior_unsup_F_max_N": 327.1,
+   "interior_frac_over_half_weight": 1.0
+  }
+ },
+ "real_jump": {
+  "clip": "DFaust_67_50020_50020_one_leg_jump_poses_60_jpos",
+  "frames": 207,
+  "airborne": 56,
+  "airborne_unsup_F_median_N": 59.1,
+  "n_over_threshold": 11,
+  "max_dist_to_contact_transition_frames": 3
+ }
+}

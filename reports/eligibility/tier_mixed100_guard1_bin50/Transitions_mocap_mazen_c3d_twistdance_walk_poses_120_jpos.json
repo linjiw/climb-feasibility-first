@@ -1,0 +1,94 @@
+{
+ "airborne_frac": 0.16585365853658537,
+ "bin_eligible": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.3333333333333333,
+ "bin_frames": 50,
+ "bin_score": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.4,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.37777777777777777,
+ "clip": "Transitions_mocap_mazen_c3d_twistdance_walk_poses_120_jpos",
+ "feasible_frac_kept": 0.3170731707317073,
+ "feasible_segments_s": [
+  [
+   5.6,
+   8.2
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 410,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.1024390243902439,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 9,
+ "n_bins_eligible": 3,
+ "n_feasible_segments": 1,
+ "n_severe_windows": 9,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/Transitions_mocap_mazen_c3d_twistdance_walk_poses_120_jpos.json",
+ "severe_frac": 0.1024390243902439,
+ "severe_frac_guarded": 0.6780487804878049,
+ "severe_windows_s": [
+  [
+   0.62,
+   0.88
+  ],
+  [
+   1.06,
+   1.24
+  ],
+  [
+   1.48,
+   1.58
+  ],
+  [
+   1.62,
+   1.68
+  ],
+  [
+   1.72,
+   1.76
+  ],
+  [
+   1.9,
+   1.92
+  ],
+  [
+   2.0,
+   2.06
+  ],
+  [
+   2.44,
+   2.48
+  ],
+  [
+   4.52,
+   4.6
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.8435027068662867
+}

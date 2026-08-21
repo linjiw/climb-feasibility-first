@@ -1,0 +1,82 @@
+{
+ "airborne_frac": 0.17701863354037267,
+ "bin_eligible": [
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "bin_eligible_frac": 0.14285714285714285,
+ "bin_frames": 50,
+ "bin_score": [
+  0.94,
+  1.0,
+  0.98,
+  0.06,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "bin_score_mean": 0.4257142857142857,
+ "clip": "ACCAD_Male2Walking_c3d_B20_-__Walk_with_box_poses_120_jpos",
+ "feasible_frac_kept": 0.46273291925465837,
+ "feasible_segments_s": [
+  [
+   0.06,
+   2.04
+  ],
+  [
+   2.06,
+   3.06
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 322,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.19254658385093168,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 7,
+ "n_bins_eligible": 1,
+ "n_feasible_segments": 2,
+ "n_severe_windows": 6,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/ACCAD_Male2Walking_c3d_B20_-__Walk_with_box_poses_120_jpos.json.gz",
+ "severe_frac": 0.19254658385093168,
+ "severe_frac_guarded": 0.19254658385093168,
+ "severe_windows_s": [
+  [
+   0.02,
+   0.06
+  ],
+  [
+   2.04,
+   2.06
+  ],
+  [
+   3.06,
+   3.08
+  ],
+  [
+   4.06,
+   4.14
+  ],
+  [
+   4.52,
+   5.58
+  ],
+  [
+   6.38,
+   6.4
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.148905169401621
+}

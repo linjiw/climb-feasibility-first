@@ -1,0 +1,178 @@
+{
+ "airborne_frac": 0.2608125819134993,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.3225806451612903,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.66,
+  0.74,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.4,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.3806451612903226,
+ "clip": "Eyes_Japan_Dataset_takiguchi_accident-11-fall_down-takiguchi_poses_120_jpos",
+ "feasible_frac_kept": 0.3709043250327654,
+ "feasible_segments_s": [
+  [
+   0.0,
+   6.0
+  ],
+  [
+   10.34,
+   11.74
+  ],
+  [
+   26.6,
+   30.52
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1526,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.24508519003931847,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 31,
+ "n_bins_eligible": 10,
+ "n_feasible_segments": 3,
+ "n_severe_windows": 17,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/Eyes_Japan_Dataset_takiguchi_accident-11-fall_down-takiguchi_poses_120_jpos.json.gz",
+ "severe_frac": 0.24508519003931847,
+ "severe_frac_guarded": 0.5681520314547838,
+ "severe_windows_s": [
+  [
+   7.0,
+   7.36
+  ],
+  [
+   7.54,
+   7.74
+  ],
+  [
+   7.84,
+   9.04
+  ],
+  [
+   9.28,
+   9.34
+  ],
+  [
+   12.74,
+   12.78
+  ],
+  [
+   13.08,
+   13.52
+  ],
+  [
+   13.72,
+   14.0
+  ],
+  [
+   14.08,
+   14.46
+  ],
+  [
+   14.54,
+   14.56
+  ],
+  [
+   14.58,
+   15.32
+  ],
+  [
+   15.36,
+   15.68
+  ],
+  [
+   15.8,
+   15.9
+  ],
+  [
+   18.84,
+   19.02
+  ],
+  [
+   19.34,
+   20.8
+  ],
+  [
+   23.72,
+   24.42
+  ],
+  [
+   24.5,
+   24.82
+  ],
+  [
+   24.92,
+   25.6
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.2265475313606247
+}

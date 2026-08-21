@@ -1,0 +1,174 @@
+{
+ "airborne_frac": 0.11356209150326797,
+ "bin_eligible": [
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "bin_eligible_frac": 0.08,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  0.56,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "bin_score_mean": 0.1024,
+ "clip": "HUMAN4D_Subject3_Medhi_RGB_TalkingWalking_S3_01_poses_120_jpos",
+ "feasible_frac_kept": 0.10457516339869281,
+ "feasible_segments_s": [
+  [
+   0.0,
+   2.56
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1224,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.16666666666666666,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 25,
+ "n_bins_eligible": 2,
+ "n_feasible_segments": 1,
+ "n_severe_windows": 21,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/HUMAN4D_Subject3_Medhi_RGB_TalkingWalking_S3_01_poses_120_jpos.json",
+ "severe_frac": 0.16666666666666666,
+ "severe_frac_guarded": 0.8954248366013072,
+ "severe_windows_s": [
+  [
+   3.56,
+   3.64
+  ],
+  [
+   4.26,
+   4.48
+  ],
+  [
+   4.84,
+   4.96
+  ],
+  [
+   5.72,
+   5.76
+  ],
+  [
+   6.5,
+   6.52
+  ],
+  [
+   6.78,
+   6.98
+  ],
+  [
+   7.7,
+   8.08
+  ],
+  [
+   8.36,
+   8.38
+  ],
+  [
+   8.94,
+   9.12
+  ],
+  [
+   10.3,
+   10.42
+  ],
+  [
+   10.88,
+   11.02
+  ],
+  [
+   11.66,
+   11.76
+  ],
+  [
+   12.16,
+   12.24
+  ],
+  [
+   12.34,
+   13.04
+  ],
+  [
+   14.52,
+   14.54
+  ],
+  [
+   16.14,
+   16.3
+  ],
+  [
+   16.8,
+   16.86
+  ],
+  [
+   18.02,
+   18.08
+  ],
+  [
+   19.28,
+   19.34
+  ],
+  [
+   20.6,
+   20.68
+  ],
+  [
+   22.62,
+   23.86
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.0212898046381331
+}

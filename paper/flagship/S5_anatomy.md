@@ -70,6 +70,8 @@ which the policy was never trained. The failure-weighted sampler cannot distingu
 from "hard" from "unseen"; it poured 87–89 % of its exposure into the one clip where those three
 coincide. The earlier "0.31 survival" was itself an artifact of start-offset averaging — episodes
 beginning after the ground segment survived — which is why every difficulty label from here on
-uses the stratified-start protocol (§6). Whether adding *feasible* members of this family to the
-bank makes the feasible phase trackable is the sealed N3 keystone (§8); whether *repairing* the
-impossible transition makes the descent trackable is N7, to be sealed after N3 reads out.
+uses the stratified-start protocol (§6). Adding *feasible* members of this family makes the
+feasible phase trackable in both N3 keystone seeds, but also improves the invalid descent and
+regresses the adaptive arm, so the frozen preflight stops an unqualified causal reading (§8).
+N7's completed repair-versus-keep/prune intervention gives a positive deployed-reference contrast
+but no raw-reference policy transfer and fails its sealed benefit/coverage rule (§8.2).

@@ -1,0 +1,2 @@
+8550b30bf7627000dfe4fddcc20c9a1316df103e51cac5f4fe4fb4f4b14378cf  run_campaign.sh
+fb6e38316f1ac26d5cccab2608c69db735c3ff52c826bedf7bf0eece656a8133  config.env

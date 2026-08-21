@@ -1,0 +1,84 @@
+{
+ "airborne_frac": 0.2433234421364985,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.5714285714285714,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  0.06,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.4,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.6042857142857143,
+ "clip": "KIT_3_seesaw_backwards07_poses_100_jpos",
+ "feasible_frac_kept": 0.5890207715133531,
+ "feasible_segments_s": [
+  [
+   0.0,
+   3.06
+  ],
+  [
+   8.6,
+   13.48
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 674,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.2433234421364985,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 14,
+ "n_bins_eligible": 8,
+ "n_feasible_segments": 2,
+ "n_severe_windows": 3,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/KIT_3_seesaw_backwards07_poses_100_jpos.json",
+ "severe_frac": 0.2433234421364985,
+ "severe_frac_guarded": 0.41097922848664686,
+ "severe_windows_s": [
+  [
+   4.06,
+   6.76
+  ],
+  [
+   6.88,
+   7.3
+  ],
+  [
+   7.44,
+   7.6
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.0212745176993738
+}

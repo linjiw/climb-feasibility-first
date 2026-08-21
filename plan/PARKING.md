@@ -4,9 +4,9 @@
   where the *reference itself* interpenetrates, so the policy is not taxed for tracking accurately.
   Waits: reward changes to training arms are frozen (P-TAX seal), and it only matters if P-TAX's
   partial correlation excludes zero; post-freeze work at the earliest.
-- **Rollout-only infeasibility runtime guard.** If P-SIGN passes, a deployment monitor: when a gain
-  increase worsens segment tracking, flag the reference segment rather than adapting the
-  controller. Waits: P-SIGN has not run; needs a deployment stack (SONIC path) that is frozen.
+- **Rollout-only infeasibility runtime guard — rejected.** P-SIGN failed all three sealed criteria
+  (7/12 family, 4/12 controls, 2/7 localised); retain the two #44 cases as exploratory context,
+  not as a deployment monitor (`plan/P_SIGN_RESULT.md`).
 - **Repair operator as a general tool (beyond N7's 3–4 clips).** Contact-restoring projection over
   the whole flagged bank (2,400 clips). Waits: N7 must first show repair works on the #44 family;
   bank-scale repair is a new thread by the no-new-threads rule.

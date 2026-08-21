@@ -1,0 +1,90 @@
+{
+ "airborne_frac": 0.004796163069544364,
+ "bin_eligible": [
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.5882352941176471,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  0.98,
+  0.0,
+  0.0,
+  0.98,
+  1.0,
+  1.0,
+  0.44,
+  0.0,
+  0.52,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.76,
+ "clip": "KIT_572_dance_chacha15_poses_100_jpos",
+ "feasible_frac_kept": 0.7553956834532374,
+ "feasible_segments_s": [
+  [
+   0.0,
+   2.98
+  ],
+  [
+   5.02,
+   8.44
+  ],
+  [
+   10.48,
+   16.68
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 834,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.004796163069544364,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 17,
+ "n_bins_eligible": 10,
+ "n_feasible_segments": 3,
+ "n_severe_windows": 2,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/KIT_572_dance_chacha15_poses_100_jpos.json.gz",
+ "severe_frac": 0.004796163069544364,
+ "severe_frac_guarded": 0.2446043165467626,
+ "severe_windows_s": [
+  [
+   3.98,
+   4.02
+  ],
+  [
+   9.44,
+   9.48
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.3413573424974472
+}

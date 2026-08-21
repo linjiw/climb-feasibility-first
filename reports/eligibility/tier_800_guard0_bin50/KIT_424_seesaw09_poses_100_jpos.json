@@ -1,0 +1,60 @@
+{
+ "airborne_frac": 0.11333333333333333,
+ "bin_eligible": [
+  1,
+  1,
+  0,
+  0,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.6666666666666666,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  0.78,
+  0.54,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.8866666666666667,
+ "clip": "KIT_424_seesaw09_poses_100_jpos",
+ "feasible_frac_kept": 0.8866666666666667,
+ "feasible_segments_s": [
+  [
+   0.0,
+   2.78
+  ],
+  [
+   3.46,
+   6.0
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 300,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.11333333333333333,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 6,
+ "n_bins_eligible": 4,
+ "n_feasible_segments": 2,
+ "n_severe_windows": 1,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/KIT_424_seesaw09_poses_100_jpos.json",
+ "severe_frac": 0.11333333333333333,
+ "severe_frac_guarded": 0.11333333333333333,
+ "severe_windows_s": [
+  [
+   2.78,
+   3.46
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.9647739920446237
+}

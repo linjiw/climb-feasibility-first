@@ -1,0 +1,2639 @@
+{
+  "analytic_uniform_arm": {
+    "flagged_mass": 0.25,
+    "infeasible_frame_share": 0.060597414125868776,
+    "sentinel_bin_clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+    "sentinel_bin_index": 50,
+    "sentinel_bin_is_flagged": true,
+    "why": "climb/commands.py:137-141 hardcodes sampling_entropy=1.0, sampling_top1_prob=1/n, sampling_top1_bin=0.5. These are sentinels, not measurements. Index n/2 happens to be a flagged clip in this bank, so a naive lower-bound statistic on the uniform logs returns a spurious 1/n."
+  },
+  "arm_semantics": {
+    "adaptive": "additive offset, mjlab's formulation (commands.py:107-108). No feasibility term.",
+    "grounded": "convex mixture, i.e. the uniform floor actually is 10% (commands.py:94-98). NO feasibility mask -- this arm is a FLOOR REPAIR, not FGAS. It is the baseline FGAS must beat, not FGAS.",
+    "uniform": "p = 1/n (commands.py:87-89). Sampling metrics are SENTINELS."
+  },
+  "backs_claim": "flagship S3 C3-EXPOSURE (collapse targets infeasible reference)",
+  "bank": {
+    "clip_list": "bank/tiers/tier_mixed100.txt",
+    "flag_threshold_infeasible_frac": 0.1,
+    "flagged_fraction": 0.25,
+    "mean_infeasible_frac_all_clips": 0.060597414125868776,
+    "mean_infeasible_frac_flagged_only": 0.20288623360547803,
+    "n_clips": 100,
+    "n_flagged": 25,
+    "sum_infeasible_frac_over_flagged_div_n": 0.05072155840136951
+  },
+  "decomposition": {
+    "note": "lam_adaptive = S/(S+eps) with S the EMA of per-step termination counts; not logged, so bracketed. eps=0.1, so even S=10 gives lam=0.990 -- the additive floor is realised as <=1% of the mass.",
+    "rows": [
+      {
+        "dynamical_reduction": 0.09817995083333342,
+        "grounded_top1_observed": 0.3424549666666666,
+        "grounded_top1_predicted_from_shrinkage_only": 0.4406349175,
+        "lam_adaptive_assumed": 1.0,
+        "mechanical_reduction": 0.04784832416666668,
+        "mechanical_share": 0.32766479071718574,
+        "total_reduction": 0.1460282750000001,
+        "u_max_implied": 0.4884832416666667
+      },
+      {
+        "dynamical_reduction": 0.09861101681681689,
+        "grounded_top1_observed": 0.3424549666666666,
+        "grounded_top1_predicted_from_shrinkage_only": 0.44106598348348347,
+        "lam_adaptive_assumed": 0.999,
+        "mechanical_reduction": 0.04741725818318321,
+        "mechanical_share": 0.32471285566567964,
+        "total_reduction": 0.1460282750000001,
+        "u_max_implied": 0.4889622038705372
+      },
+      {
+        "dynamical_reduction": 0.10252979848484856,
+        "grounded_top1_observed": 0.3424549666666666,
+        "grounded_top1_predicted_from_shrinkage_only": 0.44498476515151514,
+        "lam_adaptive_assumed": 0.99,
+        "mechanical_reduction": 0.04349847651515154,
+        "mechanical_share": 0.297877082470169,
+        "total_reduction": 0.1460282750000001,
+        "u_max_implied": 0.4933164057239057
+      },
+      {
+        "dynamical_reduction": 0.10696841853741512,
+        "grounded_top1_observed": 0.3424549666666666,
+        "grounded_top1_predicted_from_shrinkage_only": 0.4494233852040817,
+        "lam_adaptive_assumed": 0.98,
+        "mechanical_reduction": 0.039059856462584974,
+        "mechanical_share": 0.2674814618099471,
+        "total_reduction": 0.1460282750000001,
+        "u_max_implied": 0.498248205782313
+      }
+    ]
+  },
+  "f_source_audit": {
+    "campaign_csv_count": 81,
+    "example": "adaptive-mixed100-s1_it0.csv",
+    "n_clips_in_campaign_eval": 100,
+    "n_shared_with_training_bank": 0,
+    "verdict": "campaign per-checkpoint eval CSVs are on a DISJOINT held-out bank; they cannot supply per-clip failure rates for the training clips"
+  },
+  "gate": {
+    "consequence": "SIMULATION FAILED -- no modelled total is reported; only the measured lower bound, the analytic uniform arm and the distribution-free bracket stand as results",
+    "modelled_flagged_mass_spread_across_cells": 9.948051771711933,
+    "n_cells": 8,
+    "n_cells_passing": 0,
+    "per_source": [
+      {
+        "adaptive": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": 0.2603339429088352,
+          "d_top1_rel": -0.05214511773056264,
+          "free_parameters": 1,
+          "k_best": 0.31622776601683794,
+          "k_grid_max": 10000.0,
+          "k_grid_min": 0.0001,
+          "k_hit_grid_edge": false,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.39023904166666673,
+          "logged_top1_prob": 0.4884832416666667,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.6633779263749783,
+            "infeasible_frame_share": 0.17678603827818376,
+            "norm_entropy": 0.650572984575502,
+            "top1_index": 65,
+            "top1_prob": 0.46301122552055146
+          }
+        },
+        "f_max": 0.875,
+        "f_mean": 0.1075,
+        "f_source": "A7_trainbank_uniform_s1",
+        "grounded": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": -0.3761419330441874,
+          "d_top1_rel": 1.476080224818981,
+          "free_parameters": 0,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.6097925916666668,
+          "logged_top1_prob": 0.3424549666666666,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.9055453270985468,
+            "infeasible_frame_share": 0.2564939814799428,
+            "norm_entropy": 0.23365065862247936,
+            "top1_index": 65,
+            "top1_prob": 0.8479459708543764
+          }
+        },
+        "n_clips_at_f_max": 1,
+        "pass": false,
+        "usable": true,
+        "w_argmax_clip": "CMU_135_135_02_poses_120_jpos",
+        "w_argmax_flagged": true,
+        "w_argmax_index": 65,
+        "weight_model": "rate"
+      },
+      {
+        "adaptive": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": 0.19595851895699384,
+          "d_top1_rel": 0.0251211144886318,
+          "free_parameters": 1,
+          "k_best": 0.2818382931264455,
+          "k_grid_max": 10000.0,
+          "k_grid_min": 0.0001,
+          "k_hit_grid_edge": false,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.39023904166666673,
+          "logged_top1_prob": 0.4884832416666667,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.10355269678928983,
+            "infeasible_frame_share": 0.05518773986637085,
+            "norm_entropy": 0.5861975606236606,
+            "top1_index": 78,
+            "top1_prob": 0.500754485106353
+          }
+        },
+        "f_max": 0.875,
+        "f_mean": 0.1075,
+        "f_source": "A7_trainbank_uniform_s1",
+        "grounded": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": -0.3905199189669486,
+          "d_top1_rel": 1.4794065752238952,
+          "free_parameters": 0,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.6097925916666668,
+          "logged_top1_prob": 0.3424549666666666,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.02967537211189127,
+            "infeasible_frame_share": 0.057970339841057004,
+            "norm_entropy": 0.21927267269971817,
+            "top1_index": 78,
+            "top1_prob": 0.8490850960714129
+          }
+        },
+        "n_clips_at_f_max": 1,
+        "pass": false,
+        "usable": true,
+        "w_argmax_clip": "CMU_75_75_12_poses_60_jpos",
+        "w_argmax_flagged": false,
+        "w_argmax_index": 78,
+        "weight_model": "flux"
+      },
+      {
+        "adaptive": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": 0.2533161130084484,
+          "d_top1_rel": -0.023711864263674165,
+          "free_parameters": 1,
+          "k_best": 0.6309573444801936,
+          "k_grid_max": 10000.0,
+          "k_grid_min": 0.0001,
+          "k_hit_grid_edge": false,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.39023904166666673,
+          "logged_top1_prob": 0.4884832416666667,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.09525542619408571,
+            "infeasible_frame_share": 0.02601357436857913,
+            "norm_entropy": 0.6435551546751151,
+            "top1_index": 28,
+            "top1_prob": 0.47690039334518713
+          }
+        },
+        "f_max": 0.8125,
+        "f_mean": 0.3675,
+        "f_source": "eval_mixed100_uniform_s1",
+        "grounded": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": -0.22670702461376474,
+          "d_top1_rel": 1.126077872571153,
+          "free_parameters": 0,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.6097925916666668,
+          "logged_top1_prob": 0.3424549666666666,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.04923835762729116,
+            "infeasible_frame_share": 0.01346061352401795,
+            "norm_entropy": 0.38308556705290203,
+            "top1_index": 28,
+            "top1_prob": 0.7280859269820916
+          }
+        },
+        "n_clips_at_f_max": 1,
+        "pass": false,
+        "usable": true,
+        "w_argmax_clip": "KIT_3_walk_with_support04_poses_100_jpos",
+        "w_argmax_flagged": false,
+        "w_argmax_index": 28,
+        "weight_model": "rate"
+      },
+      {
+        "adaptive": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": 0.1825889653836586,
+          "d_top1_rel": 0.013520491798640986,
+          "free_parameters": 1,
+          "k_best": 3.1622776601683795,
+          "k_grid_max": 10000.0,
+          "k_grid_min": 0.0001,
+          "k_hit_grid_edge": false,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.39023904166666673,
+          "logged_top1_prob": 0.4884832416666667,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.06701417349448444,
+            "infeasible_frame_share": 0.018356007099000395,
+            "norm_entropy": 0.5728280070503253,
+            "top1_index": 16,
+            "top1_prob": 0.4950877753293944
+          }
+        },
+        "f_max": 0.8125,
+        "f_mean": 0.3675,
+        "f_source": "eval_mixed100_uniform_s1",
+        "grounded": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": -0.16769763735300836,
+          "d_top1_rel": 0.8628489680402031,
+          "free_parameters": 0,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.6097925916666668,
+          "logged_top1_prob": 0.3424549666666666,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.04706047688130606,
+            "infeasible_frame_share": 0.01290513255526295,
+            "norm_entropy": 0.4420949543136584,
+            "top1_index": 16,
+            "top1_prob": 0.637941881255242
+          }
+        },
+        "n_clips_at_f_max": 1,
+        "pass": false,
+        "usable": true,
+        "w_argmax_clip": "Eyes_Japan_Dataset_hamada_gesture_etc-02-set_2-hamada_poses_120_jpos",
+        "w_argmax_flagged": false,
+        "w_argmax_index": 16,
+        "weight_model": "flux"
+      },
+      {
+        "adaptive": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": 0.34835256559221767,
+          "d_top1_rel": -0.9317623280125757,
+          "free_parameters": 1,
+          "k_best": 10000.0,
+          "k_grid_max": 10000.0,
+          "k_grid_min": 0.0001,
+          "k_hit_grid_edge": true,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.39023904166666673,
+          "logged_top1_prob": 0.4884832416666667,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.4999971766345379,
+            "infeasible_frame_share": 0.11642793136932052,
+            "norm_entropy": 0.7385916072588844,
+            "top1_index": 5,
+            "top1_prob": 0.033332959216203724
+          }
+        },
+        "f_max": 1.0,
+        "f_mean": 0.35375,
+        "f_source": "eval_tier_mixed100_fixed",
+        "grounded": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": 0.2101244296594139,
+          "d_top1_rel": -0.9123669968158691,
+          "free_parameters": 0,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.6097925916666668,
+          "logged_top1_prob": 0.3424549666666666,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.4725056026935458,
+            "infeasible_frame_share": 0.11157327663724163,
+            "norm_entropy": 0.8199170213260807,
+            "top1_index": 5,
+            "top1_prob": 0.030010357184321414
+          }
+        },
+        "n_clips_at_f_max": 30,
+        "pass": false,
+        "usable": true,
+        "w_argmax_clip": "KIT_950_Wipe_Head_Horizontal_01_poses_100_jpos",
+        "w_argmax_flagged": false,
+        "w_argmax_index": 5,
+        "weight_model": "rate"
+      },
+      {
+        "adaptive": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": 0.23892979953740773,
+          "d_top1_rel": 0.024859911939141062,
+          "free_parameters": 1,
+          "k_best": 0.07943282347242822,
+          "k_grid_max": 10000.0,
+          "k_grid_min": 0.0001,
+          "k_hit_grid_edge": false,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.39023904166666673,
+          "logged_top1_prob": 0.4884832416666667,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.6485182057918574,
+            "infeasible_frame_share": 0.11404911951869309,
+            "norm_entropy": 0.6291688412040745,
+            "top1_index": 85,
+            "top1_prob": 0.5006268920382462
+          }
+        },
+        "f_max": 1.0,
+        "f_mean": 0.35375,
+        "f_source": "eval_tier_mixed100_fixed",
+        "grounded": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": -0.3981049373447384,
+          "d_top1_rel": 1.53305694071446,
+          "free_parameters": 0,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.6097925916666668,
+          "logged_top1_prob": 0.3424549666666666,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.9070596701303318,
+            "infeasible_frame_share": 0.14742372097243656,
+            "norm_entropy": 0.21168765432192835,
+            "top1_index": 85,
+            "top1_prob": 0.8674579301971388
+          }
+        },
+        "n_clips_at_f_max": 30,
+        "pass": false,
+        "usable": true,
+        "w_argmax_clip": "CMU_35_35_25_poses_120_jpos",
+        "w_argmax_flagged": true,
+        "w_argmax_index": 85,
+        "weight_model": "flux"
+      },
+      {
+        "adaptive": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": -0.1516123765254147,
+          "d_top1_rel": -0.3176295878826568,
+          "free_parameters": 1,
+          "k_best": 10000.0,
+          "k_grid_max": 10000.0,
+          "k_grid_min": 0.0001,
+          "k_hit_grid_edge": true,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.39023904166666673,
+          "logged_top1_prob": 0.4884832416666667,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.6666604673616168,
+            "infeasible_frame_share": 0.11056127197911773,
+            "norm_entropy": 0.23862666514125203,
+            "top1_index": 5,
+            "top1_prob": 0.3333265109284991
+          }
+        },
+        "f_max": 1.0,
+        "f_mean": 0.25375,
+        "f_source": "eval_tier_mixed100_rand",
+        "grounded": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": -0.1273127432266366,
+          "d_top1_rel": -0.22286843927619612,
+          "free_parameters": 0,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.6097925916666668,
+          "logged_top1_prob": 0.3424549666666666,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.6052650811136829,
+            "infeasible_frame_share": 0.10536432918796816,
+            "norm_entropy": 0.48247984844003017,
+            "top1_index": 5,
+            "top1_prob": 0.26613256272328484
+          }
+        },
+        "n_clips_at_f_max": 3,
+        "pass": false,
+        "usable": true,
+        "w_argmax_clip": "KIT_950_Wipe_Head_Horizontal_01_poses_100_jpos",
+        "w_argmax_flagged": false,
+        "w_argmax_index": 5,
+        "weight_model": "rate"
+      },
+      {
+        "adaptive": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": 0.2729197036080872,
+          "d_top1_rel": -0.025853639424071602,
+          "free_parameters": 1,
+          "k_best": 0.07943282347242822,
+          "k_grid_max": 10000.0,
+          "k_grid_min": 0.0001,
+          "k_hit_grid_edge": false,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.39023904166666673,
+          "logged_top1_prob": 0.4884832416666667,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.1395701243358278,
+            "infeasible_frame_share": 0.03532148400956087,
+            "norm_entropy": 0.6631587452747539,
+            "top1_index": 72,
+            "top1_prob": 0.47585417207191505
+          }
+        },
+        "f_max": 1.0,
+        "f_mean": 0.25375,
+        "f_source": "eval_tier_mixed100_rand",
+        "grounded": {
+          "argmax_matches_logged": false,
+          "d_entropy_abs": -0.4117224248950736,
+          "d_top1_rel": 1.5674081454325104,
+          "free_parameters": 0,
+          "logged_modal_top1_index": 44,
+          "logged_norm_entropy": 0.6097925916666668,
+          "logged_top1_prob": 0.3424549666666666,
+          "pass": false,
+          "sim": {
+            "flagged_mass": 0.032100504748957315,
+            "infeasible_frame_share": 0.0117015879941315,
+            "norm_entropy": 0.19807016677159314,
+            "top1_index": 72,
+            "top1_prob": 0.8792216708638185
+          }
+        },
+        "n_clips_at_f_max": 3,
+        "pass": false,
+        "usable": true,
+        "w_argmax_clip": "DFaust_67_50027_50027_one_leg_jump_poses_60_jpos",
+        "w_argmax_flagged": false,
+        "w_argmax_index": 72,
+        "weight_model": "flux"
+      }
+    ],
+    "spread_note": "ratio max/min of the MODELLED flagged mass (adaptive arm) across cells. A large ratio means the modelled total is not identified by the available data, independently of whether any cell passes.",
+    "thresholds": {
+      "norm_entropy_absolute": 0.05,
+      "note": "declared in source before the sweep was run; both arms must pass on the same (failure source, weight model) cell",
+      "top1_relative": 0.15
+    },
+    "verdict": "FAIL"
+  },
+  "logged_pooled_over_seeds": {
+    "adaptive": {
+      "norm_entropy": 0.39023904166666673,
+      "top1_prob": 0.4884832416666667
+    },
+    "grounded": {
+      "norm_entropy": 0.6097925916666668,
+      "top1_prob": 0.3424549666666666
+    }
+  },
+  "runs": {
+    "adaptive-s1": {
+      "arm": "adaptive",
+      "bracket_flagged_mass": {
+        "hi": 0.8868797920249525,
+        "lo": 0.39342327586206716,
+        "n_entropy_infeasible": 0,
+        "n_iters_used": 3944
+      },
+      "bracket_infeasible_frame_share": {
+        "hi": 0.22141984617428287,
+        "lo": 0.07065097540120283,
+        "n_entropy_infeasible": 0,
+        "n_iters_used": 3944
+      },
+      "heuristic_totals": {
+        "flagged_mass": {
+          "base_rate": 0.5152894312499983,
+          "self_similar": 0.7836976327850342
+        },
+        "infeasible_frame_share": {
+          "base_rate": 0.10041676242572241,
+          "self_similar": 0.140713914320797
+        },
+        "residual_mass": 0.502040225,
+        "status": "MODELLED-BY-ASSUMPTION, not measured; reported only as a sensitivity"
+      },
+      "is_sentinel_arm": false,
+      "log": "logs/campaign/adaptive-mixed100-s1.log",
+      "measured": {
+        "by_quarter_lb_flagged_mass": [
+          0.24364290000000008,
+          0.5079333999999998,
+          0.4660061000000002,
+          0.3415351000000002
+        ],
+        "invariants_checked": "0 <= lb_flagged_mass <= mean_top1_prob and 0 <= lb_infeasible_frame_share <= lb_flagged_mass * max(infeasible_frac)",
+        "lb_flagged_mass": {
+          "drop": {
+            "n_ambiguous": 56,
+            "n_iters_used": 3944,
+            "value": 0.39342327586206716
+          },
+          "round": {
+            "n_ambiguous": 56,
+            "n_iters_used": 4000,
+            "value": 0.3897793749999982
+          },
+          "zero": {
+            "n_ambiguous": 56,
+            "n_iters_used": 4000,
+            "value": 0.3879153499999982
+          }
+        },
+        "lb_infeasible_frame_share": {
+          "drop": {
+            "n_ambiguous": 56,
+            "n_iters_used": 3944,
+            "value": 0.07063062803377906
+          },
+          "round": {
+            "n_ambiguous": 56,
+            "n_iters_used": 4000,
+            "value": 0.06999442300355307
+          },
+          "zero": {
+            "n_ambiguous": 56,
+            "n_iters_used": 4000,
+            "value": 0.06964179924130616
+          }
+        },
+        "max_top1_prob": 0.8842,
+        "mean_norm_entropy": 0.37702172500000003,
+        "mean_perplexity_clips": 7.190634710064349,
+        "mean_top1_prob": 0.497959775,
+        "perplexity_note": "exp(H) in clips = effective number of clips the sampler is actually drawing from. MEASURED.",
+        "selection": {
+          "n_ambiguous_argmax_iters": 56,
+          "n_distinct_top1_clips": 22,
+          "n_distinct_top1_clips_flagged": 12,
+          "p_top1_flagged": 0.7837221095334685,
+          "per_clip": [
+            {
+              "clip_index": 44,
+              "iters": 1086,
+              "mass": 725.5523
+            },
+            {
+              "clip_index": 65,
+              "iters": 642,
+              "mass": 293.1896
+            },
+            {
+              "clip_index": 95,
+              "iters": 439,
+              "mass": 216.94099999999995
+            },
+            {
+              "clip_index": 86,
+              "iters": 330,
+              "mass": 126.15870000000004
+            },
+            {
+              "clip_index": 66,
+              "iters": 303,
+              "mass": 226.78030000000018
+            },
+            {
+              "clip_index": 40,
+              "iters": 187,
+              "mass": 46.44949999999997
+            },
+            {
+              "clip_index": 93,
+              "iters": 169,
+              "mass": 38.669999999999995
+            },
+            {
+              "clip_index": 5,
+              "iters": 162,
+              "mass": 78.48600000000002
+            },
+            {
+              "clip_index": 50,
+              "iters": 116,
+              "mass": 45.901599999999995
+            },
+            {
+              "clip_index": 85,
+              "iters": 106,
+              "mass": 55.475799999999985
+            },
+            {
+              "clip_index": 54,
+              "iters": 102,
+              "mass": 24.695200000000003
+            },
+            {
+              "clip_index": 78,
+              "iters": 88,
+              "mass": 24.971200000000003
+            },
+            {
+              "clip_index": 97,
+              "iters": 83,
+              "mass": 37.187699999999985
+            },
+            {
+              "clip_index": 72,
+              "iters": 78,
+              "mass": 23.191
+            },
+            {
+              "clip_index": 58,
+              "iters": 33,
+              "mass": 9.417300000000001
+            },
+            {
+              "clip_index": 69,
+              "iters": 12,
+              "mass": 2.0503
+            },
+            {
+              "clip_index": 64,
+              "iters": 2,
+              "mass": 0.6092
+            },
+            {
+              "clip_index": 71,
+              "iters": 2,
+              "mass": 0.6339
+            },
+            {
+              "clip_index": 48,
+              "iters": 1,
+              "mass": 0.4473
+            },
+            {
+              "clip_index": 57,
+              "iters": 1,
+              "mass": 0.281
+            },
+            {
+              "clip_index": 62,
+              "iters": 1,
+              "mass": 0.2536
+            },
+            {
+              "clip_index": 79,
+              "iters": 1,
+              "mass": 0.2161
+            }
+          ],
+          "top1_mass_weighted_flagged_rate": 0.7846348522870574,
+          "top1_mass_weighted_mean_infeasible_frac": 0.14086419333678674,
+          "top_occupancy": [
+            {
+              "clip_index": 44,
+              "flagged": true,
+              "iters": 1086,
+              "mean_top1_prob": 0.6680960405156537,
+              "occupancy": 0.2753549695740365
+            },
+            {
+              "clip_index": 65,
+              "flagged": true,
+              "iters": 642,
+              "mean_top1_prob": 0.4566816199376947,
+              "occupancy": 0.1627789046653144
+            },
+            {
+              "clip_index": 95,
+              "flagged": true,
+              "iters": 439,
+              "mean_top1_prob": 0.4941708428246012,
+              "occupancy": 0.11130831643002029
+            },
+            {
+              "clip_index": 86,
+              "flagged": true,
+              "iters": 330,
+              "mean_top1_prob": 0.38229909090909103,
+              "occupancy": 0.08367139959432049
+            },
+            {
+              "clip_index": 66,
+              "flagged": false,
+              "iters": 303,
+              "mean_top1_prob": 0.7484498349834989,
+              "occupancy": 0.07682555780933063
+            },
+            {
+              "clip_index": 40,
+              "flagged": true,
+              "iters": 187,
+              "mean_top1_prob": 0.2483930481283421,
+              "occupancy": 0.04741379310344827
+            },
+            {
+              "clip_index": 93,
+              "flagged": true,
+              "iters": 169,
+              "mean_top1_prob": 0.22881656804733724,
+              "occupancy": 0.042849898580121705
+            },
+            {
+              "clip_index": 5,
+              "flagged": false,
+              "iters": 162,
+              "mean_top1_prob": 0.48448148148148157,
+              "occupancy": 0.04107505070993915
+            }
+          ]
+        }
+      },
+      "n_iters": 4000,
+      "seed": 1
+    },
+    "adaptive-s2": {
+      "arm": "adaptive",
+      "bracket_flagged_mass": {
+        "hi": 0.8965555542841523,
+        "lo": 0.4048361599036052,
+        "n_entropy_infeasible": 0,
+        "n_iters_used": 3931
+      },
+      "bracket_infeasible_frame_share": {
+        "hi": 0.2132667640017956,
+        "lo": 0.06586961357544371,
+        "n_entropy_infeasible": 0,
+        "n_iters_used": 3931
+      },
+      "heuristic_totals": {
+        "flagged_mass": {
+          "base_rate": 0.5271015250000003,
+          "self_similar": 0.8189163541323353
+        },
+        "infeasible_frame_share": {
+          "base_rate": 0.09588159374144478,
+          "self_similar": 0.1330357654850166
+        },
+        "residual_mass": 0.5118235,
+        "status": "MODELLED-BY-ASSUMPTION, not measured; reported only as a sensitivity"
+      },
+      "is_sentinel_arm": false,
+      "log": "logs/campaign/adaptive-mixed100-s2.log",
+      "measured": {
+        "by_quarter_lb_flagged_mass": [
+          0.0717711,
+          0.6474417,
+          0.6041147999999995,
+          0.2732549999999998
+        ],
+        "invariants_checked": "0 <= lb_flagged_mass <= mean_top1_prob and 0 <= lb_infeasible_frame_share <= lb_flagged_mass * max(infeasible_frac)",
+        "lb_flagged_mass": {
+          "drop": {
+            "n_ambiguous": 69,
+            "n_iters_used": 3931,
+            "value": 0.40482821165097954
+          },
+          "round": {
+            "n_ambiguous": 69,
+            "n_iters_used": 4000,
+            "value": 0.3991456500000003
+          },
+          "zero": {
+            "n_ambiguous": 69,
+            "n_iters_used": 4000,
+            "value": 0.3978449250000002
+          }
+        },
+        "lb_infeasible_frame_share": {
+          "drop": {
+            "n_ambiguous": 69,
+            "n_iters_used": 3931,
+            "value": 0.06574274174559949
+          },
+          "round": {
+            "n_ambiguous": 69,
+            "n_iters_used": 4000,
+            "value": 0.06486641315259319
+          },
+          "zero": {
+            "n_ambiguous": 69,
+            "n_iters_used": 4000,
+            "value": 0.0646086794504879
+          }
+        },
+        "max_top1_prob": 0.8698,
+        "mean_norm_entropy": 0.39210467500000007,
+        "mean_perplexity_clips": 9.712740328381411,
+        "mean_top1_prob": 0.4881765,
+        "perplexity_note": "exp(H) in clips = effective number of clips the sampler is actually drawing from. MEASURED.",
+        "selection": {
+          "n_ambiguous_argmax_iters": 69,
+          "n_distinct_top1_clips": 21,
+          "n_distinct_top1_clips_flagged": 9,
+          "p_top1_flagged": 0.704400915797507,
+          "per_clip": [
+            {
+              "clip_index": 44,
+              "iters": 1789,
+              "mass": 1153.224100000002
+            },
+            {
+              "clip_index": 65,
+              "iters": 381,
+              "mass": 192.0138000000001
+            },
+            {
+              "clip_index": 54,
+              "iters": 335,
+              "mass": 44.53980000000002
+            },
+            {
+              "clip_index": 66,
+              "iters": 300,
+              "mass": 167.0971
+            },
+            {
+              "clip_index": 86,
+              "iters": 274,
+              "mass": 154.22709999999987
+            },
+            {
+              "clip_index": 7,
+              "iters": 245,
+              "mass": 82.4755
+            },
+            {
+              "clip_index": 95,
+              "iters": 168,
+              "mass": 42.87550000000002
+            },
+            {
+              "clip_index": 45,
+              "iters": 126,
+              "mass": 6.453200000000003
+            },
+            {
+              "clip_index": 93,
+              "iters": 78,
+              "mass": 35.3335
+            },
+            {
+              "clip_index": 40,
+              "iters": 74,
+              "mass": 12.8902
+            },
+            {
+              "clip_index": 5,
+              "iters": 63,
+              "mass": 30.913099999999996
+            },
+            {
+              "clip_index": 78,
+              "iters": 49,
+              "mass": 13.6982
+            },
+            {
+              "clip_index": 72,
+              "iters": 20,
+              "mass": 1.1977000000000002
+            },
+            {
+              "clip_index": 16,
+              "iters": 11,
+              "mass": 0.5686
+            },
+            {
+              "clip_index": 62,
+              "iters": 10,
+              "mass": 1.3103
+            },
+            {
+              "clip_index": 63,
+              "iters": 2,
+              "mass": 0.2923
+            },
+            {
+              "clip_index": 85,
+              "iters": 2,
+              "mass": 0.3961
+            },
+            {
+              "clip_index": 55,
+              "iters": 1,
+              "mass": 0.1271
+            },
+            {
+              "clip_index": 75,
+              "iters": 1,
+              "mass": 0.2781
+            },
+            {
+              "clip_index": 80,
+              "iters": 1,
+              "mass": 0.2297
+            },
+            {
+              "clip_index": 90,
+              "iters": 1,
+              "mass": 0.2172
+            }
+          ],
+          "top1_mass_weighted_flagged_rate": 0.8201473830965851,
+          "top1_mass_weighted_mean_infeasible_frac": 0.1331891801224903,
+          "top_occupancy": [
+            {
+              "clip_index": 44,
+              "flagged": true,
+              "iters": 1789,
+              "mean_top1_prob": 0.6446193963107892,
+              "occupancy": 0.45510048333757314
+            },
+            {
+              "clip_index": 65,
+              "flagged": true,
+              "iters": 381,
+              "mean_top1_prob": 0.503973228346457,
+              "occupancy": 0.09692190282370898
+            },
+            {
+              "clip_index": 54,
+              "flagged": false,
+              "iters": 335,
+              "mean_top1_prob": 0.1329546268656717,
+              "occupancy": 0.08522004578987535
+            },
+            {
+              "clip_index": 66,
+              "flagged": false,
+              "iters": 300,
+              "mean_top1_prob": 0.5569903333333334,
+              "occupancy": 0.07631645891630628
+            },
+            {
+              "clip_index": 86,
+              "flagged": true,
+              "iters": 274,
+              "mean_top1_prob": 0.5628726277372258,
+              "occupancy": 0.0697023658102264
+            },
+            {
+              "clip_index": 7,
+              "flagged": false,
+              "iters": 245,
+              "mean_top1_prob": 0.336634693877551,
+              "occupancy": 0.062325108114983464
+            },
+            {
+              "clip_index": 95,
+              "flagged": true,
+              "iters": 168,
+              "mean_top1_prob": 0.2552113095238096,
+              "occupancy": 0.042737216993131516
+            },
+            {
+              "clip_index": 45,
+              "flagged": false,
+              "iters": 126,
+              "mean_top1_prob": 0.05121587301587304,
+              "occupancy": 0.03205291274484864
+            }
+          ]
+        }
+      },
+      "n_iters": 4000,
+      "seed": 2
+    },
+    "adaptive-s3": {
+      "arm": "adaptive",
+      "bracket_flagged_mass": {
+        "hi": 0.8730362710790626,
+        "lo": 0.37262787514445117,
+        "n_entropy_infeasible": 0,
+        "n_iters_used": 3950
+      },
+      "bracket_infeasible_frame_share": {
+        "hi": 0.2193122886609825,
+        "lo": 0.06810433491903327,
+        "n_entropy_infeasible": 0,
+        "n_iters_used": 3950
+      },
+      "heuristic_totals": {
+        "flagged_mass": {
+          "base_rate": 0.4988556625000013,
+          "self_similar": 0.7706319983875622
+        },
+        "infeasible_frame_share": {
+          "base_rate": 0.09879247614075554,
+          "self_similar": 0.14048583678640428
+        },
+        "residual_mass": 0.52068655,
+        "status": "MODELLED-BY-ASSUMPTION, not measured; reported only as a sensitivity"
+      },
+      "is_sentinel_arm": false,
+      "log": "logs/campaign/adaptive-mixed100-s3.log",
+      "measured": {
+        "by_quarter_lb_flagged_mass": [
+          0.11273030000000006,
+          0.6424374999999997,
+          0.3965065,
+          0.32306179999999984
+        ],
+        "invariants_checked": "0 <= lb_flagged_mass <= mean_top1_prob and 0 <= lb_infeasible_frame_share <= lb_flagged_mass * max(infeasible_frac)",
+        "lb_flagged_mass": {
+          "drop": {
+            "n_ambiguous": 50,
+            "n_iters_used": 3950,
+            "value": 0.37249992405063426
+          },
+          "round": {
+            "n_ambiguous": 50,
+            "n_iters_used": 4000,
+            "value": 0.3686840250000013
+          },
+          "zero": {
+            "n_ambiguous": 50,
+            "n_iters_used": 4000,
+            "value": 0.3678436750000013
+          }
+        },
+        "lb_infeasible_frame_share": {
+          "drop": {
+            "n_ambiguous": 50,
+            "n_iters_used": 3950,
+            "value": 0.06787940075650781
+          },
+          "round": {
+            "n_ambiguous": 50,
+            "n_iters_used": 4000,
+            "value": 0.06724021764063566
+          },
+          "zero": {
+            "n_ambiguous": 50,
+            "n_iters_used": 4000,
+            "value": 0.06703090824705146
+          }
+        },
+        "max_top1_prob": 0.8927,
+        "mean_norm_entropy": 0.401590725,
+        "mean_perplexity_clips": 9.873132763720678,
+        "mean_top1_prob": 0.47931345,
+        "perplexity_note": "exp(H) in clips = effective number of clips the sampler is actually drawing from. MEASURED.",
+        "selection": {
+          "n_ambiguous_argmax_iters": 50,
+          "n_distinct_top1_clips": 15,
+          "n_distinct_top1_clips_flagged": 7,
+          "p_top1_flagged": 0.7129113924050633,
+          "per_clip": [
+            {
+              "clip_index": 44,
+              "iters": 1219,
+              "mass": 751.0684999999988
+            },
+            {
+              "clip_index": 65,
+              "iters": 736,
+              "mass": 350.6506
+            },
+            {
+              "clip_index": 54,
+              "iters": 479,
+              "mass": 57.75770000000001
+            },
+            {
+              "clip_index": 95,
+              "iters": 402,
+              "mass": 200.35760000000013
+            },
+            {
+              "clip_index": 72,
+              "iters": 232,
+              "mass": 131.06719999999996
+            },
+            {
+              "clip_index": 93,
+              "iters": 214,
+              "mass": 69.03349999999999
+            },
+            {
+              "clip_index": 66,
+              "iters": 210,
+              "mass": 104.00930000000001
+            },
+            {
+              "clip_index": 5,
+              "iters": 207,
+              "mass": 140.96799999999993
+            },
+            {
+              "clip_index": 86,
+              "iters": 182,
+              "mass": 81.65329999999989
+            },
+            {
+              "clip_index": 50,
+              "iters": 45,
+              "mass": 15.854299999999999
+            },
+            {
+              "clip_index": 40,
+              "iters": 18,
+              "mass": 2.7569000000000004
+            },
+            {
+              "clip_index": 53,
+              "iters": 2,
+              "mass": 0.0593
+            },
+            {
+              "clip_index": 98,
+              "iters": 2,
+              "mass": 0.26639999999999997
+            },
+            {
+              "clip_index": 75,
+              "iters": 1,
+              "mass": 0.2625
+            },
+            {
+              "clip_index": 90,
+              "iters": 1,
+              "mass": 0.2652
+            }
+          ],
+          "top1_mass_weighted_flagged_rate": 0.7719576651011265,
+          "top1_mass_weighted_mean_infeasible_frac": 0.14067123328952635,
+          "top_occupancy": [
+            {
+              "clip_index": 44,
+              "flagged": true,
+              "iters": 1219,
+              "mean_top1_prob": 0.6161349466776036,
+              "occupancy": 0.30860759493670886
+            },
+            {
+              "clip_index": 65,
+              "flagged": true,
+              "iters": 736,
+              "mean_top1_prob": 0.47642744565217393,
+              "occupancy": 0.18632911392405063
+            },
+            {
+              "clip_index": 54,
+              "flagged": false,
+              "iters": 479,
+              "mean_top1_prob": 0.12057974947807934,
+              "occupancy": 0.12126582278481013
+            },
+            {
+              "clip_index": 95,
+              "flagged": true,
+              "iters": 402,
+              "mean_top1_prob": 0.49840199004975155,
+              "occupancy": 0.10177215189873418
+            },
+            {
+              "clip_index": 72,
+              "flagged": false,
+              "iters": 232,
+              "mean_top1_prob": 0.5649448275862067,
+              "occupancy": 0.05873417721518987
+            },
+            {
+              "clip_index": 93,
+              "flagged": true,
+              "iters": 214,
+              "mean_top1_prob": 0.3225864485981308,
+              "occupancy": 0.054177215189873416
+            },
+            {
+              "clip_index": 66,
+              "flagged": false,
+              "iters": 210,
+              "mean_top1_prob": 0.495282380952381,
+              "occupancy": 0.053164556962025315
+            },
+            {
+              "clip_index": 5,
+              "flagged": false,
+              "iters": 207,
+              "mean_top1_prob": 0.6810048309178741,
+              "occupancy": 0.05240506329113924
+            }
+          ]
+        }
+      },
+      "n_iters": 4000,
+      "seed": 3
+    },
+    "grounded-s1": {
+      "arm": "grounded",
+      "bracket_flagged_mass": {
+        "hi": 0.8911920002929845,
+        "lo": 0.3014713148827365,
+        "n_entropy_infeasible": 0,
+        "n_iters_used": 3880
+      },
+      "bracket_infeasible_frame_share": {
+        "hi": 0.2002858976976078,
+        "lo": 0.05202631229989961,
+        "n_entropy_infeasible": 0,
+        "n_iters_used": 3880
+      },
+      "heuristic_totals": {
+        "flagged_mass": {
+          "base_rate": 0.4533289874999996,
+          "self_similar": 0.8539557364104391
+        },
+        "infeasible_frame_share": {
+          "base_rate": 0.08885980986484213,
+          "self_similar": 0.14460651179162334
+        },
+        "residual_mass": 0.66092335,
+        "status": "MODELLED-BY-ASSUMPTION, not measured; reported only as a sensitivity"
+      },
+      "is_sentinel_arm": false,
+      "log": "logs/campaign/grounded-mixed100-s1.log",
+      "measured": {
+        "by_quarter_lb_flagged_mass": [
+          0.05270869999999998,
+          0.3560307999999999,
+          0.3146572999999999,
+          0.42899580000000026
+        ],
+        "invariants_checked": "0 <= lb_flagged_mass <= mean_top1_prob and 0 <= lb_infeasible_frame_share <= lb_flagged_mass * max(infeasible_frac)",
+        "lb_flagged_mass": {
+          "drop": {
+            "n_ambiguous": 120,
+            "n_iters_used": 3880,
+            "value": 0.29626007731958715
+          },
+          "round": {
+            "n_ambiguous": 120,
+            "n_iters_used": 4000,
+            "value": 0.2880981499999996
+          },
+          "zero": {
+            "n_ambiguous": 120,
+            "n_iters_used": 4000,
+            "value": 0.28737227499999957
+          }
+        },
+        "lb_infeasible_frame_share": {
+          "drop": {
+            "n_ambiguous": 120,
+            "n_iters_used": 3880,
+            "value": 0.050155395748302474
+          },
+          "round": {
+            "n_ambiguous": 120,
+            "n_iters_used": 4000,
+            "value": 0.04880956391943562
+          },
+          "zero": {
+            "n_ambiguous": 120,
+            "n_iters_used": 4000,
+            "value": 0.0486507338758534
+          }
+        },
+        "max_top1_prob": 0.568,
+        "mean_norm_entropy": 0.613732775,
+        "mean_perplexity_clips": 22.461146038970227,
+        "mean_top1_prob": 0.33907665,
+        "perplexity_note": "exp(H) in clips = effective number of clips the sampler is actually drawing from. MEASURED.",
+        "selection": {
+          "n_ambiguous_argmax_iters": 120,
+          "n_distinct_top1_clips": 24,
+          "n_distinct_top1_clips_flagged": 8,
+          "p_top1_flagged": 0.8146907216494845,
+          "per_clip": [
+            {
+              "clip_index": 44,
+              "iters": 1274,
+              "mass": 541.5647999999994
+            },
+            {
+              "clip_index": 95,
+              "iters": 879,
+              "mass": 398.8353000000002
+            },
+            {
+              "clip_index": 65,
+              "iters": 475,
+              "mass": 115.19980000000002
+            },
+            {
+              "clip_index": 93,
+              "iters": 304,
+              "mass": 38.16989999999998
+            },
+            {
+              "clip_index": 5,
+              "iters": 259,
+              "mass": 66.89320000000001
+            },
+            {
+              "clip_index": 66,
+              "iters": 249,
+              "mass": 109.69200000000006
+            },
+            {
+              "clip_index": 86,
+              "iters": 158,
+              "mass": 53.60660000000002
+            },
+            {
+              "clip_index": 54,
+              "iters": 96,
+              "mass": 3.7987
+            },
+            {
+              "clip_index": 62,
+              "iters": 65,
+              "mass": 4.1967
+            },
+            {
+              "clip_index": 40,
+              "iters": 62,
+              "mass": 1.7397
+            },
+            {
+              "clip_index": 7,
+              "iters": 30,
+              "mass": 7.250100000000001
+            },
+            {
+              "clip_index": 64,
+              "iters": 8,
+              "mass": 0.1762
+            },
+            {
+              "clip_index": 36,
+              "iters": 4,
+              "mass": 0.0933
+            },
+            {
+              "clip_index": 72,
+              "iters": 3,
+              "mass": 0.3948
+            },
+            {
+              "clip_index": 18,
+              "iters": 2,
+              "mass": 0.0435
+            },
+            {
+              "clip_index": 29,
+              "iters": 2,
+              "mass": 0.0576
+            },
+            {
+              "clip_index": 38,
+              "iters": 2,
+              "mass": 0.0506
+            },
+            {
+              "clip_index": 49,
+              "iters": 2,
+              "mass": 0.16190000000000002
+            },
+            {
+              "clip_index": 6,
+              "iters": 1,
+              "mass": 0.2071
+            },
+            {
+              "clip_index": 37,
+              "iters": 1,
+              "mass": 0.0231
+            },
+            {
+              "clip_index": 41,
+              "iters": 1,
+              "mass": 0.0234
+            },
+            {
+              "clip_index": 43,
+              "iters": 1,
+              "mass": 0.0232
+            },
+            {
+              "clip_index": 79,
+              "iters": 1,
+              "mass": 0.1968
+            },
+            {
+              "clip_index": 80,
+              "iters": 1,
+              "mass": 0.2084
+            }
+          ],
+          "top1_mass_weighted_flagged_rate": 0.8561621955260613,
+          "top1_mass_weighted_mean_infeasible_frac": 0.14494411170703492,
+          "top_occupancy": [
+            {
+              "clip_index": 44,
+              "flagged": true,
+              "iters": 1274,
+              "mean_top1_prob": 0.4250901098901094,
+              "occupancy": 0.3283505154639175
+            },
+            {
+              "clip_index": 95,
+              "flagged": true,
+              "iters": 879,
+              "mean_top1_prob": 0.45373754266211624,
+              "occupancy": 0.22654639175257732
+            },
+            {
+              "clip_index": 65,
+              "flagged": true,
+              "iters": 475,
+              "mean_top1_prob": 0.24252589473684216,
+              "occupancy": 0.12242268041237113
+            },
+            {
+              "clip_index": 93,
+              "flagged": true,
+              "iters": 304,
+              "mean_top1_prob": 0.1255588815789473,
+              "occupancy": 0.07835051546391752
+            },
+            {
+              "clip_index": 5,
+              "flagged": false,
+              "iters": 259,
+              "mean_top1_prob": 0.2582749034749035,
+              "occupancy": 0.06675257731958763
+            },
+            {
+              "clip_index": 66,
+              "flagged": false,
+              "iters": 249,
+              "mean_top1_prob": 0.44053012048192797,
+              "occupancy": 0.06417525773195876
+            },
+            {
+              "clip_index": 86,
+              "flagged": true,
+              "iters": 158,
+              "mean_top1_prob": 0.3392822784810128,
+              "occupancy": 0.040721649484536084
+            },
+            {
+              "clip_index": 54,
+              "flagged": false,
+              "iters": 96,
+              "mean_top1_prob": 0.039569791666666666,
+              "occupancy": 0.024742268041237112
+            }
+          ]
+        }
+      },
+      "n_iters": 4000,
+      "seed": 1
+    },
+    "grounded-s2": {
+      "arm": "grounded",
+      "bracket_flagged_mass": {
+        "hi": 0.8889153993682908,
+        "lo": 0.2919834389493993,
+        "n_entropy_infeasible": 0,
+        "n_iters_used": 3794
+      },
+      "bracket_infeasible_frame_share": {
+        "hi": 0.197294497074196,
+        "lo": 0.047005356230701206,
+        "n_entropy_infeasible": 0,
+        "n_iters_used": 3794
+      },
+      "heuristic_totals": {
+        "flagged_mass": {
+          "base_rate": 0.4411378250000002,
+          "self_similar": 0.837161524364668
+        },
+        "infeasible_frame_share": {
+          "base_rate": 0.08393378053438455,
+          "self_similar": 0.13220932497151275
+        },
+        "residual_mass": 0.6716233,
+        "status": "MODELLED-BY-ASSUMPTION, not measured; reported only as a sensitivity"
+      },
+      "is_sentinel_arm": false,
+      "log": "logs/campaign/grounded-mixed100-s2.log",
+      "measured": {
+        "by_quarter_lb_flagged_mass": [
+          0.049242199999999986,
+          0.3798845000000004,
+          0.4619133999999997,
+          0.2018879
+        ],
+        "invariants_checked": "0 <= lb_flagged_mass <= mean_top1_prob and 0 <= lb_infeasible_frame_share <= lb_flagged_mass * max(infeasible_frac)",
+        "lb_flagged_mass": {
+          "drop": {
+            "n_ambiguous": 206,
+            "n_iters_used": 3794,
+            "value": 0.2867936215076438
+          },
+          "round": {
+            "n_ambiguous": 206,
+            "n_iters_used": 4000,
+            "value": 0.2732320000000002
+          },
+          "zero": {
+            "n_ambiguous": 206,
+            "n_iters_used": 4000,
+            "value": 0.2720237500000002
+          }
+        },
+        "lb_infeasible_frame_share": {
+          "drop": {
+            "n_ambiguous": 206,
+            "n_iters_used": 3794,
+            "value": 0.04524896482577332
+          },
+          "round": {
+            "n_ambiguous": 206,
+            "n_iters_used": 4000,
+            "value": 0.04323514528770195
+          },
+          "zero": {
+            "n_ambiguous": 206,
+            "n_iters_used": 4000,
+            "value": 0.04291864313724599
+          }
+        },
+        "max_top1_prob": 0.6491,
+        "mean_norm_entropy": 0.6200063250000001,
+        "mean_perplexity_clips": 23.19209563438903,
+        "mean_top1_prob": 0.3283767,
+        "perplexity_note": "exp(H) in clips = effective number of clips the sampler is actually drawing from. MEASURED.",
+        "selection": {
+          "n_ambiguous_argmax_iters": 206,
+          "n_distinct_top1_clips": 30,
+          "n_distinct_top1_clips_flagged": 15,
+          "p_top1_flagged": 0.727991565629942,
+          "per_clip": [
+            {
+              "clip_index": 44,
+              "iters": 1693,
+              "mass": 806.3205999999996
+            },
+            {
+              "clip_index": 65,
+              "iters": 452,
+              "mass": 146.9410000000001
+            },
+            {
+              "clip_index": 66,
+              "iters": 392,
+              "mass": 115.79970000000013
+            },
+            {
+              "clip_index": 95,
+              "iters": 333,
+              "mass": 83.87739999999997
+            },
+            {
+              "clip_index": 7,
+              "iters": 190,
+              "mass": 30.855700000000002
+            },
+            {
+              "clip_index": 93,
+              "iters": 156,
+              "mass": 44.18199999999998
+            },
+            {
+              "clip_index": 62,
+              "iters": 128,
+              "mass": 7.0943
+            },
+            {
+              "clip_index": 5,
+              "iters": 127,
+              "mass": 37.58270000000003
+            },
+            {
+              "clip_index": 78,
+              "iters": 57,
+              "mass": 12.229500000000002
+            },
+            {
+              "clip_index": 64,
+              "iters": 54,
+              "mass": 1.5332000000000001
+            },
+            {
+              "clip_index": 16,
+              "iters": 38,
+              "mass": 0.7878999999999998
+            },
+            {
+              "clip_index": 51,
+              "iters": 33,
+              "mass": 0.6541999999999998
+            },
+            {
+              "clip_index": 72,
+              "iters": 31,
+              "mass": 1.3316
+            },
+            {
+              "clip_index": 53,
+              "iters": 23,
+              "mass": 0.41339999999999993
+            },
+            {
+              "clip_index": 54,
+              "iters": 21,
+              "mass": 0.4382
+            },
+            {
+              "clip_index": 29,
+              "iters": 18,
+              "mass": 0.5123
+            },
+            {
+              "clip_index": 50,
+              "iters": 15,
+              "mass": 0.7733
+            },
+            {
+              "clip_index": 86,
+              "iters": 12,
+              "mass": 3.2503999999999995
+            },
+            {
+              "clip_index": 48,
+              "iters": 7,
+              "mass": 0.13169999999999998
+            },
+            {
+              "clip_index": 61,
+              "iters": 3,
+              "mass": 0.2592
+            },
+            {
+              "clip_index": 81,
+              "iters": 2,
+              "mass": 0.0537
+            },
+            {
+              "clip_index": 35,
+              "iters": 1,
+              "mass": 0.0175
+            },
+            {
+              "clip_index": 40,
+              "iters": 1,
+              "mass": 0.0225
+            },
+            {
+              "clip_index": 52,
+              "iters": 1,
+              "mass": 0.0197
+            },
+            {
+              "clip_index": 55,
+              "iters": 1,
+              "mass": 0.0329
+            },
+            {
+              "clip_index": 70,
+              "iters": 1,
+              "mass": 0.0227
+            },
+            {
+              "clip_index": 71,
+              "iters": 1,
+              "mass": 0.2977
+            },
+            {
+              "clip_index": 80,
+              "iters": 1,
+              "mass": 0.1514
+            },
+            {
+              "clip_index": 82,
+              "iters": 1,
+              "mass": 0.1662
+            },
+            {
+              "clip_index": 85,
+              "iters": 1,
+              "mass": 0.1362
+            }
+          ],
+          "top1_mass_weighted_flagged_rate": 0.839651519482227,
+          "top1_mass_weighted_mean_infeasible_frac": 0.13247631474937036,
+          "top_occupancy": [
+            {
+              "clip_index": 44,
+              "flagged": true,
+              "iters": 1693,
+              "mean_top1_prob": 0.47626733608978117,
+              "occupancy": 0.44623089088033735
+            },
+            {
+              "clip_index": 65,
+              "flagged": true,
+              "iters": 452,
+              "mean_top1_prob": 0.325090707964602,
+              "occupancy": 0.1191354770690564
+            },
+            {
+              "clip_index": 66,
+              "flagged": false,
+              "iters": 392,
+              "mean_top1_prob": 0.295407397959184,
+              "occupancy": 0.1033210332103321
+            },
+            {
+              "clip_index": 95,
+              "flagged": true,
+              "iters": 333,
+              "mean_top1_prob": 0.25188408408408397,
+              "occupancy": 0.08777016341591988
+            },
+            {
+              "clip_index": 7,
+              "flagged": false,
+              "iters": 190,
+              "mean_top1_prob": 0.16239842105263158,
+              "occupancy": 0.05007907221929362
+            },
+            {
+              "clip_index": 93,
+              "flagged": true,
+              "iters": 156,
+              "mean_top1_prob": 0.2832179487179486,
+              "occupancy": 0.04111755403268318
+            },
+            {
+              "clip_index": 62,
+              "flagged": false,
+              "iters": 128,
+              "mean_top1_prob": 0.05542421875,
+              "occupancy": 0.03373748023194518
+            },
+            {
+              "clip_index": 5,
+              "flagged": false,
+              "iters": 127,
+              "mean_top1_prob": 0.29592677165354353,
+              "occupancy": 0.033473906167633107
+            }
+          ]
+        }
+      },
+      "n_iters": 4000,
+      "seed": 2
+    },
+    "grounded-s3": {
+      "arm": "grounded",
+      "bracket_flagged_mass": {
+        "hi": 0.8546180361485,
+        "lo": 0.2958556844342816,
+        "n_entropy_infeasible": 0,
+        "n_iters_used": 3783
+      },
+      "bracket_infeasible_frame_share": {
+        "hi": 0.18944678890844852,
+        "lo": 0.04765551679046309,
+        "n_entropy_infeasible": 0,
+        "n_iters_used": 3783
+      },
+      "heuristic_totals": {
+        "flagged_mass": {
+          "base_rate": 0.43669883749999994,
+          "self_similar": 0.7721781316129852
+        },
+        "infeasible_frame_share": {
+          "base_rate": 0.0826883431488161,
+          "self_similar": 0.1222335453591458
+        },
+        "residual_mass": 0.64008845,
+        "status": "MODELLED-BY-ASSUMPTION, not measured; reported only as a sensitivity"
+      },
+      "is_sentinel_arm": false,
+      "log": "logs/campaign/grounded-mixed100-s3.log",
+      "measured": {
+        "by_quarter_lb_flagged_mass": [
+          0.0076225,
+          0.25344649999999985,
+          0.6343960999999998,
+          0.21124179999999998
+        ],
+        "invariants_checked": "0 <= lb_flagged_mass <= mean_top1_prob and 0 <= lb_infeasible_frame_share <= lb_flagged_mass * max(infeasible_frac)",
+        "lb_flagged_mass": {
+          "drop": {
+            "n_ambiguous": 217,
+            "n_iters_used": 3783,
+            "value": 0.2907686227861486
+          },
+          "round": {
+            "n_ambiguous": 217,
+            "n_iters_used": 4000,
+            "value": 0.27667672499999996
+          },
+          "zero": {
+            "n_ambiguous": 217,
+            "n_iters_used": 4000,
+            "value": 0.27499442500000004
+          }
+        },
+        "lb_infeasible_frame_share": {
+          "drop": {
+            "n_ambiguous": 217,
+            "n_iters_used": 3783,
+            "value": 0.04596707740895297
+          },
+          "round": {
+            "n_ambiguous": 217,
+            "n_iters_used": 4000,
+            "value": 0.04390063826698064
+          },
+          "zero": {
+            "n_ambiguous": 217,
+            "n_iters_used": 4000,
+            "value": 0.04347336345951727
+          }
+        },
+        "max_top1_prob": 0.6963,
+        "mean_norm_entropy": 0.5956386749999999,
+        "mean_perplexity_clips": 21.757613626809057,
+        "mean_top1_prob": 0.35991154999999997,
+        "perplexity_note": "exp(H) in clips = effective number of clips the sampler is actually drawing from. MEASURED.",
+        "selection": {
+          "n_ambiguous_argmax_iters": 217,
+          "n_distinct_top1_clips": 32,
+          "n_distinct_top1_clips_flagged": 13,
+          "p_top1_flagged": 0.7266719534760772,
+          "per_clip": [
+            {
+              "clip_index": 44,
+              "iters": 1485,
+              "mass": 778.7611000000002
+            },
+            {
+              "clip_index": 65,
+              "iters": 434,
+              "mass": 113.40399999999994
+            },
+            {
+              "clip_index": 5,
+              "iters": 353,
+              "mass": 124.81340000000006
+            },
+            {
+              "clip_index": 95,
+              "iters": 275,
+              "mass": 91.6615
+            },
+            {
+              "clip_index": 66,
+              "iters": 265,
+              "mass": 133.11999999999998
+            },
+            {
+              "clip_index": 86,
+              "iters": 254,
+              "mass": 65.3413
+            },
+            {
+              "clip_index": 7,
+              "iters": 200,
+              "mass": 43.173300000000005
+            },
+            {
+              "clip_index": 50,
+              "iters": 187,
+              "mass": 36.91840000000001
+            },
+            {
+              "clip_index": 54,
+              "iters": 84,
+              "mass": 2.268700000000001
+            },
+            {
+              "clip_index": 93,
+              "iters": 75,
+              "mass": 12.4881
+            },
+            {
+              "clip_index": 78,
+              "iters": 71,
+              "mass": 14.937800000000001
+            },
+            {
+              "clip_index": 81,
+              "iters": 32,
+              "mass": 0.8259000000000001
+            },
+            {
+              "clip_index": 38,
+              "iters": 21,
+              "mass": 0.3628
+            },
+            {
+              "clip_index": 53,
+              "iters": 14,
+              "mass": 0.2916000000000001
+            },
+            {
+              "clip_index": 17,
+              "iters": 8,
+              "mass": 0.1429
+            },
+            {
+              "clip_index": 45,
+              "iters": 3,
+              "mass": 0.05299999999999999
+            },
+            {
+              "clip_index": 80,
+              "iters": 3,
+              "mass": 0.6725
+            },
+            {
+              "clip_index": 28,
+              "iters": 2,
+              "mass": 0.036699999999999997
+            },
+            {
+              "clip_index": 63,
+              "iters": 2,
+              "mass": 0.06609999999999999
+            },
+            {
+              "clip_index": 75,
+              "iters": 2,
+              "mass": 0.4478
+            },
+            {
+              "clip_index": 76,
+              "iters": 2,
+              "mass": 0.033299999999999996
+            },
+            {
+              "clip_index": 6,
+              "iters": 1,
+              "mass": 0.0703
+            },
+            {
+              "clip_index": 27,
+              "iters": 1,
+              "mass": 0.0291
+            },
+            {
+              "clip_index": 51,
+              "iters": 1,
+              "mass": 0.017
+            },
+            {
+              "clip_index": 55,
+              "iters": 1,
+              "mass": 0.2021
+            },
+            {
+              "clip_index": 62,
+              "iters": 1,
+              "mass": 0.0442
+            },
+            {
+              "clip_index": 64,
+              "iters": 1,
+              "mass": 0.0181
+            },
+            {
+              "clip_index": 68,
+              "iters": 1,
+              "mass": 0.0347
+            },
+            {
+              "clip_index": 70,
+              "iters": 1,
+              "mass": 0.1996
+            },
+            {
+              "clip_index": 82,
+              "iters": 1,
+              "mass": 0.0278
+            },
+            {
+              "clip_index": 85,
+              "iters": 1,
+              "mass": 0.2463
+            },
+            {
+              "clip_index": 90,
+              "iters": 1,
+              "mass": 0.2412
+            }
+          ],
+          "top1_mass_weighted_flagged_rate": 0.7741139628640153,
+          "top1_mass_weighted_mean_infeasible_frac": 0.1223782542743353,
+          "top_occupancy": [
+            {
+              "clip_index": 44,
+              "flagged": true,
+              "iters": 1485,
+              "mean_top1_prob": 0.5244182491582493,
+              "occupancy": 0.39254559873116573
+            },
+            {
+              "clip_index": 65,
+              "flagged": true,
+              "iters": 434,
+              "mean_top1_prob": 0.2612995391705068,
+              "occupancy": 0.11472376420830029
+            },
+            {
+              "clip_index": 5,
+              "flagged": false,
+              "iters": 353,
+              "mean_top1_prob": 0.35357903682719566,
+              "occupancy": 0.09331218609569125
+            },
+            {
+              "clip_index": 95,
+              "flagged": true,
+              "iters": 275,
+              "mean_top1_prob": 0.3333145454545455,
+              "occupancy": 0.07269362939466033
+            },
+            {
+              "clip_index": 66,
+              "flagged": false,
+              "iters": 265,
+              "mean_top1_prob": 0.5023396226415093,
+              "occupancy": 0.07005022468939995
+            },
+            {
+              "clip_index": 86,
+              "flagged": true,
+              "iters": 254,
+              "mean_top1_prob": 0.2572492125984252,
+              "occupancy": 0.06714247951361353
+            },
+            {
+              "clip_index": 7,
+              "flagged": false,
+              "iters": 200,
+              "mean_top1_prob": 0.21586650000000002,
+              "occupancy": 0.05286809410520751
+            },
+            {
+              "clip_index": 50,
+              "flagged": true,
+              "iters": 187,
+              "mean_top1_prob": 0.19742459893048134,
+              "occupancy": 0.04943166798836902
+            }
+          ]
+        }
+      },
+      "n_iters": 4000,
+      "seed": 3
+    },
+    "uniform-s1": {
+      "arm": "uniform",
+      "is_sentinel_arm": true,
+      "log": "logs/campaign/uniform-mixed100-s1.log",
+      "measured": {
+        "by_quarter_lb_flagged_mass": [
+          0.009999999999999832,
+          0.009999999999999832,
+          0.009999999999999832,
+          0.009999999999999832
+        ],
+        "invariants_checked": "0 <= lb_flagged_mass <= mean_top1_prob and 0 <= lb_infeasible_frame_share <= lb_flagged_mass * max(infeasible_frac)",
+        "lb_flagged_mass": {
+          "drop": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.010000000000000153
+          },
+          "round": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.010000000000000153
+          },
+          "zero": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.010000000000000153
+          }
+        },
+        "lb_infeasible_frame_share": {
+          "drop": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.0012830188679245824
+          },
+          "round": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.0012830188679245824
+          },
+          "zero": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.0012830188679245824
+          }
+        },
+        "max_top1_prob": 0.01,
+        "mean_norm_entropy": 1.0,
+        "mean_perplexity_clips": 100.00000000000001,
+        "mean_top1_prob": 0.01,
+        "perplexity_note": "exp(H) in clips = effective number of clips the sampler is actually drawing from. MEASURED.",
+        "selection": {
+          "n_ambiguous_argmax_iters": 0,
+          "n_distinct_top1_clips": 1,
+          "n_distinct_top1_clips_flagged": 1,
+          "p_top1_flagged": 1.0,
+          "per_clip": [
+            {
+              "clip_index": 50,
+              "iters": 4000,
+              "mass": 40.00000000000061
+            }
+          ],
+          "top1_mass_weighted_flagged_rate": 1.0,
+          "top1_mass_weighted_mean_infeasible_frac": 0.12830188679245283,
+          "top_occupancy": [
+            {
+              "clip_index": 50,
+              "flagged": true,
+              "iters": 4000,
+              "mean_top1_prob": 0.010000000000000153,
+              "occupancy": 1.0
+            }
+          ]
+        }
+      },
+      "n_iters": 4000,
+      "seed": 1
+    },
+    "uniform-s2": {
+      "arm": "uniform",
+      "is_sentinel_arm": true,
+      "log": "logs/campaign/uniform-mixed100-s2.log",
+      "measured": {
+        "by_quarter_lb_flagged_mass": [
+          0.009999999999999832,
+          0.009999999999999832,
+          0.009999999999999832,
+          0.009999999999999832
+        ],
+        "invariants_checked": "0 <= lb_flagged_mass <= mean_top1_prob and 0 <= lb_infeasible_frame_share <= lb_flagged_mass * max(infeasible_frac)",
+        "lb_flagged_mass": {
+          "drop": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.010000000000000153
+          },
+          "round": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.010000000000000153
+          },
+          "zero": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.010000000000000153
+          }
+        },
+        "lb_infeasible_frame_share": {
+          "drop": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.0012830188679245824
+          },
+          "round": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.0012830188679245824
+          },
+          "zero": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.0012830188679245824
+          }
+        },
+        "max_top1_prob": 0.01,
+        "mean_norm_entropy": 1.0,
+        "mean_perplexity_clips": 100.00000000000001,
+        "mean_top1_prob": 0.01,
+        "perplexity_note": "exp(H) in clips = effective number of clips the sampler is actually drawing from. MEASURED.",
+        "selection": {
+          "n_ambiguous_argmax_iters": 0,
+          "n_distinct_top1_clips": 1,
+          "n_distinct_top1_clips_flagged": 1,
+          "p_top1_flagged": 1.0,
+          "per_clip": [
+            {
+              "clip_index": 50,
+              "iters": 4000,
+              "mass": 40.00000000000061
+            }
+          ],
+          "top1_mass_weighted_flagged_rate": 1.0,
+          "top1_mass_weighted_mean_infeasible_frac": 0.12830188679245283,
+          "top_occupancy": [
+            {
+              "clip_index": 50,
+              "flagged": true,
+              "iters": 4000,
+              "mean_top1_prob": 0.010000000000000153,
+              "occupancy": 1.0
+            }
+          ]
+        }
+      },
+      "n_iters": 4000,
+      "seed": 2
+    },
+    "uniform-s3": {
+      "arm": "uniform",
+      "is_sentinel_arm": true,
+      "log": "logs/campaign/uniform-mixed100-s3.log",
+      "measured": {
+        "by_quarter_lb_flagged_mass": [
+          0.009999999999999832,
+          0.009999999999999832,
+          0.009999999999999832,
+          0.009999999999999832
+        ],
+        "invariants_checked": "0 <= lb_flagged_mass <= mean_top1_prob and 0 <= lb_infeasible_frame_share <= lb_flagged_mass * max(infeasible_frac)",
+        "lb_flagged_mass": {
+          "drop": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.010000000000000153
+          },
+          "round": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.010000000000000153
+          },
+          "zero": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.010000000000000153
+          }
+        },
+        "lb_infeasible_frame_share": {
+          "drop": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.0012830188679245824
+          },
+          "round": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.0012830188679245824
+          },
+          "zero": {
+            "n_ambiguous": 0,
+            "n_iters_used": 4000,
+            "value": 0.0012830188679245824
+          }
+        },
+        "max_top1_prob": 0.01,
+        "mean_norm_entropy": 1.0,
+        "mean_perplexity_clips": 100.00000000000001,
+        "mean_top1_prob": 0.01,
+        "perplexity_note": "exp(H) in clips = effective number of clips the sampler is actually drawing from. MEASURED.",
+        "selection": {
+          "n_ambiguous_argmax_iters": 0,
+          "n_distinct_top1_clips": 1,
+          "n_distinct_top1_clips_flagged": 1,
+          "p_top1_flagged": 1.0,
+          "per_clip": [
+            {
+              "clip_index": 50,
+              "iters": 4000,
+              "mass": 40.00000000000061
+            }
+          ],
+          "top1_mass_weighted_flagged_rate": 1.0,
+          "top1_mass_weighted_mean_infeasible_frac": 0.12830188679245283,
+          "top_occupancy": [
+            {
+              "clip_index": 50,
+              "flagged": true,
+              "iters": 4000,
+              "mean_top1_prob": 0.010000000000000153,
+              "occupancy": 1.0
+            }
+          ]
+        }
+      },
+      "n_iters": 4000,
+      "seed": 3
+    }
+  },
+  "sampler_constants_from_climb_commands_py": {
+    "clip_adaptive_alpha": 0.01,
+    "clip_uniform_ratio_eps": 0.1,
+    "source_lines": "climb/commands.py:85-108 (probabilities), 143-160 (metrics), 206-211 (EMA), 137-141 (uniform sentinels), 266/273 (cfg)"
+  },
+  "selftest_bracket": {
+    "pass": true,
+    "weight_flagged_indicator": {
+      "cases": [
+        {
+          "argmax_index": 50,
+          "bracket_hi": 1.0,
+          "bracket_lo": 0.5,
+          "n_feasible_samples": 2720,
+          "n_violations": 0,
+          "norm_entropy": 0.377,
+          "pass": true,
+          "top1": 0.5
+        },
+        {
+          "argmax_index": 50,
+          "bracket_hi": 0.9885915175668085,
+          "bracket_lo": 0.34,
+          "n_feasible_samples": 1577,
+          "n_violations": 0,
+          "norm_entropy": 0.61,
+          "pass": true,
+          "top1": 0.34
+        },
+        {
+          "argmax_index": 33,
+          "bracket_hi": 0.7102096668758169,
+          "bracket_lo": 0.0,
+          "n_feasible_samples": 1190,
+          "n_violations": 0,
+          "norm_entropy": 0.75,
+          "pass": true,
+          "top1": 0.2
+        },
+        {
+          "argmax_index": 25,
+          "bracket_hi": 0.19904157153730126,
+          "bracket_lo": 0.0,
+          "n_feasible_samples": 1569,
+          "n_violations": 0,
+          "norm_entropy": 0.25,
+          "pass": true,
+          "top1": 0.8
+        }
+      ],
+      "pass": true
+    },
+    "weight_infeasible_frac": {
+      "cases": [
+        {
+          "argmax_index": 50,
+          "bracket_hi": 0.22238883458675734,
+          "bracket_lo": 0.06415094339622641,
+          "n_feasible_samples": 2720,
+          "n_violations": 0,
+          "norm_entropy": 0.377,
+          "pass": true,
+          "top1": 0.5
+        },
+        {
+          "argmax_index": 50,
+          "bracket_hi": 0.2054712740711343,
+          "bracket_lo": 0.043622641509433964,
+          "n_feasible_samples": 1577,
+          "n_violations": 0,
+          "norm_entropy": 0.61,
+          "pass": true,
+          "top1": 0.34
+        },
+        {
+          "argmax_index": 33,
+          "bracket_hi": 0.17508115728321616,
+          "bracket_lo": 0.00532319391634981,
+          "n_feasible_samples": 1190,
+          "n_violations": 0,
+          "norm_entropy": 0.75,
+          "pass": true,
+          "top1": 0.2
+        },
+        {
+          "argmax_index": 25,
+          "bracket_hi": 0.04959340626328859,
+          "bracket_lo": 0.0,
+          "n_feasible_samples": 1569,
+          "n_violations": 0,
+          "norm_entropy": 0.25,
+          "pass": true,
+          "top1": 0.8
+        }
+      ],
+      "pass": true
+    }
+  },
+  "tool": "tools/analyze_adaptive_contamination.py",
+  "top1_census": {
+    "adaptive": {
+      "flagged_share_of_top1_mass": 0.7923176019232732,
+      "modal_top1_agrees_across_seeds": {
+        "44": [
+          1,
+          2,
+          3
+        ]
+      },
+      "modal_top1_clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+      "modal_top1_flagged": true,
+      "modal_top1_index": 44,
+      "n_iters_pooled": 12000,
+      "n_seeds": 3,
+      "top_clips_by_mass": [
+        {
+          "clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+          "clip_index": 44,
+          "flagged": true,
+          "infeasible_frac": 0.13026052104208416,
+          "mass_share": 0.21915374166666673,
+          "occupancy": 0.3411666666666667
+        },
+        {
+          "clip": "CMU_135_135_02_poses_120_jpos",
+          "clip_index": 65,
+          "flagged": true,
+          "infeasible_frac": 0.2878228782287823,
+          "mass_share": 0.06965450000000001,
+          "occupancy": 0.14658333333333334
+        },
+        {
+          "clip": "DFaust_67_50025_50025_one_leg_jump_poses_60_jpos",
+          "clip_index": 66,
+          "flagged": false,
+          "infeasible_frac": 0.0,
+          "mass_share": 0.04149055833333335,
+          "occupancy": 0.06775
+        },
+        {
+          "clip": "Eyes_Japan_Dataset_hamada_jump-07-rope_double-hamada_poses_120_jpos",
+          "clip_index": 95,
+          "flagged": true,
+          "infeasible_frac": 0.18,
+          "mass_share": 0.038347841666666674,
+          "occupancy": 0.08408333333333333
+        },
+        {
+          "clip": "Eyes_Japan_Dataset_kawaguchi_turn-05-turn-kawaguchi_poses_120_jpos",
+          "clip_index": 86,
+          "flagged": true,
+          "infeasible_frac": 0.23755102040816325,
+          "mass_share": 0.030169924999999983,
+          "occupancy": 0.0655
+        },
+        {
+          "clip": "KIT_950_Wipe_Head_Horizontal_01_poses_100_jpos",
+          "clip_index": 5,
+          "flagged": false,
+          "infeasible_frac": 0.0,
+          "mass_share": 0.020863924999999995,
+          "occupancy": 0.036
+        },
+        {
+          "clip": "DFaust_67_50027_50027_one_leg_jump_poses_60_jpos",
+          "clip_index": 72,
+          "flagged": false,
+          "infeasible_frac": 0.004651162790697674,
+          "mass_share": 0.01295465833333333,
+          "occupancy": 0.0275
+        },
+        {
+          "clip": "ACCAD_Male2Running_c3d_C5_-_walk_to_run_poses_120_jpos",
+          "clip_index": 93,
+          "flagged": true,
+          "infeasible_frac": 0.15168539325842698,
+          "mass_share": 0.011919749999999998,
+          "occupancy": 0.03841666666666667
+        },
+        {
+          "clip": "DanceDB_20180501_CliodelaVara_CLIO_Rasopoulos_poses_120_jpos",
+          "clip_index": 54,
+          "flagged": false,
+          "infeasible_frac": 0.007526881720430108,
+          "mass_share": 0.010582725000000003,
+          "occupancy": 0.07633333333333334
+        },
+        {
+          "clip": "KIT_883_wipe_leg_bigcircle01_poses_100_jpos",
+          "clip_index": 7,
+          "flagged": false,
+          "infeasible_frac": 0.0,
+          "mass_share": 0.006872958333333333,
+          "occupancy": 0.020416666666666666
+        }
+      ]
+    },
+    "grounded": {
+      "flagged_share_of_top1_mass": 0.8221717243640703,
+      "modal_top1_agrees_across_seeds": {
+        "44": [
+          1,
+          2,
+          3
+        ]
+      },
+      "modal_top1_clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+      "modal_top1_flagged": true,
+      "modal_top1_index": 44,
+      "n_iters_pooled": 12000,
+      "n_seeds": 3,
+      "top_clips_by_mass": [
+        {
+          "clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+          "clip_index": 44,
+          "flagged": true,
+          "infeasible_frac": 0.13026052104208416,
+          "mass_share": 0.17722054166666656,
+          "occupancy": 0.371
+        },
+        {
+          "clip": "Eyes_Japan_Dataset_hamada_jump-07-rope_double-hamada_poses_120_jpos",
+          "clip_index": 95,
+          "flagged": true,
+          "infeasible_frac": 0.18,
+          "mass_share": 0.04786451666666668,
+          "occupancy": 0.12391666666666666
+        },
+        {
+          "clip": "CMU_135_135_02_poses_120_jpos",
+          "clip_index": 65,
+          "flagged": true,
+          "infeasible_frac": 0.2878228782287823,
+          "mass_share": 0.03129540000000001,
+          "occupancy": 0.11341666666666667
+        },
+        {
+          "clip": "DFaust_67_50025_50025_one_leg_jump_poses_60_jpos",
+          "clip_index": 66,
+          "flagged": false,
+          "infeasible_frac": 0.0,
+          "mass_share": 0.029884308333333345,
+          "occupancy": 0.0755
+        },
+        {
+          "clip": "KIT_950_Wipe_Head_Horizontal_01_poses_100_jpos",
+          "clip_index": 5,
+          "flagged": false,
+          "infeasible_frac": 0.0,
+          "mass_share": 0.019107441666666673,
+          "occupancy": 0.06158333333333333
+        },
+        {
+          "clip": "Eyes_Japan_Dataset_kawaguchi_turn-05-turn-kawaguchi_poses_120_jpos",
+          "clip_index": 86,
+          "flagged": true,
+          "infeasible_frac": 0.23755102040816325,
+          "mass_share": 0.010183191666666667,
+          "occupancy": 0.035333333333333335
+        },
+        {
+          "clip": "ACCAD_Male2Running_c3d_C5_-_walk_to_run_poses_120_jpos",
+          "clip_index": 93,
+          "flagged": true,
+          "infeasible_frac": 0.15168539325842698,
+          "mass_share": 0.00790333333333333,
+          "occupancy": 0.044583333333333336
+        },
+        {
+          "clip": "KIT_883_wipe_leg_bigcircle01_poses_100_jpos",
+          "clip_index": 7,
+          "flagged": false,
+          "infeasible_frac": 0.0,
+          "mass_share": 0.006773258333333333,
+          "occupancy": 0.035
+        },
+        {
+          "clip": "Eyes_Japan_Dataset_kawaguchi_gesture_etc-39-giant_baba-kawaguchi_poses_120_jpos",
+          "clip_index": 50,
+          "flagged": true,
+          "infeasible_frac": 0.12830188679245283,
+          "mass_share": 0.003140975000000001,
+          "occupancy": 0.016833333333333332
+        },
+        {
+          "clip": "CMU_75_75_12_poses_60_jpos",
+          "clip_index": 78,
+          "flagged": false,
+          "infeasible_frac": 0.05974025974025974,
+          "mass_share": 0.002263941666666667,
+          "occupancy": 0.010666666666666666
+        }
+      ]
+    }
+  }
+}

@@ -100,6 +100,28 @@ def main() -> int:
     err_sum = torch.zeros(num_envs, device=args.device)
     err_n = torch.zeros(num_envs, device=args.device)
 
+    # Actuator-effort headroom -- the third metric family. Survival cannot
+    # separate a policy that tracks a clip with margin from one that only holds
+    # on by pinning every motor at its limit, and it is the second that falls
+    # over on hardware, where the limit is real rather than a clamp in the
+    # solver. `effort_sat` is the fraction of force-limited actuators at >= 98%
+    # of their force range; the definition and the threshold are lifted from
+    # the S1 intervention harness (tools/g1_clip44_gate.py) so the training-eval
+    # path and the fragility gate report the same quantity.
+    frange_hi = torch.tensor(
+        env.sim.mj_model.actuator_forcerange[:, 1].copy(),
+        dtype=torch.float32,
+        device=args.device,
+    )
+    limited = frange_hi > 0
+    n_limited = int(limited.sum())
+    sat_thresh = 0.98 * frange_hi
+    if n_limited == 0:
+        print("[eval] WARNING: no actuator declares a force range; effort_sat -> nan")
+    sat_sum = torch.zeros(num_envs, device=args.device)
+    sat_peak = torch.zeros(num_envs, device=args.device)
+    sat_end = torch.zeros(num_envs, device=args.device)
+
     with torch.inference_mode():
         for _ in range(horizon):
             obs, _, _, _ = wrapped.step(policy(obs))
@@ -119,6 +141,18 @@ def main() -> int:
             err_n += alive.float()
             survived += alive.float()
 
+            # Read effort under the same `alive` mask as the tracking error and
+            # before this step retires anyone, so a dead env contributes 0 and
+            # `sat_end` keeps the value from its last live step (the torque
+            # state at the fall).
+            sat = (
+                (env.sim.data.actuator_force.abs() >= sat_thresh) & limited
+            ).float().sum(dim=1) / max(n_limited, 1)
+            sat = torch.where(alive, sat, torch.zeros_like(sat))
+            sat_sum += sat
+            sat_peak = torch.maximum(sat_peak, sat)
+            sat_end = torch.where(alive, sat, sat_end)
+
             # A step that both fails and wraps counts as a failure.
             completed |= alive & wrapped_off & ~failed
             alive &= ~(failed | wrapped_off)
@@ -130,6 +164,13 @@ def main() -> int:
     # Success = tracked the clip to its end, or still upright at the horizon
     # for clips longer than max_seconds.
     full = (completed | alive).float().reshape(n_clips, args.episodes_per_clip)
+    sat_mean = (sat_sum / err_n.clamp(min=1)).reshape(n_clips, args.episodes_per_clip)
+    sat_pk = sat_peak.reshape(n_clips, args.episodes_per_clip)
+    sat_fin = sat_end.reshape(n_clips, args.episodes_per_clip)
+
+    def _sat(x: torch.Tensor) -> float:
+        """nan, not 0.0, when the model declares no force limit to saturate."""
+        return float("nan") if n_limited == 0 else round(float(x), 5)
 
     rows = []
     for i, path in enumerate(files):
@@ -141,6 +182,12 @@ def main() -> int:
             "episodes": args.episodes_per_clip,
             "horizon_s": args.max_seconds,
             "start": args.start,
+            # Appended, never inserted or renamed: every consumer of these CSVs
+            # reads them with csv.DictReader keyed by name, so extra trailing
+            # columns are invisible to existing analyses.
+            "effort_sat_mean": _sat(sat_mean[i].mean()),
+            "effort_sat_peak": _sat(sat_pk[i].mean()),
+            "effort_sat_at_end": _sat(sat_fin[i].mean()),
         })
 
     os.makedirs(os.path.dirname(os.path.abspath(args.out)) or ".", exist_ok=True)
@@ -158,6 +205,10 @@ def main() -> int:
     mastered = (sr >= 0.8).float().mean()
     print(f"[eval] frontier fraction = {frontier:.3f} (gate >= 0.20)")
     print(f"[eval] mastered fraction = {mastered:.3f} (gate >= 0.30)")
+    if n_limited > 0:
+        sm = torch.tensor([r["effort_sat_mean"] for r in rows])
+        print(f"[eval] effort_sat over {n_limited} limited actuators: "
+              f"mean={sm.mean():.3f} max={sm.max():.3f}")
     print(f"[eval] wrote {args.out}")
     env.close()
     return 0

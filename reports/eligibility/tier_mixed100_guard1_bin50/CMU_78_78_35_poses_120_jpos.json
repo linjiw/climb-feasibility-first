@@ -1,0 +1,47 @@
+{
+ "airborne_frac": 0.16304347826086957,
+ "bin_eligible": [
+  0,
+  0
+ ],
+ "bin_eligible_frac": 0.0,
+ "bin_frames": 50,
+ "bin_score": [
+  0.0,
+  0.0
+ ],
+ "bin_score_mean": 0.0,
+ "clip": "CMU_78_78_35_poses_120_jpos",
+ "feasible_frac_kept": 0.0,
+ "feasible_segments_s": [],
+ "fps": 50.0,
+ "frames": 92,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.20652173913043478,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 2,
+ "n_bins_eligible": 0,
+ "n_feasible_segments": 0,
+ "n_severe_windows": 2,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/CMU_78_78_35_poses_120_jpos.json.gz",
+ "severe_frac": 0.20652173913043478,
+ "severe_frac_guarded": 0.8369565217391305,
+ "severe_windows_s": [
+  [
+   1.3,
+   1.4
+  ],
+  [
+   1.56,
+   1.84
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.5100285237149766
+}

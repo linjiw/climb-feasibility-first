@@ -38,9 +38,15 @@ the sampler weighted it precisely because failure was guaranteed.
 
 Screening the full 10,705-clip bank (~1 CPU-second per clip) shows this is not an anecdote:
 **22.8 % of clips are dynamically infeasible for more than 10 % of their frames**, ranging from
-0.1 % to 100 % across source datasets under a single retargeting pipeline — a pipeline property,
-not a difficulty gradient — and contaminating 29 of our own 100 evaluation clips (§6). Adding
-feasibility features to a reference-difficulty model produces the first cross-policy transfer gain
+0.1 % to 100 % across source datasets under a single retargeting pipeline — a corpus-and-pipeline property,
+not a difficulty gradient — and contaminating 29 of our own 100 evaluation clips (§6). The
+complement matters as much as the number, and we state it before anyone infers a rate for
+retargeted banks in general: an independently re-implemented screen over the 4,950-clip BONES-SEED
+bank that trains SONIC returns **0.14 %**, 160× lower, on a pre-registered test whose pre-committed
+consequence (descoping a planned training ablation there) was taken [measured; §6]. Prevalence is a
+property of a particular corpus-and-pipeline pairing; it has to be measured per corpus, and at
+≤ 1 CPU-second per clip it can be, as a standing release gate. Adding feasibility features to a
+reference-difficulty model produces the first cross-policy transfer gain
 that survives a permutation baseline (Spearman 0.567 → 0.609, p = 0.01): feasibility is the
 component of difficulty that belongs to the clip rather than to any particular training run (§7).
 
@@ -59,23 +65,25 @@ r = 0.92; §9).
 Because this project's history is a catalogue of plausible findings that dissolved under audit —
 a transfer gap that was an observation bug, a curriculum deficit that was a sampler bug, a
 "hardest clip" that was a data bug — every interpretive claim in this paper was hash-sealed before
-its numbers existed, and the full ledger, including the failed gate, the withdrawn verdict, and
-three nulls, is a first-class exhibit. Two causal confirmations are sealed and scheduled rather
-than done, and are presented as slots with their pass criteria and pre-listed null responses:
-composition causality (does adding 16 screened kneel/crawl clips make the feasible phase
-trackable?) and support moderation at scale (an 800-clip bank with *named clips predicted to get
-worse*). We believe the decomposition, the screen, the repair, and the audit discipline are useful
-to the community now, independent of how those slots resolve — and the paper is written so that
-either outcome is reportable without revision of any earlier claim.
+its numbers existed, and the full ledger, including failed gates, a withdrawn verdict, and nulls,
+is a first-class exhibit. N3 now supplies a mixed intervention result — its targeted-composition
+endpoints pass, but an adaptive-arm regression triggers the frozen interpretation stop — while
+E-HYG finds no benefit from blunt clip pruning. Support moderation at scale remains sealed and
+pending, with named clips predicted to get worse. We retain all of these outcomes without
+reframing; the decomposition, screen, repair, and audit discipline do not depend on every
+intervention being positive.
 
 **Contributions.** (1) A mechanism-level diagnosis of failure-adaptive curriculum collapse in
 humanoid tracking, including the non-floor derivation, with upstream fixes filed — and the
-exposure accounting that quantifies the cost: the shipped sampler spends a mean 48.8 % of all
-clip draws (peak 87–89 %) on a single impossible clip [measured;
+exposure accounting that quantifies the cost: the shipped sampler concentrates a mean 48.8 % of
+all clip draws on whichever single clip is currently winning (peak 87–89 %), and at least 21.9 %
+of them on the impossible clip specifically [measured;
 `reports/wasted_exposure_accounting.json`]. (2) A coverage-grounded repair that provably floors
 exposure and rescues failure-weighted sampling. (3) The feasibility × support × intrinsic
-decomposition of tracking difficulty, with bank-scale prevalence and the demonstration that
-feasibility is the transferable component of difficulty. (4) An audit methodology for
+decomposition of tracking difficulty, with bank-scale prevalence measured on two independently
+built production banks (22.8 % vs 0.14 %) — which makes prevalence a per-corpus measurement and the
+screen a release gate — and the demonstration that feasibility is the transferable component of
+difficulty. (4) An audit methodology for
 simulation-based robot learning — dual-stack conformance, stratified-start evaluation, calibrated
 paired-rollout sensitivity, and a sealed prediction ledger. The data-engineering economics frame
 all four: screening the entire 10,705-clip bank costs ~3 CPU-hours and repairing a recoverable
@@ -87,6 +95,6 @@ five orders of magnitude between the audit and the asset it defends.
 contact LP, ~1 CPU-s/clip); (ii) **contact-projection repair** — the lightweight geometric fix
 for the recoverable fraction of flagged clips (root projection onto the contact manifold, with an
 over-repair budget that refuses genuine ballistics); (iii) **evaluation & monitoring protocols**
-— stratified-start evaluation, feasibility-stratified endpoints, the dual-stack conformance
-checklist, and (pending its pre-registered test 🕐) the rollout-only sign-reversal detector as a
-runtime guard.
+— stratified-start evaluation, feasibility-stratified endpoints, and the dual-stack conformance
+checklist. A proposed rollout-only sign-reversal detector failed its sealed generality and
+specificity test and is retained as a negative result, not a runtime guard.

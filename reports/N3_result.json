@@ -1,0 +1,122 @@
+{
+ "seal": "af1b7c9f",
+ "E1": {
+  "aug_s1": {
+   "kneel_phase_survival": 0.75,
+   "n_offsets": 4,
+   "pass": true
+  },
+  "aug_s2": {
+   "kneel_phase_survival": 0.75,
+   "n_offsets": 4,
+   "pass": true
+  },
+  "baseline_base_s1": {
+   "kneel_phase_survival": 0.0
+  },
+  "baseline_base_s2": {
+   "kneel_phase_survival": 0.03125
+  },
+  "baseline_base_s3": {
+   "kneel_phase_survival": 0.1875
+  },
+  "pass": true
+ },
+ "E2": {
+  "easy": {
+   "aug_s1:CMU_76_76_02_poses_1": {
+    "mean": 1.0,
+    "pass": true
+   },
+   "aug_s1:BMLhandball_S07_Expe": {
+    "mean": 1.0,
+    "pass": true
+   },
+   "aug_s2:CMU_76_76_02_poses_1": {
+    "mean": 1.0,
+    "pass": true
+   },
+   "aug_s2:BMLhandball_S07_Expe": {
+    "mean": 1.0,
+    "pass": true
+   },
+   "aug_adapt:CMU_76_76_02_poses_1": {
+    "mean": 1.0,
+    "pass": true
+   },
+   "aug_adapt:BMLhandball_S07_Expe": {
+    "mean": 0.8571428571428571,
+    "pass": false
+   },
+   "rand_s1:CMU_76_76_02_poses_1": {
+    "mean": 1.0,
+    "pass": true
+   },
+   "rand_s1:BMLhandball_S07_Expe": {
+    "mean": 1.0,
+    "pass": true
+   }
+  },
+  "aug_s1": {
+   "heldout_all": 0.8,
+   "delta_vs_base": -0.009583333333333277,
+   "pass": true,
+   "heldout_feasible_only": 0.8362676056338029
+  },
+  "aug_s2": {
+   "heldout_all": 0.81,
+   "delta_vs_base": 0.0004166666666667318,
+   "pass": true,
+   "heldout_feasible_only": 0.8380281690140845
+  },
+  "aug_adapt": {
+   "heldout_all": 0.775,
+   "delta_vs_base": -0.0345833333333333,
+   "pass": false,
+   "heldout_feasible_only": 0.801056338028169
+  },
+  "rand_s1": {
+   "heldout_all": 0.82125,
+   "delta_vs_base": 0.011666666666666714,
+   "pass": true,
+   "heldout_feasible_only": 0.8538732394366197
+  }
+ },
+ "E3": {
+  "max_top1_after_2000": 0.784,
+  "pass": false,
+  "comparator": "adaptive-mixed100 s1-s3 max_top1 0.870-0.893 (reports/A5_coverage_dose.json)"
+ },
+ "E4": {
+  "kneel_phase_survival": 0.0,
+  "pass": true
+ },
+ "E5": {
+  "BMLmovi_Subject_36_F_MoSh_Subject_36_F_2": {
+   "base_s1": 0.0,
+   "aug_s1": 0.75
+  },
+  "Eyes_Japan_Dataset_hamada_pose-11-bended": {
+   "base_s1": 0.53125,
+   "aug_s1": 1.0
+  },
+  "KIT_3_kneel_down_to_crawl02_poses_100_jp": {
+   "base_s1": 0.375,
+   "aug_s1": 1.0
+  }
+ },
+ "descent": {
+  "aug_s1": {
+   "survival": 1.0,
+   "prediction_upheld": false
+  },
+  "aug_s2": {
+   "survival": 0.6875,
+   "prediction_upheld": false
+  }
+ },
+ "DECISION": {
+  "coverage_causal": true,
+  "rule": "E1 (both keystone seeds >= 0.25) AND E4 (random16 < 0.10); E2/E3/E5 reported alongside"
+ }
+}

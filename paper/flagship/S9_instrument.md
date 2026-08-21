@@ -1,4 +1,4 @@
-# 9. A calibrated instrument for physics sensitivity (complete except the P-SIGN slot)
+# 9. A calibrated instrument for physics sensitivity
 
 **Why an instrument section exists.** The G1 gate (§5.2) produced a methodological finding that
 outranks its negative: the natural fragility statistic — mean |φ⁺ − φ⁻| along paired
@@ -28,17 +28,17 @@ r = 0.92 across the 36 (axis, clip) signed effects, and **6/6 sign agreement on 
 above 5 mm**; 2–4 mm effects flip sign exactly as their CIs permit (`plan/N5_RESULT.md`). The
 instrument is reproducible where it claims resolution and says so where it does not.
 
-**The one anomaly it certifies** (exploratory, two supporting cases): on the impossible clip —
-and only there — **+15 % motor strength makes tracking worse** (+11.5 / +12.8 mm across seeds,
+**The anomaly it certifies** (exploratory, two supporting cases): on the impossible clip,
+**+15 % motor strength makes tracking worse** (+11.5 / +12.8 mm across seeds,
 CIs excluding zero) while helping every other clip (−2.6 to −14.2 mm). Windowed against the N1
 contact flags, the reversal is absent while the reference is supportable (+0.3 / −1.4 mm),
 switches on in the airborne window (+15.0 / +16.0 mm), and persists into its aftermath. Reading:
-*a stronger robot executes an untrackable reference harder.* If general, this is a rollout-only
-infeasibility detector — no inverse dynamics, no model of the reference, just paired rollouts.
+*a stronger robot executes this untrackable reference harder.*
 
-**[P-SIGN SLOT — sealed `c7916e8c…` (`plan/PREREGISTRATION_P_SIGN.md`): ≥ +5 mm airborne-window
-effect with CI excluding zero on ≥ 8 of the 12 named family clips; < 2 mm on ≥ 8 of 12 feasible
-matched controls; ≥ 3× airborne/standing localisation. Pass → this paragraph becomes a
-"rollout-only infeasibility detector" subsection and a candidate runtime guard (deployment: when
-tightening gains worsens a segment, suspect the reference, not the controller). Fail → the
-anomaly stays exactly this one paragraph. Runs in genuine GPU gap capacity; fills when run.]**
+**P-SIGN rejects the general detector** [sealed ✗, kept; `c7916e8c…`]. On 12 named infeasible
+family clips, 7 (needed 8) show ≥ +5 mm airborne effects with CI > 0; only 2 of those 7 meet the
+3× airborne/standing localisation rule. Just 4/12 feasible controls stay within the required
+2 mm whole-clip bound. The joint rule fails (`reports/P_SIGN/run0/p_sign_summary.json`,
+`plan/P_SIGN_RESULT.md`). The two #44 replications remain valid exploratory measurements, but
+motor sensitivity is neither sufficiently general nor sufficiently specific to serve as a
+rollout-only infeasibility detector or runtime guard.

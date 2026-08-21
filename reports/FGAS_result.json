@@ -1,0 +1,93 @@
+{
+ "analysis": "FGAS soft guard0 versus grounded mixture baseline",
+ "seeds": [
+  1,
+  2,
+  3
+ ],
+ "feasible_hard20": {
+  "motions": 20,
+  "baseline_seed_means": [
+   0.7866071428571428,
+   0.7544642857142857,
+   0.7348214285714285
+  ],
+  "fgas_seed_means": [
+   0.7785714285714285,
+   0.7089285714285714,
+   0.7294642857142857
+  ],
+  "baseline_mean": 0.7586309523809525,
+  "fgas_mean": 0.7389880952380952,
+  "paired_delta": -0.019642857142857142,
+  "bootstrap_95ci": [
+   -0.049702380952380956,
+   0.013392857142857147
+  ]
+ },
+ "heldout_feasible": {
+  "motions": 71,
+  "baseline_seed_means": [
+   0.8556338028169014,
+   0.8609154929577465,
+   0.8591549295774648
+  ],
+  "fgas_seed_means": [
+   0.8609154929577465,
+   0.8538732394366197,
+   0.823943661971831
+  ],
+  "baseline_mean": 0.8585680751173709,
+  "fgas_mean": 0.846244131455399,
+  "paired_delta": -0.01232394366197183,
+  "bootstrap_95ci": [
+   -0.04518779342723005,
+   0.01995305164319249
+  ]
+ },
+ "telemetry": [
+  {
+   "iterations": 4000,
+   "late_iterations": 2000,
+   "late_ambiguous_argmax": 24,
+   "p_top1_flagged": 0.8360323886639676,
+   "mean_top1_mass": 0.4524493,
+   "mean_clip_entropy": 0.50811365,
+   "mean_ineligible_mass": 0.21831105000000003
+  },
+  {
+   "iterations": 4000,
+   "late_iterations": 2000,
+   "late_ambiguous_argmax": 53,
+   "p_top1_flagged": 0.9280945043656909,
+   "mean_top1_mass": 0.47012545,
+   "mean_clip_entropy": 0.49387485000000003,
+   "mean_ineligible_mass": 0.20355354999999997
+  },
+  {
+   "iterations": 4000,
+   "late_iterations": 2000,
+   "late_ambiguous_argmax": 26,
+   "p_top1_flagged": 0.8196555217831814,
+   "mean_top1_mass": 0.57997235,
+   "mean_clip_entropy": 0.43674775,
+   "mean_ineligible_mass": 0.17553395
+  }
+ ],
+ "decision": {
+  "performance_benefit": false,
+  "no_feasible_regression": true,
+  "attractor_moves": false,
+  "soft_contamination_gate": false,
+  "mean_p_top1_flagged": 0.8612608049376131,
+  "mean_top1_mass": 0.5008490333333334,
+  "mean_ineligible_mass": 0.19913285000000003,
+  "reading": "failed_or_harmful",
+  "rules": {
+   "performance": "feasible-hard20 delta >= 0.05 and bootstrap CI low > 0",
+   "no_regression": "heldout feasible delta >= -0.03",
+   "attractor": "P(top1 flagged) < 0.40 and mean top1 mass in [0.30, 0.38]",
+   "soft_implementation": "late joint hard-rejected mass < 0.15"
+  }
+ }
+}

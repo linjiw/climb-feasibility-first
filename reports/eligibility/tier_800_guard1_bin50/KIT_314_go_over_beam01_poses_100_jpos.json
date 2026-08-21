@@ -1,0 +1,70 @@
+{
+ "airborne_frac": 0.3683241252302026,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1
+ ],
+ "bin_eligible_frac": 0.36363636363636365,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  0.34,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.66,
+  1.0
+ ],
+ "bin_score_mean": 0.45454545454545453,
+ "clip": "KIT_314_go_over_beam01_poses_100_jpos",
+ "feasible_frac_kept": 0.44751381215469616,
+ "feasible_segments_s": [
+  [
+   0.0,
+   3.34
+  ],
+  [
+   9.34,
+   10.86
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 543,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.3683241252302026,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 11,
+ "n_bins_eligible": 4,
+ "n_feasible_segments": 2,
+ "n_severe_windows": 1,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/KIT_314_go_over_beam01_poses_100_jpos.json",
+ "severe_frac": 0.3683241252302026,
+ "severe_frac_guarded": 0.5524861878453039,
+ "severe_windows_s": [
+  [
+   4.34,
+   8.34
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.045810054408214
+}

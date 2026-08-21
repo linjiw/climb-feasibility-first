@@ -1,0 +1,172 @@
+{
+ "airborne_frac": 0.034274193548387094,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.7333333333333333,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.94,
+  0.88,
+  1.0,
+  0.98,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.22,
+  1.0,
+  1.0,
+  0.68,
+  1.0,
+  1.0,
+  1.0,
+  0.56,
+  1.0,
+  1.0,
+  1.0,
+  0.74,
+  0.62,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.9206666666666667,
+ "clip": "Eyes_Japan_Dataset_kanno_accident-02-dodge_fast-kanno_poses_120_jpos",
+ "feasible_frac_kept": 0.9200268817204301,
+ "feasible_segments_s": [
+  [
+   0.0,
+   5.94
+  ],
+  [
+   6.12,
+   8.16
+  ],
+  [
+   8.18,
+   13.1
+  ],
+  [
+   13.88,
+   16.14
+  ],
+  [
+   16.46,
+   20.24
+  ],
+  [
+   20.68,
+   24.74
+  ],
+  [
+   25.38,
+   29.76
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1488,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.034274193548387094,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 30,
+ "n_bins_eligible": 22,
+ "n_feasible_segments": 7,
+ "n_severe_windows": 12,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/Eyes_Japan_Dataset_kanno_accident-02-dodge_fast-kanno_poses_120_jpos.json.gz",
+ "severe_frac": 0.034274193548387094,
+ "severe_frac_guarded": 0.034274193548387094,
+ "severe_windows_s": [
+  [
+   5.94,
+   6.12
+  ],
+  [
+   8.16,
+   8.18
+  ],
+  [
+   13.1,
+   13.14
+  ],
+  [
+   13.36,
+   13.52
+  ],
+  [
+   13.76,
+   13.88
+  ],
+  [
+   16.14,
+   16.18
+  ],
+  [
+   16.38,
+   16.46
+  ],
+  [
+   20.24,
+   20.32
+  ],
+  [
+   20.56,
+   20.68
+  ],
+  [
+   24.74,
+   24.76
+  ],
+  [
+   24.98,
+   25.02
+  ],
+  [
+   25.26,
+   25.38
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.2428483091318611
+}

@@ -1,0 +1,162 @@
+{
+ "airborne_frac": 0.041212121212121214,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.7575757575757576,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.64,
+  0.0,
+  0.0,
+  0.4,
+  1.0,
+  1.0,
+  1.0,
+  0.92,
+  0.0,
+  0.3,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.8,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.8503030303030302,
+ "clip": "Eyes_Japan_Dataset_takiguchi_walk-07-moonwalk-takiguchi_poses_250_jpos",
+ "feasible_frac_kept": 0.8503030303030303,
+ "feasible_segments_s": [
+  [
+   0.0,
+   7.64
+  ],
+  [
+   10.6,
+   14.92
+  ],
+  [
+   16.7,
+   23.1
+  ],
+  [
+   23.3,
+   33.0
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1650,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.04303030303030303,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 33,
+ "n_bins_eligible": 25,
+ "n_feasible_segments": 4,
+ "n_severe_windows": 11,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/Eyes_Japan_Dataset_takiguchi_walk-07-moonwalk-takiguchi_poses_250_jpos.json.gz",
+ "severe_frac": 0.04303030303030303,
+ "severe_frac_guarded": 0.04303030303030303,
+ "severe_windows_s": [
+  [
+   7.64,
+   7.7
+  ],
+  [
+   7.98,
+   8.32
+  ],
+  [
+   9.12,
+   9.16
+  ],
+  [
+   9.22,
+   9.54
+  ],
+  [
+   10.1,
+   10.2
+  ],
+  [
+   10.48,
+   10.6
+  ],
+  [
+   14.92,
+   14.98
+  ],
+  [
+   15.42,
+   15.56
+  ],
+  [
+   16.26,
+   16.28
+  ],
+  [
+   16.68,
+   16.7
+  ],
+  [
+   23.1,
+   23.3
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.45405265503176007
+}

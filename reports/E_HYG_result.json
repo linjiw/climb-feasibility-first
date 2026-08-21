@@ -1,0 +1,28 @@
+{
+ "seal": "PREREGISTRATION_E_HYG.md",
+ "n_heldout": 100,
+ "n_feasible": 71,
+ "P1": {
+  "delta_feasible_mean": -0.010060362173038226,
+  "perm_p_onesided": 0.951,
+  "pass": false
+ },
+ "P2": {
+  "delta_worst_decile": -0.0153061224489796,
+  "delta_best_half": -0.003472222222222222,
+  "delta_easy": -0.005063965884861404,
+  "pass": false
+ },
+ "P3": {
+  "delta_zs_ground": -0.03541666666666667,
+  "in_bracket": true,
+  "delta_zs_dynamic_descriptive": -0.010119047619047616
+ },
+ "P4": {
+  "delta_infeasible_stratum": -0.02093596059113301
+ },
+ "DECISION": {
+  "hygiene_confirmed": false,
+  "rule": "P1 AND P2; P3 bracket reported either way"
+ }
+}

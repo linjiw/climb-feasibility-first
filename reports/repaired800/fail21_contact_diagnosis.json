@@ -1,0 +1,481 @@
+{
+ "generated_utc": "2026-08-19T20:32:28Z",
+ "what": "Per-frame decomposition of residual infeasibility for the 21 tier_800 clips whose contact-projection repair failed the census success budget (offset_max<=0.15 m AND infeasible_frac_after<=0.05), plus a control sample of clips from tier_800_pruned.",
+ "method": "tools/n1_knee_id.py full (non-brief) screen, gap=0.06, mu default, CPU only; a frame is infeasible when the torque-limited LP leaves >0.5*bodyweight unsupported; 'in contact' means >=1 collision geom within gap of the plane.",
+ "why": "The repair operator (tools/repair_contact_projection.py) triggers only on airborne frames (mind>gap) but the success budget is scored on the full-clip LP, so frames that are IN CONTACT yet infeasible (friction-cone / torque limited) receive a zero root offset and are nevertheless counted against the operator.",
+ "control": {
+  "n": 79,
+  "source": "uniform sample of tier_800_pruned (seed 20260819)",
+  "in_contact_infeasible_frac": {
+   "mean": 0.0007540076266120954,
+   "median": 0.0,
+   "p90": 0.0,
+   "max": 0.026615969581749048,
+   "n_exceeding_0p05": 0
+  }
+ },
+ "clips": {
+  "CMU_122_122_34_poses_120_jpos": {
+   "before": {
+    "frames": 403,
+    "infeasible_frac": 0.4317617866004963,
+    "airborne_frac": 0.4317617866004963,
+    "infeasible_in_contact_frac": 0.0,
+    "infeasible_airborne_frac": 0.4317617866004963
+   },
+   "after": {
+    "frames": 403,
+    "infeasible_frac": 0.017369727047146403,
+    "airborne_frac": 0.017369727047146403,
+    "infeasible_in_contact_frac": 0.0,
+    "infeasible_airborne_frac": 0.017369727047146403
+   },
+   "offset_max_m": 0.439430436881586,
+   "peak_added_downward_vel_mps": 1.0431339381619145,
+   "fail_offset_budget": true,
+   "fail_residual_budget": false,
+   "residual_is_in_contact": false,
+   "in_contact_infeasible_before_exceeds_budget": false
+  },
+  "HUMAN4D_Subject3_Medhi_RGB_TalkingWalking_S3_01_poses_120_jpos": {
+   "before": {
+    "frames": 1224,
+    "infeasible_frac": 0.16666666666666666,
+    "airborne_frac": 0.11356209150326797,
+    "infeasible_in_contact_frac": 0.05310457516339869,
+    "infeasible_airborne_frac": 0.11356209150326797
+   },
+   "after": {
+    "frames": 1224,
+    "infeasible_frac": 0.05228758169934641,
+    "airborne_frac": 0.0,
+    "infeasible_in_contact_frac": 0.05228758169934641,
+    "infeasible_airborne_frac": 0.0
+   },
+   "offset_max_m": 0.05301097985740871,
+   "peak_added_downward_vel_mps": 0.10827678050590413,
+   "fail_offset_budget": false,
+   "fail_residual_budget": true,
+   "residual_is_in_contact": true,
+   "in_contact_infeasible_before_exceeds_budget": true
+  },
+  "CMU_83_83_15_poses_120_jpos": {
+   "before": {
+    "frames": 218,
+    "infeasible_frac": 0.4954128440366973,
+    "airborne_frac": 0.4954128440366973,
+    "infeasible_in_contact_frac": 0.0,
+    "infeasible_airborne_frac": 0.4954128440366973
+   },
+   "after": {
+    "frames": 218,
+    "infeasible_frac": 0.009174311926605505,
+    "airborne_frac": 0.0,
+    "infeasible_in_contact_frac": 0.009174311926605505,
+    "infeasible_airborne_frac": 0.0
+   },
+   "offset_max_m": 0.1507185036319303,
+   "peak_added_downward_vel_mps": 0.6689170266899068,
+   "fail_offset_budget": true,
+   "fail_residual_budget": false,
+   "residual_is_in_contact": false,
+   "in_contact_infeasible_before_exceeds_budget": false
+  },
+  "CMU_83_83_34_poses_120_jpos": {
+   "before": {
+    "frames": 403,
+    "infeasible_frac": 0.4317617866004963,
+    "airborne_frac": 0.4317617866004963,
+    "infeasible_in_contact_frac": 0.0,
+    "infeasible_airborne_frac": 0.4317617866004963
+   },
+   "after": {
+    "frames": 403,
+    "infeasible_frac": 0.017369727047146403,
+    "airborne_frac": 0.017369727047146403,
+    "infeasible_in_contact_frac": 0.0,
+    "infeasible_airborne_frac": 0.017369727047146403
+   },
+   "offset_max_m": 0.43660807038113836,
+   "peak_added_downward_vel_mps": 0.9603078913493275,
+   "fail_offset_budget": true,
+   "fail_residual_budget": false,
+   "residual_is_in_contact": false,
+   "in_contact_infeasible_before_exceeds_budget": false
+  },
+  "CMU_136_136_06_poses_120_jpos": {
+   "before": {
+    "frames": 393,
+    "infeasible_frac": 0.17557251908396945,
+    "airborne_frac": 0.10687022900763359,
+    "infeasible_in_contact_frac": 0.06870229007633588,
+    "infeasible_airborne_frac": 0.10687022900763359
+   },
+   "after": {
+    "frames": 393,
+    "infeasible_frac": 0.05089058524173028,
+    "airborne_frac": 0.0,
+    "infeasible_in_contact_frac": 0.05089058524173028,
+    "infeasible_airborne_frac": 0.0
+   },
+   "offset_max_m": 0.026614757506507426,
+   "peak_added_downward_vel_mps": 0.07415245512726709,
+   "fail_offset_budget": false,
+   "fail_residual_budget": true,
+   "residual_is_in_contact": true,
+   "in_contact_infeasible_before_exceeds_budget": true
+  },
+  "BMLmovi_Subject_17_F_MoSh_Subject_17_F_14_poses_120_jpos": {
+   "before": {
+    "frames": 342,
+    "infeasible_frac": 0.34502923976608185,
+    "airborne_frac": 0.34502923976608185,
+    "infeasible_in_contact_frac": 0.0,
+    "infeasible_airborne_frac": 0.34502923976608185
+   },
+   "after": {
+    "frames": 342,
+    "infeasible_frac": 0.023391812865497075,
+    "airborne_frac": 0.005847953216374269,
+    "infeasible_in_contact_frac": 0.017543859649122806,
+    "infeasible_airborne_frac": 0.005847953216374269
+   },
+   "offset_max_m": 0.41523932459684854,
+   "peak_added_downward_vel_mps": 0.9166859723563792,
+   "fail_offset_budget": true,
+   "fail_residual_budget": false,
+   "residual_is_in_contact": false,
+   "in_contact_infeasible_before_exceeds_budget": false
+  },
+  "CMU_114_114_09_poses_120_jpos": {
+   "before": {
+    "frames": 949,
+    "infeasible_frac": 0.41938883034773444,
+    "airborne_frac": 0.41938883034773444,
+    "infeasible_in_contact_frac": 0.0,
+    "infeasible_airborne_frac": 0.41938883034773444
+   },
+   "after": {
+    "frames": 949,
+    "infeasible_frac": 0.04320337197049526,
+    "airborne_frac": 0.023182297154899896,
+    "infeasible_in_contact_frac": 0.020021074815595362,
+    "infeasible_airborne_frac": 0.023182297154899896
+   },
+   "offset_max_m": 0.41070133506498846,
+   "peak_added_downward_vel_mps": 1.1641253410319858,
+   "fail_offset_budget": true,
+   "fail_residual_budget": false,
+   "residual_is_in_contact": false,
+   "in_contact_infeasible_before_exceeds_budget": false
+  },
+  "CMU_122_122_01_poses_120_jpos": {
+   "before": {
+    "frames": 264,
+    "infeasible_frac": 0.21212121212121213,
+    "airborne_frac": 0.14393939393939395,
+    "infeasible_in_contact_frac": 0.06818181818181818,
+    "infeasible_airborne_frac": 0.14393939393939395
+   },
+   "after": {
+    "frames": 264,
+    "infeasible_frac": 0.06439393939393939,
+    "airborne_frac": 0.0,
+    "infeasible_in_contact_frac": 0.06439393939393939,
+    "infeasible_airborne_frac": 0.0
+   },
+   "offset_max_m": 0.07278434967923403,
+   "peak_added_downward_vel_mps": 0.1430580574939973,
+   "fail_offset_budget": false,
+   "fail_residual_budget": true,
+   "residual_is_in_contact": true,
+   "in_contact_infeasible_before_exceeds_budget": true
+  },
+  "Eyes_Japan_Dataset_kaiwa_jump-03-vertical-kaiwa_poses_120_jpos": {
+   "before": {
+    "frames": 1500,
+    "infeasible_frac": 0.156,
+    "airborne_frac": 0.23,
+    "infeasible_in_contact_frac": 0.004666666666666667,
+    "infeasible_airborne_frac": 0.15133333333333332
+   },
+   "after": {
+    "frames": 1500,
+    "infeasible_frac": 0.023333333333333334,
+    "airborne_frac": 0.052,
+    "infeasible_in_contact_frac": 0.009333333333333334,
+    "infeasible_airborne_frac": 0.014
+   },
+   "offset_max_m": 0.2543715463004642,
+   "peak_added_downward_vel_mps": 1.853232478573699,
+   "fail_offset_budget": true,
+   "fail_residual_budget": false,
+   "residual_is_in_contact": false,
+   "in_contact_infeasible_before_exceeds_budget": false
+  },
+  "CMU_83_83_16_poses_120_jpos": {
+   "before": {
+    "frames": 213,
+    "infeasible_frac": 0.4084507042253521,
+    "airborne_frac": 0.40375586854460094,
+    "infeasible_in_contact_frac": 0.004694835680751174,
+    "infeasible_airborne_frac": 0.40375586854460094
+   },
+   "after": {
+    "frames": 213,
+    "infeasible_frac": 0.004694835680751174,
+    "airborne_frac": 0.0,
+    "infeasible_in_contact_frac": 0.004694835680751174,
+    "infeasible_airborne_frac": 0.0
+   },
+   "offset_max_m": 0.16068166708474196,
+   "peak_added_downward_vel_mps": 0.7388715221987148,
+   "fail_offset_budget": true,
+   "fail_residual_budget": false,
+   "residual_is_in_contact": false,
+   "in_contact_infeasible_before_exceeds_budget": false
+  },
+  "CMU_144_144_17_poses_120_jpos": {
+   "before": {
+    "frames": 1175,
+    "infeasible_frac": 0.34808510638297874,
+    "airborne_frac": 0.19063829787234043,
+    "infeasible_in_contact_frac": 0.1574468085106383,
+    "infeasible_airborne_frac": 0.19063829787234043
+   },
+   "after": {
+    "frames": 1175,
+    "infeasible_frac": 0.1523404255319149,
+    "airborne_frac": 0.000851063829787234,
+    "infeasible_in_contact_frac": 0.15148936170212765,
+    "infeasible_airborne_frac": 0.000851063829787234
+   },
+   "offset_max_m": 0.057206300291916326,
+   "peak_added_downward_vel_mps": 0.1693764919636836,
+   "fail_offset_budget": false,
+   "fail_residual_budget": true,
+   "residual_is_in_contact": true,
+   "in_contact_infeasible_before_exceeds_budget": true
+  },
+  "CMU_36_36_18_poses_120_jpos": {
+   "before": {
+    "frames": 1793,
+    "infeasible_frac": 0.35973229224762965,
+    "airborne_frac": 0.35861684327941995,
+    "infeasible_in_contact_frac": 0.0011154489682097045,
+    "infeasible_airborne_frac": 0.35861684327941995
+   },
+   "after": {
+    "frames": 1793,
+    "infeasible_frac": 0.047406581148912434,
+    "airborne_frac": 0.03179029559397657,
+    "infeasible_in_contact_frac": 0.015616285554935862,
+    "infeasible_airborne_frac": 0.03179029559397657
+   },
+   "offset_max_m": 0.3010733706320766,
+   "peak_added_downward_vel_mps": 1.26588699419399,
+   "fail_offset_budget": true,
+   "fail_residual_budget": false,
+   "residual_is_in_contact": false,
+   "in_contact_infeasible_before_exceeds_budget": false
+  },
+  "CMU_36_36_04_poses_120_jpos": {
+   "before": {
+    "frames": 1553,
+    "infeasible_frac": 0.27945911139729557,
+    "airborne_frac": 0.2755956213779781,
+    "infeasible_in_contact_frac": 0.0038634900193174502,
+    "infeasible_airborne_frac": 0.2755956213779781
+   },
+   "after": {
+    "frames": 1553,
+    "infeasible_frac": 0.08177720540888603,
+    "airborne_frac": 0.05280103026400515,
+    "infeasible_in_contact_frac": 0.028976175144880875,
+    "infeasible_airborne_frac": 0.05280103026400515
+   },
+   "offset_max_m": 0.2801434325095089,
+   "peak_added_downward_vel_mps": 1.429981909846498,
+   "fail_offset_budget": true,
+   "fail_residual_budget": true,
+   "residual_is_in_contact": false,
+   "in_contact_infeasible_before_exceeds_budget": false
+  },
+  "CMU_83_83_53_poses_120_jpos": {
+   "before": {
+    "frames": 225,
+    "infeasible_frac": 0.19555555555555557,
+    "airborne_frac": 0.3022222222222222,
+    "infeasible_in_contact_frac": 0.008888888888888889,
+    "infeasible_airborne_frac": 0.18666666666666668
+   },
+   "after": {
+    "frames": 225,
+    "infeasible_frac": 0.035555555555555556,
+    "airborne_frac": 0.07555555555555556,
+    "infeasible_in_contact_frac": 0.013333333333333334,
+    "infeasible_airborne_frac": 0.022222222222222223
+   },
+   "offset_max_m": 0.2533236521032871,
+   "peak_added_downward_vel_mps": 2.222577618558896,
+   "fail_offset_budget": true,
+   "fail_residual_budget": false,
+   "residual_is_in_contact": false,
+   "in_contact_infeasible_before_exceeds_budget": false
+  },
+  "CMU_108_108_13_poses_120_jpos": {
+   "before": {
+    "frames": 65,
+    "infeasible_frac": 0.12307692307692308,
+    "airborne_frac": 0.06153846153846154,
+    "infeasible_in_contact_frac": 0.1076923076923077,
+    "infeasible_airborne_frac": 0.015384615384615385
+   },
+   "after": {
+    "frames": 65,
+    "infeasible_frac": 0.12307692307692308,
+    "airborne_frac": 0.03076923076923077,
+    "infeasible_in_contact_frac": 0.1076923076923077,
+    "infeasible_airborne_frac": 0.015384615384615385
+   },
+   "offset_max_m": 0.00520671354566026,
+   "peak_added_downward_vel_mps": 0.12430953110516436,
+   "fail_offset_budget": false,
+   "fail_residual_budget": true,
+   "residual_is_in_contact": true,
+   "in_contact_infeasible_before_exceeds_budget": true
+  },
+  "Eyes_Japan_Dataset_aita_walk-23-shuffle_oneleg-aita_poses_120_jpos": {
+   "before": {
+    "frames": 1500,
+    "infeasible_frac": 0.422,
+    "airborne_frac": 0.28733333333333333,
+    "infeasible_in_contact_frac": 0.13466666666666666,
+    "infeasible_airborne_frac": 0.28733333333333333
+   },
+   "after": {
+    "frames": 1500,
+    "infeasible_frac": 0.13866666666666666,
+    "airborne_frac": 0.0,
+    "infeasible_in_contact_frac": 0.13866666666666666,
+    "infeasible_airborne_frac": 0.0
+   },
+   "offset_max_m": 0.08010722979829504,
+   "peak_added_downward_vel_mps": 0.46022214947406176,
+   "fail_offset_budget": false,
+   "fail_residual_budget": true,
+   "residual_is_in_contact": true,
+   "in_contact_infeasible_before_exceeds_budget": true
+  },
+  "CMU_82_82_07_poses_120_jpos": {
+   "before": {
+    "frames": 499,
+    "infeasible_frac": 0.35070140280561124,
+    "airborne_frac": 0.056112224448897796,
+    "infeasible_in_contact_frac": 0.29458917835671344,
+    "infeasible_airborne_frac": 0.056112224448897796
+   },
+   "after": {
+    "frames": 499,
+    "infeasible_frac": 0.2965931863727455,
+    "airborne_frac": 0.0,
+    "infeasible_in_contact_frac": 0.2965931863727455,
+    "infeasible_airborne_frac": 0.0
+   },
+   "offset_max_m": 0.029192889284251507,
+   "peak_added_downward_vel_mps": 0.07035493802114018,
+   "fail_offset_budget": false,
+   "fail_residual_budget": true,
+   "residual_is_in_contact": true,
+   "in_contact_infeasible_before_exceeds_budget": true
+  },
+  "CMU_143_143_09_poses_60_jpos": {
+   "before": {
+    "frames": 454,
+    "infeasible_frac": 0.10572687224669604,
+    "airborne_frac": 0.18502202643171806,
+    "infeasible_in_contact_frac": 0.0,
+    "infeasible_airborne_frac": 0.10572687224669604
+   },
+   "after": {
+    "frames": 454,
+    "infeasible_frac": 0.037444933920704845,
+    "airborne_frac": 0.07709251101321586,
+    "infeasible_in_contact_frac": 0.00881057268722467,
+    "infeasible_airborne_frac": 0.028634361233480177
+   },
+   "offset_max_m": 0.1695749031829819,
+   "peak_added_downward_vel_mps": 1.8064343588243932,
+   "fail_offset_budget": true,
+   "fail_residual_budget": false,
+   "residual_is_in_contact": false,
+   "in_contact_infeasible_before_exceeds_budget": false
+  },
+  "CMU_138_138_25_poses_120_jpos": {
+   "before": {
+    "frames": 149,
+    "infeasible_frac": 0.12080536912751678,
+    "airborne_frac": 0.08053691275167785,
+    "infeasible_in_contact_frac": 0.040268456375838924,
+    "infeasible_airborne_frac": 0.08053691275167785
+   },
+   "after": {
+    "frames": 149,
+    "infeasible_frac": 0.06040268456375839,
+    "airborne_frac": 0.006711409395973154,
+    "infeasible_in_contact_frac": 0.053691275167785234,
+    "infeasible_airborne_frac": 0.006711409395973154
+   },
+   "offset_max_m": 0.01570348518280967,
+   "peak_added_downward_vel_mps": 0.3345083192522234,
+   "fail_offset_budget": false,
+   "fail_residual_budget": true,
+   "residual_is_in_contact": true,
+   "in_contact_infeasible_before_exceeds_budget": false
+  },
+  "CMU_16_16_35_poses_120_jpos": {
+   "before": {
+    "frames": 68,
+    "infeasible_frac": 0.11764705882352941,
+    "airborne_frac": 0.058823529411764705,
+    "infeasible_in_contact_frac": 0.11764705882352941,
+    "infeasible_airborne_frac": 0.0
+   },
+   "after": {
+    "frames": 68,
+    "infeasible_frac": 0.11764705882352941,
+    "airborne_frac": 0.014705882352941176,
+    "infeasible_in_contact_frac": 0.11764705882352941,
+    "infeasible_airborne_frac": 0.0
+   },
+   "offset_max_m": 0.005897315028000942,
+   "peak_added_downward_vel_mps": 0.14743287570002356,
+   "fail_offset_budget": false,
+   "fail_residual_budget": true,
+   "residual_is_in_contact": true,
+   "in_contact_infeasible_before_exceeds_budget": true
+  },
+  "CMU_135_135_02_poses_120_jpos": {
+   "before": {
+    "frames": 2168,
+    "infeasible_frac": 0.2878228782287823,
+    "airborne_frac": 0.27075645756457567,
+    "infeasible_in_contact_frac": 0.02859778597785978,
+    "infeasible_airborne_frac": 0.2592250922509225
+   },
+   "after": {
+    "frames": 2168,
+    "infeasible_frac": 0.03044280442804428,
+    "airborne_frac": 0.005996309963099631,
+    "infeasible_in_contact_frac": 0.024446494464944648,
+    "infeasible_airborne_frac": 0.005996309963099631
+   },
+   "offset_max_m": 0.22981563090121457,
+   "peak_added_downward_vel_mps": 2.4293910070519154,
+   "fail_offset_budget": true,
+   "fail_residual_budget": false,
+   "residual_is_in_contact": false,
+   "in_contact_infeasible_before_exceeds_budget": false
+  }
+ }
+}

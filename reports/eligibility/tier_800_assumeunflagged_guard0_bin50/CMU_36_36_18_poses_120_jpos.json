@@ -1,0 +1,164 @@
+{
+ "airborne_frac": 0.35861684327941995,
+ "bin_eligible": [
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1
+ ],
+ "bin_eligible_frac": 0.4444444444444444,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  0.98,
+  0.58,
+  0.0,
+  0.0,
+  0.0,
+  0.02,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.4,
+  0.28,
+  0.96,
+  0.0,
+  0.98,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.82,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.48,
+  1.0
+ ],
+ "bin_score_mean": 0.5972222222222222,
+ "clip": "CMU_36_36_18_poses_120_jpos",
+ "feasible_frac_kept": 0.5956497490239822,
+ "feasible_segments_s": [
+  [
+   0.0,
+   2.06
+  ],
+  [
+   2.08,
+   3.58
+  ],
+  [
+   7.98,
+   17.4
+  ],
+  [
+   18.72,
+   19.96
+  ],
+  [
+   21.02,
+   26.82
+  ],
+  [
+   34.52,
+   35.86
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1793,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.35973229224762965,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 36,
+ "n_bins_eligible": 16,
+ "n_feasible_segments": 6,
+ "n_severe_windows": 8,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/CMU_36_36_18_poses_120_jpos.json",
+ "severe_frac": 0.35973229224762965,
+ "severe_frac_guarded": 0.35973229224762965,
+ "severe_windows_s": [
+  [
+   2.06,
+   2.08
+  ],
+  [
+   3.58,
+   7.98
+  ],
+  [
+   17.4,
+   18.66
+  ],
+  [
+   18.68,
+   18.72
+  ],
+  [
+   19.96,
+   21.02
+  ],
+  [
+   26.82,
+   27.38
+  ],
+  [
+   28.18,
+   33.12
+  ],
+  [
+   33.9,
+   34.52
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.0673340641814522
+}

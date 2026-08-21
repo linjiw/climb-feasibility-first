@@ -1,0 +1,62 @@
+{
+ "airborne_frac": 0.0,
+ "bin_eligible": [
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.5714285714285714,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  0.66,
+  0.0,
+  0.3,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.7085714285714285,
+ "clip": "GRAB_s9_spheresmall_pass_1",
+ "feasible_frac_kept": 0.6782334384858044,
+ "feasible_segments_s": [
+  [
+   0.0,
+   2.66
+  ],
+  [
+   4.7,
+   6.34
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 317,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.006309148264984227,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 7,
+ "n_bins_eligible": 4,
+ "n_feasible_segments": 2,
+ "n_severe_windows": 1,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/GRAB_s9_spheresmall_pass_1.json.gz",
+ "severe_frac": 0.006309148264984227,
+ "severe_frac_guarded": 0.3217665615141956,
+ "severe_windows_s": [
+  [
+   3.66,
+   3.7
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.45273797829845147
+}

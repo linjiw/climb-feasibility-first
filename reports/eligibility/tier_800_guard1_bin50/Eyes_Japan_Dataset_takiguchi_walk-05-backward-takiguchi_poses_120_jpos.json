@@ -1,0 +1,100 @@
+{
+ "airborne_frac": 0.01,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.6,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.36,
+  0.0,
+  0.52,
+  1.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.18,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.653,
+ "clip": "Eyes_Japan_Dataset_takiguchi_walk-05-backward-takiguchi_poses_120_jpos",
+ "feasible_frac_kept": 0.653,
+ "feasible_segments_s": [
+  [
+   0.0,
+   5.36
+  ],
+  [
+   7.48,
+   9.0
+  ],
+  [
+   13.82,
+   20.0
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1000,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.01,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 20,
+ "n_bins_eligible": 12,
+ "n_feasible_segments": 3,
+ "n_severe_windows": 3,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/Eyes_Japan_Dataset_takiguchi_walk-05-backward-takiguchi_poses_120_jpos.json.gz",
+ "severe_frac": 0.01,
+ "severe_frac_guarded": 0.31,
+ "severe_windows_s": [
+  [
+   6.36,
+   6.48
+  ],
+  [
+   10.0,
+   10.02
+  ],
+  [
+   12.76,
+   12.82
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.2094922087588458
+}

@@ -1,0 +1,200 @@
+{
+ "airborne_frac": 0.06960142772159429,
+ "bin_eligible": [
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.38235294117647056,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  0.96,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.08,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.9,
+  0.0,
+  0.0,
+  0.0,
+  0.62,
+  0.64,
+  0.0,
+  0.24,
+  1.0,
+  1.0,
+  0.36,
+  0.0,
+  0.0,
+  0.0,
+  0.3,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.5029411764705882,
+ "clip": "Eyes_Japan_Dataset_kanno_gesture_etc-41-mosh-kanno_poses_120_jpos",
+ "feasible_frac_kept": 0.49732302201070794,
+ "feasible_segments_s": [
+  [
+   0.0,
+   1.96
+  ],
+  [
+   8.92,
+   13.9
+  ],
+  [
+   17.38,
+   18.64
+  ],
+  [
+   20.76,
+   23.36
+  ],
+  [
+   27.7,
+   33.62
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1681,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.05056513979773944,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 34,
+ "n_bins_eligible": 13,
+ "n_feasible_segments": 5,
+ "n_severe_windows": 19,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/Eyes_Japan_Dataset_kanno_gesture_etc-41-mosh-kanno_poses_120_jpos.json.gz",
+ "severe_frac": 0.05056513979773944,
+ "severe_frac_guarded": 0.5026769779892921,
+ "severe_windows_s": [
+  [
+   2.96,
+   3.04
+  ],
+  [
+   3.16,
+   3.2
+  ],
+  [
+   3.4,
+   3.54
+  ],
+  [
+   3.86,
+   4.12
+  ],
+  [
+   4.22,
+   4.28
+  ],
+  [
+   4.98,
+   5.08
+  ],
+  [
+   5.18,
+   5.24
+  ],
+  [
+   5.3,
+   5.44
+  ],
+  [
+   6.06,
+   6.14
+  ],
+  [
+   7.82,
+   7.92
+  ],
+  [
+   14.9,
+   15.0
+  ],
+  [
+   15.1,
+   15.14
+  ],
+  [
+   16.26,
+   16.38
+  ],
+  [
+   19.64,
+   19.76
+  ],
+  [
+   24.36,
+   24.42
+  ],
+  [
+   24.52,
+   24.56
+  ],
+  [
+   25.76,
+   25.86
+  ],
+  [
+   25.96,
+   26.0
+  ],
+  [
+   26.68,
+   26.7
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.5001886362076355
+}

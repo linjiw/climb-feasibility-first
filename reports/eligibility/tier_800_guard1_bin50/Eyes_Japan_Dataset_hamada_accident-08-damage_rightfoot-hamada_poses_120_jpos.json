@@ -1,0 +1,132 @@
+{
+ "airborne_frac": 0.056451612903225805,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.5666666666666667,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.66,
+  0.0,
+  0.0,
+  0.72,
+  1.0,
+  1.0,
+  1.0,
+  0.78,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.86,
+  1.0,
+  1.0,
+  1.0,
+  0.58,
+  0.0,
+  0.18,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.6926666666666667,
+ "clip": "Eyes_Japan_Dataset_hamada_accident-08-damage_rightfoot-hamada_poses_120_jpos",
+ "feasible_frac_kept": 0.6901881720430108,
+ "feasible_segments_s": [
+  [
+   0.0,
+   7.66
+  ],
+  [
+   10.28,
+   14.78
+  ],
+  [
+   19.14,
+   23.58
+  ],
+  [
+   25.82,
+   29.76
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1488,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.056451612903225805,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 30,
+ "n_bins_eligible": 17,
+ "n_feasible_segments": 4,
+ "n_severe_windows": 5,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/Eyes_Japan_Dataset_hamada_accident-08-damage_rightfoot-hamada_poses_120_jpos.json.gz",
+ "severe_frac": 0.056451612903225805,
+ "severe_frac_guarded": 0.30981182795698925,
+ "severe_windows_s": [
+  [
+   8.66,
+   9.28
+  ],
+  [
+   15.78,
+   15.9
+  ],
+  [
+   15.96,
+   16.2
+  ],
+  [
+   17.68,
+   18.14
+  ],
+  [
+   24.58,
+   24.82
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.9239120047407416
+}

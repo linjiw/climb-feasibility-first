@@ -12,6 +12,8 @@ or, more usually, by pointing the training script at a tier list from
 
 from __future__ import annotations
 
+import os
+
 from mjlab.tasks.registry import register_mjlab_task
 from mjlab.tasks.tracking.config.g1.rl_cfg import unitree_g1_tracking_ppo_runner_cfg
 from mjlab.tasks.tracking.rl import MotionTrackingOnPolicyRunner
@@ -28,6 +30,7 @@ __all__ = [
     "read_clip_list",
 ]
 
+
 def _clips_from_env() -> list[str]:
     """Resolve the bank from CLIMB_CLIPS / CLIMB_BANK.
 
@@ -37,8 +40,6 @@ def _clips_from_env() -> list[str]:
     (num-envs, max-iterations, logger, ...) usable unchanged while the bank
     stays an explicit, logged launch parameter.
     """
-    import os  # noqa: PLC0415
-
     listing = os.environ.get("CLIMB_CLIPS")
     if not listing:
         return []
@@ -47,6 +48,11 @@ def _clips_from_env() -> list[str]:
 
 
 _CLIPS = _clips_from_env()
+_ELIGIBILITY_PATH = os.environ.get("CLIMB_ELIGIBILITY_PATH")
+_ELIGIBILITY_MODE = os.environ.get("CLIMB_ELIGIBILITY_MODE", "off")
+_ELIGIBILITY_THRESHOLD = float(
+    os.environ.get("CLIMB_ELIGIBILITY_HARD_THRESHOLD", "0.5")
+)
 
 # One task id per sampling arm. Registering them separately keeps the
 # manipulated variable visible in the run name and in `list-envs` rather than
@@ -58,9 +64,20 @@ for _task, _mode in (
 ):
     register_mjlab_task(
         task_id=_task,
-        env_cfg=climb_g1_tracking_env_cfg(motion_files=_CLIPS, sampling_mode=_mode),
+        env_cfg=climb_g1_tracking_env_cfg(
+            motion_files=_CLIPS,
+            sampling_mode=_mode,
+            eligibility_path=_ELIGIBILITY_PATH,
+            eligibility_mode=_ELIGIBILITY_MODE,
+            eligibility_hard_threshold=_ELIGIBILITY_THRESHOLD,
+        ),
         play_env_cfg=climb_g1_tracking_env_cfg(
-            motion_files=_CLIPS, sampling_mode=_mode, play=True
+            motion_files=_CLIPS,
+            sampling_mode=_mode,
+            eligibility_path=_ELIGIBILITY_PATH,
+            eligibility_mode=_ELIGIBILITY_MODE,
+            eligibility_hard_threshold=_ELIGIBILITY_THRESHOLD,
+            play=True,
         ),
         rl_cfg=unitree_g1_tracking_ppo_runner_cfg(),
         runner_cls=MotionTrackingOnPolicyRunner,

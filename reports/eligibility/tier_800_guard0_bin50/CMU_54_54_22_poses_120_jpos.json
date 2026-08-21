@@ -1,0 +1,136 @@
+{
+ "airborne_frac": 0.13920454545454544,
+ "bin_eligible": [
+  0,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "bin_eligible_frac": 0.5909090909090909,
+ "bin_frames": 50,
+ "bin_score": [
+  0.18,
+  1.0,
+  1.0,
+  1.0,
+  0.94,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.36,
+  0.5,
+  1.0,
+  0.88,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "bin_score_mean": 0.7209090909090909,
+ "clip": "CMU_54_54_22_poses_120_jpos",
+ "feasible_frac_kept": 0.7509469696969697,
+ "feasible_segments_s": [
+  [
+   0.82,
+   4.44
+  ],
+  [
+   4.5,
+   14.36
+  ],
+  [
+   15.5,
+   17.88
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1056,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.13920454545454544,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 22,
+ "n_bins_eligible": 13,
+ "n_feasible_segments": 3,
+ "n_severe_windows": 11,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/CMU_54_54_22_poses_120_jpos.json",
+ "severe_frac": 0.13920454545454544,
+ "severe_frac_guarded": 0.13920454545454544,
+ "severe_windows_s": [
+  [
+   0.72,
+   0.82
+  ],
+  [
+   4.44,
+   4.5
+  ],
+  [
+   14.36,
+   14.62
+  ],
+  [
+   15.4,
+   15.5
+  ],
+  [
+   17.88,
+   18.06
+  ],
+  [
+   18.1,
+   18.3
+  ],
+  [
+   18.72,
+   18.74
+  ],
+  [
+   18.76,
+   18.84
+  ],
+  [
+   18.98,
+   19.1
+  ],
+  [
+   19.28,
+   20.6
+  ],
+  [
+   20.62,
+   21.12
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.015587776480876
+}

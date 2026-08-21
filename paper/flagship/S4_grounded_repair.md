@@ -41,9 +41,10 @@ sampler can teach a policy to track a reference that asks the robot to hover (§
 the honest frame for the sealed Branch B: at 100 clips, 29 % of the *evaluation* mass sat in a
 stratum where the compared samplers cannot differ except by noise.
 
-**What remains open, and is sealed.** Whether prioritisation beats uniform when the bank is
+**What remains open, and what has read out.** Whether prioritisation beats uniform when the bank is
 diverse enough for coverage to bind is E3's question (800 clips), sealed with bidirectional
 support-moderation predictions including named clips that should get *worse*
 (`plan/PREREGISTRATION_E3_addendum_v2.md`, `2c38845b…`). Whether *composition* — not sampling —
-is the causal fix for the attractor's family is N3's question, sealed with its null follow-ups
-(`plan/PREREGISTRATION_N3_coverage.md`, `af1b7c9f…`). Both slots are in §8.
+is the causal fix for the attractor's family was N3's question: its targeted endpoints pass, but
+an adaptive-arm regression triggers the preflight stop and prevents unqualified closure
+(`plan/N3_RESULT.md`). E3 remains a slot in §8.

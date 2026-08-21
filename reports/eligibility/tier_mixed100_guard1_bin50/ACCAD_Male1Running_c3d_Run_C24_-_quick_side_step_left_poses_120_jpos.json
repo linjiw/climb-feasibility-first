@@ -1,0 +1,49 @@
+{
+ "airborne_frac": 0.3108108108108108,
+ "bin_eligible": [
+  0,
+  0,
+  0
+ ],
+ "bin_eligible_frac": 0.0,
+ "bin_frames": 50,
+ "bin_score": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "bin_score_mean": 0.0,
+ "clip": "ACCAD_Male1Running_c3d_Run_C24_-_quick_side_step_left_poses_120_jpos",
+ "feasible_frac_kept": 0.0,
+ "feasible_segments_s": [],
+ "fps": 50.0,
+ "frames": 148,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.2905405405405405,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 3,
+ "n_bins_eligible": 0,
+ "n_feasible_segments": 0,
+ "n_severe_windows": 2,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/ACCAD_Male1Running_c3d_Run_C24_-_quick_side_step_left_poses_120_jpos.json.gz",
+ "severe_frac": 0.2905405405405405,
+ "severe_frac_guarded": 1.0,
+ "severe_windows_s": [
+  [
+   0.8,
+   1.16
+  ],
+  [
+   1.58,
+   2.08
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.487312132718505
+}

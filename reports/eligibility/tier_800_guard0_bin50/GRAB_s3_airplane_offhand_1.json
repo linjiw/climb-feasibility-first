@@ -1,0 +1,62 @@
+{
+ "airborne_frac": 0.03640776699029126,
+ "bin_eligible": [
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.7777777777777778,
+ "bin_frames": 50,
+ "bin_score": [
+  0.0,
+  0.94,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.8822222222222221,
+ "clip": "GRAB_s3_airplane_offhand_1",
+ "feasible_frac_kept": 0.8713592233009708,
+ "feasible_segments_s": [
+  [
+   1.06,
+   8.24
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 412,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.03640776699029126,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 9,
+ "n_bins_eligible": 7,
+ "n_feasible_segments": 1,
+ "n_severe_windows": 1,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/GRAB_s3_airplane_offhand_1.json.gz",
+ "severe_frac": 0.03640776699029126,
+ "severe_frac_guarded": 0.03640776699029126,
+ "severe_windows_s": [
+  [
+   0.76,
+   1.06
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.4897935178512421
+}

@@ -1,0 +1,4 @@
+exit_code=0
+started_utc=2026-08-19T19:15:52Z
+finished_utc=2026-08-20T08:28:44Z
+cmd=tools/n3_ehyg_chain.sh

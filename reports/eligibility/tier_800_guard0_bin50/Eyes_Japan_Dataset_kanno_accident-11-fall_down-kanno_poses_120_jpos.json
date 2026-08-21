@@ -1,0 +1,200 @@
+{
+ "airborne_frac": 0.12231182795698925,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  1,
+  1,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  1,
+  1,
+  0,
+  1,
+  0,
+  0,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.5666666666666667,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.64,
+  0.06,
+  1.0,
+  1.0,
+  0.38,
+  1.0,
+  0.72,
+  0.0,
+  0.48,
+  0.92,
+  0.48,
+  1.0,
+  0.74,
+  0.24,
+  1.0,
+  1.0,
+  0.58,
+  1.0,
+  0.56,
+  0.76,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.7853333333333334,
+ "clip": "Eyes_Japan_Dataset_kanno_accident-11-fall_down-kanno_poses_120_jpos",
+ "feasible_frac_kept": 0.7836021505376344,
+ "feasible_segments_s": [
+  [
+   0.0,
+   7.64
+  ],
+  [
+   8.94,
+   11.02
+  ],
+  [
+   11.64,
+   13.72
+  ],
+  [
+   15.52,
+   16.92
+  ],
+  [
+   17.52,
+   19.74
+  ],
+  [
+   20.76,
+   23.26
+  ],
+  [
+   23.68,
+   25.56
+  ],
+  [
+   26.24,
+   29.76
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1488,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.1297043010752688,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 30,
+ "n_bins_eligible": 17,
+ "n_feasible_segments": 8,
+ "n_severe_windows": 18,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/Eyes_Japan_Dataset_kanno_accident-11-fall_down-kanno_poses_120_jpos.json",
+ "severe_frac": 0.1297043010752688,
+ "severe_frac_guarded": 0.1297043010752688,
+ "severe_windows_s": [
+  [
+   7.64,
+   7.74
+  ],
+  [
+   8.36,
+   8.44
+  ],
+  [
+   8.6,
+   8.94
+  ],
+  [
+   11.02,
+   11.64
+  ],
+  [
+   13.72,
+   13.8
+  ],
+  [
+   14.0,
+   14.1
+  ],
+  [
+   14.34,
+   14.46
+  ],
+  [
+   14.52,
+   14.64
+  ],
+  [
+   14.82,
+   14.88
+  ],
+  [
+   14.96,
+   14.98
+  ],
+  [
+   15.04,
+   15.52
+  ],
+  [
+   16.92,
+   17.52
+  ],
+  [
+   19.74,
+   19.8
+  ],
+  [
+   20.7,
+   20.76
+  ],
+  [
+   23.26,
+   23.28
+  ],
+  [
+   23.34,
+   23.5
+  ],
+  [
+   23.52,
+   23.68
+  ],
+  [
+   25.56,
+   26.24
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.9875362438573734
+}

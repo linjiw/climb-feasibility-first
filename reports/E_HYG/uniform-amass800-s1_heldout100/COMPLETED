@@ -1,0 +1,4 @@
+exit_code=0
+started_utc=2026-08-20T08:12:47Z
+finished_utc=2026-08-20T08:12:57Z
+cmd=/data/robotixx/climb/bridge/.venv/bin/python /data/robotixx/climb/tools/eval_stratified.py --offsets 0,1,2,3,4,6,8 --window 3 --episodes 8 --checkpoint /data/robotixx/climb/logs/rsl_rl/g1_tracking/2026-08-20_02-54-58_uniform-amass800-s1/model_3999.pt --clips /data/robotixx/climb/bank/tiers/heldout100.txt --out /data/robotixx/climb/reports/E_HYG_uniform-amass800-s1_heldout100_strat.csv

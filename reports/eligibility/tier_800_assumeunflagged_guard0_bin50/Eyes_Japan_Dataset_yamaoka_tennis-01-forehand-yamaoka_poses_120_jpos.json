@@ -1,0 +1,182 @@
+{
+ "airborne_frac": 0.12983870967741937,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  1,
+  0,
+  0,
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.48,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.76,
+  0.66,
+  1.0,
+  0.92,
+  0.36,
+  1.0,
+  1.0,
+  0.8,
+  0.0,
+  0.32,
+  1.0,
+  0.36,
+  0.0,
+  0.76,
+  0.86,
+  0.0,
+  0.8,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.7439999999999999,
+ "clip": "Eyes_Japan_Dataset_yamaoka_tennis-01-forehand-yamaoka_poses_120_jpos",
+ "feasible_frac_kept": 0.7419354838709677,
+ "feasible_segments_s": [
+  [
+   0.0,
+   5.76
+  ],
+  [
+   6.34,
+   8.92
+  ],
+  [
+   9.64,
+   12.8
+  ],
+  [
+   14.68,
+   16.36
+  ],
+  [
+   18.24,
+   19.86
+  ],
+  [
+   21.2,
+   24.8
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1240,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.1596774193548387,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 25,
+ "n_bins_eligible": 12,
+ "n_feasible_segments": 6,
+ "n_severe_windows": 18,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/Eyes_Japan_Dataset_yamaoka_tennis-01-forehand-yamaoka_poses_120_jpos.json",
+ "severe_frac": 0.1596774193548387,
+ "severe_frac_guarded": 0.1596774193548387,
+ "severe_windows_s": [
+  [
+   5.76,
+   5.84
+  ],
+  [
+   6.26,
+   6.34
+  ],
+  [
+   8.92,
+   9.3
+  ],
+  [
+   9.62,
+   9.64
+  ],
+  [
+   12.8,
+   12.88
+  ],
+  [
+   13.08,
+   13.12
+  ],
+  [
+   13.26,
+   13.44
+  ],
+  [
+   13.52,
+   14.68
+  ],
+  [
+   16.36,
+   16.46
+  ],
+  [
+   17.08,
+   17.24
+  ],
+  [
+   17.26,
+   17.3
+  ],
+  [
+   17.54,
+   17.66
+  ],
+  [
+   17.84,
+   18.24
+  ],
+  [
+   19.86,
+   20.04
+  ],
+  [
+   20.08,
+   20.16
+  ],
+  [
+   20.2,
+   20.22
+  ],
+  [
+   20.3,
+   20.5
+  ],
+  [
+   20.56,
+   21.2
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.0590944041901342
+}

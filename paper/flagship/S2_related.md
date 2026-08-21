@@ -25,8 +25,11 @@ policies ○ [DeepMimic; Peng et al., TOG 2018, arXiv:1804.02717] to bank-scale 
 On hardware, the current wave — H2O/OmniH2O ○ [He et al., 2024], ExBody ○ [Cheng et al., 2024],
 HumanPlus ○ [Fu et al., 2024], BeyondMimic ✓ (above), and SONIC ✓ [NVIDIA GEAR; arXiv:2511.07820,
 Science Robotics 2026; 700 h of mocap, 42 M parameters] — trains trackers over ever-larger
-retargeted corpora. All of these inherit the assumption our audit targets: that per-clip failure
-rates measure difficulty. Our results are complementary to this line, not competitive with it —
+retargeted corpora. We screen SONIC's own BONES-SEED bank in §6: it returns 0.14 %, two orders of
+magnitude below our 22.8 % — though not defect-free, since seven clips do flag and five are jumps
+whose box is missing from the flat scene — and that contrast is what makes prevalence a per-corpus
+quantity rather than a property of the practice. All of these inherit the assumption our audit
+targets: that per-clip failure rates measure difficulty. Our results are complementary to this line, not competitive with it —
 the screen, the strata, and the sampler repair apply to any of these training stacks. ASAP ✓
 [He et al., RSS 2025, arXiv:2502.01143] and SPI-Active ✓ [sampling-based active system
 identification for legged sim-to-real] address the *dynamics* gap post-training; PolySim ✓
@@ -43,9 +46,9 @@ GMR ✓ [Ze et al., ICRA 2026, github.com/YanjieZe/GMR] and *Retargeting Matters
 target foot sliding, penetration, and self-intersection. Our feasibility screen is the missing
 *dynamic* complement to these kinematic criteria: it asks not whether the pose sequence looks
 clean but whether the wrench it demands can be supplied by any admissible contact forces within
-actuator limits — the failure class that produced our 22.8 % prevalence and that none of the
-above checks detect (a clip can have perfect clearance and zero self-intersection while airborne
-at 1 g). The two systematic artifacts we document (airborne transitions from unreachable
+actuator limits — the failure class that produced the 22.8 % prevalence we measure on one such
+pipeline (and 0.14 % on another, §6) and that none of the above checks detect (a clip can have
+perfect clearance and zero self-intersection while airborne at 1 g). The two systematic artifacts we document (airborne transitions from unreachable
 postures; hand–hip interpenetration taxing self-collision rewards) are actionable inside any of
 these retargeting pipelines.
 

@@ -1,0 +1,67 @@
+{
+ "airborne_frac": 0.2808988764044944,
+ "bin_eligible": [
+  0,
+  0,
+  0,
+  0
+ ],
+ "bin_eligible_frac": 0.0,
+ "bin_frames": 50,
+ "bin_score": [
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "bin_score_mean": 0.0,
+ "clip": "ACCAD_Male2Running_c3d_C5_-_walk_to_run_poses_120_jpos",
+ "feasible_frac_kept": 0.0,
+ "feasible_segments_s": [],
+ "fps": 50.0,
+ "frames": 178,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.15168539325842698,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 4,
+ "n_bins_eligible": 0,
+ "n_feasible_segments": 0,
+ "n_severe_windows": 6,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/ACCAD_Male2Running_c3d_C5_-_walk_to_run_poses_120_jpos.json.gz",
+ "severe_frac": 0.15168539325842698,
+ "severe_frac_guarded": 0.7415730337078652,
+ "severe_windows_s": [
+  [
+   1.92,
+   2.0
+  ],
+  [
+   2.26,
+   2.3
+  ],
+  [
+   2.6,
+   2.64
+  ],
+  [
+   2.96,
+   3.14
+  ],
+  [
+   3.2,
+   3.22
+  ],
+  [
+   3.38,
+   3.56
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.7766174487401891
+}

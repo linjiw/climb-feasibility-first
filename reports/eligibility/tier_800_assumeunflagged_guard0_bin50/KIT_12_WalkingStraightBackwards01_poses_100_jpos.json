@@ -1,0 +1,36 @@
+{
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 1.0,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 1.0,
+ "clip": "KIT_12_WalkingStraightBackwards01_poses_100_jpos",
+ "fps": 50.0,
+ "frames": 300,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.0,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 6,
+ "n_bins_eligible": 6,
+ "policy": "assumed_eligible",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": null,
+ "screen_schema": "assumed",
+ "screen_source": null,
+ "severity": "severe"
+}

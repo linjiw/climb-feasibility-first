@@ -1,0 +1,62 @@
+{
+ "airborne_frac": 0.0031446540880503146,
+ "bin_eligible": [
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.5714285714285714,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  0.26,
+  0.0,
+  0.72,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.7114285714285714,
+ "clip": "ACCAD_MartialArtsWalksTurns_c3d_E3_-_advance_poses_120_jpos",
+ "feasible_frac_kept": 0.6823899371069182,
+ "feasible_segments_s": [
+  [
+   0.0,
+   2.26
+  ],
+  [
+   4.28,
+   6.36
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 318,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.0031446540880503146,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 7,
+ "n_bins_eligible": 4,
+ "n_feasible_segments": 2,
+ "n_severe_windows": 1,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/ACCAD_MartialArtsWalksTurns_c3d_E3_-_advance_poses_120_jpos.json.gz",
+ "severe_frac": 0.0031446540880503146,
+ "severe_frac_guarded": 0.31761006289308175,
+ "severe_windows_s": [
+  [
+   3.26,
+   3.28
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.19091857816617236
+}

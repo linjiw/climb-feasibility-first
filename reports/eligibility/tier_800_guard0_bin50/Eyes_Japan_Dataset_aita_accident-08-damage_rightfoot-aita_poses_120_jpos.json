@@ -1,0 +1,136 @@
+{
+ "airborne_frac": 0.162,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.7,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.34,
+  0.0,
+  0.26,
+  1.0,
+  1.0,
+  0.26,
+  0.0,
+  0.0,
+  0.0,
+  0.54,
+  1.0,
+  0.94,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.778,
+ "clip": "Eyes_Japan_Dataset_aita_accident-08-damage_rightfoot-aita_poses_120_jpos",
+ "feasible_frac_kept": 0.778,
+ "feasible_segments_s": [
+  [
+   0.0,
+   5.34
+  ],
+  [
+   7.74,
+   10.26
+  ],
+  [
+   14.46,
+   16.76
+  ],
+  [
+   16.82,
+   30.0
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 1500,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.162,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 30,
+ "n_bins_eligible": 21,
+ "n_feasible_segments": 4,
+ "n_severe_windows": 6,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/Eyes_Japan_Dataset_aita_accident-08-damage_rightfoot-aita_poses_120_jpos.json",
+ "severe_frac": 0.162,
+ "severe_frac_guarded": 0.162,
+ "severe_windows_s": [
+  [
+   5.34,
+   6.96
+  ],
+  [
+   7.22,
+   7.74
+  ],
+  [
+   10.26,
+   10.38
+  ],
+  [
+   11.32,
+   13.3
+  ],
+  [
+   13.9,
+   14.46
+  ],
+  [
+   16.76,
+   16.82
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 1.0624575307172028
+}

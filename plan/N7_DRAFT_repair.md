@@ -1,48 +1,90 @@
-# N7 — repair the impossible (DRAFT, to be sealed after N3 reads out; kept tiny)
+# N7 — repair the impossible (SEALED 2026-08-20)
 
-Purpose: convert "exclude the infeasible" into "repair the infeasible" and close the feasibility
-axis causally. Not to be run before N3's keystone is read.
+**Status:** sealed before any N7 training run.  The filename is retained because
+earlier plans link to it.  `reports/N7/COMPLETED` does not exist at sealing.
 
-Repair operator (contact-restoring projection, CPU): for each frame of a clip flagged airborne with
-unsupported wrench > ½ weight, lower the root (and re-solve the leg IK against the joint limits) so
-that at least the lowest foot/shin candidate touches the plane, with a time-warp of the transition so
-the root's vertical velocity stays ≤ the original peak — i.e. keep the human's *intent* (kneel down),
-change only where the retarget put the body relative to the floor. Verify with `n1_knee_id.py`:
-target infeasible_frac ≤ 5 % and no new self-penetration.
+## Question
 
-Clips: #44 plus 2–3 family clips that failed the N1 screen (from the 12/40: BMLmovi_Subject_27_5,
-_11_21, _60_6 — chosen for the same airborne-descent shape).
+Does contact-projection repair improve tracking relative to keeping contaminated
+references, without paying the distribution-coverage cost of deleting them?
+N7 tests the deployed repair policy, not whether an unrepaired motion can ever be
+learned.
 
-Arm: uniform on mixed100 + ground16 with the repaired #44-family clips added (1 seed) vs the N3
-keystone (unrepaired). Evaluation: stratified starts as in N3.
+That distinction changed after the draft was written.  N3's augmented-uniform
+arms reached descent-phase survival 1.000 and 0.688 on clip #44, falsifying the
+draft prediction that unrepaired descent would remain at or below 0.25.  P-SIGN
+also failed its family and control gates (7/12 and 4/12, each requiring 8/12), so
+motor-strength sign disappearance is no longer a load-bearing endpoint.  Finally,
+E-HYG found no one-seed benefit from blunt pruning: feasible heldout delta -0.0101
+(one-sided permutation p=0.951) and feasible-ground delta -0.0354.  N7 therefore
+focuses on matched-reference repair and coverage preservation.
 
-Predictions (to be sealed with numbers from N3's readout):
-- the descent phase of the *repaired* #44 (offsets 0–1 s) becomes learnable: stratified survival
-  rises from ≤ 0.25 to ≥ 0.5;
-- the motor-strength sign reversal vanishes on the repaired clip (paired motor±15 % signed effect in
-  the former airborne window within ±2 mm of the floor; N5 instrument);
-- unrepaired family clips do not improve on their descent phases in the same run (specificity).
-Null follow-ups: repair too aggressive (kneel changes) → measure joint-space distance to original;
-policy capacity → none claimed.
+## Frozen banks and arms
 
-## Extension 2026-08-20 (before sealing; per Linji's repair-vs-prune directive)
+The repair operator lowers root z on airborne, unsupported frames, preserves the
+joint trajectory, and recomputes linear velocity.  The built option-C bank replaces
+all 99 flagged files and keeps all 800 clip names and their order.  It reduces
+duration-weighted infeasibility from 3.923% to 0.903%; it is not called clean:
+10 clips retain more than 5% infeasible frames and 12 require 0.15–0.44 m root
+offsets.  These strata remain explicit in `reports/repaired800/manifest.json`.
 
-**Operator now exists and is validated** (`tools/repair_contact_projection.py`; #44: 0.13→0.00
-at 8.2 cm max root adjustment; CNRS walk 0.66→0.01; correctly refuses genuine ballistics;
-no-op on feasible controls). The full flagged-bank census is running
-(`reports/repair_census/`).
+| arm | bank | N | status |
+|---|---|---:|---|
+| K — keep | `tier_800.txt` + `bank/amass` | 800 | completed E-HYG seed 1 comparator |
+| P — prune | `tier_800_pruned.txt` + `bank/amass` | 701 | completed E-HYG seed 1 operational comparator |
+| R — repair | `tier_800_repaired.txt` + `bank/amass_repaired800` | 800 | one new seed-1 run |
 
-**Arms (revised; to be sealed with N3's readout numbers):**
-- R1 **repair**: N3's augmented bank with the #44-family flagged clips *repaired* (operator
-  output, screen-verified ≤ 5 % infeasible), 1 seed;
-- R2 **prune**: same bank with those flagged clips *removed*, 1 seed — the repair-vs-prune
-  causal comparison at matched compute;
-- comparator: N3's keystone arms (flagged clips present, unrepaired).
+K and R have byte-identical clip lists (SHA-256 `87cbeb8e…`), so they isolate
+reference repair at fixed N, names, ordering, sampler, and compute.  R versus P is
+an operational comparison, not a pure repair effect: the prune arm has 99 fewer
+clips.  K versus P, already measured by E-HYG, exposes that combined deletion/N
+effect rather than removing the confound by assertion.
 
-**Predictions to seal (numbers fixed after N3 reads out):** repaired descent phases become
-learnable (stratified-start survival at offsets {0,1} s rises above the N3 keystone's, which N3
-predicts stays ≤ 0.25); the motor-strength sign reversal vanishes on repaired clips (airborne-
-window S within ±2 mm of the per-run floor — also the P-SIGN mechanism's falsifier,
-`plan/P_SIGN_PREP.md` §2); prune arm matches repair on non-ground categories but loses on
-ground-category zero-shot (held-out feasible ground clips) — the distribution-coverage cost of
-pruning made measurable.
+All arms use uniform clip sampling, 4,096 environments, 4,000 iterations, seed 1,
+and unchanged reward, PPO, network, and randomization.  The N7 run starts only
+after the primary FGAS campaign completes and after the 14 GiB GPU headroom gate.
+
+## Evaluation design
+
+The 99 repaired names are frozen in `bank/tiers/tier_800_flagged99.txt`.  Final K
+and R policies are crossed with both raw and repaired versions of those references:
+
+| policy | raw references | repaired references |
+|---|---|---|
+| keep K | K/raw | K/repaired |
+| repair R | R/raw | R/repaired |
+
+Each cell uses offsets 0/1/2/3/4/6/8 s, eight episodes per offset, and a 3 s
+window.  This separates the deployed contrast (R/repaired minus K/raw), training
+transfer on unchanged references (R/raw minus K/raw), the reference-only effect
+(K/repaired minus K/raw), and their policy-by-reference interaction.
+
+Secondary evaluations use the same stratified protocol on heldout100 and
+`zs_ground_feasible`.  The existing K/P CSVs remain frozen comparators; only R is
+newly evaluated.
+
+## Predictions and decision rules
+
+1. **Primary repair benefit:** on flagged99, R/repaired minus K/raw is at least
+   +0.05 survival and the fixed motion-bootstrap 95% lower bound is above zero.
+2. **Training transfer (reported):** R/raw minus K/raw separates learning a better
+   policy from merely evaluating an easier reference.  No threshold is imposed.
+3. **No general regression:** R minus K on heldout100 is at least -0.03.
+4. **Coverage preservation:** on feasible-ground zero-shot motions, R minus K is
+   at least -0.03 and R minus P is at least +0.03.  This is the pre-declared place
+   where repair is predicted to beat deletion.
+5. **Mechanism probe only:** motor-strength perturbation may be reported on repaired
+   clips, but P-SIGN's failed detector forbids using its sign as a confirmatory gate.
+
+Overall pass requires rules 1, 3, and 4.  `tools/analyze_n7.py` freezes 20,000
+motion-bootstrap draws at seed 20260820.  Because training has one seed, the
+bootstrap quantifies motion uncertainty only; N7 cannot support a population-level
+training claim without replication.
+
+## Integrity and stopping
+
+`tools/run_n7_campaign.sh` freezes its resolved config and artifact hashes, refuses
+to pre-empt FGAS or another trainer, and resumes only an exact matching run.  Do not
+inspect partial outcomes, retune the operator, or change thresholds after launch.
+Hardware interruption permits exact-config resume; scientific underperformance
+does not.  No external filing, submission, or publication is authorized.

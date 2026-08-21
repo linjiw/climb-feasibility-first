@@ -1,9 +1,10 @@
-# 8. Causal tests (slots — structure fixed now, numbers fill on the Sept-15+ schedule)
+# 8. Causal tests (four readouts; support moderation open)
 
-Everything before this section is observational or mechanistic. Three sealed interventions close
-the loop. Each slot states: what was sealed, what would confirm or refute it, when it fills.
+Everything before this section is observational or mechanistic. Four sealed training interventions
+have now read out; their misses are as informative as their passes. Repair is complete and support
+moderation remains open.
 
-## 8.1 N3 — composition causality (keystone) [SLOT]
+## 8.1 N3 — targeted composition [sealed mixed outcome]
 
 **Sealed** 2026-08-19-era (`plan/PREREGISTRATION_N3_coverage.md`, `af1b7c9f…`; precondition
 `plan/N3_PRECONDITION_env_admits.md`, `3c331e18…` — terminations verified not to fire on the
@@ -12,34 +13,66 @@ tier_mixed100 + **ground16** (16 nearest *feasibility-screened* kneel/crawl neig
 + **random16**; uniform ×2 seeds (keystone), adaptive ×1, random-control ×1; stratified-start
 evaluation.
 
-**Confirms coverage-causality iff** E1: attractor kneel/crawl-phase survival (offsets {2,3,4,6} s)
-rises from 0.000 (baseline, `reports/N3_baseline_uniform-s1_strat.csv`) to ≥ 0.25 in both keystone
-seeds, **and** E4: the random16 control stays < 0.10. E2 (no regression on easy/held-out), E3
-(the adaptive sampler's top-1 mass releases below 0.5 as the family becomes learnable), E5
-(training-set family improvement) are secondary. The descent offsets {0,1} s are predicted to
-remain ≤ 0.25 — augmentation cannot fix an airborne reference; that is N7's job.
+The frozen analyzer (`b118b2d3…`; `reports/N3_result.json`) records E1 and E4 as passes: #44's
+feasible kneel/crawl-phase survival is **0.750 in both ground16 seeds**, against base s1/s2/s3
+0.000/0.031/0.188, while random16 remains **0.000**. All three evaluated ground16 probes improve
+in training. Its arithmetic decision E1∧E4 is therefore true.
 
-**Pre-listed null follow-ups (verbatim from the seal's precondition):** (1) exposure mass
-insufficient — grounded targeting of the family, one seed; (2) within-family start-phase
-curriculum — start training episodes inside the feasible phase, one seed; (3) reward tax on the
-reference — checked via the oracle's per-term reward rates (`r_self_collisions`, `r_joint_limit`)
-before touching any weight. None of these expands the bank.
+The preflight also fixed a stop rule: do not interpret E1/E4 if E2 fails anywhere. It does in the
+adaptive arm — heldout survival moves **−0.0346** versus the three-seed base and one easy control
+falls to 0.857. The two uniform keystone arms themselves do not regress (−0.0096/+0.0004), but we
+retain the stricter global stop and call this a **mixed outcome**, not unqualified causal closure.
+E3 also fails: maximum top-1 mass after iteration 2000 is 0.784 (needed <0.50). Most surprisingly,
+the predicted unlearnable descent reaches 1.000/0.688, so composition changes tracking even over
+the reference-invalid transition. N3 thus demonstrates a strong, specific training effect while
+falsifying the clean phase-separation account (`plan/N3_RESULT.md`).
 
-**Fills:** first GPU block after Sept 15; resume-safety check (frozen config re-loaded,
-hash-checked, seeds confirmed) before relaunch; realized GPU-hours recorded and used to re-plan
-the remaining budget.
+## 8.2 N7 — repair the impossible [sealed joint fail]
 
-## 8.2 N7 — repair the impossible [SLOT, seal pending N3 readout]
+The repair-all arm completed at fixed N=800, clip names, ordering, sampler, seed, and compute
+(`reports/N7_result.json`, `plan/N7_RESULT.md`). The 2×2 policy/reference cross gives a positive
+deployment contrast: R/repaired minus K/raw is **+0.0397**, motion-bootstrap 95% CI
+[+0.0153,+0.0658]. It nevertheless misses the sealed +0.05 smallest effect of interest. The
+heldout point guard passes (−0.0104), but the zero-shot-ground coverage rule fails (R−K −0.0199;
+R−P +0.0155, which needed +0.03), so the joint decision is false.
 
-Draft on file (`plan/N7_DRAFT_repair.md`): contact-restoring projection of the attractor family's
-airborne transitions (lower the root, re-solve leg IK, time-warp within original vertical-velocity
-bounds; verify with the screen to ≤ 5 % infeasible frames and no new interpenetration). Sealed
-predictions will include: the repaired descent becomes learnable in the augmented bank; the §9
-motor-strength sign reversal *vanishes* on the repaired clip; unrepaired family descents do not
-improve in the same run. Converts "exclude the impossible" into "repair the impossible" and closes
-the feasibility axis causally rather than by omission.
+The cross localises the gain. R/raw minus K/raw is −0.0036, while K/repaired minus K/raw is +0.0233
+and the policy-by-reference interaction is +0.0200. Thus `−0.0036 + 0.0233 + 0.0200 = +0.0397`:
+there is no raw-reference policy transfer, but the repaired target is easier and the repair-trained
+policy co-adapts to it. Post-outcome audit further shows that most gain comes from 11 repairs beyond
+the 0.15 m distortion budget (+0.2305 mean versus +0.0160 on 78 certified repairs). Eight names in
+`heldout100` overlap tier800; the disjoint92 delta is −0.0122. These qualifications do not replace
+the sealed result. They require reference-fidelity and paired motion-quality endpoints before
+survival on a heavily altered target can be called better motion.
 
-## 8.3 E3 — support moderation at scale [SLOT]
+## 8.3 E-HYG — clip pruning at scale [sealed null]
+
+The cheapest intervention — remove the 99 flagged clips from `tier_800`, hold training compute
+fixed — does **not** improve performance (`reports/E_HYG_result.json`,
+`plan/E_HYG_RESULT.md`). Feasible heldout survival moves 0.918→0.907 (Δ **−0.0101**, one-sided
+permutation p=0.951; P1 needed +0.015), and the predicted worst-decile concentration is absent
+(−0.0153 versus −0.0035 for the best half), so P1∧P2 fails. All-heldout Δ is −0.0132. Zero-shot
+ground moves −0.0354, inside the pre-registered [−0.05,+0.02] coverage-cost bracket.
+
+This one-seed null is specific to blunt clip pruning at 12.4% contamination. It does not test the
+screen, repair, or bin-level eligibility. Together with the segment census, it sharpens the next
+method question: can masking infeasible bins retain coverage that pruning discards?
+
+## 8.4 FGAS — clip-mean soft eligibility [sealed implementation-gate fail]
+
+The three-seed soft guard-0 arm completed (`reports/FGAS_result.json`, `plan/FGAS_RESULT.md`). On
+the frozen feasible-hard20 primary, survival moves 0.7586→0.7390 (Δ **−0.0196**, hierarchical
+bootstrap 95% CI [−0.0497,+0.0134]), rather than the predicted gain of at least 0.05. Feasible
+heldout moves −0.0123 and stays inside the −0.03 no-regression bound.
+
+The implementation gate fails: late hard-rejected start mass is **0.199** (required <0.15), and
+the top clip is flagged in 0.861 of late iterations. Post-outcome reconstruction matches the live
+telemetry within 0.0022. Failure adaptation overwhelms the clip-mean soft multiplier; one clip
+with eligibility 0.702 retains 0.618/0.376/0.222 final mass across seeds. This is therefore a
+negative result for the implemented soft formulation, not a clean test of segment-native adaptive
+sampling. A follow-up must make eligible segments the adaptive unit and be sealed separately.
+
+## 8.5 E3 — support moderation at scale [SLOT]
 
 **Sealed** (`plan/PREREGISTRATION_E3_addendum.md` `f7929136…` + v2 `2c38845b…` + the D1 policy
 `a93a87a0…`): uniform-800 ×3 vs grounded-800 ×3 (+ ≤1 adaptive demo, optional LP arm);

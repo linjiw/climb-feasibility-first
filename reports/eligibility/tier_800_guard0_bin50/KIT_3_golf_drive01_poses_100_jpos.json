@@ -1,0 +1,62 @@
+{
+ "airborne_frac": 0.0,
+ "bin_eligible": [
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.8571428571428571,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  0.86,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.9799999999999999,
+ "clip": "KIT_3_golf_drive01_poses_100_jpos",
+ "feasible_frac_kept": 0.9777777777777777,
+ "feasible_segments_s": [
+  [
+   0.0,
+   2.26
+  ],
+  [
+   2.4,
+   6.3
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 315,
+ "guard_s": 0.0,
+ "infeasible_frac": 0.015873015873015872,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 7,
+ "n_bins_eligible": 6,
+ "n_feasible_segments": 2,
+ "n_severe_windows": 1,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/KIT_3_golf_drive01_poses_100_jpos.json.gz",
+ "severe_frac": 0.022222222222222223,
+ "severe_frac_guarded": 0.022222222222222223,
+ "severe_windows_s": [
+  [
+   2.26,
+   2.4
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.006349206349206349,
+ "unsupported_ratio_p95": 0.39030612040505347
+}

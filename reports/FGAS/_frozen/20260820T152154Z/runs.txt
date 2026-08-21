@@ -1,0 +1,3 @@
+fgas-soft-mixed100-s1 /data/robotixx/climb/logs/rsl_rl/g1_tracking/2026-08-20_11-21-57_fgas-soft-mixed100-s1
+fgas-soft-mixed100-s2 /data/robotixx/climb/logs/rsl_rl/g1_tracking/2026-08-20_12-23-19_fgas-soft-mixed100-s2
+fgas-soft-mixed100-s3 /data/robotixx/climb/logs/rsl_rl/g1_tracking/2026-08-20_13-18-06_fgas-soft-mixed100-s3

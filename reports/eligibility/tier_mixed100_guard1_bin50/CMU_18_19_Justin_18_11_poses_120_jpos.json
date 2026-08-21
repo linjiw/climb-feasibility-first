@@ -1,0 +1,84 @@
+{
+ "airborne_frac": 0.001256281407035176,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.8125,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.34,
+  0.0,
+  0.34,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.855,
+ "clip": "CMU_18_19_Justin_18_11_poses_120_jpos",
+ "feasible_frac_kept": 0.8542713567839196,
+ "feasible_segments_s": [
+  [
+   0.0,
+   6.34
+  ],
+  [
+   8.66,
+   15.92
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 796,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.007537688442211055,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 16,
+ "n_bins_eligible": 13,
+ "n_feasible_segments": 2,
+ "n_severe_windows": 2,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/CMU_18_19_Justin_18_11_poses_120_jpos.json.gz",
+ "severe_frac": 0.007537688442211055,
+ "severe_frac_guarded": 0.1457286432160804,
+ "severe_windows_s": [
+  [
+   7.34,
+   7.36
+  ],
+  [
+   7.56,
+   7.66
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.1858127406205321
+}

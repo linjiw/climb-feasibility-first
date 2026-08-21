@@ -1,0 +1,93 @@
+{
+ "_script": "tools/analyze_wasted_exposure.py",
+ "_regenerates": "reports/wasted_exposure_accounting.json",
+ "inputs": {
+  "feasibility_csv": "reports/feasibility_all/feasibility.csv",
+  "tier": "bank/tiers/tier_mixed100.txt",
+  "flag_rule": "infeasible_frac > 0.1",
+  "logs": "logs/campaign",
+  "arm": "adaptive",
+  "seeds": [
+   1,
+   2,
+   3
+  ]
+ },
+ "tier": {
+  "n_clips": 100,
+  "flagged_clips": 25,
+  "flagged_clip_share": 0.25,
+  "flagged_frame_share": 0.2290707641512429,
+  "flagged_duration_share": 0.22907076415124294,
+  "mean_infeasible_frame_share": 0.060597414125868776,
+  "infeasible_frame_share_frame_weighted": 0.056239880631131146,
+  "infeasible_frame_share_duration_weighted": 0.05623988063113113,
+  "clip_draw_share_to_flagged": 0.25,
+  "expected_infeasible_frame_share_clip_uniform": 0.060597414125868776
+ },
+ "bank": {
+  "n_clips": 10705,
+  "flagged_clips": 2442,
+  "flagged_clip_share": 0.22811770200840728,
+  "flagged_frame_share": 0.2735160199682979,
+  "flagged_duration_share": 0.2735160199682979,
+  "mean_infeasible_frame_share": 0.0982353180851696,
+  "infeasible_frame_share_frame_weighted": 0.1333177623847926,
+  "infeasible_frame_share_duration_weighted": 0.1333177623847926
+ },
+ "adaptive": {
+  "per_seed": {
+   "1": {
+    "log": "logs/campaign/adaptive-mixed100-s1.log",
+    "iterations_logged": 4000,
+    "mean_top1_mass": 0.497959775,
+    "peak_top1_mass": 0.8842,
+    "peak_top1_clip_index": 66,
+    "peak_top1_is_attractor": false,
+    "top1_identity_share_attractor": 0.27225,
+    "attractor_mass_lower_bound": 0.181593875,
+    "peak_top1_mass_while_attractor_is_top1": 0.792,
+    "mean_top1_mass_while_attractor_is_top1": 0.6670114784205693,
+    "n_distinct_top1_clips": 45
+   },
+   "2": {
+    "log": "logs/campaign/adaptive-mixed100-s2.log",
+    "iterations_logged": 4000,
+    "mean_top1_mass": 0.4881765,
+    "peak_top1_mass": 0.8698,
+    "peak_top1_clip_index": 44,
+    "peak_top1_is_attractor": true,
+    "top1_identity_share_attractor": 0.44775,
+    "attractor_mass_lower_bound": 0.28841472500000004,
+    "peak_top1_mass_while_attractor_is_top1": 0.8698,
+    "mean_top1_mass_while_attractor_is_top1": 0.6441423227247347,
+    "n_distinct_top1_clips": 54
+   },
+   "3": {
+    "log": "logs/campaign/adaptive-mixed100-s3.log",
+    "iterations_logged": 4000,
+    "mean_top1_mass": 0.47931345,
+    "peak_top1_mass": 0.8927,
+    "peak_top1_clip_index": 5,
+    "peak_top1_is_attractor": false,
+    "top1_identity_share_attractor": 0.30475,
+    "attractor_mass_lower_bound": 0.18776712499999998,
+    "peak_top1_mass_while_attractor_is_top1": 0.8688,
+    "mean_top1_mass_while_attractor_is_top1": 0.6161349466776047,
+    "n_distinct_top1_clips": 41
+   }
+  },
+  "mean_top1_mass": 0.4884832416666667,
+  "peak_top1_mass_per_seed": [
+   0.8842,
+   0.8698,
+   0.8927
+  ],
+  "attractor_clip_index": 44,
+  "attractor_clip": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+  "top1_identity_share_attractor": 0.34158333333333335,
+  "attractor_mass_lower_bound": 0.219258575,
+  "attractor_mass_upper_bound": 0.4884832416666667,
+  "note": "mean_top1_mass is identity-blind: it is the mean of max_c P(c), pooled over whichever clip held the maximum at each iteration. The share attributable to the attractor clip is bracketed by [attractor_mass_lower_bound, attractor_mass_upper_bound]; the sampler telemetry logs only the argmax and its probability, so the exact share is not recoverable from data on disk."
+ }
+}

@@ -1,0 +1,9 @@
+ITERATION: first frozen FGAS launch attempt
+DATE: 2026-08-20
+COMMAND: tools/run_fgas_campaign.sh
+FROZEN BUNDLE: reports/FGAS/_frozen/20260820T150946Z
+EXIT: 75
+GATE: NVIDIA driver unavailable; nvidia-smi cannot communicate with the driver
+TRAINING STARTED: no
+OUTCOME OBSERVED: no
+DECISION: retain exact frozen campaign; do not substitute SONIC or change thresholds.

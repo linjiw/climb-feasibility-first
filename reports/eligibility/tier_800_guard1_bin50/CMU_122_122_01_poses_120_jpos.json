@@ -1,0 +1,64 @@
+{
+ "airborne_frac": 0.14393939393939395,
+ "bin_eligible": [
+  1,
+  1,
+  0,
+  0,
+  0,
+  0
+ ],
+ "bin_eligible_frac": 0.3333333333333333,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  0.06,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "bin_score_mean": 0.3433333333333333,
+ "clip": "CMU_122_122_01_poses_120_jpos",
+ "feasible_frac_kept": 0.39015151515151514,
+ "feasible_segments_s": [
+  [
+   0.0,
+   2.06
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 264,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.21212121212121213,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 6,
+ "n_bins_eligible": 2,
+ "n_feasible_segments": 1,
+ "n_severe_windows": 3,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/segments_tier800/full/CMU_122_122_01_poses_120_jpos.json",
+ "severe_frac": 0.21212121212121213,
+ "severe_frac_guarded": 0.6022727272727273,
+ "severe_windows_s": [
+  [
+   3.06,
+   3.08
+  ],
+  [
+   3.1,
+   3.26
+  ],
+  [
+   3.3,
+   4.24
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.9878878434488394
+}

@@ -1,0 +1,70 @@
+{
+ "airborne_frac": 0.011337868480725623,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  1
+ ],
+ "bin_eligible_frac": 0.6666666666666666,
+ "bin_frames": 50,
+ "bin_score": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.54,
+  0.0,
+  0.2,
+  1.0,
+  1.0
+ ],
+ "bin_score_mean": 0.7488888888888889,
+ "clip": "BMLhandball_S07_Expert_Trial_upper_left_082_poses_120_jpos",
+ "feasible_frac_kept": 0.7437641723356009,
+ "feasible_segments_s": [
+  [
+   0.0,
+   4.54
+  ],
+  [
+   6.8,
+   8.82
+  ]
+ ],
+ "fps": 50.0,
+ "frames": 441,
+ "guard_s": 1.0,
+ "infeasible_frac": 0.022675736961451247,
+ "min_bin_frac": 1.0,
+ "min_seg_s": 1.0,
+ "n_bins": 9,
+ "n_bins_eligible": 6,
+ "n_feasible_segments": 2,
+ "n_severe_windows": 2,
+ "policy": "screened",
+ "schema_version": "eligibility_sidecar/1",
+ "screen_gap_m": 0.06,
+ "screen_schema": "torque_limited",
+ "screen_source": "reports/eligibility/screens/BMLhandball_S07_Expert_Trial_upper_left_082_poses_120_jpos.json.gz",
+ "severe_frac": 0.022675736961451247,
+ "severe_frac_guarded": 0.2562358276643991,
+ "severe_windows_s": [
+  [
+   5.54,
+   5.64
+  ],
+  [
+   5.7,
+   5.8
+  ]
+ ],
+ "severity": "severe",
+ "torque_infeasible_frac": 0.0,
+ "unsupported_ratio_p95": 0.3992948403955819
+}

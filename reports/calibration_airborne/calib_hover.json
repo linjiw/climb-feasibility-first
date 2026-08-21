@@ -1,0 +1,1 @@
+{"clip": "calib_hover", "frames": 60, "fps": 50.0, "gap": 0.06, "airborne_frac": 1.0, "infeasible_frac": 1.0, "unsupported_impulse_Ns": 392.5199999999999, "unsupported_impulse_per_weight_s": 1.2000858403680994, "torque_infeasible_frac": 0.0, "max_tau_ratio_p95": 0.05, "sim_infeasible_frac": 1.0}
