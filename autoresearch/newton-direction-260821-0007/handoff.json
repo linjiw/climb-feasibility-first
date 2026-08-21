@@ -1,0 +1,21 @@
+{
+  "run_id": "newton-direction-260821-0007",
+  "status": "ready_to_publish",
+  "kept": [
+    "exact feasible segment support",
+    "fixed-horizon terminal-safe trials",
+    "paired common-survivor evaluation",
+    "Newton as an isolated short-horizon measurement teacher"
+  ],
+  "discarded": [
+    "raw failure flux",
+    "saturated conditional failure as the only rank",
+    "entropy-only manipulation checks",
+    "unvalidated long-horizon solver disagreement"
+  ],
+  "primary_page": "docs/segment-native.html",
+  "design_addendum": "plan/NEWTON_SEGMENT_DIRECTION_2026-08-21.md",
+  "pilot_result": "reports/segment_v2_pilot/result.json",
+  "next_action": "Create an isolated Newton v1.5 conformance harness and test whether axis-specific fragility predicts held-out degradation before launching G3.",
+  "kill_gate": "Do not train G3 if the Newton vector lacks incremental held-out predictive value beyond kinematics and screen features."
+}

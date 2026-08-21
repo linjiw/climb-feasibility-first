@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
 :root{--bg:#F4F6F7;--surface:#FFFFFF;--ink:#15222B;--muted:#5C6B75;--rule:#D8DFE3;--accent:#0B7285;--accent-ink:#075E70;--accent-soft:#E2F0F3;--amber:#B7791F;--amber-soft:#F7EEDC;--good:#2E7D4F;--good-soft:#E3F1E8;--bad:#B3261E;--bad-soft:#F8E4E2;--code:#EAEFF1;--hero:#0E2A33;--hero-ink:#EAF4F6;--hero-muted:#9DBDC6}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0F1518;--surface:#161E23;--ink:#E4EAEC;--muted:#93A4AD;--rule:#27333A;--accent:#49C2D4;--accent-ink:#7BD4E2;--accent-soft:#123039;--amber:#E2A33A;--amber-soft:#3A2E14;--good:#57B781;--good-soft:#14301F;--bad:#E4776E;--bad-soft:#3B1A18;--code:#1E282D;--hero:#0A2027;--hero-ink:#EAF4F6;--hero-muted:#8FB3BC}}
@@ -89,11 +89,12 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
   <div class="statrow">
     <div class="stat"><div class="v">87–89 %</div><div class="k">of a failure-adaptive sampler's exposure collapses onto one clip — the same clip in 3/3 seeds</div></div>
     <div class="stat"><div class="v">~329 N</div><div class="k">≈ full body weight unsupported for 1 s in that clip's retargeted descent: no contact within 6 cm</div></div>
-    <div class="stat"><div class="v">22.8 %</div><div class="k">of 10,705 retargeted clips are dynamically infeasible for &gt;10 % of frames (by source: 0.1 → 100 %)</div></div>
+    <div class="stat"><div class="v">22.8 %</div><div class="k">of one 10,705-clip AMASS→G1 corpus/pipeline is dynamically infeasible; a second production stack measures 0.14 %</div></div>
     <div class="stat"><div class="v">65.8 %</div><div class="k">of flagged clips auto-repaired by a 3-second root-projection onto the contact manifold (2,443-clip census)</div></div>
     <div class="stat"><div class="v">0.567 → 0.609</div><div class="k">cross-policy difficulty transfer once feasibility features join the atlas (perm p = 0.01)</div></div>
   </div>
   <div class="heroctas">
+    <a class="primary" href="segment-native.html">Latest: segment-native training →</a>
     <a class="primary" href="companion.html">Read the companion note →</a>
     <a class="ghost" href="flagship.html">Flagship working draft</a>
     <a class="ghost" href="https://github.com/linjiw/refeas">refeas — the screen (pip-able)</a>
@@ -146,10 +147,11 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       The kneel itself is feasible; the bank just never contains it (3.2 % of training duration). The human sat back on their heels;
       the robot's legs can't fold that far; the retargeter lifted the legs instead of lowering the root.</p>
       <span class="who">measurement · N1 · reports/N1_clip44_knee_id.json</span></div>
-    <div class="act"><h3>Act 5 — It's the pipeline, not the clip</h3>
+    <div class="act"><h3>Act 5 — Prevalence is corpus-and-pipeline specific</h3>
       <p>Screening all 10,705 clips (~1 CPU-second each): 22.8 % exceed 10 % infeasible frames — 39 % of ground-contact motions,
       59 % of dynamic ones — and the rate spans 0.1 % to 100 % across source datasets under one retargeter.
-      29 of our own 100 held-out evaluation clips are contaminated.</p>
+      A second production corpus/pipeline measures 0.14 %, so 22.8 % is not a generic retargeted-bank rate. 29 of our own
+      100 held-out evaluation clips are contaminated.</p>
       <span class="who">measurement · reports/feasibility_all/prevalence_report.txt</span></div>
   </div>
   <figure>
@@ -254,7 +256,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       <p>~329 N unsupported, 86 % of descent frames; kneel phase fully supportable even with frictionless knees; control clip supported at every frame.</p>
       <span class="ev">N1_clip44_knee_id.json · N1_CMU76_knee_id.json</span></div>
     <div class="card"><h3>Prevalence at scale <span class="pill sealed">measured ✓</span></h3>
-      <p>22.8 % of the bank flagged; source spread 0.1–100 % pins it on the retarget pipeline; eval set 29/100 contaminated → sealed stratified-endpoint policy.</p>
+      <p>22.8 % of the AMASS→G1 corpus/pipeline flagged versus 0.14 % in a second production stack; eval set 29/100 contaminated → sealed stratified-endpoint policy.</p>
       <span class="ev">prevalence_report.txt · GLOBAL_EVAL_ADDENDUM a93a87a0</span></div>
     <div class="card"><h3>Transfer lift <span class="pill sealed">sealed ✓</span></h3>
       <p>Feasibility features lift cross-policy difficulty prediction beyond a random-feature baseline on 4/6 pairs (p = 0.010–0.045); support alone did not (sealed null, kept).</p>
@@ -292,7 +294,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
   </table></div>
   <p class="kicker" style="margin-top:.6rem">By source dataset: GRAB 0.1 % · TCD 1.6 % · KIT 17 % · BMLmovi 22 % · Eyes-Japan 23 % ·
   BMLhandball 27 % · CMU 40 % · ACCAD 42 % · HUMAN4D 55 % · Transitions 90 % · <b>CNRS 100 %</b>. A three-orders-of-magnitude
-  spread under one pipeline and one robot is a pipeline property, not a difficulty gradient.</p>
+  spread under one pipeline and one robot is a source-corpus × pipeline property, not a difficulty gradient.</p>
 </section>
 
 <section>
@@ -311,9 +313,12 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       <tr><td>Atlas v2.1 · feasibility</td><td class="h">9b1a2c78</td><td>within-bank lift · transfer lift · residual anatomy</td><td>❌ F1 · ✅ <b>F2 (0.567→0.609, p=.01)</b> · half F3</td></tr>
       <tr><td>P-TAX · reward tax</td><td class="h">7960057a</td><td>tax→difficulty beyond feasibility flag</td><td>❌ null (0/3 arms) — hygiene finding only</td></tr>
       <tr><td>D1 · eval policy</td><td class="h">a93a87a0</td><td>feasible-only primary endpoints, threshold provenance cited</td><td>— policy, sealed before any E3 number</td></tr>
-      <tr><td>N3 · composition causality</td><td class="h">af1b7c9f</td><td>attractor's feasible phase 0.00 → ≥ 0.25 (2/2 seeds); random-16 control &lt; 0.10</td><td>🕐 keystone — first GPU block after Sept 15, null follow-ups pre-listed</td></tr>
+      <tr><td>N3 · composition causality</td><td class="h">af1b7c9f</td><td>attractor's feasible phase 0.00 → ≥ 0.25 (2/2 seeds); random-16 control &lt; 0.10</td><td>⚠ mixed — targeted endpoints pass (0.750/0.750; random 0), adaptive regression triggers stop; descent prediction misses</td></tr>
+      <tr><td>E-HYG · clip pruning</td><td class="h">a5494b7c</td><td>feasible heldout Δ ≥ +0.015; no excessive coverage cost</td><td>❌ null — feasible heldout Δ −0.0101; zero-shot ground −0.0354 inside bracket</td></tr>
       <tr><td>E3 v2 · support moderation</td><td class="h">2c38845b</td><td><b>named clips predicted to get worse</b> at 800 (all 22 dynamic held-out lose support)</td><td>🕐 bidirectional &amp; risky, post-N3</td></tr>
-      <tr><td>P-SIGN · signature generality</td><td class="h">c7916e8c</td><td>≥8/12 family clips ≥ +5 mm airborne; controls &lt; 2 mm; 3× localisation</td><td>🕐 GPU gap capacity</td></tr>
+      <tr><td>P-SIGN · signature generality</td><td class="h">c7916e8c</td><td>≥8/12 family clips ≥ +5 mm airborne; controls &lt; 2 mm; 3× localisation</td><td>❌ failed — 7/12 family, 4/12 controls, 2/7 localised; runtime-detector claim rejected</td></tr>
+      <tr><td>FGAS · soft eligibility</td><td class="h">3521c80e</td><td>feasible-hard20 Δ ≥ +0.05 with lower CI &gt; 0; heldout no-regression</td><td>❌ Δ −0.0196; no-regression passes, but rejected-start mass 0.199 fails the implementation gate</td></tr>
+      <tr><td>N7 · contact repair</td><td class="h">90da8a08</td><td>R/repaired − K/raw ≥ +0.05 with lower CI &gt; 0; heldout and coverage guards</td><td>❌ +0.0397, CI [+0.0153,+0.0658], below SESOI; coverage fails</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -332,8 +337,9 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       infeasible; a 100 %-flagged source subset's walks: 0.66 → 0.01. Census: 65.8 % of 2,443 flagged clips recovered.</p>
       <span class="ev">tools/repair_contact_projection.py · reports/repair_census/summary.md</span></div>
     <div class="card"><h3>Stratified-start evaluation</h3>
-      <p>Survival per (clip, start-offset) with fixed windows — the protocol that exposed the "0.31 survival" artifact and now
-      generates every difficulty label in the project.</p><span class="ev">tools/eval_stratified.py</span></div>
+      <p>The sealed fixed-offset harness exposed the "0.31 survival" artifact. A post-outcome audit found unpaired startup
+      randomization, clipped duplicate offsets, and reset-contaminated terminal quality metrics; a paired per-episode v2 is now required.</p>
+      <span class="ev">tools/eval_stratified.py · plan/SEGMENT_NATIVE_FOLLOWUP_2026-08-20.md</span></div>
     <div class="card"><h3>Dual-engine conformance protocol</h3>
       <p>Per-substep paired stepping, an independent third engine as referee, and a shadow solver stepping the other engine's own
       trajectory. Any second physics implementation coupled to an RL harness deserves this — end-of-episode metrics matched while
@@ -348,20 +354,78 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
 <section>
   <span class="numeral">07 · What's still open</span>
   <h2>The causal slots — and what would change our minds</h2>
-  <p class="kicker">The chain is mechanism-complete but the two causal confirmations are scheduled, not done. We say so.</p>
+  <p class="kicker">Completed interventions are mixed, null, or failed their joint gates. Segment-native v2 now has an exploratory wiring result; confirmatory benefit remains open.</p>
   <div class="grid">
-    <div class="card"><h3>N3 — composition causality <span class="pill slot">keystone</span></h3>
-      <p>Add 16 <em>feasibility-screened</em> kneel/crawl neighbours to the bank (vs 16 random clips): does the attractor's feasible phase
-      become trackable? Confirms the coverage half of the story; its three null follow-ups are pre-listed so a miss has a written response.</p></div>
-    <div class="card"><h3>N7 — repair the impossible <span class="pill slot">after N3</span></h3>
-      <p>Project the airborne transitions back onto contact and re-train: the descent should become learnable and the sign-reversal
-      should vanish on the repaired clip. Converts "exclude" into "repair".</p></div>
+    <div class="card"><h3>FGAS — soft eligibility <span class="pill neg">sealed ✗</span></h3>
+      <p>The three-seed soft arm gives Δ −0.0196 on feasible-hard20 and fails its rejected-start-mass gate (0.199). Diagnostics
+      confirm that failure weighting overwhelms a clip-mean soft multiplier; a segment-native follow-up requires a new seal.</p></div>
+    <div class="card"><h3>N7 — repair the impossible <span class="pill neg">sealed ✗</span></h3>
+      <p>R/repaired improves over K/raw by +0.0397, but misses the +0.05 SESOI and the coverage rule. R/raw is −0.0036:
+      the gain is reference easing plus co-adaptation, concentrated in over-budget edits, not better raw-reference policy skill.</p></div>
     <div class="card"><h3>E3 — support at scale <span class="pill slot">post-Sept 15</span></h3>
       <p>800-clip bank with bidirectional named predictions — including 22 clips we claim will get <em>worse</em>. Predicted harms
       are the sharpest test the support story can face.</p></div>
     <div class="card"><h3>Honest scope</h3>
       <p>One robot, one reward configuration, survival-centric endpoints, simulation only, 4k-iteration horizon. The solver-ensemble
       program was explicitly descoped: the second engine earned its keep as a <em>referee and measurement instrument</em>, not an oracle.</p></div>
+  </div>
+</section>
+
+<section>
+  <span class="numeral">08 · Latest research checkpoint</span>
+  <h2>Segment-native training works; survival lift is unresolved <span class="pill expl">exploratory</span></h2>
+  <p class="kicker">The GPU lifecycle, bounded curriculum, and paired evaluator pass. One seed shows a motion-quality
+  signal but no established survival benefit, so confirmatory training has not started.</p>
+  <div class="grid">
+    <div class="card"><h3>GPU path and objective repaired</h3>
+      <p>An 8-env lifecycle trace completed 24/24 exact trials with no wrap. Two 512-env arms then ran 200 iterations
+      each (2.46 M steps/arm). A diagnosed early-failure incentive was corrected symmetrically with a failure-only event cost;
+      invalid starts, invalid frames, and censored resets stayed at zero.</p>
+      <span class="ev">reports/segment_v2_smoke/timeline_trace.json · autoresearch/segment-native-260820-2259/research_log.md</span></div>
+    <div class="card"><h3>Paired survival is inconclusive</h3>
+      <p>On 504 identical worlds per policy, adaptive minus exact-uniform success is +0.0079
+      (unit-bootstrap 95 % CI −0.0536 to +0.0714); survival is +0.0115 s (−0.0100 to +0.0346).
+      Seeds, starts, initial state, and startup randomization hashes match.</p>
+      <span class="ev">reports/segment_v2_pilot/result.json</span></div>
+    <div class="card"><h3>Motion-quality signal</h3>
+      <p>Across 22,321 paired common-survivor frames, adaptive training reduces body-position error by 4.20 mm
+      (95 % CI 1.90–6.63 mm) and anchor-orientation error by 0.0280 rad (0.0163–0.0397).
+      Anchor position, joint error, and work remain unresolved; this is one-seed exploratory evidence.</p>
+      <span class="ev">tools/analyze_segment_pilot.py · reports/segment_v2_pilot/</span></div>
+    <div class="card"><h3>Next gate: treatment separation</h3>
+      <p>The adaptive distribution ended only 1.40 % total-variation from its control (correlation 0.998), despite healthy entropy.
+      Separation is now explicit telemetry. A stronger, capped curriculum and the missing unmasked-grounded arm must be frozen
+      before spending two more seeds.</p>
+      <span class="ev">plan/SEGMENT_NATIVE_PILOT_RESULT_2026-08-20.md</span></div>
+  </div>
+  <div class="callout"><p><strong>Full implementation note:</strong> see the
+    <a href="segment-native.html">segment-native training and Newton direction page</a>
+    for the lifecycle, training telemetry, paired evaluation, limits, and next causal design.</p></div>
+</section>
+
+<section>
+  <span class="numeral">09 · Newton direction</span>
+  <h2>Use physics as validated information, not as another source of divergence <span class="pill slot">next gate</span></h2>
+  <p class="kicker">The pilot fixed the MDP and evaluator, but its adaptive treatment was almost identical to control.
+  The revised program asks whether Newton-measured segment fragility adds predictive and training value beyond exact hygiene
+  and online learning progress.</p>
+  <div class="grid">
+    <div class="card"><h3>Newton is the measurement teacher</h3>
+      <p>MJLab keeps the proven PPO path. Newton v1.5 supplies deterministic, resynchronized short-horizon probes across
+      actuation, contact generation, and solver formulation. Long rollout disagreement is not a label.</p>
+      <span class="ev">Newton v1.5 · paired canonical-state probes</span></div>
+    <div class="card"><h3>Actuation first</h3>
+      <p>Delay and motor saturation are the first axes because they map to deployable G1 failure modes. Contact-pipeline swaps
+      come next; cross-solver claims wait for state, action, and contact conformance.</p>
+      <span class="ev">newton.actuators · SolverMuJoCo contact pipeline</span></div>
+    <div class="card"><h3>Four contrasts, one question each</h3>
+      <p>Fresh arms isolate unmasked starts, exact-feasible hygiene, learning-progress allocation, and validated
+      Newton-fragility allocation. The final contrast measures the incremental value of physics information.</p>
+      <span class="ev">G0 unmasked · G1 hygiene · G2 progress · G3 Newton</span></div>
+    <div class="card"><h3>Benefit must survive a kill gate</h3>
+      <p>No training scale-up unless the Newton vector predicts a held-out physics axis beyond reference/screen features,
+      the curriculum visibly separates from control, and one seed improves survival without degrading common-survivor quality.</p>
+      <span class="ev">plan/NEWTON_SEGMENT_DIRECTION_2026-08-21.md</span></div>
   </div>
 </section>
 
@@ -372,12 +436,13 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
     <a href="https://github.com/linjiw/refeas">refeas screen (v0.1.0)</a>
     <a href="companion.html">companion note (rendered, v0.3)</a>
     <a href="flagship.html">flagship draft (rendered)</a>
+    <a href="segment-native.html">segment-native training note</a>
     <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/paper/RESULTS_LOG.md">results log</a>
     <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/paper/flagship/preregistration_table.md">sealed record</a>
   </div>
-  <p style="margin-top:1rem;max-width:78ch">Every figure and statistic on this page maps to an artifact path in
-  <code>paper/RESULTS_LOG.md</code>; claims carry status labels (sealed ✓ / sealed ✗ kept / measured / exploratory / pending 🕐)
-  in the drafts. Pending slots (N3 · N7 · E3 · P-SIGN) do no load-bearing work anywhere. Reviewers: start at
+  <p style="margin-top:1rem;max-width:78ch">Every sealed figure and statistic on this page maps to an artifact path in
+  <code>paper/RESULTS_LOG.md</code>; exploratory checkpoints link their artifacts inline. Claims carry status labels (sealed ✓ / sealed ✗ kept / measured / exploratory / pending 🕐)
+  in the drafts. Pending slots (E3 · segment-native v2 follow-up) do no load-bearing work anywhere. Reviewers: start at
   <code>README.md → paper/RESULTS_LOG.md → paper/flagship/preregistration_table.md → paper/RED_TEAM.md</code>.</p>
 </div></footer>
 

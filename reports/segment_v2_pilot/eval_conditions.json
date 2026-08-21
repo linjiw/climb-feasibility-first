@@ -1,0 +1,4549 @@
+{
+ "schema_version": "segment_eval_conditions/1",
+ "classification": "unsealed paired segment-v2 evaluation panel",
+ "unit_table_sha256": "2aaeaa741959eabbfc9510a18820f9745bc7e879dfa423423385e835b6f120a6",
+ "phases": [
+  0.0,
+  0.5,
+  1.0
+ ],
+ "reps": 4,
+ "conditions": [
+  {
+   "world_id": "u0000-p0-r00",
+   "table_index": 0,
+   "unit_id": 0,
+   "clip_id": 0,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0000-p0-r01",
+   "table_index": 0,
+   "unit_id": 0,
+   "clip_id": 0,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0000-p0-r02",
+   "table_index": 0,
+   "unit_id": 0,
+   "clip_id": 0,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0000-p0-r03",
+   "table_index": 0,
+   "unit_id": 0,
+   "clip_id": 0,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0000-p1-r00",
+   "table_index": 0,
+   "unit_id": 0,
+   "clip_id": 0,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 30
+  },
+  {
+   "world_id": "u0000-p1-r01",
+   "table_index": 0,
+   "unit_id": 0,
+   "clip_id": 0,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 30
+  },
+  {
+   "world_id": "u0000-p1-r02",
+   "table_index": 0,
+   "unit_id": 0,
+   "clip_id": 0,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 30
+  },
+  {
+   "world_id": "u0000-p1-r03",
+   "table_index": 0,
+   "unit_id": 0,
+   "clip_id": 0,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 30
+  },
+  {
+   "world_id": "u0000-p2-r00",
+   "table_index": 0,
+   "unit_id": 0,
+   "clip_id": 0,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 60
+  },
+  {
+   "world_id": "u0000-p2-r01",
+   "table_index": 0,
+   "unit_id": 0,
+   "clip_id": 0,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 60
+  },
+  {
+   "world_id": "u0000-p2-r02",
+   "table_index": 0,
+   "unit_id": 0,
+   "clip_id": 0,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 60
+  },
+  {
+   "world_id": "u0000-p2-r03",
+   "table_index": 0,
+   "unit_id": 0,
+   "clip_id": 0,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 60
+  },
+  {
+   "world_id": "u0001-p0-r00",
+   "table_index": 1,
+   "unit_id": 1,
+   "clip_id": 0,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 175
+  },
+  {
+   "world_id": "u0001-p0-r01",
+   "table_index": 1,
+   "unit_id": 1,
+   "clip_id": 0,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 175
+  },
+  {
+   "world_id": "u0001-p0-r02",
+   "table_index": 1,
+   "unit_id": 1,
+   "clip_id": 0,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 175
+  },
+  {
+   "world_id": "u0001-p0-r03",
+   "table_index": 1,
+   "unit_id": 1,
+   "clip_id": 0,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 175
+  },
+  {
+   "world_id": "u0001-p1-r00",
+   "table_index": 1,
+   "unit_id": 1,
+   "clip_id": 0,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 219
+  },
+  {
+   "world_id": "u0001-p1-r01",
+   "table_index": 1,
+   "unit_id": 1,
+   "clip_id": 0,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 219
+  },
+  {
+   "world_id": "u0001-p1-r02",
+   "table_index": 1,
+   "unit_id": 1,
+   "clip_id": 0,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 219
+  },
+  {
+   "world_id": "u0001-p1-r03",
+   "table_index": 1,
+   "unit_id": 1,
+   "clip_id": 0,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 219
+  },
+  {
+   "world_id": "u0001-p2-r00",
+   "table_index": 1,
+   "unit_id": 1,
+   "clip_id": 0,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 263
+  },
+  {
+   "world_id": "u0001-p2-r01",
+   "table_index": 1,
+   "unit_id": 1,
+   "clip_id": 0,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 263
+  },
+  {
+   "world_id": "u0001-p2-r02",
+   "table_index": 1,
+   "unit_id": 1,
+   "clip_id": 0,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 263
+  },
+  {
+   "world_id": "u0001-p2-r03",
+   "table_index": 1,
+   "unit_id": 1,
+   "clip_id": 0,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 263
+  },
+  {
+   "world_id": "u0002-p0-r00",
+   "table_index": 2,
+   "unit_id": 2,
+   "clip_id": 1,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0002-p0-r01",
+   "table_index": 2,
+   "unit_id": 2,
+   "clip_id": 1,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0002-p0-r02",
+   "table_index": 2,
+   "unit_id": 2,
+   "clip_id": 1,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0002-p0-r03",
+   "table_index": 2,
+   "unit_id": 2,
+   "clip_id": 1,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0002-p1-r00",
+   "table_index": 2,
+   "unit_id": 2,
+   "clip_id": 1,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 53
+  },
+  {
+   "world_id": "u0002-p1-r01",
+   "table_index": 2,
+   "unit_id": 2,
+   "clip_id": 1,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 53
+  },
+  {
+   "world_id": "u0002-p1-r02",
+   "table_index": 2,
+   "unit_id": 2,
+   "clip_id": 1,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 53
+  },
+  {
+   "world_id": "u0002-p1-r03",
+   "table_index": 2,
+   "unit_id": 2,
+   "clip_id": 1,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 53
+  },
+  {
+   "world_id": "u0002-p2-r00",
+   "table_index": 2,
+   "unit_id": 2,
+   "clip_id": 1,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 106
+  },
+  {
+   "world_id": "u0002-p2-r01",
+   "table_index": 2,
+   "unit_id": 2,
+   "clip_id": 1,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 106
+  },
+  {
+   "world_id": "u0002-p2-r02",
+   "table_index": 2,
+   "unit_id": 2,
+   "clip_id": 1,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 106
+  },
+  {
+   "world_id": "u0002-p2-r03",
+   "table_index": 2,
+   "unit_id": 2,
+   "clip_id": 1,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 106
+  },
+  {
+   "world_id": "u0003-p0-r00",
+   "table_index": 3,
+   "unit_id": 6,
+   "clip_id": 1,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 338
+  },
+  {
+   "world_id": "u0003-p0-r01",
+   "table_index": 3,
+   "unit_id": 6,
+   "clip_id": 1,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 338
+  },
+  {
+   "world_id": "u0003-p0-r02",
+   "table_index": 3,
+   "unit_id": 6,
+   "clip_id": 1,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 338
+  },
+  {
+   "world_id": "u0003-p0-r03",
+   "table_index": 3,
+   "unit_id": 6,
+   "clip_id": 1,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 338
+  },
+  {
+   "world_id": "u0003-p1-r00",
+   "table_index": 3,
+   "unit_id": 6,
+   "clip_id": 1,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 434
+  },
+  {
+   "world_id": "u0003-p1-r01",
+   "table_index": 3,
+   "unit_id": 6,
+   "clip_id": 1,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 434
+  },
+  {
+   "world_id": "u0003-p1-r02",
+   "table_index": 3,
+   "unit_id": 6,
+   "clip_id": 1,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 434
+  },
+  {
+   "world_id": "u0003-p1-r03",
+   "table_index": 3,
+   "unit_id": 6,
+   "clip_id": 1,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 434
+  },
+  {
+   "world_id": "u0003-p2-r00",
+   "table_index": 3,
+   "unit_id": 6,
+   "clip_id": 1,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 531
+  },
+  {
+   "world_id": "u0003-p2-r01",
+   "table_index": 3,
+   "unit_id": 6,
+   "clip_id": 1,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 531
+  },
+  {
+   "world_id": "u0003-p2-r02",
+   "table_index": 3,
+   "unit_id": 6,
+   "clip_id": 1,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 531
+  },
+  {
+   "world_id": "u0003-p2-r03",
+   "table_index": 3,
+   "unit_id": 6,
+   "clip_id": 1,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 531
+  },
+  {
+   "world_id": "u0004-p0-r00",
+   "table_index": 4,
+   "unit_id": 7,
+   "clip_id": 2,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0004-p0-r01",
+   "table_index": 4,
+   "unit_id": 7,
+   "clip_id": 2,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0004-p0-r02",
+   "table_index": 4,
+   "unit_id": 7,
+   "clip_id": 2,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0004-p0-r03",
+   "table_index": 4,
+   "unit_id": 7,
+   "clip_id": 2,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0004-p1-r00",
+   "table_index": 4,
+   "unit_id": 7,
+   "clip_id": 2,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 12
+  },
+  {
+   "world_id": "u0004-p1-r01",
+   "table_index": 4,
+   "unit_id": 7,
+   "clip_id": 2,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 12
+  },
+  {
+   "world_id": "u0004-p1-r02",
+   "table_index": 4,
+   "unit_id": 7,
+   "clip_id": 2,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 12
+  },
+  {
+   "world_id": "u0004-p1-r03",
+   "table_index": 4,
+   "unit_id": 7,
+   "clip_id": 2,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 12
+  },
+  {
+   "world_id": "u0004-p2-r00",
+   "table_index": 4,
+   "unit_id": 7,
+   "clip_id": 2,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 23
+  },
+  {
+   "world_id": "u0004-p2-r01",
+   "table_index": 4,
+   "unit_id": 7,
+   "clip_id": 2,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 23
+  },
+  {
+   "world_id": "u0004-p2-r02",
+   "table_index": 4,
+   "unit_id": 7,
+   "clip_id": 2,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 23
+  },
+  {
+   "world_id": "u0004-p2-r03",
+   "table_index": 4,
+   "unit_id": 7,
+   "clip_id": 2,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 23
+  },
+  {
+   "world_id": "u0005-p0-r00",
+   "table_index": 5,
+   "unit_id": 9,
+   "clip_id": 2,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 130
+  },
+  {
+   "world_id": "u0005-p0-r01",
+   "table_index": 5,
+   "unit_id": 9,
+   "clip_id": 2,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 130
+  },
+  {
+   "world_id": "u0005-p0-r02",
+   "table_index": 5,
+   "unit_id": 9,
+   "clip_id": 2,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 130
+  },
+  {
+   "world_id": "u0005-p0-r03",
+   "table_index": 5,
+   "unit_id": 9,
+   "clip_id": 2,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 130
+  },
+  {
+   "world_id": "u0005-p1-r00",
+   "table_index": 5,
+   "unit_id": 9,
+   "clip_id": 2,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 244
+  },
+  {
+   "world_id": "u0005-p1-r01",
+   "table_index": 5,
+   "unit_id": 9,
+   "clip_id": 2,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 244
+  },
+  {
+   "world_id": "u0005-p1-r02",
+   "table_index": 5,
+   "unit_id": 9,
+   "clip_id": 2,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 244
+  },
+  {
+   "world_id": "u0005-p1-r03",
+   "table_index": 5,
+   "unit_id": 9,
+   "clip_id": 2,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 244
+  },
+  {
+   "world_id": "u0005-p2-r00",
+   "table_index": 5,
+   "unit_id": 9,
+   "clip_id": 2,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 359
+  },
+  {
+   "world_id": "u0005-p2-r01",
+   "table_index": 5,
+   "unit_id": 9,
+   "clip_id": 2,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 359
+  },
+  {
+   "world_id": "u0005-p2-r02",
+   "table_index": 5,
+   "unit_id": 9,
+   "clip_id": 2,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 359
+  },
+  {
+   "world_id": "u0005-p2-r03",
+   "table_index": 5,
+   "unit_id": 9,
+   "clip_id": 2,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 359
+  },
+  {
+   "world_id": "u0006-p0-r00",
+   "table_index": 6,
+   "unit_id": 10,
+   "clip_id": 2,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 465
+  },
+  {
+   "world_id": "u0006-p0-r01",
+   "table_index": 6,
+   "unit_id": 10,
+   "clip_id": 2,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 465
+  },
+  {
+   "world_id": "u0006-p0-r02",
+   "table_index": 6,
+   "unit_id": 10,
+   "clip_id": 2,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 465
+  },
+  {
+   "world_id": "u0006-p0-r03",
+   "table_index": 6,
+   "unit_id": 10,
+   "clip_id": 2,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 465
+  },
+  {
+   "world_id": "u0006-p1-r00",
+   "table_index": 6,
+   "unit_id": 10,
+   "clip_id": 2,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 471
+  },
+  {
+   "world_id": "u0006-p1-r01",
+   "table_index": 6,
+   "unit_id": 10,
+   "clip_id": 2,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 471
+  },
+  {
+   "world_id": "u0006-p1-r02",
+   "table_index": 6,
+   "unit_id": 10,
+   "clip_id": 2,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 471
+  },
+  {
+   "world_id": "u0006-p1-r03",
+   "table_index": 6,
+   "unit_id": 10,
+   "clip_id": 2,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 471
+  },
+  {
+   "world_id": "u0006-p2-r00",
+   "table_index": 6,
+   "unit_id": 10,
+   "clip_id": 2,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 478
+  },
+  {
+   "world_id": "u0006-p2-r01",
+   "table_index": 6,
+   "unit_id": 10,
+   "clip_id": 2,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 478
+  },
+  {
+   "world_id": "u0006-p2-r02",
+   "table_index": 6,
+   "unit_id": 10,
+   "clip_id": 2,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 478
+  },
+  {
+   "world_id": "u0006-p2-r03",
+   "table_index": 6,
+   "unit_id": 10,
+   "clip_id": 2,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 478
+  },
+  {
+   "world_id": "u0007-p0-r00",
+   "table_index": 7,
+   "unit_id": 11,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0007-p0-r01",
+   "table_index": 7,
+   "unit_id": 11,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0007-p0-r02",
+   "table_index": 7,
+   "unit_id": 11,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0007-p0-r03",
+   "table_index": 7,
+   "unit_id": 11,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0007-p1-r00",
+   "table_index": 7,
+   "unit_id": 11,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 70
+  },
+  {
+   "world_id": "u0007-p1-r01",
+   "table_index": 7,
+   "unit_id": 11,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 70
+  },
+  {
+   "world_id": "u0007-p1-r02",
+   "table_index": 7,
+   "unit_id": 11,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 70
+  },
+  {
+   "world_id": "u0007-p1-r03",
+   "table_index": 7,
+   "unit_id": 11,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 70
+  },
+  {
+   "world_id": "u0007-p2-r00",
+   "table_index": 7,
+   "unit_id": 11,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 141
+  },
+  {
+   "world_id": "u0007-p2-r01",
+   "table_index": 7,
+   "unit_id": 11,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 141
+  },
+  {
+   "world_id": "u0007-p2-r02",
+   "table_index": 7,
+   "unit_id": 11,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 141
+  },
+  {
+   "world_id": "u0007-p2-r03",
+   "table_index": 7,
+   "unit_id": 11,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 141
+  },
+  {
+   "world_id": "u0008-p0-r00",
+   "table_index": 8,
+   "unit_id": 12,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 203
+  },
+  {
+   "world_id": "u0008-p0-r01",
+   "table_index": 8,
+   "unit_id": 12,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 203
+  },
+  {
+   "world_id": "u0008-p0-r02",
+   "table_index": 8,
+   "unit_id": 12,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 203
+  },
+  {
+   "world_id": "u0008-p0-r03",
+   "table_index": 8,
+   "unit_id": 12,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 203
+  },
+  {
+   "world_id": "u0008-p1-r00",
+   "table_index": 8,
+   "unit_id": 12,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 234
+  },
+  {
+   "world_id": "u0008-p1-r01",
+   "table_index": 8,
+   "unit_id": 12,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 234
+  },
+  {
+   "world_id": "u0008-p1-r02",
+   "table_index": 8,
+   "unit_id": 12,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 234
+  },
+  {
+   "world_id": "u0008-p1-r03",
+   "table_index": 8,
+   "unit_id": 12,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 234
+  },
+  {
+   "world_id": "u0008-p2-r00",
+   "table_index": 8,
+   "unit_id": 12,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 265
+  },
+  {
+   "world_id": "u0008-p2-r01",
+   "table_index": 8,
+   "unit_id": 12,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 265
+  },
+  {
+   "world_id": "u0008-p2-r02",
+   "table_index": 8,
+   "unit_id": 12,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 265
+  },
+  {
+   "world_id": "u0008-p2-r03",
+   "table_index": 8,
+   "unit_id": 12,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 265
+  },
+  {
+   "world_id": "u0009-p0-r00",
+   "table_index": 9,
+   "unit_id": 13,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 336
+  },
+  {
+   "world_id": "u0009-p0-r01",
+   "table_index": 9,
+   "unit_id": 13,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 336
+  },
+  {
+   "world_id": "u0009-p0-r02",
+   "table_index": 9,
+   "unit_id": 13,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 336
+  },
+  {
+   "world_id": "u0009-p0-r03",
+   "table_index": 9,
+   "unit_id": 13,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 336
+  },
+  {
+   "world_id": "u0009-p1-r00",
+   "table_index": 9,
+   "unit_id": 13,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 356
+  },
+  {
+   "world_id": "u0009-p1-r01",
+   "table_index": 9,
+   "unit_id": 13,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 356
+  },
+  {
+   "world_id": "u0009-p1-r02",
+   "table_index": 9,
+   "unit_id": 13,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 356
+  },
+  {
+   "world_id": "u0009-p1-r03",
+   "table_index": 9,
+   "unit_id": 13,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 356
+  },
+  {
+   "world_id": "u0009-p2-r00",
+   "table_index": 9,
+   "unit_id": 13,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 376
+  },
+  {
+   "world_id": "u0009-p2-r01",
+   "table_index": 9,
+   "unit_id": 13,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 376
+  },
+  {
+   "world_id": "u0009-p2-r02",
+   "table_index": 9,
+   "unit_id": 13,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 376
+  },
+  {
+   "world_id": "u0009-p2-r03",
+   "table_index": 9,
+   "unit_id": 13,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 376
+  },
+  {
+   "world_id": "u0010-p0-r00",
+   "table_index": 10,
+   "unit_id": 14,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 469
+  },
+  {
+   "world_id": "u0010-p0-r01",
+   "table_index": 10,
+   "unit_id": 14,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 469
+  },
+  {
+   "world_id": "u0010-p0-r02",
+   "table_index": 10,
+   "unit_id": 14,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 469
+  },
+  {
+   "world_id": "u0010-p0-r03",
+   "table_index": 10,
+   "unit_id": 14,
+   "clip_id": 3,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 469
+  },
+  {
+   "world_id": "u0010-p1-r00",
+   "table_index": 10,
+   "unit_id": 14,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 521
+  },
+  {
+   "world_id": "u0010-p1-r01",
+   "table_index": 10,
+   "unit_id": 14,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 521
+  },
+  {
+   "world_id": "u0010-p1-r02",
+   "table_index": 10,
+   "unit_id": 14,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 521
+  },
+  {
+   "world_id": "u0010-p1-r03",
+   "table_index": 10,
+   "unit_id": 14,
+   "clip_id": 3,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 521
+  },
+  {
+   "world_id": "u0010-p2-r00",
+   "table_index": 10,
+   "unit_id": 14,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 574
+  },
+  {
+   "world_id": "u0010-p2-r01",
+   "table_index": 10,
+   "unit_id": 14,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 574
+  },
+  {
+   "world_id": "u0010-p2-r02",
+   "table_index": 10,
+   "unit_id": 14,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 574
+  },
+  {
+   "world_id": "u0010-p2-r03",
+   "table_index": 10,
+   "unit_id": 14,
+   "clip_id": 3,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 574
+  },
+  {
+   "world_id": "u0011-p0-r00",
+   "table_index": 11,
+   "unit_id": 15,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0011-p0-r01",
+   "table_index": 11,
+   "unit_id": 15,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0011-p0-r02",
+   "table_index": 11,
+   "unit_id": 15,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0011-p0-r03",
+   "table_index": 11,
+   "unit_id": 15,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0011-p1-r00",
+   "table_index": 11,
+   "unit_id": 15,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 98
+  },
+  {
+   "world_id": "u0011-p1-r01",
+   "table_index": 11,
+   "unit_id": 15,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 98
+  },
+  {
+   "world_id": "u0011-p1-r02",
+   "table_index": 11,
+   "unit_id": 15,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 98
+  },
+  {
+   "world_id": "u0011-p1-r03",
+   "table_index": 11,
+   "unit_id": 15,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 98
+  },
+  {
+   "world_id": "u0011-p2-r00",
+   "table_index": 11,
+   "unit_id": 15,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 195
+  },
+  {
+   "world_id": "u0011-p2-r01",
+   "table_index": 11,
+   "unit_id": 15,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 195
+  },
+  {
+   "world_id": "u0011-p2-r02",
+   "table_index": 11,
+   "unit_id": 15,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 195
+  },
+  {
+   "world_id": "u0011-p2-r03",
+   "table_index": 11,
+   "unit_id": 15,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 195
+  },
+  {
+   "world_id": "u0012-p0-r00",
+   "table_index": 12,
+   "unit_id": 16,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 247
+  },
+  {
+   "world_id": "u0012-p0-r01",
+   "table_index": 12,
+   "unit_id": 16,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 247
+  },
+  {
+   "world_id": "u0012-p0-r02",
+   "table_index": 12,
+   "unit_id": 16,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 247
+  },
+  {
+   "world_id": "u0012-p0-r03",
+   "table_index": 12,
+   "unit_id": 16,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 247
+  },
+  {
+   "world_id": "u0012-p1-r00",
+   "table_index": 12,
+   "unit_id": 16,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 529
+  },
+  {
+   "world_id": "u0012-p1-r01",
+   "table_index": 12,
+   "unit_id": 16,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 529
+  },
+  {
+   "world_id": "u0012-p1-r02",
+   "table_index": 12,
+   "unit_id": 16,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 529
+  },
+  {
+   "world_id": "u0012-p1-r03",
+   "table_index": 12,
+   "unit_id": 16,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 529
+  },
+  {
+   "world_id": "u0012-p2-r00",
+   "table_index": 12,
+   "unit_id": 16,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 810
+  },
+  {
+   "world_id": "u0012-p2-r01",
+   "table_index": 12,
+   "unit_id": 16,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 810
+  },
+  {
+   "world_id": "u0012-p2-r02",
+   "table_index": 12,
+   "unit_id": 16,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 810
+  },
+  {
+   "world_id": "u0012-p2-r03",
+   "table_index": 12,
+   "unit_id": 16,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 810
+  },
+  {
+   "world_id": "u0013-p0-r00",
+   "table_index": 13,
+   "unit_id": 19,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 900
+  },
+  {
+   "world_id": "u0013-p0-r01",
+   "table_index": 13,
+   "unit_id": 19,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 900
+  },
+  {
+   "world_id": "u0013-p0-r02",
+   "table_index": 13,
+   "unit_id": 19,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 900
+  },
+  {
+   "world_id": "u0013-p0-r03",
+   "table_index": 13,
+   "unit_id": 19,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 900
+  },
+  {
+   "world_id": "u0013-p1-r00",
+   "table_index": 13,
+   "unit_id": 19,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 900
+  },
+  {
+   "world_id": "u0013-p1-r01",
+   "table_index": 13,
+   "unit_id": 19,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 900
+  },
+  {
+   "world_id": "u0013-p1-r02",
+   "table_index": 13,
+   "unit_id": 19,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 900
+  },
+  {
+   "world_id": "u0013-p1-r03",
+   "table_index": 13,
+   "unit_id": 19,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 900
+  },
+  {
+   "world_id": "u0013-p2-r00",
+   "table_index": 13,
+   "unit_id": 19,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 900
+  },
+  {
+   "world_id": "u0013-p2-r01",
+   "table_index": 13,
+   "unit_id": 19,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 900
+  },
+  {
+   "world_id": "u0013-p2-r02",
+   "table_index": 13,
+   "unit_id": 19,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 900
+  },
+  {
+   "world_id": "u0013-p2-r03",
+   "table_index": 13,
+   "unit_id": 19,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 900
+  },
+  {
+   "world_id": "u0014-p0-r00",
+   "table_index": 14,
+   "unit_id": 22,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 1023
+  },
+  {
+   "world_id": "u0014-p0-r01",
+   "table_index": 14,
+   "unit_id": 22,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 1023
+  },
+  {
+   "world_id": "u0014-p0-r02",
+   "table_index": 14,
+   "unit_id": 22,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 1023
+  },
+  {
+   "world_id": "u0014-p0-r03",
+   "table_index": 14,
+   "unit_id": 22,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 1023
+  },
+  {
+   "world_id": "u0014-p1-r00",
+   "table_index": 14,
+   "unit_id": 22,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 1024
+  },
+  {
+   "world_id": "u0014-p1-r01",
+   "table_index": 14,
+   "unit_id": 22,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 1024
+  },
+  {
+   "world_id": "u0014-p1-r02",
+   "table_index": 14,
+   "unit_id": 22,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 1024
+  },
+  {
+   "world_id": "u0014-p1-r03",
+   "table_index": 14,
+   "unit_id": 22,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 1024
+  },
+  {
+   "world_id": "u0014-p2-r00",
+   "table_index": 14,
+   "unit_id": 22,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 1025
+  },
+  {
+   "world_id": "u0014-p2-r01",
+   "table_index": 14,
+   "unit_id": 22,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 1025
+  },
+  {
+   "world_id": "u0014-p2-r02",
+   "table_index": 14,
+   "unit_id": 22,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 1025
+  },
+  {
+   "world_id": "u0014-p2-r03",
+   "table_index": 14,
+   "unit_id": 22,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 1025
+  },
+  {
+   "world_id": "u0015-p0-r00",
+   "table_index": 15,
+   "unit_id": 26,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 1225
+  },
+  {
+   "world_id": "u0015-p0-r01",
+   "table_index": 15,
+   "unit_id": 26,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 1225
+  },
+  {
+   "world_id": "u0015-p0-r02",
+   "table_index": 15,
+   "unit_id": 26,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 1225
+  },
+  {
+   "world_id": "u0015-p0-r03",
+   "table_index": 15,
+   "unit_id": 26,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 1225
+  },
+  {
+   "world_id": "u0015-p1-r00",
+   "table_index": 15,
+   "unit_id": 26,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 1266
+  },
+  {
+   "world_id": "u0015-p1-r01",
+   "table_index": 15,
+   "unit_id": 26,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 1266
+  },
+  {
+   "world_id": "u0015-p1-r02",
+   "table_index": 15,
+   "unit_id": 26,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 1266
+  },
+  {
+   "world_id": "u0015-p1-r03",
+   "table_index": 15,
+   "unit_id": 26,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 1266
+  },
+  {
+   "world_id": "u0015-p2-r00",
+   "table_index": 15,
+   "unit_id": 26,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 1307
+  },
+  {
+   "world_id": "u0015-p2-r01",
+   "table_index": 15,
+   "unit_id": 26,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 1307
+  },
+  {
+   "world_id": "u0015-p2-r02",
+   "table_index": 15,
+   "unit_id": 26,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 1307
+  },
+  {
+   "world_id": "u0015-p2-r03",
+   "table_index": 15,
+   "unit_id": 26,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 1307
+  },
+  {
+   "world_id": "u0016-p0-r00",
+   "table_index": 16,
+   "unit_id": 28,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 1439
+  },
+  {
+   "world_id": "u0016-p0-r01",
+   "table_index": 16,
+   "unit_id": 28,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 1439
+  },
+  {
+   "world_id": "u0016-p0-r02",
+   "table_index": 16,
+   "unit_id": 28,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 1439
+  },
+  {
+   "world_id": "u0016-p0-r03",
+   "table_index": 16,
+   "unit_id": 28,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 1439
+  },
+  {
+   "world_id": "u0016-p1-r00",
+   "table_index": 16,
+   "unit_id": 28,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 1695
+  },
+  {
+   "world_id": "u0016-p1-r01",
+   "table_index": 16,
+   "unit_id": 28,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 1695
+  },
+  {
+   "world_id": "u0016-p1-r02",
+   "table_index": 16,
+   "unit_id": 28,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 1695
+  },
+  {
+   "world_id": "u0016-p1-r03",
+   "table_index": 16,
+   "unit_id": 28,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 1695
+  },
+  {
+   "world_id": "u0016-p2-r00",
+   "table_index": 16,
+   "unit_id": 28,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 1950
+  },
+  {
+   "world_id": "u0016-p2-r01",
+   "table_index": 16,
+   "unit_id": 28,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 1950
+  },
+  {
+   "world_id": "u0016-p2-r02",
+   "table_index": 16,
+   "unit_id": 28,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 1950
+  },
+  {
+   "world_id": "u0016-p2-r03",
+   "table_index": 16,
+   "unit_id": 28,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 1950
+  },
+  {
+   "world_id": "u0017-p0-r00",
+   "table_index": 17,
+   "unit_id": 33,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 2129
+  },
+  {
+   "world_id": "u0017-p0-r01",
+   "table_index": 17,
+   "unit_id": 33,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 2129
+  },
+  {
+   "world_id": "u0017-p0-r02",
+   "table_index": 17,
+   "unit_id": 33,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 2129
+  },
+  {
+   "world_id": "u0017-p0-r03",
+   "table_index": 17,
+   "unit_id": 33,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 2129
+  },
+  {
+   "world_id": "u0017-p1-r00",
+   "table_index": 17,
+   "unit_id": 33,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 2159
+  },
+  {
+   "world_id": "u0017-p1-r01",
+   "table_index": 17,
+   "unit_id": 33,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 2159
+  },
+  {
+   "world_id": "u0017-p1-r02",
+   "table_index": 17,
+   "unit_id": 33,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 2159
+  },
+  {
+   "world_id": "u0017-p1-r03",
+   "table_index": 17,
+   "unit_id": 33,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 2159
+  },
+  {
+   "world_id": "u0017-p2-r00",
+   "table_index": 17,
+   "unit_id": 33,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 2188
+  },
+  {
+   "world_id": "u0017-p2-r01",
+   "table_index": 17,
+   "unit_id": 33,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 2188
+  },
+  {
+   "world_id": "u0017-p2-r02",
+   "table_index": 17,
+   "unit_id": 33,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 2188
+  },
+  {
+   "world_id": "u0017-p2-r03",
+   "table_index": 17,
+   "unit_id": 33,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 2188
+  },
+  {
+   "world_id": "u0018-p0-r00",
+   "table_index": 18,
+   "unit_id": 40,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 2445
+  },
+  {
+   "world_id": "u0018-p0-r01",
+   "table_index": 18,
+   "unit_id": 40,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 2445
+  },
+  {
+   "world_id": "u0018-p0-r02",
+   "table_index": 18,
+   "unit_id": 40,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 2445
+  },
+  {
+   "world_id": "u0018-p0-r03",
+   "table_index": 18,
+   "unit_id": 40,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 2445
+  },
+  {
+   "world_id": "u0018-p1-r00",
+   "table_index": 18,
+   "unit_id": 40,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 2464
+  },
+  {
+   "world_id": "u0018-p1-r01",
+   "table_index": 18,
+   "unit_id": 40,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 2464
+  },
+  {
+   "world_id": "u0018-p1-r02",
+   "table_index": 18,
+   "unit_id": 40,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 2464
+  },
+  {
+   "world_id": "u0018-p1-r03",
+   "table_index": 18,
+   "unit_id": 40,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 2464
+  },
+  {
+   "world_id": "u0018-p2-r00",
+   "table_index": 18,
+   "unit_id": 40,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 2483
+  },
+  {
+   "world_id": "u0018-p2-r01",
+   "table_index": 18,
+   "unit_id": 40,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 2483
+  },
+  {
+   "world_id": "u0018-p2-r02",
+   "table_index": 18,
+   "unit_id": 40,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 2483
+  },
+  {
+   "world_id": "u0018-p2-r03",
+   "table_index": 18,
+   "unit_id": 40,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 2483
+  },
+  {
+   "world_id": "u0019-p0-r00",
+   "table_index": 19,
+   "unit_id": 41,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 2536
+  },
+  {
+   "world_id": "u0019-p0-r01",
+   "table_index": 19,
+   "unit_id": 41,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 2536
+  },
+  {
+   "world_id": "u0019-p0-r02",
+   "table_index": 19,
+   "unit_id": 41,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 2536
+  },
+  {
+   "world_id": "u0019-p0-r03",
+   "table_index": 19,
+   "unit_id": 41,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 2536
+  },
+  {
+   "world_id": "u0019-p1-r00",
+   "table_index": 19,
+   "unit_id": 41,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 2651
+  },
+  {
+   "world_id": "u0019-p1-r01",
+   "table_index": 19,
+   "unit_id": 41,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 2651
+  },
+  {
+   "world_id": "u0019-p1-r02",
+   "table_index": 19,
+   "unit_id": 41,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 2651
+  },
+  {
+   "world_id": "u0019-p1-r03",
+   "table_index": 19,
+   "unit_id": 41,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 2651
+  },
+  {
+   "world_id": "u0019-p2-r00",
+   "table_index": 19,
+   "unit_id": 41,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 2766
+  },
+  {
+   "world_id": "u0019-p2-r01",
+   "table_index": 19,
+   "unit_id": 41,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 2766
+  },
+  {
+   "world_id": "u0019-p2-r02",
+   "table_index": 19,
+   "unit_id": 41,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 2766
+  },
+  {
+   "world_id": "u0019-p2-r03",
+   "table_index": 19,
+   "unit_id": 41,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 2766
+  },
+  {
+   "world_id": "u0020-p0-r00",
+   "table_index": 20,
+   "unit_id": 42,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 2835
+  },
+  {
+   "world_id": "u0020-p0-r01",
+   "table_index": 20,
+   "unit_id": 42,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 2835
+  },
+  {
+   "world_id": "u0020-p0-r02",
+   "table_index": 20,
+   "unit_id": 42,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 2835
+  },
+  {
+   "world_id": "u0020-p0-r03",
+   "table_index": 20,
+   "unit_id": 42,
+   "clip_id": 4,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 2835
+  },
+  {
+   "world_id": "u0020-p1-r00",
+   "table_index": 20,
+   "unit_id": 42,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 2848
+  },
+  {
+   "world_id": "u0020-p1-r01",
+   "table_index": 20,
+   "unit_id": 42,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 2848
+  },
+  {
+   "world_id": "u0020-p1-r02",
+   "table_index": 20,
+   "unit_id": 42,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 2848
+  },
+  {
+   "world_id": "u0020-p1-r03",
+   "table_index": 20,
+   "unit_id": 42,
+   "clip_id": 4,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 2848
+  },
+  {
+   "world_id": "u0020-p2-r00",
+   "table_index": 20,
+   "unit_id": 42,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 2861
+  },
+  {
+   "world_id": "u0020-p2-r01",
+   "table_index": 20,
+   "unit_id": 42,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 2861
+  },
+  {
+   "world_id": "u0020-p2-r02",
+   "table_index": 20,
+   "unit_id": 42,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 2861
+  },
+  {
+   "world_id": "u0020-p2-r03",
+   "table_index": 20,
+   "unit_id": 42,
+   "clip_id": 4,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 2861
+  },
+  {
+   "world_id": "u0021-p0-r00",
+   "table_index": 21,
+   "unit_id": 43,
+   "clip_id": 5,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0021-p0-r01",
+   "table_index": 21,
+   "unit_id": 43,
+   "clip_id": 5,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0021-p0-r02",
+   "table_index": 21,
+   "unit_id": 43,
+   "clip_id": 5,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0021-p0-r03",
+   "table_index": 21,
+   "unit_id": 43,
+   "clip_id": 5,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0021-p1-r00",
+   "table_index": 21,
+   "unit_id": 43,
+   "clip_id": 5,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 18
+  },
+  {
+   "world_id": "u0021-p1-r01",
+   "table_index": 21,
+   "unit_id": 43,
+   "clip_id": 5,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 18
+  },
+  {
+   "world_id": "u0021-p1-r02",
+   "table_index": 21,
+   "unit_id": 43,
+   "clip_id": 5,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 18
+  },
+  {
+   "world_id": "u0021-p1-r03",
+   "table_index": 21,
+   "unit_id": 43,
+   "clip_id": 5,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 18
+  },
+  {
+   "world_id": "u0021-p2-r00",
+   "table_index": 21,
+   "unit_id": 43,
+   "clip_id": 5,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 35
+  },
+  {
+   "world_id": "u0021-p2-r01",
+   "table_index": 21,
+   "unit_id": 43,
+   "clip_id": 5,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 35
+  },
+  {
+   "world_id": "u0021-p2-r02",
+   "table_index": 21,
+   "unit_id": 43,
+   "clip_id": 5,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 35
+  },
+  {
+   "world_id": "u0021-p2-r03",
+   "table_index": 21,
+   "unit_id": 43,
+   "clip_id": 5,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 35
+  },
+  {
+   "world_id": "u0022-p0-r00",
+   "table_index": 22,
+   "unit_id": 45,
+   "clip_id": 5,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 188
+  },
+  {
+   "world_id": "u0022-p0-r01",
+   "table_index": 22,
+   "unit_id": 45,
+   "clip_id": 5,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 188
+  },
+  {
+   "world_id": "u0022-p0-r02",
+   "table_index": 22,
+   "unit_id": 45,
+   "clip_id": 5,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 188
+  },
+  {
+   "world_id": "u0022-p0-r03",
+   "table_index": 22,
+   "unit_id": 45,
+   "clip_id": 5,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 188
+  },
+  {
+   "world_id": "u0022-p1-r00",
+   "table_index": 22,
+   "unit_id": 45,
+   "clip_id": 5,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 287
+  },
+  {
+   "world_id": "u0022-p1-r01",
+   "table_index": 22,
+   "unit_id": 45,
+   "clip_id": 5,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 287
+  },
+  {
+   "world_id": "u0022-p1-r02",
+   "table_index": 22,
+   "unit_id": 45,
+   "clip_id": 5,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 287
+  },
+  {
+   "world_id": "u0022-p1-r03",
+   "table_index": 22,
+   "unit_id": 45,
+   "clip_id": 5,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 287
+  },
+  {
+   "world_id": "u0022-p2-r00",
+   "table_index": 22,
+   "unit_id": 45,
+   "clip_id": 5,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 386
+  },
+  {
+   "world_id": "u0022-p2-r01",
+   "table_index": 22,
+   "unit_id": 45,
+   "clip_id": 5,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 386
+  },
+  {
+   "world_id": "u0022-p2-r02",
+   "table_index": 22,
+   "unit_id": 45,
+   "clip_id": 5,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 386
+  },
+  {
+   "world_id": "u0022-p2-r03",
+   "table_index": 22,
+   "unit_id": 45,
+   "clip_id": 5,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 386
+  },
+  {
+   "world_id": "u0023-p0-r00",
+   "table_index": 23,
+   "unit_id": 46,
+   "clip_id": 5,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 483
+  },
+  {
+   "world_id": "u0023-p0-r01",
+   "table_index": 23,
+   "unit_id": 46,
+   "clip_id": 5,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 483
+  },
+  {
+   "world_id": "u0023-p0-r02",
+   "table_index": 23,
+   "unit_id": 46,
+   "clip_id": 5,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 483
+  },
+  {
+   "world_id": "u0023-p0-r03",
+   "table_index": 23,
+   "unit_id": 46,
+   "clip_id": 5,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 483
+  },
+  {
+   "world_id": "u0023-p1-r00",
+   "table_index": 23,
+   "unit_id": 46,
+   "clip_id": 5,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 521
+  },
+  {
+   "world_id": "u0023-p1-r01",
+   "table_index": 23,
+   "unit_id": 46,
+   "clip_id": 5,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 521
+  },
+  {
+   "world_id": "u0023-p1-r02",
+   "table_index": 23,
+   "unit_id": 46,
+   "clip_id": 5,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 521
+  },
+  {
+   "world_id": "u0023-p1-r03",
+   "table_index": 23,
+   "unit_id": 46,
+   "clip_id": 5,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 521
+  },
+  {
+   "world_id": "u0023-p2-r00",
+   "table_index": 23,
+   "unit_id": 46,
+   "clip_id": 5,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 558
+  },
+  {
+   "world_id": "u0023-p2-r01",
+   "table_index": 23,
+   "unit_id": 46,
+   "clip_id": 5,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 558
+  },
+  {
+   "world_id": "u0023-p2-r02",
+   "table_index": 23,
+   "unit_id": 46,
+   "clip_id": 5,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 558
+  },
+  {
+   "world_id": "u0023-p2-r03",
+   "table_index": 23,
+   "unit_id": 46,
+   "clip_id": 5,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 558
+  },
+  {
+   "world_id": "u0024-p0-r00",
+   "table_index": 24,
+   "unit_id": 47,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0024-p0-r01",
+   "table_index": 24,
+   "unit_id": 47,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0024-p0-r02",
+   "table_index": 24,
+   "unit_id": 47,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0024-p0-r03",
+   "table_index": 24,
+   "unit_id": 47,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0024-p1-r00",
+   "table_index": 24,
+   "unit_id": 47,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 94
+  },
+  {
+   "world_id": "u0024-p1-r01",
+   "table_index": 24,
+   "unit_id": 47,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 94
+  },
+  {
+   "world_id": "u0024-p1-r02",
+   "table_index": 24,
+   "unit_id": 47,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 94
+  },
+  {
+   "world_id": "u0024-p1-r03",
+   "table_index": 24,
+   "unit_id": 47,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 94
+  },
+  {
+   "world_id": "u0024-p2-r00",
+   "table_index": 24,
+   "unit_id": 47,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 187
+  },
+  {
+   "world_id": "u0024-p2-r01",
+   "table_index": 24,
+   "unit_id": 47,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 187
+  },
+  {
+   "world_id": "u0024-p2-r02",
+   "table_index": 24,
+   "unit_id": 47,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 187
+  },
+  {
+   "world_id": "u0024-p2-r03",
+   "table_index": 24,
+   "unit_id": 47,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 187
+  },
+  {
+   "world_id": "u0025-p0-r00",
+   "table_index": 25,
+   "unit_id": 50,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 308
+  },
+  {
+   "world_id": "u0025-p0-r01",
+   "table_index": 25,
+   "unit_id": 50,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 308
+  },
+  {
+   "world_id": "u0025-p0-r02",
+   "table_index": 25,
+   "unit_id": 50,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 308
+  },
+  {
+   "world_id": "u0025-p0-r03",
+   "table_index": 25,
+   "unit_id": 50,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 308
+  },
+  {
+   "world_id": "u0025-p1-r00",
+   "table_index": 25,
+   "unit_id": 50,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 334
+  },
+  {
+   "world_id": "u0025-p1-r01",
+   "table_index": 25,
+   "unit_id": 50,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 334
+  },
+  {
+   "world_id": "u0025-p1-r02",
+   "table_index": 25,
+   "unit_id": 50,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 334
+  },
+  {
+   "world_id": "u0025-p1-r03",
+   "table_index": 25,
+   "unit_id": 50,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 334
+  },
+  {
+   "world_id": "u0025-p2-r00",
+   "table_index": 25,
+   "unit_id": 50,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 360
+  },
+  {
+   "world_id": "u0025-p2-r01",
+   "table_index": 25,
+   "unit_id": 50,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 360
+  },
+  {
+   "world_id": "u0025-p2-r02",
+   "table_index": 25,
+   "unit_id": 50,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 360
+  },
+  {
+   "world_id": "u0025-p2-r03",
+   "table_index": 25,
+   "unit_id": 50,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 360
+  },
+  {
+   "world_id": "u0026-p0-r00",
+   "table_index": 26,
+   "unit_id": 54,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 481
+  },
+  {
+   "world_id": "u0026-p0-r01",
+   "table_index": 26,
+   "unit_id": 54,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 481
+  },
+  {
+   "world_id": "u0026-p0-r02",
+   "table_index": 26,
+   "unit_id": 54,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 481
+  },
+  {
+   "world_id": "u0026-p0-r03",
+   "table_index": 26,
+   "unit_id": 54,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 481
+  },
+  {
+   "world_id": "u0026-p1-r00",
+   "table_index": 26,
+   "unit_id": 54,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 517
+  },
+  {
+   "world_id": "u0026-p1-r01",
+   "table_index": 26,
+   "unit_id": 54,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 517
+  },
+  {
+   "world_id": "u0026-p1-r02",
+   "table_index": 26,
+   "unit_id": 54,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 517
+  },
+  {
+   "world_id": "u0026-p1-r03",
+   "table_index": 26,
+   "unit_id": 54,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 517
+  },
+  {
+   "world_id": "u0026-p2-r00",
+   "table_index": 26,
+   "unit_id": 54,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 553
+  },
+  {
+   "world_id": "u0026-p2-r01",
+   "table_index": 26,
+   "unit_id": 54,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 553
+  },
+  {
+   "world_id": "u0026-p2-r02",
+   "table_index": 26,
+   "unit_id": 54,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 553
+  },
+  {
+   "world_id": "u0026-p2-r03",
+   "table_index": 26,
+   "unit_id": 54,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 553
+  },
+  {
+   "world_id": "u0027-p0-r00",
+   "table_index": 27,
+   "unit_id": 57,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 675
+  },
+  {
+   "world_id": "u0027-p0-r01",
+   "table_index": 27,
+   "unit_id": 57,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 675
+  },
+  {
+   "world_id": "u0027-p0-r02",
+   "table_index": 27,
+   "unit_id": 57,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 675
+  },
+  {
+   "world_id": "u0027-p0-r03",
+   "table_index": 27,
+   "unit_id": 57,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 675
+  },
+  {
+   "world_id": "u0027-p1-r00",
+   "table_index": 27,
+   "unit_id": 57,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 707
+  },
+  {
+   "world_id": "u0027-p1-r01",
+   "table_index": 27,
+   "unit_id": 57,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 707
+  },
+  {
+   "world_id": "u0027-p1-r02",
+   "table_index": 27,
+   "unit_id": 57,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 707
+  },
+  {
+   "world_id": "u0027-p1-r03",
+   "table_index": 27,
+   "unit_id": 57,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 707
+  },
+  {
+   "world_id": "u0027-p2-r00",
+   "table_index": 27,
+   "unit_id": 57,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 740
+  },
+  {
+   "world_id": "u0027-p2-r01",
+   "table_index": 27,
+   "unit_id": 57,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 740
+  },
+  {
+   "world_id": "u0027-p2-r02",
+   "table_index": 27,
+   "unit_id": 57,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 740
+  },
+  {
+   "world_id": "u0027-p2-r03",
+   "table_index": 27,
+   "unit_id": 57,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 740
+  },
+  {
+   "world_id": "u0028-p0-r00",
+   "table_index": 28,
+   "unit_id": 61,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 866
+  },
+  {
+   "world_id": "u0028-p0-r01",
+   "table_index": 28,
+   "unit_id": 61,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 866
+  },
+  {
+   "world_id": "u0028-p0-r02",
+   "table_index": 28,
+   "unit_id": 61,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 866
+  },
+  {
+   "world_id": "u0028-p0-r03",
+   "table_index": 28,
+   "unit_id": 61,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 866
+  },
+  {
+   "world_id": "u0028-p1-r00",
+   "table_index": 28,
+   "unit_id": 61,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 899
+  },
+  {
+   "world_id": "u0028-p1-r01",
+   "table_index": 28,
+   "unit_id": 61,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 899
+  },
+  {
+   "world_id": "u0028-p1-r02",
+   "table_index": 28,
+   "unit_id": 61,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 899
+  },
+  {
+   "world_id": "u0028-p1-r03",
+   "table_index": 28,
+   "unit_id": 61,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 899
+  },
+  {
+   "world_id": "u0028-p2-r00",
+   "table_index": 28,
+   "unit_id": 61,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 932
+  },
+  {
+   "world_id": "u0028-p2-r01",
+   "table_index": 28,
+   "unit_id": 61,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 932
+  },
+  {
+   "world_id": "u0028-p2-r02",
+   "table_index": 28,
+   "unit_id": 61,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 932
+  },
+  {
+   "world_id": "u0028-p2-r03",
+   "table_index": 28,
+   "unit_id": 61,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 932
+  },
+  {
+   "world_id": "u0029-p0-r00",
+   "table_index": 29,
+   "unit_id": 63,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 1059
+  },
+  {
+   "world_id": "u0029-p0-r01",
+   "table_index": 29,
+   "unit_id": 63,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 1059
+  },
+  {
+   "world_id": "u0029-p0-r02",
+   "table_index": 29,
+   "unit_id": 63,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 1059
+  },
+  {
+   "world_id": "u0029-p0-r03",
+   "table_index": 29,
+   "unit_id": 63,
+   "clip_id": 6,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 1059
+  },
+  {
+   "world_id": "u0029-p1-r00",
+   "table_index": 29,
+   "unit_id": 63,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 1254
+  },
+  {
+   "world_id": "u0029-p1-r01",
+   "table_index": 29,
+   "unit_id": 63,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 1254
+  },
+  {
+   "world_id": "u0029-p1-r02",
+   "table_index": 29,
+   "unit_id": 63,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 1254
+  },
+  {
+   "world_id": "u0029-p1-r03",
+   "table_index": 29,
+   "unit_id": 63,
+   "clip_id": 6,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 1254
+  },
+  {
+   "world_id": "u0029-p2-r00",
+   "table_index": 29,
+   "unit_id": 63,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 1449
+  },
+  {
+   "world_id": "u0029-p2-r01",
+   "table_index": 29,
+   "unit_id": 63,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 1449
+  },
+  {
+   "world_id": "u0029-p2-r02",
+   "table_index": 29,
+   "unit_id": 63,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 1449
+  },
+  {
+   "world_id": "u0029-p2-r03",
+   "table_index": 29,
+   "unit_id": 63,
+   "clip_id": 6,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 1449
+  },
+  {
+   "world_id": "u0030-p0-r00",
+   "table_index": 30,
+   "unit_id": 64,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0030-p0-r01",
+   "table_index": 30,
+   "unit_id": 64,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0030-p0-r02",
+   "table_index": 30,
+   "unit_id": 64,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0030-p0-r03",
+   "table_index": 30,
+   "unit_id": 64,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0030-p1-r00",
+   "table_index": 30,
+   "unit_id": 64,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 47
+  },
+  {
+   "world_id": "u0030-p1-r01",
+   "table_index": 30,
+   "unit_id": 64,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 47
+  },
+  {
+   "world_id": "u0030-p1-r02",
+   "table_index": 30,
+   "unit_id": 64,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 47
+  },
+  {
+   "world_id": "u0030-p1-r03",
+   "table_index": 30,
+   "unit_id": 64,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 47
+  },
+  {
+   "world_id": "u0030-p2-r00",
+   "table_index": 30,
+   "unit_id": 64,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 94
+  },
+  {
+   "world_id": "u0030-p2-r01",
+   "table_index": 30,
+   "unit_id": 64,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 94
+  },
+  {
+   "world_id": "u0030-p2-r02",
+   "table_index": 30,
+   "unit_id": 64,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 94
+  },
+  {
+   "world_id": "u0030-p2-r03",
+   "table_index": 30,
+   "unit_id": 64,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 94
+  },
+  {
+   "world_id": "u0031-p0-r00",
+   "table_index": 31,
+   "unit_id": 65,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 183
+  },
+  {
+   "world_id": "u0031-p0-r01",
+   "table_index": 31,
+   "unit_id": 65,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 183
+  },
+  {
+   "world_id": "u0031-p0-r02",
+   "table_index": 31,
+   "unit_id": 65,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 183
+  },
+  {
+   "world_id": "u0031-p0-r03",
+   "table_index": 31,
+   "unit_id": 65,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 183
+  },
+  {
+   "world_id": "u0031-p1-r00",
+   "table_index": 31,
+   "unit_id": 65,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 203
+  },
+  {
+   "world_id": "u0031-p1-r01",
+   "table_index": 31,
+   "unit_id": 65,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 203
+  },
+  {
+   "world_id": "u0031-p1-r02",
+   "table_index": 31,
+   "unit_id": 65,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 203
+  },
+  {
+   "world_id": "u0031-p1-r03",
+   "table_index": 31,
+   "unit_id": 65,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 203
+  },
+  {
+   "world_id": "u0031-p2-r00",
+   "table_index": 31,
+   "unit_id": 65,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 222
+  },
+  {
+   "world_id": "u0031-p2-r01",
+   "table_index": 31,
+   "unit_id": 65,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 222
+  },
+  {
+   "world_id": "u0031-p2-r02",
+   "table_index": 31,
+   "unit_id": 65,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 222
+  },
+  {
+   "world_id": "u0031-p2-r03",
+   "table_index": 31,
+   "unit_id": 65,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 222
+  },
+  {
+   "world_id": "u0032-p0-r00",
+   "table_index": 32,
+   "unit_id": 67,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 290
+  },
+  {
+   "world_id": "u0032-p0-r01",
+   "table_index": 32,
+   "unit_id": 67,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 290
+  },
+  {
+   "world_id": "u0032-p0-r02",
+   "table_index": 32,
+   "unit_id": 67,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 290
+  },
+  {
+   "world_id": "u0032-p0-r03",
+   "table_index": 32,
+   "unit_id": 67,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 290
+  },
+  {
+   "world_id": "u0032-p1-r00",
+   "table_index": 32,
+   "unit_id": 67,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 308
+  },
+  {
+   "world_id": "u0032-p1-r01",
+   "table_index": 32,
+   "unit_id": 67,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 308
+  },
+  {
+   "world_id": "u0032-p1-r02",
+   "table_index": 32,
+   "unit_id": 67,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 308
+  },
+  {
+   "world_id": "u0032-p1-r03",
+   "table_index": 32,
+   "unit_id": 67,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 308
+  },
+  {
+   "world_id": "u0032-p2-r00",
+   "table_index": 32,
+   "unit_id": 67,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 327
+  },
+  {
+   "world_id": "u0032-p2-r01",
+   "table_index": 32,
+   "unit_id": 67,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 327
+  },
+  {
+   "world_id": "u0032-p2-r02",
+   "table_index": 32,
+   "unit_id": 67,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 327
+  },
+  {
+   "world_id": "u0032-p2-r03",
+   "table_index": 32,
+   "unit_id": 67,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 327
+  },
+  {
+   "world_id": "u0033-p0-r00",
+   "table_index": 33,
+   "unit_id": 68,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 404
+  },
+  {
+   "world_id": "u0033-p0-r01",
+   "table_index": 33,
+   "unit_id": 68,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 404
+  },
+  {
+   "world_id": "u0033-p0-r02",
+   "table_index": 33,
+   "unit_id": 68,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 404
+  },
+  {
+   "world_id": "u0033-p0-r03",
+   "table_index": 33,
+   "unit_id": 68,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 404
+  },
+  {
+   "world_id": "u0033-p1-r00",
+   "table_index": 33,
+   "unit_id": 68,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 407
+  },
+  {
+   "world_id": "u0033-p1-r01",
+   "table_index": 33,
+   "unit_id": 68,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 407
+  },
+  {
+   "world_id": "u0033-p1-r02",
+   "table_index": 33,
+   "unit_id": 68,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 407
+  },
+  {
+   "world_id": "u0033-p1-r03",
+   "table_index": 33,
+   "unit_id": 68,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 407
+  },
+  {
+   "world_id": "u0033-p2-r00",
+   "table_index": 33,
+   "unit_id": 68,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 410
+  },
+  {
+   "world_id": "u0033-p2-r01",
+   "table_index": 33,
+   "unit_id": 68,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 410
+  },
+  {
+   "world_id": "u0033-p2-r02",
+   "table_index": 33,
+   "unit_id": 68,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 410
+  },
+  {
+   "world_id": "u0033-p2-r03",
+   "table_index": 33,
+   "unit_id": 68,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 410
+  },
+  {
+   "world_id": "u0034-p0-r00",
+   "table_index": 34,
+   "unit_id": 69,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 470
+  },
+  {
+   "world_id": "u0034-p0-r01",
+   "table_index": 34,
+   "unit_id": 69,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 470
+  },
+  {
+   "world_id": "u0034-p0-r02",
+   "table_index": 34,
+   "unit_id": 69,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 470
+  },
+  {
+   "world_id": "u0034-p0-r03",
+   "table_index": 34,
+   "unit_id": 69,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 470
+  },
+  {
+   "world_id": "u0034-p1-r00",
+   "table_index": 34,
+   "unit_id": 69,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 472
+  },
+  {
+   "world_id": "u0034-p1-r01",
+   "table_index": 34,
+   "unit_id": 69,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 472
+  },
+  {
+   "world_id": "u0034-p1-r02",
+   "table_index": 34,
+   "unit_id": 69,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 472
+  },
+  {
+   "world_id": "u0034-p1-r03",
+   "table_index": 34,
+   "unit_id": 69,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 472
+  },
+  {
+   "world_id": "u0034-p2-r00",
+   "table_index": 34,
+   "unit_id": 69,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 474
+  },
+  {
+   "world_id": "u0034-p2-r01",
+   "table_index": 34,
+   "unit_id": 69,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 474
+  },
+  {
+   "world_id": "u0034-p2-r02",
+   "table_index": 34,
+   "unit_id": 69,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 474
+  },
+  {
+   "world_id": "u0034-p2-r03",
+   "table_index": 34,
+   "unit_id": 69,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 474
+  },
+  {
+   "world_id": "u0035-p0-r00",
+   "table_index": 35,
+   "unit_id": 70,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 585
+  },
+  {
+   "world_id": "u0035-p0-r01",
+   "table_index": 35,
+   "unit_id": 70,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 585
+  },
+  {
+   "world_id": "u0035-p0-r02",
+   "table_index": 35,
+   "unit_id": 70,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 585
+  },
+  {
+   "world_id": "u0035-p0-r03",
+   "table_index": 35,
+   "unit_id": 70,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 585
+  },
+  {
+   "world_id": "u0035-p1-r00",
+   "table_index": 35,
+   "unit_id": 70,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 585
+  },
+  {
+   "world_id": "u0035-p1-r01",
+   "table_index": 35,
+   "unit_id": 70,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 585
+  },
+  {
+   "world_id": "u0035-p1-r02",
+   "table_index": 35,
+   "unit_id": 70,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 585
+  },
+  {
+   "world_id": "u0035-p1-r03",
+   "table_index": 35,
+   "unit_id": 70,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 585
+  },
+  {
+   "world_id": "u0035-p2-r00",
+   "table_index": 35,
+   "unit_id": 70,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 586
+  },
+  {
+   "world_id": "u0035-p2-r01",
+   "table_index": 35,
+   "unit_id": 70,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 586
+  },
+  {
+   "world_id": "u0035-p2-r02",
+   "table_index": 35,
+   "unit_id": 70,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 586
+  },
+  {
+   "world_id": "u0035-p2-r03",
+   "table_index": 35,
+   "unit_id": 70,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 586
+  },
+  {
+   "world_id": "u0036-p0-r00",
+   "table_index": 36,
+   "unit_id": 72,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 673
+  },
+  {
+   "world_id": "u0036-p0-r01",
+   "table_index": 36,
+   "unit_id": 72,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 673
+  },
+  {
+   "world_id": "u0036-p0-r02",
+   "table_index": 36,
+   "unit_id": 72,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 673
+  },
+  {
+   "world_id": "u0036-p0-r03",
+   "table_index": 36,
+   "unit_id": 72,
+   "clip_id": 7,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 673
+  },
+  {
+   "world_id": "u0036-p1-r00",
+   "table_index": 36,
+   "unit_id": 72,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 687
+  },
+  {
+   "world_id": "u0036-p1-r01",
+   "table_index": 36,
+   "unit_id": 72,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 687
+  },
+  {
+   "world_id": "u0036-p1-r02",
+   "table_index": 36,
+   "unit_id": 72,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 687
+  },
+  {
+   "world_id": "u0036-p1-r03",
+   "table_index": 36,
+   "unit_id": 72,
+   "clip_id": 7,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 687
+  },
+  {
+   "world_id": "u0036-p2-r00",
+   "table_index": 36,
+   "unit_id": 72,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 702
+  },
+  {
+   "world_id": "u0036-p2-r01",
+   "table_index": 36,
+   "unit_id": 72,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 702
+  },
+  {
+   "world_id": "u0036-p2-r02",
+   "table_index": 36,
+   "unit_id": 72,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 702
+  },
+  {
+   "world_id": "u0036-p2-r03",
+   "table_index": 36,
+   "unit_id": 72,
+   "clip_id": 7,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 702
+  },
+  {
+   "world_id": "u0037-p0-r00",
+   "table_index": 37,
+   "unit_id": 77,
+   "clip_id": 8,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0037-p0-r01",
+   "table_index": 37,
+   "unit_id": 77,
+   "clip_id": 8,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0037-p0-r02",
+   "table_index": 37,
+   "unit_id": 77,
+   "clip_id": 8,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0037-p0-r03",
+   "table_index": 37,
+   "unit_id": 77,
+   "clip_id": 8,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0037-p1-r00",
+   "table_index": 37,
+   "unit_id": 77,
+   "clip_id": 8,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 54
+  },
+  {
+   "world_id": "u0037-p1-r01",
+   "table_index": 37,
+   "unit_id": 77,
+   "clip_id": 8,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 54
+  },
+  {
+   "world_id": "u0037-p1-r02",
+   "table_index": 37,
+   "unit_id": 77,
+   "clip_id": 8,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 54
+  },
+  {
+   "world_id": "u0037-p1-r03",
+   "table_index": 37,
+   "unit_id": 77,
+   "clip_id": 8,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 54
+  },
+  {
+   "world_id": "u0037-p2-r00",
+   "table_index": 37,
+   "unit_id": 77,
+   "clip_id": 8,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 108
+  },
+  {
+   "world_id": "u0037-p2-r01",
+   "table_index": 37,
+   "unit_id": 77,
+   "clip_id": 8,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 108
+  },
+  {
+   "world_id": "u0037-p2-r02",
+   "table_index": 37,
+   "unit_id": 77,
+   "clip_id": 8,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 108
+  },
+  {
+   "world_id": "u0037-p2-r03",
+   "table_index": 37,
+   "unit_id": 77,
+   "clip_id": 8,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 108
+  },
+  {
+   "world_id": "u0038-p0-r00",
+   "table_index": 38,
+   "unit_id": 78,
+   "clip_id": 8,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 204
+  },
+  {
+   "world_id": "u0038-p0-r01",
+   "table_index": 38,
+   "unit_id": 78,
+   "clip_id": 8,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 204
+  },
+  {
+   "world_id": "u0038-p0-r02",
+   "table_index": 38,
+   "unit_id": 78,
+   "clip_id": 8,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 204
+  },
+  {
+   "world_id": "u0038-p0-r03",
+   "table_index": 38,
+   "unit_id": 78,
+   "clip_id": 8,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 204
+  },
+  {
+   "world_id": "u0038-p1-r00",
+   "table_index": 38,
+   "unit_id": 78,
+   "clip_id": 8,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 206
+  },
+  {
+   "world_id": "u0038-p1-r01",
+   "table_index": 38,
+   "unit_id": 78,
+   "clip_id": 8,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 206
+  },
+  {
+   "world_id": "u0038-p1-r02",
+   "table_index": 38,
+   "unit_id": 78,
+   "clip_id": 8,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 206
+  },
+  {
+   "world_id": "u0038-p1-r03",
+   "table_index": 38,
+   "unit_id": 78,
+   "clip_id": 8,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 206
+  },
+  {
+   "world_id": "u0038-p2-r00",
+   "table_index": 38,
+   "unit_id": 78,
+   "clip_id": 8,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 209
+  },
+  {
+   "world_id": "u0038-p2-r01",
+   "table_index": 38,
+   "unit_id": 78,
+   "clip_id": 8,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 209
+  },
+  {
+   "world_id": "u0038-p2-r02",
+   "table_index": 38,
+   "unit_id": 78,
+   "clip_id": 8,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 209
+  },
+  {
+   "world_id": "u0038-p2-r03",
+   "table_index": 38,
+   "unit_id": 78,
+   "clip_id": 8,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 209
+  },
+  {
+   "world_id": "u0039-p0-r00",
+   "table_index": 39,
+   "unit_id": 79,
+   "clip_id": 8,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 389
+  },
+  {
+   "world_id": "u0039-p0-r01",
+   "table_index": 39,
+   "unit_id": 79,
+   "clip_id": 8,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 389
+  },
+  {
+   "world_id": "u0039-p0-r02",
+   "table_index": 39,
+   "unit_id": 79,
+   "clip_id": 8,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 389
+  },
+  {
+   "world_id": "u0039-p0-r03",
+   "table_index": 39,
+   "unit_id": 79,
+   "clip_id": 8,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 389
+  },
+  {
+   "world_id": "u0039-p1-r00",
+   "table_index": 39,
+   "unit_id": 79,
+   "clip_id": 8,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 465
+  },
+  {
+   "world_id": "u0039-p1-r01",
+   "table_index": 39,
+   "unit_id": 79,
+   "clip_id": 8,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 465
+  },
+  {
+   "world_id": "u0039-p1-r02",
+   "table_index": 39,
+   "unit_id": 79,
+   "clip_id": 8,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 465
+  },
+  {
+   "world_id": "u0039-p1-r03",
+   "table_index": 39,
+   "unit_id": 79,
+   "clip_id": 8,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 465
+  },
+  {
+   "world_id": "u0039-p2-r00",
+   "table_index": 39,
+   "unit_id": 79,
+   "clip_id": 8,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 541
+  },
+  {
+   "world_id": "u0039-p2-r01",
+   "table_index": 39,
+   "unit_id": 79,
+   "clip_id": 8,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 541
+  },
+  {
+   "world_id": "u0039-p2-r02",
+   "table_index": 39,
+   "unit_id": 79,
+   "clip_id": 8,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 541
+  },
+  {
+   "world_id": "u0039-p2-r03",
+   "table_index": 39,
+   "unit_id": 79,
+   "clip_id": 8,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 541
+  },
+  {
+   "world_id": "u0040-p0-r00",
+   "table_index": 40,
+   "unit_id": 80,
+   "clip_id": 9,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0040-p0-r01",
+   "table_index": 40,
+   "unit_id": 80,
+   "clip_id": 9,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0040-p0-r02",
+   "table_index": 40,
+   "unit_id": 80,
+   "clip_id": 9,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0040-p0-r03",
+   "table_index": 40,
+   "unit_id": 80,
+   "clip_id": 9,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 0
+  },
+  {
+   "world_id": "u0040-p1-r00",
+   "table_index": 40,
+   "unit_id": 80,
+   "clip_id": 9,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 40
+  },
+  {
+   "world_id": "u0040-p1-r01",
+   "table_index": 40,
+   "unit_id": 80,
+   "clip_id": 9,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 40
+  },
+  {
+   "world_id": "u0040-p1-r02",
+   "table_index": 40,
+   "unit_id": 80,
+   "clip_id": 9,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 40
+  },
+  {
+   "world_id": "u0040-p1-r03",
+   "table_index": 40,
+   "unit_id": 80,
+   "clip_id": 9,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 40
+  },
+  {
+   "world_id": "u0040-p2-r00",
+   "table_index": 40,
+   "unit_id": 80,
+   "clip_id": 9,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 79
+  },
+  {
+   "world_id": "u0040-p2-r01",
+   "table_index": 40,
+   "unit_id": 80,
+   "clip_id": 9,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 79
+  },
+  {
+   "world_id": "u0040-p2-r02",
+   "table_index": 40,
+   "unit_id": 80,
+   "clip_id": 9,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 79
+  },
+  {
+   "world_id": "u0040-p2-r03",
+   "table_index": 40,
+   "unit_id": 80,
+   "clip_id": 9,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 79
+  },
+  {
+   "world_id": "u0041-p0-r00",
+   "table_index": 41,
+   "unit_id": 81,
+   "clip_id": 9,
+   "phase": 0.0,
+   "rep": 0,
+   "start_frame": 172
+  },
+  {
+   "world_id": "u0041-p0-r01",
+   "table_index": 41,
+   "unit_id": 81,
+   "clip_id": 9,
+   "phase": 0.0,
+   "rep": 1,
+   "start_frame": 172
+  },
+  {
+   "world_id": "u0041-p0-r02",
+   "table_index": 41,
+   "unit_id": 81,
+   "clip_id": 9,
+   "phase": 0.0,
+   "rep": 2,
+   "start_frame": 172
+  },
+  {
+   "world_id": "u0041-p0-r03",
+   "table_index": 41,
+   "unit_id": 81,
+   "clip_id": 9,
+   "phase": 0.0,
+   "rep": 3,
+   "start_frame": 172
+  },
+  {
+   "world_id": "u0041-p1-r00",
+   "table_index": 41,
+   "unit_id": 81,
+   "clip_id": 9,
+   "phase": 0.5,
+   "rep": 0,
+   "start_frame": 260
+  },
+  {
+   "world_id": "u0041-p1-r01",
+   "table_index": 41,
+   "unit_id": 81,
+   "clip_id": 9,
+   "phase": 0.5,
+   "rep": 1,
+   "start_frame": 260
+  },
+  {
+   "world_id": "u0041-p1-r02",
+   "table_index": 41,
+   "unit_id": 81,
+   "clip_id": 9,
+   "phase": 0.5,
+   "rep": 2,
+   "start_frame": 260
+  },
+  {
+   "world_id": "u0041-p1-r03",
+   "table_index": 41,
+   "unit_id": 81,
+   "clip_id": 9,
+   "phase": 0.5,
+   "rep": 3,
+   "start_frame": 260
+  },
+  {
+   "world_id": "u0041-p2-r00",
+   "table_index": 41,
+   "unit_id": 81,
+   "clip_id": 9,
+   "phase": 1.0,
+   "rep": 0,
+   "start_frame": 349
+  },
+  {
+   "world_id": "u0041-p2-r01",
+   "table_index": 41,
+   "unit_id": 81,
+   "clip_id": 9,
+   "phase": 1.0,
+   "rep": 1,
+   "start_frame": 349
+  },
+  {
+   "world_id": "u0041-p2-r02",
+   "table_index": 41,
+   "unit_id": 81,
+   "clip_id": 9,
+   "phase": 1.0,
+   "rep": 2,
+   "start_frame": 349
+  },
+  {
+   "world_id": "u0041-p2-r03",
+   "table_index": 41,
+   "unit_id": 81,
+   "clip_id": 9,
+   "phase": 1.0,
+   "rep": 3,
+   "start_frame": 349
+  }
+ ]
+}
