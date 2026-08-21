@@ -1,0 +1,117 @@
+{
+ "clip": "KIT_200_Kniebeuge01_poses_100_jpos",
+ "fps": 50.0,
+ "frames": 374,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.3502673796791444,
+ "infeasible_frac": 0.3502673796791444,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.3502673796791444,
+ "severe_frac_guarded": 0.3502673796791444,
+ "feasible_frac_kept": 0.6497326203208557,
+ "n_severe_windows": 2,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   88
+  ],
+  [
+   156,
+   209
+  ],
+  [
+   272,
+   374
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 88,
+   "unsupported_ratio_mean": 0.034030810260987095,
+   "unsupported_ratio_p95": 0.16889009941387395,
+   "unsupported_ratio_max": 0.20637367325192785
+  },
+  {
+   "start_frame": 156,
+   "stop_frame": 209,
+   "unsupported_ratio_mean": 0.09990735561286203,
+   "unsupported_ratio_p95": 0.23162769608246006,
+   "unsupported_ratio_max": 0.24031067729780042
+  },
+  {
+   "start_frame": 272,
+   "stop_frame": 374,
+   "unsupported_ratio_mean": 0.027069871360031382,
+   "unsupported_ratio_p95": 0.22404537445779663,
+   "unsupported_ratio_max": 0.24336806504968084
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   1.76
+  ],
+  [
+   3.12,
+   4.18
+  ],
+  [
+   5.44,
+   7.48
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   88,
+   156
+  ],
+  [
+   209,
+   272
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   88,
+   156
+  ],
+  [
+   209,
+   272
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   1.76,
+   3.12
+  ],
+  [
+   4.18,
+   5.44
+  ]
+ ],
+ "n_bins": 8,
+ "n_bins_eligible": 3,
+ "bin_eligible_frac": 0.375,
+ "bin_eligible": [
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 1.1386782073715813,
+ "source_screen_sha256": "107d5e615918428c0790e0e7467682dbd4f0d460db33737465ca1ca88850a702",
+ "reducer_sha256": "5c46376599812bf081c5d26aa5153b23d3dee93b9aaedf192ca6e995b2d2f224"
+}

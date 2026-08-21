@@ -1,0 +1,48 @@
+{
+ "schema_version": "paired_eval_output/1",
+ "classification": "post-audit evaluator; does not replace sealed outputs",
+ "checkpoint": "/data/robotixx/climb/logs/rsl_rl/g1_tracking/2026-08-20_02-54-58_uniform-amass800-s1/model_3999.pt",
+ "checkpoint_sha256": "d99a16896e61555a0a74e4c45bad2b0817d8037f0249c518557aa1787ebec474",
+ "clips": "/data/robotixx/climb/reports/eval_v2_smoke/vector_clips.txt",
+ "clips_sha256": "6e1c29f1f761f407a4a503b6ac1f94e578eb028b82fac6e654d3958e67cbe9ff",
+ "bank": "/data/robotixx/climb/bank/amass",
+ "selected_reference_sha256": {
+  "CMU_114_114_04_poses_120_jpos": "708d5bf4bd1ada99a2b3f2dd1612325229b22abf959bad25993d59f527df4ecf",
+  "CMU_138_138_25_poses_120_jpos": "6356427de6ba06a3ce462baf4d48630f072753262d7104a2d763d8b6d690953c",
+  "Eyes_Japan_Dataset_kaiwa_accident-02-dodge_fast-kaiwa_poses_120_jpos": "b4610ccc0f2f4119d29447de7a73406e8d6fc04f94b58e60bb3259593be139fd"
+ },
+ "common_reference_bank": "/data/robotixx/climb/bank/amass",
+ "common_reference_sha256": {
+  "CMU_114_114_04_poses_120_jpos": "708d5bf4bd1ada99a2b3f2dd1612325229b22abf959bad25993d59f527df4ecf",
+  "CMU_138_138_25_poses_120_jpos": "6356427de6ba06a3ce462baf4d48630f072753262d7104a2d763d8b6d690953c",
+  "Eyes_Japan_Dataset_kaiwa_accident-02-dodge_fast-kaiwa_poses_120_jpos": "b4610ccc0f2f4119d29447de7a73406e8d6fc04f94b58e60bb3259593be139fd"
+ },
+ "conditions": "/data/robotixx/climb/reports/eval_v2_smoke/vector_conditions_v2.json",
+ "conditions_sha256": "68944187924ce853b41bdeadac62dc8337b311fe32e105aa6f1fb99d6e7716ca",
+ "evaluator_sha256": "520416dc7e5a2af0ff4769fd936c76c36c67a9b3fa6a1c1e65d62cac08091b73",
+ "device": "cuda:0",
+ "nominal": false,
+ "joint_noise": 0.05,
+ "nconmax_per_world": 70,
+ "startup_randomization_sha256": "d5d9741513055cdd4bd98b502e372137a81c4fe954503981cd59df5128d46aae",
+ "initial_state_sha256": "3a51f8ff67d71d6cbf737dfb020c5ead397262ee333fff82d12e02757349a1c8",
+ "software_versions": {
+  "python": "3.13.9",
+  "torch": "2.9.0+cu128",
+  "numpy": "2.5.1",
+  "mjlab": "1.6.0",
+  "mujoco": "3.11.0",
+  "mujoco-warp": "3.11.0",
+  "rsl-rl-lib": "5.4.2"
+ },
+ "source_sha256": {
+  "climb/commands.py": "9f3c9c342701d92ed7e8da8583f16b8df803708a99f28b9249af3be7595fc94e",
+  "climb/env_cfg.py": "86ec36241a6aaa0152f4602198ba04cb88eba3f0e676484a283e9a0b19965bc8",
+  "climb/motion_bank.py": "e9149ce08661f5f6f56e0ea1b9a542aa5c788232d9661044c7f340c947681129",
+  "mjlab-1.6.0/src/mjlab/envs/manager_based_rl_env.py": "e05034969baaa6ca38d7587190eef95d468fd413f182edd2c8d387c2950701f1",
+  "mjlab-1.6.0/src/mjlab/tasks/tracking/mdp/commands.py": "b8700e65bb519b5e68962216ed78a107f6a3c02bab2ff75854e62b1983d1ad97"
+ },
+ "worlds": 3,
+ "full_window_worlds": 2,
+ "output": "/data/robotixx/climb/reports/eval_v2_smoke/vector_eval_v2_repeat.csv"
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": "paired_eval_output/1",
+ "classification": "post-audit evaluator; does not replace sealed outputs",
+ "checkpoint": "/data/robotixx/climb/logs/rsl_rl/g1_tracking/2026-08-20_02-54-58_uniform-amass800-s1/model_3999.pt",
+ "checkpoint_sha256": "d99a16896e61555a0a74e4c45bad2b0817d8037f0249c518557aa1787ebec474",
+ "clips": "/data/robotixx/climb/reports/eval_v2_smoke/clips.txt",
+ "clips_sha256": "9eb2641c7f0f90a20ac898c1c6194534583f69a33551de9ffa64896ca4ce3bb9",
+ "bank": "/data/robotixx/climb/bank/amass",
+ "conditions": "/data/robotixx/climb/reports/eval_v2_smoke/conditions.json",
+ "conditions_sha256": "64ff6e49f29ea3e5adf01b5a8457716322e7bd08feaa4885a4750c49a51501a8",
+ "evaluator_sha256": "de98f14c82daacd8b57318715e77328c2d16f7f8b50a04272873fa7124b26ac8",
+ "device": "cuda:0",
+ "nominal": false,
+ "joint_noise": 0.05,
+ "nconmax_per_world": 70,
+ "startup_randomization_sha256": "0b23969f46204e6a77b17ea27749cacf50365fb5d4e7d962609e1f3a3a35d5ab",
+ "initial_state_sha256": "03f79997681806d07452d4e7de36d1748d79c1e8abb8075e5526b16adb80ca2d",
+ "software_versions": {
+  "python": "3.13.9",
+  "torch": "2.9.0+cu128",
+  "numpy": "2.5.1",
+  "mjlab": "1.6.0",
+  "mujoco": "3.11.0",
+  "mujoco-warp": "3.11.0",
+  "rsl-rl-lib": "5.4.2"
+ },
+ "worlds": 1,
+ "full_window_worlds": 1,
+ "output": "/data/robotixx/climb/reports/eval_v2_smoke/eval_a.csv"
+}

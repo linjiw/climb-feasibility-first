@@ -1,0 +1,115 @@
+{
+ "clip": "BMLmovi_Subject_74_F_MoSh_Subject_74_F_5_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 299,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.4180602006688963,
+ "infeasible_frac": 0.4180602006688963,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.4180602006688963,
+ "severe_frac_guarded": 0.4180602006688963,
+ "feasible_frac_kept": 0.5819397993311036,
+ "n_severe_windows": 2,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   40
+  ],
+  [
+   106,
+   174
+  ],
+  [
+   233,
+   299
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 40,
+   "unsupported_ratio_mean": 0.03621475792102349,
+   "unsupported_ratio_p95": 0.11803045416134332,
+   "unsupported_ratio_max": 0.15348086514439674
+  },
+  {
+   "start_frame": 106,
+   "stop_frame": 174,
+   "unsupported_ratio_mean": 0.03578942133083542,
+   "unsupported_ratio_p95": 0.16992961124951328,
+   "unsupported_ratio_max": 0.19414412224440622
+  },
+  {
+   "start_frame": 233,
+   "stop_frame": 299,
+   "unsupported_ratio_mean": 0.013359857994580471,
+   "unsupported_ratio_p95": 0.06298218768873651,
+   "unsupported_ratio_max": 0.09936510193611342
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   0.8
+  ],
+  [
+   2.12,
+   3.48
+  ],
+  [
+   4.66,
+   5.98
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   40,
+   106
+  ],
+  [
+   174,
+   233
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   40,
+   106
+  ],
+  [
+   174,
+   233
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   0.8,
+   2.12
+  ],
+  [
+   3.48,
+   4.66
+  ]
+ ],
+ "n_bins": 6,
+ "n_bins_eligible": 1,
+ "bin_eligible_frac": 0.16666666666666666,
+ "bin_eligible": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  1
+ ],
+ "unsupported_ratio_p95": 1.1760547726383195,
+ "source_screen_sha256": "cee244ce31639197c4ecf8b80ab5c0f3c03aca0190202d25a957bc9015c84651",
+ "reducer_sha256": "5c46376599812bf081c5d26aa5153b23d3dee93b9aaedf192ca6e995b2d2f224"
+}

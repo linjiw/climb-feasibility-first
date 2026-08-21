@@ -1,0 +1,29 @@
+{
+ "schema_version": "paired_eval_conditions/1",
+ "window_s": 3.0,
+ "requested_phases": [
+  0.0
+ ],
+ "episodes_per_start": 1,
+ "environment_seed": 123,
+ "joint_noise_seed": 456,
+ "motions": [
+  {
+   "clip": "CMU_114_114_04_poses_120_jpos",
+   "frames": 373,
+   "fps": 50.0
+  }
+ ],
+ "conditions": [
+  {
+   "world_id": 0,
+   "condition_id": "CMU_114_114_04_poses_120_jpos@0:r0",
+   "clip": "CMU_114_114_04_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  }
+ ]
+}

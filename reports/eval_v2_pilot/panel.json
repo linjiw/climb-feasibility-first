@@ -1,0 +1,41 @@
+{
+ "classification": "exploratory evaluator/checkpoint pilot; policy-independent selection",
+ "source_manifest": "reports/repaired800/manifest.json",
+ "source_manifest_sha256": "66c2da06fb9ea02ea173ba702c8e7cbb4ed395549d720eb6a86422c792459580",
+ "selection": {
+  "repaired_over_budget": "all 11",
+  "repaired_residual": "all 10; three clips shorter than a full 3 s window remain secondary-only",
+  "repaired_certified": "11 clips at evenly spaced offset_max_m ranks, selected before evaluation",
+  "uses_policy_outcomes": false
+ },
+ "protocol": {
+  "phases": [0.0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1.0],
+  "episodes_per_start": 4,
+  "window_s": 3.0,
+  "environment_seed": 20260822,
+  "joint_noise_seed": 20260823,
+  "joint_noise": 0.05,
+  "nconmax_per_world": 70,
+  "expected_cells": 4,
+  "expected_worlds_per_cell": 824,
+  "primary_population": "full_window == True",
+  "quality_population": "condition IDs jointly successful in the compared cells"
+ },
+ "checkpoints": {
+  "K": {
+   "path": "logs/rsl_rl/g1_tracking/2026-08-20_02-54-58_uniform-amass800-s1/model_3999.pt",
+   "sha256": "d99a16896e61555a0a74e4c45bad2b0817d8037f0249c518557aa1787ebec474"
+  },
+  "R": {
+   "path": "logs/rsl_rl/g1_tracking/2026-08-20_14-20-40_uniform-amass800r-s1/model_3999.pt",
+   "sha256": "9c20a1ba5e34e5717e49e4f4fda32cce57605b6058e4df5a2a1148916622ed47"
+  }
+ },
+ "cells": {
+  "K_raw": {"policy": "K", "bank": "bank/amass"},
+  "K_repaired": {"policy": "K", "bank": "bank/amass_repaired800"},
+  "R_raw": {"policy": "R", "bank": "bank/amass"},
+  "R_repaired": {"policy": "R", "bank": "bank/amass_repaired800"}
+ },
+ "common_reference_bank": "bank/amass"
+}

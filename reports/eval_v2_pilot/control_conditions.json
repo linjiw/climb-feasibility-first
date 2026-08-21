@@ -1,0 +1,3443 @@
+{
+ "schema_version": "paired_eval_conditions/2",
+ "window_s": 3.0,
+ "requested_phases": [
+  0.0,
+  0.166667,
+  0.333333,
+  0.5,
+  0.666667,
+  0.833333,
+  1.0
+ ],
+ "episodes_per_start": 4,
+ "environment_seed": 20260822,
+ "joint_noise_seed": 20260823,
+ "joint_noise": 0.05,
+ "nominal": false,
+ "nconmax_per_world": 70,
+ "motions": [
+  {
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "frames": 219,
+   "fps": 50.0
+  },
+  {
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "frames": 252,
+   "fps": 50.0
+  },
+  {
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "frames": 199,
+   "fps": 50.0
+  },
+  {
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "frames": 169,
+   "fps": 50.0
+  },
+  {
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "frames": 306,
+   "fps": 50.0
+  },
+  {
+   "clip": "GRAB_s7_stapler_staple_1",
+   "frames": 404,
+   "fps": 50.0
+  },
+  {
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "frames": 319,
+   "fps": 50.0
+  },
+  {
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "frames": 315,
+   "fps": 50.0
+  },
+  {
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "frames": 1488,
+   "fps": 50.0
+  },
+  {
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "frames": 837,
+   "fps": 50.0
+  },
+  {
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "frames": 1488,
+   "fps": 50.0
+  },
+  {
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "frames": 2843,
+   "fps": 50.0
+  }
+ ],
+ "conditions": [
+  {
+   "world_id": 0,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@0:r0",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 1,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@0:r1",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 2,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@0:r2",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 3,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@0:r3",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 4,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@11:r0",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 11,
+   "phase": 0.16176470588235295,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 5,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@11:r1",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 11,
+   "phase": 0.16176470588235295,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 6,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@11:r2",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 11,
+   "phase": 0.16176470588235295,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 7,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@11:r3",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 11,
+   "phase": 0.16176470588235295,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 8,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@23:r0",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 23,
+   "phase": 0.3382352941176471,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 9,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@23:r1",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 23,
+   "phase": 0.3382352941176471,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 10,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@23:r2",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 23,
+   "phase": 0.3382352941176471,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 11,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@23:r3",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 23,
+   "phase": 0.3382352941176471,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 12,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@34:r0",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 34,
+   "phase": 0.5,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 13,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@34:r1",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 34,
+   "phase": 0.5,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 14,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@34:r2",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 34,
+   "phase": 0.5,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 15,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@34:r3",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 34,
+   "phase": 0.5,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 16,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@45:r0",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 45,
+   "phase": 0.6617647058823529,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 17,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@45:r1",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 45,
+   "phase": 0.6617647058823529,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 18,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@45:r2",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 45,
+   "phase": 0.6617647058823529,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 19,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@45:r3",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 45,
+   "phase": 0.6617647058823529,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 20,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@57:r0",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 57,
+   "phase": 0.8382352941176471,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 21,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@57:r1",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 57,
+   "phase": 0.8382352941176471,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 22,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@57:r2",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 57,
+   "phase": 0.8382352941176471,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 23,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@57:r3",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 57,
+   "phase": 0.8382352941176471,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 24,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@68:r0",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 68,
+   "phase": 1.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 25,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@68:r1",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 68,
+   "phase": 1.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 26,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@68:r2",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 68,
+   "phase": 1.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 27,
+   "condition_id": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos@68:r3",
+   "clip": "BMLmovi_Subject_85_F_MoSh_Subject_85_F_10_poses_120_jpos",
+   "start_frame": 68,
+   "phase": 1.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 28,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@0:r0",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 29,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@0:r1",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 30,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@0:r2",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 31,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@0:r3",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 32,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@17:r0",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 17,
+   "phase": 0.16831683168316833,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 33,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@17:r1",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 17,
+   "phase": 0.16831683168316833,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 34,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@17:r2",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 17,
+   "phase": 0.16831683168316833,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 35,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@17:r3",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 17,
+   "phase": 0.16831683168316833,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 36,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@34:r0",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 34,
+   "phase": 0.33663366336633666,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 37,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@34:r1",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 34,
+   "phase": 0.33663366336633666,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 38,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@34:r2",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 34,
+   "phase": 0.33663366336633666,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 39,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@34:r3",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 34,
+   "phase": 0.33663366336633666,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 40,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@50:r0",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 50,
+   "phase": 0.49504950495049505,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 41,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@50:r1",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 50,
+   "phase": 0.49504950495049505,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 42,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@50:r2",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 50,
+   "phase": 0.49504950495049505,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 43,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@50:r3",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 50,
+   "phase": 0.49504950495049505,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 44,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@67:r0",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 67,
+   "phase": 0.6633663366336634,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 45,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@67:r1",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 67,
+   "phase": 0.6633663366336634,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 46,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@67:r2",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 67,
+   "phase": 0.6633663366336634,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 47,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@67:r3",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 67,
+   "phase": 0.6633663366336634,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 48,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@84:r0",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 84,
+   "phase": 0.8316831683168316,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 49,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@84:r1",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 84,
+   "phase": 0.8316831683168316,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 50,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@84:r2",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 84,
+   "phase": 0.8316831683168316,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 51,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@84:r3",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 84,
+   "phase": 0.8316831683168316,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 52,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@101:r0",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 101,
+   "phase": 1.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 53,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@101:r1",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 101,
+   "phase": 1.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 54,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@101:r2",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 101,
+   "phase": 1.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 55,
+   "condition_id": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos@101:r3",
+   "clip": "KIT_1717_displace_from_left_to_right_14_poses_100_jpos",
+   "start_frame": 101,
+   "phase": 1.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 56,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@0:r0",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 57,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@0:r1",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 58,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@0:r2",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 59,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@0:r3",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 60,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@8:r0",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 8,
+   "phase": 0.16666666666666666,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 61,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@8:r1",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 8,
+   "phase": 0.16666666666666666,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 62,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@8:r2",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 8,
+   "phase": 0.16666666666666666,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 63,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@8:r3",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 8,
+   "phase": 0.16666666666666666,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 64,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@16:r0",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 16,
+   "phase": 0.3333333333333333,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 65,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@16:r1",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 16,
+   "phase": 0.3333333333333333,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 66,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@16:r2",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 16,
+   "phase": 0.3333333333333333,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 67,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@16:r3",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 16,
+   "phase": 0.3333333333333333,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 68,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@24:r0",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 24,
+   "phase": 0.5,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 69,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@24:r1",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 24,
+   "phase": 0.5,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 70,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@24:r2",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 24,
+   "phase": 0.5,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 71,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@24:r3",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 24,
+   "phase": 0.5,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 72,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@32:r0",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 32,
+   "phase": 0.6666666666666666,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 73,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@32:r1",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 32,
+   "phase": 0.6666666666666666,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 74,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@32:r2",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 32,
+   "phase": 0.6666666666666666,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 75,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@32:r3",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 32,
+   "phase": 0.6666666666666666,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 76,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@40:r0",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 40,
+   "phase": 0.8333333333333334,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 77,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@40:r1",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 40,
+   "phase": 0.8333333333333334,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 78,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@40:r2",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 40,
+   "phase": 0.8333333333333334,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 79,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@40:r3",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 40,
+   "phase": 0.8333333333333334,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 80,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@48:r0",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 48,
+   "phase": 1.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 81,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@48:r1",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 48,
+   "phase": 1.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 82,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@48:r2",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 48,
+   "phase": 1.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 83,
+   "condition_id": "KIT_572_throw_left04_poses_100_jpos@48:r3",
+   "clip": "KIT_572_throw_left04_poses_100_jpos",
+   "start_frame": 48,
+   "phase": 1.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 84,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@0:r0",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 85,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@0:r1",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 86,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@0:r2",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 87,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@0:r3",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 88,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@3:r0",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 3,
+   "phase": 0.16666666666666666,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 89,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@3:r1",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 3,
+   "phase": 0.16666666666666666,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 90,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@3:r2",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 3,
+   "phase": 0.16666666666666666,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 91,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@3:r3",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 3,
+   "phase": 0.16666666666666666,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 92,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@6:r0",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 6,
+   "phase": 0.3333333333333333,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 93,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@6:r1",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 6,
+   "phase": 0.3333333333333333,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 94,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@6:r2",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 6,
+   "phase": 0.3333333333333333,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 95,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@6:r3",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 6,
+   "phase": 0.3333333333333333,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 96,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@9:r0",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 9,
+   "phase": 0.5,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 97,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@9:r1",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 9,
+   "phase": 0.5,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 98,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@9:r2",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 9,
+   "phase": 0.5,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 99,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@9:r3",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 9,
+   "phase": 0.5,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 100,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@12:r0",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 12,
+   "phase": 0.6666666666666666,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 101,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@12:r1",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 12,
+   "phase": 0.6666666666666666,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 102,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@12:r2",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 12,
+   "phase": 0.6666666666666666,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 103,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@12:r3",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 12,
+   "phase": 0.6666666666666666,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 104,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@15:r0",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 15,
+   "phase": 0.8333333333333334,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 105,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@15:r1",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 15,
+   "phase": 0.8333333333333334,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 106,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@15:r2",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 15,
+   "phase": 0.8333333333333334,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 107,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@15:r3",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 15,
+   "phase": 0.8333333333333334,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 108,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@18:r0",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 18,
+   "phase": 1.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 109,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@18:r1",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 18,
+   "phase": 1.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 110,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@18:r2",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 18,
+   "phase": 1.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 111,
+   "condition_id": "DFaust_67_50020_50020_punching_poses_60_jpos@18:r3",
+   "clip": "DFaust_67_50020_50020_punching_poses_60_jpos",
+   "start_frame": 18,
+   "phase": 1.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 112,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@0:r0",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 113,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@0:r1",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 114,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@0:r2",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 115,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@0:r3",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 116,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@26:r0",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 26,
+   "phase": 0.16774193548387098,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 117,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@26:r1",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 26,
+   "phase": 0.16774193548387098,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 118,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@26:r2",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 26,
+   "phase": 0.16774193548387098,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 119,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@26:r3",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 26,
+   "phase": 0.16774193548387098,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 120,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@52:r0",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 52,
+   "phase": 0.33548387096774196,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 121,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@52:r1",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 52,
+   "phase": 0.33548387096774196,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 122,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@52:r2",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 52,
+   "phase": 0.33548387096774196,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 123,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@52:r3",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 52,
+   "phase": 0.33548387096774196,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 124,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@78:r0",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 78,
+   "phase": 0.5032258064516129,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 125,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@78:r1",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 78,
+   "phase": 0.5032258064516129,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 126,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@78:r2",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 78,
+   "phase": 0.5032258064516129,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 127,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@78:r3",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 78,
+   "phase": 0.5032258064516129,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 128,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@103:r0",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 103,
+   "phase": 0.6645161290322581,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 129,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@103:r1",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 103,
+   "phase": 0.6645161290322581,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 130,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@103:r2",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 103,
+   "phase": 0.6645161290322581,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 131,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@103:r3",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 103,
+   "phase": 0.6645161290322581,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 132,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@129:r0",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 129,
+   "phase": 0.832258064516129,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 133,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@129:r1",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 129,
+   "phase": 0.832258064516129,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 134,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@129:r2",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 129,
+   "phase": 0.832258064516129,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 135,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@129:r3",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 129,
+   "phase": 0.832258064516129,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 136,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@155:r0",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 155,
+   "phase": 1.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 137,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@155:r1",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 155,
+   "phase": 1.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 138,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@155:r2",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 155,
+   "phase": 1.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 139,
+   "condition_id": "CMU_106_106_13_poses_60_jpos@155:r3",
+   "clip": "CMU_106_106_13_poses_60_jpos",
+   "start_frame": 155,
+   "phase": 1.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 140,
+   "condition_id": "GRAB_s7_stapler_staple_1@0:r0",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 141,
+   "condition_id": "GRAB_s7_stapler_staple_1@0:r1",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 142,
+   "condition_id": "GRAB_s7_stapler_staple_1@0:r2",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 143,
+   "condition_id": "GRAB_s7_stapler_staple_1@0:r3",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 144,
+   "condition_id": "GRAB_s7_stapler_staple_1@42:r0",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 42,
+   "phase": 0.16600790513833993,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 145,
+   "condition_id": "GRAB_s7_stapler_staple_1@42:r1",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 42,
+   "phase": 0.16600790513833993,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 146,
+   "condition_id": "GRAB_s7_stapler_staple_1@42:r2",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 42,
+   "phase": 0.16600790513833993,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 147,
+   "condition_id": "GRAB_s7_stapler_staple_1@42:r3",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 42,
+   "phase": 0.16600790513833993,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 148,
+   "condition_id": "GRAB_s7_stapler_staple_1@84:r0",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 84,
+   "phase": 0.33201581027667987,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 149,
+   "condition_id": "GRAB_s7_stapler_staple_1@84:r1",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 84,
+   "phase": 0.33201581027667987,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 150,
+   "condition_id": "GRAB_s7_stapler_staple_1@84:r2",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 84,
+   "phase": 0.33201581027667987,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 151,
+   "condition_id": "GRAB_s7_stapler_staple_1@84:r3",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 84,
+   "phase": 0.33201581027667987,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 152,
+   "condition_id": "GRAB_s7_stapler_staple_1@126:r0",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 126,
+   "phase": 0.4980237154150198,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 153,
+   "condition_id": "GRAB_s7_stapler_staple_1@126:r1",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 126,
+   "phase": 0.4980237154150198,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 154,
+   "condition_id": "GRAB_s7_stapler_staple_1@126:r2",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 126,
+   "phase": 0.4980237154150198,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 155,
+   "condition_id": "GRAB_s7_stapler_staple_1@126:r3",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 126,
+   "phase": 0.4980237154150198,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 156,
+   "condition_id": "GRAB_s7_stapler_staple_1@169:r0",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 169,
+   "phase": 0.6679841897233202,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 157,
+   "condition_id": "GRAB_s7_stapler_staple_1@169:r1",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 169,
+   "phase": 0.6679841897233202,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 158,
+   "condition_id": "GRAB_s7_stapler_staple_1@169:r2",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 169,
+   "phase": 0.6679841897233202,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 159,
+   "condition_id": "GRAB_s7_stapler_staple_1@169:r3",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 169,
+   "phase": 0.6679841897233202,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 160,
+   "condition_id": "GRAB_s7_stapler_staple_1@211:r0",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 211,
+   "phase": 0.83399209486166,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 161,
+   "condition_id": "GRAB_s7_stapler_staple_1@211:r1",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 211,
+   "phase": 0.83399209486166,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 162,
+   "condition_id": "GRAB_s7_stapler_staple_1@211:r2",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 211,
+   "phase": 0.83399209486166,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 163,
+   "condition_id": "GRAB_s7_stapler_staple_1@211:r3",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 211,
+   "phase": 0.83399209486166,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 164,
+   "condition_id": "GRAB_s7_stapler_staple_1@253:r0",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 253,
+   "phase": 1.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 165,
+   "condition_id": "GRAB_s7_stapler_staple_1@253:r1",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 253,
+   "phase": 1.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 166,
+   "condition_id": "GRAB_s7_stapler_staple_1@253:r2",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 253,
+   "phase": 1.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 167,
+   "condition_id": "GRAB_s7_stapler_staple_1@253:r3",
+   "clip": "GRAB_s7_stapler_staple_1",
+   "start_frame": 253,
+   "phase": 1.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 168,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@0:r0",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 169,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@0:r1",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 170,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@0:r2",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 171,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@0:r3",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 172,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@28:r0",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 28,
+   "phase": 0.16666666666666666,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 173,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@28:r1",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 28,
+   "phase": 0.16666666666666666,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 174,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@28:r2",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 28,
+   "phase": 0.16666666666666666,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 175,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@28:r3",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 28,
+   "phase": 0.16666666666666666,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 176,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@56:r0",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 56,
+   "phase": 0.3333333333333333,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 177,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@56:r1",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 56,
+   "phase": 0.3333333333333333,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 178,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@56:r2",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 56,
+   "phase": 0.3333333333333333,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 179,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@56:r3",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 56,
+   "phase": 0.3333333333333333,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 180,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@84:r0",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 84,
+   "phase": 0.5,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 181,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@84:r1",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 84,
+   "phase": 0.5,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 182,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@84:r2",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 84,
+   "phase": 0.5,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 183,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@84:r3",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 84,
+   "phase": 0.5,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 184,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@112:r0",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 112,
+   "phase": 0.6666666666666666,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 185,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@112:r1",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 112,
+   "phase": 0.6666666666666666,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 186,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@112:r2",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 112,
+   "phase": 0.6666666666666666,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 187,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@112:r3",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 112,
+   "phase": 0.6666666666666666,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 188,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@140:r0",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 140,
+   "phase": 0.8333333333333334,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 189,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@140:r1",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 140,
+   "phase": 0.8333333333333334,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 190,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@140:r2",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 140,
+   "phase": 0.8333333333333334,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 191,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@140:r3",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 140,
+   "phase": 0.8333333333333334,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 192,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@168:r0",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 168,
+   "phase": 1.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 193,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@168:r1",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 168,
+   "phase": 1.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 194,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@168:r2",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 168,
+   "phase": 1.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 195,
+   "condition_id": "KIT_8_WalkingStraightForwards09_poses_100_jpos@168:r3",
+   "clip": "KIT_8_WalkingStraightForwards09_poses_100_jpos",
+   "start_frame": 168,
+   "phase": 1.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 196,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@0:r0",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 197,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@0:r1",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 198,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@0:r2",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 199,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@0:r3",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 200,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@27:r0",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 27,
+   "phase": 0.16463414634146342,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 201,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@27:r1",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 27,
+   "phase": 0.16463414634146342,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 202,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@27:r2",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 27,
+   "phase": 0.16463414634146342,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 203,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@27:r3",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 27,
+   "phase": 0.16463414634146342,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 204,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@55:r0",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 55,
+   "phase": 0.3353658536585366,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 205,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@55:r1",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 55,
+   "phase": 0.3353658536585366,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 206,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@55:r2",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 55,
+   "phase": 0.3353658536585366,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 207,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@55:r3",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 55,
+   "phase": 0.3353658536585366,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 208,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@82:r0",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 82,
+   "phase": 0.5,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 209,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@82:r1",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 82,
+   "phase": 0.5,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 210,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@82:r2",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 82,
+   "phase": 0.5,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 211,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@82:r3",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 82,
+   "phase": 0.5,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 212,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@109:r0",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 109,
+   "phase": 0.6646341463414634,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 213,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@109:r1",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 109,
+   "phase": 0.6646341463414634,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 214,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@109:r2",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 109,
+   "phase": 0.6646341463414634,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 215,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@109:r3",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 109,
+   "phase": 0.6646341463414634,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 216,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@137:r0",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 137,
+   "phase": 0.8353658536585366,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 217,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@137:r1",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 137,
+   "phase": 0.8353658536585366,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 218,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@137:r2",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 137,
+   "phase": 0.8353658536585366,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 219,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@137:r3",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 137,
+   "phase": 0.8353658536585366,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 220,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@164:r0",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 164,
+   "phase": 1.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 221,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@164:r1",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 164,
+   "phase": 1.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 222,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@164:r2",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 164,
+   "phase": 1.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 223,
+   "condition_id": "KIT_675_walk_with_table_left04_poses_100_jpos@164:r3",
+   "clip": "KIT_675_walk_with_table_left04_poses_100_jpos",
+   "start_frame": 164,
+   "phase": 1.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 224,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@0:r0",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 225,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@0:r1",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 226,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@0:r2",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 227,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@0:r3",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 228,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@223:r0",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 223,
+   "phase": 0.1667913238593867,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 229,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@223:r1",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 223,
+   "phase": 0.1667913238593867,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 230,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@223:r2",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 223,
+   "phase": 0.1667913238593867,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 231,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@223:r3",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 223,
+   "phase": 0.1667913238593867,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 232,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@446:r0",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 446,
+   "phase": 0.3335826477187734,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 233,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@446:r1",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 446,
+   "phase": 0.3335826477187734,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 234,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@446:r2",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 446,
+   "phase": 0.3335826477187734,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 235,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@446:r3",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 446,
+   "phase": 0.3335826477187734,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 236,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@668:r0",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 668,
+   "phase": 0.49962602842183995,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 237,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@668:r1",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 668,
+   "phase": 0.49962602842183995,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 238,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@668:r2",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 668,
+   "phase": 0.49962602842183995,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 239,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@668:r3",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 668,
+   "phase": 0.49962602842183995,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 240,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@891:r0",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 891,
+   "phase": 0.6664173522812267,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 241,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@891:r1",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 891,
+   "phase": 0.6664173522812267,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 242,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@891:r2",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 891,
+   "phase": 0.6664173522812267,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 243,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@891:r3",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 891,
+   "phase": 0.6664173522812267,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 244,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@1114:r0",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 1114,
+   "phase": 0.8332086761406133,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 245,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@1114:r1",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 1114,
+   "phase": 0.8332086761406133,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 246,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@1114:r2",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 1114,
+   "phase": 0.8332086761406133,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 247,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@1114:r3",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 1114,
+   "phase": 0.8332086761406133,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 248,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@1337:r0",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 1337,
+   "phase": 1.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 249,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@1337:r1",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 1337,
+   "phase": 1.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 250,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@1337:r2",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 1337,
+   "phase": 1.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 251,
+   "condition_id": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos@1337:r3",
+   "clip": "Eyes_Japan_Dataset_kanno_pose-19-funny-kanno_poses_120_jpos",
+   "start_frame": 1337,
+   "phase": 1.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 252,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@0:r0",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 253,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@0:r1",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 254,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@0:r2",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 255,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@0:r3",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 256,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@114:r0",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 114,
+   "phase": 0.1661807580174927,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 257,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@114:r1",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 114,
+   "phase": 0.1661807580174927,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 258,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@114:r2",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 114,
+   "phase": 0.1661807580174927,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 259,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@114:r3",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 114,
+   "phase": 0.1661807580174927,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 260,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@229:r0",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 229,
+   "phase": 0.3338192419825073,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 261,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@229:r1",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 229,
+   "phase": 0.3338192419825073,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 262,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@229:r2",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 229,
+   "phase": 0.3338192419825073,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 263,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@229:r3",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 229,
+   "phase": 0.3338192419825073,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 264,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@343:r0",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 343,
+   "phase": 0.5,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 265,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@343:r1",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 343,
+   "phase": 0.5,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 266,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@343:r2",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 343,
+   "phase": 0.5,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 267,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@343:r3",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 343,
+   "phase": 0.5,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 268,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@457:r0",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 457,
+   "phase": 0.6661807580174927,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 269,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@457:r1",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 457,
+   "phase": 0.6661807580174927,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 270,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@457:r2",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 457,
+   "phase": 0.6661807580174927,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 271,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@457:r3",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 457,
+   "phase": 0.6661807580174927,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 272,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@572:r0",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 572,
+   "phase": 0.8338192419825073,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 273,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@572:r1",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 572,
+   "phase": 0.8338192419825073,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 274,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@572:r2",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 572,
+   "phase": 0.8338192419825073,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 275,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@572:r3",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 572,
+   "phase": 0.8338192419825073,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 276,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@686:r0",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 686,
+   "phase": 1.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 277,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@686:r1",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 686,
+   "phase": 1.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 278,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@686:r2",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 686,
+   "phase": 1.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 279,
+   "condition_id": "GRAB_s6_spherelarge_pick_all@686:r3",
+   "clip": "GRAB_s6_spherelarge_pick_all",
+   "start_frame": 686,
+   "phase": 1.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 280,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@0:r0",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 281,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@0:r1",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 282,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@0:r2",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 283,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@0:r3",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 284,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@223:r0",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 223,
+   "phase": 0.1667913238593867,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 285,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@223:r1",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 223,
+   "phase": 0.1667913238593867,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 286,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@223:r2",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 223,
+   "phase": 0.1667913238593867,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 287,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@223:r3",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 223,
+   "phase": 0.1667913238593867,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 288,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@446:r0",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 446,
+   "phase": 0.3335826477187734,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 289,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@446:r1",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 446,
+   "phase": 0.3335826477187734,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 290,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@446:r2",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 446,
+   "phase": 0.3335826477187734,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 291,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@446:r3",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 446,
+   "phase": 0.3335826477187734,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 292,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@668:r0",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 668,
+   "phase": 0.49962602842183995,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 293,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@668:r1",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 668,
+   "phase": 0.49962602842183995,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 294,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@668:r2",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 668,
+   "phase": 0.49962602842183995,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 295,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@668:r3",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 668,
+   "phase": 0.49962602842183995,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 296,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@891:r0",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 891,
+   "phase": 0.6664173522812267,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 297,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@891:r1",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 891,
+   "phase": 0.6664173522812267,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 298,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@891:r2",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 891,
+   "phase": 0.6664173522812267,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 299,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@891:r3",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 891,
+   "phase": 0.6664173522812267,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 300,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@1114:r0",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 1114,
+   "phase": 0.8332086761406133,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 301,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@1114:r1",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 1114,
+   "phase": 0.8332086761406133,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 302,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@1114:r2",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 1114,
+   "phase": 0.8332086761406133,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 303,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@1114:r3",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 1114,
+   "phase": 0.8332086761406133,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 304,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@1337:r0",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 1337,
+   "phase": 1.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 305,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@1337:r1",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 1337,
+   "phase": 1.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 306,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@1337:r2",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 1337,
+   "phase": 1.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 307,
+   "condition_id": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos@1337:r3",
+   "clip": "Eyes_Japan_Dataset_hamada_accident-06-damage_left_leg-hamada_poses_120_jpos",
+   "start_frame": 1337,
+   "phase": 1.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 308,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@0:r0",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 309,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@0:r1",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 310,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@0:r2",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 311,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@0:r3",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 312,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@449:r0",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 449,
+   "phase": 0.16679049034175333,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 313,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@449:r1",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 449,
+   "phase": 0.16679049034175333,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 314,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@449:r2",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 449,
+   "phase": 0.16679049034175333,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 315,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@449:r3",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 449,
+   "phase": 0.16679049034175333,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 316,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@897:r0",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 897,
+   "phase": 0.33320950965824664,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 317,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@897:r1",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 897,
+   "phase": 0.33320950965824664,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 318,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@897:r2",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 897,
+   "phase": 0.33320950965824664,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 319,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@897:r3",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 897,
+   "phase": 0.33320950965824664,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 320,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@1346:r0",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 1346,
+   "phase": 0.5,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 321,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@1346:r1",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 1346,
+   "phase": 0.5,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 322,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@1346:r2",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 1346,
+   "phase": 0.5,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 323,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@1346:r3",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 1346,
+   "phase": 0.5,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 324,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@1795:r0",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 1795,
+   "phase": 0.6667904903417533,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 325,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@1795:r1",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 1795,
+   "phase": 0.6667904903417533,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 326,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@1795:r2",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 1795,
+   "phase": 0.6667904903417533,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 327,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@1795:r3",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 1795,
+   "phase": 0.6667904903417533,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 328,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@2243:r0",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 2243,
+   "phase": 0.8332095096582467,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 329,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@2243:r1",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 2243,
+   "phase": 0.8332095096582467,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 330,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@2243:r2",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 2243,
+   "phase": 0.8332095096582467,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 331,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@2243:r3",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 2243,
+   "phase": 0.8332095096582467,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 332,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@2692:r0",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 2692,
+   "phase": 1.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 333,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@2692:r1",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 2692,
+   "phase": 1.0,
+   "replicate": 1,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 334,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@2692:r2",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 2692,
+   "phase": 1.0,
+   "replicate": 2,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 335,
+   "condition_id": "SFU_0015_0015_BasicKendo001_poses_120_jpos@2692:r3",
+   "clip": "SFU_0015_0015_BasicKendo001_poses_120_jpos",
+   "start_frame": 2692,
+   "phase": 1.0,
+   "replicate": 3,
+   "horizon_steps": 150,
+   "full_window": true
+  }
+ ]
+}

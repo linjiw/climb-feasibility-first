@@ -1,0 +1,2 @@
+clip,fps,frames,guard_s,min_seg_s,bin_frames,severity,airborne_frac,infeasible_frac,torque_infeasible_frac,severe_frac,severe_frac_guarded,feasible_frac_kept,n_severe_windows,screen_schema,screen_gap_m,n_feasible_segments,n_bins,n_bins_eligible,bin_eligible_frac,unsupported_ratio_p95
+BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos,50.0,496,0.0,1.0,50,severe,0.125,0.1310483870967742,0.0,0.1310483870967742,0.1310483870967742,0.7963709677419355,2,torque_limited,0.06,2,10,7,0.7,1.0107723907716646

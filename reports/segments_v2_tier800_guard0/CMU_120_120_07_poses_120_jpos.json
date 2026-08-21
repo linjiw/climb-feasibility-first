@@ -1,0 +1,281 @@
+{
+ "clip": "CMU_120_120_07_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 464,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.23922413793103448,
+ "infeasible_frac": 0.17672413793103448,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.17672413793103448,
+ "severe_frac_guarded": 0.17672413793103448,
+ "feasible_frac_kept": 0.8232758620689655,
+ "n_severe_windows": 8,
+ "n_feasible_segments": 9,
+ "feasible_segments_frames": [
+  [
+   0,
+   118
+  ],
+  [
+   132,
+   140
+  ],
+  [
+   158,
+   213
+  ],
+  [
+   223,
+   269
+  ],
+  [
+   283,
+   290
+  ],
+  [
+   305,
+   370
+  ],
+  [
+   374,
+   376
+  ],
+  [
+   379,
+   381
+  ],
+  [
+   385,
+   464
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 118,
+   "unsupported_ratio_mean": 0.01541130707473279,
+   "unsupported_ratio_p95": 0.08099020154731201,
+   "unsupported_ratio_max": 0.12718733047822517
+  },
+  {
+   "start_frame": 132,
+   "stop_frame": 140,
+   "unsupported_ratio_mean": 0.2846810170469649,
+   "unsupported_ratio_p95": 0.45940308359755083,
+   "unsupported_ratio_max": 0.47053197501439553
+  },
+  {
+   "start_frame": 158,
+   "stop_frame": 213,
+   "unsupported_ratio_mean": 0.08199358061861106,
+   "unsupported_ratio_p95": 0.280759917255178,
+   "unsupported_ratio_max": 0.4830672647971052
+  },
+  {
+   "start_frame": 223,
+   "stop_frame": 269,
+   "unsupported_ratio_mean": 0.05279975717595217,
+   "unsupported_ratio_p95": 0.22066696099196878,
+   "unsupported_ratio_max": 0.22899834261584293
+  },
+  {
+   "start_frame": 283,
+   "stop_frame": 290,
+   "unsupported_ratio_mean": 0.2854289851219785,
+   "unsupported_ratio_p95": 0.42830945016092703,
+   "unsupported_ratio_max": 0.4427097464722838
+  },
+  {
+   "start_frame": 305,
+   "stop_frame": 370,
+   "unsupported_ratio_mean": 0.05459083422819088,
+   "unsupported_ratio_p95": 0.219459292829976,
+   "unsupported_ratio_max": 0.38278494653542766
+  },
+  {
+   "start_frame": 374,
+   "stop_frame": 376,
+   "unsupported_ratio_mean": 0.23969919974742437,
+   "unsupported_ratio_p95": 0.24520249770080912,
+   "unsupported_ratio_max": 0.2458139752511852
+  },
+  {
+   "start_frame": 379,
+   "stop_frame": 381,
+   "unsupported_ratio_mean": 0.25269309769291615,
+   "unsupported_ratio_p95": 0.2643876058438587,
+   "unsupported_ratio_max": 0.26568699563840786
+  },
+  {
+   "start_frame": 385,
+   "stop_frame": 464,
+   "unsupported_ratio_mean": 0.022814304806753206,
+   "unsupported_ratio_p95": 0.08224373052558309,
+   "unsupported_ratio_max": 0.11251186926919918
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   2.36
+  ],
+  [
+   2.64,
+   2.8
+  ],
+  [
+   3.16,
+   4.26
+  ],
+  [
+   4.46,
+   5.38
+  ],
+  [
+   5.66,
+   5.8
+  ],
+  [
+   6.1,
+   7.4
+  ],
+  [
+   7.48,
+   7.52
+  ],
+  [
+   7.58,
+   7.62
+  ],
+  [
+   7.7,
+   9.28
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   118,
+   132
+  ],
+  [
+   140,
+   158
+  ],
+  [
+   213,
+   223
+  ],
+  [
+   269,
+   283
+  ],
+  [
+   290,
+   305
+  ],
+  [
+   370,
+   374
+  ],
+  [
+   376,
+   379
+  ],
+  [
+   381,
+   385
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   118,
+   132
+  ],
+  [
+   140,
+   158
+  ],
+  [
+   213,
+   223
+  ],
+  [
+   269,
+   283
+  ],
+  [
+   290,
+   305
+  ],
+  [
+   370,
+   374
+  ],
+  [
+   376,
+   379
+  ],
+  [
+   381,
+   385
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   2.36,
+   2.64
+  ],
+  [
+   2.8,
+   3.16
+  ],
+  [
+   4.26,
+   4.46
+  ],
+  [
+   5.38,
+   5.66
+  ],
+  [
+   5.8,
+   6.1
+  ],
+  [
+   7.4,
+   7.48
+  ],
+  [
+   7.52,
+   7.58
+  ],
+  [
+   7.62,
+   7.7
+  ]
+ ],
+ "n_bins": 10,
+ "n_bins_eligible": 4,
+ "bin_eligible_frac": 0.4,
+ "bin_eligible": [
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 1.363457354889829,
+ "source_screen_sha256": "bb24b451b1edcaf3d5dfa99ef3494e18554b6f7108145de5f35fc11313060b0c",
+ "reducer_sha256": "5c46376599812bf081c5d26aa5153b23d3dee93b9aaedf192ca6e995b2d2f224"
+}

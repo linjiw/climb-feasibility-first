@@ -1,0 +1,18 @@
+{
+ "schema_version": "segment_v2_smoke_selection/1",
+ "classification": "unsealed mechanism smoke; selected without policy outcomes",
+ "selection_rule": "ten flagged tier800 motions spanning source families, each with at least two exact guard-0 feasible segments that admit a 50-step trial",
+ "horizon_steps": 50,
+ "num_envs": 512,
+ "max_iterations": 200,
+ "source_sidecars": "reports/segments_v2_tier800_guard0",
+ "gates": [
+  "zero invalid starts",
+  "zero realized invalid reference frames",
+  "zero invalid-attributed failures",
+  "explicit segment timeouts with no continuing teleport",
+  "exploration floor and unit/clip caps pass",
+  "fixed-clock conditional outcome accounting",
+  "sampler-equivalent resume at an all-env reset boundary"
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "schema_version": "paired_eval_conditions/2",
+ "window_s": 3.0,
+ "requested_phases": [
+  0.0
+ ],
+ "episodes_per_start": 1,
+ "environment_seed": 123,
+ "joint_noise_seed": 456,
+ "joint_noise": 0.05,
+ "nominal": false,
+ "nconmax_per_world": 70,
+ "motions": [
+  {
+   "clip": "CMU_114_114_04_poses_120_jpos",
+   "frames": 373,
+   "fps": 50.0
+  },
+  {
+   "clip": "CMU_138_138_25_poses_120_jpos",
+   "frames": 149,
+   "fps": 50.0
+  },
+  {
+   "clip": "Eyes_Japan_Dataset_kaiwa_accident-02-dodge_fast-kaiwa_poses_120_jpos",
+   "frames": 1500,
+   "fps": 50.0
+  }
+ ],
+ "conditions": [
+  {
+   "world_id": 0,
+   "condition_id": "CMU_114_114_04_poses_120_jpos@0:r0",
+   "clip": "CMU_114_114_04_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  },
+  {
+   "world_id": 1,
+   "condition_id": "CMU_138_138_25_poses_120_jpos@0:r0",
+   "clip": "CMU_138_138_25_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 148,
+   "full_window": false
+  },
+  {
+   "world_id": 2,
+   "condition_id": "Eyes_Japan_Dataset_kaiwa_accident-02-dodge_fast-kaiwa_poses_120_jpos@0:r0",
+   "clip": "Eyes_Japan_Dataset_kaiwa_accident-02-dodge_fast-kaiwa_poses_120_jpos",
+   "start_frame": 0,
+   "phase": 0.0,
+   "replicate": 0,
+   "horizon_steps": 150,
+   "full_window": true
+  }
+ ]
+}

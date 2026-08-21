@@ -1,0 +1,303 @@
+{
+ "clip": "CMU_36_36_04_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 1553,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.2755956213779781,
+ "infeasible_frac": 0.27945911139729557,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.27945911139729557,
+ "severe_frac_guarded": 0.27945911139729557,
+ "feasible_frac_kept": 0.7205408886027045,
+ "n_severe_windows": 8,
+ "n_feasible_segments": 9,
+ "feasible_segments_frames": [
+  [
+   0,
+   67
+  ],
+  [
+   150,
+   230
+  ],
+  [
+   291,
+   493
+  ],
+  [
+   563,
+   657
+  ],
+  [
+   734,
+   955
+  ],
+  [
+   991,
+   1040
+  ],
+  [
+   1069,
+   1294
+  ],
+  [
+   1331,
+   1381
+  ],
+  [
+   1422,
+   1553
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 67,
+   "unsupported_ratio_mean": 0.05871553463200787,
+   "unsupported_ratio_p95": 0.3246945792496998,
+   "unsupported_ratio_max": 0.3439561220865464
+  },
+  {
+   "start_frame": 150,
+   "stop_frame": 230,
+   "unsupported_ratio_mean": 0.07003710992620056,
+   "unsupported_ratio_p95": 0.33972164005019206,
+   "unsupported_ratio_max": 0.3577143669700083
+  },
+  {
+   "start_frame": 291,
+   "stop_frame": 493,
+   "unsupported_ratio_mean": 0.0341201445993268,
+   "unsupported_ratio_p95": 0.2162948965067795,
+   "unsupported_ratio_max": 0.47297788521589984
+  },
+  {
+   "start_frame": 563,
+   "stop_frame": 657,
+   "unsupported_ratio_mean": 0.06453364934580773,
+   "unsupported_ratio_p95": 0.3162256151769908,
+   "unsupported_ratio_max": 0.40112927304671014
+  },
+  {
+   "start_frame": 734,
+   "stop_frame": 955,
+   "unsupported_ratio_mean": 0.02967187896033081,
+   "unsupported_ratio_p95": 0.16051285697372167,
+   "unsupported_ratio_max": 0.31154781191661407
+  },
+  {
+   "start_frame": 991,
+   "stop_frame": 1040,
+   "unsupported_ratio_mean": 0.11821483336148222,
+   "unsupported_ratio_p95": 0.3689044061418906,
+   "unsupported_ratio_max": 0.42344820363543717
+  },
+  {
+   "start_frame": 1069,
+   "stop_frame": 1294,
+   "unsupported_ratio_mean": 0.03491672696547515,
+   "unsupported_ratio_p95": 0.2628130511516401,
+   "unsupported_ratio_max": 0.4439327015730359
+  },
+  {
+   "start_frame": 1331,
+   "stop_frame": 1381,
+   "unsupported_ratio_mean": 0.09608146749059386,
+   "unsupported_ratio_p95": 0.2923015560185268,
+   "unsupported_ratio_max": 0.3097133792654858
+  },
+  {
+   "start_frame": 1422,
+   "stop_frame": 1553,
+   "unsupported_ratio_mean": 0.0284663804654087,
+   "unsupported_ratio_p95": 0.17258953859364928,
+   "unsupported_ratio_max": 0.3497651588151192
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   1.34
+  ],
+  [
+   3.0,
+   4.6
+  ],
+  [
+   5.82,
+   9.86
+  ],
+  [
+   11.26,
+   13.14
+  ],
+  [
+   14.68,
+   19.1
+  ],
+  [
+   19.82,
+   20.8
+  ],
+  [
+   21.38,
+   25.88
+  ],
+  [
+   26.62,
+   27.62
+  ],
+  [
+   28.44,
+   31.06
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   67,
+   150
+  ],
+  [
+   230,
+   291
+  ],
+  [
+   493,
+   563
+  ],
+  [
+   657,
+   734
+  ],
+  [
+   955,
+   991
+  ],
+  [
+   1040,
+   1069
+  ],
+  [
+   1294,
+   1331
+  ],
+  [
+   1381,
+   1422
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   67,
+   150
+  ],
+  [
+   230,
+   291
+  ],
+  [
+   493,
+   563
+  ],
+  [
+   657,
+   734
+  ],
+  [
+   955,
+   991
+  ],
+  [
+   1040,
+   1069
+  ],
+  [
+   1294,
+   1331
+  ],
+  [
+   1381,
+   1422
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   1.34,
+   3.0
+  ],
+  [
+   4.6,
+   5.82
+  ],
+  [
+   9.86,
+   11.26
+  ],
+  [
+   13.14,
+   14.68
+  ],
+  [
+   19.1,
+   19.82
+  ],
+  [
+   20.8,
+   21.38
+  ],
+  [
+   25.88,
+   26.62
+  ],
+  [
+   27.62,
+   28.44
+  ]
+ ],
+ "n_bins": 32,
+ "n_bins_eligible": 16,
+ "bin_eligible_frac": 0.5,
+ "bin_eligible": [
+  1,
+  0,
+  0,
+  1,
+  0,
+  0,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 1.0099774699561754,
+ "source_screen_sha256": "63bf9e1250e6cc5da1202a9d6dea1ef170a85516652838c15f0a5cb597b43d12",
+ "reducer_sha256": "5c46376599812bf081c5d26aa5153b23d3dee93b9aaedf192ca6e995b2d2f224"
+}

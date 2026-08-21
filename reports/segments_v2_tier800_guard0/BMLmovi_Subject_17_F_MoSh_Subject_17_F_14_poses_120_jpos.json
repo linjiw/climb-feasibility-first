@@ -1,0 +1,116 @@
+{
+ "clip": "BMLmovi_Subject_17_F_MoSh_Subject_17_F_14_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 342,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.34502923976608185,
+ "infeasible_frac": 0.34502923976608185,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.34502923976608185,
+ "severe_frac_guarded": 0.34502923976608185,
+ "feasible_frac_kept": 0.6549707602339181,
+ "n_severe_windows": 2,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   114
+  ],
+  [
+   126,
+   147
+  ],
+  [
+   253,
+   342
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 114,
+   "unsupported_ratio_mean": 0.030396870859484733,
+   "unsupported_ratio_p95": 0.30388905559815355,
+   "unsupported_ratio_max": 0.34762498738880293
+  },
+  {
+   "start_frame": 126,
+   "stop_frame": 147,
+   "unsupported_ratio_mean": 0.3110382472913007,
+   "unsupported_ratio_p95": 0.35863158329557243,
+   "unsupported_ratio_max": 0.363217664923393
+  },
+  {
+   "start_frame": 253,
+   "stop_frame": 342,
+   "unsupported_ratio_mean": 0.03148078804295742,
+   "unsupported_ratio_p95": 0.1507292161677042,
+   "unsupported_ratio_max": 0.27241324869254474
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   2.28
+  ],
+  [
+   2.52,
+   2.94
+  ],
+  [
+   5.06,
+   6.84
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   114,
+   126
+  ],
+  [
+   147,
+   253
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   114,
+   126
+  ],
+  [
+   147,
+   253
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   2.28,
+   2.52
+  ],
+  [
+   2.94,
+   5.06
+  ]
+ ],
+ "n_bins": 7,
+ "n_bins_eligible": 3,
+ "bin_eligible_frac": 0.42857142857142855,
+ "bin_eligible": [
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  1
+ ],
+ "unsupported_ratio_p95": 1.0564650507235174,
+ "source_screen_sha256": "3008ff27ab9405f4eaa45a984156cf43b9a307fcd34237f68f290a285fdc429d",
+ "reducer_sha256": "5c46376599812bf081c5d26aa5153b23d3dee93b9aaedf192ca6e995b2d2f224"
+}

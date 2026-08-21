@@ -1,0 +1,120 @@
+{
+ "clip": "KIT_513_seesaw_up08_poses_100_jpos",
+ "fps": 50.0,
+ "frames": 512,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.263671875,
+ "infeasible_frac": 0.263671875,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.263671875,
+ "severe_frac_guarded": 0.263671875,
+ "feasible_frac_kept": 0.736328125,
+ "n_severe_windows": 2,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   157
+  ],
+  [
+   234,
+   238
+  ],
+  [
+   296,
+   512
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 157,
+   "unsupported_ratio_mean": 0.052744807171771324,
+   "unsupported_ratio_p95": 0.38987808611979,
+   "unsupported_ratio_max": 0.45616225258055754
+  },
+  {
+   "start_frame": 234,
+   "stop_frame": 238,
+   "unsupported_ratio_mean": 0.31972632415289415,
+   "unsupported_ratio_p95": 0.32032251476451085,
+   "unsupported_ratio_max": 0.32041423639706723
+  },
+  {
+   "start_frame": 296,
+   "stop_frame": 512,
+   "unsupported_ratio_mean": 0.015003847300894615,
+   "unsupported_ratio_p95": 0.08721198562238877,
+   "unsupported_ratio_max": 0.27241324869254474
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   3.14
+  ],
+  [
+   4.68,
+   4.76
+  ],
+  [
+   5.92,
+   10.24
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   157,
+   234
+  ],
+  [
+   238,
+   296
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   157,
+   234
+  ],
+  [
+   238,
+   296
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   3.14,
+   4.68
+  ],
+  [
+   4.76,
+   5.92
+  ]
+ ],
+ "n_bins": 11,
+ "n_bins_eligible": 8,
+ "bin_eligible_frac": 0.7272727272727273,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 1.0216108303520806,
+ "source_screen_sha256": "a475b7244a6ffd329c522c3d207bbbecd6238ac7511f5d3378ac5e2d088b26f6",
+ "reducer_sha256": "5c46376599812bf081c5d26aa5153b23d3dee93b9aaedf192ca6e995b2d2f224"
+}

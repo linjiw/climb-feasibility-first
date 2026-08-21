@@ -1,0 +1,25 @@
+{
+ "classification": "exploratory clean-control panel; policy-independent selection",
+ "selection": {
+  "population": "heldout100 intersect feasible and exactly disjoint from tier_800",
+  "coverage": "12 motions selected across duration and feasibility strata before v2 evaluation",
+  "uses_policy_outcomes": false
+ },
+ "source_hashes": {
+  "bank/tiers/heldout100.txt": "8ebac06027329a378aa6a2405f198b532591876be9e36989b583592d9cc68152",
+  "bank/tiers/tier_800.txt": "87cbeb8ea677c5855948269d89e77dd748b410cdb4c4e9b0594b9c2f5160306e",
+  "reports/feasibility_all/feasibility.csv": "587a2518a9a4b40a2c99025fc956df2a8d9614d2a9cbdaacbdcf41cf164fddb9"
+ },
+ "protocol": {
+  "phases": [0.0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1.0],
+  "episodes_per_start": 4,
+  "window_s": 3.0,
+  "environment_seed": 20260822,
+  "joint_noise_seed": 20260823,
+  "joint_noise": 0.05,
+  "nconmax_per_world": 70,
+  "expected_worlds_per_cell": 336,
+  "cells": ["K_raw", "R_raw"]
+ },
+ "common_reference_bank": "bank/amass"
+}

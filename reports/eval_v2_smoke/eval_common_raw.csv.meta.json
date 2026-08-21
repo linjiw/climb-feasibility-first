@@ -1,0 +1,44 @@
+{
+ "schema_version": "paired_eval_output/1",
+ "classification": "post-audit evaluator; does not replace sealed outputs",
+ "checkpoint": "/data/robotixx/climb/logs/rsl_rl/g1_tracking/2026-08-20_02-54-58_uniform-amass800-s1/model_3999.pt",
+ "checkpoint_sha256": "d99a16896e61555a0a74e4c45bad2b0817d8037f0249c518557aa1787ebec474",
+ "clips": "/data/robotixx/climb/reports/eval_v2_smoke/clips.txt",
+ "clips_sha256": "9eb2641c7f0f90a20ac898c1c6194534583f69a33551de9ffa64896ca4ce3bb9",
+ "bank": "/data/robotixx/climb/bank/amass",
+ "selected_reference_sha256": {
+  "Eyes_Japan_Dataset_kaiwa_accident-02-dodge_fast-kaiwa_poses_120_jpos": "b4610ccc0f2f4119d29447de7a73406e8d6fc04f94b58e60bb3259593be139fd"
+ },
+ "common_reference_bank": "/data/robotixx/climb/bank/amass",
+ "common_reference_sha256": {
+  "Eyes_Japan_Dataset_kaiwa_accident-02-dodge_fast-kaiwa_poses_120_jpos": "b4610ccc0f2f4119d29447de7a73406e8d6fc04f94b58e60bb3259593be139fd"
+ },
+ "conditions": "/data/robotixx/climb/reports/eval_v2_smoke/conditions_v2.json",
+ "conditions_sha256": "8002c8dab124e2bc60fbcd818da2e9e0c283ac27a7441ee9c9a29e055dda6a2f",
+ "evaluator_sha256": "9ed95c4df6a6528b2089813bf98e60d2f638690ab914de833380a2ed53d4ef89",
+ "device": "cuda:0",
+ "nominal": false,
+ "joint_noise": 0.05,
+ "nconmax_per_world": 70,
+ "startup_randomization_sha256": "0b23969f46204e6a77b17ea27749cacf50365fb5d4e7d962609e1f3a3a35d5ab",
+ "initial_state_sha256": "03f79997681806d07452d4e7de36d1748d79c1e8abb8075e5526b16adb80ca2d",
+ "software_versions": {
+  "python": "3.13.9",
+  "torch": "2.9.0+cu128",
+  "numpy": "2.5.1",
+  "mjlab": "1.6.0",
+  "mujoco": "3.11.0",
+  "mujoco-warp": "3.11.0",
+  "rsl-rl-lib": "5.4.2"
+ },
+ "source_sha256": {
+  "climb/commands.py": "9f3c9c342701d92ed7e8da8583f16b8df803708a99f28b9249af3be7595fc94e",
+  "climb/env_cfg.py": "86ec36241a6aaa0152f4602198ba04cb88eba3f0e676484a283e9a0b19965bc8",
+  "climb/motion_bank.py": "e9149ce08661f5f6f56e0ea1b9a542aa5c788232d9661044c7f340c947681129",
+  "mjlab-1.6.0/src/mjlab/envs/manager_based_rl_env.py": "e05034969baaa6ca38d7587190eef95d468fd413f182edd2c8d387c2950701f1",
+  "mjlab-1.6.0/src/mjlab/tasks/tracking/mdp/commands.py": "b8700e65bb519b5e68962216ed78a107f6a3c02bab2ff75854e62b1983d1ad97"
+ },
+ "worlds": 1,
+ "full_window_worlds": 1,
+ "output": "/data/robotixx/climb/reports/eval_v2_smoke/eval_common_raw.csv"
+}
