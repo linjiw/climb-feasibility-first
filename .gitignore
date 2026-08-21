@@ -15,3 +15,11 @@ reports/**/*.npz
 reports/feasibility_all/json/
 reports/feasibility_e3/json/
 reports/clip44_gate.html
+
+# local simulator products; retain only adjudicated CSV/JSON summaries
+reports/**/training/
+
+# bulky per-clip screen shards; their manifests and aggregate tables are versioned
+reports/eligibility/screens/
+reports/P_SIGN/screens/
+reports/segments_tier800/full/
