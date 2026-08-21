@@ -2,7 +2,7 @@
  "schema_version": "segment_unit_table/1",
  "classification": "unsealed v2 runtime input; exact support fails closed",
  "clips_sha256": "3d26bb38cee19940ee09f75279f9980b281255ad11bfd00f1e3a52e9aa02cc0b",
- "builder_sha256": "0d7a38ab2ad791a08aade6b0bccb5f03f52cbbdd487ae830f4783657c9d583dd",
+ "builder_sha256": "1e9e93fe7f764a32cf345b223b9d76ae9e5e21af874611e6b89a4c1fb6c4490f",
  "horizon_steps": 50,
  "sources": [
   {
@@ -11,13 +11,13 @@
    "frames": 80,
    "fps": 50.0,
    "motion_sha256": "9bfd4f57bc09ad055294592d651f76a804727fe1ec2dbe7dd7346ce668bd80ed",
-   "sidecar_sha256": "1b4bf48a3f7c257bd3d9cb8833fe8674c72e5a9b86a11af9f71938d2b9d9e874",
+   "sidecar_sha256": "a8896b52bacafe7fcdad081052f7c35cf8e107e428443e7c14668bc0fbc8dc90",
    "source_screen_sha256": "7a1d3d9c074c7f6a4fed7ec1ac192ecbd87c72a439c7a805c2f126a5f1f1eb7b",
-   "reducer_sha256": "5c46376599812bf081c5d26aa5153b23d3dee93b9aaedf192ca6e995b2d2f224",
+   "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b",
    "guard_s": 0.0,
    "guard_mode": "symmetric",
    "severity": "severe",
-   "dfrp_manifest_payload_sha256": "5a6897dd2cb9a0fe7205d9a6f30143c219677e092d6ecc19fec9bc0a4e6ba992",
+   "dfrp_manifest_payload_sha256": "67a3cdd5ce6da12f87794669590e0645bcc608ea152b2a52875c7350ec971205",
    "dfrp_route": "raw_feasible"
   },
   {
@@ -26,13 +26,13 @@
    "frames": 99,
    "fps": 50.0,
    "motion_sha256": "abd4e67a8ede9018e2d156184879546614218f6f053ab42edb530f05a19147c1",
-   "sidecar_sha256": "5fd6ae307194bb9f267e941965a2fbd4d9fcac6d46a5cd1a531a1a495cfa8ebc",
+   "sidecar_sha256": "3497ef9e7edf68b78290bf1c33ba10a8b72dd2e2b2eac9e4b9460f8276c7caa2",
    "source_screen_sha256": "60bc6dd18ce65d494cf2efc37f7e52d49dada94667c0433495eef72f48d8a523",
-   "reducer_sha256": "5c46376599812bf081c5d26aa5153b23d3dee93b9aaedf192ca6e995b2d2f224",
+   "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b",
    "guard_s": 0.0,
    "guard_mode": "symmetric",
    "severity": "severe",
-   "dfrp_manifest_payload_sha256": "5a6897dd2cb9a0fe7205d9a6f30143c219677e092d6ecc19fec9bc0a4e6ba992",
+   "dfrp_manifest_payload_sha256": "67a3cdd5ce6da12f87794669590e0645bcc608ea152b2a52875c7350ec971205",
    "dfrp_route": "repair_primary"
   }
  ],
@@ -96,7 +96,7 @@
    "deployment_mass": 46
   }
  ],
- "unit_table_sha256": "e40c70ff7884d51b914fe90751ac2b1d3a3576ec5f1535d8d14c2dcc58d13f3b",
+ "unit_table_sha256": "daabea17043f355d57b293b8b86fa1e98e99c6c3a6b4f36042ea7dcd157d1306",
  "counts": {
   "clips": 2,
   "source_units": 2,
@@ -106,7 +106,7 @@
  },
  "dfrp": {
   "manifest_path": "/data/robotixx/climb/reports/dfrp_v0/dev_panel/manifest.json",
-  "manifest_file_sha256": "45046952653701819a7d9bf684a185c3d45233680f6b310e46e93e603d213a1d",
-  "manifest_payload_sha256": "5a6897dd2cb9a0fe7205d9a6f30143c219677e092d6ecc19fec9bc0a4e6ba992"
+  "manifest_file_sha256": "3387ba49cc35cb649c005137eefda6cb7a234974bdaa607f0ff49b23f613047e",
+  "manifest_payload_sha256": "67a3cdd5ce6da12f87794669590e0645bcc608ea152b2a52875c7350ec971205"
  }
 }

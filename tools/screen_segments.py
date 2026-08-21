@@ -226,6 +226,9 @@ def reduce_clip(summary: dict, *, guard_s: float, min_seg_s: float, bin_frames: 
         "guarded_severe_windows_frames": [
             [int(a), int(b)] for a, b in runs(guarded)
         ],
+        "excluded_windows_frames": [
+            [int(a), int(b)] for a, b in runs(~kept)
+        ],
         "severe_windows_s": [[round(a / fps, 3), round(b / fps, 3)] for a, b in runs(severe)],
         "n_bins": len(m_b),
         "n_bins_eligible": int(m_b.sum()),
@@ -239,6 +242,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--json", nargs="+", required=True,
                     help="full-mode n1_knee_id.py output JSON(s) (NOT --brief output)")
+    ap.add_argument("--motion", nargs="*", default=None,
+                    help="optional source motion NPZ(s), one per --json; records a hash binding")
     ap.add_argument("--guard-s", type=float, default=0.0,
                     help="guard band half-width in seconds. mjlab: 0 (no obs lookahead). "
                          "SONIC: >= 1.0 (num_future_frames*dt). Default 0 = measure first.")
@@ -263,14 +268,16 @@ def main() -> int:
 
     scalar_fields = [
         "clip", "fps", "frames", "guard_s", "guard_mode", "min_seg_s", "bin_frames", "severity",
-        "source_screen_sha256", "reducer_sha256",
+        "source_screen_sha256", "source_motion_sha256", "reducer_sha256",
         "airborne_frac", "infeasible_frac", "torque_infeasible_frac", "severe_frac",
         "severe_frac_guarded", "feasible_frac_kept", "n_severe_windows",
         "screen_schema", "screen_gap_m", "n_feasible_segments", "n_bins", "n_bins_eligible", "bin_eligible_frac",
         "unsupported_ratio_p95",
     ]
     results = []
-    for path in args.json:
+    if args.motion is not None and len(args.motion) != len(args.json):
+        ap.error("--motion must provide exactly one path per --json")
+    for index, path in enumerate(args.json):
         try:
             with open(path) as handle:
                 summary = json.load(handle)
@@ -286,6 +293,9 @@ def main() -> int:
                           severity=args.severity, model=args.model,
                           guard_mode=args.guard_mode)
         res["source_screen_sha256"] = sha256_file(path)
+        res["source_motion_sha256"] = (
+            sha256_file(args.motion[index]) if args.motion is not None else None
+        )
         res["reducer_sha256"] = sha256_file(__file__)
         results.append(res)
         if args.out_dir:

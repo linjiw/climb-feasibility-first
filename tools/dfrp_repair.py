@@ -79,6 +79,23 @@ def _support_side(geom_name: str) -> str | None:
     return None
 
 
+def _joint_limits_valid(model: mujoco.MjModel, qpos: np.ndarray) -> bool:
+    """Return whether every limited scalar joint stays inside its range."""
+    valid = True
+    for joint_id in range(1, model.njnt):
+        if not model.jnt_limited[joint_id]:
+            continue
+        qpos_id = model.jnt_qposadr[joint_id]
+        low, high = model.jnt_range[joint_id]
+        valid &= bool(
+            (
+                (qpos[:, qpos_id] >= low - 1.0e-4)
+                & (qpos[:, qpos_id] <= high + 1.0e-4)
+            ).all()
+        )
+    return valid
+
+
 def _angular_velocity(quaternions_wxyz: np.ndarray, fps: float) -> np.ndarray:
     """Return centered world-frame angular velocity from wxyz quaternions."""
     xyzw = np.concatenate(
@@ -110,6 +127,7 @@ def repair_motion(
     smoothing_s: float = 0.24,
     ik_tolerance_m: float = 0.001,
     ik_iterations: int = 15,
+    repair_enabled: bool = True,
 ) -> dict[str, Any]:
     """Repair one motion and return provenance/fidelity diagnostics."""
     if gap_m <= clearance_m or clearance_m < 0.0:
@@ -159,6 +177,33 @@ def repair_motion(
     qpos[:, :3] = motion["body_pos_w"][:, 0]
     qpos[:, 3:7] = motion["body_quat_w"][:, 0]
     qpos[:, 7:] = motion["joint_pos"]
+    if not repair_enabled:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(motion_path, output_path)
+        return {
+            "operator": OPERATOR,
+            "operator_sha256": sha256_file(Path(__file__).resolve()),
+            "input_motion_sha256": sha256_file(motion_path),
+            "model_sha256": sha256_file(model_path),
+            "clip": motion_path.stem,
+            "frames": frames,
+            "fps": fps,
+            "gap_m": gap_m,
+            "clearance_m": clearance_m,
+            "smoothing_s": smoothing_s,
+            "repair_applied": False,
+            "frames_needing_support": 0,
+            "needs_frac": 0.0,
+            "offset_max_m": 0.0,
+            "offset_mean_when_active_m": 0.0,
+            "joint_delta_rad_p95": 0.0,
+            "joint_delta_rad_max": 0.0,
+            "joint_limits_valid": _joint_limits_valid(model, qpos),
+            "ik_frames": 0,
+            "ik_iterations_max": 0,
+            "ik_contact_residual_m": 0.0,
+            "nonleg_support_frames": 0,
+        }
     minimum_distance = np.zeros(frames, dtype=np.float64)
     support_geom = np.zeros(frames, dtype=np.int32)
     from_to = np.zeros(6, dtype=np.float64)
@@ -188,18 +233,6 @@ def repair_motion(
     qpos[:, 2] -= root_offset
 
     if not bool(needs_support.any()):
-        joint_limits_valid = True
-        for joint_id in range(1, model.njnt):
-            if not model.jnt_limited[joint_id]:
-                continue
-            qpos_id = model.jnt_qposadr[joint_id]
-            low, high = model.jnt_range[joint_id]
-            joint_limits_valid &= bool(
-                (
-                    (qpos[:, qpos_id] >= low - 1.0e-4)
-                    & (qpos[:, qpos_id] <= high + 1.0e-4)
-                ).all()
-            )
         output_path.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(motion_path, output_path)
         return {
@@ -213,13 +246,14 @@ def repair_motion(
             "gap_m": gap_m,
             "clearance_m": clearance_m,
             "smoothing_s": smoothing_s,
+            "repair_applied": False,
             "frames_needing_support": 0,
             "needs_frac": 0.0,
             "offset_max_m": 0.0,
             "offset_mean_when_active_m": 0.0,
             "joint_delta_rad_p95": 0.0,
             "joint_delta_rad_max": 0.0,
-            "joint_limits_valid": joint_limits_valid,
+            "joint_limits_valid": _joint_limits_valid(model, qpos),
             "ik_frames": 0,
             "ik_iterations_max": 0,
             "ik_contact_residual_m": 0.0,
@@ -281,18 +315,7 @@ def repair_motion(
         )
         contact_residual[frame] = max(distance - clearance_m, 0.0)
 
-    joint_limits_valid = True
-    for joint_id in range(1, model.njnt):
-        if not model.jnt_limited[joint_id]:
-            continue
-        qpos_id = model.jnt_qposadr[joint_id]
-        low, high = model.jnt_range[joint_id]
-        joint_limits_valid &= bool(
-            (
-                (qpos[:, qpos_id] >= low - 1.0e-4)
-                & (qpos[:, qpos_id] <= high + 1.0e-4)
-            ).all()
-        )
+    joint_limits_valid = _joint_limits_valid(model, qpos)
 
     body_position = np.zeros_like(motion["body_pos_w"], dtype=np.float64)
     body_quaternion = np.zeros_like(motion["body_quat_w"], dtype=np.float64)
@@ -334,6 +357,7 @@ def repair_motion(
         "gap_m": gap_m,
         "clearance_m": clearance_m,
         "smoothing_s": smoothing_s,
+        "repair_applied": True,
         "frames_needing_support": int(needs_support.sum()),
         "needs_frac": float(needs_support.mean()),
         "offset_max_m": float(root_offset.max(initial=0.0)),
@@ -400,6 +424,8 @@ def run_rescreen(
             str(repo / "tools" / "screen_segments.py"),
             "--json",
             str(full_out),
+            "--motion",
+            str(bank / f"{clip}.npz"),
             "--guard-s",
             "0",
             "--guard-mode",
@@ -433,6 +459,7 @@ def main() -> int:
     parser.add_argument("--gap-m", type=float, default=0.06)
     parser.add_argument("--clearance-m", type=float, default=0.003)
     parser.add_argument("--smoothing-s", type=float, default=0.24)
+    parser.add_argument("--flag-infeasible-frac", type=float, default=0.10)
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
@@ -452,6 +479,9 @@ def main() -> int:
         gap_m=args.gap_m,
         clearance_m=args.clearance_m,
         smoothing_s=args.smoothing_s,
+        repair_enabled=(
+            float(before["infeasible_frac"]) > args.flag_infeasible_frac
+        ),
     )
     after = run_rescreen(
         clip=args.clip,
@@ -468,14 +498,17 @@ def main() -> int:
             "airborne_frac_before": float(before["airborne_frac"]),
             "infeasible_frac_after": float(after["infeasible_frac"]),
             "airborne_frac_after": float(after["airborne_frac"]),
+            "repair_entry_threshold": args.flag_infeasible_frac,
             "primary_candidate": bool(
-                after["infeasible_frac"] <= 0.05
+                record["repair_applied"]
+                and after["infeasible_frac"] <= 0.05
                 and record["offset_max_m"] <= 0.08
                 and record["joint_limits_valid"]
                 and record["ik_contact_residual_m"] <= 0.01
             ),
             "exploratory_candidate": bool(
-                after["infeasible_frac"] <= 0.05
+                record["repair_applied"]
+                and after["infeasible_frac"] <= 0.05
                 and record["offset_max_m"] <= 0.15
                 and record["joint_limits_valid"]
             ),

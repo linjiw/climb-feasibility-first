@@ -50,6 +50,12 @@
    3
   ]
  ],
+ "excluded_windows_frames": [
+  [
+   0,
+   3
+  ]
+ ],
  "severe_windows_s": [
   [
    0.0,
@@ -65,5 +71,6 @@
  ],
  "unsupported_ratio_p95": 0.4544195415619857,
  "source_screen_sha256": "60bc6dd18ce65d494cf2efc37f7e52d49dada94667c0433495eef72f48d8a523",
- "reducer_sha256": "5c46376599812bf081c5d26aa5153b23d3dee93b9aaedf192ca6e995b2d2f224"
+ "source_motion_sha256": "abd4e67a8ede9018e2d156184879546614218f6f053ab42edb530f05a19147c1",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
 }

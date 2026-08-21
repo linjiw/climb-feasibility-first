@@ -19,6 +19,7 @@ def materialize_training_view(
     *,
     overlay_dir: Path,
     sidecar_overlay_dir: Path,
+    repair_record_overlay_dir: Path | None = None,
     clips_out: Path,
     root: Path,
     force: bool,
@@ -27,7 +28,10 @@ def materialize_training_view(
     selected = [row for row in manifest["clips"] if row["training_eligible"]]
     if not selected:
         raise ValueError("DFRP manifest has no training-ready clips")
-    for directory in (overlay_dir, sidecar_overlay_dir):
+    directories = [overlay_dir, sidecar_overlay_dir]
+    if repair_record_overlay_dir is not None:
+        directories.append(repair_record_overlay_dir)
+    for directory in directories:
         if directory.exists():
             entries = list(directory.iterdir())
             if entries and not force:
@@ -48,6 +52,12 @@ def materialize_training_view(
         sidecar_link = sidecar_overlay_dir / f"{row['name']}.json"
         motion_link.symlink_to(os.path.relpath(motion, overlay_dir))
         sidecar_link.symlink_to(os.path.relpath(sidecar, sidecar_overlay_dir))
+        if repair_record_overlay_dir is not None and row.get("repair"):
+            record = (root / row["repair"]["record_path"]).resolve()
+            record_link = repair_record_overlay_dir / f"{row['name']}.json"
+            record_link.symlink_to(
+                os.path.relpath(record, repair_record_overlay_dir)
+            )
 
 
 def main() -> int:
@@ -80,6 +90,7 @@ def main() -> int:
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--overlay-dir", type=Path)
     parser.add_argument("--sidecar-overlay-dir", type=Path)
+    parser.add_argument("--repair-record-overlay-dir", type=Path)
     parser.add_argument("--training-clips-out", type=Path)
     parser.add_argument(
         "--force-overlay",
@@ -163,6 +174,11 @@ def main() -> int:
                 manifest,
                 overlay_dir=args.overlay_dir.resolve(),
                 sidecar_overlay_dir=args.sidecar_overlay_dir.resolve(),
+                repair_record_overlay_dir=(
+                    args.repair_record_overlay_dir.resolve()
+                    if args.repair_record_overlay_dir
+                    else None
+                ),
                 clips_out=args.training_clips_out.resolve(),
                 root=Path.cwd(),
                 force=args.force_overlay,

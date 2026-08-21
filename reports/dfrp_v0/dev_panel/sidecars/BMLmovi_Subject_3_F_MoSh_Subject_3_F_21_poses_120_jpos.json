@@ -40,6 +40,7 @@
  ],
  "severe_windows_frames": [],
  "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
  "severe_windows_s": [],
  "n_bins": 2,
  "n_bins_eligible": 2,
@@ -50,5 +51,6 @@
  ],
  "unsupported_ratio_p95": 0.06950971053900114,
  "source_screen_sha256": "7a1d3d9c074c7f6a4fed7ec1ac192ecbd87c72a439c7a805c2f126a5f1f1eb7b",
- "reducer_sha256": "5c46376599812bf081c5d26aa5153b23d3dee93b9aaedf192ca6e995b2d2f224"
+ "source_motion_sha256": "9bfd4f57bc09ad055294592d651f76a804727fe1ec2dbe7dd7346ce668bd80ed",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
 }

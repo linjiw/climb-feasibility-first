@@ -152,6 +152,7 @@ def _exact_support_facts(
     frames: int,
     fps: float,
     horizon_steps: int,
+    expected_motion_sha256: str,
     root: Path,
 ) -> dict[str, Any] | None:
     if path is None or not path.is_file():
@@ -163,11 +164,17 @@ def _exact_support_facts(
         or abs(float(sidecar.get("fps", -1.0)) - fps) > 1.0e-9
     ):
         raise ValueError(f"{clip}: exact sidecar timeline does not match motion")
+    if sidecar.get("source_motion_sha256") != expected_motion_sha256:
+        raise ValueError(f"{clip}: exact sidecar source-motion hash mismatch")
     runs = sidecar.get("feasible_segments_frames")
     if not isinstance(runs, list):
         raise TypeError(f"{clip}: exact sidecar lacks feasible_segments_frames")
+    excluded = sidecar.get("excluded_windows_frames")
+    if not isinstance(excluded, list):
+        raise TypeError(f"{clip}: exact sidecar lacks excluded_windows_frames")
     legal_starts = 0
     previous_stop = 0
+    feasible_mask = np.zeros(frames, dtype=bool)
     for index, run in enumerate(runs):
         if (
             not isinstance(run, list)
@@ -179,10 +186,30 @@ def _exact_support_facts(
         if start < previous_stop or start < 0 or stop <= start or stop > frames:
             raise ValueError(f"{clip}: feasible runs are not an exact ordered partition")
         legal_starts += max(stop - start - horizon_steps, 0)
+        feasible_mask[start:stop] = True
         previous_stop = stop
+    excluded_mask = np.zeros(frames, dtype=bool)
+    previous_stop = 0
+    for index, run in enumerate(excluded):
+        if (
+            not isinstance(run, list)
+            or len(run) != 2
+            or not all(isinstance(value, int) for value in run)
+        ):
+            raise ValueError(f"{clip}: invalid excluded run {index}")
+        start, stop = run
+        if start < previous_stop or start < 0 or stop <= start or stop > frames:
+            raise ValueError(f"{clip}: excluded runs are not exact and ordered")
+        excluded_mask[start:stop] = True
+        previous_stop = stop
+    if bool((feasible_mask & excluded_mask).any()) or not bool(
+        (feasible_mask | excluded_mask).all()
+    ):
+        raise ValueError(f"{clip}: exact support is not a frame partition")
     return {
         "path": _relative(path, root),
         "sha256": sha256_file(path),
+        "source_motion_sha256": expected_motion_sha256,
         "legal_starts": legal_starts,
         "support_ready": legal_starts > 0,
     }
@@ -354,6 +381,7 @@ def build_dfrp_manifest(
     for name in names:
         original_path = bank / f"{name}.npz"
         frames, fps, original_arrays = _motion_facts(original_path)
+        original_sha256 = sha256_file(original_path)
         screen_path = screen_dir / f"{name}.json"
         if not screen_path.is_file():
             raise FileNotFoundError(f"{name}: missing screen {screen_path}")
@@ -372,6 +400,7 @@ def build_dfrp_manifest(
             frames=frames,
             fps=fps,
             horizon_steps=config.horizon_steps,
+            expected_motion_sha256=original_sha256,
             root=root,
         )
 
@@ -411,6 +440,7 @@ def build_dfrp_manifest(
                 repaired_frames, repaired_fps, repaired_arrays = _motion_facts(
                     repaired_path
                 )
+                repaired_sha256 = sha256_file(repaired_path)
                 if repaired_frames != frames or abs(repaired_fps - fps) > 1.0e-9:
                     raise ValueError(f"{name}: repaired motion timeline does not match")
                 fidelity = _repair_fidelity(
@@ -420,7 +450,7 @@ def build_dfrp_manifest(
                     repair,
                     fidelity,
                     config=config,
-                    expected_motion_sha256=sha256_file(original_path),
+                    expected_motion_sha256=original_sha256,
                     expected_model_sha256=model_sha256,
                     expected_operator_sha256=repair_tool_sha256,
                 )
@@ -435,6 +465,7 @@ def build_dfrp_manifest(
                     frames=frames,
                     fps=fps,
                     horizon_steps=config.horizon_steps,
+                    expected_motion_sha256=repaired_sha256,
                     root=root,
                 )
 
@@ -495,7 +526,7 @@ def build_dfrp_manifest(
                 "name": name,
                 "original": {
                     "path": _relative(original_path, root),
-                    "sha256": sha256_file(original_path),
+                    "sha256": original_sha256,
                     "frames": frames,
                     "fps": fps,
                 },

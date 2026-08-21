@@ -60,6 +60,9 @@ def write_sidecar(
     frames: int = 80,
     feasible: list[list[int]] | None = None,
 ) -> None:
+    root = path.parent.parent
+    motion_dir = "bank" if path.parent.name == "raw_sidecars" else "repaired"
+    motion_path = root / motion_dir / f"{name}.npz"
     feasible = feasible or [[0, frames]]
     severe: list[list[int]] = [] if feasible == [[0, frames]] else [[30, 40]]
     records = [
@@ -82,10 +85,14 @@ def write_sidecar(
                 "guard_mode": "symmetric",
                 "severity": "severe",
                 "source_screen_sha256": "a" * 64,
+                "source_motion_sha256": hashlib.sha256(
+                    motion_path.read_bytes()
+                ).hexdigest(),
                 "reducer_sha256": "b" * 64,
                 "feasible_segments_frames": feasible,
                 "feasible_segment_records": records,
                 "guarded_severe_windows_frames": severe,
+                "excluded_windows_frames": severe,
             }
         )
     )
@@ -266,6 +273,15 @@ def test_manifest_hash_detects_tampering(tmp_path: Path) -> None:
     manifest["clips"][0]["route"] = "quarantine"
     with pytest.raises(ValueError, match="payload hash mismatch"):
         validate_dfrp_manifest(manifest)
+
+
+def test_exact_sidecar_is_bound_to_selected_motion(tmp_path: Path) -> None:
+    paths = fixture_dirs(tmp_path, ["clip"])
+    write_screen(paths["screens"] / "clip.json", "clip", 0.0)
+    write_sidecar(paths["raw_sidecars"] / "clip.json", "clip")
+    write_motion(paths["bank"] / "clip.npz", root_drop=0.01)
+    with pytest.raises(ValueError, match="source-motion hash mismatch"):
+        build(paths)
 
 
 def test_materialized_view_contains_only_training_ready_rows(tmp_path: Path) -> None:

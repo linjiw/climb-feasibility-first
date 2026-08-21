@@ -18,15 +18,15 @@
   "model": "refeas/examples/g1_flat.xml",
   "model_sha256": "3e1630b42b1d01a45823f228ffe76443a39b85d47df456b9ca119d5431cf7357",
   "manifest_builder": "climb/dfrp.py",
-  "manifest_builder_sha256": "e90e0eb0d2f4d81481f7ae993796f1ddf9b5e4d8aa928f2481f82830c2c9b131",
+  "manifest_builder_sha256": "847d5dc28b875b2d127b549925985aab5810dce348a0d1a7e0c48e049cfab8e0",
   "screen_tool": "refeas/refeas/screen.py",
   "screen_tool_sha256": "5ef2c91bf9f4634fa484057eea4a9c74577e73ed60a52801c2739ad30fdfe8db",
   "repair_tool": "tools/dfrp_repair.py",
-  "repair_tool_sha256": "8ddd69873b73e65e04f32a30f911c1efa3900253f35b1bb3284678a3f7c8c7f7",
-  "repair_records_dir": "reports/dfrp_v0/dev_panel/repair_records",
+  "repair_tool_sha256": "40c367ad18894f6a7cf2ef83bc85d2765b68cbce9830dbe1d866417c32c597da",
+  "repair_records_dir": "reports/dfrp_v0/dev_panel/manifest_repair_records",
   "repaired_bank": "reports/dfrp_v0/dev_panel/repaired",
-  "raw_sidecar_dir": "reports/dfrp_v0/dev_panel/sidecars",
-  "repaired_sidecar_dir": "reports/dfrp_v0/dev_panel/sidecars"
+  "raw_sidecar_dir": "reports/dfrp_v0/dev_panel/manifest_raw_sidecars",
+  "repaired_sidecar_dir": "reports/dfrp_v0/dev_panel/manifest_repaired_sidecars"
  },
  "counts": {
   "clips": 2,
@@ -40,9 +40,7 @@
  },
  "integrity": {
   "flagged_missing_repair_records": [],
-  "repair_records_outside_strict_flag_set": [
-   "BMLmovi_Subject_3_F_MoSh_Subject_3_F_21_poses_120_jpos"
-  ]
+  "repair_records_outside_strict_flag_set": []
  },
  "clips": [
   {
@@ -62,41 +60,11 @@
     "unsupported_impulse_per_weight_s": 0.021059286834952284
    },
    "flagged": false,
-   "repair": {
-    "record_path": "reports/dfrp_v0/dev_panel/repair_records/BMLmovi_Subject_3_F_MoSh_Subject_3_F_21_poses_120_jpos.json",
-    "record_sha256": "808257acafdbf61393bd8ae6d2f92c8449d8cf33490f6e8b681f0d22f34e1b35",
-    "motion_path": "reports/dfrp_v0/dev_panel/repaired/BMLmovi_Subject_3_F_MoSh_Subject_3_F_21_poses_120_jpos.npz",
-    "motion_sha256": "9bfd4f57bc09ad055294592d651f76a804727fe1ec2dbe7dd7346ce668bd80ed",
-    "operator": "dfrp_root_contact_ik_v1",
-    "infeasible_frac_before": 0.0,
-    "infeasible_frac_after": 0.0,
-    "offset_max_m": 0.0,
-    "qualification": "complete",
-    "qualification_reasons": [],
-    "fidelity": {
-     "finite": true,
-     "joint_delta_rad_p95": 0.0,
-     "joint_delta_rad_max": 0.0,
-     "root_displacement_m_p95": 0.0,
-     "root_displacement_m_max": 0.0,
-     "body_mpjpe_m_mean": 0.0,
-     "body_mpjpe_m_p95": 0.0,
-     "body_mpjpe_m_max": 0.0,
-     "root_velocity_delta_mps_p95": 0.0,
-     "root_velocity_delta_mps_max": 0.0,
-     "root_acceleration_delta_mps2_p95": 0.0,
-     "root_acceleration_delta_mps2_max": 0.0
-    },
-    "exact_support": {
-     "path": "reports/dfrp_v0/dev_panel/sidecars/BMLmovi_Subject_3_F_MoSh_Subject_3_F_21_poses_120_jpos.json",
-     "sha256": "1b4bf48a3f7c257bd3d9cb8833fe8674c72e5a9b86a11af9f71938d2b9d9e874",
-     "legal_starts": 30,
-     "support_ready": true
-    }
-   },
+   "repair": null,
    "raw_exact_support": {
     "path": "reports/dfrp_v0/dev_panel/sidecars/BMLmovi_Subject_3_F_MoSh_Subject_3_F_21_poses_120_jpos.json",
-    "sha256": "1b4bf48a3f7c257bd3d9cb8833fe8674c72e5a9b86a11af9f71938d2b9d9e874",
+    "sha256": "a8896b52bacafe7fcdad081052f7c35cf8e107e428443e7c14668bc0fbc8dc90",
+    "source_motion_sha256": "9bfd4f57bc09ad055294592d651f76a804727fe1ec2dbe7dd7346ce668bd80ed",
     "legal_starts": 30,
     "support_ready": true
    },
@@ -109,7 +77,8 @@
    },
    "training_sidecar": {
     "path": "reports/dfrp_v0/dev_panel/sidecars/BMLmovi_Subject_3_F_MoSh_Subject_3_F_21_poses_120_jpos.json",
-    "sha256": "1b4bf48a3f7c257bd3d9cb8833fe8674c72e5a9b86a11af9f71938d2b9d9e874",
+    "sha256": "a8896b52bacafe7fcdad081052f7c35cf8e107e428443e7c14668bc0fbc8dc90",
+    "source_motion_sha256": "9bfd4f57bc09ad055294592d651f76a804727fe1ec2dbe7dd7346ce668bd80ed",
     "legal_starts": 30,
     "support_ready": true
    }
@@ -133,7 +102,7 @@
    "flagged": true,
    "repair": {
     "record_path": "reports/dfrp_v0/dev_panel/repair_records/CMU_108_108_10_poses_120_jpos.json",
-    "record_sha256": "c6e856dfb896846252eb2a776c7b02787af64bee5a8e338b18d02f9dd84e8fbb",
+    "record_sha256": "b6b9fbc65fc4ebedba675e54274f1a821741fdcdd83c98066d1f28b858a3155e",
     "motion_path": "reports/dfrp_v0/dev_panel/repaired/CMU_108_108_10_poses_120_jpos.npz",
     "motion_sha256": "abd4e67a8ede9018e2d156184879546614218f6f053ab42edb530f05a19147c1",
     "operator": "dfrp_root_contact_ik_v1",
@@ -158,17 +127,13 @@
     },
     "exact_support": {
      "path": "reports/dfrp_v0/dev_panel/sidecars/CMU_108_108_10_poses_120_jpos.json",
-     "sha256": "5fd6ae307194bb9f267e941965a2fbd4d9fcac6d46a5cd1a531a1a495cfa8ebc",
+     "sha256": "3497ef9e7edf68b78290bf1c33ba10a8b72dd2e2b2eac9e4b9460f8276c7caa2",
+     "source_motion_sha256": "abd4e67a8ede9018e2d156184879546614218f6f053ab42edb530f05a19147c1",
      "legal_starts": 46,
      "support_ready": true
     }
    },
-   "raw_exact_support": {
-    "path": "reports/dfrp_v0/dev_panel/sidecars/CMU_108_108_10_poses_120_jpos.json",
-    "sha256": "5fd6ae307194bb9f267e941965a2fbd4d9fcac6d46a5cd1a531a1a495cfa8ebc",
-    "legal_starts": 46,
-    "support_ready": true
-   },
+   "raw_exact_support": null,
    "route": "repair_primary",
    "route_reasons": [],
    "training_eligible": true,
@@ -178,11 +143,12 @@
    },
    "training_sidecar": {
     "path": "reports/dfrp_v0/dev_panel/sidecars/CMU_108_108_10_poses_120_jpos.json",
-    "sha256": "5fd6ae307194bb9f267e941965a2fbd4d9fcac6d46a5cd1a531a1a495cfa8ebc",
+    "sha256": "3497ef9e7edf68b78290bf1c33ba10a8b72dd2e2b2eac9e4b9460f8276c7caa2",
+    "source_motion_sha256": "abd4e67a8ede9018e2d156184879546614218f6f053ab42edb530f05a19147c1",
     "legal_starts": 46,
     "support_ready": true
    }
   }
  ],
- "payload_sha256": "5a6897dd2cb9a0fe7205d9a6f30143c219677e092d6ecc19fec9bc0a4e6ba992"
+ "payload_sha256": "67a3cdd5ce6da12f87794669590e0645bcc608ea152b2a52875c7350ec971205"
 }

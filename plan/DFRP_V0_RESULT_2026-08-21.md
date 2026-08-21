@@ -27,8 +27,14 @@ residual. The materialized view contains two training-ready units and **76
 legal 50-step starts**.
 
 Artifacts: `reports/dfrp_v0/dev_panel/manifest.json` (payload
-`5a6897dd2cb9a0fe7205d9a6f30143c219677e092d6ecc19fec9bc0a4e6ba992`),
+`67a3cdd5ce6da12f87794669590e0645bcc608ea152b2a52875c7350ec971205`),
 `unit_table.json`, repair records, full screens, and exact sidecars.
+
+The development artifact was refreshed after the v1 panel exposed two
+fail-closed contract gaps: exact sidecars now bind the screened motion hash and
+their feasible/excluded runs partition every frame. The measured two-clip
+outcome and 76-start count are unchanged; the payload changes because the
+stronger provenance fields and current builder/tool hashes are included.
 
 ## Full legacy-artifact routing census
 

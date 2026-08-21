@@ -24,3 +24,7 @@ reports/eligibility/screens/
 reports/P_SIGN/screens/
 reports/segments_tier800/full/
 reports/patches/
+
+# exact DFRP panels: retain compact records/sidecars, not per-frame screens/logs
+reports/dfrp_v1_exact_panel/*/screens_full/
+reports/dfrp_v1_exact_panel/*/logs/

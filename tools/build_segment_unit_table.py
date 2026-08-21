@@ -150,9 +150,12 @@ def build_manifest(
             label=f"{name}.feasible_segments_frames",
         )
         severe = validate_runs(
-            sidecar["guarded_severe_windows_frames"],
+            sidecar.get(
+                "excluded_windows_frames",
+                sidecar["guarded_severe_windows_frames"],
+            ),
             frames=frames,
-            label=f"{name}.guarded_severe_windows_frames",
+            label=f"{name}.excluded_windows_frames",
         )
         feasible_mask = np.zeros(frames, dtype=bool)
         severe_mask = np.zeros(frames, dtype=bool)
