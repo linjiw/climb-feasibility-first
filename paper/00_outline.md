@@ -29,9 +29,9 @@ moderation at scale (E3 slot).
 | 3 | Sampler collapse and the non-floor (Exp-1; #1153/#73 reach) | **complete** | `flagship/S3_collapse_nonfloor.md` |
 | 4 | Grounded repair (Exp-2 + D1 stratified re-analysis) | **complete** | `flagship/S4_grounded_repair.md` |
 | 5 | Anatomy of an attractor (G0 elimination → G1 negative → N1 verdict; errors #8–11 → Appendix A1) | **complete** | `flagship/S5_anatomy.md`, `flagship/A1_g0_appendix.md` |
-| 6 | The feasibility screen at scale (prevalence, **cross-bank contrast 22.8 % vs 0.14 % — pre-registered, ablation descoped**, eval contamination, label hygiene incl. the P-TAX null, **segment- vs clip-level curation**; compressed, cites companion note) | **complete** | `flagship/S6_screen_at_scale.md` |
+| 6 | The feasibility screen at scale (prevalence, **cross-bank contrast 22.8 % vs 0.14 % — pre-registered, ablation descoped**, eval contamination, label hygiene incl. the P-TAX null, **segment- vs clip-level curation**, DFRP v1 exact implementation gate; compressed, cites companion note) | **complete** | `flagship/S6_screen_at_scale.md` |
 | 7 | Difficulty that transfers (N2; atlas v2.1 0.567→0.609 perm p=0.01; support-moderation pending E3) | complete + slot | `flagship/S7_transfer.md` |
-| 8 | Causal tests — N3 mixed; E-HYG null; soft FGAS implementation-gate fail; N7 joint fail; E3 slot | results + slots | `flagship/S8_causal_slots.md` |
+| 8 | Causal tests — N3 mixed; E-HYG exposure null; soft FGAS allocation-gate fail; N7 reference-side gain/joint fail; segment-v2 manipulation fail (not tested); E3 slot | results + slots | `flagship/S8_causal_slots.md` |
 | 9 | The calibrated instrument (N5; r = 0.92 replication; Lyapunov-horizon finding) + P-SIGN sealed fail | **complete** | `flagship/S9_instrument.md` |
 | 10 | Limitations and scope | **complete** | `flagship/S10_limitations.md` |
 | — | **Pre-registration table** (first-class exhibit): every seal — hash, date, prediction, outcome, artifact — incl. the failed G1 gate, the withdrawn S1 verdict, the N2 within-bank null, the P-TAX null | **complete** | `flagship/preregistration_table.md` |

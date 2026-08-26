@@ -1,0 +1,12 @@
+{
+  "schema_version": "autoresearch_handoff/1",
+  "status": "complete",
+  "goal": "Advance fable.md Phase-W guidance with CPU and writing work only",
+  "primary_metric": "durable W2 artifact plus manipulation-correct W3/W4 prose",
+  "result_log": "autoresearch/autoresearch-260826-1617/research_log.md",
+  "remaining": [
+    "Linji author/scope sign-off for the companion note",
+    "expand RED_TEAM #8 hand-inspection to 5 CNRS and 5 Transitions clips",
+    "final bibliography pass and RED_TEAM #20 same-clip cross-implementation check"
+  ]
+}

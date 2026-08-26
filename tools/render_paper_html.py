@@ -121,6 +121,7 @@ if __name__ == "__main__":
            "CLIMB — Flagship Working Draft",
            "Working draft with pending experiments (title not final; five candidates under review). N3 is mixed, "
            "E-HYG is null, P-SIGN failed, soft FGAS failed its implementation gate, and N7 failed "
-           "its joint rule as sealed; E3 remains pending. Pending results do no load-bearing work. The sealed record is included in full, including the "
+           "its joint rule as sealed; the segment-v2 pilot failed its allocation manipulation, and E3 remains "
+           "pending. Pending results do no load-bearing work. The sealed record is included in full, including the "
            "failed gate, the withdrawn verdict, and the kept nulls.",
            ("companion.html", "companion note →"))

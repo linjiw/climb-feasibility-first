@@ -18,3 +18,15 @@
 - **Cross-retargeter feasibility comparison (GMR vs wbt on the 40 shared LAFAN1 clips).** One
   afternoon of CPU; strengthens the companion note's "pipeline property" claim. Waits: companion
   note deadline first; add only if the note's reviewers ask or time remains before Sept 5.
+- **Bank-wide DFRP repair.** The exact 30-clip gate validates a fail-closed artifact contract, not
+  a bank-wide recovery rate or policy benefit. Waits: a policy must first consume the 26-clip
+  curated view under an interpretable, manipulation-passing training design.
+- **Newton fragility-weighted sampling (G3).** Newton axes may become a useful analysis instrument,
+  but weighting training by them waits for the sealed no-training predictive gate and a clean G2
+  learning-progress arm. If prediction fails, G3 is killed rather than softened.
+- **Differentiable feasibility and cross-embodiment atlas.** Both are plausible extensions of the
+  screen, but each changes the scientific question and embodiment scope. Waits until after the Dec 1
+  results freeze and the single-embodiment flagship is assembled.
+- **Terrain refeas and SafeTrack runtime guard.** Terrain-aware feasibility is the right response to
+  scene-mismatch clips; a runtime guard is not supported by P-SIGN. Both wait until after freeze;
+  SONIC remains an evaluation target, not a new training program.

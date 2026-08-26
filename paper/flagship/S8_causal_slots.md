@@ -1,8 +1,13 @@
-# 8. Causal tests (four readouts; support moderation open)
+# 8. Causal tests (one mixed result, three null mechanisms, one open test)
 
 Everything before this section is observational or mechanistic. Four sealed training interventions
-have now read out; their misses are as informative as their passes. Repair is complete and support
-moderation remains open.
+and one unsealed wiring pilot have now read out. They do not support the broad conclusion that
+"feasibility intervention works" or that it does not. They support narrower diagnoses: N3 changes
+behaviour but trips its interpretation stop; E-HYG removes exposure the policy was not converting;
+soft FGAS fails its allocation gate; N7's benefit sits on the changed reference and its interaction
+with training; and the segment-v2 adaptive distribution is nearly its own uniform control. Thus no
+interpretable adaptive exact-segment allocation arm has yet run. That missing manipulation—not an
+assumed positive result—is the open causal test. Support moderation also remains open.
 
 ## 8.1 N3 — targeted composition [sealed mixed outcome]
 
@@ -54,7 +59,9 @@ permutation p=0.951; P1 needed +0.015), and the predicted worst-decile concentra
 (−0.0153 versus −0.0035 for the best half), so P1∧P2 fails. All-heldout Δ is −0.0132. Zero-shot
 ground moves −0.0354, inside the pre-registered [−0.05,+0.02] coverage-cost bracket.
 
-This one-seed null is specific to blunt clip pruning at 12.4% contamination. It does not test the
+This one-seed null is specific to blunt clip pruning at 12.4% contamination. The removed clips are
+ones the comparator already fails on, so pruning removes exposure the policy was not converting; it
+does not create a distinct allocation over the feasible material that remains. It does not test the
 screen, repair, or bin-level eligibility. Together with the segment census, it sharpens the next
 method question: can masking infeasible bins retain coverage that pruning discards?
 
@@ -70,9 +77,26 @@ the top clip is flagged in 0.861 of late iterations. Post-outcome reconstruction
 telemetry within 0.0022. Failure adaptation overwhelms the clip-mean soft multiplier; one clip
 with eligibility 0.702 retains 0.618/0.376/0.222 final mass across seeds. This is therefore a
 negative result for the implemented soft formulation, not a clean test of segment-native adaptive
-sampling. A follow-up must make eligible segments the adaptive unit and be sealed separately.
+sampling: the intended treatment never controlled the realized allocation. A follow-up must make
+eligible segments the adaptive unit and be sealed separately.
 
-## 8.5 E3 — support moderation at scale [SLOT]
+## 8.5 Segment-v2 — exact mechanics, failed manipulation [exploratory; not tested]
+
+The v2 runtime fixes the old sampler and evaluator mechanics: exact horizon-safe support, stable
+unit attribution, explicit 50-step truncation, paired startup randomization, terminal reads before
+reset, and zero invalid or censored trials (`plan/SEGMENT_NATIVE_FOLLOWUP_2026-08-20.md`). Its
+one-seed, 42-unit wiring pilot moves paired success by +0.0079, with a unit-clustered 95% interval
+[−0.0536,+0.0714] (`reports/segment_v2_pilot/result.json`). That outcome is not the load-bearing
+readout. The load-bearing manipulation check is that the final adaptive allocation is only
+**0.014 total variation** from its capped uniform control (correlation 0.998), because conditional
+failure saturates near one across most units.
+
+Accordingly, this pilot is a mechanical pass and an allocation fail. Calling its outcome a null for
+adaptive segment sampling would treat two nearly identical distributions as different treatments.
+The next arm must predeclare and pass an informative allocation band before outcome evaluation;
+until then, exact-feasible adaptive allocation is **not tested**.
+
+## 8.6 E3 — support moderation at scale [SLOT]
 
 **Sealed** (`plan/PREREGISTRATION_E3_addendum.md` `f7929136…` + v2 `2c38845b…` + the D1 policy
 `a93a87a0…`): uniform-800 ×3 vs grounded-800 ×3 (+ ≤1 adaptive demo, optional LP arm);

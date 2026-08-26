@@ -268,6 +268,18 @@ stratified-start evaluation, feasibility-stratified endpoints (sealed policy `a9
 Appendix-A coupling checklist. The proposed rollout-only infeasibility detector is explicitly not
 a deliverable: P-SIGN rejects it [sealed ✗, `plan/P_SIGN_RESULT.md`].
 
+**Exact qualification changes the claim** [unsealed measured implementation; not
+policy-validated]. The 65.8% census routes legacy root-only repairs; it does not promote them to
+training. DFRP v1 instead freezes a stratified 26-flagged + 4-control panel and admits a repair only
+when residual infeasibility is ≤ 5%, root displacement is ≤ 8 cm, joint limits pass, contact-IK
+residual is ≤ 10 mm, legal 50-step starts exist, and every source/repair/sidecar/unit-table identity
+is hash-bound. **22/26** flagged candidates pass and **4/4** controls remain byte-identical. The
+curated 26-clip view exposes **36 exact units and 10,561 legal starts**; two residual-feasibility
+and two IK-qualification failures remain excluded (`reports/dfrp_v1_exact_panel/iter1/result.json`,
+`plan/DFRP_V1_EXACT_PANEL_RESULT_2026-08-21.md`). This is an implementation gate on a panel, not a
+bank-wide recovery rate or a policy-benefit result. The separate residual and IK failures are the
+reason those gates may not be collapsed into one "repaired" label.
+
 **Segment-level curation, and why its value is framework-dependent** [measured;
 `reports/segments_tier800/segments_guard0.csv`, `…_guard1.0.csv`, reducer `tools/screen_segments.py`].
 Pruning and repair are not the only options: a flagged clip is usually mostly feasible. Re-screening
@@ -294,6 +306,13 @@ its pre-registered coverage-cost bracket (`reports/E_HYG_result.json`,
 the sharper next training test; it does not turn the duration measurement into a performance
 claim.
 
+The existing exact-segment wiring pilot does not yet supply that policy test [exploratory]. Its
+runtime is mechanically clean—exact truncation and zero invalid/censored trials—but conditional
+failure saturates and leaves the adaptive distribution only **0.014 TV** from its capped uniform
+control (`reports/segment_v2_pilot/result.json`). It is therefore a failed manipulation check, not
+evidence for or against adaptive segment allocation. A new arm must pass a predeclared allocation
+band before its outcome is interpreted.
+
 ## Appendix A — coupling-error taxonomy
 
 (→ `appendix_coupling_taxonomy.md`, shipped verbatim; also `refeas/docs/COUPLING_TAXONOMY.md`.)
@@ -301,8 +320,10 @@ claim.
 ---
 *Completed sealed work retained here: N3 `af1b7c9f` mixed outcome; E-HYG `a5494b7c` null;
 P-SIGN `c7916e8c` fail; soft FGAS `3521c80e` implementation-gate fail; N7 repair `90da8a08`
-joint fail. Pending work: E3 support moderation `2c38845b` 🕐 and a separately sealed segment-native
-follow-up under the v2 lifecycle/evaluator. Figures: F1 anatomy, F2 prevalence — scripts + data in `paper/RESULTS_LOG.md`.
+joint fail. The segment-v2 pilot is exploratory and fails its allocation manipulation (TV 0.014),
+so adaptive exact-segment sampling remains untested. Pending work: E3 support moderation
+`2c38845b` 🕐 and a separately sealed segment-native follow-up under the v2 lifecycle/evaluator.
+Figures: F1 anatomy, F2 prevalence — scripts + data in `paper/RESULTS_LOG.md`.
 Author list / acknowledgements TBD with Linji. Upstream note drafts are separate documents
 awaiting approval (`reports/upstream_drafts/`).*
 

@@ -100,6 +100,18 @@ length and the strict bin-eligibility rule (any severe frame disqualifies a bin)
 measurements, and the recovery figures are *duration* claims — no training arm has yet consumed
 curated segments.
 
+**Exact repair qualification** [unsealed measured implementation; no policy claim]. The legacy
+65.8% census is a routing result, not a training-ready recovery rate. DFRP v1 therefore froze a
+stratified panel of 26 flagged candidates plus four source-matched feasible controls and required
+residual infeasibility ≤ 5%, root displacement ≤ 8 cm, joint-limit validity, contact-IK residual
+≤ 10 mm, full-horizon-safe starts, and fail-closed hash binding among the source motion, repair,
+sidecar, and unit table. **22/26** flagged repairs pass and **4/4** controls are byte-identical
+no-ops; the resulting 26-clip view contains **36 exact units and 10,561 legal 50-step starts**
+(`reports/dfrp_v1_exact_panel/iter1/result.json`). Two candidates fail the residual-feasibility
+gate and two fail IK qualification, demonstrating why those gates must remain separate. This
+validates the artifact and runtime contract on the panel; it is not a bank-wide recovery estimate
+or evidence that consuming repaired references improves a policy.
+
 **Deployment implication (measured in sim; hardware phenomenology predicted, labeled).** Tracking
 the airborne descent saturates zero actuators until support is lost, then pins ≥ 4/29 at ≥ 98 %
 force range within 0.6 s in 8/8 replicates — exactly 5/29 in 7/8, mean 16.8 %

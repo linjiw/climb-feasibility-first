@@ -1,0 +1,32 @@
+{
+ "already_done": 0,
+ "argv": [
+  "--bank",
+  "/data/robotixx/groot-wbc-sonic-research/datasets/bones_seed_official_headline_scale4950/robot_filtered",
+  "--out",
+  "/data/robotixx/climb/reports/feasibility_sonic",
+  "--workers",
+  "8"
+ ],
+ "csv_path": "/data/robotixx/climb/reports/feasibility_sonic/hygiene_screen.csv",
+ "csv_rows": 4950,
+ "exit_code": 0,
+ "failed_keys": [],
+ "failed_this_run": 0,
+ "finished_unix": 1787762597.199,
+ "kind": "hygiene_screen_bank",
+ "mjcf_path": "/home/robotixx/GR00T-WholeBodyControl/gear_sonic/data/assets/robot_description/mjcf/g1_29dof_rev_1_0.xml",
+ "requested_clips": 4950,
+ "robot_sha256": "15a330f1dbff68cdbeb8284be6162a857bdcd21a858f65a8617fb32d5115f209",
+ "schema_version": 1,
+ "screened_this_run": 4950,
+ "started_unix": 1787762417.361,
+ "target_fps": 50,
+ "thresholds": {
+  "gap_m": 0.06,
+  "mu": 0.7,
+  "unsupported_force_frac": 0.5
+ },
+ "wall_clock_s": 179.838,
+ "workers": 8
+}

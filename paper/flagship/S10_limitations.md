@@ -22,6 +22,12 @@ method deltas require the v2 evaluator (`plan/SEGMENT_NATIVE_FOLLOWUP_2026-08-20
 could in principle close at much longer horizons (an E4 cell is sealed but unscheduled). Branch B
 ("grounded ≈ uniform" at 100 clips) is a bounded claim at this scale, not an asymptotic one.
 
+**Coverage versus exploration.** Normalise-then-mix changes the realized exploration distribution
+as well as enforcing coverage, so grounded-versus-adaptive does not isolate a pure "coverage"
+mediator. The result establishes that the documented non-floor and collapse are avoidable at
+matched training compute; it does not assign the entire performance difference to the minimum
+probability mass alone. The exposure ledger is diagnostic, not a mediation analysis.
+
 **Simulation only.** No hardware in this paper. The sign-reversal signature (§9) failed its
 sealed simulation generality/specificity test and is not proposed as a deployment-time diagnostic.
 The LUCID-correlation — whether our simulated exposure audit predicts a companion
@@ -30,10 +36,13 @@ policies, few motions); we state that caveat wherever it is cited.
 
 **Causal work remains incomplete.** N3's composition endpoints pass but its preflight stop fires;
 E-HYG's pruning arm is a sealed null; soft FGAS fails its implementation gate; N7 has a positive
-deployment contrast but fails its benefit and coverage rules; E3 (support at scale) remains sealed
-and pending (§8). The decomposition's feasibility axis is causally closed through measurement
-(N1), prediction transfer (§7), and a bounded repair intervention, but no completed intervention
-yet improves policy skill on unchanged references under all of its registered guards.
+deployment contrast but fails its benefit and coverage rules; and the exploratory segment-v2
+adaptive arm is only 0.014 TV from its control. E3 (support at scale) remains sealed and pending
+(§8). The decomposition's feasibility axis is causally closed through measurement (N1), prediction
+transfer (§7), and a bounded repair intervention, but no completed intervention yet improves policy
+skill on unchanged references under all of its registered guards. In particular, no adaptive
+exact-segment arm has both passed an allocation-manipulation check and reached confirmatory outcome
+evaluation.
 
 **Descoped: the solver-ensemble program.** This project began with the hypothesis that
 disagreement across physics engines could serve as an uncertainty oracle for sim-to-real. We

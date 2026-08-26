@@ -66,7 +66,7 @@ The closed conformance certificate remains tied to that historical commit. New w
 fresh isolated Newton v1.5.0 environment; the existing bridge currently reports a 1.6.0.dev0
 package and is not the recertification environment (`plan/NEWTON_SEGMENT_DIRECTION_2026-08-21.md`).
 
-## Status (2026-08-21)
+## Status (2026-08-26)
 
 Done: sampler collapse + non-floor (sealed ✓; upstream mjlab #1153 / whole_body_tracking #73),
 grounded repair (sealed ✓), dual-stack conformance |Δq̇| ≤ 3×10⁻⁵ (measured, four coupling errors
@@ -80,5 +80,7 @@ fail-closed, source-motion-bound exact contract: a frozen CPU panel admits 22/26
 and 4/4 byte-identical controls, yielding 36 units and 10,561 legal starts; four failures remain
 excluded, and this is not a bank-wide recovery or policy claim. Pending 🕐: Newton v1.5 isolated
 recertification and its no-training predictive gate, a separately sealed segment-native follow-up
-under the corrected lifecycle/evaluator, and E3 support moderation. Results
+under the corrected lifecycle/evaluator (the exploratory pilot was only 0.014 TV from control, so
+adaptive allocation remains untested), and E3 support moderation. The durable BONES-SEED screen is
+now `reports/feasibility_sonic/{hygiene_screen.csv,COMPLETED.json}`. Results
 freeze Dec 1; RSS 2027 target.

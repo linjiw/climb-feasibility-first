@@ -1,6 +1,6 @@
 # CLIMB / feasibility-first — status against Research Plan v5
 
-Updated 2026-08-21. **v5 (`RESEARCH_PLAN_v5.md`, sealed `4d490cf8…`) is authoritative**: D1
+Updated 2026-08-26. **v5 (`RESEARCH_PLAN_v5.md`, sealed `4d490cf8…`) is authoritative**: D1
 evaluation policy, D2 spin-out, D3 new seals, D4 writing-first window to Sept 15. v4's freeze
 discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 
@@ -19,7 +19,7 @@ discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 | **DFRP v0 CPU gate** | Artifact contract, root/contact-IK operator, exact-unit integration, two-clip training-ready view, and strict full-bank legacy routing audit complete. 644/2,442 (26.4 %) fit the 8 cm displacement tier, but all bank-wide legacy repairs remain qualification-incomplete and zero are promoted to training. | `plan/DFRP_V0_RESULT_2026-08-21.md`, `reports/dfrp_v0/` |
 | **DFRP v1 exact panel passes** | Unsealed frozen CPU panel: 22/26 flagged repairs are exact-ready and all 4 controls are byte-identical/ready. The curated view contains 26 clips, 36 units, and 10,561 legal 50-step starts. Two residual-infeasibility and two IK-qualification failures remain excluded. This validates the implementation gate only—not a bank-wide recovery rate or policy benefit. | `plan/DFRP_V1_EXACT_PANEL_RESULT_2026-08-21.md`, `reports/dfrp_v1_exact_panel/` |
 | **Corrections applied** | C1 exposure attribution (the impossible clip's share bracketed [21.9 %, 48.8 %]; the JSON key was copied), C2 saturation-at-fall (≥ 4/29 in 8/8, exactly 5/29 in 7/8, mean 16.8 %), C3 per-actuator identity **withdrawn** (not recoverable from the artifact). All three fixed in place across `RESULTS_LOG`, flagship, companion, payoff plan, `RED_TEAM` row 18. | `paper/CORRECTIONS_2026-08-19.md` |
-| **Open artifact-hygiene item** | The second bank's 4,950-row per-clip screen CSV was not found in accessible `/tmp` paths; the durable record is still only the P10 register entry. It needs a durable path + sentinel before submission. The public-site prose and rendered drafts are now synchronized with the 2026-08-20 outcomes and per-corpus prevalence framing. | flagged in `paper/CONSISTENCY_SWEEP_2026-08-20.md` |
+| **Second-bank artifact hygiene closed** | The BONES-SEED screen was reproduced from the exact 4,950-clip bank into a durable 4,950-row CSV; its sentinel records 0 failures and all registered threshold counts reproduce (infeasible 29/7/5; airborne 225/111/32 at >0.05/>0.10/>0.20). | `reports/feasibility_sonic/{hygiene_screen.csv,COMPLETED.json}`; execution log `autoresearch/autoresearch-260826-1617/research_log.md` |
 
 ## Payoff directive (2026-08-21, Linji): approvals and launches
 
@@ -65,8 +65,9 @@ link to them (commit `7c5caa2`).
 | upstream-drafts (P3) | unblocked by cnrs-audit; drafts updated; **awaiting Linji approval to file** | `reports/upstream_drafts/` |
 
 P0 DoD check: numbers pathed ✓ · labels ✓ · taxonomy appendix ✓ · versions pinned ✓ ·
-sweep table empty ✓ · review zero majors ✓ → **companion is submit-ready pending Linji's
-author/scope pass and figure typesetting.**
+sweep table empty ✓ · review zero majors ✓. The figure-injected HTML was regenerated 2026-08-26;
+**Linji's author/scope pass remains the submission blocker**, with the LaTeX skeleton still to be
+filled if that submission format is chosen.
 
 ## v5 Aug 19–22 tranche — status
 
@@ -95,11 +96,17 @@ author/scope pass and figure typesetting.**
 
 ## Next scheduled
 
-Next: integrate exact segment units into the command runtime, implement explicit
-segment-boundary truncation with time-limit bootstrap, and simulator-trace every
-reference frame before the 512-env smoke. Then separately seal a common-mechanics
-MJLab segment-native comparison. Add common-reference contact timing before any
-motion-quality claim. E3 → E10 → E4 remain later in the queue. Dec 1 results freeze.
+Writing-first through Sept 12: Linji's author/scope pass remains the companion critical path; the
+figure-injected HTML was refreshed 2026-08-26. The flagship §8 mechanism rewrite and DFRP v1 method
+integration also landed, followed by draft assembly and a fresh red-team sweep. No GPU training
+runs before Sept 15.
+
+In parallel, CPU/gap-only Newton 1.5 recertification follows
+`plan/NEWTON_SEGMENT_DIRECTION_2026-08-21.md` gates 1–2 in an isolated environment. Before any new
+outcome exists, seal the G0/G1/G2 design and its allocation-manipulation gate. The one-seed wiring
+screen stops unless TV(G2,G1), entropy-effective units, invalid frames, and rejected-start mass all
+pass; additional seeds do not launch on a failed manipulation. E3 remains the independent sealed
+uniform-arm experiment. Dec 1 results freeze.
 
 ## The three v4 actions
 
