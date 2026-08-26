@@ -25,7 +25,7 @@ moderation at scale (E3 slot).
 | § | title | state | file |
 |---|---|---|---|
 | 1 | Introduction — the chain and the decomposition | **complete** | `flagship/S1_intro.md` |
-| 2 | Related work — adaptive sampling/prioritisation (PER, PLR, BeyondMimic sampler, mjlab), generalist humanoid tracking (SONIC-era), retargeting & physical plausibility (contact-aware retargeting, physics-filtered mocap), exposure-auditing (LUCID companion). **12 citations verified live 2026-08-20; ○-marked standards queued for final bib pass; LUCID flagged as internal.** | **complete (draft)** | `flagship/S2_related.md` |
+| 2 | Related work — adaptive sampling/prioritisation (PER, PLR, BeyondMimic sampler, mjlab), generalist humanoid tracking (SONIC-era), retargeting & physical plausibility (contact-aware retargeting, physics-filtered mocap), exposure-auditing (LUCID companion). **20/20 external citations verified live 2026-08-26; durable ledger written; LUCID flagged as internal.** | **complete (draft)** | `flagship/S2_related.md` |
 | 3 | Sampler collapse and the non-floor (Exp-1; #1153/#73 reach) | **complete** | `flagship/S3_collapse_nonfloor.md` |
 | 4 | Grounded repair (Exp-2 + D1 stratified re-analysis) | **complete** | `flagship/S4_grounded_repair.md` |
 | 5 | Anatomy of an attractor (G0 elimination → G1 negative → N1 verdict; errors #8–11 → Appendix A1) | **complete** | `flagship/S5_anatomy.md`, `flagship/A1_g0_appendix.md` |
@@ -52,7 +52,7 @@ moderation at scale (E3 slot).
 | F7 | E3 slot (support-moderation, named strata) | after E3 | — |
 | F8 | repair census (recoverable by severity × category) | **done** `paper/figures/f_census_repair.py` | `reports/repair_census/summary.json` |
 | F9 | guard-band recovery: duration and sampler bins recovered from flagged clips at guard 0 s vs 1.0 s (the framework-dependence claim) | **candidate, not written** | `reports/segments_tier800/segments_guard0.csv`, `…_guard1.0.csv` |
-| F10 | cross-bank prevalence: the two banks' infeasible/airborne rates side by side (candidate; may stay a table) | **candidate, not written** | `reports/feasibility_all/feasibility.csv`; BONES-SEED screen CSV (⚠ needs a durable path first, see `RESULTS_LOG.md`) |
+| F10 | cross-bank prevalence: the two banks' infeasible/airborne rates side by side (candidate; may stay a table) | **candidate, not written** | `reports/feasibility_all/feasibility.csv`; `reports/feasibility_sonic/hygiene_screen.csv`; same-clip agreement `reports/feasibility_xcheck/agreement.csv` |
 
 ## Companion note (`paper/companion/`) — submittable Sept 5
 

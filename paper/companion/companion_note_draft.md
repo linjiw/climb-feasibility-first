@@ -137,13 +137,14 @@ By source: GRAB 0.1 %, TCD 1.6 %, KIT 16.5 %, BMLmovi 21.8 %, Eyes-Japan 23.2 %,
 27.4 %, CMU 39.7 %, ACCAD 41.7 %, HUMAN4D 55.4 %, Transitions 89.6 %, **CNRS 100 %** — three
 orders of magnitude of spread under one retargeter and one robot. Hand-checks of the extremes
 [measured; `reports/upstream_drafts/CNRS_AUDIT.md`]: the CNRS clips are *ordinary fast walks*
-whose retargeted trajectory rides ~4–5 cm high — in the median frame nothing on the robot is
-within 6 cm of the floor (median lowest-geom clearance 6.2–7.7 cm; contact only momentary) — the
-"lift the limb, not lower the root" failure expressed continuously; Transitions is genuinely
-acrobatic content whose *flagged frames* are non-ballistic floating around take-off/landing
-(per-clip severity moderate: 22 % vs CNRS's 57–66 %). The dynamic category's rate is partially
-content-inflated the same way; the ground category's 39 % cannot be, and is the attractor's
-family writ large. *Figure 2 [measured]: `paper/figures/f4_prevalence.png` (script
+in all five severity strata inspected: median lowest-geometry clearance spans 5.1–9.7 cm and
+each develops a 1.34–3.76 s floating run — an ingest/retarget root-height defect, not exotic
+content. Transitions is mixed rather than uniformly acrobatic: among five severity-stratified
+clips, the air-kick and 360° jump/twist are content-driven, but two locomotion clips and a
+maximum-severity standing punch are ingest defects (3/5 ingest, 2/5 content, 0/5 scene mismatch).
+The dynamic category's rate is therefore partly content-inflated and partly output-side; the
+ground category's 39 % cannot be explained by acrobatics and is the attractor's family writ
+large. *Figure 2 [measured]: `paper/figures/f4_prevalence.png` (script
 `f4_prevalence.py`, data `reports/feasibility_all/feasibility.csv`).*
 
 ### A second bank, a second pipeline [measured; pre-registered]
@@ -176,6 +177,16 @@ to be measured per corpus and can be, in minutes. That is what turns the screen 
 a release gate. The comparison bounds generality rather than isolating a cause — two source
 corpora, two implementations of one method, a release filter on one side only — and the controlled
 version (two retargeters over the same source clips) is not run.
+
+A same-clip implementation check removes one part of that caveat [measured;
+`reports/feasibility_xcheck/`]. We applied both implementations to a deterministic stratified
+20-clip sample from each bank (all seven BONES-SEED flags + 13 sampled feasible clips; ten AMASS
+flags including #44 + ten sampled feasible clips). Across the 40 clips, CLIMB and SONIC scores
+have Spearman ρ = **0.984** for `infeasible_frac` and **0.997** for `airborne_frac`; the strict
+`> 0.10` verdict agrees on **39/40** clips (97.5 %, Cohen's κ = 0.948; matrix: 16 both flag,
+23 neither, one SONIC-only, zero CLIMB-only). This closes implementation agreement on the
+stratified panel, not the corpus/filter confound and not a prevalence estimate; the full table is
+Appendix A3.
 
 The same run is also the clearest evidence for keeping `airborne_frac` and `infeasible_frac` as
 separate axes rather than collapsing them into one "grounded" flag: seven `kneeling_loop_*` clips

@@ -1,0 +1,17 @@
+{
+ "schema_version": "newton15_pred_probe_synthetic/1",
+ "synthetic": true,
+ "pass": true,
+ "effect": {
+  "s_mm": 10.0,
+  "ci_low_mm": 10.0,
+  "ci_high_mm": 10.0,
+  "replicates": 8,
+  "paired_alive_fraction": 1.0,
+  "anchor_ori_s_rad": 0.0,
+  "mechanical_work_s_j": 0.0,
+  "effort_saturation_s": 0.0,
+  "rmst_regret_s": 0.0,
+  "clamp_realized": false
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "airborne_frac": 0.31910946196660483,
+ "body_weight_N": 327.07660302000005,
+ "duration_s": 10.78,
+ "foot_gap_m_p05": 0.0009254672509685641,
+ "foot_gap_m_p50": 0.012962779633928802,
+ "fps": 50,
+ "infeasible_frac": 0.31910946196660483,
+ "max_tau_ratio_max": 14.366855917130918,
+ "max_tau_ratio_p95": 0.5409980463271679,
+ "mean_contacts": 6.148423005565863,
+ "mjcf_path": "/home/robotixx/GR00T-WholeBodyControl/gear_sonic/data/assets/robot_description/mjcf/g1_29dof_rev_1_0.xml",
+ "motion_key": "KIT_3_kneel_up_hold03_poses_100_jpos",
+ "num_contact_free_frames": 172,
+ "num_evaluable_frames": 539,
+ "num_frames": 539,
+ "robot_sha256": "15a330f1dbff68cdbeb8284be6162a857bdcd21a858f65a8617fb32d5115f209",
+ "schema_version": 1,
+ "source_path": "reports/feasibility_xcheck/_adapted/amass_as_pkl/KIT_3_kneel_up_hold03_poses_100_jpos.pkl",
+ "source_sha256": "13306bafef563a9e3ef4e3d6762c301ac099ff86f314a82ed65a14b17755777b",
+ "thresholds": {
+  "gap_m": 0.06,
+  "mu": 0.7,
+  "unsupported_force_frac": 0.5
+ },
+ "torque_infeasible_frac": 0.0,
+ "torque_saturated_frac": 0.012987012987012988,
+ "unsupported_force_N_max": 510.0472038772673,
+ "unsupported_force_N_p50": 0.0,
+ "unsupported_force_N_p95": 355.54717415800206,
+ "unsupported_impulse_per_weight_s": 3.6054465629407257
+}

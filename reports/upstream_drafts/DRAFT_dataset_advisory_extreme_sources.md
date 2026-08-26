@@ -26,19 +26,17 @@ limits? Clip flag: > 10 % of frames infeasible (unsupported wrench > ½ robot we
 | **all** | **10,705** | **22.8 %** |
 
 A 0.1 %-to-100 % spread across sources under one retargeting pipeline and one robot is not a
-motion-difficulty gradient. Hand-checks (2026-08-20, `CNRS_AUDIT.md`) pin the mechanisms:
+motion-difficulty gradient. The expanded 5+5 hand-check (2026-08-26, `CNRS_AUDIT.md`) pins the
+mechanisms:
 
-- **CNRS (100 % flagged):** the clips are *ordinary fast walks* (6.9–7.4 m of root travel in
-  5–7 s) whose retargeted trajectory rides ~4–5 cm high — in the median frame **no part of the
-  robot is within 6 cm of the floor** (median lowest-geom clearance 6.2–7.7 cm; feet dip to
-  contact only momentarily). The source motion is fine; the output floats. This is a subset-wide
-  root-height/leg-length convention interaction — the "lift the limb instead of lowering the
-  root" failure expressed continuously.
-- **Transitions (90 % flagged):** genuinely acrobatic content (airkicks, jumps, twists), so the
-  rate over-indexes on content — but the screen already exempts true ballistic flight (a body in
-  free fall demands no support), so the flagged frames are *non-ballistic floating* around
-  take-off and landing; per-clip severity is moderate (e.g. jump-in-place: 22 % infeasible vs
-  CNRS's 57–66 %).
+- **CNRS (100 % flagged):** all five severity-stratified clips are *ordinary fast walks* whose
+  output develops long floating tails (median lowest-geometry clearance 5.1–9.7 cm; longest
+  continuous >6 cm run 1.34–3.76 s). Verdict: 5/5 ingest/retarget, 0 content, 0 scene mismatch.
+  The source motion is fine; the output floats under a root-height/leg-length convention.
+- **Transitions (90 % flagged):** mixed, not uniformly acrobatic. Two of five inspected clips are
+  content-driven (air-kick and jumping 360° twist), while two ordinary locomotion clips and a
+  maximum-severity standing-punch clip are ingest defects; none needs missing scene geometry.
+  True ballistic flight remains exempt from the infeasibility score by construction.
 
 One secondary QC observation (exploratory, one clip): a 40 rad/s joint-velocity spike in
 CNRS_283_-01_L_1 — a retarget glitch class our screen does not target.

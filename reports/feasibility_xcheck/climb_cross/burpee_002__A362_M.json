@@ -1,0 +1,1 @@
+{"clip": "burpee_002__A362_M", "frames": 474, "fps": 50.0, "gap": 0.06, "airborne_frac": 0.004219409282700422, "infeasible_frac": 0.0189873417721519, "unsupported_impulse_Ns": 181.964, "unsupported_impulse_per_weight_s": 0.5563345048831675, "torque_infeasible_frac": 0.014767932489451477, "max_tau_ratio_p95": 5.4209999999999985, "sim_infeasible_frac": 0.05063291139240506}

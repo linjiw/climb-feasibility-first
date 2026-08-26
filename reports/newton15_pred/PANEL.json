@@ -1,0 +1,102 @@
+{
+ "schema_version": "newton15_pred_panel/1",
+ "classification": "unsealed reference-only preregistration input; no policy or solver outcomes",
+ "selection_rule": "all 42 admissible units in the segment-v2 mechanism table; canonical start is first + floor((legal_start_count - 1) / 2)",
+ "probe_steps": 25,
+ "units": 42,
+ "clips": 10,
+ "unit_table_file_sha256": "d80e228c1e44f7c669e033cba2bd7f774ff1fb4d5c6bdf39d1da5b7405584b16",
+ "unit_table_payload_sha256": "2aaeaa741959eabbfc9510a18820f9745bc7e879dfa423423385e835b6f120a6",
+ "panel_csv": "/data/robotixx/climb/reports/newton15_pred/reference_features.csv",
+ "panel_csv_sha256": "406ec4076402973a2bbd9644fb9e562760366a2427aaf311a3c89a844013c02e",
+ "kinematic_columns": [
+  "root_linear_speed_rms_mps",
+  "root_angular_speed_rms_rps",
+  "joint_speed_rms_rps",
+  "joint_acceleration_rms_rps2",
+  "body_linear_speed_rms_mps",
+  "root_height_range_m"
+ ],
+ "input_files": [
+  {
+   "path": "/data/robotixx/climb/bank/amass/ACCAD_Female1General_c3d_A5_-_pick_up_box_poses_120_jpos.npz",
+   "sha256": "2938d9c859f9bcb798b0552ade25be5e550e4e3a17828630612bf79f665184ca"
+  },
+  {
+   "path": "/data/robotixx/climb/bank/amass/BMLhandball_S07_Expert_Trial_upper_right_210_poses_120_jpos.npz",
+   "sha256": "d0749230fab728027f84be34154537d44732d0a701f2719ea490247410839bf7"
+  },
+  {
+   "path": "/data/robotixx/climb/bank/amass/BMLmovi_Subject_27_F_MoSh_Subject_27_F_5_poses_120_jpos.npz",
+   "sha256": "313b7950e96785d29205460a127da413c062e78c243be7f44cd7c8d74814da78"
+  },
+  {
+   "path": "/data/robotixx/climb/bank/amass/CMU_02_02_08_poses_120_jpos.npz",
+   "sha256": "61f687cdcd684980275574bca7ce7419e17c781ea512110d355e9472458c0525"
+  },
+  {
+   "path": "/data/robotixx/climb/bank/amass/CMU_54_54_21_poses_120_jpos.npz",
+   "sha256": "ecadaeb62a9bab5218a5a19a467130e923d58502bcee21c14a86deb83e8f4ba1"
+  },
+  {
+   "path": "/data/robotixx/climb/bank/amass/DFaust_67_50004_50004_knees_poses_60_jpos.npz",
+   "sha256": "e78d42d2bc75ec3257fb3a971a73efeb8c85097cd1f95de80b93b1e3a23057aa"
+  },
+  {
+   "path": "/data/robotixx/climb/bank/amass/Eyes_Japan_Dataset_kaiwa_jump-03-vertical-kaiwa_poses_120_jpos.npz",
+   "sha256": "5f3d7e0e2440aa097d9e7a1e6c7b9dd04a6c82829926799e058f0f2103133201"
+  },
+  {
+   "path": "/data/robotixx/climb/bank/amass/HUMAN4D_Subject4_Carine_RGB_BasketBall_S4_01_poses_120_jpos.npz",
+   "sha256": "efbe84e23eaf2cc6e6d8a1399cd08f3e043a1e0b90a4fd488cdd6baf0ff8c14a"
+  },
+  {
+   "path": "/data/robotixx/climb/bank/amass/KIT_424_step_stones03_poses_100_jpos.npz",
+   "sha256": "8a76312419a657eb0f4c041f340be5d2f3ebf6513e0962d5520d70766c72b4bf"
+  },
+  {
+   "path": "/data/robotixx/climb/bank/amass/Transitions_mocap_mazen_c3d_airkick_turntwist180_poses_120_jpos.npz",
+   "sha256": "4a5ccae0f1dc18487c25cd2c23ee0524434bf8797883f1c0f78d113e96d91633"
+  },
+  {
+   "path": "/data/robotixx/climb/reports/segments_v2_tier800_guard0/ACCAD_Female1General_c3d_A5_-_pick_up_box_poses_120_jpos.json",
+   "sha256": "dcb07ee12b59cb50c28b122650dd152d543722384d6b7afb8381814254e5ff02"
+  },
+  {
+   "path": "/data/robotixx/climb/reports/segments_v2_tier800_guard0/BMLhandball_S07_Expert_Trial_upper_right_210_poses_120_jpos.json",
+   "sha256": "ef419cbf42fb20ee9c0ace5d717c251e35b690a1ff4f24790cde635d7de4ae56"
+  },
+  {
+   "path": "/data/robotixx/climb/reports/segments_v2_tier800_guard0/BMLmovi_Subject_27_F_MoSh_Subject_27_F_5_poses_120_jpos.json",
+   "sha256": "a55d8c75d4510192a5aacb53ada1327242513b009cd3f70589638aa6be35f9e1"
+  },
+  {
+   "path": "/data/robotixx/climb/reports/segments_v2_tier800_guard0/CMU_02_02_08_poses_120_jpos.json",
+   "sha256": "4a53526e343e79adb5ba43d777b3b4411b12703511de57ada00ec9b34c9dd164"
+  },
+  {
+   "path": "/data/robotixx/climb/reports/segments_v2_tier800_guard0/CMU_54_54_21_poses_120_jpos.json",
+   "sha256": "5e9f2ec77cbecb086c2ac9a29a7436ea0334f0f173121eb4468290e906d6b00e"
+  },
+  {
+   "path": "/data/robotixx/climb/reports/segments_v2_tier800_guard0/DFaust_67_50004_50004_knees_poses_60_jpos.json",
+   "sha256": "85e19e58c59aba77d0a56a8b30880ff742ccd07ff176ff31f45fe2924da5d9f2"
+  },
+  {
+   "path": "/data/robotixx/climb/reports/segments_v2_tier800_guard0/Eyes_Japan_Dataset_kaiwa_jump-03-vertical-kaiwa_poses_120_jpos.json",
+   "sha256": "5fa05f796bfb801423e1d346342b74ef0e20ebae95732bee13e8ac707d41d8b6"
+  },
+  {
+   "path": "/data/robotixx/climb/reports/segments_v2_tier800_guard0/HUMAN4D_Subject4_Carine_RGB_BasketBall_S4_01_poses_120_jpos.json",
+   "sha256": "b2a2824935815539a53cf3d34dcb42f80e7bffadaf52cf51fa519121284d99ed"
+  },
+  {
+   "path": "/data/robotixx/climb/reports/segments_v2_tier800_guard0/KIT_424_step_stones03_poses_100_jpos.json",
+   "sha256": "e6efed890956c2bcf9dc4d3d07ccf1dc924dcaa97230b232a7b56cde379de4ed"
+  },
+  {
+   "path": "/data/robotixx/climb/reports/segments_v2_tier800_guard0/Transitions_mocap_mazen_c3d_airkick_turntwist180_poses_120_jpos.json",
+   "sha256": "fce5712c630827d59e55bb12b7574fbb881b35871cc26b598ecb9b693e1dfd2d"
+  }
+ ]
+}

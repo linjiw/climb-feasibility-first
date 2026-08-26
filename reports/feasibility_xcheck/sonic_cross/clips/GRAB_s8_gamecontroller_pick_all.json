@@ -1,0 +1,32 @@
+{
+ "airborne_frac": 0.0,
+ "body_weight_N": 327.07660302000005,
+ "duration_s": 14.24,
+ "foot_gap_m_p05": 0.0008384063887887701,
+ "foot_gap_m_p50": 0.007507426158602352,
+ "fps": 50,
+ "infeasible_frac": 0.0,
+ "max_tau_ratio_max": 0.8867779752055704,
+ "max_tau_ratio_p95": 0.6408814460334402,
+ "mean_contacts": 11.627808988764045,
+ "mjcf_path": "/home/robotixx/GR00T-WholeBodyControl/gear_sonic/data/assets/robot_description/mjcf/g1_29dof_rev_1_0.xml",
+ "motion_key": "GRAB_s8_gamecontroller_pick_all",
+ "num_contact_free_frames": 0,
+ "num_evaluable_frames": 712,
+ "num_frames": 712,
+ "robot_sha256": "15a330f1dbff68cdbeb8284be6162a857bdcd21a858f65a8617fb32d5115f209",
+ "schema_version": 1,
+ "source_path": "reports/feasibility_xcheck/_adapted/amass_as_pkl/GRAB_s8_gamecontroller_pick_all.pkl",
+ "source_sha256": "b84dcfd30e7bc0ce60941924e599dd8e8b4be61703fa16be048e4be7da020f37",
+ "thresholds": {
+  "gap_m": 0.06,
+  "mu": 0.7,
+  "unsupported_force_frac": 0.5
+ },
+ "torque_infeasible_frac": 0.0,
+ "torque_saturated_frac": 0.0,
+ "unsupported_force_N_max": 0.0,
+ "unsupported_force_N_p50": 0.0,
+ "unsupported_force_N_p95": 0.0,
+ "unsupported_impulse_per_weight_s": 0.0
+}

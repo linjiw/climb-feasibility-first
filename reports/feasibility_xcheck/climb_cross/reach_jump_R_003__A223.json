@@ -1,0 +1,1 @@
+{"clip": "reach_jump_R_003__A223", "frames": 209, "fps": 50.0, "gap": 0.06, "airborne_frac": 0.0861244019138756, "infeasible_frac": 0.0, "unsupported_impulse_Ns": 52.95, "unsupported_impulse_per_weight_s": 0.16188868146206786, "torque_infeasible_frac": 0.04784688995215311, "max_tau_ratio_p95": 0.9659999999999999, "sim_infeasible_frac": 0.0}

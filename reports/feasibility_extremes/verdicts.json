@@ -1,0 +1,42 @@
+{
+  "CNRS_283_03_L_2": {
+    "verdict": "ingest",
+    "note": "Ordinary fast walk; clearance rises late and the longest 1.34 s window floats without any scene object." 
+  },
+  "CNRS_283_-01_L_2": {
+    "verdict": "ingest",
+    "note": "Ordinary fast walk; median clearance is already above the 6 cm contact gap and the final 1.60 s floats." 
+  },
+  "CNRS_283_SW_B_3": {
+    "verdict": "ingest",
+    "note": "Ordinary walking stride; whole-reference clearance drifts upward, with 61.8% geometry-airborne frames." 
+  },
+  "CNRS_288_03_L_2": {
+    "verdict": "ingest",
+    "note": "Ordinary fast walk; median clearance 8.4 cm and a continuous 3.14 s floating tail indicate root-height drift." 
+  },
+  "CNRS_288_03_R_2": {
+    "verdict": "ingest",
+    "note": "Ordinary fast walk; median clearance 9.7 cm and a continuous 3.76 s floating tail, with no scene dependency." 
+  },
+  "Transitions_mocap_mazen_c3d_walksideways_running_poses_120_jpos": {
+    "verdict": "ingest",
+    "note": "Ordinary sideways running; only short clearance spikes cross 6 cm, with no object or terrain requirement." 
+  },
+  "Transitions_mocap_mazen_c3d_airkick_walkbackwards_poses_120_jpos": {
+    "verdict": "content",
+    "note": "The named air-kick is visible in the inspected pose and accounts for the concentrated elevated window." 
+  },
+  "Transitions_mocap_mazen_c3d_walksideways_runbackwards_poses_120_jpos": {
+    "verdict": "ingest",
+    "note": "Ordinary sideways/backward locomotion shows repeated floating spikes; no missing scene support is implied." 
+  },
+  "Transitions_mocap_mazen_c3d_turntwist_jumpingtwist3602_poses_120_jpos": {
+    "verdict": "content",
+    "note": "The named jumping 360-degree twist is visible, including the panel's largest 20.4 cm clearance peak." 
+  },
+  "Transitions_mocap_mazen_c3d_punchkarate_stand_poses_120_jpos": {
+    "verdict": "ingest",
+    "note": "Standing punch/karate motion, yet 87.8% of frames are geometry-airborne and median clearance is 8.7 cm." 
+  }
+}

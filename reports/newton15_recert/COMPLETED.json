@@ -1,0 +1,8 @@
+{
+ "kind": "newton15_recert",
+ "exit_code": 0,
+ "result_pass": true,
+ "result": "/data/robotixx/climb/reports/newton15_recert/result.json",
+ "result_sha256": "d997af51d81aaf083446cf8790d7fea605bc100cc791305619b3bcedda82603d",
+ "trajectory_sha256": "26cf4a097883d7a88253ee58fb00f60d08039e1ae3755a31b0f7c25be8ee9d0e"
+}

@@ -20,6 +20,7 @@ discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 | **DFRP v1 exact panel passes** | Unsealed frozen CPU panel: 22/26 flagged repairs are exact-ready and all 4 controls are byte-identical/ready. The curated view contains 26 clips, 36 units, and 10,561 legal 50-step starts. Two residual-infeasibility and two IK-qualification failures remain excluded. This validates the implementation gate only—not a bank-wide recovery rate or policy benefit. | `plan/DFRP_V1_EXACT_PANEL_RESULT_2026-08-21.md`, `reports/dfrp_v1_exact_panel/` |
 | **Corrections applied** | C1 exposure attribution (the impossible clip's share bracketed [21.9 %, 48.8 %]; the JSON key was copied), C2 saturation-at-fall (≥ 4/29 in 8/8, exactly 5/29 in 7/8, mean 16.8 %), C3 per-actuator identity **withdrawn** (not recoverable from the artifact). All three fixed in place across `RESULTS_LOG`, flagship, companion, payoff plan, `RED_TEAM` row 18. | `paper/CORRECTIONS_2026-08-19.md` |
 | **Second-bank artifact hygiene closed** | The BONES-SEED screen was reproduced from the exact 4,950-clip bank into a durable 4,950-row CSV; its sentinel records 0 failures and all registered threshold counts reproduce (infeasible 29/7/5; airborne 225/111/32 at >0.05/>0.10/>0.20). | `reports/feasibility_sonic/{hygiene_screen.csv,COMPLETED.json}`; execution log `autoresearch/autoresearch-260826-1617/research_log.md` |
+| **Same-clip implementation agreement closed** | Deterministic stratified 20+20 panel run through both CLIMB/refeas and SONIC implementations: infeasible ρ 0.984, airborne ρ 0.997, strict `>0.10` flags agree 39/40 (97.5 %, κ 0.948). Sole disagreement: BONES `burpee_002` (0.019 vs 0.136). This closes implementation agreement on the panel, not the corpus/release-filter confound and not retargeter causality. | `reports/feasibility_xcheck/`; companion §4; flagship A3; `paper/RESULTS_LOG.md` |
 
 ## Payoff directive (2026-08-21, Linji): approvals and launches
 
@@ -55,11 +56,11 @@ link to them (commit `7c5caa2`).
 |---|---|---|
 | consistency-sweep | **done, table empty** — (a) 6/6 direction vs 4/6 significance split stated everywhere; (b) d_z=20 replaced by per-seed Δ +0.030/+0.028/+0.030; (c) "dual-engine" → dual-stack same-engine with pins named; (d) 329/327 pairing verified vs artifact (median 328.6 N) | `paper/CONSISTENCY_SWEEP_2026-08-20.md` |
 | coupling-taxonomy | **done** — 9 error classes × (symptom, detector, S1 instance); ships as companion Appendix A + refeas docs | `paper/companion/appendix_coupling_taxonomy.md`, `refeas/docs/COUPLING_TAXONOMY.md` |
-| cnrs-audit | **done — verdict: CNRS = ingest (ordinary walks floating 6–8 cm; subset-wide root-height convention); Transitions = mixed (acrobatic content, flagged frames are non-ballistic floating, severity 22 % vs 57–66 %)**; advisory reworded; upstream drafts remain NOT FILED pending approval | `reports/upstream_drafts/CNRS_AUDIT.md` |
+| cnrs-audit | **expanded to deterministic 5+5 severity panel:** CNRS 5/5 ingest ordinary walks (median clearance 5.1–9.7 cm); Transitions 3/5 ingest + 2/5 content + 0 scene-mismatch. The earlier one-clip Transitions reading was too broad and is corrected. Pose/trace panel and 3,277-row clearance artifact complete; advisory reworded; upstream drafts remain NOT FILED pending approval. | `reports/feasibility_extremes/`, `reports/upstream_drafts/CNRS_AUDIT.md` |
 | n3-preflight (P1) | **done** — frozen `tools/analyze_n3.py` (sha `b118b2d3…`), 4-branch synthetic dry-run passes, all 16 neighbours confirmed ≤ 0.10 infeasible with support metrics, decision tree written; s2/s3 stratified baselines flagged as pre-unblinding requirement | `plan/N3_PREFLIGHT.md`, `reports/N3_ground16_preflight.csv` |
 | psign-prep (P2) | **done, experiment read out** — analysis frozen (sha `db538a9b…`); sealed experiment fails 7/12 family, 4/12 controls, 2/7 localised | `plan/P_SIGN_PREP.md`, `plan/P_SIGN_RESULT.md` |
 | threshold-audit | **spec only (as directed)** — λ-injection design, TOST bounds ±1/32 on the sealed primary, negative framing: bugs #6/#8/#9 sit 1.3–110,000× above the threshold; #11 shows why a q̇ threshold can't replace bidirectionality checks | `plan/SPEC_threshold_audit.md` |
-| newton-1.0-recert | **spec only (as directed)** — version-note flagged (GA line vs checkout metadata; commit hash is the pin), 6-step protocol identical to S1, float32-geometry class marked predicted-sensitive | `plan/SPEC_newton_recert.md` |
+| newton-1.5-recert | **measured PASS on two hash-bound DFRP v1 units** — exact placement/first obs/action; 48 resynchronized substeps with `|Δq|=|Δqdot|=0`; exact solver + observer contact timing; two independent repeats have zero dispersion. Seven Newton-1.5 import residuals are recorded and exactly mirrored before the pass. This is conformance, not a policy or predictive result. | `plan/NEWTON15_RECERT_RESULT.md`, `reports/newton15_recert/result.json` |
 | companion-review (P0) | **done — 2 majors found and fixed same day** (ephemeral gap-sensitivity artifact → durable `reports/N1_gap_sensitivity.json`, and the "6–11 points" error → 6.0–8.4/8.4–11.8 corrected in 4 documents); 5 minors fixed; **zero unresolved majors** | `paper/companion/REVIEW_2026-08-20.md` |
 | companion note (P0) | **v0.2 submit-candidate**: full prose, every claim labelled, every number pathed, pins in header, taxonomy appendix, gap/bound sensitivity honestly stated | `paper/companion/companion_note_draft.md` |
 | upstream-drafts (P3) | unblocked by cnrs-audit; drafts updated; **awaiting Linji approval to file** | `reports/upstream_drafts/` |
@@ -68,6 +69,10 @@ P0 DoD check: numbers pathed ✓ · labels ✓ · taxonomy appendix ✓ · versi
 sweep table empty ✓ · review zero majors ✓. The figure-injected HTML was regenerated 2026-08-26;
 **Linji's author/scope pass remains the submission blocker**, with the LaTeX skeleton still to be
 filled if that submission format is chosen.
+
+A concise three-decision sign-off request is drafted (not sent) at
+`paper/LINJI_SIGNOFF_ASK_2026-08-26.md`: authors/acknowledgements; title/scope/venue; and permission
+to file the upstream drafts.
 
 ## v5 Aug 19–22 tranche — status
 
@@ -88,7 +93,7 @@ filled if that submission format is chosen.
 | item | state |
 |---|---|
 | Flagship §1 Introduction | **complete** (`paper/flagship/S1_intro.md`) — chain + decomposition + contributions |
-| Flagship §2 Related work | **complete (draft)** — 12 citations live-verified (BeyondMimic 2508.08241, mjlab 2601.22074, SONIC 2511.07820/SciRobotics, PLR 2010.03934, PHC, MaskedMimic, PhysCap, ASAP, PolySim, GMR, Retargeting Matters 2510.02252, contact-aware retargeting 2109.07431); ○-standards queued for bib pass; LUCID flagged internal |
+| Flagship §2 Related work | **complete (draft)** — 20/20 external citations live-verified 2026-08-26 against primary pages; durable ledger `paper/CITATION_CHECK_2026-08-26.md`; LUCID flagged internal |
 | Flagship §10 Limitations | **complete** — incl. the solver-ensemble descope rationale |
 | Figures F2/F4/F5 | **generated** with recorded scripts + data paths (`paper/figures/`) |
 | P-SIGN harness | **run; sealed fail** (`tools/p_sign_gate.py` + sealed analysis `tools/analyze_p_sign.py`): 7/12 family, 4/12 controls, 2/7 localised |
@@ -107,6 +112,20 @@ outcome exists, seal the G0/G1/G2 design and its allocation-manipulation gate. T
 screen stops unless TV(G2,G1), entropy-effective units, invalid frames, and rejected-start mass all
 pass; additional seeds do not launch on a failed manipulation. E3 remains the independent sealed
 uniform-arm experiment. Dec 1 results freeze.
+
+**Phase N setup, recertification, and predictive seal completed 2026-08-26:** isolated
+`newton15/.venv` imports Newton 1.5.0 / Warp 1.16.0 / MuJoCo 3.11.0 / MuJoCo Warp 3.11.0 with
+mjlab 1.6.0 and PyTorch 2.9.0+cu128. Full pins, source/hash identities, and a before/after proof
+that the trainer venv was untouched are in `plan/NEWTON15_PINS.md`. The S1 six-step port passes
+on one easy and one contact-rich exact DFRP v1 unit: all canonical deltas and repeat dispersion
+are zero after seven Newton-1.5 live-model import residuals are mirrored
+(`plan/NEWTON15_RECERT_RESULT.md`). N-c is sealed at `b1773fc5…` on the 42-unit mechanism panel:
+uniform-s1 development vector, adaptive-s1 primary held-out policy, grounded-s1 directional
+replication, three named axes, partial-Spearman/permutation and grouped-LOCO thresholds, plus the
+unchanged fail → G3-never-runs rule (`plan/PREREGISTRATION_NEWTON_PRED.md`). The frozen analyzer's
+pass/null/discordant synthetic branches and the probe summarizer pass. **No panel axis outcome has
+been measured yet**; `tools/newton15_pred_probe.py` awaits a genuine GPU gap and must pass its
+zero-dispersion/manipulation manifest before the analyzer can open `effects.csv`.
 
 ## The three v4 actions
 

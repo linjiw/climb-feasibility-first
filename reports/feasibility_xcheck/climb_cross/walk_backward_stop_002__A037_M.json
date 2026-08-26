@@ -1,0 +1,1 @@
+{"clip": "walk_backward_stop_002__A037_M", "frames": 594, "fps": 50.0, "gap": 0.06, "airborne_frac": 0.0, "infeasible_frac": 0.0, "unsupported_impulse_Ns": 88.28, "unsupported_impulse_per_weight_s": 0.2699061907360028, "torque_infeasible_frac": 0.0, "max_tau_ratio_p95": 0.6235000000000003, "sim_infeasible_frac": 0.0}

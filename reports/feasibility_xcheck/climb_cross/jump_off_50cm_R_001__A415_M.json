@@ -1,0 +1,1 @@
+{"clip": "jump_off_50cm_R_001__A415_M", "frames": 134, "fps": 50.0, "gap": 0.06, "airborne_frac": 0.417910447761194, "infeasible_frac": 0.3582089552238806, "unsupported_impulse_Ns": 337.95199999999994, "unsupported_impulse_per_weight_s": 1.0332503055234894, "torque_infeasible_frac": 0.0, "max_tau_ratio_p95": 1.2714999999999994, "sim_infeasible_frac": 0.3582089552238806}

@@ -1,0 +1,1 @@
+{"clip": "jog_avoid_bump_270_R_002__A167", "frames": 314, "fps": 50.0, "gap": 0.06, "airborne_frac": 0.012738853503184714, "infeasible_frac": 0.0, "unsupported_impulse_Ns": 112.744, "unsupported_impulse_per_weight_s": 0.34470212469800526, "torque_infeasible_frac": 0.009554140127388535, "max_tau_ratio_p95": 1.17, "sim_infeasible_frac": 0.0}

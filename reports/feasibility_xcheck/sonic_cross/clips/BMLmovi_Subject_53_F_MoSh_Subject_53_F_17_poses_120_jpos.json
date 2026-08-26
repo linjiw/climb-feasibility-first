@@ -1,0 +1,32 @@
+{
+ "airborne_frac": 0.6032388663967612,
+ "body_weight_N": 327.07660302000005,
+ "duration_s": 9.88,
+ "foot_gap_m_p05": 0.011384586724097236,
+ "foot_gap_m_p50": 0.08680339312192621,
+ "fps": 50,
+ "infeasible_frac": 0.6032388663967612,
+ "max_tau_ratio_max": 0.7660042656613726,
+ "max_tau_ratio_p95": 0.5972504004819935,
+ "mean_contacts": 2.4878542510121457,
+ "mjcf_path": "/home/robotixx/GR00T-WholeBodyControl/gear_sonic/data/assets/robot_description/mjcf/g1_29dof_rev_1_0.xml",
+ "motion_key": "BMLmovi_Subject_53_F_MoSh_Subject_53_F_17_poses_120_jpos",
+ "num_contact_free_frames": 298,
+ "num_evaluable_frames": 494,
+ "num_frames": 494,
+ "robot_sha256": "15a330f1dbff68cdbeb8284be6162a857bdcd21a858f65a8617fb32d5115f209",
+ "schema_version": 1,
+ "source_path": "reports/feasibility_xcheck/_adapted/amass_as_pkl/BMLmovi_Subject_53_F_MoSh_Subject_53_F_17_poses_120_jpos.pkl",
+ "source_sha256": "a01167f4aeb80181791cb3b13fc67f52aebb4468c82cc00f7e54a438641b1366",
+ "thresholds": {
+  "gap_m": 0.06,
+  "mu": 0.7,
+  "unsupported_force_frac": 0.5
+ },
+ "torque_infeasible_frac": 0.0,
+ "torque_saturated_frac": 0.0,
+ "unsupported_force_N_max": 357.29693384247275,
+ "unsupported_force_N_p50": 323.27469823518663,
+ "unsupported_force_N_p95": 342.73472281733183,
+ "unsupported_impulse_per_weight_s": 6.065399113287181
+}

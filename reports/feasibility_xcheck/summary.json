@@ -1,0 +1,59 @@
+{
+  "AMASS-wbt-G1": {
+    "airborne_frac_spearman": {
+      "pvalue": 8.692836206020471e-24,
+      "rho": 0.9983471074380166
+    },
+    "flag_agreement": {
+      "agreement": 1.0,
+      "both_flag": 10,
+      "climb_only": 0,
+      "cohen_kappa": 1.0,
+      "n": 20,
+      "neither_flag": 10,
+      "sonic_only": 0
+    },
+    "infeasible_frac_spearman": {
+      "pvalue": 0.0,
+      "rho": 1.0
+    }
+  },
+  "BONES-SEED": {
+    "airborne_frac_spearman": {
+      "pvalue": 1.8421662417210907e-16,
+      "rho": 0.9891891891891891
+    },
+    "flag_agreement": {
+      "agreement": 0.95,
+      "both_flag": 6,
+      "climb_only": 0,
+      "cohen_kappa": 0.8863636363636362,
+      "n": 20,
+      "neither_flag": 13,
+      "sonic_only": 1
+    },
+    "infeasible_frac_spearman": {
+      "pvalue": 1.3929829720650187e-11,
+      "rho": 0.9619185809213996
+    }
+  },
+  "all": {
+    "airborne_frac_spearman": {
+      "pvalue": 4.1254031377272655e-45,
+      "rho": 0.9974276527331191
+    },
+    "flag_agreement": {
+      "agreement": 0.975,
+      "both_flag": 16,
+      "climb_only": 0,
+      "cohen_kappa": 0.9484536082474226,
+      "n": 40,
+      "neither_flag": 23,
+      "sonic_only": 1
+    },
+    "infeasible_frac_spearman": {
+      "pvalue": 7.162740534855145e-30,
+      "rho": 0.9835891641059079
+    }
+  }
+}

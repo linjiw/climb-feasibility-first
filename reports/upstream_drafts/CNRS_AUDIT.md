@@ -1,50 +1,73 @@
-# TASK cnrs-audit — hand-check of the extreme sources (2026-08-20)
+# Extreme-source hand audit — CNRS and Transitions (expanded 2026-08-26)
 
-*Status labels: measured. Artifacts: this file + per-clip numbers below recomputed live from
-`bank/amass/*.npz` with the pinned screen model; screen values from
-`reports/feasibility_all/feasibility.csv`. UNVERIFIED: none.*
+*Status: measured reviewer check. The 2026-08-20 audit of three CNRS clips and one Transitions
+clip is superseded in sample size by this deterministic 5+5 inspection. Selection, geometry
+traces, verdicts, source hashes, pinned-model hash, script hash, and completion sentinel:
+`reports/feasibility_extremes/`. Screen values come from
+`reports/feasibility_all/feasibility.csv`; clearance is recomputed from the raw NPZ poses under
+`refeas/examples/g1_flat.xml` (sha `3e1630b4…`).*
 
-## CNRS (3 of 79 clips hand-checked: CNRS_283_-01_L_1, _L_2, _R_1)
+## Selection and inspection protocol
 
-| check | finding |
-|---|---|
-| units / skeleton | retarget output is G1-sized (ankle→torso span median 0.75 m, matches other sources) — no unit-scale error in the output |
-| frame rate | 50 fps as converted; durations 4.9–6.7 s; consistent |
-| motion content | **ordinary fast locomotion**: root xy drift 6.9–7.4 m per clip, root z median 0.81–0.84 m |
-| floor / root convention | **the defect**: minimum geom-to-plane distance has median **6.2–7.7 cm** and p90 10.7–12.9 cm — i.e. in the median frame *nothing* on the robot is within 6 cm of the floor. The feet dip to contact (min −0.7 to 0.0 cm) only momentarily. Root z median 0.81–0.84 vs the G1's 0.79 standing height — the whole trajectory rides ~4–5 cm high, and swing+stance clearances ride with it |
-| screen agreement | screen said infeasible 0.57–0.66 / airborne 0.52–0.64; hand-check reproduces (54–64 % of frames no geom within 6 cm) |
-| other artifacts | CNRS_283_-01_L_1 has a 40.1 rad/s joint-velocity spike (retarget glitch); siblings 9–10 rad/s |
+Within each source, sort strict-flagged clips (`infeasible_frac > 0.10`) by native screen severity
+and take the 0/25/50/75/100 % positions. This yields five of 79 CNRS flags and five of 95
+Transitions flags without selecting on the visual verdict. For every clip, recompute the lowest
+collision-geometry distance to the plane on all frames, identify the longest run above the pinned
+6 cm contact gap, render its midpoint from the stored body positions, and inspect the pose and
+full clearance trace. Verdict vocabulary is fixed to **ingest**, **content**, or
+**scene-mismatch**.
 
-**Verdict: ingest/retarget interaction, not motion content.** A walking human retargeted with a
-root-height convention that leaves the G1's feet ~5–8 cm off the floor for most of every stride.
-Plausible mechanism: subject-calibration/leg-length handling for this subset (root height carried
-from the human's proportions while the G1's shorter legs hang, feet floating) — the same "lift the
-limb instead of lowering the root" family as clip #44, expressed continuously instead of at one
-transition. 100 % flag rate follows: every clip is a walk, and every walk floats.
+![Five CNRS and five Transitions poses with clearance traces](../feasibility_extremes/extreme_source_panel.png)
 
-## Transitions (1 of 106 hand-checked: mocap_mazen_airkick_jumpinplace)
+*Panel [measured]: five severity rows per source. Red fill marks frames whose lowest collision
+geometry is more than 6 cm above the plane; orange marks the rendered frame. Script:
+`tools/audit_extreme_sources.py`; data: `reports/feasibility_extremes/{clips.csv,clearance_trace.csv}`.*
 
-| check | finding |
-|---|---|
-| motion content | genuinely acrobatic (jump in place; subset is airkicks/twists/long-jumps); root z 0.62–1.09 m; xy drift 0.04 m — content is as labeled |
-| screen semantics | infeasible 0.22 / airborne 0.30. Important: **true ballistic flight does not trigger the infeasible flag** (a body in free fall needs no support — q̈ ≈ g leaves no unsupported wrench), so the 22 % is *non-ballistic* airborne dynamics: preparation/landing frames floating with near-zero acceleration |
-| floor | median lowest-geom distance 3.6 cm (reasonable), p90 10.7 cm |
+## Per-clip verdicts
 
-**Verdict: mixed.** The 90 % source-level flag rate over-indexes on acrobatic content, but the
-flagged *frames* are still artifacts (floating at ~0 acceleration is not flight); the per-clip
-severity is much lower than CNRS (0.22 vs 0.57–0.66 median infeasible).
+| source | severity q | clip | screen infeasible / airborne | median clearance | longest >6 cm run | verdict |
+|---|---:|---|---:|---:|---:|---|
+| CNRS | 0 | `CNRS_283_03_L_2` | 0.358 / 0.332 | 5.1 cm | 1.34 s | ingest — ordinary fast walk; late root-height drift |
+| CNRS | 25 | `CNRS_283_-01_L_2` | 0.570 / 0.525 | 6.1 cm | 1.60 s | ingest — ordinary fast walk; floating final segment |
+| CNRS | 50 | `CNRS_283_SW_B_3` | 0.647 / 0.618 | 7.4 cm | 2.52 s | ingest — ordinary walk; whole-reference clearance drift |
+| CNRS | 75 | `CNRS_288_03_L_2` | 0.715 / 0.695 | 8.4 cm | 3.14 s | ingest — ordinary fast walk; continuous floating tail |
+| CNRS | 100 | `CNRS_288_03_R_2` | 0.802 / 0.771 | 9.7 cm | 3.76 s | ingest — ordinary fast walk; continuous floating tail |
+| Transitions | 0 | `Transitions_mocap_mazen_c3d_walksideways_running_poses_120_jpos` | 0.101 / 0.104 | 2.8 cm | 0.22 s | ingest — ordinary running; brief floating spikes |
+| Transitions | 25 | `Transitions_mocap_mazen_c3d_airkick_walkbackwards_poses_120_jpos` | 0.173 / 0.169 | 3.7 cm | 1.00 s | content — the named air-kick is visible |
+| Transitions | 50 | `Transitions_mocap_mazen_c3d_walksideways_runbackwards_poses_120_jpos` | 0.263 / 0.266 | 3.9 cm | 0.46 s | ingest — ordinary locomotion; repeated floating spikes |
+| Transitions | 75 | `Transitions_mocap_mazen_c3d_turntwist_jumpingtwist3602_poses_120_jpos` | 0.340 / 0.371 | 4.8 cm | 0.94 s | content — named jump/twist; peak clearance 20.4 cm |
+| Transitions | 100 | `Transitions_mocap_mazen_c3d_punchkarate_stand_poses_120_jpos` | 1.000 / 0.878 | 8.7 cm | 3.92 s | ingest — standing punch, yet 87.8 % geometry-airborne |
 
-## Consequences for the dataset advisory (wording changes applied to the draft)
+No inspected clip needs an absent object or terrain feature, so **scene-mismatch = 0/10** on this
+panel. That does not contradict the BONES-SEED box-jump class; it says only that scene mismatch is
+not the mechanism in these ten AMASS extreme-source clips.
 
-1. CNRS: state the mechanism concretely — *systematic root-height elevation leaving feet 5–8 cm
-   airborne during ordinary locomotion; output-side; reproducible on any clip of the subset* —
-   and drop any implication that the source mocap is at fault (the walk itself is fine).
-2. Transitions: soften to "flag rate inflated by acrobatic content; flagged frames are
-   non-ballistic floating (the screen already exempts true free fall); per-clip severity moderate."
-3. Both: the advisory's ask becomes sharper — a *root-height/contact consistency pass per source
-   subset* would catch CNRS-class defects wholesale; per-clip flags catch the rest.
-4. Add the 40 rad/s velocity-spike observation as a secondary QC item (one clip; not quantified
-   bank-wide — labeled exploratory).
+## Source-level reading
 
-Advisory draft updated accordingly (`DRAFT_dataset_advisory_extreme_sources.md`); **still not
-filed — awaiting Linji's approval** per D2c.
+**CNRS: 5/5 ingest.** Every severity stratum is ordinary fast locomotion (6.6–9.4 m of root-path
+length in 4.9–6.6 s), yet median lowest-geometry clearance rises from 5.1 to 9.7 cm and each clip
+develops a long floating tail. This strengthens the original verdict: an output-side root-height
+or leg-length convention drifts upward over the stride. The source motion is not intrinsically
+exotic, and no scene support is missing.
+
+**Transitions: genuinely mixed, 3/5 ingest and 2/5 content.** The air-kick and 360° jump/twist are
+content-driven examples. But two locomotion clips and the maximum-severity standing-punch clip
+are output-side floating defects. The earlier one-clip audit correctly identified acrobatic
+content in `airkick_jumpinplace` but overgeneralized that mechanism to the source; the expanded
+panel corrects it. True ballistic flight remains exempt from `infeasible_frac` by construction,
+so even the two content verdicts do not license treating every airborne frame as infeasible.
+
+## Consequences for the advisory and paper
+
+1. Keep the CNRS mechanism concrete: ordinary locomotion, systematic clearance drift, output-side.
+2. Describe Transitions as a *mixture* of acrobatic content and ordinary-motion ingest defects;
+   do not explain its 89.6 % source rate by content alone.
+3. Keep `airborne_frac` separate from `infeasible_frac`; neither alone determines the verdict.
+4. Add a source-subset root-height/contact-consistency pass, while retaining per-clip dynamic
+   screening for mixed sources.
+5. The prior secondary QC observation remains exploratory: `CNRS_283_-01_L_1` contains a
+   40.1 rad/s joint-velocity spike; that clip is outside this deterministic 5-clip panel and no
+   bank-wide velocity-spike rate is claimed.
+
+The dataset advisory draft is updated accordingly and remains **not filed**, awaiting Linji's
+approval under D2c.

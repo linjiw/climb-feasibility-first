@@ -1,0 +1,290 @@
+{
+ "schema_version": "newton15_recert_result/2",
+ "classification": "unsealed measured conformance result; not a policy-benefit claim",
+ "pass": true,
+ "seed": 20260826,
+ "repeats": 2,
+ "probe_steps": 1,
+ "device": "cuda:0",
+ "warp_deterministic_mode": "RUN_TO_RUN",
+ "warp_deterministic_max_records": 630,
+ "action_protocol": "stock canonical frozen-policy actions replayed in Newton after an independently checked first action",
+ "selection_sha256": "0b5df36c2495800c3873eaae4fe5c1a8fc0df3ea1935a3ac0097b7be5acaf860",
+ "unit_table_file_sha256": "b91e6342049dea90410052e75ccbe5d450887c102ea90812a23d5204e7cd4c48",
+ "unit_table_payload_sha256": "0df66390ceb6c9258c64c50bb4c31a9ee33d0412a3635d8dab72f0b789bdd2ff",
+ "checkpoint": "/data/robotixx/climb/reports/segment_v2_pilot/training/segment_v2_pilot/2026-08-20_23-21-07_uniform-penalty10-pilot200-s20260820/model_199.pt",
+ "checkpoint_sha256": "84da3b706ad344efc8cf77423e1c540c4e74d7eea5122b6c83338498ec25075b",
+ "units": [
+  {
+   "table_index": 33,
+   "unit_id": 34,
+   "clip_id": 24,
+   "clip": "BMLhandball_S06_Novice_Trial_upper_left_187_poses_120_jpos",
+   "start_frame": 75,
+   "stop_frame_exclusive": 125,
+   "legal_start_count": 151,
+   "unsupported_ratio_p95": 0.09049867745566022,
+   "joint_speed_rms_rad_s": 0.36033164204069423,
+   "root_speed_mean_m_s": 0.13380306502216674,
+   "mean_contact_classes": 2.14,
+   "multi_contact_fraction": 1.0,
+   "nonfoot_candidate_fraction": 0.14,
+   "contact_set_changes": 1,
+   "motion_sha256": "c947f1ba33675af5b7674fdce8bbc78fab1544d4c59f1adb558989bebcfeb390",
+   "dfrp_route": "raw_feasible"
+  },
+  {
+   "table_index": 28,
+   "unit_id": 29,
+   "clip_id": 21,
+   "clip": "KIT_513_seesaw_up02_poses_100_jpos",
+   "start_frame": 150,
+   "stop_frame_exclusive": 200,
+   "legal_start_count": 302,
+   "unsupported_ratio_p95": 0.13605375495867836,
+   "joint_speed_rms_rad_s": 0.470966523544739,
+   "root_speed_mean_m_s": 0.3494928927575552,
+   "mean_contact_classes": 3.16,
+   "multi_contact_fraction": 1.0,
+   "nonfoot_candidate_fraction": 1.0,
+   "contact_set_changes": 3,
+   "motion_sha256": "72703fcf7aec3f9aaee608ca2ae0b2677f263fe2acba45acf33e38e8f5db5382",
+   "dfrp_route": "repair_primary"
+  }
+ ],
+ "six_checks": {
+  "placement": {
+   "max_abs_qpos": 0.0,
+   "max_abs_qvel": 0.0,
+   "threshold": 1e-07,
+   "pass": true
+  },
+  "first_observation": {
+   "max_abs_delta": 0.0,
+   "threshold": 1e-06,
+   "pass": true
+  },
+  "first_action": {
+   "max_abs_delta": 0.0,
+   "threshold": 1e-06,
+   "pass": true
+  },
+  "state_evolution": {
+   "protocol": "per-substep resynchronization from stock canonical state, warm start, and control",
+   "max_abs_qpos": 0.0,
+   "qpos_threshold": 1e-05,
+   "max_abs_qvel": 0.0,
+   "qvel_threshold": 3e-05,
+   "closed_loop_diagnostic_max_abs_qpos": 2.9802322387695312e-08,
+   "closed_loop_diagnostic_max_abs_qvel": 6.020069122314453e-06,
+   "pass": true
+  },
+  "contact_and_termination_timing": {
+   "post_control_observer_contact_equal": true,
+   "first_post_control_contact_mismatch": null,
+   "solver_substep_contact_equal": true,
+   "first_solver_substep_contact_mismatch": null,
+   "termination_equal": true,
+   "pass": true
+  },
+  "deterministic_repeats": {
+   "arms": {
+    "stock": {
+     "max_abs_deltas": {
+      "initial_observation": 0.0,
+      "first_action": 0.0,
+      "qpos": 0.0,
+      "qvel": 0.0,
+      "actions": 0.0,
+      "conformance_qpos": 0.0,
+      "conformance_qvel": 0.0
+     },
+     "contact_equal": true,
+     "first_contact_mismatches": [
+      null
+     ],
+     "conformance_contact_equal": true,
+     "first_conformance_contact_mismatches": [
+      null
+     ],
+     "termination_equal": true,
+     "pass": true
+    },
+    "newton": {
+     "max_abs_deltas": {
+      "initial_observation": 0.0,
+      "first_action": 0.0,
+      "qpos": 0.0,
+      "qvel": 0.0,
+      "actions": 0.0,
+      "conformance_qpos": 0.0,
+      "conformance_qvel": 0.0
+     },
+     "contact_equal": true,
+     "first_contact_mismatches": [
+      null
+     ],
+     "conformance_contact_equal": true,
+     "first_conformance_contact_mismatches": [
+      null
+     ],
+     "termination_equal": true,
+     "pass": true
+    }
+   },
+   "pass": true
+  }
+ },
+ "absorbed_state_writes": {
+  "stock": [
+   null,
+   null
+  ],
+  "newton": [
+   0,
+   0
+  ]
+ },
+ "live_model_diff": {
+  "before_mirror": {
+   "mapped_counts": {
+    "nbody": 32,
+    "ngeom": 34,
+    "njnt": 30,
+    "nv": 35,
+    "nu": 29
+   },
+   "fields_checked": 44,
+   "mismatch_count": 7,
+   "mismatches": {
+    "geom_size": {
+     "axis": "ngeom",
+     "shape_equal": true,
+     "exact": false,
+     "max_abs_delta": 0.009999999776482582
+    },
+    "geom_contype": {
+     "axis": "ngeom",
+     "shape_equal": true,
+     "exact": false,
+     "max_abs_delta": null
+    },
+    "geom_conaffinity": {
+     "axis": "ngeom",
+     "shape_equal": true,
+     "exact": false,
+     "max_abs_delta": null
+    },
+    "jnt_range": {
+     "axis": "njnt",
+     "shape_equal": true,
+     "exact": false,
+     "max_abs_delta": 10000000000.0
+    },
+    "actuator_gainprm": {
+     "axis": "nu",
+     "shape_equal": true,
+     "exact": false,
+     "max_abs_delta": 4.57763671875e-05
+    },
+    "actuator_biasprm": {
+     "axis": "nu",
+     "shape_equal": true,
+     "exact": false,
+     "max_abs_delta": 4.57763671875e-05
+    },
+    "actuator_ctrlrange": {
+     "axis": "nu",
+     "shape_equal": true,
+     "exact": false,
+     "max_abs_delta": 4.291534423828125e-06
+    }
+   }
+  },
+  "mirrored_fields": [
+   "geom_size",
+   "geom_contype",
+   "geom_conaffinity",
+   "jnt_range",
+   "actuator_gainprm",
+   "actuator_biasprm",
+   "actuator_ctrlrange"
+  ],
+  "after_mirror": {
+   "mapped_counts": {
+    "nbody": 32,
+    "ngeom": 34,
+    "njnt": 30,
+    "nv": 35,
+    "nu": 29
+   },
+   "fields_checked": 44,
+   "mismatch_count": 0,
+   "mismatches": {}
+  }
+ },
+ "trajectory_hashes": {
+  "stock": [
+   {
+    "initial_observation": "463cca88a90a8c19c38f073a5711078a032d8ac322948169dd9d61091578dfdc",
+    "first_action": "86e11d6ebf6e811eb962407293f8681741807f5cd55ec58f7d0585480677cb52",
+    "qpos": "b5fd56474c15c573d09ea351b34f9a8e3f710935504c55e5abf35d0ced1a9325",
+    "qvel": "33dcca72ded15731b2f45eacf3f2c11a6c2bef011ab716dd8aed5883e6cef24e",
+    "actions": "60b971af3b9e9e8ed92344266ebc54d6e02e140b3474588663d4a1c15cf88892",
+    "terminated": "d1c528cebffc2387c20faf3e43d24a1f84dc91656fd3c41aee145aa1a7003819",
+    "substep_pre_qpos": "f0c09b182622ffe47184a83bb87fa7be759e56434e346325d766d1787f714da1",
+    "substep_pre_qvel": "129bb4c9edddec542583a76f7c6b51a3c30101984595bdab52e4d56dd0e662dd",
+    "substep_pre_warmstart": "91a947dea41ac2cbf23066fea10adc1743c8bfd6fa760456b065745697ab5f48",
+    "substep_ctrl": "23036c24d537a015510e4bdd422805a349e922977f936e06fef79a810bfefd9e",
+    "conformance_qpos": "68fbaf69d10e734e2c17007de219948b073d4f11ea402a7893052b9ffa6b0f26",
+    "conformance_qvel": "c04de1ef0f6b0fe2a5c90fe5c63c9dc7df04059236ee68ece2c28de7175f8084"
+   },
+   {
+    "initial_observation": "463cca88a90a8c19c38f073a5711078a032d8ac322948169dd9d61091578dfdc",
+    "first_action": "86e11d6ebf6e811eb962407293f8681741807f5cd55ec58f7d0585480677cb52",
+    "qpos": "b5fd56474c15c573d09ea351b34f9a8e3f710935504c55e5abf35d0ced1a9325",
+    "qvel": "33dcca72ded15731b2f45eacf3f2c11a6c2bef011ab716dd8aed5883e6cef24e",
+    "actions": "60b971af3b9e9e8ed92344266ebc54d6e02e140b3474588663d4a1c15cf88892",
+    "terminated": "d1c528cebffc2387c20faf3e43d24a1f84dc91656fd3c41aee145aa1a7003819",
+    "substep_pre_qpos": "f0c09b182622ffe47184a83bb87fa7be759e56434e346325d766d1787f714da1",
+    "substep_pre_qvel": "129bb4c9edddec542583a76f7c6b51a3c30101984595bdab52e4d56dd0e662dd",
+    "substep_pre_warmstart": "91a947dea41ac2cbf23066fea10adc1743c8bfd6fa760456b065745697ab5f48",
+    "substep_ctrl": "23036c24d537a015510e4bdd422805a349e922977f936e06fef79a810bfefd9e",
+    "conformance_qpos": "68fbaf69d10e734e2c17007de219948b073d4f11ea402a7893052b9ffa6b0f26",
+    "conformance_qvel": "c04de1ef0f6b0fe2a5c90fe5c63c9dc7df04059236ee68ece2c28de7175f8084"
+   }
+  ],
+  "newton": [
+   {
+    "initial_observation": "463cca88a90a8c19c38f073a5711078a032d8ac322948169dd9d61091578dfdc",
+    "first_action": "86e11d6ebf6e811eb962407293f8681741807f5cd55ec58f7d0585480677cb52",
+    "qpos": "381999230bbd5a8903d0691ef8cf2b9d3ae3c527dd6e43a9172dd9f9ed6bd735",
+    "qvel": "b158b1e11ab1b39e0a37a1d63baa7102d898a4ec14860c3ca617f5c5591afde5",
+    "actions": "60b971af3b9e9e8ed92344266ebc54d6e02e140b3474588663d4a1c15cf88892",
+    "terminated": "d1c528cebffc2387c20faf3e43d24a1f84dc91656fd3c41aee145aa1a7003819",
+    "substep_pre_qpos": "f0c09b182622ffe47184a83bb87fa7be759e56434e346325d766d1787f714da1",
+    "substep_pre_qvel": "129bb4c9edddec542583a76f7c6b51a3c30101984595bdab52e4d56dd0e662dd",
+    "substep_pre_warmstart": "91a947dea41ac2cbf23066fea10adc1743c8bfd6fa760456b065745697ab5f48",
+    "substep_ctrl": "23036c24d537a015510e4bdd422805a349e922977f936e06fef79a810bfefd9e",
+    "conformance_qpos": "68fbaf69d10e734e2c17007de219948b073d4f11ea402a7893052b9ffa6b0f26",
+    "conformance_qvel": "c04de1ef0f6b0fe2a5c90fe5c63c9dc7df04059236ee68ece2c28de7175f8084"
+   },
+   {
+    "initial_observation": "463cca88a90a8c19c38f073a5711078a032d8ac322948169dd9d61091578dfdc",
+    "first_action": "86e11d6ebf6e811eb962407293f8681741807f5cd55ec58f7d0585480677cb52",
+    "qpos": "381999230bbd5a8903d0691ef8cf2b9d3ae3c527dd6e43a9172dd9f9ed6bd735",
+    "qvel": "b158b1e11ab1b39e0a37a1d63baa7102d898a4ec14860c3ca617f5c5591afde5",
+    "actions": "60b971af3b9e9e8ed92344266ebc54d6e02e140b3474588663d4a1c15cf88892",
+    "terminated": "d1c528cebffc2387c20faf3e43d24a1f84dc91656fd3c41aee145aa1a7003819",
+    "substep_pre_qpos": "f0c09b182622ffe47184a83bb87fa7be759e56434e346325d766d1787f714da1",
+    "substep_pre_qvel": "129bb4c9edddec542583a76f7c6b51a3c30101984595bdab52e4d56dd0e662dd",
+    "substep_pre_warmstart": "91a947dea41ac2cbf23066fea10adc1743c8bfd6fa760456b065745697ab5f48",
+    "substep_ctrl": "23036c24d537a015510e4bdd422805a349e922977f936e06fef79a810bfefd9e",
+    "conformance_qpos": "68fbaf69d10e734e2c17007de219948b073d4f11ea402a7893052b9ffa6b0f26",
+    "conformance_qvel": "c04de1ef0f6b0fe2a5c90fe5c63c9dc7df04059236ee68ece2c28de7175f8084"
+   }
+  ]
+ },
+ "trajectory_npz": "/data/robotixx/climb/reports/newton15_recert/trajectories.npz",
+ "trajectory_npz_sha256": "cf1f8d2c4fa369939f02aee65057aff21252504ceab6dc54e5551612c225c651"
+}

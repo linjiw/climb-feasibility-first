@@ -1,0 +1,1 @@
+{"clip": "kick_back_001__A495_M", "frames": 417, "fps": 50.0, "gap": 0.06, "airborne_frac": 0.07913669064748201, "infeasible_frac": 0.4724220623501199, "unsupported_impulse_Ns": 1203.7579999999998, "unsupported_impulse_per_weight_s": 3.680354965428062, "torque_infeasible_frac": 0.0, "max_tau_ratio_p95": 0.6319999999999999, "sim_infeasible_frac": 0.4724220623501199}

@@ -1,0 +1,32 @@
+{
+ "airborne_frac": 0.0,
+ "body_weight_N": 327.07660302000005,
+ "duration_s": 6.0200000000000005,
+ "foot_gap_m_p05": -0.0009256199803822458,
+ "foot_gap_m_p50": 0.0006659661740948163,
+ "fps": 50,
+ "infeasible_frac": 0.0,
+ "max_tau_ratio_max": 1.0341941863651838,
+ "max_tau_ratio_p95": 0.6283034943562555,
+ "mean_contacts": 10.70764119601329,
+ "mjcf_path": "/home/robotixx/GR00T-WholeBodyControl/gear_sonic/data/assets/robot_description/mjcf/g1_29dof_rev_1_0.xml",
+ "motion_key": "KIT_291_push_recovery_stand_back03_poses_100_jpos",
+ "num_contact_free_frames": 0,
+ "num_evaluable_frames": 301,
+ "num_frames": 301,
+ "robot_sha256": "15a330f1dbff68cdbeb8284be6162a857bdcd21a858f65a8617fb32d5115f209",
+ "schema_version": 1,
+ "source_path": "reports/feasibility_xcheck/_adapted/amass_as_pkl/KIT_291_push_recovery_stand_back03_poses_100_jpos.pkl",
+ "source_sha256": "84bbfb31481bde9fa8c4a24eafe68b22686fcfaf68b76d0c40f7b2b05e0b97a0",
+ "thresholds": {
+  "gap_m": 0.06,
+  "mu": 0.7,
+  "unsupported_force_frac": 0.5
+ },
+ "torque_infeasible_frac": 0.0,
+ "torque_saturated_frac": 0.0033222591362126247,
+ "unsupported_force_N_max": 27.89536704648407,
+ "unsupported_force_N_p50": 0.0,
+ "unsupported_force_N_p95": 5.275685660126284,
+ "unsupported_impulse_per_weight_s": 0.01671405222435025
+}

@@ -1,0 +1,23 @@
+{
+  "climb_mjcf": "/data/robotixx/climb/refeas/examples/g1_flat.xml",
+  "climb_mjcf_sha256": "3e1630b42b1d01a45823f228ffe76443a39b85d47df456b9ca119d5431cf7357",
+  "climb_native_csv": "/data/robotixx/climb/reports/feasibility_all/feasibility.csv",
+  "climb_native_csv_sha256": "587a2518a9a4b40a2c99025fc956df2a8d9614d2a9cbdaacbdcf41cf164fddb9",
+  "clip_44_required": "BMLmovi_Subject_64_F_MoSh_Subject_64_F_9_poses_120_jpos",
+  "counts": {
+    "amass_feasible": 10,
+    "amass_flagged": 10,
+    "bones_feasible": 13,
+    "bones_flagged": 7
+  },
+  "flag_rule": "infeasible_frac > 0.1",
+  "joint_order_check": "29/29 names and axes exact",
+  "kind": "feasibility_xcheck_selection",
+  "rows": 40,
+  "selection_csv_sha256": "5bb7ad21bf3dab35ad5cf3c6ca3dc7d68fc75eb5f1d3f2602fccef034107a6b4",
+  "selection_seed": 260826,
+  "sonic_mjcf": "/home/robotixx/GR00T-WholeBodyControl/gear_sonic/data/assets/robot_description/mjcf/g1_29dof_rev_1_0.xml",
+  "sonic_mjcf_sha256": "15a330f1dbff68cdbeb8284be6162a857bdcd21a858f65a8617fb32d5115f209",
+  "sonic_native_csv": "/data/robotixx/climb/reports/feasibility_sonic/hygiene_screen.csv",
+  "sonic_native_csv_sha256": "c28fccbdd28db090c1b2e5edbfbc58d41f3c22161fab6eb8ee44427195f9a2f6"
+}

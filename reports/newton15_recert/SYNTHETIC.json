@@ -1,0 +1,97 @@
+{
+ "synthetic": true,
+ "pass": true,
+ "passing_case": {
+  "placement": {
+   "max_abs_qpos": 0.0,
+   "max_abs_qvel": 0.0,
+   "threshold": 1e-07,
+   "pass": true
+  },
+  "first_observation": {
+   "max_abs_delta": 0.0,
+   "threshold": 1e-06,
+   "pass": true
+  },
+  "first_action": {
+   "max_abs_delta": 0.0,
+   "threshold": 1e-06,
+   "pass": true
+  },
+  "state_evolution": {
+   "protocol": "per-substep resynchronization from stock canonical state, warm start, and control",
+   "max_abs_qpos": 0.0,
+   "qpos_threshold": 1e-05,
+   "max_abs_qvel": 0.0,
+   "qvel_threshold": 3e-05,
+   "closed_loop_diagnostic_max_abs_qpos": 0.0,
+   "closed_loop_diagnostic_max_abs_qvel": 0.0,
+   "pass": true
+  },
+  "contact_and_termination_timing": {
+   "post_control_observer_contact_equal": true,
+   "first_post_control_contact_mismatch": null,
+   "solver_substep_contact_equal": true,
+   "first_solver_substep_contact_mismatch": null,
+   "termination_equal": true,
+   "pass": true
+  }
+ },
+ "failing_case": {
+  "placement": {
+   "max_abs_qpos": 0.0,
+   "max_abs_qvel": 0.0,
+   "threshold": 1e-07,
+   "pass": true
+  },
+  "first_observation": {
+   "max_abs_delta": 0.0,
+   "threshold": 1e-06,
+   "pass": true
+  },
+  "first_action": {
+   "max_abs_delta": 0.0,
+   "threshold": 1e-06,
+   "pass": true
+  },
+  "state_evolution": {
+   "protocol": "per-substep resynchronization from stock canonical state, warm start, and control",
+   "max_abs_qpos": 0.0,
+   "qpos_threshold": 1e-05,
+   "max_abs_qvel": 5.999999848427251e-05,
+   "qvel_threshold": 3e-05,
+   "closed_loop_diagnostic_max_abs_qpos": 0.0,
+   "closed_loop_diagnostic_max_abs_qvel": 5.999999848427251e-05,
+   "pass": false
+  },
+  "contact_and_termination_timing": {
+   "post_control_observer_contact_equal": true,
+   "first_post_control_contact_mismatch": null,
+   "solver_substep_contact_equal": true,
+   "first_solver_substep_contact_mismatch": null,
+   "termination_equal": true,
+   "pass": true
+  }
+ },
+ "repeat_case": {
+  "max_abs_deltas": {
+   "initial_observation": 0.0,
+   "first_action": 0.0,
+   "qpos": 0.0,
+   "qvel": 0.0,
+   "actions": 0.0,
+   "conformance_qpos": 0.0,
+   "conformance_qvel": 0.0
+  },
+  "contact_equal": true,
+  "first_contact_mismatches": [
+   null
+  ],
+  "conformance_contact_equal": true,
+  "first_conformance_contact_mismatches": [
+   null
+  ],
+  "termination_equal": true,
+  "pass": true
+ }
+}

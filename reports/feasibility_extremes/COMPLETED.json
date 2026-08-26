@@ -1,0 +1,17 @@
+{
+  "clips_csv_sha256": "cf78e6a7b9eb3e03f55ebed0ce998f3ff501a5aa1bb62a54422870d23e2f1096",
+  "exit_code": 0,
+  "features_sha256": "587a2518a9a4b40a2c99025fc956df2a8d9614d2a9cbdaacbdcf41cf164fddb9",
+  "flag_rule": "infeasible_frac > 0.1",
+  "gap_m": 0.06,
+  "kind": "extreme_source_audit",
+  "model_sha256": "3e1630b42b1d01a45823f228ffe76443a39b85d47df456b9ca119d5431cf7357",
+  "panel_sha256": "8e5f5f5166927b61a1af5b606ff3d874dc404213b4b637db6bc672a594b1f9a4",
+  "rows": 10,
+  "selection": "strict-flag severity quantiles 0/25/50/75/100 within source",
+  "tool_sha256": "03d956cc9a9210e6a6c7f530bb9ef073c1c1d3509bf03442c77cfd9ff59a531b",
+  "trace_csv_sha256": "c02501b28bcc1c2b714a1ae20c74d50c94837c12ff72273ec6aae97f3a48ede4",
+  "trace_rows": 3277,
+  "verdicts_complete": true,
+  "verdicts_sha256": "8956174a07a2b754e9aa0c10696657c9d28528e285b0797cdbf09c729d549771"
+}

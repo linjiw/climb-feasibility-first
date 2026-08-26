@@ -1,0 +1,220 @@
+{
+ "schema_version": "newton15_pred_synthetic/1",
+ "synthetic": true,
+ "pass": true,
+ "branches": {
+  "pass": {
+   "results": {
+    "adaptive": {
+     "partial_spearman": 0.9868424943054761,
+     "partial_permutation_p_one_sided": 0.002,
+     "loco_ridge": {
+      "baseline_rho": -0.08507836520434946,
+      "augmented_rho": 0.9805324334458194,
+      "rho_lift": 1.0656107986501688
+     },
+     "loco_lift_permutation_p_one_sided": 0.002,
+     "per_axis_raw_spearman": {
+      "delay_20ms": {
+       "n_units": 42,
+       "rho": 0.9643464873186938
+      },
+      "motor_clamp_85pct": {
+       "n_units": 42,
+       "rho": 0.9573778462037112
+      },
+      "newton_contact": {
+       "n_units": 42,
+       "rho": 0.9675877157442672
+      }
+     },
+     "permutation_null": {
+      "draws": 499,
+      "scheme": "intact three-axis unit vectors permuted within source clip",
+      "partial_rho_p95": 0.5112883039720258,
+      "loco_rho_lift_p95": 0.3488905886764154
+     }
+    },
+    "grounded": {
+     "partial_spearman": 0.947585202205694,
+     "partial_permutation_p_one_sided": 0.002,
+     "loco_ridge": {
+      "baseline_rho": -0.1272050993625797,
+      "augmented_rho": 0.9446029246344206,
+      "rho_lift": 1.0718080239970003
+     },
+     "loco_lift_permutation_p_one_sided": 0.002,
+     "per_axis_raw_spearman": {
+      "delay_20ms": {
+       "n_units": 42,
+       "rho": 0.9176727979904385
+      },
+      "motor_clamp_85pct": {
+       "n_units": 42,
+       "rho": 0.9048699457094239
+      },
+      "newton_contact": {
+       "n_units": 42,
+       "rho": 0.8852605137347056
+      }
+     },
+     "permutation_null": {
+      "draws": 499,
+      "scheme": "intact three-axis unit vectors permuted within source clip",
+      "partial_rho_p95": 0.5031965990553183,
+      "loco_rho_lift_p95": 0.3916616422947128
+     }
+    }
+   },
+   "decision": {
+    "measurement_valid": true,
+    "primary_adaptive_pass": true,
+    "grounded_directional_replication_pass": true,
+    "gate_pass": true,
+    "next_action": "G3 remains eligible for a later sealed wiring screen"
+   }
+  },
+  "null": {
+   "results": {
+    "adaptive": {
+     "partial_spearman": 0.062480222591868875,
+     "partial_permutation_p_one_sided": 0.634,
+     "loco_ridge": {
+      "baseline_rho": 0.7501823037805737,
+      "augmented_rho": 0.6992898320153375,
+      "rho_lift": -0.05089247176523626
+     },
+     "loco_lift_permutation_p_one_sided": 0.884,
+     "per_axis_raw_spearman": {
+      "delay_20ms": {
+       "n_units": 42,
+       "rho": 0.07138805607325177
+      },
+      "motor_clamp_85pct": {
+       "n_units": 42,
+       "rho": 0.09034924236285553
+      },
+      "newton_contact": {
+       "n_units": 42,
+       "rho": 0.05307511546876267
+      }
+     },
+     "permutation_null": {
+      "draws": 499,
+      "scheme": "intact three-axis unit vectors permuted within source clip",
+      "partial_rho_p95": 0.4003515150156466,
+      "loco_rho_lift_p95": 0.011678076681408812
+     }
+    },
+    "grounded": {
+     "partial_spearman": -0.12080909901631805,
+     "partial_permutation_p_one_sided": 0.676,
+     "loco_ridge": {
+      "baseline_rho": 0.7119420760544953,
+      "augmented_rho": 0.6728624749017559,
+      "rho_lift": -0.03907960115273945
+     },
+     "loco_lift_permutation_p_one_sided": 0.934,
+     "per_axis_raw_spearman": {
+      "delay_20ms": {
+       "n_units": 42,
+       "rho": -0.08111174134997165
+      },
+      "motor_clamp_85pct": {
+       "n_units": 42,
+       "rho": -0.06749858196256381
+      },
+      "newton_contact": {
+       "n_units": 42,
+       "rho": -0.06279880074548254
+      }
+     },
+     "permutation_null": {
+      "draws": 499,
+      "scheme": "intact three-axis unit vectors permuted within source clip",
+      "partial_rho_p95": 0.2785601196307278,
+      "loco_rho_lift_p95": 0.011377208464390099
+     }
+    }
+   },
+   "decision": {
+    "measurement_valid": true,
+    "primary_adaptive_pass": false,
+    "grounded_directional_replication_pass": false,
+    "gate_pass": false,
+    "next_action": "Newton remains an analysis instrument; G3 must never run"
+   }
+  },
+  "discordant": {
+   "results": {
+    "adaptive": {
+     "partial_spearman": 0.9916400504673475,
+     "partial_permutation_p_one_sided": 0.002,
+     "loco_ridge": {
+      "baseline_rho": -0.22932433445819275,
+      "augmented_rho": 0.9874255718035246,
+      "rho_lift": 1.2167499062617173
+     },
+     "loco_lift_permutation_p_one_sided": 0.002,
+     "per_axis_raw_spearman": {
+      "delay_20ms": {
+       "n_units": 42,
+       "rho": 0.9863868406125923
+      },
+      "motor_clamp_85pct": {
+       "n_units": 42,
+       "rho": 0.9828214893444616
+      },
+      "newton_contact": {
+       "n_units": 42,
+       "rho": 0.9923831131999027
+      }
+     },
+     "permutation_null": {
+      "draws": 499,
+      "scheme": "intact three-axis unit vectors permuted within source clip",
+      "partial_rho_p95": 0.5045202855937665,
+      "loco_rho_lift_p95": 0.4189774278215223
+     }
+    },
+    "grounded": {
+     "partial_spearman": -0.9920613930726211,
+     "partial_permutation_p_one_sided": 1.0,
+     "loco_ridge": {
+      "baseline_rho": -0.21521409823772028,
+      "augmented_rho": 0.9884574428196476,
+      "rho_lift": 1.203671541057368
+     },
+     "loco_lift_permutation_p_one_sided": 0.002,
+     "per_axis_raw_spearman": {
+      "delay_20ms": {
+       "n_units": 42,
+       "rho": -0.9886557005104936
+      },
+      "motor_clamp_85pct": {
+       "n_units": 42,
+       "rho": -0.9884936390892148
+      },
+      "newton_contact": {
+       "n_units": 42,
+       "rho": -0.9915728060935095
+      }
+     },
+     "permutation_null": {
+      "draws": 499,
+      "scheme": "intact three-axis unit vectors permuted within source clip",
+      "partial_rho_p95": 0.08312550654365311,
+      "loco_rho_lift_p95": 0.34970348706411664
+     }
+    }
+   },
+   "decision": {
+    "measurement_valid": true,
+    "primary_adaptive_pass": true,
+    "grounded_directional_replication_pass": false,
+    "gate_pass": false,
+    "next_action": "Newton remains an analysis instrument; G3 must never run"
+   }
+  }
+ }
+}
