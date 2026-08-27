@@ -12,9 +12,9 @@ import argparse
 import csv
 import hashlib
 import json
-import time
 import os
 import sys
+import time
 from dataclasses import asdict
 from pathlib import Path
 from typing import Any
@@ -236,6 +236,8 @@ def build_physics(env: Any, device: str, *, mujoco_contacts: bool) -> Any:
             physics = s1.NewtonPhysics(env, "mjw", device)
         finally:
             newton.solvers.SolverMuJoCo = original
+    if not mujoco_contacts:
+        attach_newton_collision(physics)
     recert.configure_sensor_module_nondeterministic()
     recert.mirror_newton15_live_fields(physics)
     audit = recert.live_model_diff(physics)
@@ -246,6 +248,49 @@ def build_physics(env: Any, device: str, *, mujoco_contacts: bool) -> Any:
 
     wp.to_torch(physics.solver.mjw_data.qacc_warmstart).zero_()
     return physics
+
+
+def attach_newton_collision(physics: Any) -> None:
+    """Route the `newton_contact` axis through Newton's own collision pipeline.
+
+    With ``use_mujoco_contacts=False`` the solver consumes a ``Contacts`` buffer
+    instead of running MJWarp collision detection. The S1 wrapper passes
+    ``None`` (it only ever ran MuJoCo-native contacts), so wrap ``solver.step``
+    to generate contacts from ``state_in`` every substep. The buffer capacity is
+    at least MJWarp's ``naconmax`` so no generated contact is dropped by the
+    conversion kernel. Determinism: the pipeline uses Newton's deterministic
+    sort buffers under the same Warp mode as the solver.
+    """
+    import newton
+
+    solver = physics.solver
+    if bool(wp_scalar(solver.mjw_model.opt.run_collision_detection)):
+        raise RuntimeError("newton_contact axis requested but MJWarp collision is still on")
+    naconmax = int(solver.mjw_data.naconmax)
+    pipeline = newton.CollisionPipeline(
+        physics.model, rigid_contact_max=max(naconmax, 1), broad_phase="explicit"
+    )
+    buffer = pipeline.contacts()
+    original_step = solver.step
+
+    def step(state_in: Any, state_out: Any, control: Any, contacts: Any, dt: float) -> None:
+        pipeline.collide(state_in, buffer)
+        original_step(state_in, state_out, control, buffer, dt)
+
+    solver.step = step
+    physics.newton_collision = {
+        "pipeline": pipeline,
+        "rigid_contact_max": int(pipeline.rigid_contact_max),
+        "naconmax": naconmax,
+    }
+
+
+def wp_scalar(value: Any) -> Any:
+    """Return a Python scalar from a Warp array, tensor, or plain value."""
+    if hasattr(value, "numpy"):
+        array = value.numpy()
+        return array.reshape(-1)[0] if getattr(array, "size", 1) else array
+    return value
 
 
 class PairedDelay:
@@ -514,6 +559,7 @@ def run_condition_set(
                     [sys.executable, str(Path(__file__).resolve()), "--worker-batch", str(payload_path)],
                     capture_output=True,
                     text=True,
+                    check=False,
                 )
                 if completed.returncode == 0 and result_path.exists():
                     break
@@ -939,26 +985,49 @@ def main() -> int:
     preflight = {}
     measurements: dict[str, dict[str, dict[int, dict[str, Any]]]] = {}
     manipulation: dict[str, dict[str, Any]] = {}
+    # Completed stages are cached under the probe's own SHA so a late harness or
+    # GPU failure does not discard a day of finished, hash-bound stages. A
+    # changed probe file never reuses a cache.
+    import pickle
+
+    cache_dir = args.out_dir / "cache" / sha256_file(Path(__file__).resolve())[:16]
+    cache_dir.mkdir(parents=True, exist_ok=True)
+
+    def cached(name: str, compute: Any) -> Any:
+        path = cache_dir / f"{name}.pkl"
+        if path.exists():
+            print(f"    cached stage {name}", flush=True)
+            return pickle.loads(path.read_bytes())
+        value = compute()
+        path.write_bytes(pickle.dumps(value))
+        return value
+
     for policy, checkpoint in checkpoints.items():
         print(f"[{policy}] deterministic preflight")
-        preflight[policy] = deterministic_preflight(
-            checkpoint=checkpoint,
-            unit_table=args.unit_table,
-            bank=args.bank,
-            reference_rows=reference_rows,
-            device=args.device,
-        )
-        measurements[policy] = {}
-        manipulation[policy] = {}
-        for axis in AXES:
-            print(f"[{policy}] {axis}")
-            effects, checks = run_axis(
+        preflight[policy] = cached(
+            f"{policy}_preflight",
+            lambda: deterministic_preflight(
                 checkpoint=checkpoint,
                 unit_table=args.unit_table,
                 bank=args.bank,
                 reference_rows=reference_rows,
                 device=args.device,
-                axis=axis,
+            ),
+        )
+        measurements[policy] = {}
+        manipulation[policy] = {}
+        for axis in AXES:
+            print(f"[{policy}] {axis}")
+            effects, checks = cached(
+                f"{policy}_{axis}",
+                lambda: run_axis(
+                    checkpoint=checkpoint,
+                    unit_table=args.unit_table,
+                    bank=args.bank,
+                    reference_rows=reference_rows,
+                    device=args.device,
+                    axis=axis,
+                ),
             )
             measurements[policy][axis] = effects
             manipulation[policy][axis] = checks

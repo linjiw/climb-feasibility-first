@@ -81,3 +81,19 @@ discarded (the manifest binds a single run).
   exactly; unit table 1,184 units / 368,951 legal starts. **140/701 unflagged clips contain a
   severe window** — the FGAS `assumeunflagged` eligibility set was inexact.
 - S3: 2,800 evaluation conditions on the disjoint 100-clip panel.
+
+## 07:48 — attempt 3 stopped on the `newton_contact` axis (harness, not a measurement)
+
+Development preflight, `delay_20ms`, and `motor_clamp_85pct` completed (~6 h, 4-world batches,
+zero OOM retries needed). The first `use_mujoco_contacts=False` batch raised
+`'NoneType' object has no attribute 'rigid_contact_max'`: with MJWarp collision off, Newton's
+`SolverMuJoCo.step` needs a `Contacts` buffer from Newton's own `CollisionPipeline`, and the
+pinned S1 wrapper passes `None` because every earlier run (S1, G0, N-b) used MuJoCo-native
+contacts. This axis had never executed. Fix (probe only; S1 baseline untouched):
+`attach_newton_collision` wraps `solver.step` to run `CollisionPipeline(model,
+rigid_contact_max ≥ naconmax, broad_phase="explicit").collide(state_in, buffer)` every substep.
+Verified on 4 worlds: all alive under both generators; `error_body_pos` differs by ≤ 0.5 mm at
+step 25; contact sets differ (expected). Also added per-(policy, axis) stage caching keyed by
+the probe's SHA so a late failure keeps finished stages; the earlier stages were *not* reused
+(different probe SHA). Relaunched 08:0x as attempt 4 (`probe_run_attempt3_contact_axis_fail.log`
+kept). Two `B023` lint notes on immediately-invoked lambdas are deferred until the run ends.
