@@ -359,6 +359,7 @@ No edits to sealed files. Do not soften §8's "not tested" wording to make the d
 | S4 analyzer | `tools/analyze_g_segment.py`; synthetic positive/null/inconclusive/gate-fail all pass; fails closed without a post-warm-up ledger | **closed** (draft; re-hash at seal) |
 | S5 gap gate | `tools/run_when_free.sh` in repo; memory + utilization gated; OOM retry; 512-env need still unmeasured | **closed** (script) |
 | S6 seeds/drop order | seeds 1,2,3; G0 first, then seed 3 — in the draft and `STATUS.md` | **closed** |
+| Probe harness, 3rd repair | attempt 3 ran 6 h (development preflight/delay/clamp clean, zero OOM retries) then hit the never-executed `newton_contact` axis: Newton needs its own `CollisionPipeline` contacts when MJWarp collision is off. Fixed in the probe (S1 baseline untouched), verified on 4 worlds; per-stage cache added. **Attempt 4 launched 08:0x Aug 27, ETA ≈ 06:00 Aug 28** | **closed**; probe **running** |
 | Probe harness, 2nd repair | mjlab's `auto_reset=False` guard refused to step a fallen world at batch 6; the probe now clears `_manual_reset_pending` each step (no reset, no RNG consumed; `alive` masks). Relaunched 01:2x | **closed**; probe **running** |
 
 Three facts the seal work surfaced that change the plan: **G2's learning-progress rank did not
