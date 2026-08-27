@@ -1,0 +1,17 @@
+{
+ "synthetic": true,
+ "pass": true,
+ "verdicts": {
+  "positive": "positive",
+  "null": "null",
+  "inconclusive": "inconclusive",
+  "gate_fail": "not_tested"
+ },
+ "expected": {
+  "positive": "positive",
+  "null": "null",
+  "inconclusive": "inconclusive",
+  "gate_fail": "not_tested"
+ },
+ "analyzer_sha256": "a9c2c5466bf3d8992882ce04ead016695d4df0c47d2ff2d991a62b2e60314016"
+}
