@@ -1,10 +1,11 @@
-# fable.md — Research guidance for CLIMB / feasibility-first (2026-08-26, rev 2)
+# fable.md — Research guidance for CLIMB / feasibility-first (2026-08-27, rev 3)
 
 **Author:** Claude Fable 5, from a full read of `plan/STATUS.md`, the sealed result files,
 `paper/RESULTS_LOG.md`, `RED_TEAM.md`, the DFRP v0/v1 results, the Newton direction addendum,
 the segment-native follow-up, and the autoresearch logs through `autoresearch-260821-0115`.
 **Status:** unsealed guidance. Not a preregistration; authorizes nothing by itself.
-**Rev 2 (same day, evening):** Phase-W tranche W2–W5 landed and verified (§7). Next directive is §8.
+**Rev 2 (Aug 26, evening):** Phase-W tranche W2–W5 landed and verified (§7).
+**Rev 3 (Aug 27, 01:00):** Phase N sealed and the real N-c probe is running (§9). B1–B3 closed. Next directive is §10; §8 is kept as the record of what was asked.
 Supersedes the aspirational plan in `/home/robotixx/newton/fable.md` (Aug 2026 v1), which
 predates every measured result below.
 
@@ -332,3 +333,81 @@ wiring screen go into the gap queue in whichever order capacity allows.
 
 No GPU training. No bank-wide repair. No G3. No new preregistrations beyond the two named above.
 No edits to sealed files. Do not soften §8's "not tested" wording to make the draft read better.
+
+
+---
+
+## 9. Progress ledger — 2026-08-27 (verified against the tree; probe in flight)
+
+| item | evidence | disposition |
+|---|---|---|
+| 8.0 commit | `529e97a`, `c4d1d6f` pushed; tree clean at session start | **closed** |
+| B1 cross-implementation check | `reports/feasibility_xcheck/`: ρ 0.984 / 0.997, flags agree 39/40 (κ 0.948) | **closed** |
+| B2 5+5 extreme-source audit | recorded in STATUS; no sealed claim changed | **closed** |
+| B3 bibliography | 20/20 live-verified | **closed** |
+| B4 Linji sign-off | `paper/LINJI_SIGNOFF_ASK_2026-08-26.md` drafted, **not sent** | **open — the only external blocker; send it** |
+| N-a pins | `plan/NEWTON15_PINS.md`; trainer venv untouched (freeze hash identical) | **closed** |
+| N-b recert | `plan/NEWTON15_RECERT_RESULT.md` **PASS**: easy + contact-rich DFRP v1 units, zero dispersion after seven live-model residuals were mirrored | **closed** |
+| N-c seal | `plan/PREREGISTRATION_NEWTON_PRED.md` sealed `b1773fc5…` before outcomes; analyzer `1324aa6f…` passes pass/null/discordant synthetic | **closed** |
+| N-c probe | launched 2026-08-27 00:5x on the real 42-unit panel, pid in `reports/newton15_pred/probe/probe.pid`, log `probe_run.log`; ≈ 22 h at 4 worlds/batch | **running** |
+| Probe harness repairs | int32 scatter overflow at 42 worlds → subprocess batching; `TensorDict` flatten; OOM retry. Log: `autoresearch/autoresearch-260827-0040/research_log.md` | **closed** (unsealed implementation; batch size in manifest) |
+| G-0 panel | `reports/g_segment/panel/` 100 clips, disjoint by name + hash, `ec23b7b9…` | **closed** |
+| G-0 seal draft | `plan/PREREGISTRATION_G_SEGMENT.md` DRAFT; pre-seal checklist S1–S7 | **open — target seal Sept 10** |
+
+Two facts the seal draft surfaced that change the plan: **G2's learning-progress rank does not
+exist in code** (the sampler only has `conditional_failure_rate^power`), and the **DFRP v1 panel
+overlaps `tier_800` by 2 clips** (the G-2 arm must exclude or disclose them).
+
+## 10. Next directive (rev 3)
+
+### 10.0 While the probe runs (≈ 22 h; CPU only; do not touch the GPU)
+
+Do not start any other GPU job; the probe's batches need ~5.6 GB and the foreign jobs already
+spike to 27.9 GB. `run_when_free.sh` must not be used to queue anything alongside it.
+
+1. **Send B4.** The 10-line ask is written. Nothing else in this file blocks on Linji, but the
+   companion release does.
+2. **S1 — implement the G2 rank** (`climb/segment_curriculum.py`, `segment_runtime.py`): the LP
+   rank exactly as §3 of the draft seal defines it (W = 10 ticks, λ = 0.01, `difficulty_power` 0),
+   plus the uncertainty fallback; extend `tests/test_segment_{curriculum,runtime}.py` with the
+   resume-equivalence property for the new state (`s_u(k − W)` ring buffer must round-trip
+   through `state_dict`). This is the single prerequisite the wiring screen cannot start without.
+3. **S2 — build the `tier_800` guard-0 unit table** with `tools/build_segment_unit_table.py`
+   (`--sidecars reports/segments_v2_tier800_guard0 --horizon-steps 50`) →
+   `reports/g_segment/unit_table.json`; record admissible units and legal starts in the draft.
+4. **S3 — build the panel's condition manifest** with `eval_paired_v2.build_conditions`
+   (7 phases × 4 reps × 3.0 s) → `reports/g_segment/eval_conditions.json`; hash it into the draft.
+5. **S4 — frozen analyzer `tools/analyze_g_segment.py`** with four `--synthetic` branches
+   (positive / null / inconclusive / gate-fail) that fails closed without the sampler ledger.
+6. **S5 — bring `run_when_free.sh` into `tools/`** and make it gate on free memory *and*
+   utilization; the `need_MiB` for a 512-env arm is still a guess until the wiring screen.
+
+### 10.1 When the probe finishes
+
+1. Check `reports/newton15_pred/probe/COMPLETED.json` and the manifest: `pass_preflight`,
+   `deterministic_repeat_max_abs_delta = 0`, `cross_condition_initial_state_max_abs_delta = 0`,
+   `invalid_starts = 0`, `escaped_reference_frames = 0`, motor-clamp realized in ≥ 12 units,
+   paired-alive ≥ 0.80 everywhere. **If any fails → "not tested"**; repair under a dated
+   addendum; re-run. Do not look at the effects table first.
+2. Run the frozen analyzer unchanged (10,000 permutations, seed 20260826) →
+   `reports/newton15_pred/result.json` + sentinel. Record the verdict verbatim in
+   `plan/STATUS.md`, `paper/RESULTS_LOG.md`, and `PARKING.md` (G3 entry).
+3. **Kill rule stands:** valid-data fail → Newton is an instrument; G3 never runs; the
+   fragility vector goes to the companion appendix. Pass → G3 remains *eligible* for its own
+   later seal; it still does not run before G2 has a passing manipulation check.
+4. Commit the probe artifacts (`effects.csv`, `probe_manifest.json`, `COMPLETED.json`,
+   `result.json`, `launch_env.txt`, `gpu_watch.log`) in one commit with the research log.
+
+### 10.2 Seal Phase G (target Sept 10)
+
+When S1–S6 are closed: freeze `plan/G_SEGMENT_FREEZE.sha256`, append the document hash to
+`plan/SEALS_2026-08-19.sha256`, dry-run the analyzer on synthetic data, and put the one-seed
+wiring screen and E3 (addendum v2) into the gap queue in whichever order capacity allows.
+The wiring screen's sentinel must record realized GPU-hours and peak memory; the three-seed
+decision (and the G0-first drop) is made from that number, not from an estimate.
+
+### 10.3 What not to do
+
+No second GPU job while the probe runs. No G3. No bank-wide repair. No edits to sealed files or
+to the frozen analyzer. No softening of any threshold in the draft seal after S1–S4 exist —
+the draft is a draft only until the hashes are written, not until the numbers look right.

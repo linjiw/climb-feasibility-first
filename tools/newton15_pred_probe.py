@@ -12,6 +12,7 @@ import argparse
 import csv
 import hashlib
 import json
+import time
 import os
 import sys
 from dataclasses import asdict
@@ -53,7 +54,7 @@ def flatten_observation(value: Any) -> torch.Tensor:
         hasattr(value, "keys") and hasattr(value, "__getitem__")
     ):
         return torch.cat(
-            [flatten_observation(value[key]) for key in sorted(value, key=str)],
+            [flatten_observation(value[key]) for key in sorted(value.keys(), key=str)],
             dim=1,
         )
     raise TypeError(f"unsupported observation type: {type(value)!r}")
@@ -385,6 +386,145 @@ def rollout(
     }
 
 
+BATCH_WORLDS = 8
+OOM_RETRIES = 240
+OOM_WAIT_S = 60
+"""Worlds per vectorized build.
+
+Warp's run-to-run deterministic scatter buffers grow roughly quadratically with
+the number of worlds under the 630-record G1 bound (int32 overflow at 42
+worlds, ~2.4 GB at 8). Conditions are therefore executed in fixed-size batches
+of independent worlds; every batch is an independent build with the same
+sealed starts, noise draws (keyed by unit and replicate), and physics contract.
+Paired base/perturbed worlds always share a batch.
+"""
+
+
+def _merge_batch_results(
+    parts: list[tuple[dict[str, Any], dict[str, np.ndarray], dict[str, Any]]],
+) -> tuple[dict[str, Any], dict[str, np.ndarray], dict[str, Any]]:
+    """Concatenate per-batch rollouts along the world axis."""
+    results = [part[0] for part in parts]
+    initials = [part[1] for part in parts]
+    manipulations = [part[2] for part in parts]
+    result: dict[str, Any] = {}
+    for key, value in results[0].items():
+        if isinstance(value, np.ndarray):
+            result[key] = np.concatenate([r[key] for r in results], axis=1)
+        elif key == "contacts":
+            result[key] = [
+                [world for r in results for world in r[key][step]]
+                for step in range(len(value))
+            ]
+        elif isinstance(value, (int, np.integer)):
+            result[key] = int(sum(int(r[key]) for r in results))
+        else:
+            raise TypeError(f"cannot merge rollout field {key!r}")
+    initial = {
+        key: np.concatenate([i[key] for i in initials], axis=0) for key in initials[0]
+    }
+    manipulation: dict[str, Any] = {}
+    for key, value in manipulations[0].items():
+        if key in {"delayed_worlds", "clamped_worlds"}:
+            manipulation[key] = int(sum(int(m[key]) for m in manipulations))
+        else:
+            if any(m[key] != value for m in manipulations):
+                raise ValueError(f"manipulation field {key!r} differs across batches")
+            manipulation[key] = value
+    manipulation["batches"] = len(parts)
+    manipulation["batch_worlds"] = BATCH_WORLDS
+    return result, initial, manipulation
+
+
+def _worker_batch(payload_path: Path) -> int:
+    """Child-process entry: execute one batch and pickle the result."""
+    import pickle
+
+    payload = pickle.loads(payload_path.read_bytes())
+    configure_determinism()
+    part = _run_condition_batch(
+        checkpoint=Path(payload["checkpoint"]),
+        unit_table=Path(payload["unit_table"]),
+        bank=Path(payload["bank"]),
+        conditions=payload["conditions"],
+        device=payload["device"],
+        axis=payload["axis"],
+        mujoco_contacts=payload["mujoco_contacts"],
+    )
+    Path(payload["result_path"]).write_bytes(pickle.dumps(part))
+    return 0
+
+
+def run_condition_set(
+    *,
+    checkpoint: Path,
+    unit_table: Path,
+    bank: Path,
+    conditions: list[dict[str, Any]],
+    device: str,
+    axis: str,
+    mujoco_contacts: bool = True,
+) -> tuple[dict[str, Any], dict[str, np.ndarray], dict[str, Any]]:
+    """Execute a condition set in world batches and merge in condition order.
+
+    Each batch runs in a fresh child process: Warp's memory pool does not return
+    a closed environment's allocations to the device, so in-process batches
+    accumulate until the shared GPU is exhausted.
+    """
+    import pickle
+    import subprocess
+    import sys
+    import tempfile
+
+    if BATCH_WORLDS < 2 or BATCH_WORLDS % 2:
+        raise ValueError("BATCH_WORLDS must be an even positive integer")
+    parts = []
+    total = (len(conditions) + BATCH_WORLDS - 1) // BATCH_WORLDS
+    with tempfile.TemporaryDirectory(prefix="newton15_pred_batch_") as tmp:
+        for offset in range(0, len(conditions), BATCH_WORLDS):
+            chunk = conditions[offset : offset + BATCH_WORLDS]
+            index = offset // BATCH_WORLDS + 1
+            print(f"    batch {index}/{total} ({len(chunk)} worlds)", flush=True)
+            payload_path = Path(tmp) / f"payload_{index}.pkl"
+            result_path = Path(tmp) / f"result_{index}.pkl"
+            payload_path.write_bytes(
+                pickle.dumps(
+                    {
+                        "checkpoint": str(checkpoint),
+                        "unit_table": str(unit_table),
+                        "bank": str(bank),
+                        "conditions": chunk,
+                        "device": device,
+                        "axis": axis,
+                        "mujoco_contacts": mujoco_contacts,
+                        "result_path": str(result_path),
+                    }
+                )
+            )
+            for attempt in range(OOM_RETRIES + 1):
+                completed = subprocess.run(
+                    [sys.executable, str(Path(__file__).resolve()), "--worker-batch", str(payload_path)],
+                    capture_output=True,
+                    text=True,
+                )
+                if completed.returncode == 0 and result_path.exists():
+                    break
+                tail = (completed.stderr or "")[-4000:]
+                lowered = tail.lower()
+                transient = "out of memory" in lowered or "failed to allocate" in lowered
+                if not transient or attempt == OOM_RETRIES:
+                    sys.stderr.write(tail)
+                    raise RuntimeError(f"batch {index} failed (rc={completed.returncode})")
+                print(
+                    f"    out of memory on attempt {attempt + 1}; waiting {OOM_WAIT_S}s",
+                    flush=True,
+                )
+                time.sleep(OOM_WAIT_S)
+            parts.append(pickle.loads(result_path.read_bytes()))
+            result_path.unlink()
+    return _merge_batch_results(parts)
+
+
 def pair_delta(
     initial: dict[str, np.ndarray], conditions: list[dict[str, Any]]
 ) -> float:
@@ -418,7 +558,7 @@ def cross_run_initial_delta(
     return maximum
 
 
-def run_condition_set(
+def _run_condition_batch(
     *,
     checkpoint: Path,
     unit_table: Path,
@@ -428,7 +568,7 @@ def run_condition_set(
     axis: str,
     mujoco_contacts: bool = True,
 ) -> tuple[dict[str, Any], dict[str, np.ndarray], dict[str, Any]]:
-    """Build and execute one vectorized condition set."""
+    """Build and execute one vectorized batch of conditions."""
     env, wrapped, policy, command = build_env(
         checkpoint=checkpoint,
         unit_table=unit_table,
@@ -761,10 +901,16 @@ def main() -> int:
     parser.add_argument("--development", type=Path)
     parser.add_argument("--adaptive", type=Path)
     parser.add_argument("--grounded", type=Path)
-    parser.add_argument("--out-dir", type=Path, required=True)
+    parser.add_argument("--out-dir", type=Path)
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--synthetic", action="store_true")
+    parser.add_argument("--batch-worlds", type=int, default=BATCH_WORLDS)
+    parser.add_argument("--worker-batch", type=Path, help=argparse.SUPPRESS)
     args = parser.parse_args()
+    if args.worker_batch is not None:
+        return _worker_batch(args.worker_batch)
+    if args.out_dir is None:
+        parser.error("--out-dir is required")
     if args.synthetic:
         return synthetic(args.out_dir / "SYNTHETIC_PROBE.json")
     for name in (
@@ -778,6 +924,7 @@ def main() -> int:
         if getattr(args, name) is None:
             parser.error(f"--{name.replace('_', '-')} is required without --synthetic")
 
+    globals()["BATCH_WORLDS"] = int(args.batch_worlds)
     configure_determinism()
     reference_rows = load_reference_rows(args.reference)
     checkpoints = {policy: getattr(args, policy) for policy in POLICIES}
@@ -882,6 +1029,7 @@ def main() -> int:
             policy: sha256_file(path) for policy, path in checkpoints.items()
         },
         "probe_tool_sha256": sha256_file(Path(__file__)),
+        "batch_worlds": BATCH_WORLDS,
         "effects_csv": str(effects_path.resolve()),
         "effects_csv_sha256": sha256_file(effects_path),
         "preflight": preflight,
