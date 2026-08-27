@@ -356,6 +356,9 @@ No edits to sealed files. Do not soften §8's "not tested" wording to make the d
 | S1 G2 rank | `SegmentSampler(rank="learning_progress"\|"uncertainty")`, W = 10, λ = 0.01; ledger logs `rank_saturation_fraction`; 59 tests pass | **closed** (2026-08-27 01:20) |
 | S2 exact unit table | `reports/g_segment/unit_table.json`: 800 clips → 1,184 admissible units, 368,951 legal starts; 701 unflagged clips newly screened in full mode (4.5 min, 8 CPU workers) | **closed** |
 | S3 eval conditions | `reports/g_segment/eval_conditions.json`: 2,800 conditions, all full-window | **closed** |
+| S4 analyzer | `tools/analyze_g_segment.py`; synthetic positive/null/inconclusive/gate-fail all pass; fails closed without a post-warm-up ledger | **closed** (draft; re-hash at seal) |
+| S5 gap gate | `tools/run_when_free.sh` in repo; memory + utilization gated; OOM retry; 512-env need still unmeasured | **closed** (script) |
+| S6 seeds/drop order | seeds 1,2,3; G0 first, then seed 3 — in the draft and `STATUS.md` | **closed** |
 | Probe harness, 2nd repair | mjlab's `auto_reset=False` guard refused to step a fallen world at batch 6; the probe now clears `_manual_reset_pending` each step (no reset, no RNG consumed; `alive` masks). Relaunched 01:2x | **closed**; probe **running** |
 
 Three facts the seal work surfaced that change the plan: **G2's learning-progress rank did not
@@ -373,7 +376,7 @@ spike to 27.9 GB. `run_when_free.sh` must not be used to queue anything alongsid
 
 1. **Send B4.** The 10-line ask is written. Nothing else in this file blocks on Linji, but the
    companion release does.
-2. ~~S1~~, ~~S2~~, ~~S3~~ — done (see §9). Remaining before the seal: S4–S7.
+2. ~~S1~~–~~S6~~ — done (see §9). Remaining before the seal: S7 (G3 pointer after N-c) and the seal itself (§10.2), which should wait for the N-c verdict only if it lands before Sept 10.
 2′. *(record)* **S1 — implement the G2 rank** (`climb/segment_curriculum.py`, `segment_runtime.py`): the LP
    rank exactly as §3 of the draft seal defines it (W = 10 ticks, λ = 0.01, `difficulty_power` 0),
    plus the uncertainty fallback; extend `tests/test_segment_{curriculum,runtime}.py` with the

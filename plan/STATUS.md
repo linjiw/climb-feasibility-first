@@ -1,6 +1,6 @@
 # CLIMB / feasibility-first — status against Research Plan v5
 
-Updated 2026-08-26. **v5 (`RESEARCH_PLAN_v5.md`, sealed `4d490cf8…`) is authoritative**: D1
+Updated 2026-08-27. **v5 (`RESEARCH_PLAN_v5.md`, sealed `4d490cf8…`) is authoritative**: D1
 evaluation policy, D2 spin-out, D3 new seals, D4 writing-first window to Sept 15. v4's freeze
 discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 
@@ -21,6 +21,15 @@ discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 | **Corrections applied** | C1 exposure attribution (the impossible clip's share bracketed [21.9 %, 48.8 %]; the JSON key was copied), C2 saturation-at-fall (≥ 4/29 in 8/8, exactly 5/29 in 7/8, mean 16.8 %), C3 per-actuator identity **withdrawn** (not recoverable from the artifact). All three fixed in place across `RESULTS_LOG`, flagship, companion, payoff plan, `RED_TEAM` row 18. | `paper/CORRECTIONS_2026-08-19.md` |
 | **Second-bank artifact hygiene closed** | The BONES-SEED screen was reproduced from the exact 4,950-clip bank into a durable 4,950-row CSV; its sentinel records 0 failures and all registered threshold counts reproduce (infeasible 29/7/5; airborne 225/111/32 at >0.05/>0.10/>0.20). | `reports/feasibility_sonic/{hygiene_screen.csv,COMPLETED.json}`; execution log `autoresearch/autoresearch-260826-1617/research_log.md` |
 | **Same-clip implementation agreement closed** | Deterministic stratified 20+20 panel run through both CLIMB/refeas and SONIC implementations: infeasible ρ 0.984, airborne ρ 0.997, strict `>0.10` flags agree 39/40 (97.5 %, κ 0.948). Sole disagreement: BONES `burpee_002` (0.019 vs 0.136). This closes implementation agreement on the panel, not the corpus/release-filter confound and not retargeter causality. | `reports/feasibility_xcheck/`; companion §4; flagship A3; `paper/RESULTS_LOG.md` |
+
+## Phase N / Phase G state (2026-08-27)
+
+| item | state | where |
+|---|---|---|
+| **Newton 1.5 recertification (N-b)** | **PASS** on one easy + one contact-rich hash-bound DFRP v1 unit after seven live-model residuals were mirrored; zero dispersion across independent rebuilds. Conformance only; no policy or predictive claim. | `plan/NEWTON15_RECERT_RESULT.md`, `reports/newton15_recert/` |
+| **Newton predictive gate (N-c)** | Sealed `b1773fc5…` before outcomes; frozen analyzer `1324aa6f…`. The real 42-unit probe is **running** (launched 2026-08-27; ≈ 22 h at 4 worlds per child-process batch because Warp's deterministic scatter buffers overflow int32 at 42 worlds). Verdict not opened. Kill rule stands: valid-data fail → G3 never runs. | `plan/PREREGISTRATION_NEWTON_PRED.md`, `reports/newton15_pred/probe/`, `autoresearch/autoresearch-260827-0040/research_log.md` |
+| **Phase-G seal draft** | `PREREGISTRATION_G_SEGMENT.md` (unsealed; target seal Sept 10). Done: LP/uncertainty ranks in the sampler; exact `tier_800` guard-0 unit table (1,184 units / 368,951 starts; 140 of 701 unflagged clips carry severe windows — the FGAS `assumeunflagged` eligibility was not exact); disjoint 100-clip panel (name + hash) with 2,800 conditions; frozen analyzer with four synthetic branches; `tools/run_when_free.sh`. **Seeds 1, 2, 3; drop order under GPU scarcity: G0 first, then seed 3; never the manipulation gate or the panel.** | `plan/PREREGISTRATION_G_SEGMENT.md`, `reports/g_segment/` |
+| **Companion release** | Blocked only on Linji's three decisions (`paper/LINJI_SIGNOFF_ASK_2026-08-26.md`, drafted, not sent). | `paper/` |
 
 ## Payoff directive (2026-08-21, Linji): approvals and launches
 

@@ -35,7 +35,8 @@ Two contrasts, in priority order:
 
 All arms: 4,000 iterations, 512 envs, identical PPO configuration, identical environment seed
 per training seed, failure penalty as in the segment-v2 pilot (−10). Seeds for confirmation:
-three, fixed at seal time. The wiring screen is seed 1 only.
+**1, 2, 3** (`CLIMB_SEGMENT_SEED` = PPO seed = environment seed per arm). The wiring screen is
+seed 1 only.
 
 The unit table used by G1/G2 is built: `reports/g_segment/unit_table.json` — 800 clips,
 1,841 source units, **1,184 admissible 50-step units, 368,951 legal starts** (657 short units
@@ -175,8 +176,8 @@ about bank-wide curation, not about SONIC. A positive G2 − G1 is a claim about
 | S2 ✅ | `tier_800` guard-0 exact unit table built from full-mode screens of all 800 clips | `reports/g_segment/unit_table.json`, SHAs in §2 |
 | S3 ✅ | condition manifest for the 100-clip panel built with `eval_paired_v2.build_conditions` | `reports/g_segment/eval_conditions.json`, SHA in §5 |
 | S4 ✅ (draft) | frozen analyzer `tools/analyze_g_segment.py`: gate first (TV band, entropy, invalid/censored = 0, saturation < 0.90; G1 TV < 0.01), seed×clip hierarchical bootstrap for G2 − G1 survival / AULC / G1 − G0, common-survivor relative noninferiority (MPKPE, anchor orientation, work; CI upper < +10 %), §6 verdict; `--synthetic` passes positive / null / inconclusive / gate-fail; fails closed without a post-warm-up ledger or on a condition-set mismatch. SHA-256 `a9c2c5466bf3d8992882ce04ead016695d4df0c47d2ff2d991a62b2e60314016` (re-hash at seal; the G0 exposure check is reported, not gated, because G0 uses the clip-level command) | `reports/g_segment/SYNTHETIC.json` |
-| S5 | `run_when_free.sh` moved into `tools/` (today it lives only in a job scratch directory) and the memory need set from a measured 512-env footprint | script SHA recorded |
-| S6 | seeds fixed; drop order copied verbatim into `plan/STATUS.md` | — |
+| S5 ✅ (script) / ⏳ (footprint) | `tools/run_when_free.sh` now in the repo; gates on free memory **and** utilization ≤ 60 %, retries on OOM / `Failed to allocate`, writes a `DONE rc=` sentinel. SHA-256 `7601b5054dceeb86064326dfc814ecec8896aa6559d1e74a8c79db398397108d`. The 512-env `need_MiB` is still unmeasured — the wiring screen records it | — |
+| S6 ✅ | training seeds fixed: **1, 2, 3** (wiring screen = seed 1); drop order (G0 first, then seed 3) copied into `plan/STATUS.md` | — |
 | S7 | G3 pointer: `PARKING.md` entry updated with the N-c verdict when it lands | — |
 
 Seal: `sha256sum plan/PREREGISTRATION_G_SEGMENT.md tools/analyze_g_segment.py
