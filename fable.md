@@ -353,10 +353,16 @@ No edits to sealed files. Do not soften §8's "not tested" wording to make the d
 | Probe harness repairs | int32 scatter overflow at 42 worlds → subprocess batching; `TensorDict` flatten; OOM retry. Log: `autoresearch/autoresearch-260827-0040/research_log.md` | **closed** (unsealed implementation; batch size in manifest) |
 | G-0 panel | `reports/g_segment/panel/` 100 clips, disjoint by name + hash, `ec23b7b9…` | **closed** |
 | G-0 seal draft | `plan/PREREGISTRATION_G_SEGMENT.md` DRAFT; pre-seal checklist S1–S7 | **open — target seal Sept 10** |
+| S1 G2 rank | `SegmentSampler(rank="learning_progress"\|"uncertainty")`, W = 10, λ = 0.01; ledger logs `rank_saturation_fraction`; 59 tests pass | **closed** (2026-08-27 01:20) |
+| S2 exact unit table | `reports/g_segment/unit_table.json`: 800 clips → 1,184 admissible units, 368,951 legal starts; 701 unflagged clips newly screened in full mode (4.5 min, 8 CPU workers) | **closed** |
+| S3 eval conditions | `reports/g_segment/eval_conditions.json`: 2,800 conditions, all full-window | **closed** |
+| Probe harness, 2nd repair | mjlab's `auto_reset=False` guard refused to step a fallen world at batch 6; the probe now clears `_manual_reset_pending` each step (no reset, no RNG consumed; `alive` masks). Relaunched 01:2x | **closed**; probe **running** |
 
-Two facts the seal draft surfaced that change the plan: **G2's learning-progress rank does not
-exist in code** (the sampler only has `conditional_failure_rate^power`), and the **DFRP v1 panel
-overlaps `tier_800` by 2 clips** (the G-2 arm must exclude or disclose them).
+Three facts the seal work surfaced that change the plan: **G2's learning-progress rank did not
+exist in code** (now implemented, S1); the **DFRP v1 panel overlaps `tier_800` by 2 clips** (the
+G-2 arm must exclude or disclose them); and **140 of the 701 "unflagged" tier_800 clips contain
+severe windows at guard 0** — the FGAS-era `assumeunflagged` eligibility was not exact, which is
+one more reason the FGAS null is about wiring, not about segment-native curation.
 
 ## 10. Next directive (rev 3)
 
@@ -367,7 +373,8 @@ spike to 27.9 GB. `run_when_free.sh` must not be used to queue anything alongsid
 
 1. **Send B4.** The 10-line ask is written. Nothing else in this file blocks on Linji, but the
    companion release does.
-2. **S1 — implement the G2 rank** (`climb/segment_curriculum.py`, `segment_runtime.py`): the LP
+2. ~~S1~~, ~~S2~~, ~~S3~~ — done (see §9). Remaining before the seal: S4–S7.
+2′. *(record)* **S1 — implement the G2 rank** (`climb/segment_curriculum.py`, `segment_runtime.py`): the LP
    rank exactly as §3 of the draft seal defines it (W = 10 ticks, λ = 0.01, `difficulty_power` 0),
    plus the uncertainty fallback; extend `tests/test_segment_{curriculum,runtime}.py` with the
    resume-equivalence property for the new state (`s_u(k − W)` ring buffer must round-trip

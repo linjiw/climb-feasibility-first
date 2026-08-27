@@ -37,8 +37,19 @@ All arms: 4,000 iterations, 512 envs, identical PPO configuration, identical env
 per training seed, failure penalty as in the segment-v2 pilot (−10). Seeds for confirmation:
 three, fixed at seal time. The wiring screen is seed 1 only.
 
-The unit table used by G1/G2 will be built once, before sealing, and bound here by file and
-payload SHA-256 (§9). The eight-clip N7 overlap must not recur: the evaluation panel of §5 is
+The unit table used by G1/G2 is built: `reports/g_segment/unit_table.json` — 800 clips,
+1,841 source units, **1,184 admissible 50-step units, 368,951 legal starts** (657 short units
+discarded); file SHA-256 `a98c48541fbc4aa4627d9b24c5a08e9e67f0d6bc9bb94103da57313b94766739`, payload SHA-256
+`a52a668e5570c24e01a1af821164cbd19a38a3cd9007f245f78494ce11af9606`. Its sidecars
+(`reports/g_segment/sidecars_guard0/`, 800 files) were reduced by `tools/screen_segments.py`
+(SHA-256 `993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b`) at guard 0 s / symmetric / min-seg 0 / bin 50 / severe / real model from
+full-mode per-frame screens: the 99 flagged clips' existing screens
+(`reports/segments_tier800/full/`) and **701 new full-mode screens of the unflagged clips**
+(`reports/g_segment/screen_full/`, `n1_knee_id.py --gap 0.06`, μ 0.6). The 99 legacy sidecars
+reproduce with zero field mismatches. **Finding:** 140 of the 701 unflagged clips contain at
+least one severe window at guard 0 — the FGAS-era `tier_800_assumeunflagged_guard0_bin50`
+eligibility (which treated unflagged clips as fully feasible) was not exact. G1/G2 use the exact
+table; this is disclosed here so the G1 − G0 contrast is read as *exact* hygiene. The eight-clip N7 overlap must not recur: the evaluation panel of §5 is
 already hash-verified disjoint from `tier_800` and every other list an arm can see.
 
 ## 3. The G2 rank (must be named exactly, because this is what sank every earlier arm)
@@ -68,9 +79,15 @@ the confirmation runs G0/G1 only.
 
 No other rank, power, window, floor, or cap is admissible after outcomes exist.
 
-**Implementation status:** neither rank exists in `climb/` today (only
-`conditional_failure_rate^difficulty_power`). Both must be implemented, unit-tested (including
-the pilot's sampler-equivalent resume property), and hash-bound here **before** sealing (§9).
+**Implementation status (2026-08-27):** both ranks are implemented as
+`SegmentSampler(rank="learning_progress" | "uncertainty", progress_window=10, progress_floor=0.01)`
+in `climb/segment_runtime.py` (SHA-256 `2b2631e2fffdebb70eac8d885daca4689283e52c0674ddfcd79d29dc0591e50f`), plumbed through
+`SegmentNativeMotionCommandCfg.segment_rank / segment_progress_window / segment_progress_floor`
+in `climb/segment_command.py` (SHA-256 `89b56c009fdd86d2a327e9ce69d99101f960291453b8bf70c42ee3fae6dbcfeb`). `difficulty_power ≠ 0` with a non-failure rank
+is a launch error. The success-rate ring buffer round-trips through `state_dict` and the
+sampler-equivalent resume test covers it (`tests/test_segment_runtime.py`, 10 tests; full
+suite 59). The ledger now also records `rank` and `rank_saturation_fraction` (gate item 4).
+The default rank remains `failure`, so the pilot's behaviour is unchanged.
 
 ## 4. Manipulation gate — sealed with the endpoint, evaluated before it
 
@@ -109,7 +126,9 @@ G0 realized clip exposure matches the deployment prior within 0.02 TV.
   `tools/build_g_eval_panel.py` SHA-256
   `dd36fedcdfbb125f6396cf01d29d3b1ecf381d1aa9d0351d87d928549c603627`.
 - Conditions: 7 phases × 4 replicates × 3.0 s windows per clip (the eval-v2 pilot design),
-  same for every arm and seed.
+  same for every arm and seed. Built: `reports/g_segment/eval_conditions.json` — **2,800
+  conditions, all full-window**, environment seed 20260910, joint-noise seed 20260911, joint
+  noise 0.05, nconmax 70; SHA-256 `74b723d42c4050eea9f4ea7ff87d22771e8e32c5155b56829900bf4cb3744a4e`.
 - **Primary endpoint:** feasible-disjoint survival (fraction of conditions surviving the full
   window) at iteration 3,999, contrast G2 − G1, three seeds, seed × clip hierarchical
   bootstrap (10,000 draws, NumPy seed 20260910), 95 % percentile interval.
@@ -152,9 +171,9 @@ about bank-wide curation, not about SONIC. A positive G2 − G1 is a claim about
 
 | # | item | done when |
 |---|---|---|
-| S1 | LP rank + uncertainty fallback implemented in `climb/segment_curriculum.py` / `segment_runtime.py`, with `W`, `λ`, and resume equivalence tested | tests pass; SHAs recorded here |
-| S2 | `tier_800` guard-0 unit table built; file + payload SHA recorded; admissible unit count and legal-start count recorded | `reports/g_segment/unit_table.json` |
-| S3 | condition manifest for the 100-clip panel built with `eval_paired_v2.build_conditions`; SHA recorded | `reports/g_segment/eval_conditions.json` |
+| S1 ✅ | LP rank + uncertainty fallback implemented in `climb/segment_runtime.py`, plumbed in `segment_command.py`; `W`, `λ`, and resume equivalence tested (59 tests) | SHAs in §3 |
+| S2 ✅ | `tier_800` guard-0 exact unit table built from full-mode screens of all 800 clips | `reports/g_segment/unit_table.json`, SHAs in §2 |
+| S3 ✅ | condition manifest for the 100-clip panel built with `eval_paired_v2.build_conditions` | `reports/g_segment/eval_conditions.json`, SHA in §5 |
 | S4 | frozen analyzer `tools/analyze_g_segment.py` with `--synthetic` branches: positive / null / inconclusive / gate-fail (must fail closed without the ledger) | SHA recorded; `reports/g_segment/SYNTHETIC.json` |
 | S5 | `run_when_free.sh` moved into `tools/` (today it lives only in a job scratch directory) and the memory need set from a measured 512-env footprint | script SHA recorded |
 | S6 | seeds fixed; drop order copied verbatim into `plan/STATUS.md` | — |

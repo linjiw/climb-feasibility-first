@@ -1,0 +1,146 @@
+{
+ "clip": "KIT_674_wash_head02_poses_100_jpos",
+ "fps": 50.0,
+ "frames": 2838,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.00035236081747709656,
+ "infeasible_frac": 0.00035236081747709656,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.00035236081747709656,
+ "severe_frac_guarded": 0.00035236081747709656,
+ "feasible_frac_kept": 0.9996476391825229,
+ "n_severe_windows": 1,
+ "n_feasible_segments": 2,
+ "feasible_segments_frames": [
+  [
+   0,
+   1269
+  ],
+  [
+   1270,
+   2838
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 1269,
+   "unsupported_ratio_mean": 0.03595912031076875,
+   "unsupported_ratio_p95": 0.11807631497762149,
+   "unsupported_ratio_max": 0.2925920078549555
+  },
+  {
+   "start_frame": 1270,
+   "stop_frame": 2838,
+   "unsupported_ratio_mean": 0.012450275684506896,
+   "unsupported_ratio_p95": 0.07163459502655799,
+   "unsupported_ratio_max": 0.1761055345083118
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   25.38
+  ],
+  [
+   25.4,
+   56.76
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   1269,
+   1270
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   1269,
+   1270
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   1269,
+   1270
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   25.38,
+   25.4
+  ]
+ ],
+ "n_bins": 57,
+ "n_bins_eligible": 56,
+ "bin_eligible_frac": 0.9824561403508771,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.1027740892794601,
+ "source_screen_sha256": "fb2caad05a07691d23cc1cd092a2d81e0b09922f467d6eeaecf18082f2e1f7c4",
+ "source_motion_sha256": "f44980345092e73a3bc3128685dc64c0738e2f8bcc75cae9a2ca5afa84927afc",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

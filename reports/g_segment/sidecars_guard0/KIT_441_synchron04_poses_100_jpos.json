@@ -1,0 +1,132 @@
+{
+ "clip": "KIT_441_synchron04_poses_100_jpos",
+ "fps": 50.0,
+ "frames": 569,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.08260105448154657,
+ "infeasible_frac": 0.050966608084358524,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.050966608084358524,
+ "severe_frac_guarded": 0.050966608084358524,
+ "feasible_frac_kept": 0.9490333919156415,
+ "n_severe_windows": 2,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   344
+  ],
+  [
+   371,
+   395
+  ],
+  [
+   397,
+   569
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 344,
+   "unsupported_ratio_mean": 0.013495167332718657,
+   "unsupported_ratio_p95": 0.08617247378674942,
+   "unsupported_ratio_max": 0.15164643249326848
+  },
+  {
+   "start_frame": 371,
+   "stop_frame": 395,
+   "unsupported_ratio_mean": 0.2207816130326643,
+   "unsupported_ratio_p95": 0.32342576333266937,
+   "unsupported_ratio_max": 0.392262848566257
+  },
+  {
+   "start_frame": 397,
+   "stop_frame": 569,
+   "unsupported_ratio_mean": 0.003965716322351861,
+   "unsupported_ratio_p95": 0.0,
+   "unsupported_ratio_max": 0.33478395883090517
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   6.88
+  ],
+  [
+   7.42,
+   7.9
+  ],
+  [
+   7.94,
+   11.38
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   344,
+   371
+  ],
+  [
+   395,
+   397
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   344,
+   371
+  ],
+  [
+   395,
+   397
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   344,
+   371
+  ],
+  [
+   395,
+   397
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   6.88,
+   7.42
+  ],
+  [
+   7.9,
+   7.94
+  ]
+ ],
+ "n_bins": 12,
+ "n_bins_eligible": 10,
+ "bin_eligible_frac": 0.8333333333333334,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.5265433186288497,
+ "source_screen_sha256": "cdcdd9579b2cd4346fdaf116da77b60ebdfc5a9f7b416142f47fbab05cb6e833",
+ "source_motion_sha256": "9ebf43f5335d3e4089772243dd3f4415555de563f8038ef61e79dfdd3b7545a5",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

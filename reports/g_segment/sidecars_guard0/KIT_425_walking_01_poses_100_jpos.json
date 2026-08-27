@@ -1,0 +1,127 @@
+{
+ "clip": "KIT_425_walking_01_poses_100_jpos",
+ "fps": 50.0,
+ "frames": 330,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.10303030303030303,
+ "infeasible_frac": 0.06666666666666667,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.06666666666666667,
+ "severe_frac_guarded": 0.06666666666666667,
+ "feasible_frac_kept": 0.9333333333333333,
+ "n_severe_windows": 2,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   3
+  ],
+  [
+   21,
+   33
+  ],
+  [
+   37,
+   330
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 3,
+   "unsupported_ratio_mean": 0.030777703368929488,
+   "unsupported_ratio_p95": 0.03344782200557171,
+   "unsupported_ratio_max": 0.03363126527068454
+  },
+  {
+   "start_frame": 21,
+   "stop_frame": 33,
+   "unsupported_ratio_mean": 0.20084489706727746,
+   "unsupported_ratio_p95": 0.3628507783931673,
+   "unsupported_ratio_max": 0.4206965546587448
+  },
+  {
+   "start_frame": 37,
+   "stop_frame": 330,
+   "unsupported_ratio_mean": 0.021485192427036753,
+   "unsupported_ratio_p95": 0.09814214683536125,
+   "unsupported_ratio_max": 0.392568587341445
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   0.06
+  ],
+  [
+   0.42,
+   0.66
+  ],
+  [
+   0.74,
+   6.6
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   3,
+   21
+  ],
+  [
+   33,
+   37
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   3,
+   21
+  ],
+  [
+   33,
+   37
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   3,
+   21
+  ],
+  [
+   33,
+   37
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   0.06,
+   0.42
+  ],
+  [
+   0.66,
+   0.74
+  ]
+ ],
+ "n_bins": 7,
+ "n_bins_eligible": 6,
+ "bin_eligible_frac": 0.8571428571428571,
+ "bin_eligible": [
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.9267400884112316,
+ "source_screen_sha256": "e665f749324497e8387fb7fd9a7053710610a6ca0bfba0da544ac55c66c4c73a",
+ "source_motion_sha256": "4c0f40965fc8ae3289b0476e2ac561e6949affa765d5ebeb5a8ab7494b49c304",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

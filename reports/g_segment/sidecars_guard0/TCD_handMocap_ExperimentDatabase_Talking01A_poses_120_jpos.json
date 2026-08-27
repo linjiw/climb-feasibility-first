@@ -1,0 +1,60 @@
+{
+ "clip": "TCD_handMocap_ExperimentDatabase_Talking01A_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 260,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0,
+ "severe_frac_guarded": 0.0,
+ "feasible_frac_kept": 1.0,
+ "n_severe_windows": 0,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   260
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 260,
+   "unsupported_ratio_mean": 0.21825280058634935,
+   "unsupported_ratio_p95": 0.23664181199554396,
+   "unsupported_ratio_max": 0.24459102015043302
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   5.2
+  ]
+ ],
+ "severe_windows_frames": [],
+ "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
+ "severe_windows_s": [],
+ "n_bins": 6,
+ "n_bins_eligible": 6,
+ "bin_eligible_frac": 1.0,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.23664181199554396,
+ "source_screen_sha256": "3b0a84cc1e901005e93b62ebc3b0e8b6833ee42848fadfcfcd10b98189f7eabd",
+ "source_motion_sha256": "00648b2122b49d324f87fec8b9f1b90c688ad93ce2e7d7a0c0f1ac464afe6d53",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

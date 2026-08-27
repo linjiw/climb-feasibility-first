@@ -1,0 +1,64 @@
+{
+ "clip": "BMLhandball_S09_Novice_Trial_upper_right_left_181_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 456,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0,
+ "severe_frac_guarded": 0.0,
+ "feasible_frac_kept": 1.0,
+ "n_severe_windows": 0,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   456
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 456,
+   "unsupported_ratio_mean": 0.03755692432490818,
+   "unsupported_ratio_p95": 0.15371016922578776,
+   "unsupported_ratio_max": 0.3121592894669901
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   9.12
+  ]
+ ],
+ "severe_windows_frames": [],
+ "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
+ "severe_windows_s": [],
+ "n_bins": 10,
+ "n_bins_eligible": 10,
+ "bin_eligible_frac": 1.0,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.15371016922578776,
+ "source_screen_sha256": "9c4563e07337e3f48ad9ff596a329aad429448bf0b7643fd7ea3cbf73d3af85c",
+ "source_motion_sha256": "68ec90be894fcdc7019a89cee3ecdee723d11ebe2e1bf5e1d5df3cf608e735f6",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

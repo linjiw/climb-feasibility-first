@@ -1,0 +1,219 @@
+{
+ "clip": "BMLmovi_Subject_51_F_MoSh_Subject_51_F_5_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 285,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.21052631578947367,
+ "infeasible_frac": 0.21052631578947367,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.21052631578947367,
+ "severe_frac_guarded": 0.21052631578947367,
+ "feasible_frac_kept": 0.7894736842105263,
+ "n_severe_windows": 5,
+ "n_feasible_segments": 6,
+ "feasible_segments_frames": [
+  [
+   0,
+   31
+  ],
+  [
+   34,
+   41
+  ],
+  [
+   48,
+   63
+  ],
+  [
+   84,
+   194
+  ],
+  [
+   213,
+   221
+  ],
+  [
+   231,
+   285
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 31,
+   "unsupported_ratio_mean": 0.018768415780091693,
+   "unsupported_ratio_p95": 0.07276582849475383,
+   "unsupported_ratio_max": 0.14339148556319137
+  },
+  {
+   "start_frame": 34,
+   "stop_frame": 41,
+   "unsupported_ratio_mean": 0.08918836841914003,
+   "unsupported_ratio_p95": 0.14868076637394445,
+   "unsupported_ratio_max": 0.14950626106695217
+  },
+  {
+   "start_frame": 48,
+   "stop_frame": 63,
+   "unsupported_ratio_mean": 0.13668561509406701,
+   "unsupported_ratio_p95": 0.17439339736725873,
+   "unsupported_ratio_max": 0.18038587736094436
+  },
+  {
+   "start_frame": 84,
+   "stop_frame": 194,
+   "unsupported_ratio_mean": 0.0039607068603905345,
+   "unsupported_ratio_p95": 0.0,
+   "unsupported_ratio_max": 0.13972262026093488
+  },
+  {
+   "start_frame": 213,
+   "stop_frame": 221,
+   "unsupported_ratio_mean": 0.11488134477690651,
+   "unsupported_ratio_p95": 0.13441805251142233,
+   "unsupported_ratio_max": 0.13880540393537075
+  },
+  {
+   "start_frame": 231,
+   "stop_frame": 285,
+   "unsupported_ratio_mean": 0.03910059224904839,
+   "unsupported_ratio_p95": 0.15490255044902107,
+   "unsupported_ratio_max": 0.16020711819853362
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   0.62
+  ],
+  [
+   0.68,
+   0.82
+  ],
+  [
+   0.96,
+   1.26
+  ],
+  [
+   1.68,
+   3.88
+  ],
+  [
+   4.26,
+   4.42
+  ],
+  [
+   4.62,
+   5.7
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   31,
+   34
+  ],
+  [
+   41,
+   48
+  ],
+  [
+   63,
+   84
+  ],
+  [
+   194,
+   213
+  ],
+  [
+   221,
+   231
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   31,
+   34
+  ],
+  [
+   41,
+   48
+  ],
+  [
+   63,
+   84
+  ],
+  [
+   194,
+   213
+  ],
+  [
+   221,
+   231
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   31,
+   34
+  ],
+  [
+   41,
+   48
+  ],
+  [
+   63,
+   84
+  ],
+  [
+   194,
+   213
+  ],
+  [
+   221,
+   231
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   0.62,
+   0.68
+  ],
+  [
+   0.82,
+   0.96
+  ],
+  [
+   1.26,
+   1.68
+  ],
+  [
+   3.88,
+   4.26
+  ],
+  [
+   4.42,
+   4.62
+  ]
+ ],
+ "n_bins": 6,
+ "n_bins_eligible": 2,
+ "bin_eligible_frac": 0.3333333333333333,
+ "bin_eligible": [
+  0,
+  0,
+  1,
+  0,
+  0,
+  1
+ ],
+ "unsupported_ratio_p95": 1.0343142764611437,
+ "source_screen_sha256": "c36a61149b20e8d38b770280eb6a38dfcfab541cfca2b84970c3d231e81019ae",
+ "source_motion_sha256": "3c0676794825433c32f798ccb08495c91ab14b2301a81d914c4a407bf61a3b7f",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

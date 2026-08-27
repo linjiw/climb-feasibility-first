@@ -23,6 +23,17 @@ from .segment_curriculum import (
 )
 
 SamplingMode = Literal["uniform", "adaptive"]
+RankMode = Literal["failure", "learning_progress", "uncertainty"]
+"""Adaptive focus rank.
+
+``failure``: conditional failure rate raised to ``difficulty_power`` (the
+segment-v2 pilot rank; retired as a sole rank because it saturates on an exact
+support).  ``learning_progress``: absolute change of the conditional success
+estimate over ``progress_window`` sampler ticks, plus ``progress_floor``.
+``uncertainty``: Bernoulli variance ``s (1 - s)`` of the conditional success
+estimate (the pre-declared fallback).  Both non-failure ranks require
+``difficulty_power == 0`` so the failure rate never enters multiplicatively.
+"""
 
 
 def canonical_hash(value: Any) -> str:
@@ -59,6 +70,9 @@ class SegmentSampler:
         prior_strength: float = 2.0,
         max_unit_probability: float | None = None,
         max_clip_probability: float | None = None,
+        rank: RankMode = "failure",
+        progress_window: int = 10,
+        progress_floor: float = 0.01,
     ) -> None:
         self.manifest_path = Path(manifest_path).resolve()
         self.manifest = json.loads(self.manifest_path.read_text())
@@ -98,6 +112,14 @@ class SegmentSampler:
             raise ValueError("decay must be in (0, 1]")
         if not 0.0 <= prior_rate <= 1.0 or prior_strength <= 0.0:
             raise ValueError("a positive Beta prior in [0, 1] is required")
+        if rank not in ("failure", "learning_progress", "uncertainty"):
+            raise ValueError("rank must be 'failure', 'learning_progress', or 'uncertainty'")
+        if rank != "failure" and difficulty_power != 0.0:
+            raise ValueError("non-failure ranks require difficulty_power == 0")
+        if progress_window < 1:
+            raise ValueError("progress_window must be at least one sampler tick")
+        if progress_floor < 0.0:
+            raise ValueError("progress_floor must be non-negative")
 
         units = self.manifest["admissible_units"]
         if not units:
@@ -140,6 +162,9 @@ class SegmentSampler:
             raise ValueError("deployment mass must equal the legal-start count")
 
         self.mode = mode
+        self.rank = rank
+        self.progress_window = int(progress_window)
+        self.progress_floor = float(progress_floor)
         self.exploration_ratio = exploration_ratio
         self.difficulty_power = difficulty_power
         self.decay = decay
@@ -158,6 +183,7 @@ class SegmentSampler:
         self.lifetime_failures = torch.zeros(num_units, dtype=torch.int64)
         self.lifetime_attempts = torch.zeros(num_units, dtype=torch.int64)
         self.clock = 0
+        self.rate_history = self.conditional_success_rates().unsqueeze(0)
         self.deployment_probabilities = self._compute_probabilities(
             force_uniform=True
         )
@@ -168,23 +194,64 @@ class SegmentSampler:
         """Number of admissible runtime rows."""
         return self.intervals.first.numel()
 
+    def conditional_success_rates(self) -> torch.Tensor:
+        """Current Beta-smoothed conditional success estimate per unit."""
+        return 1.0 - conditional_failure_rate(
+            self.failure_mass, self.attempt_mass, prior_strength=0.0
+        )
+
+    def saturation_fraction(self, low: float = 0.05, high: float = 0.95) -> float:
+        """Fraction of units whose success estimate lies outside ``(low, high)``.
+
+        A rank has nothing to order when almost every estimate is saturated;
+        the Phase-G manipulation gate reads this value.
+        """
+        rates = self.conditional_success_rates()
+        return float(((rates <= low) | (rates >= high)).double().mean())
+
+    def learning_progress(self) -> torch.Tensor | None:
+        """Absolute success-rate change over ``progress_window`` ticks.
+
+        Returns ``None`` until the history spans the full window, during which
+        an adaptive learning-progress sampler is uniform over its support.
+        """
+        if self.rate_history.shape[0] < self.progress_window + 1:
+            return None
+        return (self.rate_history[-1] - self.rate_history[-(self.progress_window + 1)]).abs()
+
+    def _ranking_weight(self) -> torch.Tensor | None:
+        if self.rank == "learning_progress":
+            progress = self.learning_progress()
+            if progress is None:
+                return None
+            return progress + self.progress_floor
+        if self.rank == "uncertainty":
+            rates = self.rate_history[-1]
+            return rates * (1.0 - rates)
+        return None
+
     def _compute_probabilities(
         self, *, force_uniform: bool = False
     ) -> torch.Tensor:
+        ranking_weight = None
         if self.mode == "uniform" or force_uniform:
             difficulty = torch.ones(self.num_units, dtype=torch.float64)
-        else:
+        elif self.rank == "failure":
             difficulty = conditional_failure_rate(
                 self.failure_mass,
                 self.attempt_mass,
                 prior_strength=0.0,
             )
+        else:
+            difficulty = torch.ones(self.num_units, dtype=torch.float64)
+            ranking_weight = self._ranking_weight()
         return segment_sampling_probabilities(
             difficulty,
             torch.ones(self.num_units, dtype=torch.float64),
             self.deployment_mass.to(torch.float64),
             exploration_ratio=self.exploration_ratio,
             difficulty_power=self.difficulty_power,
+            ranking_weight=ranking_weight,
             clip_ids=self.intervals.clip_ids,
             max_unit_probability=self.max_unit_probability,
             max_clip_probability=self.max_clip_probability,
@@ -256,6 +323,9 @@ class SegmentSampler:
         self.pending_failures.zero_()
         self.pending_attempts.zero_()
         self.clock += 1
+        self.rate_history = torch.cat(
+            [self.rate_history, self.conditional_success_rates().unsqueeze(0)]
+        )[-(self.progress_window + 1) :]
         self.probabilities = self._compute_probabilities()
 
     def state_dict(self) -> dict[str, Any]:
@@ -264,7 +334,11 @@ class SegmentSampler:
             "schema_version": "segment_sampler_state/1",
             "unit_table_sha256": self.manifest["unit_table_sha256"],
             "mode": self.mode,
+            "rank": self.rank,
+            "progress_window": self.progress_window,
+            "progress_floor": self.progress_floor,
             "clock": self.clock,
+            "rate_history": self.rate_history.clone(),
             "generator_state": self.generator.get_state().clone(),
             "failure_mass": self.failure_mass.clone(),
             "attempt_mass": self.attempt_mass.clone(),
@@ -283,6 +357,13 @@ class SegmentSampler:
             raise ValueError("sampler state belongs to a different unit table")
         if state.get("mode") != self.mode:
             raise ValueError("sampler state belongs to a different sampling mode")
+        if state.get("rank", "failure") != self.rank:
+            raise ValueError("sampler state belongs to a different focus rank")
+        if self.rank != "failure" and (
+            int(state.get("progress_window", -1)) != self.progress_window
+            or float(state.get("progress_floor", -1.0)) != self.progress_floor
+        ):
+            raise ValueError("sampler state uses different rank parameters")
         tensor_names = (
             "failure_mass",
             "attempt_mass",
@@ -298,6 +379,19 @@ class SegmentSampler:
             if not isinstance(value, torch.Tensor) or value.shape != current.shape:
                 raise ValueError(f"sampler state has invalid {name}")
             setattr(self, name, value.to(dtype=current.dtype, device="cpu").clone())
+        history = state.get("rate_history")
+        if history is None:
+            if self.rank != "failure":
+                raise ValueError("sampler state has no success-rate history")
+            history = self.conditional_success_rates().unsqueeze(0)
+        if (
+            not isinstance(history, torch.Tensor)
+            or history.ndim != 2
+            or history.shape[1] != self.num_units
+            or not 1 <= history.shape[0] <= self.progress_window + 1
+        ):
+            raise ValueError("sampler state has invalid rate_history")
+        self.rate_history = history.to(dtype=torch.float64, device="cpu").clone()
         if not torch.equal(self.probabilities, self._compute_probabilities()):
             raise ValueError("sampler-state probabilities do not match its statistics")
         generator_state = state.get("generator_state")

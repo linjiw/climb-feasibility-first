@@ -62,3 +62,22 @@ detail; if the two independent preflight rebuilds disagree the gate is **not tes
 Keep: probe harness fixes (unsealed implementation), launch record, panel builder + panel,
 seal draft. Discard: every pre-fix launch as a Newton result. The gate verdict is not opened
 until `reports/newton15_pred/probe/COMPLETED.json` exists and the frozen analyzer runs.
+
+## 01:13 — probe stopped at preflight batch 6 (harness, not a measurement)
+
+mjlab `auto_reset=False` raises when a terminated world is stepped again. World 3 of batch 6
+(unit 23, replicate 0, development policy) fell inside the 25-step window. The sealed contract is
+"no reset after termination; paired-alive frames only", so the probe now clears
+`env._manual_reset_pending` every step: fallen worlds keep evolving physically, consume no RNG,
+receive no new segment, and are masked by `alive`. Verified on the exact failing batch (62 s).
+Relaunched 01:2x; new probe SHA in `launch_env.txt`. Batches 1–5 of the earlier run are
+discarded (the manifest binds a single run).
+
+## S1–S3 closed on CPU (details in `plan/PREREGISTRATION_G_SEGMENT.md`)
+
+- S1 rank modes implemented and tested (59 tests pass; ruff clean).
+- S2: 701 unflagged tier_800 clips screened in full mode (4 m 27 s wall, 8 nice'd workers,
+  `n1_knee_id.py --gap 0.06`); 800 sidecars reduced at guard 0; the 99 legacy sidecars reproduce
+  exactly; unit table 1,184 units / 368,951 legal starts. **140/701 unflagged clips contain a
+  severe window** — the FGAS `assumeunflagged` eligibility set was inexact.
+- S3: 2,800 evaluation conditions on the disjoint 100-clip panel.

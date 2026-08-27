@@ -1,0 +1,84 @@
+{
+ "clip": "KIT_442_PizzaDelivery05_poses_100_jpos",
+ "fps": 50.0,
+ "frames": 1500,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0,
+ "severe_frac_guarded": 0.0,
+ "feasible_frac_kept": 1.0,
+ "n_severe_windows": 0,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   1500
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 1500,
+   "unsupported_ratio_mean": 0.004916075679173577,
+   "unsupported_ratio_p95": 0.050156446069598154,
+   "unsupported_ratio_max": 0.20025889774816705
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   30.0
+  ]
+ ],
+ "severe_windows_frames": [],
+ "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
+ "severe_windows_s": [],
+ "n_bins": 30,
+ "n_bins_eligible": 30,
+ "bin_eligible_frac": 1.0,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.050156446069598154,
+ "source_screen_sha256": "80ca3eda5862a8ebc4f793e79ffd2a87f6797581a9c8ccea9030df8158b3606d",
+ "source_motion_sha256": "1fe73ebeaeca9fc987acc619bc8637793df7023e257b544492f5fc5a539a2512",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

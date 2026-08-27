@@ -1,0 +1,74 @@
+{
+ "clip": "Eyes_Japan_Dataset_kawaguchi_throw_toss-17-pass_to_back_light-kawaguchi_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 996,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0,
+ "severe_frac_guarded": 0.0,
+ "feasible_frac_kept": 1.0,
+ "n_severe_windows": 0,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   996
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 996,
+   "unsupported_ratio_mean": 0.02182317946229259,
+   "unsupported_ratio_p95": 0.10058805703686557,
+   "unsupported_ratio_max": 0.2577377874835188
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   19.92
+  ]
+ ],
+ "severe_windows_frames": [],
+ "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
+ "severe_windows_s": [],
+ "n_bins": 20,
+ "n_bins_eligible": 20,
+ "bin_eligible_frac": 1.0,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.10058805703686557,
+ "source_screen_sha256": "8f13162305d42b4a3c43b75dc6953cad93aa756443f683f87ade3abf1a3db310",
+ "source_motion_sha256": "7d9ebd4a70755ab1a0c7d3bc65670823528251a1bf350d9d0fb296871d527d49",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

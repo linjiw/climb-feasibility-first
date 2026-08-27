@@ -1,0 +1,145 @@
+{
+ "clip": "HUMAN4D_Subject4_Carine_INF_InflightSafety_S4_02_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 2797,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0003575259206292456,
+ "infeasible_frac": 0.0003575259206292456,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0003575259206292456,
+ "severe_frac_guarded": 0.0003575259206292456,
+ "feasible_frac_kept": 0.9996424740793708,
+ "n_severe_windows": 1,
+ "n_feasible_segments": 2,
+ "feasible_segments_frames": [
+  [
+   0,
+   1558
+  ],
+  [
+   1559,
+   2797
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 1558,
+   "unsupported_ratio_mean": 0.0031706170672100025,
+   "unsupported_ratio_p95": 0.01839018732756064,
+   "unsupported_ratio_max": 0.20025889774816705
+  },
+  {
+   "start_frame": 1559,
+   "stop_frame": 2797,
+   "unsupported_ratio_mean": 0.009170187560809652,
+   "unsupported_ratio_p95": 0.050446897906026814,
+   "unsupported_ratio_max": 0.3549627179933159
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   31.16
+  ],
+  [
+   31.18,
+   55.94
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   1558,
+   1559
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   1558,
+   1559
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   1558,
+   1559
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   31.16,
+   31.18
+  ]
+ ],
+ "n_bins": 56,
+ "n_bins_eligible": 55,
+ "bin_eligible_frac": 0.9821428571428571,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.040051779549633404,
+ "source_screen_sha256": "262e8a4192fe5167940e7e4447b048a5069c5f6c14601611efc6edcb18c819a5",
+ "source_motion_sha256": "26495e415856ec94f5e6de159ad366cf25f49b7342dd7b2b15752061d1c2b26c",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

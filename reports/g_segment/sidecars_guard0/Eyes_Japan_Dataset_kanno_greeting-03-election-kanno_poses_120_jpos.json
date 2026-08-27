@@ -1,0 +1,123 @@
+{
+ "clip": "Eyes_Japan_Dataset_kanno_greeting-03-election-kanno_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 1687,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.007113218731475993,
+ "infeasible_frac": 0.007113218731475993,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.007113218731475993,
+ "severe_frac_guarded": 0.007113218731475993,
+ "feasible_frac_kept": 0.992886781268524,
+ "n_severe_windows": 1,
+ "n_feasible_segments": 2,
+ "feasible_segments_frames": [
+  [
+   0,
+   1477
+  ],
+  [
+   1489,
+   1687
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 1477,
+   "unsupported_ratio_mean": 0.024807896758571972,
+   "unsupported_ratio_p95": 0.07716846685746163,
+   "unsupported_ratio_max": 0.41733342813167634
+  },
+  {
+   "start_frame": 1489,
+   "stop_frame": 1687,
+   "unsupported_ratio_mean": 0.004644758766493072,
+   "unsupported_ratio_p95": 0.0069096963192497056,
+   "unsupported_ratio_max": 0.18374900388801282
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   29.54
+  ],
+  [
+   29.78,
+   33.74
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   1477,
+   1489
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   1477,
+   1489
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   1477,
+   1489
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   29.54,
+   29.78
+  ]
+ ],
+ "n_bins": 34,
+ "n_bins_eligible": 33,
+ "bin_eligible_frac": 0.9705882352941176,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.07888060399851465,
+ "source_screen_sha256": "42c8238213b6b08ff1b4803bb5d03858af4c663de589f0bc08abf952aa6afb2e",
+ "source_motion_sha256": "8ed0541f1e4f46544b75d6410f9104ae28b28f7c2c3e15fabb44b3120fb376a4",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

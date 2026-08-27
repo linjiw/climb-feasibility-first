@@ -1,0 +1,69 @@
+{
+ "clip": "HumanEva_S3_Gestures_3_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 746,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0,
+ "severe_frac_guarded": 0.0,
+ "feasible_frac_kept": 1.0,
+ "n_severe_windows": 0,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   746
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 746,
+   "unsupported_ratio_mean": 0.002003695538732351,
+   "unsupported_ratio_p95": 0.013681810189664847,
+   "unsupported_ratio_max": 0.062370710138360416
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   14.92
+  ]
+ ],
+ "severe_windows_frames": [],
+ "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
+ "severe_windows_s": [],
+ "n_bins": 15,
+ "n_bins_eligible": 15,
+ "bin_eligible_frac": 1.0,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.013681810189664847,
+ "source_screen_sha256": "f46c6d9adcd360c2f305bffbe210331f63e574723125e2c0544afa97f4f74a5e",
+ "source_motion_sha256": "cbfbb1e138c8c329a9a5a31549938f4bb7411b5497c92993c0ec29bde6a634d7",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

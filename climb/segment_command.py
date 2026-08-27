@@ -19,7 +19,7 @@ import torch
 
 from .commands import MultiClipMotionCommand, MultiClipMotionCommandCfg
 from .segment_curriculum import validate_sampling_concentration
-from .segment_runtime import SamplingMode, SegmentSampler
+from .segment_runtime import RankMode, SamplingMode, SegmentSampler
 
 if TYPE_CHECKING:
     from mjlab.envs import ManagerBasedRlEnv
@@ -66,6 +66,9 @@ class SegmentNativeMotionCommand(MultiClipMotionCommand):
             prior_strength=cfg.segment_prior_strength,
             max_unit_probability=cfg.max_unit_probability,
             max_clip_probability=cfg.max_clip_probability,
+            rank=cfg.segment_rank,
+            progress_window=cfg.segment_progress_window,
+            progress_floor=cfg.segment_progress_floor,
         )
         self._validate_manifest_sources(cfg.motion_files)
         frames_per_step = self.motion.fps * env.step_dt
@@ -105,6 +108,7 @@ class SegmentNativeMotionCommand(MultiClipMotionCommand):
         for key in (
             "sampling_unit_effective_count",
             "sampling_adaptation_total_variation",
+            "sampling_rank_saturation_fraction",
             "segment_failure_rate",
             "segment_censored_resets",
             "segment_invalid_start_count",
@@ -221,6 +225,9 @@ class SegmentNativeMotionCommand(MultiClipMotionCommand):
         self.metrics["sampling_adaptation_total_variation"][:] = (
             self.sampler.adaptation_total_variation()
         )
+        self.metrics["sampling_rank_saturation_fraction"][:] = (
+            self.sampler.saturation_fraction()
+        )
         self.metrics["bank_clip_count"][:] = float(self.motion.num_clips)
 
         clip_mass = torch.zeros(
@@ -309,6 +316,8 @@ class SegmentNativeMotionCommand(MultiClipMotionCommand):
             "adaptation_total_variation": (
                 self.sampler.adaptation_total_variation()
             ),
+            "rank": self.sampler.rank,
+            "rank_saturation_fraction": self.sampler.saturation_fraction(),
             "lifetime_attempts": self.sampler.lifetime_attempts.tolist(),
             "lifetime_failures": self.sampler.lifetime_failures.tolist(),
             "probabilities": self.sampler.probabilities.tolist(),
@@ -401,6 +410,9 @@ class SegmentNativeMotionCommandCfg(MultiClipMotionCommandCfg):
     sampler_seed: int = 0
     segment_exploration_ratio: float = 0.1
     segment_difficulty_power: float = 1.0
+    segment_rank: RankMode = "failure"
+    segment_progress_window: int = 10
+    segment_progress_floor: float = 0.01
     segment_decay: float = 0.99
     segment_prior_rate: float = 0.5
     segment_prior_strength: float = 2.0

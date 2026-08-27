@@ -1,0 +1,119 @@
+{
+ "clip": "Eyes_Japan_Dataset_hamada_walk-17-push_by_back-hamada_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 1500,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.01,
+ "infeasible_frac": 0.01,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.01,
+ "severe_frac_guarded": 0.01,
+ "feasible_frac_kept": 0.99,
+ "n_severe_windows": 1,
+ "n_feasible_segments": 2,
+ "feasible_segments_frames": [
+  [
+   0,
+   257
+  ],
+  [
+   272,
+   1500
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 257,
+   "unsupported_ratio_mean": 0.023022010807155546,
+   "unsupported_ratio_p95": 0.07661813706212313,
+   "unsupported_ratio_max": 0.1874178691902693
+  },
+  {
+   "start_frame": 272,
+   "stop_frame": 1500,
+   "unsupported_ratio_mean": 0.01575774659643837,
+   "unsupported_ratio_p95": 0.06206497136317238,
+   "unsupported_ratio_max": 0.362911926148205
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   5.14
+  ],
+  [
+   5.44,
+   30.0
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   257,
+   272
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   257,
+   272
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   257,
+   272
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   5.14,
+   5.44
+  ]
+ ],
+ "n_bins": 30,
+ "n_bins_eligible": 29,
+ "bin_eligible_frac": 0.9666666666666667,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.07031991829324949,
+ "source_screen_sha256": "f0ba352186fa299b861e249e3ad7af05fc1cd25aaff076f0e0fdad40b870bbac",
+ "source_motion_sha256": "af35055f62b271295edde8a79634b9d35914fbf9481fbb380a92a36da3aeb4f9",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

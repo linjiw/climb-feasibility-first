@@ -1,0 +1,143 @@
+{
+ "clip": "HumanEva_S1_Box_1_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 1143,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.022747156605424323,
+ "infeasible_frac": 0.022747156605424323,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.022747156605424323,
+ "severe_frac_guarded": 0.022747156605424323,
+ "feasible_frac_kept": 0.9772528433945756,
+ "n_severe_windows": 2,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   780
+  ],
+  [
+   783,
+   802
+  ],
+  [
+   825,
+   1143
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 780,
+   "unsupported_ratio_mean": 0.053703015861779446,
+   "unsupported_ratio_p95": 0.14742723739567345,
+   "unsupported_ratio_max": 0.318579803745939
+  },
+  {
+   "start_frame": 783,
+   "stop_frame": 802,
+   "unsupported_ratio_mean": 0.18526160624946947,
+   "unsupported_ratio_p95": 0.2783445809311927,
+   "unsupported_ratio_max": 0.3179683261955629
+  },
+  {
+   "start_frame": 825,
+   "stop_frame": 1143,
+   "unsupported_ratio_mean": 0.051901560694893184,
+   "unsupported_ratio_p95": 0.17804697573075579,
+   "unsupported_ratio_max": 0.22532947731358643
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   15.6
+  ],
+  [
+   15.66,
+   16.04
+  ],
+  [
+   16.5,
+   22.86
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   780,
+   783
+  ],
+  [
+   802,
+   825
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   780,
+   783
+  ],
+  [
+   802,
+   825
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   780,
+   783
+  ],
+  [
+   802,
+   825
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   15.6,
+   15.66
+  ],
+  [
+   16.04,
+   16.5
+  ]
+ ],
+ "n_bins": 23,
+ "n_bins_eligible": 21,
+ "bin_eligible_frac": 0.9130434782608695,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.2017570177465884,
+ "source_screen_sha256": "f3cba5d05758045746f59d8be6e429a3b0cc1231940c238cdff7a61c9b13a468",
+ "source_motion_sha256": "c91cd376f0b168977ca788ca11bc2cab546bb182a79b176a3bcc20bfc5f0f6c8",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

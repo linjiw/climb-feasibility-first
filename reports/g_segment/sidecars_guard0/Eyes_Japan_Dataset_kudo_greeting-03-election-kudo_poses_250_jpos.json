@@ -1,0 +1,87 @@
+{
+ "clip": "Eyes_Japan_Dataset_kudo_greeting-03-election-kudo_poses_250_jpos",
+ "fps": 50.0,
+ "frames": 1650,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0,
+ "severe_frac_guarded": 0.0,
+ "feasible_frac_kept": 1.0,
+ "n_severe_windows": 0,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   1650
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 1650,
+   "unsupported_ratio_mean": 0.011045322818293303,
+   "unsupported_ratio_p95": 0.05336670320907259,
+   "unsupported_ratio_max": 0.09080441623084826
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   33.0
+  ]
+ ],
+ "severe_windows_frames": [],
+ "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
+ "severe_windows_s": [],
+ "n_bins": 33,
+ "n_bins_eligible": 33,
+ "bin_eligible_frac": 1.0,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.05336670320907259,
+ "source_screen_sha256": "d296f8d5517b71cf7c1d714e291f836332b134c01c2b19947e2d17f6d7d2389a",
+ "source_motion_sha256": "7dd04c42219a96b879ee7e1fa0a4bfef5f8c88a3ca8eaeaf6e0e1abbe4ab3853",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

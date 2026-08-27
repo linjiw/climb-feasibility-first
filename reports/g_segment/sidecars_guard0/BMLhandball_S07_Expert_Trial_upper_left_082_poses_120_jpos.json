@@ -1,0 +1,129 @@
+{
+ "clip": "BMLhandball_S07_Expert_Trial_upper_left_082_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 441,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.011337868480725623,
+ "infeasible_frac": 0.022675736961451247,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.022675736961451247,
+ "severe_frac_guarded": 0.022675736961451247,
+ "feasible_frac_kept": 0.9773242630385488,
+ "n_severe_windows": 2,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   277
+  ],
+  [
+   282,
+   285
+  ],
+  [
+   290,
+   441
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 277,
+   "unsupported_ratio_mean": 0.043122412302605,
+   "unsupported_ratio_p95": 0.32548950006518856,
+   "unsupported_ratio_max": 0.48153857092116503
+  },
+  {
+   "start_frame": 282,
+   "stop_frame": 285,
+   "unsupported_ratio_mean": 0.4596272920326887,
+   "unsupported_ratio_p95": 0.475607238682517,
+   "unsupported_ratio_max": 0.4772582280685324
+  },
+  {
+   "start_frame": 290,
+   "stop_frame": 441,
+   "unsupported_ratio_mean": 0.08926762331450572,
+   "unsupported_ratio_p95": 0.1785514447098161,
+   "unsupported_ratio_max": 0.23113851404215918
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   5.54
+  ],
+  [
+   5.64,
+   5.7
+  ],
+  [
+   5.8,
+   8.82
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   277,
+   282
+  ],
+  [
+   285,
+   290
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   277,
+   282
+  ],
+  [
+   285,
+   290
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   277,
+   282
+  ],
+  [
+   285,
+   290
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   5.54,
+   5.64
+  ],
+  [
+   5.7,
+   5.8
+  ]
+ ],
+ "n_bins": 9,
+ "n_bins_eligible": 8,
+ "bin_eligible_frac": 0.8888888888888888,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.3992948403955819,
+ "source_screen_sha256": "0042e20ac4a5f8e8185fef4e5c20b1cf1411f135146389a2d4c380efda463b0f",
+ "source_motion_sha256": "1e668f33e14ca60e21ca55dd1367be4f92c69cc8e564f57595ee3a0e7f3b150e",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

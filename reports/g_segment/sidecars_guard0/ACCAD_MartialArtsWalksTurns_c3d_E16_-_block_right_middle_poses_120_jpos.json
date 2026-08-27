@@ -1,0 +1,57 @@
+{
+ "clip": "ACCAD_MartialArtsWalksTurns_c3d_E16_-_block_right_middle_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 125,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0,
+ "severe_frac_guarded": 0.0,
+ "feasible_frac_kept": 1.0,
+ "n_severe_windows": 0,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   125
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 125,
+   "unsupported_ratio_mean": 0.010397564266594906,
+   "unsupported_ratio_p95": 0.07282697624979141,
+   "unsupported_ratio_max": 0.24336806504968084
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   2.5
+  ]
+ ],
+ "severe_windows_frames": [],
+ "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
+ "severe_windows_s": [],
+ "n_bins": 3,
+ "n_bins_eligible": 3,
+ "bin_eligible_frac": 1.0,
+ "bin_eligible": [
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.07282697624979141,
+ "source_screen_sha256": "5422ca0ec6ba31250e842efb8f3a36f6f5a3661b47c043114104922d24ad6e1f",
+ "source_motion_sha256": "79a566f9438fe90305c04bfffb9df17d7b3843be3ed0a8f6f383a3e306f29e76",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

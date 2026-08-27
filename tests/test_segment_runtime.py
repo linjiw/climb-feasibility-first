@@ -114,3 +114,124 @@ def test_sampler_equivalent_resume_replays_next_draws(tmp_path: Path) -> None:
     actual = resumed.sample(100)
     for field in SegmentSamples.__dataclass_fields__:
         assert torch.equal(getattr(expected, field), getattr(actual, field))
+
+
+def _drive(sampler: SegmentSampler, failed: list[int], ticks: int) -> None:
+    for _ in range(ticks):
+        sampler.record_completed_trials(
+            torch.tensor([0, 1]), torch.tensor(failed, dtype=torch.bool)
+        )
+        sampler.advance_clock()
+
+
+def test_learning_progress_rank_is_uniform_until_the_window_fills(tmp_path: Path) -> None:
+    manifest = tmp_path / "units.json"
+    write_manifest(manifest)
+    sampler = SegmentSampler(
+        manifest, mode="adaptive", seed=7, difficulty_power=0.0,
+        rank="learning_progress", progress_window=3, decay=1.0,
+    )
+    assert sampler.learning_progress() is None
+    _drive(sampler, [1, 0], ticks=2)
+    assert sampler.learning_progress() is None
+    assert sampler.adaptation_total_variation() == 0.0
+    _drive(sampler, [1, 0], ticks=1)
+    assert sampler.learning_progress() is not None
+    assert sampler.rate_history.shape == (4, 2)
+
+
+def test_learning_progress_rank_focuses_on_the_changing_unit(tmp_path: Path) -> None:
+    manifest = tmp_path / "units.json"
+    write_manifest(manifest)
+    sampler = SegmentSampler(
+        manifest, mode="adaptive", seed=7, difficulty_power=0.0,
+        rank="learning_progress", progress_window=2, decay=1.0,
+        max_unit_probability=None, max_clip_probability=None,
+    )
+    # unit 0 keeps failing (rate saturates, no progress); unit 1 flips from
+    # failing to succeeding, so its success estimate moves across the window.
+    _drive(sampler, [1, 1], ticks=3)
+    _drive(sampler, [1, 0], ticks=2)
+    progress = sampler.learning_progress()
+    assert progress is not None
+    assert progress[1] > progress[0]
+    assert sampler.probabilities[1] > sampler.probabilities[0]
+    assert sampler.adaptation_total_variation() > 0.0
+
+
+def test_uncertainty_rank_prefers_unsaturated_units(tmp_path: Path) -> None:
+    manifest = tmp_path / "units.json"
+    write_manifest(manifest)
+    sampler = SegmentSampler(
+        manifest, mode="adaptive", seed=7, difficulty_power=0.0,
+        rank="uncertainty", decay=1.0,
+        max_unit_probability=None, max_clip_probability=None,
+    )
+    # unit 0 always fails (s -> 0); unit 1 alternates (s ~ 0.5).
+    for tick in range(20):
+        sampler.record_completed_trials(
+            torch.tensor([0, 1]), torch.tensor([True, bool(tick % 2)])
+        )
+        sampler.advance_clock()
+    assert sampler.probabilities[1] > sampler.probabilities[0]
+    assert 0.0 < sampler.saturation_fraction() < 1.0
+
+
+def test_non_failure_ranks_require_zero_difficulty_power(tmp_path: Path) -> None:
+    manifest = tmp_path / "units.json"
+    write_manifest(manifest)
+    try:
+        SegmentSampler(manifest, mode="adaptive", seed=7, rank="learning_progress")
+    except ValueError as error:
+        assert "difficulty_power" in str(error)
+    else:
+        raise AssertionError("expected difficulty_power == 0 to be enforced")
+
+
+def test_learning_progress_resume_round_trips_the_history(tmp_path: Path) -> None:
+    manifest = tmp_path / "units.json"
+    write_manifest(manifest)
+    original = SegmentSampler(
+        manifest, mode="adaptive", seed=123, difficulty_power=0.0,
+        rank="learning_progress", progress_window=3,
+    )
+    _drive(original, [1, 0], ticks=5)
+    state = original.state_dict()
+    expected_draws = original.sample(100)
+    _drive(original, [0, 1], ticks=2)
+    expected_after = original.probabilities.clone()
+
+    resumed = SegmentSampler(
+        manifest, mode="adaptive", seed=999, difficulty_power=0.0,
+        rank="learning_progress", progress_window=3,
+    )
+    resumed.load_state_dict(state)
+    actual_draws = resumed.sample(100)
+    for field in SegmentSamples.__dataclass_fields__:
+        assert torch.equal(getattr(expected_draws, field), getattr(actual_draws, field))
+    _drive(resumed, [0, 1], ticks=2)
+    assert torch.equal(resumed.probabilities, expected_after)
+
+    wrong = SegmentSampler(
+        manifest, mode="adaptive", seed=999, difficulty_power=0.0,
+        rank="learning_progress", progress_window=4,
+    )
+    try:
+        wrong.load_state_dict(state)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("mismatched progress_window must be rejected")
+
+
+def test_failure_rank_state_without_history_still_loads(tmp_path: Path) -> None:
+    manifest = tmp_path / "units.json"
+    write_manifest(manifest)
+    original = SegmentSampler(manifest, mode="adaptive", seed=1)
+    _drive(original, [1, 0], ticks=2)
+    state = original.state_dict()
+    state.pop("rate_history")
+    state.pop("rank")
+    resumed = SegmentSampler(manifest, mode="adaptive", seed=2)
+    resumed.load_state_dict(state)
+    assert torch.equal(resumed.probabilities, original.probabilities)

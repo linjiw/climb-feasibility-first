@@ -1,0 +1,96 @@
+{
+ "clip": "BMLhandball_S05_Novice_Trial_upper_left_right_013_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 345,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.008695652173913044,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.008695652173913044,
+ "severe_frac_guarded": 0.008695652173913044,
+ "feasible_frac_kept": 0.991304347826087,
+ "n_severe_windows": 1,
+ "n_feasible_segments": 2,
+ "feasible_segments_frames": [
+  [
+   0,
+   236
+  ],
+  [
+   239,
+   345
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 236,
+   "unsupported_ratio_mean": 0.0677885048749553,
+   "unsupported_ratio_p95": 0.40372805263580847,
+   "unsupported_ratio_max": 0.47206066889033577
+  },
+  {
+   "start_frame": 239,
+   "stop_frame": 345,
+   "unsupported_ratio_mean": 0.1222926257471487,
+   "unsupported_ratio_p95": 0.2643876058438587,
+   "unsupported_ratio_max": 0.45921964033243795
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   4.72
+  ],
+  [
+   4.78,
+   6.9
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   236,
+   239
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   236,
+   239
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   236,
+   239
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   4.72,
+   4.78
+  ]
+ ],
+ "n_bins": 7,
+ "n_bins_eligible": 6,
+ "bin_eligible_frac": 0.8571428571428571,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.3978272942746794,
+ "source_screen_sha256": "215afdc43f88beffa0d7034e41110efcd5cdbfd7ebc933b96d36118cb3ca88ee",
+ "source_motion_sha256": "e1f6d799d04486f555ea913aade25aff363deff8948e96be5ed66f20d9bff974",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

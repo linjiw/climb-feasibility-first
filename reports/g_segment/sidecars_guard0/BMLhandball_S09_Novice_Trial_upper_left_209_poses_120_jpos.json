@@ -1,0 +1,129 @@
+{
+ "clip": "BMLhandball_S09_Novice_Trial_upper_left_209_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 415,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.012048192771084338,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.012048192771084338,
+ "severe_frac_guarded": 0.012048192771084338,
+ "feasible_frac_kept": 0.9879518072289156,
+ "n_severe_windows": 2,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   333
+  ],
+  [
+   337,
+   339
+  ],
+  [
+   340,
+   415
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 333,
+   "unsupported_ratio_mean": 0.035514359048194055,
+   "unsupported_ratio_p95": 0.20184873937914452,
+   "unsupported_ratio_max": 0.47450657909184
+  },
+  {
+   "start_frame": 337,
+   "stop_frame": 339,
+   "unsupported_ratio_mean": 0.4538692117666473,
+   "unsupported_ratio_p95": 0.46116108155488206,
+   "unsupported_ratio_max": 0.46197128930913034
+  },
+  {
+   "start_frame": 340,
+   "stop_frame": 415,
+   "unsupported_ratio_mean": 0.05567299270324107,
+   "unsupported_ratio_p95": 0.2400660862776494,
+   "unsupported_ratio_max": 0.47297788521589984
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   6.66
+  ],
+  [
+   6.74,
+   6.78
+  ],
+  [
+   6.8,
+   8.3
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   333,
+   337
+  ],
+  [
+   339,
+   340
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   333,
+   337
+  ],
+  [
+   339,
+   340
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   333,
+   337
+  ],
+  [
+   339,
+   340
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   6.66,
+   6.74
+  ],
+  [
+   6.78,
+   6.8
+  ]
+ ],
+ "n_bins": 9,
+ "n_bins_eligible": 8,
+ "bin_eligible_frac": 0.8888888888888888,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.22114085609351025,
+ "source_screen_sha256": "47e00a578fff5fceea0bc09888b90fba98e01754b9661f8ef6c662bec9eea391",
+ "source_motion_sha256": "1e9cf112ca62b54a5b4f914c2311a90cf2697892b03e60abd624b99eb5c6de4f",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

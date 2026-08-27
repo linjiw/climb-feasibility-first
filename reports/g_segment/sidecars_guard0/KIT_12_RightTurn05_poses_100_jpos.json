@@ -1,0 +1,58 @@
+{
+ "clip": "KIT_12_RightTurn05_poses_100_jpos",
+ "fps": 50.0,
+ "frames": 177,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0,
+ "severe_frac_guarded": 0.0,
+ "feasible_frac_kept": 1.0,
+ "n_severe_windows": 0,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   177
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 177,
+   "unsupported_ratio_mean": 0.016388980220249354,
+   "unsupported_ratio_p95": 0.09832559010047406,
+   "unsupported_ratio_max": 0.15195217126845653
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   3.54
+  ]
+ ],
+ "severe_windows_frames": [],
+ "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
+ "severe_windows_s": [],
+ "n_bins": 4,
+ "n_bins_eligible": 4,
+ "bin_eligible_frac": 1.0,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.09832559010047406,
+ "source_screen_sha256": "feee458136729a2f8991181afd3510a2f1d8f67571b13ce90d08442d2655fbce",
+ "source_motion_sha256": "8b6b3e6c99e0ae1be0035c62e91f92a5944c53e0b94ef22e434a7dbde47660fc",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

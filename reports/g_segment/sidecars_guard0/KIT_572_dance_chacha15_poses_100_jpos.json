@@ -1,0 +1,137 @@
+{
+ "clip": "KIT_572_dance_chacha15_poses_100_jpos",
+ "fps": 50.0,
+ "frames": 834,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.004796163069544364,
+ "infeasible_frac": 0.004796163069544364,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.004796163069544364,
+ "severe_frac_guarded": 0.004796163069544364,
+ "feasible_frac_kept": 0.9952038369304557,
+ "n_severe_windows": 2,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   199
+  ],
+  [
+   201,
+   472
+  ],
+  [
+   474,
+   834
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 199,
+   "unsupported_ratio_mean": 0.0751379926600319,
+   "unsupported_ratio_p95": 0.36942416205971024,
+   "unsupported_ratio_max": 0.37697590980685486
+  },
+  {
+   "start_frame": 201,
+   "stop_frame": 472,
+   "unsupported_ratio_mean": 0.077929542052081,
+   "unsupported_ratio_p95": 0.35847871390797836,
+   "unsupported_ratio_max": 0.370249656752718
+  },
+  {
+   "start_frame": 474,
+   "stop_frame": 834,
+   "unsupported_ratio_mean": 0.03584447429329575,
+   "unsupported_ratio_p95": 0.10222375948412162,
+   "unsupported_ratio_max": 0.3045158200872891
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   3.98
+  ],
+  [
+   4.02,
+   9.44
+  ],
+  [
+   9.48,
+   16.68
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   199,
+   201
+  ],
+  [
+   472,
+   474
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   199,
+   201
+  ],
+  [
+   472,
+   474
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   199,
+   201
+  ],
+  [
+   472,
+   474
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   3.98,
+   4.02
+  ],
+  [
+   9.44,
+   9.48
+  ]
+ ],
+ "n_bins": 17,
+ "n_bins_eligible": 14,
+ "bin_eligible_frac": 0.8235294117647058,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  0,
+  0,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.3413573424974472,
+ "source_screen_sha256": "c7f9572003be73f78e990c5f4232f6e11ed1e4d6feb662d74a59bcff610aac0d",
+ "source_motion_sha256": "1bbc5541c8d859af59bfa2352178c91fd5edd6ecf902a616fb590bb27a854dba",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

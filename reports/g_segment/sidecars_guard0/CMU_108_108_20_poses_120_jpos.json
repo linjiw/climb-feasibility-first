@@ -1,0 +1,139 @@
+{
+ "clip": "CMU_108_108_20_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 116,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.12931034482758622,
+ "infeasible_frac": 0.05172413793103448,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.05172413793103448,
+ "severe_frac_guarded": 0.05172413793103448,
+ "feasible_frac_kept": 0.9482758620689655,
+ "n_severe_windows": 3,
+ "n_feasible_segments": 3,
+ "feasible_segments_frames": [
+  [
+   0,
+   2
+  ],
+  [
+   4,
+   58
+  ],
+  [
+   59,
+   113
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 2,
+   "unsupported_ratio_mean": 0.4324674975034844,
+   "unsupported_ratio_p95": 0.4466384897334501,
+   "unsupported_ratio_max": 0.4482130444256685
+  },
+  {
+   "start_frame": 4,
+   "stop_frame": 58,
+   "unsupported_ratio_mean": 0.1190682674482316,
+   "unsupported_ratio_p95": 0.2801331527660427,
+   "unsupported_ratio_max": 0.4384294036196512
+  },
+  {
+   "start_frame": 59,
+   "stop_frame": 113,
+   "unsupported_ratio_mean": 0.1234844942009478,
+   "unsupported_ratio_p95": 0.3260245429217678,
+   "unsupported_ratio_max": 0.38278494653542766
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   0.04
+  ],
+  [
+   0.08,
+   1.16
+  ],
+  [
+   1.18,
+   2.26
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   2,
+   4
+  ],
+  [
+   58,
+   59
+  ],
+  [
+   113,
+   116
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   2,
+   4
+  ],
+  [
+   58,
+   59
+  ],
+  [
+   113,
+   116
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   2,
+   4
+  ],
+  [
+   58,
+   59
+  ],
+  [
+   113,
+   116
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   0.04,
+   0.08
+  ],
+  [
+   1.16,
+   1.18
+  ],
+  [
+   2.26,
+   2.32
+  ]
+ ],
+ "n_bins": 3,
+ "n_bins_eligible": 0,
+ "bin_eligible_frac": 0.0,
+ "bin_eligible": [
+  0,
+  0,
+  0
+ ],
+ "unsupported_ratio_p95": 0.47290145052210286,
+ "source_screen_sha256": "f55978cee80c173636021daf7283b610328eb261d584781dd616183ac01bc520",
+ "source_motion_sha256": "898639a5eeea49c598f2f6b9571a76d27f3c7b56a41c4697e3d137a239c6554b",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

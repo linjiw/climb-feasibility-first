@@ -1,0 +1,99 @@
+{
+ "clip": "KIT_421_push_recovery_stand_left02_poses_100_jpos",
+ "fps": 50.0,
+ "frames": 451,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0066518847006651885,
+ "infeasible_frac": 0.0066518847006651885,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0066518847006651885,
+ "severe_frac_guarded": 0.0066518847006651885,
+ "feasible_frac_kept": 0.9933481152993349,
+ "n_severe_windows": 1,
+ "n_feasible_segments": 2,
+ "feasible_segments_frames": [
+  [
+   0,
+   231
+  ],
+  [
+   234,
+   451
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 231,
+   "unsupported_ratio_mean": 0.009698933959211974,
+   "unsupported_ratio_p95": 0.07429452237069403,
+   "unsupported_ratio_max": 0.19536707734515837
+  },
+  {
+   "start_frame": 234,
+   "stop_frame": 451,
+   "unsupported_ratio_mean": 0.005709002382773932,
+   "unsupported_ratio_p95": 0.0286171493576006,
+   "unsupported_ratio_max": 0.15286938759402063
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   4.62
+  ],
+  [
+   4.68,
+   9.02
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   231,
+   234
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   231,
+   234
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   231,
+   234
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   4.62,
+   4.68
+  ]
+ ],
+ "n_bins": 10,
+ "n_bins_eligible": 9,
+ "bin_eligible_frac": 0.9,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.066651052990993,
+ "source_screen_sha256": "69301d577d29e1675324323c39a215a1f804020103c34c78a92972390297e18b",
+ "source_motion_sha256": "91dd6919f223c9cf2029cd1ad960ea26bafcccd861d3048977288d50ceea84a5",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

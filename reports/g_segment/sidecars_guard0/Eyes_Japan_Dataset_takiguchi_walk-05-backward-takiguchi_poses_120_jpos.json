@@ -1,0 +1,171 @@
+{
+ "clip": "Eyes_Japan_Dataset_takiguchi_walk-05-backward-takiguchi_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 1000,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.01,
+ "infeasible_frac": 0.01,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.01,
+ "severe_frac_guarded": 0.01,
+ "feasible_frac_kept": 0.99,
+ "n_severe_windows": 3,
+ "n_feasible_segments": 4,
+ "feasible_segments_frames": [
+  [
+   0,
+   318
+  ],
+  [
+   324,
+   500
+  ],
+  [
+   501,
+   638
+  ],
+  [
+   641,
+   1000
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 318,
+   "unsupported_ratio_mean": 0.0507478294677685,
+   "unsupported_ratio_p95": 0.19585625938545922,
+   "unsupported_ratio_max": 0.4179449056820524
+  },
+  {
+   "start_frame": 324,
+   "stop_frame": 500,
+   "unsupported_ratio_mean": 0.059386282776013516,
+   "unsupported_ratio_p95": 0.1740417977757925,
+   "unsupported_ratio_max": 0.42589411383694153
+  },
+  {
+   "start_frame": 501,
+   "stop_frame": 638,
+   "unsupported_ratio_mean": 0.06321874469727616,
+   "unsupported_ratio_p95": 0.21102090263478607,
+   "unsupported_ratio_max": 0.30084695478503265
+  },
+  {
+   "start_frame": 641,
+   "stop_frame": 1000,
+   "unsupported_ratio_mean": 0.05994523929787144,
+   "unsupported_ratio_p95": 0.20059521040087347,
+   "unsupported_ratio_max": 0.46502867706101075
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   6.36
+  ],
+  [
+   6.48,
+   10.0
+  ],
+  [
+   10.02,
+   12.76
+  ],
+  [
+   12.82,
+   20.0
+  ]
+ ],
+ "severe_windows_frames": [
+  [
+   318,
+   324
+  ],
+  [
+   500,
+   501
+  ],
+  [
+   638,
+   641
+  ]
+ ],
+ "guarded_severe_windows_frames": [
+  [
+   318,
+   324
+  ],
+  [
+   500,
+   501
+  ],
+  [
+   638,
+   641
+  ]
+ ],
+ "excluded_windows_frames": [
+  [
+   318,
+   324
+  ],
+  [
+   500,
+   501
+  ],
+  [
+   638,
+   641
+  ]
+ ],
+ "severe_windows_s": [
+  [
+   6.36,
+   6.48
+  ],
+  [
+   10.0,
+   10.02
+  ],
+  [
+   12.76,
+   12.82
+  ]
+ ],
+ "n_bins": 20,
+ "n_bins_eligible": 17,
+ "bin_eligible_frac": 0.85,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  0,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.2094922087588458,
+ "source_screen_sha256": "bb5fb29e96aacbb68cd15a3fdb6e4db21cdf14469830b629f9a122aebc7152dd",
+ "source_motion_sha256": "6be58161852b087191e8ae469236a8cc971745e39d39854bae4367952ea279c7",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

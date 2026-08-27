@@ -1,0 +1,84 @@
+{
+ "clip": "Eyes_Japan_Dataset_hamada_gesture_etc-48-medium_drum-hamada_poses_120_jpos",
+ "fps": 50.0,
+ "frames": 1488,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0,
+ "severe_frac_guarded": 0.0,
+ "feasible_frac_kept": 1.0,
+ "n_severe_windows": 0,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   1488
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 1488,
+   "unsupported_ratio_mean": 0.020881876157500426,
+   "unsupported_ratio_p95": 0.08947445255878024,
+   "unsupported_ratio_max": 0.24245084872411674
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   29.76
+  ]
+ ],
+ "severe_windows_frames": [],
+ "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
+ "severe_windows_s": [],
+ "n_bins": 30,
+ "n_bins_eligible": 30,
+ "bin_eligible_frac": 1.0,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.08947445255878024,
+ "source_screen_sha256": "e055446caea9562636c241ee0b2968e911b8ca64c59db58dbf048cd57a6e2d8f",
+ "source_motion_sha256": "64ee13444d9f4bddd95fa0b8f9ca610b8845aad15827cddb8dc5f56d7eabbb08",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

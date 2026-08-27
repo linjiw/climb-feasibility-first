@@ -1,0 +1,63 @@
+{
+ "clip": "GRAB_s2_gamecontroller_play_1",
+ "fps": 50.0,
+ "frames": 430,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0,
+ "severe_frac_guarded": 0.0,
+ "feasible_frac_kept": 1.0,
+ "n_severe_windows": 0,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   430
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 430,
+   "unsupported_ratio_mean": 0.0035081746901809195,
+   "unsupported_ratio_p95": 0.023541885689479177,
+   "unsupported_ratio_max": 0.04861246525489856
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   8.6
+  ]
+ ],
+ "severe_windows_frames": [],
+ "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
+ "severe_windows_s": [],
+ "n_bins": 9,
+ "n_bins_eligible": 9,
+ "bin_eligible_frac": 1.0,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.023541885689479177,
+ "source_screen_sha256": "c33f034bed89556fb88e26f5b329745c10cb346dc66ae82ae8538f0f3afea1d7",
+ "source_motion_sha256": "811c6e8d6d73cf39e13c9798f4edbf329afcb4ce4992dbbdd16f824f5673ea29",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}

@@ -330,9 +330,17 @@ def rollout(
         )
     }
     contacts = []
+    if not hasattr(env, "_manual_reset_pending"):
+        raise AttributeError("mjlab env lacks _manual_reset_pending; probe contract unknown")
     with torch.inference_mode():
         for _ in range(PROBE_STEPS):
             actions = policy(observations)
+            # Sealed contract: no reset after termination. mjlab refuses to step
+            # a terminated world when auto_reset=False; clear its pending flag so
+            # fallen worlds keep evolving physically while ``alive`` masks them
+            # out of every paired statistic. No RNG is consumed and no new
+            # segment is assigned.
+            env._manual_reset_pending.zero_()
             observations, _, _, _ = s1._step_with_external_physics(
                 env, wrapped, actions, physics
             )

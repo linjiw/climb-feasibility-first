@@ -1,0 +1,63 @@
+{
+ "clip": "GRAB_s8_bowl_drink_2",
+ "fps": 50.0,
+ "frames": 417,
+ "guard_s": 0.0,
+ "guard_mode": "symmetric",
+ "min_seg_s": 0.0,
+ "bin_frames": 50,
+ "severity": "severe",
+ "screen_schema": "torque_limited",
+ "screen_gap_m": 0.06,
+ "airborne_frac": 0.0,
+ "infeasible_frac": 0.0,
+ "torque_infeasible_frac": 0.0,
+ "severe_frac": 0.0,
+ "severe_frac_guarded": 0.0,
+ "feasible_frac_kept": 1.0,
+ "n_severe_windows": 0,
+ "n_feasible_segments": 1,
+ "feasible_segments_frames": [
+  [
+   0,
+   417
+  ]
+ ],
+ "feasible_segment_records": [
+  {
+   "start_frame": 0,
+   "stop_frame": 417,
+   "unsupported_ratio_mean": 0.0013923211848491375,
+   "unsupported_ratio_p95": 0.00617592325879843,
+   "unsupported_ratio_max": 0.045555077503018154
+  }
+ ],
+ "feasible_segments_s": [
+  [
+   0.0,
+   8.34
+  ]
+ ],
+ "severe_windows_frames": [],
+ "guarded_severe_windows_frames": [],
+ "excluded_windows_frames": [],
+ "severe_windows_s": [],
+ "n_bins": 9,
+ "n_bins_eligible": 9,
+ "bin_eligible_frac": 1.0,
+ "bin_eligible": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "unsupported_ratio_p95": 0.00617592325879843,
+ "source_screen_sha256": "23576ef1dd356853708e521132f9e4be17f21a93f6582eb410fcfb22fe20f929",
+ "source_motion_sha256": "2447c24e652596e61434da4c08ce77b26764079d4a18c5fb5a68cdfeba523e1b",
+ "reducer_sha256": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+}
