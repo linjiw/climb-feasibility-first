@@ -97,3 +97,16 @@ step 25; contact sets differ (expected). Also added per-(policy, axis) stage cac
 the probe's SHA so a late failure keeps finished stages; the earlier stages were *not* reused
 (different probe SHA). Relaunched 08:0x as attempt 4 (`probe_run_attempt3_contact_axis_fail.log`
 kept). Two `B023` lint notes on immediately-invoked lambdas are deferred until the run ends.
+
+## 21:50 — attempt 4 completed as NOT TESTED; addendum 1 sealed; attempt 5 launched
+
+Attempt 4 ran all 126 rows (13 h 45 min; zero OOM retries; deterministic repeats and contact
+sets exactly equal; motor clamp realized on 12/14/13 units). Two sealed checks failed:
+`cross_condition_initial_state_max_abs_delta = 2.0` (mjlab `env_spacing` offsetting paired
+worlds' root x — harness; fixed with `env_spacing = 0`, verified byte-identical) and
+`minimum_paired_alive_fraction = 0.19` (unit 46 unlearnable for development/adaptive within
+0.5 s; unit 9 at 0.78 on one row). Only the alive columns of attempt 4 were read; effects were
+not opened; files archived under `probe_attempt4_not_tested/`. Addendum 1
+(`plan/PREREGISTRATION_NEWTON_PRED_addendum1.md`) replaces the row-level veto with unit-level
+exclusion (≥ 36 units must remain) and re-freezes the analyzer (`95479ebc…`), synthetic
+five-branch pass. Attempt 5 launched 21:50 with the spacing fix (probe `781f491e…`).

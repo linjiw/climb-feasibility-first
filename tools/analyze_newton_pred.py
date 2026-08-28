@@ -19,6 +19,8 @@ import numpy as np
 
 AXES = ("delay_20ms", "motor_clamp_85pct", "newton_contact")
 HELDOUT_POLICIES = ("adaptive", "grounded")
+PAIRED_ALIVE_THRESHOLD = 0.80
+MIN_UNITS_AFTER_EXCLUSION = 36  # addendum 1 (2026-08-27): unit-level exclusion floor
 CONTROL_COLUMNS = (
     "clip_infeasible_frac",
     "root_linear_speed_rms_mps",
@@ -145,33 +147,58 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 
 
 def validate_and_join(
-    reference_rows: list[dict[str, Any]], effect_rows: list[dict[str, Any]]
+    reference_rows: list[dict[str, Any]],
+    effect_rows: list[dict[str, Any]],
+    exclusion: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
-    """Validate the 42x3 table and join frozen reference controls."""
+    """Validate the 42x3 table, apply addendum-1 unit exclusion, join controls.
+
+    Addendum 1 (2026-08-27): a unit whose paired-alive fraction is below
+    ``PAIRED_ALIVE_THRESHOLD`` in *any* of its nine policy x axis rows is
+    excluded from every analysis; at least ``MIN_UNITS_AFTER_EXCLUSION`` units
+    must remain or the gate is not tested. The full 42x3 table must still be
+    present and complete; exclusion never repairs a missing row.
+    """
     reference = {int(row["table_index"]): row for row in reference_rows}
     if len(reference) != 42 or set(reference) != set(range(42)):
         raise ValueError("reference table must contain table_index 0..41 exactly once")
-    joined: list[dict[str, Any]] = []
-    seen: set[tuple[int, str]] = set()
+    joined: dict[tuple[int, str], dict[str, Any]] = {}
+    low_alive: set[int] = set()
     for effect in effect_rows:
         table_index = int(effect["table_index"])
         axis = str(effect["axis"])
         key = (table_index, axis)
-        if table_index not in reference or axis not in AXES or key in seen:
+        if table_index not in reference or axis not in AXES or key in joined:
             raise ValueError(f"invalid or duplicate effect row {key}")
-        row = {**reference[table_index], **effect}
         for policy in ("development", *HELDOUT_POLICIES):
             if int(effect[f"{policy}_replicates"]) != 8:
                 raise ValueError(f"{key}: {policy} does not have exactly 8 replicates")
-            if float(effect[f"{policy}_paired_alive_fraction"]) < 0.80:
-                raise ValueError(f"{key}: {policy} paired-alive fraction is below 0.80")
-        joined.append(row)
-        seen.add(key)
+            if float(effect[f"{policy}_paired_alive_fraction"]) < PAIRED_ALIVE_THRESHOLD:
+                low_alive.add(table_index)
+        joined[key] = {**reference[table_index], **effect}
     expected = {(unit, axis) for unit in range(42) for axis in AXES}
-    if seen != expected:
-        missing = sorted(expected - seen)
+    if set(joined) != expected:
+        missing = sorted(expected - set(joined))
         raise ValueError(f"effect table is not the frozen 42x3 panel; missing={missing[:5]}")
-    return sorted(joined, key=lambda row: (int(row["table_index"]), AXES.index(row["axis"])))
+    kept_units = sorted(set(range(42)) - low_alive)
+    if len(kept_units) < MIN_UNITS_AFTER_EXCLUSION:
+        raise ValueError(
+            f"only {len(kept_units)} units meet the paired-alive rule; "
+            f"fewer than {MIN_UNITS_AFTER_EXCLUSION} -> gate not tested"
+        )
+    if exclusion is not None:
+        exclusion.update(
+            {
+                "paired_alive_threshold": PAIRED_ALIVE_THRESHOLD,
+                "excluded_table_indices": sorted(low_alive),
+                "excluded_unit_ids": [
+                    int(joined[(unit, AXES[0])]["unit_id"]) for unit in sorted(low_alive)
+                ],
+                "units_analyzed": len(kept_units),
+            }
+        )
+    rows = [joined[(unit, axis)] for unit in kept_units for axis in AXES]
+    return rows
 
 
 def matrices(rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -365,7 +392,7 @@ def synthetic_tables(mode: str) -> tuple[list[dict[str, Any]], list[dict[str, An
             reference.append(row)
             for axis_id, axis_name in enumerate(AXES):
                 dev = 3.0 * latent[table_index] + 0.8 * axis_id + rng.normal(scale=0.25)
-                if mode == "pass":
+                if mode in ("pass", "excluded", "too_few"):
                     adaptive = 0.9 * dev + 0.6 * controls[table_index, 0] + rng.normal(scale=0.3)
                     grounded = 0.6 * dev + 0.6 * controls[table_index, 1] + rng.normal(scale=0.5)
                 elif mode == "discordant":
@@ -394,16 +421,33 @@ def synthetic_tables(mode: str) -> tuple[list[dict[str, Any]], list[dict[str, An
                     }
                 )
             table_index += 1
+    if mode in ("excluded", "too_few"):
+        # pass-shaped data with low paired-alive rows on 2 (or 8) units
+        dropped = 2 if mode == "excluded" else 8
+        for effect in effects:
+            if int(effect["table_index"]) < dropped and effect["axis"] == AXES[1]:
+                effect["adaptive_paired_alive_fraction"] = 0.3
     return reference, effects
 
 
 def synthetic() -> dict[str, Any]:
     """Exercise the pass, null, and discordant-replication decisions."""
     branches = {}
-    expected = {"pass": True, "null": False, "discordant": False}
+    expected = {"pass": True, "null": False, "discordant": False, "excluded": True}
+    reference, effects = synthetic_tables("too_few")
+    try:
+        validate_and_join(reference, effects)
+    except ValueError as error:
+        if "gate not tested" not in str(error):
+            raise
+    else:
+        raise AssertionError("synthetic too_few: exclusion floor did not fail closed")
     for mode, want in expected.items():
         reference, effects = synthetic_tables(mode)
-        rows = validate_and_join(reference, effects)
+        exclusion: dict[str, Any] = {}
+        rows = validate_and_join(reference, effects, exclusion)
+        if mode == "excluded" and exclusion["units_analyzed"] != 40:
+            raise AssertionError("synthetic excluded: expected 40 analyzed units")
         result = analyze_rows(
             rows,
             measurement_valid=True,
@@ -423,18 +467,25 @@ def synthetic() -> dict[str, Any]:
 
 
 def validate_probe_manifest(manifest: dict[str, Any], effects_path: Path) -> bool:
-    """Fail closed on the sealed probe manipulation/integrity checks."""
+    """Fail closed on the sealed probe manipulation/integrity checks.
+
+    Addendum 1: validity is recomputed from the manifest's component checks.
+    The probe's aggregate ``pass_preflight`` folded the per-row paired-alive
+    rule in; that rule is now applied per unit by ``validate_and_join``.
+    """
     if manifest.get("effects_csv_sha256") != sha256_file(effects_path):
         raise ValueError("probe manifest does not bind the effects CSV")
     required_zero = (
         "deterministic_repeat_max_abs_delta",
         "invalid_starts",
+        "invalid_reference_frames",
         "escaped_reference_frames",
         "cross_condition_initial_state_max_abs_delta",
     )
     return bool(
-        manifest.get("pass_preflight") is True
-        and all(float(manifest.get(name, float("inf"))) == 0.0 for name in required_zero)
+        all(float(manifest.get(name, float("inf"))) == 0.0 for name in required_zero)
+        and manifest.get("deterministic_contacts_equal") is True
+        and manifest.get("motor_clamp_manipulation_pass") is True
     )
 
 
@@ -453,7 +504,7 @@ def main() -> int:
         output = synthetic()
         args.out.parent.mkdir(parents=True, exist_ok=True)
         args.out.write_text(json.dumps(output, indent=1) + "\n")
-        print("Newton predictive-gate synthetic pass/null/discordant branches: PASS")
+        print("Newton predictive-gate synthetic pass/null/discordant/excluded/too_few branches: PASS")
         return 0
     if args.permutations != REAL_PERMUTATIONS:
         parser.error(f"real analysis requires exactly {REAL_PERMUTATIONS} permutations")
@@ -465,7 +516,8 @@ def main() -> int:
     measurement_valid = validate_probe_manifest(probe_manifest, args.effects)
     reference_rows = read_csv(args.reference)
     effect_rows = read_csv(args.effects)
-    rows = validate_and_join(reference_rows, effect_rows)
+    exclusion: dict[str, Any] = {}
+    rows = validate_and_join(reference_rows, effect_rows, exclusion)
     analyzed = analyze_rows(
         rows,
         measurement_valid=measurement_valid,
@@ -487,6 +539,7 @@ def main() -> int:
         },
         "permutations": args.permutations,
         "seed": args.seed,
+        "addendum_1_exclusion": exclusion,
         **analyzed,
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)

@@ -139,6 +139,10 @@ def build_env(
         failure_penalty=0.0,
     )
     cfg.scene.num_envs = num_envs
+    # Every world shares one origin: MJWarp worlds never interact, and the
+    # sealed cross-condition check demands byte-identical canonical states
+    # between paired worlds (the default 2 m spacing offsets root x).
+    cfg.scene.env_spacing = 0.0
     cfg.auto_reset = False
     for event in ("push_robot", "base_com", "foot_friction", "encoder_bias"):
         cfg.events.pop(event, None)

@@ -1,0 +1,9 @@
+2026-08-27T00:44:25-04:00
+22050 MiB, 99 %
+relaunch 2026-08-27T00:54:32-04:00 batch_worlds=4 probe_sha=28be548ad3e112456e081eccb580e528646b216a5eea35782ab9fc4e8e2b1060
+22222 MiB, 98 %
+relaunch 2026-08-27T00:57:23-04:00 batch_worlds=4 probe_sha=8b9d0a8407f195401ef861d93ddbcff8c227c4c92844f155956ca4f116dcc184
+relaunch 2026-08-27T01:03:22-04:00 batch_worlds=4 subprocess-batches probe_sha=63cc9a63ce46eb5884207fd11511de010cc2be53cb2d12d55dd37f0e5e582b03
+relaunch 2026-08-27T01:17:11-04:00 batch_worlds=4 no-reset-after-termination probe_sha=9c7473d633fe0e056e6222344b95ca291f16a8d50a062d33af7ee222ff56997c
+relaunch 2026-08-27T07:56:44-04:00 batch_worlds=4 newton-collision-pipeline+stage-cache probe_sha=a6f2075b882188e8c898623099569e5f95856e2c755808e69bb240fd3247bf49
+relaunch 2026-08-27T21:52:42-04:00 batch_worlds=4 env_spacing=0 probe_sha=781f491ef2ef21e1925ddb494205dd5ba95bebd46a2dc718a00220703120aed4
