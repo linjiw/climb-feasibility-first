@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import functools
 import hashlib
 import json
 import os
@@ -1010,7 +1011,8 @@ def main() -> int:
         print(f"[{policy}] deterministic preflight")
         preflight[policy] = cached(
             f"{policy}_preflight",
-            lambda: deterministic_preflight(
+            functools.partial(
+                deterministic_preflight,
                 checkpoint=checkpoint,
                 unit_table=args.unit_table,
                 bank=args.bank,
@@ -1024,7 +1026,8 @@ def main() -> int:
             print(f"[{policy}] {axis}")
             effects, checks = cached(
                 f"{policy}_{axis}",
-                lambda: run_axis(
+                functools.partial(
+                    run_axis,
                     checkpoint=checkpoint,
                     unit_table=args.unit_table,
                     bank=args.bank,
