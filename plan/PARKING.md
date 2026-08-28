@@ -21,9 +21,10 @@
 - **Bank-wide DFRP repair.** The exact 30-clip gate validates a fail-closed artifact contract, not
   a bank-wide recovery rate or policy benefit. Waits: a policy must first consume the 26-clip
   curated view under an interpretable, manipulation-passing training design.
-- **Newton fragility-weighted sampling (G3).** Newton axes may become a useful analysis instrument,
-  but weighting training by them waits for the sealed no-training predictive gate and a clean G2
-  learning-progress arm. If prediction fails, G3 is killed rather than softened.
+- **Newton fragility-weighted sampling (G3) — KILLED 2026-08-28.** The sealed no-training predictive
+  gate failed on valid data (`plan/NEWTON_PRED_RESULT.md`: adaptive partial ρ +0.14, LOCO lift −0.006;
+  grounded ρ +0.02). Per the kill rule G3 never runs in this project; Newton stays a conformance /
+  analysis instrument (recert `plan/NEWTON15_RECERT_RESULT.md`). Not to be reopened by re-analysis.
 - **Differentiable feasibility and cross-embodiment atlas.** Both are plausible extensions of the
   screen, but each changes the scientific question and embodiment scope. Waits until after the Dec 1
   results freeze and the single-embodiment flagship is assembled.

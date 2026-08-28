@@ -359,6 +359,7 @@ No edits to sealed files. Do not soften §8's "not tested" wording to make the d
 | S4 analyzer | `tools/analyze_g_segment.py`; synthetic positive/null/inconclusive/gate-fail all pass; fails closed without a post-warm-up ledger | **closed** (draft; re-hash at seal) |
 | S5 gap gate | `tools/run_when_free.sh` in repo; memory + utilization gated; OOM retry; 512-env need still unmeasured | **closed** (script) |
 | S6 seeds/drop order | seeds 1,2,3; G0 first, then seed 3 — in the draft and `STATUS.md` | **closed** |
+| **N-c verdict: FAIL on valid data** | attempt 5 (13.9 h) passes every component check; analyzer (addendum 1) on 40 units: adaptive partial ρ +0.141 (p 0.158), LOCO lift −0.006; grounded ρ +0.022, lift −0.036. `plan/NEWTON_PRED_RESULT.md`, `reports/newton15_pred/result.json`. **G3 killed; Newton = instrument.** S7 closed (PARKING updated) | **closed** |
 | Probe attempt 4 → NOT TESTED; addendum 1 | all 126 rows completed (13.8 h) but `env_spacing` offset paired worlds (cross-condition delta 2.0) and unit 46 is unlearnable within 0.5 s for dev/adaptive (alive 0.19). Effects never opened. Addendum 1 sealed 22:1x Aug 27: unit-level exclusion (≥ 36 remain), analyzer re-frozen `95479ebc…`. **Attempt 5 launched 21:50 with `env_spacing = 0`; ETA ≈ 11:30 Aug 28** | **closed**; probe **running** |
 | Probe harness, 3rd repair | attempt 3 ran 6 h (development preflight/delay/clamp clean, zero OOM retries) then hit the never-executed `newton_contact` axis: Newton needs its own `CollisionPipeline` contacts when MJWarp collision is off. Fixed in the probe (S1 baseline untouched), verified on 4 worlds; per-stage cache added. **Attempt 4 launched 08:0x Aug 27, ETA ≈ 06:00 Aug 28** | **closed**; probe **running** |
 | Probe harness, 2nd repair | mjlab's `auto_reset=False` guard refused to step a fallen world at batch 6; the probe now clears `_manual_reset_pending` each step (no reset, no RNG consumed; `alive` masks). Relaunched 01:2x | **closed**; probe **running** |
@@ -378,7 +379,7 @@ spike to 27.9 GB. `run_when_free.sh` must not be used to queue anything alongsid
 
 1. **Send B4.** The 10-line ask is written. Nothing else in this file blocks on Linji, but the
    companion release does.
-2. ~~S1~~–~~S6~~ — done (see §9). Remaining before the seal: S7 (G3 pointer after N-c) and the seal itself (§10.2), which should wait for the N-c verdict only if it lands before Sept 10.
+2. ~~S1~~–~~S7~~ — all done (see §9). N-c failed on valid data, so the Phase-G seal drops G3 unconditionally. Remaining: the seal itself (§10.2) after Linji reads the draft, then the wiring screen via `tools/run_when_free.sh`.
 2′. *(record)* **S1 — implement the G2 rank** (`climb/segment_curriculum.py`, `segment_runtime.py`): the LP
    rank exactly as §3 of the draft seal defines it (W = 10 ticks, λ = 0.01, `difficulty_power` 0),
    plus the uncertainty fallback; extend `tests/test_segment_{curriculum,runtime}.py` with the
@@ -394,7 +395,7 @@ spike to 27.9 GB. `run_when_free.sh` must not be used to queue anything alongsid
 6. **S5 — bring `run_when_free.sh` into `tools/`** and make it gate on free memory *and*
    utilization; the `need_MiB` for a 512-env arm is still a guess until the wiring screen.
 
-### 10.1 When the probe finishes
+### 10.1 When the probe finishes — DONE 2026-08-28 (verdict FAIL; G3 killed; see §9)
 
 1. Check `reports/newton15_pred/probe/COMPLETED.json` and the manifest: `pass_preflight`,
    `deterministic_repeat_max_abs_delta = 0`, `cross_condition_initial_state_max_abs_delta = 0`,

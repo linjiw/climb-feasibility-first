@@ -1,0 +1,11 @@
+{
+  "attempt": 5,
+  "status": "INTERRUPTED",
+  "completed": false,
+  "observed_at": "2026-08-28T02:18:59-04:00",
+  "last_probe_log_write": "2026-08-28T02:14:22-04:00",
+  "last_logged_stage": "adaptive delay_20ms batch 60/168",
+  "probe_sha256": "781f491ef2ef21e1925ddb494205dd5ba95bebd46a2dc718a00220703120aed4",
+  "evidence": "The recorded probe and GPU-watch PIDs were absent, no matching process was running, the log ended without a traceback, and no COMPLETED.json existed.",
+  "interpretation": "Incomplete harness execution only; no scientific outcome was opened or analyzed."
+}

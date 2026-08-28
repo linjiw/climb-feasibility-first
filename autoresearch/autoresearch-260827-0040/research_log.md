@@ -110,3 +110,15 @@ not opened; files archived under `probe_attempt4_not_tested/`. Addendum 1
 (`plan/PREREGISTRATION_NEWTON_PRED_addendum1.md`) replaces the row-level veto with unit-level
 exclusion (≥ 36 units must remain) and re-freezes the analyzer (`95479ebc…`), synthetic
 five-branch pass. Attempt 5 launched 21:50 with the spacing fix (probe `781f491e…`).
+
+## 09:43 Aug 28 — attempt 5 complete; sealed verdict FAIL on valid data
+
+Attempt 5 ran uninterrupted 21:50 → 09:43 (13.9 h). A 02:18 note from another session
+(`INTERRUPTED.json`, now `INTERRUPTED_stale_external_note.json`) claimed the PIDs were absent;
+the monitor stream, log writes, manifest, and `COMPLETED.json` show the run never stopped, and the
+narrative edits that note produced in `fable.md`/`STATUS.md`/this log were restored from HEAD.
+Component checks: repeat Δ 0, contacts equal, invalid/escaped 0, cross-condition Δ 0 (spacing fix
+confirmed), clamp realized 12/14/13. Addendum-1 analyzer (`95479ebc…`, hash verified) excluded
+units 9 and 46 as predicted (40 analyzed) and returned **gate FAIL**: adaptive partial ρ +0.141
+(p 0.158), LOCO lift −0.006 (p 0.640); grounded ρ +0.022, lift −0.036. Recorded in
+`plan/NEWTON_PRED_RESULT.md`, `STATUS.md`, `RESULTS_LOG.md`, `PARKING.md` (G3 killed), fable §9/§10.

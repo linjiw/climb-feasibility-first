@@ -1,0 +1,7 @@
+{
+ "schema_version": "newton15_pred_probe_completed/1",
+ "pass_preflight": false,
+ "probe_manifest": "/data/robotixx/climb/reports/newton15_pred/probe/probe_manifest.json",
+ "probe_manifest_sha256": "08ea88e9468bcd1c9ddd6f472be7f10a399852618c247b53956945a8236a24f9",
+ "effects_csv_sha256": "d863abffb28893a52c870460acb6f4575edb1c78866e7910863e5507bfeff029"
+}

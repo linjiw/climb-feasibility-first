@@ -1,0 +1,16 @@
+{
+ "schema_version": "newton15_pred_gate_completed/1",
+ "verdict": "FAIL_VALID_DATA",
+ "gate_pass": false,
+ "measurement_valid": true,
+ "units_analyzed": 40,
+ "excluded_unit_ids": [
+  9,
+  46
+ ],
+ "effects_sha256": "d863abffb28893a52c870460acb6f4575edb1c78866e7910863e5507bfeff029",
+ "probe_manifest_sha256": "08ea88e9468bcd1c9ddd6f472be7f10a399852618c247b53956945a8236a24f9",
+ "result_sha256": "ff7e5670658751f4b362ea8a531f51a6f79a2a5b381b3c59837504f268da3670",
+ "analyzer_sha256": "95479ebce49d0c192025d13308b482e2c3b4616dc9ba3048716fe95ee46af20d",
+ "finished": "2026-08-28T09:45:34.350730-04:00"
+}

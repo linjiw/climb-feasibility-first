@@ -1,0 +1,109 @@
+{
+ "schema_version": "newton15_pred_result/1",
+ "classification": "sealed-protocol measured no-training predictive gate",
+ "reference_sha256": "406ec4076402973a2bbd9644fb9e562760366a2427aaf311a3c89a844013c02e",
+ "effects_sha256": "d863abffb28893a52c870460acb6f4575edb1c78866e7910863e5507bfeff029",
+ "probe_manifest_sha256": "08ea88e9468bcd1c9ddd6f472be7f10a399852618c247b53956945a8236a24f9",
+ "axes": [
+  "delay_20ms",
+  "motor_clamp_85pct",
+  "newton_contact"
+ ],
+ "controls": [
+  "clip_infeasible_frac",
+  "root_linear_speed_rms_mps",
+  "root_angular_speed_rms_rps",
+  "joint_speed_rms_rps",
+  "joint_acceleration_rms_rps2",
+  "body_linear_speed_rms_mps",
+  "root_height_range_m"
+ ],
+ "thresholds": {
+  "partial_rho": 0.25,
+  "loco_rho_lift": 0.05,
+  "permutation_p_one_sided": 0.05
+ },
+ "permutations": 10000,
+ "seed": 20260826,
+ "addendum_1_exclusion": {
+  "paired_alive_threshold": 0.8,
+  "excluded_table_indices": [
+   5,
+   23
+  ],
+  "excluded_unit_ids": [
+   9,
+   46
+  ],
+  "units_analyzed": 40
+ },
+ "results": {
+  "adaptive": {
+   "partial_spearman": 0.1413798079391122,
+   "partial_permutation_p_one_sided": 0.15828417158284172,
+   "loco_ridge": {
+    "baseline_rho": 0.5611109074039515,
+    "augmented_rho": 0.5553869241727802,
+    "rho_lift": -0.005723983231171292
+   },
+   "loco_lift_permutation_p_one_sided": 0.6403359664033597,
+   "per_axis_raw_spearman": {
+    "delay_20ms": {
+     "n_units": 40,
+     "rho": 0.42382739212007514
+    },
+    "motor_clamp_85pct": {
+     "n_units": 40,
+     "rho": 0.2684395338878031
+    },
+    "newton_contact": {
+     "n_units": 40,
+     "rho": -0.03452157598499063
+    }
+   },
+   "permutation_null": {
+    "draws": 10000,
+    "scheme": "intact three-axis unit vectors permuted within source clip",
+    "partial_rho_p95": 0.20033622564621137,
+    "loco_rho_lift_p95": 0.02215966813040726
+   }
+  },
+  "grounded": {
+   "partial_spearman": 0.02179142973509837,
+   "partial_permutation_p_one_sided": 0.4293570642935706,
+   "loco_ridge": {
+    "baseline_rho": 0.5875378137232443,
+    "augmented_rho": 0.5517757964584464,
+    "rho_lift": -0.035762017264797885
+   },
+   "loco_lift_permutation_p_one_sided": 0.8979102089791021,
+   "per_axis_raw_spearman": {
+    "delay_20ms": {
+     "n_units": 40,
+     "rho": 0.5347091932457787
+    },
+    "motor_clamp_85pct": {
+     "n_units": 40,
+     "rho": -0.21286340143383642
+    },
+    "newton_contact": {
+     "n_units": 40,
+     "rho": -0.0827392120075047
+    }
+   },
+   "permutation_null": {
+    "draws": 10000,
+    "scheme": "intact three-axis unit vectors permuted within source clip",
+    "partial_rho_p95": 0.15956447168228988,
+    "loco_rho_lift_p95": 0.007383599306761291
+   }
+  }
+ },
+ "decision": {
+  "measurement_valid": true,
+  "primary_adaptive_pass": false,
+  "grounded_directional_replication_pass": false,
+  "gate_pass": false,
+  "next_action": "Newton remains an analysis instrument; G3 must never run"
+ }
+}

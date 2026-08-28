@@ -1,0 +1,162 @@
+{
+ "schema_version": "newton15_pred_probe/1",
+ "classification": "sealed-protocol no-training Newton probe",
+ "pass_preflight": false,
+ "deterministic_repeat_max_abs_delta": 0.0,
+ "deterministic_contacts_equal": true,
+ "invalid_starts": 0,
+ "invalid_reference_frames": 0,
+ "escaped_reference_frames": 0,
+ "cross_condition_initial_state_max_abs_delta": 0.0,
+ "motor_clamp_units_realized_by_policy": {
+  "development": 12,
+  "adaptive": 14,
+  "grounded": 13
+ },
+ "motor_clamp_manipulation_pass": true,
+ "minimum_paired_alive_fraction": 0.19,
+ "unit_table_sha256": "d80e228c1e44f7c669e033cba2bd7f774ff1fb4d5c6bdf39d1da5b7405584b16",
+ "reference_sha256": "406ec4076402973a2bbd9644fb9e562760366a2427aaf311a3c89a844013c02e",
+ "checkpoint_sha256": {
+  "development": "6099a7072afdcfa4bca17201dc4b1092ec373e8621ff50e6d7ffd2792a7de079",
+  "adaptive": "22079dde59496a4f6e44de95bd0dfc9a6ce362436ad448261fa52eba64f58085",
+  "grounded": "e97881c05dc9674af0734964c30a6272549038361ee7818231ebad5cecf4b7f1"
+ },
+ "probe_tool_sha256": "781f491ef2ef21e1925ddb494205dd5ba95bebd46a2dc718a00220703120aed4",
+ "batch_worlds": 4,
+ "effects_csv": "/data/robotixx/climb/reports/newton15_pred/probe/effects.csv",
+ "effects_csv_sha256": "d863abffb28893a52c870460acb6f4575edb1c78866e7910863e5507bfeff029",
+ "preflight": {
+  "development": {
+   "numeric_max_abs_delta": 0.0,
+   "initial_max_abs_delta": 0.0,
+   "contacts_equal": true,
+   "invalid_starts": 0,
+   "invalid_reference_frames": 0,
+   "escaped_reference_frames": 0
+  },
+  "adaptive": {
+   "numeric_max_abs_delta": 0.0,
+   "initial_max_abs_delta": 0.0,
+   "contacts_equal": true,
+   "invalid_starts": 0,
+   "invalid_reference_frames": 0,
+   "escaped_reference_frames": 0
+  },
+  "grounded": {
+   "numeric_max_abs_delta": 0.0,
+   "initial_max_abs_delta": 0.0,
+   "contacts_equal": true,
+   "invalid_starts": 0,
+   "invalid_reference_frames": 0,
+   "escaped_reference_frames": 0
+  }
+ },
+ "manipulation": {
+  "development": {
+   "delay_20ms": {
+    "axis": "delay_20ms",
+    "mujoco_contacts": true,
+    "delayed_worlds": 336,
+    "delay_control_steps": 1,
+    "batches": 168,
+    "batch_worlds": 4,
+    "initial_pair_max_abs_delta": 0.0,
+    "invalid_starts": 0,
+    "invalid_reference_frames": 0,
+    "escaped_reference_frames": 0
+   },
+   "motor_clamp_85pct": {
+    "axis": "motor_clamp_85pct",
+    "mujoco_contacts": true,
+    "clamped_worlds": 336,
+    "effort_limit_ratio": 0.85,
+    "batches": 168,
+    "batch_worlds": 4,
+    "initial_pair_max_abs_delta": 0.0,
+    "invalid_starts": 0,
+    "invalid_reference_frames": 0,
+    "escaped_reference_frames": 0
+   },
+   "newton_contact": {
+    "axis": "newton_contact",
+    "base_mujoco_contacts": true,
+    "perturbed_mujoco_contacts": false,
+    "initial_pair_max_abs_delta": 0.0,
+    "invalid_starts": 0,
+    "invalid_reference_frames": 0,
+    "escaped_reference_frames": 0
+   }
+  },
+  "adaptive": {
+   "delay_20ms": {
+    "axis": "delay_20ms",
+    "mujoco_contacts": true,
+    "delayed_worlds": 336,
+    "delay_control_steps": 1,
+    "batches": 168,
+    "batch_worlds": 4,
+    "initial_pair_max_abs_delta": 0.0,
+    "invalid_starts": 0,
+    "invalid_reference_frames": 0,
+    "escaped_reference_frames": 0
+   },
+   "motor_clamp_85pct": {
+    "axis": "motor_clamp_85pct",
+    "mujoco_contacts": true,
+    "clamped_worlds": 336,
+    "effort_limit_ratio": 0.85,
+    "batches": 168,
+    "batch_worlds": 4,
+    "initial_pair_max_abs_delta": 0.0,
+    "invalid_starts": 0,
+    "invalid_reference_frames": 0,
+    "escaped_reference_frames": 0
+   },
+   "newton_contact": {
+    "axis": "newton_contact",
+    "base_mujoco_contacts": true,
+    "perturbed_mujoco_contacts": false,
+    "initial_pair_max_abs_delta": 0.0,
+    "invalid_starts": 0,
+    "invalid_reference_frames": 0,
+    "escaped_reference_frames": 0
+   }
+  },
+  "grounded": {
+   "delay_20ms": {
+    "axis": "delay_20ms",
+    "mujoco_contacts": true,
+    "delayed_worlds": 336,
+    "delay_control_steps": 1,
+    "batches": 168,
+    "batch_worlds": 4,
+    "initial_pair_max_abs_delta": 0.0,
+    "invalid_starts": 0,
+    "invalid_reference_frames": 0,
+    "escaped_reference_frames": 0
+   },
+   "motor_clamp_85pct": {
+    "axis": "motor_clamp_85pct",
+    "mujoco_contacts": true,
+    "clamped_worlds": 336,
+    "effort_limit_ratio": 0.85,
+    "batches": 168,
+    "batch_worlds": 4,
+    "initial_pair_max_abs_delta": 0.0,
+    "invalid_starts": 0,
+    "invalid_reference_frames": 0,
+    "escaped_reference_frames": 0
+   },
+   "newton_contact": {
+    "axis": "newton_contact",
+    "base_mujoco_contacts": true,
+    "perturbed_mujoco_contacts": false,
+    "initial_pair_max_abs_delta": 0.0,
+    "invalid_starts": 0,
+    "invalid_reference_frames": 0,
+    "escaped_reference_frames": 0
+   }
+  }
+ }
+}
