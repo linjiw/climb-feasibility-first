@@ -404,12 +404,12 @@ result would apply only to this calibrated ALP rule, support, task, and budget; 
 the simpler G1 default only within the same boundary.
 
 Within those limits, the measured conclusion is already useful. A failure-adaptive curriculum can
-spend most of its exposure on a reference whose demanded dynamics have no modeled support source.
-A policy-independent robot-space audit finds such intervals before training, and an exact-support
-interface prevents feasibility, duration exposure, and terminal semantics from leaking into the
-allocation comparison. The remaining experiment asks one narrow question on that controlled
-substrate. Whether its answer is positive or null, feasibility must be measured before policy
-failure is interpreted as learning value.
+repeatedly make a reference whose demanded dynamics have no modeled support source a dominant
+attractor. A policy-independent robot-space audit finds such intervals before training, and an
+exact-support interface prevents feasibility, duration exposure, and terminal semantics from
+leaking into the allocation comparison. The remaining experiment asks one narrow question on that
+controlled substrate. Whether its answer is positive or null, feasibility must be measured before
+policy failure is interpreted as learning value.
 
 ## References — numbered mirror
 
