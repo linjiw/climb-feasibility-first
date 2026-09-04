@@ -103,23 +103,27 @@ feasible and diverse subset [3,9]. These are effective system designs, but their
 trained policy and combines reference quality with that policy's capability. KungfuBot instead
 uses a human-space center-of-mass/center-of-pressure stability heuristic before robot retargeting
 [10]. LIMMT combines target-robot motion heuristics, diversity, and complexity, with physical-score
-weights calibrated through repeated policy training [11]. These works rule out claims that
-filtering or physics-aware curation is itself new.
+weights calibrated through repeated policy training [11]. PHUMA filters source artifacts and
+retargets with joint-limit, ground-contact, and anti-skating losses [12]. These works rule out
+claims that filtering or physics-aware curation is itself new.
 
 Optimization-based retargeters address a complementary problem. Kinodynamic Motion Retargeting
 uses rigid-body and contact constraints to construct viable locomotion, while Direct Dynamic
 Retargeting uses simulator-in-the-loop optimization without requiring an infeasible geometric
-intermediate [12,13]. GMR and *Retargeting Matters* further show that retargeting artifacts affect
-downstream tracking robustness [14]. Repair can therefore be preferable to exclusion. Our narrower
-question is diagnostic and routing-oriented: after retargeting, can the demanded robot-space
-wrench be supplied by admissible contacts within the modeled actuator limits? The screen can route
-a reference toward exclusion, repair, or a scene/contact-model correction; it does not decide that
-exclusion is best.
+intermediate [13,14]. AMO and SPIDER likewise generate viable references through trajectory
+optimization or physics-based sampling with contact guidance [15,16]. GMR and *Retargeting
+Matters* further show that retargeting artifacts affect downstream tracking robustness [17]. An
+earlier analytic study estimates velocity, acceleration, and torque requirements for 40 upper-body
+motions, but does not test whole-body environmental support [18]. Repair can therefore be
+preferable to exclusion. Our narrower question is diagnostic and routing-oriented: after
+retargeting, can the demanded robot-space wrench be supplied by admissible contacts within the
+modeled actuator limits? The screen can route a reference toward exclusion, repair, or a
+scene/contact-model correction; it does not decide that exclusion is best.
 
 ### Adaptive allocation
 
 Prioritized experience replay and prioritized level replay formalize the benefit and bias of
-nonuniform training distributions, including explicit replay/exploration mixing [15,16]. In
+nonuniform training distributions, including explicit replay/exploration mixing [19,20]. In
 humanoid tracking, BeyondMimic popularized a failure-EMA bin sampler, while GMT and EGM reweight
 motions or motion segments using tracking outcomes [5,7,8]. Those systems combine allocation with
 curation, staged training, clipping, or architectural changes. Their results motivate the present
@@ -130,9 +134,9 @@ legal trials.
 ### Evaluation on fixed support
 
 Robot-learning comparisons are sensitive to seed count, aggregation, and interval construction
-[17]. Tracking adds another conditioning problem: kinematic error among survivors can improve when
+[21]. Tracking adds another conditioning problem: kinematic error among survivors can improve when
 a method terminates earlier. HumanTracker responds to related limitations by adding contact-aware
-and preference-aligned trajectory diagnostics [18]. We use a liveness-weighted tracking score as
+and preference-aligned trajectory diagnostics [22]. We use a liveness-weighted tracking score as
 the primary Phase-G endpoint and report common-survivor quality only beside survival. The current
 contact-timing proxy remains exploratory unless it passes an independent blinded-label gate.
 
@@ -424,12 +428,17 @@ the prose draft's numeric citation mapping. Source checks are recorded in
 9. “ExBody2,” arXiv:2412.13196.
 10. Xie et al., “KungfuBot / PBHC,” NeurIPS 2025.
 11. “LIMMT,” arXiv:2606.06953.
-12. “Kinodynamic Motion Retargeting,” arXiv:2603.09956.
-13. “Direct Dynamic Retargeting,” arXiv:2605.23762.
-14. “Retargeting Matters / GMR,” arXiv:2510.02252.
-15. Schaul et al., “Prioritized Experience Replay,” ICLR 2016, arXiv:1511.05952.
-16. Jiang, Grefenstette, and Rocktaschel, “Prioritized Level Replay,” ICML 2021,
+12. Lee et al., “PHUMA,” arXiv:2510.26236.
+13. “Kinodynamic Motion Retargeting,” arXiv:2603.09956.
+14. “Direct Dynamic Retargeting,” arXiv:2605.23762.
+15. Li et al., “AMO,” RSS 2025.
+16. Pan et al., “SPIDER,” arXiv:2511.09484.
+17. “Retargeting Matters / GMR,” arXiv:2510.02252.
+18. Klas et al., “On the Actuator Requirements for Human-Like Execution of Retargeted Human
+    Motion on Humanoid Robots,” Humanoids 2023.
+19. Schaul et al., “Prioritized Experience Replay,” ICLR 2016, arXiv:1511.05952.
+20. Jiang, Grefenstette, and Rocktaschel, “Prioritized Level Replay,” ICML 2021,
     arXiv:2010.03934.
-17. Agarwal et al., “Deep Reinforcement Learning at the Edge of the Statistical Precipice,”
+21. Agarwal et al., “Deep Reinforcement Learning at the Edge of the Statistical Precipice,”
     NeurIPS 2021, arXiv:2108.13264.
-18. “HumanTracker,” arXiv:2608.13555.
+22. “HumanTracker,” arXiv:2608.13555.

@@ -34,7 +34,7 @@ policy-based feasibility filtering, physics-aware curation, adaptive sampling, a
 constrained retargeting. CLIMB must claim its narrower delta rather than priority over those classes.
 
 **Writing checkpoint, 2026-09-04:** the anonymous PaperCept source now builds deterministically to
-five US-Letter pages including 18 resolved references and Figs. 1–2. All fonts are embedded, no
+five US-Letter pages including 22 resolved references and Figs. 1–2. All fonts are embedded, no
 Type 3 font or overfull box remains, and the build fails closed on the eight-page/font/citation
 gates. This leaves three pages for the frozen Phase-G table/figure and final result text; it does
 not make the pending experiment complete. See `paper/icra/BUILD_AUDIT_2026-09-04.md`.

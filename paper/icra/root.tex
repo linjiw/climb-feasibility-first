@@ -114,16 +114,21 @@ feasible and diverse subset~\cite{he2024h2o,ji2024exbody2}. These scores combine
 with policy capability. KungfuBot instead uses a human-space center-of-mass/center-of-pressure
 heuristic before robot retargeting~\cite{xie2025kungfubot}. LIMMT combines target-robot motion
 heuristics, diversity, and complexity, with physical-score weights calibrated through repeated
-policy training~\cite{guan2026limmt}. Thus neither filtering nor physics-aware curation is itself
-new.
+policy training~\cite{guan2026limmt}. PHUMA filters source artifacts and retargets with joint-limit,
+ground-contact, and anti-skating losses~\cite{lee2025phuma}. Thus neither filtering nor
+physics-aware curation is itself new.
 
 Optimization-based retargeters address a complementary problem. Kinodynamic Motion Retargeting
 uses rigid-body and contact constraints to construct viable locomotion, while Direct Dynamic
 Retargeting uses simulator-in-the-loop optimization without an infeasible geometric
-intermediate~\cite{zhang2026kinodynamic,roux2026direct}. GMR further shows that retargeting
-artifacts affect downstream tracking robustness~\cite{araujo2025retargeting}. Repair can therefore
-be preferable to exclusion. Our narrower question is diagnostic: after retargeting, can the
-demanded robot-space wrench be supplied by admissible contacts within modeled actuator limits?
+intermediate~\cite{zhang2026kinodynamic,roux2026direct}. AMO and SPIDER likewise generate viable
+references through trajectory optimization or physics-based sampling with contact
+guidance~\cite{li2025amo,pan2025spider}. GMR further shows that retargeting artifacts affect
+downstream tracking robustness~\cite{araujo2025retargeting}. An earlier analytic study estimates
+velocity, acceleration, and torque requirements for 40 upper-body motions, but does not test
+whole-body environmental support~\cite{klas2023actuator}. Repair can therefore be preferable to
+exclusion. Our narrower question is diagnostic: after retargeting, can the demanded robot-space
+wrench be supplied by admissible contacts within modeled actuator limits?
 
 \subsection{Adaptive allocation and evaluation}
 
