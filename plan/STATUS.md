@@ -111,8 +111,9 @@ to file the upstream drafts.
 ## Next scheduled
 
 Writing-first remains active while the ICRA-sized manuscript is assembled from the flagship;
-`paper/icra/OUTLINE.md` now fixes the eight-page causal spine. Linji's author/scope pass remains
-the companion critical path.
+`paper/icra/OUTLINE.md` fixes the eight-page causal spine, and `paper/icra/DRAFT.md` now carries
+the complete prose path with a fenced Phase-G result slot and an independent Xiao-inspired review.
+Linji's author/scope pass remains the companion critical path.
 
 Newton gates 1–2 are closed: conformance passed, but the predictive gate failed on valid data and
 killed G3. The licensed AMASS→G1 payload now passes all 900 hashes. Next run the endpoint-blind
