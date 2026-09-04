@@ -18,6 +18,7 @@ replaces, `paper/CITATION_CHECK_2026-08-26.md`. It is a literature audit, not a 
 | Athena-WBC | [arXiv:2607.04837](https://arxiv.org/abs/2607.04837) | targeted exposure does not solve every feasible long-tail clip in a strong baseline; capability mismatch can remain | a null allocation result would not imply that the residual motions are intrinsically unlearnable |
 | HumanTracker | [arXiv:2608.13555](https://arxiv.org/abs/2608.13555) | conventional kinematic errors can miss support/contact failures; the benchmark adds contact diagnostics and preference-aligned scoring | supports contact-aware evaluation, not the validity of CLIMB's still-unvalidated contact-timing proxy |
 | ICRA 2027 call | [official call for technical papers](https://2027.ieee-icra.org/contribute/call-for-icra-2027-papers-now-accepting-submissions/) | deadline 2026-09-15 11:59 PST; eight pages total including references; double anonymous; no supplement beyond the paper and optional video | the 11.5k-word flagship source cannot be treated as an ICRA-ready manuscript |
+| PaperCept manuscript support | [official LaTeX support](https://ras.papercept.net/conferences/support/tex.php) and [PDF overview](https://ras.papercept.net/conferences/support/support.php) | official `ieeeconf.cls`; US-Letter, two-column output; embedded fonts; no Type 3 fonts; pre-submission PDF test | `paper/icra/build.sh` pins the class/compiler digests and enforces page, paper-size, font, overfull-box, and citation gates locally |
 
 ## Positioning consequence
 

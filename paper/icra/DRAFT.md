@@ -1,8 +1,10 @@
 # Feasibility First: Auditing Reference Dynamics Before Adaptive Humanoid Motion Tracking
 
-**Manuscript status:** unsealed ICRA-sized prose draft, 2026-09-04. Bracketed Phase-G text is
-deliberately pending. This draft does not report an unrun experiment or authorize endpoint access.
-Claims and numbers remain governed by `paper/RESULTS_LOG.md` and the sealed records it cites.
+**Manuscript status:** unsealed ICRA-sized prose draft, 2026-09-04. The anonymous two-column source
+is `paper/icra/root.tex`, its verified bibliography is `paper/icra/references.bib`, and a passing
+build writes `paper/icra/ICRA_DRAFT.pdf`. Bracketed Phase-G text is deliberately pending. This
+draft does not report an unrun experiment or authorize endpoint access. Claims and numbers remain
+governed by `paper/RESULTS_LOG.md` and the sealed records it cites.
 
 ## Abstract
 
@@ -11,8 +13,8 @@ policy has not mastered. Policy error, however, can conflate controllable diffic
 reference that demands unsupported or over-limit robot dynamics. In a three-seed Unitree G1
 campaign, a failure-adaptive sampler's peak top-1 mass reached 87--89%, and the same
 kneel-and-crawl reference became a dominant attractor in every seed; during that reference's
-descent, no collision geometry lies within
-6 cm of the floor while approximately one body weight remains unsupported. We introduce a
+descent, 86% of frames have no collision geometry within 6 cm of the floor, and median unsupported
+force is approximately one body weight. We introduce a
 policy-independent screen that applies contact-free inverse dynamics and a torque-limited contact
 program to the final robot-space trajectory before training. On one AMASS-to-G1 pipeline, the
 screen flags 2,442 of 10,705 clips above a fixed 10%-of-frames threshold; on a separate filtered
@@ -324,25 +326,16 @@ single disagreement is `burpee_002__A362_M` (0.019 versus 0.136). This closes an
 agreement question on the enriched panel; it does not remove the corpus, filter, robot-file, or
 friction confounds between the two full-bank prevalence estimates.
 
-| corpus/pipeline pairing | clips | `infeasible_frac > 0.10` | `airborne_frac > 0.10` | flagged duration | screen setting |
-|---|---:|---:|---:|---:|---|
-| AMASS → `whole_body_tracking` → G1 | 10,705 | 2,442 (22.8%) | 2,512 (23.5%) | 27.4% | CLIMB implementation, friction 0.6 |
-| filtered BONES-SEED → G1 | 4,950 | 7 (0.14%) | 111 (2.24%) | 0.09% | independent implementation, friction 0.7 |
+![Bank-scale audit with separate corpus/pipeline prevalence bars and a same-clip
+implementation-agreement scatter plot](../figures/f2_bank_scale.png)
 
-**Table 1.** Corpus-scale audit measurements. Both rows use a 6 cm candidate-contact band and a
-half-weight unsupported-force threshold, but the corpora, release filtering, robot files,
-friction, and implementations differ. The rows are deliberately not a causal retargeter ablation.
-
-| panel | clips | Spearman `infeasible_frac` | Spearman `airborne_frac` | strict agreement | Cohen's kappa |
-|---|---:|---:|---:|---:|---:|
-| deterministic stratified same-clip panel | 40 | 0.9836 | 0.9974 | 39/40 | 0.9485 |
-
-**Table 2.** Cross-implementation agreement on a flag-enriched 20+20 panel. The independent unit
-is the clip. Because selection is stratified by native verdict, this table is not a prevalence
-estimate.
-
-**[Fig. 2: raw counts and denominators for the two corpus/pipeline pairings, visually separated,
-plus the 39/40 agreement inset. Never draw a causal arrow between retargeters.]**
+**Figure 2. Bank-scale audit and implementation check.** (a) Bars are normalized within two
+separate corpus/pipeline denominators and apply the strict `infeasible_frac > 0.10` rule:
+2,442/10,705 for AMASS → `whole_body_tracking` → G1 and 7/4,950 for filtered BONES-SEED →
+G1. Corpus, filtering, robot file, friction, and implementation differ, so this is not a causal
+retargeter comparison. (b) On a flag-enriched, deterministic 20+20 same-clip panel, strict
+decisions agree for 39/40 clips (Spearman ρ = 0.9836, Cohen's κ = 0.9485). That panel checks
+implementation agreement; its stratified selection is not a prevalence sample.
 
 ### 5.3 Obvious interventions do not establish the allocation claim
 
@@ -414,9 +407,10 @@ allocation comparison. The remaining experiment asks one narrow question on that
 substrate. Whether its answer is positive or null, feasibility must be measured before policy
 failure is interpreted as learning value.
 
-## References — conversion ledger
+## References — numbered mirror
 
-The final LaTeX/BibTeX pass must replace this compact ledger with verified metadata from
+Canonical verified metadata now lives in `paper/icra/references.bib`; this compact list preserves
+the prose draft's numeric citation mapping. Source checks are recorded in
 `paper/CITATION_CHECK_2026-08-26.md` and `paper/CITATION_CHECK_2026-09-04.md`.
 
 1. Luo et al., “PHC,” ICCV 2023.

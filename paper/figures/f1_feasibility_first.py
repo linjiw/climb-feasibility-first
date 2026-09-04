@@ -15,6 +15,8 @@ from pathlib import Path
 import matplotlib
 
 matplotlib.use("Agg")
+matplotlib.rcParams["pdf.fonttype"] = 42
+matplotlib.rcParams["ps.fonttype"] = 42
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
 import numpy as np
@@ -33,7 +35,7 @@ GRAY = "#5C6B75"
 LIGHT_GRAY = "#E8ECEF"
 
 
-def rounded_box(ax, xy, width, height, text, *, edge, face, fontsize=8.2) -> None:
+def rounded_box(ax, xy, width, height, text, *, edge, face, fontsize=9.5) -> None:
     """Draw one centered rounded box in axes coordinates."""
     box = FancyBboxPatch(
         xy,
@@ -96,7 +98,7 @@ def failure_loop(ax) -> None:
         (0.04, 0.58),
         0.35,
         0.18,
-        "retargeted\nreference defect",
+        "retargeted\nreference\ndefect",
         edge=RED,
         face=RED_FILL,
     )
@@ -105,7 +107,7 @@ def failure_loop(ax) -> None:
         (0.60, 0.58),
         0.35,
         0.18,
-        "persistent\npolicy failure",
+        "persistent\npolicy\nfailure",
         edge=GRAY,
         face=LIGHT_GRAY,
     )
@@ -114,7 +116,7 @@ def failure_loop(ax) -> None:
         (0.32, 0.20),
         0.36,
         0.18,
-        "sampler assigns\nmore exposure",
+        "sampler assigns\nmore\nexposure",
         edge=RED,
         face=RED_FILL,
     )
@@ -129,10 +131,10 @@ def failure_loop(ax) -> None:
         transform=ax.transAxes,
         ha="center",
         va="bottom",
-        fontsize=7.5,
+        fontsize=8.6,
         color=INK,
     )
-    ax.set_title("(a) Failure is not always learning value", loc="left", fontsize=10, pad=9)
+    ax.set_title("(a) Defect-driven failure loop", loc="left", fontsize=10.8, pad=9)
 
 
 def unsupported_trace(ax) -> None:
@@ -154,8 +156,9 @@ def unsupported_trace(ax) -> None:
         ]
     )
     weight = float(payload["total_mass_kg"]) * 9.81
-    descent = (time >= 0.75) & (time <= 1.75) & no_contact
+    descent = (time >= 0.75) & (time <= 1.75)
     descent_median = float(np.median(unsupported[descent]))
+    descent_no_contact = float(np.mean(no_contact[descent]))
 
     ax.fill_between(time, unsupported, color=RED, alpha=0.23, step="mid")
     ax.plot(time, unsupported, color=RED, linewidth=1.25)
@@ -169,21 +172,30 @@ def unsupported_trace(ax) -> None:
         step="mid",
     )
     ax.axhline(weight, color=GRAY, linestyle="--", linewidth=1.0)
-    ax.text(9.75, weight + 9, f"robot weight {weight:.0f} N", ha="right", fontsize=7.3, color=GRAY)
+    ax.text(
+        9.75,
+        weight - 10,
+        f"robot weight {weight:.0f} N",
+        ha="right",
+        va="top",
+        fontsize=8.2,
+        color=GRAY,
+    )
     ax.annotate(
-        f"0.75–1.75 s: no admissible contact\nmedian unsupported ≈{descent_median:.0f} N",
+        f"0.75–1.75 s: no contact on {descent_no_contact:.0%} of frames\n"
+        f"median unsupported ≈{descent_median:.0f} N",
         xy=(1.27, 322),
         xytext=(3.1, 345),
-        fontsize=7.4,
+        fontsize=8.5,
         color=INK,
         arrowprops={"arrowstyle": "-|>", "color": RED, "lw": 1.0},
     )
     ax.set_xlim(0, 9.9)
     ax.set_ylim(0, 390)
-    ax.set_xlabel("reference time [s]", fontsize=8.5)
-    ax.set_ylabel("unsupported force [N]", fontsize=8.5)
-    ax.tick_params(labelsize=7.5)
-    ax.set_title("(b) Audit the final robot-space trajectory", loc="left", fontsize=10, pad=9)
+    ax.set_xlabel("reference time [s]", fontsize=9.5)
+    ax.set_ylabel("unsupported force [N]", fontsize=9.5)
+    ax.tick_params(labelsize=8.5)
+    ax.set_title("(b) Robot-space dynamic audit", loc="left", fontsize=10.8, pad=9)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
 
@@ -194,12 +206,12 @@ def support_contract(ax) -> None:
     n_units = int(unit_table["counts"]["admissible_units"])
     n_starts = int(unit_table["counts"]["legal_starts"])
     ax.set_axis_off()
-    ax.set_title("(c) Hold support exact; test allocation only", loc="left", fontsize=10, pad=9)
+    ax.set_title("(c) Identical support, changed allocation", loc="left", fontsize=10.8, pad=9)
 
     feasible = [(0.03, 0.24), (0.36, 0.30), (0.76, 0.20)]
     rejected = [(0.27, 0.08), (0.67, 0.08)]
     timeline_y = 0.76
-    ax.text(0.0, timeline_y + 0.08, "screened reference", transform=ax.transAxes, fontsize=7.5)
+    ax.text(0.0, timeline_y + 0.08, "screened reference", transform=ax.transAxes, fontsize=8.5)
     for start, width in feasible:
         ax.add_patch(
             Rectangle(
@@ -223,8 +235,8 @@ def support_contract(ax) -> None:
                 hatch="////",
             )
         )
-    ax.text(0.03, timeline_y - 0.06, "feasible intervals", transform=ax.transAxes, fontsize=7.0, color=TEAL)
-    ax.text(0.62, timeline_y - 0.06, "excluded", transform=ax.transAxes, fontsize=7.0, color=RED)
+    ax.text(0.03, timeline_y - 0.06, "feasible intervals", transform=ax.transAxes, fontsize=8.0, color=TEAL)
+    ax.text(0.62, timeline_y - 0.06, "excluded", transform=ax.transAxes, fontsize=8.0, color=RED)
 
     unit_x = np.array([0.08, 0.22, 0.43, 0.58, 0.80, 0.91])
     control = np.array([0.55, 0.48, 0.70, 0.62, 0.50, 0.66])
@@ -255,17 +267,17 @@ def support_contract(ax) -> None:
             )
         )
     ax.plot([0.03, 0.97], [base_y, base_y], transform=ax.transAxes, color=INK, linewidth=0.8)
-    ax.text(0.03, base_y + 0.22, "allocation over identical units", transform=ax.transAxes, fontsize=7.5)
-    legend_y = 0.15
+    ax.text(0.03, base_y + 0.22, "allocation over identical units", transform=ax.transAxes, fontsize=8.5)
+    legend_y = 0.18
     ax.add_patch(Rectangle((0.10, legend_y), 0.035, 0.035, transform=ax.transAxes, facecolor=GRAY))
-    ax.text(0.145, legend_y + 0.017, "G1 uniform", transform=ax.transAxes, fontsize=7.1, va="center")
+    ax.text(0.155, legend_y + 0.017, "G1 uniform", transform=ax.transAxes, fontsize=8.0, va="center")
     ax.add_patch(Rectangle((0.52, legend_y), 0.035, 0.035, transform=ax.transAxes, facecolor=TEAL))
-    ax.text(0.565, legend_y + 0.017, "G2 calibrated ALP", transform=ax.transAxes, fontsize=7.1, va="center")
+    ax.text(0.575, legend_y + 0.017, "G2 ALP", transform=ax.transAxes, fontsize=8.0, va="center")
     ax.add_patch(
         FancyBboxPatch(
-            (0.0, 0.0),
-            1.0,
-            0.10,
+            (-0.02, 0.0),
+            1.04,
+            0.14,
             boxstyle="round,pad=0.004,rounding_size=0.01",
             linewidth=0.9,
             edgecolor=TEAL,
@@ -276,35 +288,45 @@ def support_contract(ax) -> None:
     )
     ax.text(
         0.5,
-        0.063,
-        f"Same {n_units:,} units · {n_starts:,} legal starts · hashes · PPO · compute",
+        0.108,
+        f"Same support: {n_units:,} units",
         transform=ax.transAxes,
         ha="center",
         va="center",
-        fontsize=6.8,
+        fontsize=8.0,
         color=INK,
     )
     ax.text(
         0.5,
-        0.025,
+        0.068,
+        f"{n_starts:,} starts · same hashes · PPO · compute",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=8.0,
+        color=INK,
+    )
+    ax.text(
+        0.5,
+        0.027,
         "Policy outcome pending",
         transform=ax.transAxes,
         ha="center",
         va="center",
-        fontsize=7.1,
+        fontsize=8.2,
         color=INK,
     )
 
 
 def main() -> None:
     """Render PNG and vector PDF outputs."""
-    fig, axes = plt.subplots(1, 3, figsize=(11.2, 3.45), gridspec_kw={"width_ratios": [1.0, 1.3, 1.1]})
+    fig, axes = plt.subplots(1, 3, figsize=(9.3, 3.7), gridspec_kw={"width_ratios": [1.0, 1.25, 1.1]})
     failure_loop(axes[0])
     unsupported_trace(axes[1])
     support_contract(axes[2])
     fig.suptitle(
         "Feasibility first: separate reference defects from allocation effects",
-        fontsize=11.5,
+        fontsize=12.2,
         y=1.01,
         color=INK,
     )

@@ -33,6 +33,12 @@ four broad contributions, and an outdated nearest-neighbour claim. Recent work a
 policy-based feasibility filtering, physics-aware curation, adaptive sampling, and dynamically
 constrained retargeting. CLIMB must claim its narrower delta rather than priority over those classes.
 
+**Writing checkpoint, 2026-09-04:** the anonymous PaperCept source now builds deterministically to
+five US-Letter pages including 18 resolved references and Figs. 1–2. All fonts are embedded, no
+Type 3 font or overfull box remains, and the build fails closed on the eight-page/font/citation
+gates. This leaves three pages for the frozen Phase-G table/figure and final result text; it does
+not make the pending experiment complete. See `paper/icra/BUILD_AUDIT_2026-09-04.md`.
+
 ## Provisional contribution statement
 
 1. **A failure diagnosis and screen.** A traced sampler-collapse case links a non-floor exposure

@@ -41,3 +41,6 @@ reports/g_segment/screen_full/
 reports/g_segment/contact_validation/renders/
 # Local payload receipts contain machine-specific licensed-data paths.
 reports/g_segment/local_bank_intake.json
+
+# generated anonymous ICRA paper build
+paper/icra/build/

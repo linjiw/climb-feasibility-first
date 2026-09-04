@@ -1,0 +1,401 @@
+\documentclass[letterpaper,10pt,conference]{ieeeconf}
+
+\IEEEoverridecommandlockouts
+\overrideIEEEmargins
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{newtxtext,newtxmath}
+\usepackage{tabularx}
+\usepackage{url}
+\usepackage{xcolor}
+
+\newcommand{\method}{CLIMB}
+\newcommand{\phaseg}{\textbf{[Phase G pending: endpoint access remains locked.]}}
+
+\title{\LARGE \bf
+Feasibility First: Auditing Reference Dynamics Before\\
+Adaptive Humanoid Motion Tracking
+}
+
+\author{Anonymous Authors}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+\begin{abstract}
+Failure-adaptive sampling is intended to concentrate humanoid tracking updates on motions the
+policy has not mastered. Policy error, however, can conflate controllable difficulty with a
+reference that demands unsupported or over-limit robot dynamics. In a three-seed Unitree G1
+campaign, peak top-1 allocation reached 87--89\%, and the same kneel-and-crawl reference became a
+dominant attractor in every seed. During that reference's descent, 86\% of frames have no
+collision geometry within 6\,cm of the floor, and median unsupported force is approximately one
+body weight. We introduce a
+policy-independent screen that applies contact-free inverse dynamics and a torque-limited contact
+program to the final robot-space trajectory before training. On one AMASS-to-G1 pipeline, the
+screen flags 2,442 of 10,705 clips above a fixed 10\%-of-frames threshold; on a separate filtered
+4,950-clip production pairing, an independent implementation flags 7, and the implementations
+agree on 39 of 40 strict decisions in a stratified same-clip panel. We convert feasible intervals
+into 1,184 hash-bound units with 368,951 legal fixed-horizon starts, enabling a controlled
+comparison of learning-progress and deployment-uniform allocation on identical support.
+\phaseg{} The present evidence supports an embodiment- and pipeline-specific release audit, not a
+generic prevalence rate, a hardware-safety certificate, or a claim that filtering improves policy
+performance.
+\end{abstract}
+
+\section{Introduction}
+
+Large retargeted motion banks have made generalist humanoid tracking a practical training recipe:
+map human motion to a robot, train a policy over the resulting references in massively parallel
+simulation, and spend additional updates on motions the policy currently fails. Systems such as
+PHC, MaskedMimic, H2O, ExBody, BeyondMimic, and SONIC demonstrate the scale and capability of this
+recipe~\cite{luo2023phc,tessler2024maskedmimic,he2024h2o,cheng2024exbody,liao2025beyondmimic,luo2025sonic}.
+Failure, completion, or recent learning progress appears to tell the trainer where another update
+is most useful~\cite{liao2025beyondmimic,chen2025gmt,yang2025egm}.
+
+That interpretation assumes that policy error measures a solvable control problem. A retargeted
+trajectory may instead have no admissible contact capable of supplying its demanded base wrench,
+or require joint effort beyond the modeled actuator range. The same policy failure then admits two
+incompatible readings: the controller has not learned a feasible skill, or the reference does not
+define a feasible skill for this embodiment and scene.
+
+We observed this ambiguity in a 100-motion Unitree G1 campaign. A BeyondMimic-style sampler
+concentrated on the same kneel-and-crawl clip in all three seeds. Peak top-1 mass was 0.884, 0.870,
+and 0.893; those campaign maxima belonged to another clip in two seeds. Clip-uniform sampling
+nevertheless achieved higher held-out survival in all three paired seeds. The attractor passes
+ordinary kinematic checks. Yet from 0.75 to 1.75\,s its pelvis descends from 0.79 to 0.40\,m while
+the nearest collision geometry remains 7--10\,cm above the floor. A median 329\,N of support
+demand, approximately the 327\,N model weight, has no modeled source.
+
+Three ambiguities must be removed before testing adaptive allocation. \emph{Error ambiguity}
+mixes policy competence with reference feasibility. \emph{Support ambiguity} arises when
+clip-level sampling changes the duration prior or admits fixed-horizon starts that cross invalid
+frames. \emph{Evaluation ambiguity} arises when wraparound, implicit teleports, reset-state
+terminal reads, or unstable attribution make unlike trials appear paired.
+
+Our interface has two parts. A robot-space dynamic-feasibility screen analyzes the final
+retargeted trajectory using the target MuJoCo model, modeled contacts, friction, and actuator
+ranges. An exact-support contract turns feasible intervals into non-wrapping fixed-horizon starts,
+stable attribution units, and paired evaluation conditions bound by content hashes. The
+allocation rule may then change while embodiment, reward, PPO, support, legal-start prior, caps,
+compute, seeds, and evaluator remain fixed.
+
+The evidence has an important boundary. The screen flags 2,442/10,705 clips in one
+AMASS-to-\texttt{whole\_body\_tracking}-to-G1 pipeline, but only 7/4,950 in a separately filtered
+BONES-SEED-to-G1 production pairing used by SONIC. The implementations agree on 39/40 strict
+decisions in a stratified same-clip panel. Because source corpus, filtering, robot file, and
+implementation also change, the prevalence difference is not a retargeter comparison. It shows
+why feasibility should be measured for each corpus-and-pipeline pairing.
+
+This paper contributes:
+\begin{enumerate}
+  \item a measured failure diagnosis and policy-independent screen that tests final robot-space
+  trajectories against modeled contacts and actuator limits;
+  \item an exact-support trial contract with 1,184 units, 368,951 legal starts, explicit terminals,
+  paired conditions, and content hashes; and
+  \item a manipulation-first comparison of calibrated absolute-learning-progress allocation
+  against deployment-uniform allocation on identical support.
+\end{enumerate}
+The third item remains a protocol until Phase G completes. A failed manipulation or provenance
+gate returns \texttt{not\_tested} without opening a policy endpoint; a valid null would recommend
+the simpler allocator within the tested task.
+
+\section{Related Work}
+
+\subsection{Motion filtering and dynamic retargeting}
+
+Policy-based curation already removes poorly tracked references. H2O retains AMASS motions that a
+privileged imitator can follow, and ExBody2 uses an initial policy's sequence errors to select a
+feasible and diverse subset~\cite{he2024h2o,ji2024exbody2}. These scores combine reference quality
+with policy capability. KungfuBot instead uses a human-space center-of-mass/center-of-pressure
+heuristic before robot retargeting~\cite{xie2025kungfubot}. LIMMT combines target-robot motion
+heuristics, diversity, and complexity, with physical-score weights calibrated through repeated
+policy training~\cite{guan2026limmt}. Thus neither filtering nor physics-aware curation is itself
+new.
+
+Optimization-based retargeters address a complementary problem. Kinodynamic Motion Retargeting
+uses rigid-body and contact constraints to construct viable locomotion, while Direct Dynamic
+Retargeting uses simulator-in-the-loop optimization without an infeasible geometric
+intermediate~\cite{zhang2026kinodynamic,roux2026direct}. GMR further shows that retargeting
+artifacts affect downstream tracking robustness~\cite{araujo2025retargeting}. Repair can therefore
+be preferable to exclusion. Our narrower question is diagnostic: after retargeting, can the
+demanded robot-space wrench be supplied by admissible contacts within modeled actuator limits?
+
+\subsection{Adaptive allocation and evaluation}
+
+Prioritized experience and level replay formalize the benefit and bias of nonuniform training
+distributions~\cite{schaul2016per,jiang2021plr}. In humanoid tracking, BeyondMimic uses a
+failure-EMA bin sampler, while GMT and EGM reweight motions or segments using tracking
+outcomes~\cite{liao2025beyondmimic,chen2025gmt,yang2025egm}. Those systems combine allocation with
+curation, staging, clipping, or architectural changes. Our comparison changes only allocation
+over a shared set of legal trials.
+
+Robot-learning comparisons are sensitive to seed count, aggregation, and interval
+construction~\cite{agarwal2021precipice}. Tracking adds a conditioning problem: kinematic error
+among survivors can improve when a method terminates earlier. HumanTracker similarly finds that
+kinematic metrics can miss support and contact failures~\cite{liu2026humantracker}. We therefore
+use a liveness-weighted primary score and report common-survivor quality only beside survival.
+
+\section{Feasibility and Exact-Support Interface}
+
+\subsection{Problem and assumptions}
+
+Let a retargeted reference provide generalized position and velocity
+$(q_t,\dot q_t)$ for the G1 at frame $t$. We apply a centered five-frame moving average to
+velocity, differentiate at the reference frame rate, and smooth acceleration with the same
+window. The audit is conditioned on a robot model, flat plane, collision geometry, friction,
+actuator ranges, and reference. It is not a certificate for unmodeled electrical, thermal,
+compliance, latency, or hardware-safety constraints.
+
+We use the compiled MuJoCo model underlying the tracking environment. Contact-free inverse
+dynamics returns the generalized force required for the prescribed acceleration. The six
+free-joint coordinates define the base wrench $W_t$ that the environment must supply; the
+remaining coordinates define contact-free joint torque $\tau^{\mathrm{free}}_t$. A collision
+geometry becomes a candidate contact when its exact distance to the plane is at most
+$g=0.06$\,m.
+
+The 6\,cm band is a declared tolerance. At 3\,cm a known feasible control is flagged on 42\% of
+frames because the bank carries an approximately 3\,cm ground-alignment offset. At 10\,cm the
+attractor's 7--10\,cm floating descent is incorrectly granted a contact candidate. The chosen
+setting lies between these observed failure modes; it is not a universal constant.
+
+\subsection{Contact-capacity screen}
+
+For each candidate point we construct a four-edge pyramidal friction cone with coefficient 0.6 in
+the primary model; a simulator-matched view makes non-foot contacts frictionless. Mapping
+nonnegative generator magnitudes $f_t$ through the contact Jacobian yields both base-wrench
+matrix $A_t f_t$ and joint-torque contribution $J_t f_t$. A weighted nonnegative least-squares
+problem first exposes the unconstrained residual, with angular-wrench rows weighted by two. We
+then solve a linear program minimizing $\ell_1$ wrench slack subject to
+\begin{equation}
+-\tau_{\max} \leq \tau^{\mathrm{free}}_t-J_t f_t \leq \tau_{\max},
+\qquad f_t\geq0.
+\label{eq:contact}
+\end{equation}
+The translational component of the resulting weighted residual defines unsupported force. With
+no candidate contact, the residual is the contact-free demand.
+
+We report the fraction of frames with no contact candidate (\texttt{airborne\_frac}), the fraction
+whose torque-limited unsupported force exceeds half the robot weight
+(\texttt{infeasible\_frac}), normalized unsupported-force integral, and joint-torque
+infeasibility. A clip crosses the primary rule only when
+\texttt{infeasible\_frac}$>0.10$ (strict inequality). Ballistic flight is not flagged merely for
+being airborne: near-gravity acceleration has little external support demand. Conversely,
+nonballistic hovering or descent without support is flagged.
+
+The screen takes approximately one CPU-second per clip in the primary implementation. An
+independent implementation processes the production bank at 0.145 CPU-s per clip
+(0.84\,ms/frame). These costs support corpus-scale release audit, not real-time control.
+
+\subsection{Exact-support trials}
+
+Clip classification is too coarse because one reference can contain both supportable and
+unsupported intervals. We reduce per-frame screens to ordered feasible runs, retain only 50-step
+windows wholly inside a run, and bind each motion and sidecar by SHA-256. Across 800 training
+clips, 1,841 source runs yield 1,184 admissible units and 368,951 legal starts after 657 short runs
+are discarded. A unit is an attribution stratum; the deployment prior is uniform over legal
+starts, not units or clips.
+
+The runtime samples only legal starts, emits explicit truncation at a segment boundary, never
+wraps into a rejected frame, and serializes its deterministic generator and sufficient
+statistics. Per-unit and per-clip caps bound concentration. Missing sidecars, changed motion
+hashes, invalid starts, invalid frames, or censored resets fail the contract.
+
+The paired evaluator freezes the motion, start, replicate, environment-noise seed, and
+dynamics-noise seed across policies. It assigns the reference before the first observation,
+disables auto-reset until terminal channels are captured, rejects invalid offsets, and records
+checkpoint, task, condition, reference, evaluator, and output hashes. The 100-clip panel is
+name- and hash-disjoint from training and contains 2,800 paired conditions.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{f1_feasibility_first.pdf}
+  \caption{\textbf{The feasibility-first trial interface.}
+  (a) In the motivating simulation campaign, the same attractor recurs in 3/3 adaptive seeds;
+  0.87--0.89 is the campaign maximum top-1 mass and does not belong to that clip in every seed.
+  (b) A reference-only audit localizes the unsupported interval. This pipeline-specific
+  temporal and modeled-wrench diagnosis does not establish that all adaptive collapse has this
+  cause. (c) The preregistered G1/G2 comparison keeps 1,184 units, 368,951 legal starts, hashes,
+  PPO, and compute fixed while changing allocation. No Phase-G policy outcome is shown.}
+  \label{fig:interface}
+\end{figure*}
+
+\section{Experimental Design}
+
+\subsection{RQ1: motivating failure}
+
+We analyze the previously sealed 100-motion campaign: 4,096 environments, 4,000 PPO iterations,
+three seeds per arm, and 100 disjoint evaluation motions with eight episodes per clip. It includes
+failure-adaptive, clip-uniform, and normalized grounded samplers. We report exposure, attractor
+identity, and held-out survival. This campaign motivates the audit; it is not reused as evidence
+for the exact-support allocation claim.
+
+\subsection{RQ2: bank-scale screen}
+
+The primary corpus contains 10,705 AMASS-derived references retargeted through
+\texttt{whole\_body\_tracking} to G1. We report raw counts under the fixed rule, category/source
+breakdowns, and contamination in the historical evaluator. A separate experiment covers all
+4,950 references in the filtered BONES-SEED production pairing. We never pool their prevalence.
+A deterministic 40-clip panel, 20 from each bank and enriched for flags, passes through both
+implementations to measure score and decision agreement; it is not a prevalence sample.
+
+\subsection{RQ3: negative controls}
+
+Simple interventions do not establish training benefit. E-HYG prunes 99 flagged motions from an
+800-motion bank but yields a held-out feasible-motion effect of $-0.0101$ under its predeclared
+test. Soft segment sampling estimates $-0.0196$ with a 95\% hierarchical-bootstrap interval
+$[-0.0497,+0.0134]$, but fails its rejected-start-mass manipulation gate. An exploratory
+segment-native pilot reaches only 0.014 total variation (TV) from control. These negative results
+motivate an exact-support, manipulation-first test.
+
+\subsection{RQ4: identical-support allocation}
+
+Phase G compares two 512-environment, 4,000-iteration arms with confirmation seeds 1--3. G1
+samples uniformly over legal starts. G2 estimates each unit's Beta-smoothed conditional success
+rate $s_u(k)$ and ranks absolute learning progress
+\begin{equation}
+\mathrm{LP}_u(k)=|s_u(k)-s_u(k-10)|.
+\end{equation}
+Its focus distribution is proportional to the legal-start prior times
+$\mathrm{LP}_u+\lambda$; exploration $\rho$ mixes the G1 prior back in before fixed unit and clip
+caps.
+
+Before sealing, a 12-row grid crosses
+$\rho\in\{0.05,0.10,0.20,0.40\}$ and
+$\lambda\in\{0.001,0.01,0.05\}$. Each row runs 50 iterations on seed 20260903. Only sampler
+ledgers at iterations 30, 40, and 49 enter selection. A row passes when mean TV is in
+$[0.05,0.15]$, each checkpoint lies in $[0.025,0.20]$, entropy-effective units are at least 12,
+top-1 probability is at most 0.05, invalid/censored counts are zero, and final rank saturation is
+below 0.90. The passing row nearest TV 0.10 is repeated on seed 20260904. Failure returns the
+study to design without endpoint access.
+
+After a 400-iteration warm-up, the confirmation gate applies the same separation,
+concentration, validity, seed, and provenance checks. Only a passed gate unlocks the primary
+endpoint: liveness-weighted TrackingScore on 25 reference-defined feasible-hard clips,
+\begin{equation}
+h\exp\!\left(-\frac{\mathrm{MPKPE}}{0.30\,\mathrm{m}}
+             -\frac{\mathrm{anchor\ error}}{0.40\,\mathrm{rad}}\right),
+\end{equation}
+where $h$ is survived-horizon fraction. The independent unit is clip within training seed, with a
+seed-then-clip hierarchical bootstrap of 10,000 draws. Survival, all-panel TrackingScore, AULC,
+and common-survivor non-harm are secondaries. Exactly one status is printed: positive, null,
+inconclusive, or \texttt{not\_tested}.
+
+\section{Results}
+
+\subsection{Failure-adaptive exposure can lock onto a defect}
+
+Adaptive peak top-1 mass is 0.884/0.870/0.893 across campaign seeds, and the same BMLmovi
+kneel-and-crawl clip repeatedly becomes dominant in all three. The maximum belongs to another
+clip in two seeds. Uniform sampling achieves higher held-out endpoint survival in every paired
+seed: differences (uniform minus adaptive) are $+0.0300$, $+0.0275$, and $+0.0300$. With only
+three seeds, the sign pattern is the useful description; the minimum attainable paired
+permutation $p$-value is 0.125.
+
+The reference has no joint-limit violation and peak joint speed is at most 5.6\,rad/s. The
+dynamic audit instead localizes the failure (Fig.~\ref{fig:interface}). From 0.75--1.75\,s, 86\%
+of frames have no candidate contact and median unsupported force is 329\,N; the model weighs
+327\,N. The 1.75--7.25\,s kneeling interval is supportable through non-foot contacts, and the
+8.0--8.5\,s rise again becomes unsupported. Every trained policy has zero survival from frame
+zero, while the tested late 8\,s offset survives.
+
+\subsection{Prevalence is pipeline-dependent}
+
+Under the strict rule, 2,442 of 10,705 primary-pipeline clips are flagged (22.8\%). Category
+rates range from 12.9\% for quiet motion to 58.6\% for dynamic motion, and source rates from
+0.1\% for GRAB to 100\% for CNRS. Severity-stratified inspection shows why labels are
+insufficient: five inspected CNRS cases are ordinary fast walks with extended floating
+intervals, while the Transitions sample mixes ingest defects with acrobatic content.
+
+Only 7 of 4,950 production clips (0.14\%) cross the same nominal rule, while 111 (2.24\%) are
+airborne on more than 10\% of frames. Five of seven flags are jumps, four naming a 50\,cm box
+absent from the flat audit scene. Their verdict is \emph{unsupported on this plane}, routing them
+toward missing terrain or exclusion rather than geometric root projection.
+
+Across the stratified 40-clip panel, \texttt{infeasible\_frac} rank correlation is 0.9836,
+\texttt{airborne\_frac} correlation is 0.9974, and strict decisions agree for 39/40 clips
+(Cohen's $\kappa=0.9485$). The disagreement is \texttt{burpee\_002\_\_A362\_M}
+(0.019 versus 0.136). Figure~\ref{fig:bank} keeps the full-bank denominators separate and uses
+only this same-input panel to check implementation agreement; it does not establish corpus or
+retargeter equivalence.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{f2_bank_scale.pdf}
+  \caption{Bank-scale audit and implementation check. (a) Bars are normalized within two
+  separate corpus/pipeline denominators and apply the strict
+  \texttt{infeasible\_frac}$>0.10$ rule: 2,442/10,705 for AMASS$\rightarrow$WBT$\rightarrow$G1
+  and 7/4,950 for filtered BONES-SEED$\rightarrow$G1. Corpus, filtering, robot file, friction,
+  and implementation differ, so this is not a causal retargeter comparison. (b) On a
+  flag-enriched, deterministic 20+20 same-clip panel, strict decisions agree for 39/40 clips
+  (Spearman $\rho=0.9836$, Cohen's $\kappa=0.9485$). That panel checks implementation agreement;
+  its stratified selection is not a prevalence sample.}
+  \label{fig:bank}
+\end{figure*}
+
+\subsection{Obvious interventions do not establish allocation benefit}
+
+The historical evaluator contains 29 flagged clips among 100. Across three policies, flagged
+clips score 6.0--8.4 survival points below the all-clip aggregate and 8.4--11.8 below the
+feasible stratum. The grounded-minus-uniform endpoint contrast is $+0.025$ on feasible clips and
+$-0.009$ on flagged clips. These data justify stratified evaluation, but changing the evaluation
+subset cannot establish training benefit.
+
+Training-side shortcuts likewise fail to answer RQ4. E-HYG is a sealed null. Soft segment
+sampling fails its allocation gate. The prior segment-native treatment is only 0.014 TV from
+control. We retain these failures because they separate three statements often collapsed in
+discussion: a defect can be measured; screening changes admissible support; and an allocator can
+improve policy performance on that support. Only Phase G can address the third.
+
+\subsection{Controlled Phase-G allocation result}
+
+\phaseg{} The exact 900-motion payload passes all committed identities. The 12-candidate,
+endpoint-blind calibration is queued behind a 14,000\,MiB shared-GPU availability gate. This
+subsection will be populated only from the frozen result table. If manipulation or provenance
+fails, the paper will report \texttt{not\_tested} and no endpoint estimate. If all gates pass, it
+will report the feasible-hard TrackingScore contrast with seed-then-clip interval, survival,
+AULC, and common-survivor non-harm.
+
+\section{Limitations and Conclusion}
+
+The audit is conditioned on one robot and simulator model and has no hardware closed-loop
+validation. It models collision contacts, friction, and actuator force limits, but not
+electrical, thermal, compliance, latency, or structural constraints; \emph{screened feasible} is
+not a safety certificate. The primary prevalence estimate belongs to one pipeline. The second
+bank bounds generality but is not a causal retargeter comparison. Both screens assume a flat
+plane, so terrain-bearing skills require their terrain in the audit.
+
+Finite differences and the contact-distance band introduce modeling error. The 6\,cm and
+half-weight thresholds are design choices supported by local sensitivity checks, not universal
+constants. Analytic routing also does not establish that exclusion is better than repair. That
+requires a same-support comparison of certified repaired and excluded intervals.
+
+Phase G has three training seeds, or two under the predeclared budget fallback, so uncertainty is
+seed- and clip-structured. A positive result would apply only to this ALP rule, support, task, and
+budget; a null would support G1 only within the same boundary.
+
+Within those limits, the measured conclusion is useful. A failure-adaptive curriculum can spend
+most exposure on a reference whose demanded dynamics have no modeled support source. A
+policy-independent audit finds such intervals before training, and an exact-support interface
+prevents feasibility, duration exposure, and terminal semantics from leaking into the allocation
+comparison. Whether Phase G is positive or null, feasibility must be measured before policy
+failure is interpreted as learning value.
+
+\section*{Reproducibility and AI disclosure}
+
+The audit and training stack uses mjlab v1.6.0 at commit
+\texttt{0fb8a681136b}, MuJoCo 3.11.0, NumPy 2.5.1, and SciPy 1.16.2. Motion, sidecar,
+unit-table, task, checkpoint, evaluator, condition, and output identities are SHA-256 bound.
+Released code and aggregate artifacts will be supplied through an anonymous review repository;
+licensed AMASS-derived motion files cannot be redistributed. OpenAI Codex assisted with code,
+figure composition, and language editing. The authors verified scientific claims and artifact
+provenance.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
