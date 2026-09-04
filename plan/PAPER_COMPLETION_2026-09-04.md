@@ -6,12 +6,18 @@ no confirmatory run before the Phase-G seal.
 
 ## Decision and goal
 
-The immediate paper goal is an **eight-page, result-complete ICRA 2027 manuscript** whose central
-claim is narrow enough for the existing tables to hold:
+The immediate paper goal is an **eight-page, result-complete ICRA 2027 methods manuscript** whose
+central claim is narrow enough for the existing tables to hold:
 
-> Failure-adaptive humanoid motion tracking can spend training on reference defects rather than
-> controllable difficulty; a policy-independent dynamic-feasibility audit and exact-support trial
-> contract separate that failure class from the remaining allocation question.
+> Reference--physics misalignment turns persistent tracking error into an ambiguous curriculum
+> signal. CLIMB screens and routes the final robot-space trajectory, constructs exact admissible
+> support, and applies learning-progress allocation only inside a hard feasibility gate.
+
+The revised working title is **“Feasibility-Gated Humanoid Motion Tracking: Separating Reference
+Physics from Curriculum Difficulty.”** The complete framing and next experiment cards are in
+`plan/METHOD_REFRAME_2026-09-04.md`. A “prevents pathological collapse” headline remains reserved
+for a future matched dirty-support gate experiment; Phase G isolates allocator value inside a
+fixed gate.
 
 The 11.5k-word flagship remains the RSS-scale source of record. It is not the ICRA draft. The
 [official ICRA 2027 call](https://2027.ieee-icra.org/contribute/call-for-icra-2027-papers-now-accepting-submissions/)
@@ -41,14 +47,14 @@ not make the pending experiment complete. See `paper/icra/BUILD_AUDIT_2026-09-04
 
 ## Provisional contribution statement
 
-1. **A failure diagnosis and screen.** A traced sampler-collapse case links a non-floor exposure
-   rule to an embodiment-specific reference whose demanded wrench has no admissible contact source;
-   the policy-independent screen is then measured at bank scale, with cross-bank and
-   cross-implementation boundaries reported.
-2. **An exact-support trial contract.** Feasible frame intervals, full-horizon legal starts, fixed
-   terminals, stable attribution units, paired seeds/initial states, and hash-complete provenance
-   turn the screen into a reproducible sampler/evaluator interface.
-3. **A controlled allocation result.** G2 ALP versus G1 deployment-uniform on identical support,
+1. **Reference--physics misalignment diagnosis.** A traced sampler-attractor case links persistent
+   failure to an embodiment-specific reference whose demanded wrench has no admissible contact
+   source.
+2. **The CLIMB method.** A policy-independent screen, cause-aware routing, exact legal starts,
+   stable units, a binary feasibility gate, and a true exploration mixture turn admissibility into
+   an active curriculum input.
+3. **A claim-isolating evaluation.** Bank-scale and cross-implementation screen measurements, an
+   exact repair panel, and G2 ALP versus G1 deployment-uniform on identical support,
    included only if calibration, independent validation, sealing, manipulation, and provenance
    gates all pass. A positive, bounded null, inconclusive, and not-tested result are equally
    reportable.

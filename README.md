@@ -1,4 +1,4 @@
-# CLIMB — feasibility × support × intrinsic: an audit of humanoid motion-tracking RL
+# CLIMB — feasibility-gated humanoid motion tracking
 
 **Project page:** https://linjiw.github.io/climb-feasibility-first/ ·
 **Tool:** [refeas](https://github.com/linjiw/refeas) (dynamic-feasibility screen, Apache-2.0) ·
@@ -6,23 +6,27 @@
 **Harness guide:** [`paper/PRACTITIONERS_GUIDE_HARNESS_TRAPS.md`](paper/PRACTITIONERS_GUIDE_HARNESS_TRAPS.md) ·
 **Phase-G table shell:** [`paper/PHASE_G_RESULT_TABLE_SHELL.md`](paper/PHASE_G_RESULT_TABLE_SHELL.md) ·
 **Paper completion plan:** [`plan/PAPER_COMPLETION_2026-09-04.md`](plan/PAPER_COMPLETION_2026-09-04.md) ·
+**Method reframe + next research:** [`plan/METHOD_REFRAME_2026-09-04.md`](plan/METHOD_REFRAME_2026-09-04.md) ·
 **Companion note (draft):** [`paper/companion/companion_note_draft.md`](paper/companion/companion_note_draft.md) ·
 **Flagship draft (with slots):** [`paper/flagship/DRAFT_full.md`](paper/flagship/DRAFT_full.md)
 
-Generalist humanoid motion tracking (BeyondMimic/mjlab lineage, Unitree G1) trains on tens of
-thousands of retargeted clips, steered by failure-adaptive curricula, scored by averaged survival.
-This repository is an end-to-end audit of that chain. Its central finding: apparent per-clip
-**difficulty conflates three things** — *feasibility* (can any controller supply the forces the
-reference demands with the contacts it offers?), *support* (does the bank contain anything like
-it?), and *intrinsic* hardness — and samplers, harnesses, and benchmarks that cannot tell them
-apart silently optimise the wrong objective. Headline results (each labelled and artifact-pathed
-in the drafts): failure-adaptive sampling collapses onto a single clip whose retargeted descent
-is *physically impossible* (median 329 N unsupported vs a 327 N robot); a one-line
-normalise-then-mix repairs the sampler; **22.8 % of one 10,705-clip AMASS→G1 corpus/pipeline is
-dynamically infeasible for > 10 % of frames** (0.1 %→100 % by source under one retargeter, versus
-0.14 % in a second production corpus/pipeline); and feasibility
-features are the first that make difficulty labels transfer across policies (Spearman
-0.567 → 0.609 on the headline pair, permutation p = 0.010).
+Generalist humanoid motion tracking (BeyondMimic/mjlab lineage, Unitree G1) trains on large
+retargeted motion banks and reallocates updates from policy outcomes. CLIMB addresses
+**reference--physics misalignment**: persistent error can mean either useful control difficulty or
+a final robot-space reference whose demanded wrench has no admissible source under the declared
+robot/scene model. The method screens contact and actuator capacity, routes intervals to admit /
+contextualize / repair / quarantine, constructs exact non-wrapping legal starts, and applies
+learning progress only inside a hard feasibility gate.
+
+Measured evidence (each number is status-labelled and artifact-pathed in the drafts): a shared
+unsupported kneel/crawl attractor recurs in 3/3 adaptive seeds while campaign peak top-1 mass
+reaches 0.870–0.893; its descent has median 329 N unsupported demand against a 327 N robot.
+**2,442/10,705 clips (22.8%) cross the fixed threshold in one AMASS→G1 corpus/pipeline**, versus
+7/4,950 (0.14%) in a separately filtered production pairing. The two implementations agree on
+39/40 strict decisions in a flag-enriched same-clip panel. An exact-support repair panel qualifies
+22/26 flagged candidates and preserves 4/4 feasible controls byte-identically. Whether calibrated
+ALP improves policy performance inside the 1,184-unit gate remains the endpoint-blind Phase-G
+experiment; no improvement is claimed before that result exists.
 
 ## For reviewers — start here, in this order
 

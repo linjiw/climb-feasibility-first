@@ -1,4 +1,4 @@
-# Feasibility First — ICRA 2027 manuscript outline
+# Feasibility-Gated Humanoid Motion Tracking — ICRA 2027 manuscript outline
 
 **Status:** unsealed writing scaffold, 2026-09-04. This file contains no new result and does
 not authorize endpoint access. Phase-G cells remain conditional on the calibration,
@@ -6,36 +6,37 @@ independent-validation, seal, manipulation, and provenance gates.
 
 ## Paper contract
 
-**Working title:** *Feasibility First: Auditing Reference Dynamics Before Adaptive Humanoid
-Motion Tracking*
+**Working title:** *Feasibility-Gated Humanoid Motion Tracking: Separating Reference Physics
+from Curriculum Difficulty*
 
 **Operational bottleneck.** A failure-adaptive sampler can assign increasing training exposure
 to a motion that the robot cannot realize under the modeled contacts and actuator limits. In
 that case, policy error is not evidence of controllable difficulty, and sampling it more often
 does not isolate the allocation problem.
 
-**Narrow claim.** On the tested AMASS-to-`whole_body_tracking`-to-Unitree-G1 pipeline, an
-analytic robot-space screen identifies dynamically infeasible reference intervals before
-policy training; an exact-support trial contract then separates reference feasibility from the
-still-open effect of adaptive allocation.
+**Method claim.** CLIMB treats reference feasibility as an explicit input to curriculum design.
+It screens the final robot-space motion, routes each interval to admit / contextualize / repair /
+quarantine, and assigns learning-progress mass only inside exact admissible support. The current
+binary gate is the testable special case of feasibility-conditioned allocation; a smooth score is
+a separate future intervention.
 
-The claim is deliberately about one retargeting pipeline and one modeled embodiment. It is not
-a generic prevalence claim, a hardware-safety guarantee, or evidence that filtering improves
-policy performance.
+**Evidence claim.** On the tested AMASS-to-`whole_body_tracking`-to-Unitree-G1 pipeline, the
+screen identifies inadmissible reference intervals before policy training and the exact-support
+interface isolates the remaining effect of adaptive allocation. Bank rates stay paired with their
+corpus, retargeter, robot, and scene.
 
 **Contribution list.** Keep these three noun-phrase contributions and use the same comparison
 classes in the result tables.
 
-1. **A measured failure diagnosis and policy-independent screen:** the collapse trace is tied
-   to an unsupported reference interval, and the screen reports 2,442 of 10,705 clips above the
-   fixed infeasible-frame threshold on the primary pipeline.
-2. **An exact-support trial contract:** feasible intervals, full-horizon legal starts, stable
-   attribution units, fixed terminals, paired conditions, and content hashes produce 1,184
-   training units with 368,951 legal starts plus a name- and hash-disjoint 100-clip evaluation
-   panel.
-3. **A controlled allocation test:** calibrated learning-progress allocation versus
-   deployment-uniform allocation on identical support, reported only if every predeclared gate
-   passes; otherwise the paper reports `not_tested` rather than an endpoint estimate.
+1. **Reference--physics misalignment diagnosis:** the repeated curriculum attractor is tied to an
+   unsupported robot-space interval, and the screen reports 2,442 of 10,705 clips above the fixed
+   infeasible-frame threshold on the primary pipeline.
+2. **The CLIMB method:** contact/torque screening, cause-aware routing, and a hard feasibility gate
+   produce 1,184 admissible units and 368,951 legal starts with fixed terminals, concentration
+   caps, paired conditions, and content hashes.
+3. **Claim-isolating evaluation:** bank-scale and cross-implementation screen tests, a qualified
+   repair path, and calibrated learning-progress versus deployment-uniform allocation on identical
+   support.
 
 Contribution 3 becomes an empirical result only after Phase G is complete. If Phase G cannot
 be completed, rename it “a preregistered controlled allocation protocol” in the abstract,
@@ -43,21 +44,16 @@ introduction, and conclusion.
 
 ## Abstract skeleton — seven sentences, about 175 words
 
-1. **Ground:** Failure-adaptive sampling is intended to concentrate humanoid tracking updates
-   on motions the policy has not mastered.
-2. **Gap:** Policy error, however, can conflate controllable difficulty with a reference that
-   demands unsupported or over-limit robot dynamics.
-3. **Observed consequence:** In one three-seed training campaign, this conflation coincided
-   with concentrated exposure and a shared attractor, motivating an audit that does not require
-   a trained policy.
-4. **Method:** Introduce the contact-capacity and actuator-limit screen, then state its inputs,
-   outputs, and assumptions in one sentence.
-5. **Interface:** Explain that feasible intervals are converted into exact full-horizon starts
-   and stable attribution units so allocation rules consume identical support.
+1. **Ground and gap:** Adaptive curricula concentrate updates on hard motion, but policy error
+   conflates controllable difficulty with inadmissible reference dynamics.
+2. **Mechanism:** Define reference--physics misalignment and its curriculum consequence.
+3. **Observed consequence:** Report the three-seed attractor and localized unsupported wrench.
+4. **Method:** Introduce CLIMB's screen, routing rule, and exact-support binary gate.
+5. **Current method scale:** Report the 1,184 units and 368,951 legal starts.
 6. **Measured setup/result:** Report the primary 10,705-clip count together with the separate
-   4,950-clip production-bank result, explicitly stating that the prevalence difference is a
-   corpus-and-pipeline measurement.
-7. **Controlled outcome:** Replace this sentence with exactly one Phase-G branch—`positive`,
+   4,950-clip production-bank result and 39/40 implementation agreement.
+7. **Controlled outcome:** Replace the current calibration-status sentence with exactly one
+   Phase-G branch—`positive`,
    `null`, `inconclusive`, or `not_tested`—and include the comparator, independent unit, primary
    metric, estimate, interval, and scope.
 
@@ -72,7 +68,8 @@ final evidence licenses the word under `paper/PHASE_G_RESULT_TABLE_SHELL.md`.
 expand humanoid tracking coverage. Credit policy-based filtering, physics-aware curation, and
 adaptive allocation before naming their different information requirements.
 
-**Paragraph 2: turn to the physical gap.** State three limitations as an auditable list:
+**Paragraph 2: turn to the physical gap.** Name reference--physics misalignment and its three
+observable consequences:
 
 - **L1 — error ambiguity:** tracking error mixes policy competence with reference infeasibility;
 - **L2 — support ambiguity:** clip-level selection changes legal-start exposure and can include
@@ -84,7 +81,8 @@ adaptive allocation before naming their different information requirements.
 unsupported interval as the hook. Present the causal explanation as a diagnosis for this
 pipeline, not a universal theory of sampler collapse.
 
-**Paragraph 4: hinge at Fig. 1.** Introduce the robot-space screen and exact-support interface.
+**Paragraph 4: hinge at Fig. 1.** Introduce CLIMB's robot-space screen, cause-aware routing, and
+exact-support feasibility gate.
 The figure must show the failure situation and the changed experimental interface, not a module
 inventory.
 
@@ -110,7 +108,7 @@ Organize by the three ingredients rather than by chronology.
 Every nearest-neighbor sentence must follow credit → required information → physical boundary →
 this paper's changed interface. Use `paper/CITATION_CHECK_2026-09-04.md` as the citation ledger.
 
-### 3. Screen and exact-support interface — 1.5 pages
+### 3. CLIMB: feasibility-gated tracking — 1.7 pages
 
 #### 3.1 Problem and assumptions
 
@@ -126,26 +124,32 @@ test, actuator-limit test, gap/weight thresholds, aggregation into `infeasible_f
 strict clip threshold. Separate ballistic flight from unsupported hovering. State CPU cost in
 the paragraph that claims bank-scale applicability.
 
-#### 3.3 Exact-support trial contract
+#### 3.3 Routing and exact-support curriculum
 
-Map L1–L3 to the corresponding intervention: feasible frame intervals, exact 50-step windows,
-legal-start mass, stable segment units, fixed non-wrapping terminals, paired evaluator
-conditions, and SHA-256-bound inputs. State what stays identical between G1 and G2: embodiment,
-task, PPO, reward, support, legal-start prior, caps, compute, seeds, and evaluator.
+Map L1–L3 to the corresponding intervention: admit / contextualize / repair / quarantine routing,
+feasible frame intervals, exact 50-step windows, legal-start mass, stable segment units, fixed
+non-wrapping terminals, paired evaluator conditions, and SHA-256-bound inputs. Print the binary
+gate explicitly:
+
+`q_u(k) ∝ F_u b_u [LP_u(k)+lambda]`, followed by a joint allocation operator that mixes the
+deployment prior, preserves the exact `rho bbar_u` floor, and enforces unit/clip concentration
+caps. State what stays identical between G1 and G2: embodiment, task, PPO, reward, support,
+legal-start prior, caps, compute, seeds, and evaluator. State that smooth feasibility weighting is
+a new intervention, not a relabeling of Phase G.
 
 ### 4. Experimental design — 1.0 page
 
 Organize the section by questions, not implementation chronology.
 
-- **RQ1 — Does the motivating failure occur?** Three training seeds; exposure concentration,
+- **E1 — Does reference--physics misalignment create the motivating attractor?** Three training seeds; exposure concentration,
   shared attractor, and the traced motion's physical demand.
-- **RQ2 — What does the screen measure at bank scale?** Primary 10,705-clip pipeline, separate
+- **E2 — Does the screen scale and agree across implementations?** Primary 10,705-clip pipeline, separate
   4,950-clip production bank, and the 40-clip cross-implementation agreement panel. Never pool
   their prevalence estimates.
-- **RQ3 — Does screening alone imply a training benefit?** Report the E-HYG null and failed
-  FGAS manipulation gate as counterevidence; they motivate, but do not substitute for, the
-  controlled allocation test.
-- **RQ4 — Does ALP help on identical feasible support?** G2 versus G1, three seeds if budget
+- **E3 — Which flagged references can be repaired rather than removed?** Report the exact DFRP
+  CPU panel, byte-identical controls, and the sealed repair-all policy boundary; preserve fidelity,
+  residual, and coverage gates.
+- **E4 — Does ALP help on identical feasible support?** G2 versus G1, three seeds if budget
   permits, 100 disjoint evaluation clips, 2,800 paired conditions, and the exact gates in the
   frozen table shell.
 
@@ -155,26 +159,27 @@ hierarchical bootstrap.
 
 ### 5. Results — 2.4 pages
 
-#### 5.1 Failure-adaptive exposure can lock onto a reference defect
+#### 5.1 RPM creates a curriculum attractor
 
 Use one compact figure and one paragraph: peak/mean top-1 exposure, the shared-attractor count,
 and the unsupported-demand anatomy. Include the strongest alternative explanation still open.
 
-#### 5.2 Infeasibility prevalence is pipeline-dependent
+#### 5.2 The gate is pipeline-conditioned and reproducible
 
 Print raw counts and denominators: 2,442/10,705 on the primary pipeline and 7/4,950 on the
 separate production pairing. Add the cross-implementation agreement row (39/40 strict decisions,
 with the single disagreement named in the text). The result licenses a screen and a pipeline
 measurement, not a generic rate for retargeted motion.
 
-#### 5.3 Obvious interventions do not establish the allocation claim
+#### 5.3 Routing changes support, but policy benefit is conditional
 
 Lead with counterevidence: E-HYG's held-out effect is −0.0101 with its predeclared test, the
 soft-FGAS allocation gate fails, and the segment-native pilot reaches only 0.014 total
-variation. These results rule out using prior filtering or weak-treatment runs as evidence that
-allocation helps.
+variation. Add the 22/26 exact-ready repair panel and 4/4 byte-identical controls, then report why
+the earlier repair-all policy result remains insufficient. These results distinguish a working
+routing operator from a demonstrated controller improvement.
 
-#### 5.4 Controlled Phase-G result
+#### 5.4 Feasibility-gated allocation on exact support
 
 Copy topology, definitions, and decision language from
 `paper/PHASE_G_RESULT_TABLE_SHELL.md`. Do not compress a manipulation or provenance failure into
@@ -182,7 +187,7 @@ a performance result. If the gate passes, report the feasible-hard TrackingScore
 95% interval first, then survival and common-survivor non-harm. Print the losing subgroup or
 null secondary beside any positive aggregate.
 
-### 6. Limitations and conclusion — 0.7 page
+### 6. Limitations and conclusion — 0.8 page
 
 Use a headed limitations paragraph. At minimum retain:
 
@@ -191,7 +196,8 @@ Use a headed limitations paragraph. At minimum retain:
   a causal retargeter comparison;
 - modeled contact and actuator limits rather than an electrical, thermal, or safety certificate;
 - training-seed uncertainty and any budget-triggered seed-3 omission;
-- analytic routing does not establish that exclusion beats repair;
+- a smooth residual-derived gate is untested and would couple feasibility with allocation;
+- repair is implemented, but its policy value needs a same-policy distortion-aware comparison;
 - contact timing stays a kinematic proxy unless its held-out instrument gate passes.
 
 Close with the narrow measured contribution. The generative limitation sentence should be:

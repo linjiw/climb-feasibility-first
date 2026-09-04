@@ -1,31 +1,29 @@
-# Feasibility First: Auditing Reference Dynamics Before Adaptive Humanoid Motion Tracking
+# Feasibility-Gated Humanoid Motion Tracking: Separating Reference Physics from Curriculum Difficulty
 
 **Manuscript status:** unsealed ICRA-sized prose draft, 2026-09-04. The anonymous two-column source
 is `paper/icra/root.tex`, its verified bibliography is `paper/icra/references.bib`, and a passing
-build writes `paper/icra/ICRA_DRAFT.pdf`. Bracketed Phase-G text is deliberately pending. This
-draft does not report an unrun experiment or authorize endpoint access. Claims and numbers remain
-governed by `paper/RESULTS_LOG.md` and the sealed records it cites.
+build writes `paper/icra/ICRA_DRAFT.pdf`. Phase G remains in endpoint-blind calibration. Claims
+and numbers remain governed by `paper/RESULTS_LOG.md` and the sealed records it cites.
 
 ## Abstract
 
-Failure-adaptive sampling is intended to concentrate humanoid tracking updates on motions the
-policy has not mastered. Policy error, however, can conflate controllable difficulty with a
-reference that demands unsupported or over-limit robot dynamics. In a three-seed Unitree G1
-campaign, a failure-adaptive sampler's peak top-1 mass reached 87--89%, and the same
-kneel-and-crawl reference became a dominant attractor in every seed; during that reference's
-descent, 86% of frames have no collision geometry within 6 cm of the floor, and median unsupported
-force is approximately one body weight. We introduce a
-policy-independent screen that applies contact-free inverse dynamics and a torque-limited contact
-program to the final robot-space trajectory before training. On one AMASS-to-G1 pipeline, the
-screen flags 2,442 of 10,705 clips above a fixed 10%-of-frames threshold; on a separate filtered
-4,950-clip production pairing, an independent implementation flags 7, and the implementations
-agree on 39 of 40 strict decisions in a stratified same-clip panel. We then convert feasible
-intervals into 1,184 hash-bound attribution units with 368,951 legal fixed-horizon starts, enabling
-a controlled comparison of learning-progress and deployment-uniform allocation on identical
-support. **[Phase G pending: replace with exactly one positive, null, inconclusive, or
-`not_tested` sentence containing the primary estimate and interval.]** The present evidence
-supports an embodiment- and pipeline-specific release audit, not a generic prevalence rate, a
-hardware-safety certificate, or a claim that filtering improves policy performance.
+Adaptive curricula improve humanoid tracking by concentrating updates on difficult motion
+segments, but persistent policy error can also arise when a retargeted reference demands
+unsupported or over-limit dynamics. We call this **reference--physics misalignment (RPM)**: the
+curriculum interprets an inadmissible reference as learnable difficulty. In a three-seed Unitree
+G1 campaign, peak top-1 allocation reached 87--89%, and the same kneel-and-crawl reference became
+a dominant attractor in every seed; during its descent, 86% of frames have no collision geometry
+within 6 cm of the floor, while median unsupported force is approximately one body weight. We
+introduce **CLIMB**, a feasibility-gated tracking pipeline that screens final robot-space
+trajectories with contact-free inverse dynamics and a torque-limited contact program, then
+converts admissible intervals into exact non-wrapping training units. Learning progress
+reallocates samples only inside this gate, which yields 1,184 hash-bound units and 368,951 legal
+fixed-horizon starts. On one AMASS-to-G1 pipeline, the screen flags 2,442 of 10,705 clips above a
+fixed 10%-of-frames threshold; on a separate filtered 4,950-clip production pairing, an independent
+implementation flags 7, and the implementations agree on 39 of 40 strict decisions in a
+stratified same-clip panel. **Phase-G status: endpoint-blind calibration in progress.** Its matched
+ALP-versus-uniform outcome will determine whether adaptive allocation adds value after reference
+feasibility is fixed.
 
 ## 1. Introduction
 
@@ -37,12 +35,12 @@ recipe [1--6]. Adaptive motion allocation is a natural part of it. Failure, comp
 learning progress appears to tell the trainer where another update is most useful [5,7,8].
 
 That interpretation assumes that policy error measures a solvable control problem. A retargeted
-trajectory can violate the assumption before the policy acts. The robot may have no admissible
-contact capable of supplying the demanded base wrench, or the contact forces that would supply it
-may require joint effort outside the modeled actuator range. The same policy failure then admits
-two incompatible readings: the controller has not yet learned a feasible skill, or the reference
-does not define a feasible skill for this embodiment and scene. Sampling more of the first case may
-be useful; sampling more of the second cannot establish the value of an allocation rule.
+trajectory can violate the assumption before the policy acts: the robot may have no admissible
+contact capable of supplying the demanded base wrench, or the required joint effort may exceed the
+modeled actuator range. We call this **reference--physics misalignment (RPM)**. Under RPM, the same
+persistent error can describe an unlearned feasible skill or a reference that does not define one
+for this embodiment and scene. A policy-only curriculum cannot distinguish the two from failure
+alone.
 
 We observed this ambiguity in a 100-motion Unitree G1 campaign. A BeyondMimic-style failure
 sampler concentrated on the same kneel-and-crawl clip in all three seeds. Peak top-1 mass was
@@ -53,45 +51,34 @@ its pelvis descends from 0.79 to 0.40 m while the nearest collision geometry rem
 the floor. A median 329 N of support demand, approximately the 327 N model weight, has no modeled
 source. The sampler therefore reads a persistent reference defect as persistent learning value.
 
-Three ambiguities have to be removed before testing adaptive allocation. First, **error
-ambiguity** mixes policy competence with reference feasibility. Second, **support ambiguity**
-arises when clip-level sampling changes the prior over duration and admits fixed-horizon starts
-that cross invalid frames. Third, **evaluation ambiguity** arises when wraparound, implicit
-teleports, reset-state terminal reads, or unstable attribution make unlike trials appear paired.
-These are experimental-interface problems, not merely data-cleaning details.
+CLIMB closes this reference--policy interface in three stages. First, a robot-space feasibility
+screen evaluates the final retargeted trajectory using the target MuJoCo model, modeled contacts,
+friction, and actuator ranges. Second, cause-aware routing admits supported intervals, sends
+scene-mismatch or repair candidates to separate paths, and quarantines residual failures. Third,
+an exact-support curriculum turns admitted intervals into non-wrapping fixed-horizon starts and
+applies outcome-based allocation only within that support. This design separates reference
+admissibility from learning progress while holding embodiment, reward, PPO, legal-start prior,
+caps, compute, seeds, and evaluator fixed.
 
-Our interface has two parts. A robot-space dynamic-feasibility screen analyzes the final
-retargeted trajectory using the target MuJoCo model, modeled contact geometry, friction, and
-actuator ranges. It reports unsupported wrench and related diagnostics without training a policy.
-An exact-support contract then turns feasible intervals into non-wrapping fixed-horizon starts,
-stable attribution units, and paired evaluation conditions whose identities are bound by content
-hashes. This contract lets the allocation rule change while embodiment, reward, PPO, support,
-legal-start prior, caps, compute, seeds, and evaluator remain fixed.
-
-The resulting evidence has an important boundary. The screen flags 2,442/10,705 clips in the
-primary AMASS-to-`whole_body_tracking`-to-G1 pipeline, but only 7/4,950 in the separately filtered
+Feasibility is a corpus--pipeline property. The screen flags 2,442/10,705 clips in the primary
+AMASS-to-`whole_body_tracking`-to-G1 pipeline and 7/4,950 in the separately filtered
 BONES-SEED-to-G1 production pairing used by SONIC. The two implementations agree on 39/40 strict
-decisions in a stratified same-clip panel. Thus the large prevalence difference is not licensed as
-a retargeter comparison: source corpus, release filtering, robot file, and implementation also
-change. It instead shows why feasibility prevalence must be measured for each corpus-and-pipeline
-pairing and why the audit is useful as a release gate rather than as a universal rejection rule.
+decisions in a stratified same-clip panel. Source corpus, release filtering, robot file, and
+implementation all change between the bank-scale measurements, so they motivate measuring each
+pairing rather than comparing retargeters from unmatched denominators.
 
 This paper makes three contributions:
 
-1. **A measured failure diagnosis and policy-independent screen.** We trace a reproducible
-   sampler attractor to an unsupported reference interval and screen the final robot-space
-   trajectory using modeled contacts and actuator limits.
-2. **An exact-support trial contract.** Feasible intervals, full-horizon legal starts, stable
-   units, explicit terminals, paired conditions, and hashes yield 1,184 training units with
-   368,951 legal starts and a disjoint 100-clip evaluation panel.
-3. **A controlled allocation test.** We predeclare a manipulation-first comparison of calibrated
-   absolute-learning-progress allocation against deployment-uniform allocation on identical
-   support. A failed manipulation or provenance gate produces `not_tested`; it does not expose a
-   policy endpoint.
+1. **RPM diagnosis.** A three-seed curriculum attractor localized to a robot-space interval whose
+   demanded wrench has no admissible modeled support source.
+2. **The CLIMB method.** A policy-independent contact/torque screen, cause-aware routing, and a
+   hard feasibility gate yielding 1,184 units and 368,951 legal starts.
+3. **Claim-isolating evaluation.** Bank-scale and cross-implementation screen tests plus a matched
+   ALP-versus-uniform allocation ablation on identical feasible support.
 
-The third contribution remains a protocol until Phase G completes. This distinction is central:
-the current measured contributions do not require an adaptive-policy win, and a valid null would
-recommend the simpler allocator within the tested task rather than weaken the screen.
+The allocation ablation is in endpoint-blind calibration; its exhaustive result status is
+positive, null, inconclusive, or `not_tested` under the predeclared manipulation and provenance
+gates.
 
 ## 2. Related work
 
@@ -104,8 +91,9 @@ trained policy and combines reference quality with that policy's capability. Kun
 uses a human-space center-of-mass/center-of-pressure stability heuristic before robot retargeting
 [10]. LIMMT combines target-robot motion heuristics, diversity, and complexity, with physical-score
 weights calibrated through repeated policy training [11]. PHUMA filters source artifacts and
-retargets with joint-limit, ground-contact, and anti-skating losses [12]. These works rule out
-claims that filtering or physics-aware curation is itself new.
+retargets with joint-limit, ground-contact, and anti-skating losses [12]. CLIMB builds on this line
+but changes the training interface: the final robot-space screen determines the support on which
+an adaptive allocator is permitted to act.
 
 Optimization-based retargeters address a complementary problem. Kinodynamic Motion Retargeting
 uses rigid-body and contact constraints to construct viable locomotion, while Direct Dynamic
@@ -126,10 +114,10 @@ Prioritized experience replay and prioritized level replay formalize the benefit
 nonuniform training distributions, including explicit replay/exploration mixing [19,20]. In
 humanoid tracking, BeyondMimic popularized a failure-EMA bin sampler, while GMT and EGM reweight
 motions or motion segments using tracking outcomes [5,7,8]. Those systems combine allocation with
-curation, staged training, clipping, or architectural changes. Their results motivate the present
-test but do not isolate one learning-progress allocator after feasible support and the legal-start
-prior are held exact. Our comparison changes only the allocation distribution over a shared set of
-legal trials.
+curation, staged training, clipping, or architectural changes. Empirical failure, completion, and
+tracking error identify hard examples, but do not by themselves determine whether a reference is
+dynamically admissible. CLIMB inserts that test before outcome-based allocation; its matched
+comparison then changes only the allocation distribution over a shared set of legal trials.
 
 ### Evaluation on fixed support
 
@@ -140,17 +128,17 @@ and preference-aligned trajectory diagnostics [22]. We use a liveness-weighted t
 the primary Phase-G endpoint and report common-survivor quality only beside survival. The current
 contact-timing proxy remains exploratory unless it passes an independent blinded-label gate.
 
-## 3. Dynamic-feasibility and exact-support interface
+## 3. CLIMB: feasibility-gated tracking
 
 ### 3.1 Problem and assumptions
 
 Let a retargeted reference provide generalized position and velocity
 `(q_t, qdot_t)` for the Unitree G1 at frame `t`. We apply a centered five-frame moving average to
 velocity, differentiate at the reference frame rate, and smooth the resulting acceleration with
-the same window. The audit is conditioned on a specific robot model, flat plane, collision geometry,
-friction model, actuator force ranges, and reference trajectory. Its output is therefore a verdict
-about that robot/reference/scene tuple. It is not a certificate for unmodeled electrical,
-thermal, compliance, latency, or hardware-safety constraints.
+the same window. Feasibility is defined relative to a robot model, scene, collision geometry,
+friction model, actuator force ranges, and reference trajectory. The present instantiation uses
+the G1 and a flat plane; electrical, thermal, compliance, latency, and structural limits remain
+outside this model-relative label.
 
 We use the compiled G1 MuJoCo model that underlies the tracking environment. Contact-free inverse
 dynamics returns the generalized force needed to realize the prescribed acceleration. The six
@@ -195,9 +183,10 @@ axes would delete precisely the non-foot-contact behavior a rare-skill bank shou
 
 The screen takes approximately one CPU-second per clip in the primary implementation. A separate
 implementation screens the 4,950-clip production bank at 0.145 CPU-s per clip (0.84 ms per screened
-frame). These costs support corpus-scale audit; they do not imply real-time control use.
+frame). The screen therefore runs as an offline bank-ingestion stage rather than in the policy
+control loop.
 
-### 3.3 Exact-support trials
+### 3.3 Routing and exact-support curriculum
 
 Clip classification alone is too coarse for a controlled allocation experiment. A clip can
 contain both supportable and unsupported intervals. We therefore reduce full per-frame screens to
@@ -206,6 +195,26 @@ motion and sidecar by SHA-256. The table spans 800 training clips and contains 1
 After discarding 657 runs shorter than the fixed horizon, 1,184 admissible units and 368,951 legal
 starts remain. A unit is an attribution stratum; the deployment prior is uniform over legal starts,
 not uniform over units or clips.
+
+Let `U` contain candidate units, `F_u in {0,1}` denote admission under the declared screen, and
+`n_u` count legal starts. The duration-correct base mass is `b_u = n_u / sum_v n_v`. For absolute
+learning progress `LP_u(k)` at sampler clock `k`, CLIMB forms
+
+`q_u(k) = F_u b_u [LP_u(k) + lambda] / sum_v F_v b_v [LP_v(k) + lambda]`,
+
+then applies `p(k) = Cap_(c_unit,c_clip)(bbar, q(k); rho)`, where `bbar` is the base mass normalized
+over admitted units. Without an active concentration limit, the operator returns
+`rho bbar + (1-rho) q`; otherwise it reallocates only the focused mass under the fixed unit and
+clip ceilings while preserving the exact lower bound `p_u >= rho bbar_u`. Thus a rejected interval
+receives zero mass under the declared model, while `rho` preserves deployment-prior exploration
+inside the gate. The present method uses binary `F_u` so admissibility and allocation remain
+separately testable; a smooth residual-based gate is a different intervention.
+
+Intervals do not all receive the same remedy. Admissible runs enter the exact support. References
+whose required contact object is absent from the scene are paired with that context or withheld. A
+lightweight root-translation plus contact-IK path projects eligible repair candidates before the
+same screen and qualification checks are rerun; residual infeasibility, excess displacement,
+joint-limit failure, or contact-IK residual sends the result to quarantine.
 
 The runtime samples only legal starts, emits an explicit truncation at a segment boundary, and
 attributes attempts and outcomes to the sampled unit. It never wraps into a rejected frame or
@@ -223,15 +232,16 @@ conditions.
 
 ## 4. Experimental design
 
-### RQ1: Does the motivating failure occur?
+### E1: Does RPM create the motivating attractor?
 
 We analyze the previously sealed 100-motion campaign: 4,096 environments, 4,000 PPO iterations,
 three seeds per arm, and 100 disjoint evaluation motions with eight episodes per clip. The
 comparison includes failure-adaptive, clip-uniform, and a normalized grounded sampler. We report
-the adaptive top-1 exposure, the identity of its attractor, and held-out survival. This campaign
-motivates the audit; it is not reused as evidence for the new exact-support allocation claim.
+the adaptive top-1 exposure, the identity of its attractor, held-out survival, and the attractor's
+modeled contact-capacity residual. This campaign establishes the motivating failure case; E4
+separately isolates the exact-support allocator.
 
-### RQ2: What does the screen measure at bank scale?
+### E2: Does the screen scale and agree across implementations?
 
 The primary corpus contains 10,705 AMASS-derived references retargeted through
 `whole_body_tracking` to the G1 model. We report raw flagged counts under the strict fixed rule,
@@ -241,9 +251,10 @@ their prevalence estimates. A deterministic 40-clip stratified panel (20 from ea
 through both implementations to measure score and decision agreement; because the panel is
 enriched for flags, it is not a prevalence sample.
 
-### RQ3: Does a simpler intervention establish training benefit?
+### E3: Which intervals should be filtered, repaired, or quarantined?
 
-No. We retain two negative controls. E-HYG prunes 99 flagged motions from an 800-motion training
+We first test whether simpler routing choices already establish training benefit. E-HYG prunes 99
+flagged motions from an 800-motion training
 bank but yields a held-out feasible-motion effect of -0.0101 under its predeclared test. The soft
 FGAS segment formulation estimates a primary effect of -0.0196 with a 95% hierarchical-bootstrap
 interval `[-0.0497, +0.0134]`, but its rejected-start-mass manipulation gate fails. The exploratory
@@ -251,7 +262,14 @@ segment-native pilot is mechanically clean yet reaches only 0.014 total variatio
 control. These observations motivate an exact-support, manipulation-first test; none is evidence
 that the final allocator helps.
 
-### RQ4: Does learning-progress allocation help on identical support?
+A source- and severity-stratified CPU panel also exercises the repair route. It applies root
+translation plus contact IK, reruns the screen, and requires residual infeasibility at most 5%,
+root displacement at most 8 cm, joint-limit compliance, and contact-IK residual at most 10 mm. It
+admits 22/26 flagged candidates and keeps 4/4 feasible controls byte-identical, producing 36 units
+and 10,561 legal starts. A separate sealed repair-all policy study is a boundary because it misses
+its benefit and coverage gates.
+
+### E4: Does learning-progress allocation help on identical feasible support?
 
 Phase G compares two 512-environment, 4,000-iteration arms with confirmation seeds 1, 2, and 3.
 G1 samples uniformly over all legal starts. G2 estimates the Beta-smoothed conditional success
@@ -279,7 +297,7 @@ secondaries. Exactly one status is printed: `positive`, `null`, `inconclusive`, 
 
 ## 5. Results
 
-### 5.1 Failure-adaptive exposure can lock onto a reference defect
+### 5.1 RPM creates a curriculum attractor
 
 The adaptive sampler's peak top-1 mass is 0.884/0.870/0.893 across the three campaign seeds, and
 the same BMLmovi kneel-and-crawl clip repeatedly becomes the dominant attractor in all three.
@@ -291,7 +309,7 @@ the minimum attainable paired permutation p-value is 0.125, so we do not headlin
 claim.
 
 The reference is kinematically ordinary: it has no joint-limit violation and peak joint speed is
-at most 5.6 rad/s. The dynamic audit localizes a different failure. From 0.75--1.75 s, 86% of
+at most 5.6 rad/s. The dynamic screen localizes a different failure. From 0.75--1.75 s, 86% of
 frames have no candidate contact and median unsupported force is 329 N; the G1 model weighs 327 N.
 The kneeling/crawling interval from 1.75--7.25 s is supportable through its non-foot contacts, and
 the 8.0--8.5 s rise again becomes unsupported. Every trained policy has zero survival from frame
@@ -300,15 +318,15 @@ previously made an untrackable prefix look partially learnable.
 
 ![The feasibility-first trial interface.](../figures/f1_feasibility_first.png)
 
-**Fig. 1. The feasibility-first trial interface.** (a) In the motivating closed-loop simulation
+**Fig. 1. The CLIMB feasibility-gated tracking interface.** (a) In the motivating closed-loop simulation
 campaign, the same attractor recurs in 3/3 adaptive seeds; 0.87--0.89 is the campaign maximum
-top-1 mass and does not belong to that clip in every seed. (b) A reference-only robot-space audit
+top-1 mass and does not belong to that clip in every seed. (b) A reference-only robot-space screen
 localizes the attractor's unsupported interval. This pipeline-specific temporal and modeled-wrench
-diagnosis does not establish that all adaptive collapse has this cause. (c) The preregistered G1/G2
+diagnosis isolates this failure case rather than every cause of adaptive concentration. (c) The preregistered G1/G2
 comparison keeps the 1,184 units, 368,951 legal starts, hashes, PPO implementation, and compute
-fixed while changing allocation. No Phase-G policy outcome is shown.
+fixed while changing allocation; its policy outcome is pending.
 
-### 5.2 Infeasibility prevalence is pipeline-dependent
+### 5.2 The gate is pipeline-conditioned and reproducible
 
 Under the strict `infeasible_frac > 0.10` rule, 2,442 of 10,705 primary-pipeline clips are flagged
 (22.8%). Category rates range from 12.9% for quiet motion to 58.6% for dynamic motion, and source
@@ -330,10 +348,10 @@ single disagreement is `burpee_002__A362_M` (0.019 versus 0.136). This closes an
 agreement question on the enriched panel; it does not remove the corpus, filter, robot-file, or
 friction confounds between the two full-bank prevalence estimates.
 
-![Bank-scale audit with separate corpus/pipeline prevalence bars and a same-clip
+![Bank-scale screen with separate corpus/pipeline prevalence bars and a same-clip
 implementation-agreement scatter plot](../figures/f2_bank_scale.png)
 
-**Figure 2. Bank-scale audit and implementation check.** (a) Bars are normalized within two
+**Figure 2. Bank-scale screen and implementation agreement.** (a) Bars are normalized within two
 separate corpus/pipeline denominators and apply the strict `infeasible_frac > 0.10` rule:
 2,442/10,705 for AMASS → `whole_body_tracking` → G1 and 7/4,950 for filtered BONES-SEED →
 G1. Corpus, filtering, robot file, friction, and implementation differ, so this is not a causal
@@ -341,7 +359,7 @@ retargeter comparison. (b) On a flag-enriched, deterministic 20+20 same-clip pan
 decisions agree for 39/40 clips (Spearman ρ = 0.9836, Cohen's κ = 0.9485). That panel checks
 implementation agreement; its stratified selection is not a prevalence sample.
 
-### 5.3 Obvious interventions do not establish the allocation claim
+### 5.3 Routing changes support, but policy benefit is conditional
 
 The historical evaluator contains 29 flagged clips among 100. Across three policies, flagged
 clips score 6.0--8.4 survival points below the all-clip aggregate and 8.4--11.8 below the feasible
@@ -349,14 +367,24 @@ stratum. Moreover, the grounded-minus-uniform endpoint contrast is +0.025 on fea
 -0.009 on flagged clips. These data justify feasibility-stratified evaluation, but changing the
 evaluation subset cannot establish a training benefit.
 
-Training-side shortcuts also fail to answer RQ4. E-HYG's pruning contrast is a sealed null. Soft
-FGAS does not satisfy its own allocation gate. The prior segment-native treatment is only 0.014 TV
-from control. We retain these failures because they separate three statements often collapsed in
-discussion: a reference defect can be measured; screening can change the admissible training
-support; and an adaptive allocation rule can improve policy performance on that support. The first
-is established here, the second is an apparatus property, and only Phase G can address the third.
+The routing controls separate operator validity from policy value. E-HYG's pruning contrast is a
+sealed null, soft FGAS does not satisfy its own allocation gate, and the prior segment-native
+treatment is only 0.014 TV from control. Together they distinguish three statements often
+collapsed in discussion: a reference defect can be measured; screening can change the admissible
+training support; and an adaptive allocation rule can improve policy performance on that support.
+The first is established here, the second is an apparatus property, and Phase G directly tests the
+third.
 
-### 5.4 Controlled Phase-G allocation result
+The repair panel demonstrates that the routing operator can recover exact-support candidates:
+22/26 flagged cases pass every residual, displacement, joint-limit, contact-IK, and hash gate,
+while 4/4 feasible controls remain byte-identical. The panel is stratified rather than a
+prevalence sample. In the earlier repair-all policy study, repaired-reference deployment changes
+by +0.0397 with a motion-bootstrap 95% interval `[+0.0153,+0.0658]`, below its +0.05 smallest
+effect of interest; unchanged-reference policy transfer is -0.0036, and the coverage gate fails.
+Repair is therefore an implemented route whose downstream value requires a matched,
+distortion-aware comparison, not the explanation for the present policy claim.
+
+### 5.4 Feasibility-gated allocation on exact support
 
 **Status at this draft: pending calibration; no reward, survival, or tracking endpoint has been
 opened.** The exact 900-motion local payload passes every committed identity. The 12-candidate
@@ -380,36 +408,39 @@ Use exactly one of the following result forms:
 - **Not tested:** name the failed manipulation or provenance gate and do not print an endpoint
   estimate.
 
-## 6. Limitations and conclusion
+## 6. Limitations
 
-The audit is conditioned on one robot and simulator model and has no hardware closed-loop
-validation. It models collision contacts, friction, and actuator force limits, but not electrical,
-thermal, compliance, latency, or structural constraints; “screened feasible” is not a safety
-certificate. The primary prevalence estimate belongs to one AMASS-derived retargeting pipeline.
-The second bank bounds that estimate's generality but is not a causal retargeter comparison. Both
-full-bank screens assume a flat plane, so terrain-bearing skills require their terrain to be part
-of the audit.
+CLIMB's admission label is model-relative. The current screen instantiates one G1 model and a flat
+scene with collision contacts, friction, and actuator force limits. Hardware deployment would add
+electrical, thermal, compliance, latency, and structural constraints and then require closed-loop
+validation. Terrain-bearing references likewise require their terrain in the scene; the four
+box-jump flags in the production bank are routed to missing context rather than declared bad
+motion.
 
-Finite differences and a contact-distance band introduce modeling error, and the 6 cm and
-half-weight thresholds are design choices supported by local sensitivity checks rather than
-universal constants. Analytic routing also does not establish that exclusion is better than
-repair. The observation that would settle whether screening should exclude or repair a reference
-is a same-support, same-policy comparison of certified repaired and excluded intervals with
-actuator and contact consequences measured under the same trial contract.
+Finite differences, the 6 cm contact band, and the half-weight residual threshold introduce
+modeling choices. Local sensitivity checks bound the two thresholds on this bank, but a new robot
+or retargeter must recalibrate them. The 22.8% and 0.14% rates therefore remain separate
+corpus--pipeline measurements. A smooth feasibility weight derived from residual slack could
+retain borderline cases, but would couple admissibility and allocation; it requires its own
+matched ablation against the current binary gate.
 
-Phase G will have only three training seeds, or two if the predeclared budget fallback is exercised,
-so its uncertainty is explicitly seed- and clip-structured. Contact timing remains a kinematic
-proxy unless independent blinded labels pass the held-out instrument gate. A positive allocation
-result would apply only to this calibrated ALP rule, support, task, and budget; a null would support
-the simpler G1 default only within the same boundary.
+Phase G has three training seeds, or two under the predeclared budget fallback, so uncertainty is
+seed- and clip-structured. Its result applies to the calibrated ALP rule, support, task, and
+budget. The repair route likewise needs a same-policy, distortion-aware comparison of certified
+repair against exact feasible intervals and quarantine. The observation that would settle this is
+joint movement of tracking, survival, reference fidelity, contact timing, and mechanical work
+under one paired trial contract.
 
-Within those limits, the measured conclusion is already useful. A failure-adaptive curriculum can
-repeatedly make a reference whose demanded dynamics have no modeled support source a dominant
-attractor. A policy-independent robot-space audit finds such intervals before training, and an
-exact-support interface prevents feasibility, duration exposure, and terminal semantics from
-leaking into the allocation comparison. The remaining experiment asks one narrow question on that
-controlled substrate. Whether its answer is positive or null, feasibility must be measured before
-policy failure is interpreted as learning value.
+## 7. Conclusion
+
+Reference--physics misalignment turns persistent tracking error into a misleading curriculum
+signal. In the diagnosed three-seed campaign, one such reference repeatedly becomes a dominant
+attractor; the screen localizes its unsupported wrench demand before policy training. CLIMB turns
+that diagnosis into an active interface: it screens and routes final robot-space trajectories,
+constructs exact legal-start support, and assigns zero training mass to rejected intervals under
+the declared model. The pending matched allocation ablation will determine whether ALP adds value
+inside that gate. In either outcome, feasibility and learning progress are separate quantities
+that can be measured, changed, and evaluated independently.
 
 ## References — numbered mirror
 

@@ -195,7 +195,7 @@ def unsupported_trace(ax) -> None:
     ax.set_xlabel("reference time [s]", fontsize=9.5)
     ax.set_ylabel("unsupported force [N]", fontsize=9.5)
     ax.tick_params(labelsize=8.5)
-    ax.set_title("(b) Robot-space dynamic audit", loc="left", fontsize=10.8, pad=9)
+    ax.set_title("(b) Robot-space feasibility screen", loc="left", fontsize=10.8, pad=9)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
 
@@ -325,7 +325,7 @@ def main() -> None:
     unsupported_trace(axes[1])
     support_contract(axes[2])
     fig.suptitle(
-        "Feasibility first: separate reference defects from allocation effects",
+        "Feasibility-gated tracking: screen reference physics before allocating learning",
         fontsize=12.2,
         y=1.01,
         color=INK,

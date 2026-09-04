@@ -80,20 +80,21 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
 
 <div class="hero"><div class="wrap">
   <span class="eyebrow">CLIMB · Robotixx · project page · updated 2026-09-04</span>
-  <h1>Feasibility first: screen the motion, fix the trial, then allocate learning.</h1>
-  <p class="sub">CLIMB is an auditable framework for generalist humanoid tracking: a dynamic-feasibility screen,
-  a segment-native paired benchmark, and a grounded curriculum that can adapt only inside verified support.
-  The design follows one finding from a Unitree G1 pipeline: <b>what looks like difficulty is three different
-  things</b>—physical impossibility, missing support, and intrinsic control hardness.</p>
+  <h1>Feasibility-gated motion tracking: separate reference physics from curriculum difficulty.</h1>
+  <p class="sub">CLIMB is a method for generalist humanoid tracking that screens the final robot-space motion,
+  routes admissible, repairable, missing-context, and quarantined intervals, and applies learning progress only
+  inside exact feasible support. Its motivating finding is <b>reference–physics misalignment</b>: persistent
+  policy error can describe either useful control difficulty or a reference the declared robot/scene model cannot realize.</p>
   <div class="statrow">
-    <div class="stat"><div class="v">87–89 %</div><div class="k">of a failure-adaptive sampler's exposure collapses onto one clip — the same clip in 3/3 seeds</div></div>
+    <div class="stat"><div class="v">87–89 %</div><div class="k">campaign peak top-1 allocation; the same unsupported attractor becomes dominant in 3/3 seeds, but is not the peak holder in every seed</div></div>
     <div class="stat"><div class="v">~329 N</div><div class="k">≈ full body weight unsupported for 1 s in that clip's retargeted descent: no contact within 6 cm</div></div>
     <div class="stat"><div class="v">22.8 %</div><div class="k">of one 10,705-clip AMASS→G1 corpus/pipeline is dynamically infeasible; a second production stack measures 0.14 %</div></div>
-    <div class="stat"><div class="v">65.8 %</div><div class="k">of the strict 2,442 flagged clips recovered by the legacy ≤15 cm root projection; only 26.4% fit the new 8 cm tier</div></div>
+    <div class="stat"><div class="v">22 / 26</div><div class="k">flagged candidates pass every exact repair gate in a stratified CPU panel; 4/4 feasible controls remain byte-identical</div></div>
     <div class="stat"><div class="v">0.567 → 0.609</div><div class="k">cross-policy difficulty transfer once feasibility features join the atlas (perm p = 0.01)</div></div>
   </div>
   <div class="heroctas">
-    <a class="primary" href="segment-native.html">Latest: exact-support G2 direction →</a>
+    <a class="primary" href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/METHOD_REFRAME_2026-09-04.md">Method + next research →</a>
+    <a class="primary" href="segment-native.html">Exact-support G2 direction →</a>
     <a class="primary" href="companion.html">Read the companion note →</a>
     <a class="ghost" href="flagship.html">Flagship working draft</a>
     <a class="ghost" href="https://github.com/linjiw/refeas">refeas — the screen (pip-able)</a>
@@ -103,14 +104,14 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
 <div class="wrap">
 
 <section>
-  <span class="numeral">00 · The feasibility-first framework</span>
-  <h2>Three gates turn a post-mortem into an actionable pipeline</h2>
+  <span class="numeral">00 · The CLIMB method</span>
+  <h2>Screen, route, and gate before learning progress allocates updates</h2>
   <div class="grid">
     <div class="card"><h3>I · Screen</h3><p>Contact-free inverse dynamics plus a contact-capacity LP rejects references whose demanded force has no admissible contact source.</p><span class="ev">refeas · measured screen</span></div>
-    <div class="card"><h3>II · Benchmark</h3><p>Hash-bound starts, fixed horizons, paired seeds, and terminal-state reads remove reset, wrap, and startup-noise artifacts.</p><span class="ev">segment-native paired v2</span></div>
-    <div class="card"><h3>III · Allocate</h3><p>A true simplex floor and absolute-learning-progress rank spend training only within exact feasible support, with TV and concentration gates.</p><span class="ev">Phase G · pending, unsealed</span></div>
+    <div class="card"><h3>II · Route</h3><p>Admit exact supported intervals, add missing scene context, re-screen fidelity-qualified repairs, and quarantine residual failures.</p><span class="ev">exact support + DFRP</span></div>
+    <div class="card"><h3>III · Gate + allocate</h3><p>A binary feasibility mask assigns rejected intervals zero mass; a true mixture and absolute-learning-progress rank allocate only within admitted support.</p><span class="ev">Phase G · endpoint-blind calibration</span></div>
   </div>
-  <figure class="wide"><img src="assets/f1_feasibility_first.png" alt="Three-panel feasibility-first research design: observed failure loop, measured unsupported-force trace, and exact-support allocation comparison"><figcaption><b>The ICRA paper's central contrast.</b> A persistent policy failure can feed a failure-adaptive sampler even when the reference itself lacks an admissible support source. The robot-space audit localizes that defect before training; the pending G1/G2 experiment then changes allocation while keeping all 1,184 units and 368,951 legal starts exact. The allocation bars are schematic—no Phase-G policy outcome is shown.</figcaption></figure>
+  <figure class="wide"><img src="assets/f1_feasibility_first.png" alt="Three-panel feasibility-gated tracking design: observed failure loop, measured unsupported-force trace, and exact-support allocation comparison"><figcaption><b>The ICRA paper's central contrast.</b> A persistent policy failure can feed a failure-adaptive sampler even when the reference itself lacks an admissible support source. The robot-space screen localizes that defect before training; the pending G1/G2 experiment then changes allocation while keeping all 1,184 units and 368,951 legal starts exact. The allocation bars are schematic—no Phase-G policy outcome is shown.</figcaption></figure>
 </section>
 
 <section>
@@ -118,8 +119,8 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
   <h2>Humanoid tracking pipelines fail silently, in layers</h2>
   <p class="kicker">Motion-tracking foundations (BeyondMimic-style trackers, SONIC-era generalists) share one recipe:
   retarget a huge mocap corpus, weight training toward failures, evaluate by average survival. Each stage trusts the one before it.
-  Our project began as a curriculum study and became an audit, because every headline effect we chased turned out to be
-  an artifact of a different layer:</p>
+  CLIMB began as a curriculum study and became a method for separating those layers, because each apparent learning effect
+  exposed a different missing interface:</p>
   <div class="grid">
     <div class="card"><h3>Scheduler layer</h3><p>The failure-adaptive sampler's advertised uniform floor is
       <em>additive in counts</em> — the real floor is ε/(Σq+ε) &lt; 1 % and shrinks with the number of environments.
@@ -345,10 +346,10 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       G1 worked example (a synthetic hover the screen flags at 45 % infeasible). Screen before training; ship per-clip flags with datasets.</p>
       <span class="ev">github.com/linjiw/refeas · v0.1.0</span></div>
     <div class="card"><h3>Contact-projection repair</h3>
-      <p>The lightweight fix for the recoverable two-thirds: lower the root onto the contact manifold exactly where support
-      is missing (~3 s/clip, joints untouched, over-repair budget refuses genuine ballistics). The attractor: 0.13 → 0.00
-      infeasible; a 100 %-flagged source subset's walks: 0.66 → 0.01. Strict-set correction: 1,606/2,442 (65.8%) recover through the legacy 15 cm budget.</p>
-      <span class="ev">tools/repair_contact_projection.py · reports/dfrp_v0/census/summary.md · correction C4</span></div>
+      <p>A root-translation plus contact-IK operator projects eligible candidates and then reruns residual, displacement,
+      joint-limit, IK-residual, provenance, and exact-support gates. The stratified exact panel qualifies 22/26 repairs and
+      keeps 4/4 feasible controls byte-identical; legacy bank-wide projections remain qualification-incomplete.</p>
+      <span class="ev">tools/repair_contact_projection.py · plan/DFRP_V1_EXACT_PANEL_RESULT_2026-08-21.md</span></div>
     <div class="card"><h3>Stratified-start evaluation</h3>
       <p>The sealed fixed-offset harness exposed the "0.31 survival" artifact. A post-outcome audit found unpaired startup
       randomization, clipped duplicate offsets, and reset-contaminated terminal quality metrics; a paired per-episode v2 is now required.</p>
@@ -367,7 +368,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
 <section>
   <span class="numeral">07 · What's still open</span>
   <h2>The causal slots — and what would change our minds</h2>
-  <p class="kicker">Completed interventions are mixed, null, or failed their joint gates. Segment-native v2 now has an exploratory wiring result; confirmatory benefit remains open.</p>
+  <p class="kicker">The screen, routing contract, and exact-support gate are implemented. Whether ALP adds policy value inside the gate remains the current controlled question.</p>
   <div class="grid">
     <div class="card"><h3>FGAS — soft eligibility <span class="pill neg">sealed ✗</span></h3>
       <p>The three-seed soft arm gives Δ −0.0196 on feasible-hard20 and fails its rejected-start-mass gate (0.199). Diagnostics
@@ -478,13 +479,14 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
     <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/paper/RESULTS_LOG.md">results log</a>
     <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/paper/flagship/preregistration_table.md">sealed record</a>
     <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/PAPER_COMPLETION_2026-09-04.md">paper completion plan</a>
+    <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/METHOD_REFRAME_2026-09-04.md">method reframe + next research</a>
     <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/paper/icra/OUTLINE.md">ICRA paper outline</a>
     <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/paper/icra/DRAFT.md">ICRA manuscript draft</a>
     <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/paper/icra/ICRA_DRAFT.pdf">ICRA two-column PDF</a>
   </div>
   <p style="margin-top:1rem;max-width:78ch">Every sealed figure and statistic on this page maps to an artifact path in
   <code>paper/RESULTS_LOG.md</code>; exploratory checkpoints link their artifacts inline. Claims carry status labels (sealed ✓ / sealed ✗ kept / measured / exploratory / pending 🕐)
-  in the drafts. Pending slots (E3 · exact-support G2 follow-up) do no load-bearing work anywhere. Reviewers: start at
+  in the drafts. The pending Phase-G allocation result does no load-bearing work anywhere. Reviewers: start at
   <code>README.md → paper/RESULTS_LOG.md → paper/flagship/preregistration_table.md → paper/RED_TEAM.md</code>.</p>
 </div></footer>
 
