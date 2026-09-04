@@ -1,8 +1,9 @@
 # Pre-registration (DRAFT) — Phase G: one causal test of segment-native allocation
 
-**Status:** DRAFT, **unsealed**. Written 2026-08-27 on CPU; updated 2026-09-04 after the
-Newton N-c result, a launch-readiness audit, the feasibility-first narrative review, and a
-bounded primary-source curriculum scan.
+**Status:** DRAFT, **unsealed and seal-ready pending approval**. Written 2026-08-27 on CPU;
+updated 2026-09-04 after the Newton N-c result, a launch-readiness audit, the feasibility-first
+narrative review, a bounded primary-source curriculum scan, and the endpoint-blind G2
+calibration plus independent validation.
 Target seal date **2026-09-10**. Confirmatory training is not authorized until the seal hash
 exists in `plan/G_SEGMENT_FREEZE.sha256` and every item in §9 is closed. The endpoint-blind
 calibration explicitly defined in §3 may run unsealed after the licensed bank passes hash
@@ -39,7 +40,7 @@ result remains historical context, not a Phase-G comparator.
 | arm | support | sampler | invariants |
 |---|---|---|---|
 | G1 | exact feasible 50-step trials built from `tier_800` guard-0 sidecars (`reports/segments_v2_tier800_guard0/`) with `tools/build_segment_unit_table.py` | deployment-uniform over all 368,951 legal starts; the 1,184 units are attribution strata, not equal-mass atoms | exact support mask; explicit truncation; zero invalid starts |
-| G2 | identical unit table and deployment prior to G1 (same file hash) | `segment_sampling_mode="adaptive"` with the **learning-progress rank** of §3 | endpoint-blind calibrated exploration/floor; unit cap 0.05; clip cap 0.25; stable unit attribution |
+| G2 | identical unit table and deployment prior to G1 (same file hash) | `segment_sampling_mode="adaptive"` with the **learning-progress rank** of §3 | endpoint-blind calibrated exploration **rho = 0.40** and progress floor **lambda = 0.05**; unit cap 0.05; clip cap 0.25; stable unit attribution |
 
 Both arms: 4,000 iterations, 512 envs, identical PPO configuration, identical environment seed
 per training seed, failure penalty as in the segment-v2 pilot (−10). Seeds for confirmation:
@@ -94,6 +95,17 @@ order. That one candidate is repeated once on independent calibration seed 20260
 passing validation can be copied into this document and frozen. A failed validation returns the
 project to design; it does **not** license trying candidates against confirmatory endpoints.
 
+**Measured calibration result (2026-09-04; manipulation only, no policy endpoint read).**
+Two of 12 screen candidates passed. The deterministic selector chose `rho040_floor0050`
+(rho = 0.40, lambda = 0.05): screen checkpoint TVs 0.1310/0.1063/0.0865, mean 0.1079,
+SD 0.0182. The only permitted independent validation, seed 20260904, passed with TVs
+0.1292/0.1045/0.0831, mean 0.1056, SD 0.0188, minimum 700.1 entropy-effective units,
+maximum top-1 mass 0.0134, zero invalid/censored events, and final saturation 0.2365.
+The exact 12-row decision, run-map hashes, and per-ledger hashes are in
+`reports/g_segment/calibration/result.json` and
+`plan/G2_CALIBRATION_RESULT_2026-09-04.md`. These values select treatment strength only;
+they are not evidence of policy benefit.
+
 The uncertainty rank remains implemented for prior diagnostics but is no longer a Phase-G
 fallback. No rank, power, window, floor, cap, or candidate outside the grid is admissible after
 calibration begins. Confirmation seeds 1, 2, and 3 are not calibration seeds.
@@ -120,11 +132,13 @@ cannot change calibration selection, the manipulation gate, or the Phase-G verdi
 whether the treatment is following changing competence or approximately reconstructing one of
 two established allocation heuristics; it does not establish why either ranking succeeds.
 
-**Launch plumbing audit (2026-09-03):** `tools/climb_segment_train.py` now reads the explicit
+**Launch plumbing audit (2026-09-03; calibrated profile recorded 2026-09-04):**
+`tools/climb_segment_train.py` now reads the explicit
 training seed, rank, difficulty power, exploration, window, floor, cap, and calibration
 save-interval settings and passes them through
 `climb/segment_env_cfg.py` into both registered segment tasks. `research.env.example` records the
-G2 wiring-screen values. The future seal binds both launcher files; a readiness check blocks if
+selected G2 confirmation profile while retaining the seal and approval warning. The future seal
+binds both launcher files; a readiness check blocks if
 the G2 environment is absent or differs from the draft contract.
 
 ## 4. Manipulation gates — calibration first, confirmation before endpoint readout
@@ -255,13 +269,13 @@ task, budget, support, and evaluator.
 | S2 ✅ | `tier_800` guard-0 exact unit table built from full-mode screens of all 800 clips | `reports/g_segment/unit_table.json`, SHAs in §2 |
 | S3 ✅ | condition manifest for the 100-clip panel built with `eval_paired_v2.build_conditions` | `reports/g_segment/eval_conditions.json`, SHA in §5 |
 | S4 ✅ (draft) | analyzer `tools/analyze_g_segment.py`: manipulation gate first, then hash-complete evaluation provenance gate; bind calibration, PPO/environment/sampler seed, unit table, checkpoint, training entrypoint, evaluator, conditions, active/common references, CSV, and metadata before parsing endpoint rows; primary liveness-weighted TrackingScore on feasible-hard-reference; survival/all-panel/AULC decomposition; common-survivor non-harm; positive/null/inconclusive/not-tested rules | `--synthetic` passes positive, null, inconclusive, low-TV, wrong-seed, and wrong-checkpoint-provenance branches; `tools/build_g_run_manifest.py` constructs the accepted manifest without parsing CSV rows; re-hash at seal |
-| S5 ✅ (script) / ⏳ (footprint) | `tools/run_when_free.sh` gates on free memory **and** utilization ≤ 60 %, retries on OOM / `Failed to allocate`, and appends per-attempt elapsed GPU-hours plus baseline/peak VRAM to durable sentinels. SHA-256 `ba945375055f2dee1a15437de2abfcdaac49306f6135e9fdd856094e890d87ac`. The 512-env `need_MiB` is still unmeasured — the first calibration launch uses the conservative 14,000 MiB availability gate and records the realized footprint | `tests/test_run_when_free.py` covers success metrics and a retained OOM retry |
+| S5 ✅ | `tools/run_when_free.sh` gates on free memory **and** utilization ≤ 60 %, retries on OOM / `Failed to allocate`, and appends per-attempt elapsed GPU-hours plus baseline/peak VRAM to durable sentinels. SHA-256 `ba945375055f2dee1a15437de2abfcdaac49306f6135e9fdd856094e890d87ac`. Thirteen 512-env calibration launches completed: 36--49 s, sampled peak-total VRAM 3,598--8,441 MiB, sampled peak delta 2,278--7,254 MiB. The availability gate remains conservatively 14,000 MiB because the peak outlier is retained rather than explained away | `tests/test_run_when_free.py`; `plan/G2_CALIBRATION_RESULT_2026-09-04.md` |
 | S6 ✅ | confirmation training seeds fixed: **1, 2, 3** (seed 1 is the early manipulation gate); G0 removed before seal for comparator confounding; only seed 3 may be dropped for budget | — |
 | S7 ✅ | G3 pointer: N-c failed on valid data; `PARKING.md` records that G3 must never run | `plan/NEWTON_PRED_RESULT.md` |
-| S8 ✅ (design) / ⏳ (runs) | 12-candidate, endpoint-blind 50-iteration ALP grid, ledger-only launch orchestrator and deterministic selector; independent validation seed | `plan/G2_CALIBRATION_GRID.json`, `tools/run_g2_calibration.py`, `tools/calibrate_g2_treatment.py`; result status must be `ready_to_freeze` |
+| S8 ✅ | 12-candidate, endpoint-blind 50-iteration ALP grid, ledger-only launch orchestrator and deterministic selector; `rho = 0.40`, `lambda = 0.05` selected and passed independent validation; result status is `ready_to_freeze` | `plan/G2_CALIBRATION_GRID.json`, `tools/run_g2_calibration.py`, `tools/calibrate_g2_treatment.py`, `reports/g_segment/calibration/result.json` |
 | S9 ✅ | outcome-blind 25/75 evaluation strata built from reference features only | `reports/g_segment/panel/strata.csv`, adjacent manifest |
-| S10 ✅ (instrument) / ⏳ (labels) | fixed proxy builder, reference-only dual-view renderer, outcome-blind 20-clip panel, one-to-one event scorer, passing/failing/insufficient-support synthetic branches, and evaluator gating are implemented; validate blinded reference labels, or explicitly freeze contact timing as exploratory-only | `plan/G_CONTACT_TIMING_VALIDATION.md`, `reports/g_segment/contact_validation/`; motion-backed rendering is unblocked, while independent labels remain open |
-| S11 ✅ (intake) / ⏳ (footprint) | fail-closed local intake separates the 800-motion calibration scope from the 900-motion full scope and checks committed SHA-256 identities before linking; all 900 identities now pass, leaving only the measured 512-env GPU footprint | `tools/restore_phase_g_bank.py`, `tools/research_preflight.py`; strict calibration preflight has zero blockers (warning count depends on optional archived-checkpoint configuration); confirmation additionally requires the Phase-G seal |
+| S10 ✅ (exploratory-only disposition) | fixed proxy builder, reference-only dual-view renderer, outcome-blind 20-clip panel, one-to-one event scorer, passing/failing/insufficient-support synthetic branches, and evaluator gating are implemented; independent rater artifacts are absent, so contact timing is explicitly frozen out of the Phase-G v1 verdict | `plan/G_CONTACT_TIMING_VALIDATION.md`, `plan/G_CONTACT_TIMING_DISPOSITION_2026-09-04.md`, `reports/g_segment/contact_validation/` |
+| S11 ✅ | fail-closed local intake separates the 800-motion calibration scope from the 900-motion full scope and checks committed SHA-256 identities before linking; all 900 identities pass, and the 512-env calibration footprint is measured | `tools/restore_phase_g_bank.py`, `tools/research_preflight.py`, `plan/G2_CALIBRATION_RESULT_2026-09-04.md`; strict calibration preflight has zero blockers; confirmation additionally requires the Phase-G seal |
 | S12 ✅ (draft) | post-warm-up sampler ledgers expose conditional success and pre-mixture ALP vectors; the frozen analyzer reports Spearman agreement with failure and `p(1-p)` as exploratory-only | `climb/segment_command.py`, `tools/analyze_g_segment.py`, `paper/PHASE_G_RESULT_TABLE_SHELL.md`; re-hash at seal |
 
 Seal: `sha256sum plan/PREREGISTRATION_G_SEGMENT.md plan/G2_CALIBRATION_GRID.json
@@ -272,12 +286,16 @@ tools/restore_phase_g_bank.py tools/research_preflight.py
 tools/build_contact_validation_panel.py tools/build_reference_contact_labels.py
 tools/render_contact_validation.py tools/validate_contact_proxy.py
 plan/G_CONTACT_TIMING_VALIDATION.md
+plan/G_CONTACT_TIMING_DISPOSITION_2026-09-04.md
 reports/g_segment/panel/panel.txt
 reports/g_segment/panel/panel_manifest.json reports/g_segment/panel/strata.csv
 reports/g_segment/panel/strata.manifest.json
 reports/g_segment/contact_validation/panel.csv
 reports/g_segment/contact_validation/panel.manifest.json
 reports/g_segment/unit_table.json reports/g_segment/eval_conditions.json
+reports/g_segment/calibration/screen_runs.json
+reports/g_segment/calibration/validation_runs.json
+reports/g_segment/calibration/result.json
 climb/segment_curriculum.py climb/segment_runtime.py climb/segment_command.py
 climb/segment_env_cfg.py climb/contact_timing.py climb/contact_validation.py
 > plan/G_SEGMENT_FREEZE.sha256`. Do not modify an older sealed manifest; record the new seal in

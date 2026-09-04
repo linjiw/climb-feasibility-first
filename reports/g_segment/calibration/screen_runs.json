@@ -1,0 +1,91 @@
+{
+ "schema_version": "g2_calibration_runs/1",
+ "design_sha256": "c1eb9b757d2bf7f1e893fc646599d720a1750e4030624c5254fc3d70dde381de",
+ "stage": "screen",
+ "runs": {
+  "rho005_floor0001": {
+   "ledgers": [
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-39-29_g2cal_screen_rho005_floor0001/model_30_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-39-29_g2cal_screen_rho005_floor0001/model_40_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-39-29_g2cal_screen_rho005_floor0001/model_49_segment.json"
+   ]
+  },
+  "rho005_floor0010": {
+   "ledgers": [
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-40-06_g2cal_screen_rho005_floor0010/model_30_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-40-06_g2cal_screen_rho005_floor0010/model_40_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-40-06_g2cal_screen_rho005_floor0010/model_49_segment.json"
+   ]
+  },
+  "rho005_floor0050": {
+   "ledgers": [
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-40-43_g2cal_screen_rho005_floor0050/model_30_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-40-43_g2cal_screen_rho005_floor0050/model_40_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-40-43_g2cal_screen_rho005_floor0050/model_49_segment.json"
+   ]
+  },
+  "rho010_floor0001": {
+   "ledgers": [
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-41-19_g2cal_screen_rho010_floor0001/model_30_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-41-19_g2cal_screen_rho010_floor0001/model_40_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-41-19_g2cal_screen_rho010_floor0001/model_49_segment.json"
+   ]
+  },
+  "rho010_floor0010": {
+   "ledgers": [
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-41-56_g2cal_screen_rho010_floor0010/model_30_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-41-56_g2cal_screen_rho010_floor0010/model_40_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-41-56_g2cal_screen_rho010_floor0010/model_49_segment.json"
+   ]
+  },
+  "rho010_floor0050": {
+   "ledgers": [
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-42-32_g2cal_screen_rho010_floor0050/model_30_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-42-32_g2cal_screen_rho010_floor0050/model_40_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-42-32_g2cal_screen_rho010_floor0050/model_49_segment.json"
+   ]
+  },
+  "rho020_floor0001": {
+   "ledgers": [
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-43-20_g2cal_screen_rho020_floor0001/model_30_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-43-20_g2cal_screen_rho020_floor0001/model_40_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-43-20_g2cal_screen_rho020_floor0001/model_49_segment.json"
+   ]
+  },
+  "rho020_floor0010": {
+   "ledgers": [
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-43-58_g2cal_screen_rho020_floor0010/model_30_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-43-58_g2cal_screen_rho020_floor0010/model_40_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-43-58_g2cal_screen_rho020_floor0010/model_49_segment.json"
+   ]
+  },
+  "rho020_floor0050": {
+   "ledgers": [
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-44-36_g2cal_screen_rho020_floor0050/model_30_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-44-36_g2cal_screen_rho020_floor0050/model_40_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-44-36_g2cal_screen_rho020_floor0050/model_49_segment.json"
+   ]
+  },
+  "rho040_floor0001": {
+   "ledgers": [
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-45-14_g2cal_screen_rho040_floor0001/model_30_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-45-14_g2cal_screen_rho040_floor0001/model_40_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-45-14_g2cal_screen_rho040_floor0001/model_49_segment.json"
+   ]
+  },
+  "rho040_floor0010": {
+   "ledgers": [
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-45-51_g2cal_screen_rho040_floor0010/model_30_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-45-51_g2cal_screen_rho040_floor0010/model_40_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-45-51_g2cal_screen_rho040_floor0010/model_49_segment.json"
+   ]
+  },
+  "rho040_floor0050": {
+   "ledgers": [
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-46-29_g2cal_screen_rho040_floor0050/model_30_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-46-29_g2cal_screen_rho040_floor0050/model_40_segment.json",
+    "reports/g_segment/calibration/screen_training/g1_tracking/2026-09-04_14-46-29_g2cal_screen_rho040_floor0050/model_49_segment.json"
+   ]
+  }
+ }
+}

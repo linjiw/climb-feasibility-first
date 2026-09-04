@@ -111,9 +111,9 @@ replication after Phase G.
 | Priority | Consumable object | One changed variable | Gate / endpoint | State |
 | --- | --- | --- | --- | --- |
 | P0 | Verified 900-file local payload receipt | payload availability only; no experiment outcome | every required SHA-256 passes | **complete: 900/900** |
-| P1 | ALP calibration ledger and independent-validation decision | exploration ratio / progress floor within the finite predeclared grid | TV in `[0.05, 0.15]`, effective units ≥12, top-1 ≤0.05, no invalid or censored mass | next compute action; no endpoint access |
-| P2 | Blinded contact-proxy validation report | proxy validity, policies untouched | held-out event gates in `G_CONTACT_TIMING_VALIDATION.md` | runnable after P0 and independent labels |
-| P3 | Hash-complete three-seed G2−G1 result | allocation rule only | feasible-hard liveness-weighted TrackingScore; survival and common-survivor safeguards | requires P1, proxy disposition, footprint, and Phase-G seal |
+| P1 | ALP calibration ledger and independent-validation decision | exploration ratio / progress floor within the finite predeclared grid | TV in `[0.05, 0.15]`, effective units ≥12, top-1 ≤0.05, no invalid or censored mass | **complete:** rho 0.40 / lambda 0.05 selected; independent validation passed; manipulation only |
+| P2 | Blinded contact-proxy validation report | proxy validity, policies untouched | held-out event gates in `G_CONTACT_TIMING_VALIDATION.md` | human labels absent; Phase-G v1 disposition frozen exploratory-only |
+| P3 | Hash-complete three-seed G2−G1 result | allocation rule only | feasible-hard liveness-weighted TrackingScore; survival and common-survivor safeguards | preregistration seal-ready; requires explicit approval to seal and launch |
 | P4 | G1 actuator-consequence bridge | reference feasibility only | saturation, thermal/current proxy, torque and contact-force traces | follows the allocation result; separate protocol |
 
 This ordering follows the instrument-first rule: payload identity and manipulation validity must
@@ -136,7 +136,7 @@ These are proposed paper contributions, not claims that G2 wins.
 | Candidate claim | Evidence required | Current status | Permitted wording now |
 | --- | --- | --- | --- |
 | The old adaptive pilot tested allocation | TV manipulation on the pilot | measured TV 0.014; gate failed | it did **not** identify the allocation effect |
-| ALP creates a distinct treatment | endpoint-blind screen plus independent seed | unrun | pending |
+| ALP creates a distinct treatment | endpoint-blind screen plus independent seed | measured pass: screen mean TV 0.1079; validation mean TV 0.1056 | manipulation established; policy effect unknown |
 | ALP improves feasible-hard precision | sealed paired G2−G1 result | unrun | no claim |
 | Contact timing is a valid secondary metric | blinded held-out manual event labels | instrument ready; labels absent | exploratory proxy only |
 | Exact-uniform is the recommended default | passed manipulation plus TrackingScore and survival CIs below SESOIs | unrun | conditional kill-rule outcome only |

@@ -4,9 +4,10 @@
 > dataset candidate, and actuator-bridge boundaries continue in
 > `plan/ICRA_FEASIBILITY_FIRST_2026-09-03.md`.
 
-**Status:** unsealed research direction and environment audit, updated 2026-09-04. This file does not
-amend any sealed result. Endpoint-blind treatment calibration may run before the Phase-G seal;
-confirmatory G1/G2 training may not.
+**Status:** unsealed research direction and environment audit, updated 2026-09-04 after the
+endpoint-blind calibration and independent validation. This file does not amend any sealed
+result. The calibrated contract is seal-ready; confirmatory G1/G2 training may not run without
+the seal and explicit approval.
 
 ## Verdict
 
@@ -85,19 +86,21 @@ clip-duration exposure. Phase G now spends compute only on the controlled G2−G
 | Phase-G compact inputs | ready | committed exact unit table, 800 sidecars, 100-clip panel, and 2,800-condition manifest pass structural checks |
 | Feasible-hard endpoint | ready | reference-only demand ranking creates a hash-bound 25/75 panel split; survival-weighted analyzer and six synthetic decision/provenance branches pass |
 | Evaluation provenance | ready | training ledgers bind checkpoint/launcher hashes; evaluator sidecars bind checkpoint/task/conditions/references; `tools/build_g_run_manifest.py` creates the fail-closed analyzer input without parsing outcomes |
-| Contact-timing instrument | ready; real validation pending | fixed kinematic proxy builder, reference-only dual-view renderer, balanced outcome-blind 10-development/10-held-out panel, immutable manifests, one-to-one ±40 ms scorer, and evaluator validation gate pass synthetic/model/render tests; no manual labels exist, so the metric remains exploratory |
-| G2 calibration | ready | 12-setting finite design, PPO/environment/sampler seed binding, ledger-only selector, independent validation, training-only launcher, and exact 800-motion payload pass preflight |
+| Contact-timing instrument | exploratory-only for Phase G v1 | fixed kinematic proxy builder, reference-only dual-view renderer, balanced outcome-blind 10-development/10-held-out panel, immutable manifests, one-to-one ±40 ms scorer, and evaluator validation gate pass synthetic/model/render tests; no independent manual labels exist, so the metric is frozen out of the verdict |
+| G2 calibration | measured pass; manipulation only | rho 0.40 / lambda 0.05 selected from 2/12 passing rows; independent validation mean TV 0.1056, minimum 700.1 effective units, maximum top-1 0.0134, zero invalid/censored events; no policy endpoint read |
 | Training launcher | ready for explicit rank | `CLIMB_SEGMENT_RANK`, numeric sampler contract, and configurable checkpoint interval reach the command configuration; regression tests added |
 | Clip-level release candidate | ready internally | typed 10,705-row Parquet and manifest reproduce the aggregate screen; AMASS license review blocks public distribution |
 | Motion payload | **ready** | ignored `bank/amass` symlink exposes a licensed local reconstruction; the full intake verifies all 800 training plus 100 disjoint evaluation SHA-256 identities |
 | Historical policy checkpoints | optional / absent | ignored checkpoint files are absent; only historical reruns need them, while Phase-G G1/G2 train from scratch |
-| Seal | open by design | calibration may run unsealed; review the calibrated contract, contact-timing disposition, and 512-env footprint before confirmation |
+| Seal | ready for review; not written | calibrated contract, contact-timing disposition, and 512-env footprint are recorded; advisor directive requires explicit approval before sealing/confirmation |
 
-Last verified on this machine, 2026-09-04: **18 checks passed, three warnings, zero blockers** for
-the calibration stage, including all 800 calibration motion hashes. Warnings cover the pending
-real contact-timing labels, the deliberately absent confirmation seal, and the optional historical
-policy checkpoint. The shared GPU had 8,753 MiB free at 59% utilization during the strict check;
-availability is a point measurement, not a reservation.
+Latest strict checks on this machine, 2026-09-04: the calibration stage has **zero blockers** and
+all 800 calibration motion hashes pass. The exact OK/warning split is GPU-state dependent because
+the shared-device check changes from OK to warning at 60% utilization. The full-scope confirmation
+preflight passes all 900 identities and reports exactly one blocker: the deliberately absent
+Phase-G seal. Other warnings cover absent real contact labels, transient shared-GPU availability,
+and the optional historical policy checkpoint. Availability is a point measurement, not a
+reservation.
 
 The completed blocker-resolution record is in
 `plan/NEXT_STAGE_PAYLOAD_INTAKE_2026-09-03.md`. Calibration requires the 800 hash-bound training
@@ -150,9 +153,10 @@ unsealed Phase-G draft.
 `docs/index.html` and `docs/segment-native.html` were rendered at 1440 × 1100 and 390 × 844.
 The hierarchy, statistics, navigation, and responsive layouts remain readable, and every local
 link resolves. The revised home page leads with the three-stage feasibility-first system; the
-segment-native page presents the endpoint-blind calibration and continuous endpoint without
-promoting G2 as a result. Newton remains an instrument, G3 is closed, the exact 900-file payload
-is restored locally, and G2−G1 remains pending calibration and sealing.
+segment-native page presents the passed endpoint-blind manipulation calibration and continuous
+endpoint without promoting G2 as a policy result. Newton remains an instrument, G3 is closed,
+the exact 900-file payload is restored locally, and G2−G1 policy performance remains pending
+review, sealing, and explicit launch approval.
 
 ## Verification record
 
@@ -179,13 +183,23 @@ python tools/calibrate_g2_treatment.py --synthetic \
   --out /tmp/climb_g2_calibration_synthetic.json
 selection and independent-validation branches: PASS
 
+python tools/calibrate_g2_treatment.py \
+  --screen-runs reports/g_segment/calibration/screen_runs.json \
+  --validation-runs reports/g_segment/calibration/validation_runs.json \
+  --out reports/g_segment/calibration/result.json
+ready_to_freeze; selected rho 0.40 / lambda 0.05; 39/39 ledger hashes pass
+
 newton15/.venv/bin/python tools/newton15_recert.py --synthetic \
   --out /tmp/climb_newton15_synthetic.json
 passing, failing, and deterministic-repeat comparator branches: PASS
 
 python tools/research_preflight.py --g2-stage calibration \
   --verify-motion-hashes --strict
-18 ok, 3 warnings, 0 blockers (all 800 calibration motion identities pass)
+zero blockers (all 800 calibration motion identities pass)
+
+python tools/research_preflight.py --g2-stage confirmation \
+  --verify-motion-hashes --strict
+all 900 identities pass; exactly one expected blocker: Phase-G seal absent
 
 git diff --check
 PASS

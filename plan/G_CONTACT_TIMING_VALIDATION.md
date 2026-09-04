@@ -1,7 +1,9 @@
 # Phase-G contact-timing instrument validation
 
-**Status:** unsealed, outcome-blind instrument protocol, 2026-09-03. No contact-timing
-validation result exists yet. This protocol does not amend a sealed result.
+**Status:** unsealed, outcome-blind instrument protocol, 2026-09-03; Phase-G v1
+disposition recorded 2026-09-04. No contact-timing validation result exists.
+`plan/G_CONTACT_TIMING_DISPOSITION_2026-09-04.md` freezes the metric as
+exploratory-only for Phase G v1. This protocol does not amend a sealed result.
 
 ## 1. Construct and boundary
 
@@ -126,6 +128,10 @@ Ready now: deterministic 20-clip selection, manifest, proxy construction code, b
 artifacts, reference-only synchronized dual-view renderer, hysteresis/debounce logic, one-to-one
 event scorer, evaluator validation gate, and synthetic unit/model/render tests.
 
-Blocked now: the licensed AMASS→G1 payload needed to render and label the selected references,
-plus two independent raters and an adjudicator. No validation status is inferred from synthetic
-tests.
+The licensed AMASS→G1 payload is restored and all 20 selected source identities are available
+under the full 900-file verification contract. The remaining blocker is human coordination:
+two independent raters and an adjudicator, with the required independent files and completion
+ledgers, are absent. No validation status is inferred from synthetic tests. Phase G v1 therefore
+uses the exploratory-only disposition in
+`plan/G_CONTACT_TIMING_DISPOSITION_2026-09-04.md`; future human validation remains a separate
+instrument study.

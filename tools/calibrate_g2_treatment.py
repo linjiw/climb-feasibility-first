@@ -18,6 +18,8 @@ from typing import Any
 
 import numpy as np
 
+ROOT = Path(__file__).resolve().parents[1]
+
 
 def sha256_file(path: Path) -> str:
     """Hash a calibration input without trusting its filename."""
@@ -66,13 +68,19 @@ def assess(
     hashes: dict[str, str] = {}
     for raw_path in ledger_paths:
         path = Path(raw_path)
+        if not path.is_absolute():
+            path = ROOT / path
         payload = json.loads(path.read_text())
         iteration = int(payload["iteration"])
         segment = payload["segment"]
         if iteration in by_iteration:
             raise ValueError(f"{candidate['id']}: duplicate ledger iteration {iteration}")
         by_iteration[iteration] = segment
-        hashes[str(path.resolve())] = sha256_file(path)
+        try:
+            ledger_key = str(path.resolve().relative_to(ROOT))
+        except ValueError:
+            ledger_key = str(path.resolve())
+        hashes[ledger_key] = sha256_file(path)
     missing = required - set(by_iteration)
     if missing:
         raise ValueError(f"{candidate['id']}: missing ledgers {sorted(missing)}")
@@ -168,7 +176,7 @@ def analyze(
     eligible = [row for row in screen if row["pass"]]
     result: dict[str, Any] = {
         "schema_version": "g2_calibration_result/1",
-        "classification": "pending; manipulation only; no policy endpoint read",
+        "classification": "measured; manipulation only; no policy endpoint read",
         "design_sha256": design_hash,
         "screen_runs_sha256": sha256_file(screen_path),
         "screen": screen,

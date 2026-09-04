@@ -1,0 +1,14 @@
+{
+ "schema_version": "g2_calibration_runs/1",
+ "design_sha256": "c1eb9b757d2bf7f1e893fc646599d720a1750e4030624c5254fc3d70dde381de",
+ "stage": "validation",
+ "runs": {
+  "rho040_floor0050": {
+   "ledgers": [
+    "reports/g_segment/calibration/validation_training/g1_tracking/2026-09-04_15-18-50_g2cal_validation_rho040_floor0050/model_30_segment.json",
+    "reports/g_segment/calibration/validation_training/g1_tracking/2026-09-04_15-18-50_g2cal_validation_rho040_floor0050/model_40_segment.json",
+    "reports/g_segment/calibration/validation_training/g1_tracking/2026-09-04_15-18-50_g2cal_validation_rho040_floor0050/model_49_segment.json"
+   ]
+  }
+ }
+}

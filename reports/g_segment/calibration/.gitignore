@@ -1,0 +1,6 @@
+# The policy exports, checkpoints, TensorBoard events, and launch logs are local
+# execution products. The ledger-only run maps and the 39 selector inputs are
+# force-added explicitly so the calibration decision remains reproducible.
+logs/
+screen_training/**/*
+validation_training/**/*

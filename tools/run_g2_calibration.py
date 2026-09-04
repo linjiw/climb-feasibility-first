@@ -103,7 +103,7 @@ def collect_ledgers(
     missing = [str(path) for path in ledgers if not path.is_file()]
     if missing:
         raise RuntimeError(f"{run_name}: missing ledgers {missing}")
-    return [str(path.resolve()) for path in ledgers]
+    return [str(path.resolve().relative_to(ROOT)) for path in ledgers]
 
 
 def write_run_map(

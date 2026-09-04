@@ -9,7 +9,7 @@ not authorize Phase-G endpoint access or convert pending text into a result.
 |---|---|
 | official class | PaperCept `ieeeconf.cls`, SHA-256 `4befef671c2a996889d325f5170d3387bf42aac9a37dcaa93724ad49816e4ec2` |
 | compiler | Tectonic 0.17.0 static Linux build, archive SHA-256 `8533d07f9ccbd7a65824b9e0459041bca34af1eb33daba48f59215593753a3b7` |
-| output | `paper/icra/ICRA_DRAFT.pdf`, SHA-256 `89fe723521691d549c93a45157ddaa1a51092eeea9b63fd342cfaa3f1f60815a` |
+| output | `paper/icra/ICRA_DRAFT.pdf`, SHA-256 `1e0283b308d5814c2cf8f04915aeeadbedfe05ec37711b1ceaae1b8daeb71b8f` |
 | page gate | 7 of 8 total pages |
 | page geometry | US Letter, 612 × 792 pt |
 | fonts | all embedded; zero Type 3 fonts |
@@ -29,8 +29,10 @@ reruns it twice and records the matching PDF digest under the pinned inputs.
 
 ## Remaining paper-critical slots
 
-- Keep the ALP-versus-uniform endpoint out of the claim set until the frozen manipulation and
-  provenance gates pass; if completed, add only the bounded result and its seed/clip uncertainty.
+- The endpoint-blind ALP treatment calibration now passes and is included as a manipulation
+  check only. Keep the ALP-versus-uniform policy endpoint out of the claim set until the sealed
+  confirmation and provenance gates pass; if completed, add only the bounded result and its
+  seed/clip uncertainty.
 - Replace the generic anonymous-artifact availability sentence with the final anonymous review
   artifact route.
 - Run the bounded 2025–2026 proceedings novelty check, PDF checker, and final anonymity sweep.

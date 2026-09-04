@@ -325,6 +325,13 @@ final rank saturation is below 0.90. The passing row nearest TV 0.10 is selected
 and declared order as ties, then repeated once on seed 20260904. Failure returns the study to
 design without opening a policy endpoint.
 
+The endpoint-blind calibration selected `rho = 0.40`, `lambda = 0.05`. Its screen TVs are
+0.1310/0.1063/0.0865 (mean 0.1079); the independent-seed TVs are
+0.1292/0.1045/0.0831 (mean 0.1056). The latter retains at least 700.1 entropy-effective units,
+at most 0.0134 top-1 mass, zero invalid or censored events, and 0.2365 final saturation. This is
+a passed manipulation calibration, not an ALP policy-performance result; the G2--G1 endpoint
+remains sealed and unread.
+
 The confirmation gate applies the same separation, concentration, validity, parameter, seed, and
 provenance checks after a 400-iteration warm-up. Only a passed gate unlocks the primary endpoint:
 liveness-weighted TrackingScore on the 25 reference-defined feasible-hard evaluation clips,
