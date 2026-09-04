@@ -1,0 +1,20 @@
+{
+ "synthetic": true,
+ "pass": true,
+ "summary": {
+  "status": "ready_to_freeze",
+  "selected": {
+   "id": "target",
+   "exploration_ratio": 0.1,
+   "progress_floor": 0.01
+  },
+  "screen_pass": {
+   "weak": false,
+   "target": true
+  },
+  "validation_pass": true,
+  "endpoint_schema_refused": true,
+  "wrong_seed_refused": true
+ },
+ "analyzer_sha256": "920cb4501c27a8efa978410d32c2a0b2c94fe41f44e1d5fb58cf3ff9b4d96631"
+}

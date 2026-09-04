@@ -1,5 +1,5 @@
 #!/bin/bash
-# Gap-gated launcher for the shared RTX 5090.
+# Gap-gated launcher for the shared NVIDIA GPU (model discovered at runtime).
 # usage: tools/run_when_free.sh <need_MiB> <log> -- cmd...
 #   env: ATTEMPTS (default 120 polls of 30 s), MAX_UTIL (default 60 %),
 #        GPU_TOTAL_MIB (default from nvidia-smi), POLL_S (default 30)

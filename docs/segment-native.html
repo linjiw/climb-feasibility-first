@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="How CLIMB turns physics-feasible motion segments into auditable humanoid tracking trials, what the first GPU pilot measured, and where Newton enters next.">
+<meta name="description" content="How CLIMB turns physics-feasible motion segments into auditable humanoid tracking trials, why Newton's predictive gate failed, and why exact-support learning-progress allocation is next.">
 <title>Segment-native training · CLIMB</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@ h2{font-size:1.8rem;margin-bottom:.5rem}.kicker{color:var(--muted);margin:.35rem
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1rem;margin-top:1.4rem}.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.1rem 1.2rem}.card h3{font-size:1.08rem}.card p{color:var(--muted);font-size:.94rem;margin:.45rem 0 0}.tag{display:inline-block;margin-top:.65rem;border-radius:999px;padding:.16rem .55rem;font:500 .68rem "IBM Plex Mono",monospace;background:var(--accent-soft);color:var(--accent)}
 .callout{border-left:3px solid var(--accent);background:var(--accent-soft);padding:.9rem 1.1rem;border-radius:0 8px 8px 0;margin-top:1.35rem;max-width:78ch}.callout.warn{border-color:var(--amber);background:var(--amber-soft)}.callout p{margin:.2rem 0;font-size:.95rem}
 .scroll{overflow-x:auto;margin-top:1.3rem}table{border-collapse:collapse;width:100%;background:var(--surface);font-size:.9rem;font-variant-numeric:tabular-nums}th,td{border:1px solid var(--rule);padding:.55rem .7rem;text-align:right}th{text-align:left;color:var(--muted);background:var(--bg);font-weight:500;font-size:.82rem}td:first-child{text-align:left}.good{color:var(--good);font-weight:600}.neutral{color:var(--amber);font-weight:600}.small{font-size:.84rem;color:var(--muted)}
-.arms{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:1.35rem}.arm{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1rem}.arm .id{font:600 1.3rem "Source Serif 4",serif;color:var(--accent)}.arm h3{font-size:1rem;margin-top:.2rem}.arm p{font-size:.84rem;color:var(--muted);margin:.4rem 0 0}
+.arms{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-top:1.35rem}.arm{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1rem}.arm .id{font:600 1.3rem "Source Serif 4",serif;color:var(--accent)}.arm h3{font-size:1rem;margin-top:.2rem}.arm p{font-size:.84rem;color:var(--muted);margin:.4rem 0 0}
 .sources{font-size:.86rem;color:var(--muted)}.sources li{margin:.45rem 0}
 footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;color:var(--muted);font-size:.88rem}.links{display:flex;gap:1.2rem;flex-wrap:wrap}
 @media(max-width:850px){.flow{grid-template-columns:1fr 1fr}.flow-step:not(:last-child):after{display:none}.arms{grid-template-columns:1fr 1fr}}
@@ -42,17 +42,18 @@ footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;color:var(--muted);f
 </head>
 <body>
 <nav class="top" aria-label="Project navigation"><div class="wrap">
-  <span class="eyebrow">CLIMB · research checkpoint · 2026-08-21</span>
+  <span class="eyebrow">CLIMB · research checkpoint · 2026-09-04</span>
   <a href="index.html">← Project overview</a>
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <span class="eyebrow">Segment-native v2 · unsealed exploratory result</span>
+  <span class="eyebrow">Segment-native v2 · exploratory result + next gate</span>
   <h1>Train on the hard motion—not on an impossible transition.</h1>
   <p class="sub">We turned offline physics screening into an exact motion-tracking lifecycle:
   <strong>feasible start segments, fixed-horizon trials, conditional outcome attribution,
   bounded sampling, and paired terminal-safe evaluation.</strong> The pipeline now works on GPU.
-  The first policy result is promising on two quality channels and inconclusive on survival.</p>
+  The first policy result is promising on two quality channels and inconclusive on survival.
+  Newton's later predictive gate failed, leaving exact-support learning progress as the next causal test.</p>
   <div class="stats" aria-label="Pilot summary">
     <div class="stat"><div class="v">4.92 M</div><div class="k">total PPO transitions across two matched 512-environment arms</div></div>
     <div class="stat"><div class="v">0</div><div class="k">invalid starts, escaped reference frames, or censored resets</div></div>
@@ -149,43 +150,71 @@ footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;color:var(--muted);f
 </section>
 
 <section>
-  <span class="num">06 · Newton as the next information source</span>
-  <h2>Measure where feasible motion is physically fragile</h2>
-  <p class="kicker">Feasibility tells us what not to train on. Newton can tell us which remaining feasible segments are sensitive to deployable physics axes—and whether that information predicts failure before PPO spends on it.</p>
+  <span class="num">06 · Newton result</span>
+  <h2>Conformance passed; predictive value did not</h2>
+  <p class="kicker">Newton earned a role as a reproducible analysis instrument, then failed the predeclared gate required for a curriculum feature. These are separate findings.</p>
   <div class="grid">
-    <div class="card"><h3>Canonical-state probes</h3><p>Start every physics variant from the same saved policy state and run only 0.25–0.50 seconds. This prevents long-horizon closed-loop chaos from becoming the signal.</p><span class="tag">resynchronize</span></div>
-    <div class="card"><h3>Determinism before noise</h3><p>Newton v1.5 supports more reliable deterministic multi-world/contact workflows. Same-configuration repeats must match before an explicit paired noise ensemble estimates uncertainty.</p><span class="tag">measure the floor</span></div>
-    <div class="card"><h3>Actuation before exotic solvers</h3><p>Delay and DC-motor saturation map directly to G1 deployment. Then compare MuJoCo and Newton contact generation. Cross-solver labels wait for conformance.</p><span class="tag">axis-specific vector</span></div>
-    <div class="card"><h3>Predict held-out degradation</h3><p>A fragility vector earns a training role only if it predicts a held-out physics axis or policy beyond kinematics and the screen. Solver disagreement alone is not physical truth.</p><span class="tag">kill gate</span></div>
+    <div class="card"><h3>Canonical-state conformance passed</h3><p>One easy and one contact-rich hash-bound unit pass placement, observation, action, resynchronized state, contact-timing, and deterministic-repeat checks after seven import residuals are mirrored.</p><span class="tag">measured ✓</span></div>
+    <div class="card"><h3>Predictive panel was valid</h3><p>The final run retained 40 units after the sealed alive exclusion. Determinism, pairing, reference bounds, contact checks, and manipulation checks support reading the outcome.</p><span class="tag">valid measurement</span></div>
+    <div class="card"><h3>Joint predictive gate failed</h3><p>Adaptive partial Spearman is +0.141 (p = 0.158) and held-out-clip LOCO lift is −0.006, below the registered +0.25 and +0.05 thresholds. Grounded replication also fails.</p><span class="tag">sealed ✗</span></div>
+    <div class="card"><h3>G3 is not eligible</h3><p>The kill rule was fixed before outcomes: valid-data failure keeps Newton as an instrument and forbids Newton-fragility-weighted training. Individual axis correlations do not reopen it.</p><span class="tag">G3 killed</span></div>
   </div>
-  <div class="callout warn"><p><strong>Current limitation.</strong> Newton's current solver matrix does not mark <code>SolverMuJoCo</code> differentiable, and differentiable contact kinematics remain experimental.
-  The first benefit study uses deterministic finite swaps; differentiability is a later, solver-specific spike.</p></div>
+  <div class="callout warn"><p><strong>Claim boundary.</strong> This failure rejects the tested three-axis Newton vector as an incremental curriculum signal on this panel. It does not undo the conformance result or claim that Newton is broadly uninformative.</p></div>
 </section>
 
 <section>
   <span class="num">07 · Next causal experiment</span>
-  <h2>Four fresh arms isolate where any benefit comes from</h2>
-  <p class="kicker">The design separates data hygiene, online allocation, and Newton physics information. Every arm gets matched compute and the same terminal-safe evaluator.</p>
+  <h2>One controlled contrast isolates allocation</h2>
+  <p class="kicker">The pre-seal comparator audit removed both confounded G0 and ineligible G3. Phase G now changes one thing: how training exposure is allocated inside identical exact support.</p>
   <div class="arms">
-    <div class="arm"><span class="id">G0</span><h3>Unmasked grounded</h3><p>Fresh baseline. Measures the cost and benefit of removing invalid starts.</p></div>
-    <div class="arm"><span class="id">G1</span><h3>Exact-feasible uniform</h3><p>Deployment prior over safe units. G1−G0 is the hygiene effect.</p></div>
-    <div class="arm"><span class="id">G2</span><h3>Learning progress</h3><p>Online progress/uncertainty replaces saturated raw failure. G2−G1 is allocation value.</p></div>
-    <div class="arm"><span class="id">G3</span><h3>Newton-grounded</h3><p>Add only a validated fragility vector. G3−G2 is incremental physics information.</p></div>
+    <div class="arm"><span class="id">G1</span><h3>Exact-feasible control</h3><p>Deployment-uniform over 368,951 legal starts; 1,184 variable-length units provide attribution.</p></div>
+    <div class="arm"><span class="id">G2</span><h3>Absolute learning progress</h3><p>The same support and prior, reweighted by a calibrated ALP rank. G2−G1 is allocation value.</p></div>
   </div>
+  <div class="callout warn"><p><strong>Why G0 was removed.</strong> G0 samples clips uniformly and then frames within a clip; G1 is uniform over legal starts and therefore weights clips by admissible duration. Their difference would mix feasibility hygiene with duration exposure, so it cannot identify either effect.</p></div>
   <div class="verdicts">
-    <div class="verdict keep"><h3>Advance only if</h3><p>The Newton vector predicts held-out degradation, curriculum TV stays in a predeclared informative band, and G3 improves survival/AULC without a common-survivor quality regression.</p></div>
-    <div class="verdict hold"><h3>Stop or reframe if</h3><p>Conformance fails, physics features do not add held-out prediction, or G3 does not beat G2. Newton can remain a diagnostic instrument without becoming a curriculum claim.</p></div>
+    <div class="verdict keep"><h3>Calibrate without endpoints</h3><p>Twelve predeclared exploration/floor settings receive 50 iterations on a dedicated seed. Sampler ledgers alone select TV nearest 0.10; one independent seed must validate it before sealing.</p></div>
+    <div class="verdict hold"><h3>Score precision and liveness</h3><p>The primary is a horizon-weighted pose/orientation TrackingScore on 25 outcome-blind reference-hard clips. Survival and mechanical work decompose the result; a passed-gate two-endpoint null recommends G1 only in this setting.</p></div>
   </div>
 </section>
 
 <section>
-  <span class="num">08 · Evidence and implementation</span>
+  <span class="num">08 · Research fit</span>
+  <h2>Recent work sharpens the claim instead of replacing the experiment</h2>
+  <p class="kicker">Physics-aware curation and adaptive sampling are active research areas. CLIMB's remaining question is narrower: does this allocation rule help after analytic support and the evaluation contract are fixed?</p>
+  <div class="grid">
+    <div class="card"><h3>Feasibility is already a data axis</h3><p>LIMMT combines heuristic physical scores with diversity and complexity selection. CLIMB does not claim that data quality first became important here; it contributes a policy-independent contact-capacity test on final robot-space trajectories.</p><span class="tag"><a href="https://arxiv.org/abs/2606.06953">LIMMT · 2026</a></span></div>
+    <div class="card"><h3>Exposure may not fix capability</h3><p>Athena-WBC reports residual feasible clips that targeted training still cannot solve. Therefore a Phase-G null would reject this ALP treatment, not prove that the remaining motions are intrinsically unlearnable.</p><span class="tag"><a href="https://arxiv.org/abs/2607.04837">Athena-WBC · 2026</a></span></div>
+    <div class="card"><h3>One-factor comparisons matter</h3><p>YAHMP changes individual design choices on one fixed Unitree G1 motion set. Phase G follows the same causal discipline by holding robot, support, PPO, reward, caps, compute, and evaluator fixed.</p><span class="tag"><a href="https://arxiv.org/abs/2607.19903">YAHMP · 2026</a></span></div>
+    <div class="card"><h3>Contact deserves its own evidence</h3><p>HumanTracker shows that kinematic averages can miss support and contact defects. CLIMB keeps contact timing exploratory until its own blinded held-out manual-label gate passes.</p><span class="tag"><a href="https://arxiv.org/abs/2608.13555">HumanTracker · 2026</a></span></div>
+  </div>
+</section>
+
+<section>
+  <span class="num">09 · Current gate</span>
+  <h2>The design is runnable; the licensed payload is absent</h2>
+  <p class="kicker">The blocker is an exact data identity, not missing analysis code. Calibration requires 800 hash-bound training motions; full confirmation and contact validation require those plus 100 disjoint evaluation motions.</p>
+  <div class="verdicts">
+    <div class="verdict keep"><h3>Ready after verified intake</h3><p>The 12-setting endpoint-blind calibration, independent validation, training-only launcher, paired evaluator, provenance builder, and frozen result table have synthetic coverage.</p></div>
+    <div class="verdict hold"><h3>Fail closed on substitution</h3><p>A different AMASS→G1 retarget would change the substrate and confound allocation with preprocessing. No checkpoint endpoint is opened before validation, footprint review, proxy disposition, and seal.</p></div>
+  </div>
+  <div class="callout"><p><strong>Next executable action.</strong> Supply the exact licensed local bank, verify all required SHA-256 identities with <code>tools/restore_phase_g_bank.py</code>, then run the strict research preflight. Until that succeeds, G2 remains pending—not a result.</p></div>
+</section>
+
+<section>
+  <span class="num">10 · Evidence and implementation</span>
   <h2>Trace every number</h2>
   <ul class="sources">
     <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/SEGMENT_NATIVE_PILOT_RESULT_2026-08-20.md">Exploratory pilot result and decision</a></li>
     <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/reports/segment_v2_pilot/result.json">Machine-readable paired result</a></li>
     <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/reports/segment_v2_smoke/timeline_trace.json">Vectorized GPU lifecycle trace</a></li>
     <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/NEWTON_SEGMENT_DIRECTION_2026-08-21.md">Newton-grounded direction addendum</a></li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/NEWTON_PRED_RESULT.md">Sealed Newton predictive-gate result</a></li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/NEXT_RESEARCH_2026-09-03.md">Current direction and machine-readiness audit</a></li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/PREREGISTRATION_G_SEGMENT.md">Draft Phase-G preregistration</a></li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/ICRA_FEASIBILITY_FIRST_2026-09-03.md">Feasibility-first ICRA execution plan</a></li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/PAPER_COMPLETION_2026-09-04.md">Paper-completion checkpoint and stop rules</a></li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/paper/CITATION_CHECK_2026-09-04.md">Current primary-literature positioning audit</a></li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/paper/PRACTITIONERS_GUIDE_HARNESS_TRAPS.md">Five silent harness traps</a></li>
     <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/DFRP_V0_RESULT_2026-08-21.md">DFRP v0 CPU result and claim boundaries</a></li>
     <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/DFRP_V1_EXACT_PANEL_RESULT_2026-08-21.md">DFRP v1 frozen exact-panel result</a></li>
     <li><a href="https://github.com/newton-physics/newton/releases/tag/v1.5.0">Newton v1.5.0 release</a>, <a href="https://newton-physics.github.io/newton/stable/solvers/index.html">solver feature matrix</a>, and <a href="https://newton-physics.github.io/newton/stable/concepts/collisions.html">collision pipeline</a></li>
@@ -198,6 +227,6 @@ footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;color:var(--muted);f
   <a href="companion.html">companion note</a>
   <a href="flagship.html">flagship draft</a>
   <a href="https://github.com/linjiw/climb-feasibility-first">repository</a>
-</div><p>Claim labels: sealed · measured · exploratory · pending. This page reports an unsealed one-seed pilot and a pending design revision.</p></div></footer>
+</div><p>Claim labels: sealed · measured · exploratory · pending. This page reports an unsealed one-seed pilot, a sealed failed Newton gate, and an unsealed two-arm G2−G1 design blocked on exact licensed data.</p></div></footer>
 </body>
 </html>

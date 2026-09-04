@@ -3,6 +3,71 @@
 Working area for the grounded-adaptive-motion-curricula project
 (`/home/robotixx/newton/fable.md`). Lives on `/data` because `/` is at 91%.
 
+> **Current checkout (2026-09-03):** this historical workspace note was written for
+> `/data/robotixx/climb`; the active checkout is relocatable. Run commands from the repository
+> root and use `research.env.example` plus `tools/research_preflight.py` instead of copying the
+> old absolute paths below. The compact Phase-G inputs and environments are present here, but
+> the licensed AMASS→G1 motion payload and ignored historical checkpoints are not.
+
+```bash
+mjlab-1.6.0/.venv/bin/python tools/research_preflight.py --materialize-clips
+# Supply a local bank obtained under your own AMASS access. This first hashes
+# all 900 Phase-G training/evaluation identities, then creates one ignored
+# directory symlink; it never downloads or copies motion data.
+mjlab-1.6.0/.venv/bin/python tools/restore_phase_g_bank.py \
+  --source-dir /absolute/path/to/amass_g1_npz_bank --scope full \
+  --link-destination bank/amass \
+  --json-out reports/g_segment/local_bank_intake.json
+mjlab-1.6.0/.venv/bin/python tools/research_preflight.py \
+  --g2-stage calibration --verify-motion-hashes --strict
+mjlab-1.6.0/.venv/bin/python tools/build_feasibility_release.py
+mjlab-1.6.0/.venv/bin/python tools/run_g2_calibration.py screen \
+  --need-mib MEASURED_512_ENV_MIB --dry-run
+mjlab-1.6.0/.venv/bin/python tools/calibrate_g2_treatment.py \
+  --screen-runs reports/g_segment/calibration/screen_runs.json \
+  --validation-runs reports/g_segment/calibration/validation_runs.json \
+  --out reports/g_segment/calibration/result.json
+
+# After the licensed bank is restored, build the fixed contact proxy. This
+# remains exploratory until the separate blinded validation command passes.
+mjlab-1.6.0/.venv/bin/python tools/build_reference_contact_labels.py
+mjlab-1.6.0/.venv/bin/python tools/render_contact_validation.py
+mjlab-1.6.0/.venv/bin/python tools/validate_contact_proxy.py \
+  --render-manifest reports/g_segment/contact_validation/renders/all.manifest.json \
+  --rater-a PATH --rater-a-completion PATH \
+  --rater-b PATH --rater-b-completion PATH \
+  --consensus PATH --consensus-completion PATH
+
+# After sealed confirmation training/evaluation, convert the path-only run map
+# into the hash-complete analyzer input. This does not parse evaluator CSV rows.
+mjlab-1.6.0/.venv/bin/python tools/build_g_run_manifest.py \
+  --run-map reports/g_segment/confirmation/run_map.json \
+  --calibration-result reports/g_segment/calibration/result.json \
+  --out reports/g_segment/confirmation/run_manifest.json
+mjlab-1.6.0/.venv/bin/python tools/analyze_g_segment.py \
+  --manifest reports/g_segment/confirmation/run_manifest.json \
+  --out reports/g_segment/confirmation/result.json
+```
+
+The confirmation run map uses schema `g_segment_run_map/1` and contains exactly G1/G2, seeds
+1–3 (or the predeclared 1–2 budget fallback), a list of sampler-ledger paths per run, and
+evaluation records at iterations 1000/2000/3000/3999 with `csv` and `checkpoint` paths. The
+builder verifies the adjacent evaluator metadata and training-ledger checkpoint link, then
+hashes every artifact. The analyzer rejects any checkpoint, code, condition, reference, or CSV
+identity mismatch before parsing endpoint rows.
+
+The contact-label protocol and CSV schemas are frozen in
+`plan/G_CONTACT_TIMING_VALIDATION.md`. `eval_paired_v2.py` accepts
+`--reference-contact-manifest` only together with `--contact-validation-report`, and rejects
+anything except a hash-complete real report with status `validated`. Without that pair, contact
+timing is omitted rather than silently approximated from contact fraction or switch rate.
+
+The payload-intake tool has two explicit scopes. `calibration` verifies the 800 motions used
+by the endpoint-blind sampler pilot. `full` verifies those plus the 100 hash- and name-disjoint
+evaluation motions (900 unique files) and is required before confirmation. A different public
+AMASS-to-G1 retarget is not interchangeable: Phase G is bound to the exact file identities in
+`reports/g_segment/unit_table.json` and `reports/g_segment/panel/panel_manifest.json`.
+
 ```
 mjlab-1.6.0/   git worktree of mjlab @ v1.6.0 + .venv   <- the training stack
 climb/         the mjlab extension — multi-clip motion bank + clip samplers

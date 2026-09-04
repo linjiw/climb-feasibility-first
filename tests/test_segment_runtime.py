@@ -235,3 +235,24 @@ def test_failure_rank_state_without_history_still_loads(tmp_path: Path) -> None:
     resumed = SegmentSampler(manifest, mode="adaptive", seed=2)
     resumed.load_state_dict(state)
     assert torch.equal(resumed.probabilities, original.probabilities)
+
+
+def test_learning_progress_exposes_checkpoint_diagnostic_vectors(tmp_path: Path) -> None:
+    manifest = tmp_path / "units.json"
+    write_manifest(manifest)
+    sampler = SegmentSampler(
+        manifest,
+        mode="adaptive",
+        seed=7,
+        difficulty_power=0.0,
+        rank="learning_progress",
+        progress_window=2,
+    )
+    assert sampler.learning_progress() is None
+    _drive(sampler, [1, 0], ticks=2)
+    progress = sampler.learning_progress()
+    rates = sampler.conditional_success_rates()
+    assert progress is not None
+    assert progress.shape == rates.shape == (2,)
+    assert bool((progress >= 0.0).all())
+    assert bool(((rates >= 0.0) & (rates <= 1.0)).all())

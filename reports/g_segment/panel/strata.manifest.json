@@ -1,0 +1,52 @@
+{
+ "builder_sha256": "b067aff2961d9262249daa24151ab191c94189416019c011a4cb84a6f1fca833",
+ "classification": "pending; outcome-blind reference-only stratification",
+ "counts": {
+  "feasible_hard_reference": 25,
+  "feasible_remainder": 75
+ },
+ "definition": "top 25/100 panel clips by mean global percentile rank over seven pre-existing dynamic-demand features; this is reference-hardness, not observed policy hardness",
+ "eligibility": {
+  "airborne_frac_max": 0.1,
+  "frames_min": 250,
+  "infeasible_frac_max": 0.1,
+  "population": 6197
+ },
+ "features": [
+  {
+   "direction": 1.0,
+   "name": "required_mu_p95"
+  },
+  {
+   "direction": 1.0,
+   "name": "vert_force_bw_max"
+  },
+  {
+   "direction": 1.0,
+   "name": "contact_switch_rate"
+  },
+  {
+   "direction": 1.0,
+   "name": "flight_phase_frac"
+  },
+  {
+   "direction": 1.0,
+   "name": "nonfoot_ground_frac"
+  },
+  {
+   "direction": 1.0,
+   "name": "angmom_peak"
+  },
+  {
+   "direction": -1.0,
+   "name": "support_margin_mean"
+  }
+ ],
+ "inputs": {
+  "feasibility_sha256": "587a2518a9a4b40a2c99025fc956df2a8d9614d2a9cbdaacbdcf41cf164fddb9",
+  "features_sha256": "ed2fdb3962a545d97ce1a24e39c3b922df64b4bfe53244eb46a774526df74639",
+  "panel_sha256": "ec23b7b959dbb6bd05015f5821c99ac9d5a70dd966ef5448443d060b4a3127fe"
+ },
+ "output_sha256": "e2b57f3616b9695b076bedc085263707af94f517fbde349d73fe38805660e200",
+ "schema_version": "g_segment_eval_strata/1"
+}

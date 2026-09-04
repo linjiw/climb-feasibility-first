@@ -5,13 +5,17 @@
   "positive": "positive",
   "null": "null",
   "inconclusive": "inconclusive",
-  "gate_fail": "not_tested"
+  "gate_fail": "not_tested",
+  "seed_mismatch": "not_tested",
+  "provenance_mismatch": "not_tested"
  },
  "expected": {
   "positive": "positive",
   "null": "null",
   "inconclusive": "inconclusive",
-  "gate_fail": "not_tested"
+  "gate_fail": "not_tested",
+  "seed_mismatch": "not_tested",
+  "provenance_mismatch": "not_tested"
  },
- "analyzer_sha256": "a9c2c5466bf3d8992882ce04ead016695d4df0c47d2ff2d991a62b2e60314016"
+ "analyzer_sha256": "d60d38f2ebab58278c54b278377e0fb44ae9a991da7ac83b80898d19809da63d"
 }

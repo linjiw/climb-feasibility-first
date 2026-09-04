@@ -3,7 +3,11 @@ bank/
 logs/
 mjlab-1.6.0/
 bridge/
+newton15/
+research.env
+.codex/
 outputs/
+datasets/*.parquet
 # refeas is released separately as its own repo
 refeas/
 __pycache__/
@@ -33,3 +37,7 @@ reports/dfrp_v1_exact_panel/baseline/manifest_*/
 reports/dfrp_v1_exact_panel/baseline/repair_records/
 reports/dfrp_v1_exact_panel/baseline/sidecars/
 reports/g_segment/screen_full/
+# Licensed-motion-derived annotation videos remain local.
+reports/g_segment/contact_validation/renders/
+# Local payload receipts contain machine-specific licensed-data paths.
+reports/g_segment/local_bank_intake.json

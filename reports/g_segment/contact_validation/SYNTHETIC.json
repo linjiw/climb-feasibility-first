@@ -1,0 +1,10 @@
+{
+ "branches": {
+  "failed": "failed_validation",
+  "insufficient": "insufficient_support",
+  "passing": "validated"
+ },
+ "classification": "synthetic control-flow test; not empirical evidence",
+ "schema_version": "contact_proxy_validation/1",
+ "scorer_sha256": "470322c96aa1f7c8e0c8507f5d414a0214176d28616f818ad9415e362285ce0f"
+}

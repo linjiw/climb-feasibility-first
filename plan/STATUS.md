@@ -1,6 +1,6 @@
 # CLIMB / feasibility-first — status against Research Plan v5
 
-Updated 2026-08-27. **v5 (`RESEARCH_PLAN_v5.md`, sealed `4d490cf8…`) is authoritative**: D1
+Updated 2026-09-04. **v5 (`RESEARCH_PLAN_v5.md`, sealed `4d490cf8…`) is authoritative**: D1
 evaluation policy, D2 spin-out, D3 new seals, D4 writing-first window to Sept 15. v4's freeze
 discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 
@@ -22,13 +22,13 @@ discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 | **Second-bank artifact hygiene closed** | The BONES-SEED screen was reproduced from the exact 4,950-clip bank into a durable 4,950-row CSV; its sentinel records 0 failures and all registered threshold counts reproduce (infeasible 29/7/5; airborne 225/111/32 at >0.05/>0.10/>0.20). | `reports/feasibility_sonic/{hygiene_screen.csv,COMPLETED.json}`; execution log `autoresearch/autoresearch-260826-1617/research_log.md` |
 | **Same-clip implementation agreement closed** | Deterministic stratified 20+20 panel run through both CLIMB/refeas and SONIC implementations: infeasible ρ 0.984, airborne ρ 0.997, strict `>0.10` flags agree 39/40 (97.5 %, κ 0.948). Sole disagreement: BONES `burpee_002` (0.019 vs 0.136). This closes implementation agreement on the panel, not the corpus/release-filter confound and not retargeter causality. | `reports/feasibility_xcheck/`; companion §4; flagship A3; `paper/RESULTS_LOG.md` |
 
-## Phase N / Phase G state (2026-08-27)
+## Phase N / Phase G state (2026-09-04)
 
 | item | state | where |
 |---|---|---|
 | **Newton 1.5 recertification (N-b)** | **PASS** on one easy + one contact-rich hash-bound DFRP v1 unit after seven live-model residuals were mirrored; zero dispersion across independent rebuilds. Conformance only; no policy or predictive claim. | `plan/NEWTON15_RECERT_RESULT.md`, `reports/newton15_recert/` |
-| **Newton predictive gate (N-c) — FAIL (valid)** | Sealed `b1773fc5…` before outcomes; frozen analyzer `1324aa6f…`. The real 42-unit probe is **running** (launched 2026-08-27; ≈ 22 h at 4 worlds per child-process batch because Warp's deterministic scatter buffers overflow int32 at 42 worlds). Attempt 4 was **not tested** (harness `env_spacing` artifact + one unlearnable unit); addendum 1 sealed (unit-level exclusion, ≥ 36 units; analyzer `95479ebc…`). **Attempt 5 (2026-08-28) valid on every component check; sealed verdict FAIL:** adaptive partial ρ +0.14 (p 0.16), LOCO lift −0.006; grounded ρ +0.02, lift −0.036; 40 units. **G3 never runs; Newton is an instrument.** | `plan/PREREGISTRATION_NEWTON_PRED.md`, `reports/newton15_pred/probe/`, `autoresearch/autoresearch-260827-0040/research_log.md` |
-| **Phase-G seal draft** | `PREREGISTRATION_G_SEGMENT.md` (unsealed; target seal Sept 10). Done: LP/uncertainty ranks in the sampler; exact `tier_800` guard-0 unit table (1,184 units / 368,951 starts; 140 of 701 unflagged clips carry severe windows — the FGAS `assumeunflagged` eligibility was not exact); disjoint 100-clip panel (name + hash) with 2,800 conditions; frozen analyzer with four synthetic branches; `tools/run_when_free.sh`. **Seeds 1, 2, 3; drop order under GPU scarcity: G0 first, then seed 3; never the manipulation gate or the panel.** | `plan/PREREGISTRATION_G_SEGMENT.md`, `reports/g_segment/` |
+| **Newton predictive gate (N-c) — FAIL (valid)** | Sealed `b1773fc5…` before outcomes; attempt 4 was **not tested** (harness `env_spacing` artifact + one unlearnable unit), then addendum 1 sealed a unit-level exclusion with ≥36 required. **Attempt 5 (2026-08-28) is valid; sealed verdict FAIL:** adaptive partial ρ +0.14 (p 0.16), LOCO lift −0.006; grounded ρ +0.02, lift −0.036; 40 units. **G3 never runs; Newton is an instrument.** | `plan/NEWTON_PRED_RESULT.md`, `reports/newton15_pred/`, `autoresearch/autoresearch-260827-0040/research_log.md` |
+| **Phase-G seal draft** | `PREREGISTRATION_G_SEGMENT.md` remains unsealed. Done: ALP rank and explicit launcher plumbing; exact `tier_800` guard-0 unit table (1,184 attribution units / 368,951 legal starts); disjoint 100-clip panel with 2,800 conditions; outcome-blind 25/75 reference-hard strata; liveness-weighted continuous TrackingScore analyzer with six synthetic branches; hash-complete checkpoint/evaluator provenance manifest; finite endpoint-blind 50-iteration treatment-calibration grid and selector; exploratory-only checkpoint rank agreement among ALP, failure, and `p(1-p)`; `tools/run_when_free.sh`; a fail-closed licensed-bank intake that distinguishes 800-motion calibration from 900-motion full scope; and a source-hash-bound contact-timing instrument with a balanced 20-clip blinded-validation panel, three-branch scorer, and evaluator gate. The contact proxy is not validated and remains exploratory. G0 was removed before sealing because its uniform-over-clips allocation confounds the intended support-hygiene contrast; Phase G is now the controlled G2−G1 test. The compute estimate is 49.15 M transitions / approximately 1.37 training GPU-hours per full arm at the pilot rate. Current blockers are the absent licensed motion payload, unrun treatment calibration/validation, unresolved contact-timing disposition, unmeasured current-hardware footprint, and the intentionally absent seal. | `plan/PREREGISTRATION_G_SEGMENT.md`, `plan/G_CONTACT_TIMING_VALIDATION.md`, `plan/ICRA_FEASIBILITY_FIRST_2026-09-03.md`, `plan/PAPER_COMPLETION_2026-09-04.md`, `tools/research_preflight.py` |
 | **Companion release** | Blocked only on Linji's three decisions (`paper/LINJI_SIGNOFF_ASK_2026-08-26.md`, drafted, not sent). | `paper/` |
 
 ## Payoff directive (2026-08-21, Linji): approvals and launches
@@ -115,12 +115,12 @@ figure-injected HTML was refreshed 2026-08-26. The flagship §8 mechanism rewrit
 integration also landed, followed by draft assembly and a fresh red-team sweep. No GPU training
 runs before Sept 15.
 
-In parallel, CPU/gap-only Newton 1.5 recertification follows
-`plan/NEWTON_SEGMENT_DIRECTION_2026-08-21.md` gates 1–2 in an isolated environment. Before any new
-outcome exists, seal the G0/G1/G2 design and its allocation-manipulation gate. The one-seed wiring
-screen stops unless TV(G2,G1), entropy-effective units, invalid frames, and rejected-start mass all
-pass; additional seeds do not launch on a failed manipulation. E3 remains the independent sealed
-uniform-arm experiment. Dec 1 results freeze.
+Newton gates 1–2 are closed: conformance passed, but the predictive gate failed on valid data and
+killed G3. Restore and hash-check the licensed AMASS→G1 payload, measure the current-hardware
+512-env footprint, then review and seal the G1/G2 design before any new outcome exists. The
+one-seed wiring screen stops unless TV(G2,G1), entropy-effective units, invalid frames, and
+rejected-start mass all pass; additional seeds do not launch on a failed manipulation. E3 remains
+the independent sealed uniform-arm experiment. Dec 1 results freeze.
 
 **Phase N setup, recertification, and predictive seal completed 2026-08-26:** isolated
 `newton15/.venv` imports Newton 1.5.0 / Warp 1.16.0 / MuJoCo 3.11.0 / MuJoCo Warp 3.11.0 with
@@ -131,10 +131,10 @@ are zero after seven Newton-1.5 live-model import residuals are mirrored
 (`plan/NEWTON15_RECERT_RESULT.md`). N-c is sealed at `b1773fc5…` on the 42-unit mechanism panel:
 uniform-s1 development vector, adaptive-s1 primary held-out policy, grounded-s1 directional
 replication, three named axes, partial-Spearman/permutation and grouped-LOCO thresholds, plus the
-unchanged fail → G3-never-runs rule (`plan/PREREGISTRATION_NEWTON_PRED.md`). The frozen analyzer's
-pass/null/discordant synthetic branches and the probe summarizer pass. **No panel axis outcome has
-been measured yet**; `tools/newton15_pred_probe.py` awaits a genuine GPU gap and must pass its
-zero-dispersion/manipulation manifest before the analyzer can open `effects.csv`.
+unchanged fail → G3-never-runs rule (`plan/PREREGISTRATION_NEWTON_PRED.md`). The final valid
+40-unit measurement fails that gate: adaptive partial ρ +0.141 (p = 0.158), LOCO lift −0.006;
+grounded partial ρ +0.022, lift −0.036. Newton remains a conformance and analysis instrument
+(`plan/NEWTON_PRED_RESULT.md`).
 
 ## The three v4 actions
 

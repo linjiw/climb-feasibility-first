@@ -4,10 +4,11 @@ for the GitHub Pages site (docs/companion.html, docs/flagship.html). Figures ins
 anchors; print stylesheet included so the browser's Print → PDF produces a clean document.
 Re-run after any draft edit; the HTML is generated, never hand-edited."""
 import re
+from pathlib import Path
 
 import markdown
 
-R = "/data/robotixx/climb/"
+R = Path(__file__).resolve().parents[1]
 
 TPL = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -100,12 +101,12 @@ def insert_figures(src, key):
 
 
 def render(md_path, out_path, key, title, banner, other):
-    src = open(R + md_path).read()
+    src = (R / md_path).read_text()
     src = insert_figures(src, key)
     body = markdown.markdown(src, extensions=["tables", "fenced_code", "sane_lists"])
     body = body.replace("<table>", '<div class="tablewrap"><table>').replace("</table>", "</table></div>")
     html = TPL.format(title=title, banner=banner, body=body, other_href=other[0], other_label=other[1])
-    open(R + out_path, "w").write(html)
+    (R / out_path).write_text(html)
     print(f"rendered {out_path} ({len(html)//1024} KB)")
 
 

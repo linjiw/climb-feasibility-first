@@ -1,0 +1,27 @@
+{
+ "artifact": {
+  "bytes": 373348,
+  "path": "datasets/amass_g1_feasibility_v1.parquet",
+  "sha256": "31849ec4b72ac19a6fbb233f935b8e910d2a48b1ec88917c03202b9f5ca91dfe"
+ },
+ "builder_sha256": "4f361f6fd1ceffeb72fc1e0bd473df589e061ab54b3034d98a6cb16dc5e53fab",
+ "classification": "internal release candidate; do not publish without written permission",
+ "flagged_fraction": 0.22811770200840728,
+ "flagged_infeasible_gt_0p10": 2442,
+ "limitations": [
+  "No AMASS motion trajectories are redistributed.",
+  "This v1 candidate contains clip aggregates, not per-frame masks.",
+  "Public distribution requires written permission or a documented legal determination."
+ ],
+ "rows": 10705,
+ "schema_version": "amass_g1_feasibility_release/1",
+ "scope": "one corpus-and-pipeline pairing; not an AMASS-wide or retargeter-wide rate",
+ "source": {
+  "path": "reports/feasibility_all/feasibility.csv",
+  "sha256": "587a2518a9a4b40a2c99025fc956df2a8d9614d2a9cbdaacbdcf41cf164fddb9"
+ },
+ "writer": {
+  "compression": "zstd",
+  "pyarrow": "21.0.0"
+ }
+}

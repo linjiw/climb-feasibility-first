@@ -39,6 +39,10 @@ ERROR_METRICS = (
 
 sys.path.insert(0, str(ROOT))
 
+from climb.contact_timing import contact_event_metrics
+
+CONTACT_TOLERANCE_FRAMES = 2
+
 
 def sha256_file(path: Path) -> str:
     """Hash one artifact without loading it all into memory."""
@@ -79,6 +83,133 @@ def software_versions() -> dict[str, str]:
 def selected_file_hashes(names: list[str], bank: Path) -> dict[str, str]:
     """Hash every selected reference file, keyed by clip identity."""
     return {name: sha256_file(bank / f"{name}.npz") for name in names}
+
+
+def load_validated_contact_proxy(
+    proxy_manifest_path: Path,
+    validation_report_path: Path,
+    names: list[str],
+    source_hashes: dict[str, str],
+) -> tuple[dict[str, np.ndarray], dict[str, Any]]:
+    """Load contact masks only through a passing, hash-bound validation report."""
+    proxy_manifest_path = proxy_manifest_path.resolve()
+    validation_report_path = validation_report_path.resolve()
+    proxy_manifest_sha256 = sha256_file(proxy_manifest_path)
+    report = json.loads(validation_report_path.read_text())
+    gate_results = report.get("gate_results")
+    if (
+        report.get("schema_version") != "contact_proxy_validation/1"
+        or report.get("classification")
+        != "measured held-out contact-instrument validation"
+        or report.get("status") != "validated"
+        or report.get("tolerance_frames") != CONTACT_TOLERANCE_FRAMES
+        or not isinstance(gate_results, dict)
+        or not gate_results
+        or not all(value is True for value in gate_results.values())
+    ):
+        raise ValueError("contact validation report is absent, failed, or incompatible")
+    scorer_path = ROOT / "tools" / "validate_contact_proxy.py"
+    if report.get("scorer_sha256") != sha256_file(scorer_path):
+        raise ValueError("contact validation scorer hash mismatch")
+    linked_proxy = report.get("inputs", {}).get("proxy_manifest", {})
+    if (
+        Path(linked_proxy.get("path", "")).resolve() != proxy_manifest_path
+        or linked_proxy.get("sha256") != proxy_manifest_sha256
+    ):
+        raise ValueError("validation report does not bind the requested proxy manifest")
+
+    manifest = json.loads(proxy_manifest_path.read_text())
+    if manifest.get("schema_version") != "reference_contact_proxy/1":
+        raise ValueError("unsupported reference-contact proxy manifest")
+    builder_path = ROOT / "tools" / "build_reference_contact_labels.py"
+    if manifest.get("builder_sha256") != sha256_file(builder_path):
+        raise ValueError("reference-contact proxy builder hash mismatch")
+    records = manifest.get("clips", {})
+    if not set(names).issubset(records):
+        raise ValueError("reference-contact proxy does not cover selected clips")
+
+    masks: dict[str, np.ndarray] = {}
+    artifacts: dict[str, str] = {}
+    for name in names:
+        record = records[name]
+        if record.get("source_motion_sha256") != source_hashes[name]:
+            raise ValueError(f"reference-contact source hash mismatch: {name}")
+        artifact = record.get("artifact", {})
+        path = Path(artifact.get("path", ""))
+        if not path.is_file() or artifact.get("sha256") != sha256_file(path):
+            raise ValueError(f"reference-contact artifact hash mismatch: {name}")
+        with np.load(path, allow_pickle=False) as arrays:
+            mask = np.asarray(arrays["contact"], dtype=bool)
+            fps = float(arrays["fps"])
+        if (
+            mask.ndim != 2
+            or mask.shape[1] != 2
+            or mask.shape[0] != int(record.get("frames", -1))
+            or not np.isclose(fps, 50.0)
+        ):
+            raise ValueError(f"invalid reference-contact artifact: {name}")
+        masks[name] = mask
+        artifacts[name] = artifact["sha256"]
+    provenance = {
+        "proxy_manifest": {
+            "path": str(proxy_manifest_path),
+            "sha256": proxy_manifest_sha256,
+        },
+        "validation_report": {
+            "path": str(validation_report_path),
+            "sha256": sha256_file(validation_report_path),
+        },
+        "label_artifact_sha256": artifacts,
+        "tolerance_frames": CONTACT_TOLERANCE_FRAMES,
+    }
+    return masks, provenance
+
+
+def score_contact_window(
+    reference_contact: np.ndarray,
+    observed_contact: np.ndarray,
+    *,
+    start_frame: int,
+    fps: float,
+) -> dict[str, Any]:
+    """Align post-step contacts to reference frames and flatten event metrics."""
+    observed = np.asarray(observed_contact, dtype=bool)
+    if observed.ndim != 2 or observed.shape[1] != 2:
+        raise ValueError("observed contact must have shape [survived_steps, 2]")
+    stop = start_frame + 1 + observed.shape[0]
+    reference = np.asarray(reference_contact, dtype=bool)[start_frame + 1 : stop]
+    if reference.shape != observed.shape:
+        raise ValueError("reference-contact window escaped its source timeline")
+    metrics = contact_event_metrics(
+        reference,
+        observed,
+        tolerance_frames=CONTACT_TOLERANCE_FRAMES,
+    )
+    flat: dict[str, Any] = {
+        "reference_contact_event_count": metrics["reference_event_count"],
+        "observed_contact_event_count": metrics["observed_event_count"],
+        "contact_event_tp": metrics["tp"],
+        "contact_event_fp": metrics["fp"],
+        "contact_event_fn": metrics["fn"],
+        "contact_event_precision": metrics["precision"],
+        "contact_event_recall": metrics["recall"],
+        "contact_event_f1": metrics["f1"],
+        "contact_event_timing_mae_s": metrics["matched_timing_mae_frames"] / fps,
+        "contact_state_iou": metrics["contact_state_iou"],
+        "contact_scored_frames": observed.shape[0],
+    }
+    for foot in ("left", "right"):
+        for event in ("touchdown", "liftoff"):
+            detail = metrics["detail"][foot][event]
+            prefix = f"contact_{foot}_{event}"
+            flat[f"{prefix}_tp"] = detail["tp"]
+            flat[f"{prefix}_fp"] = detail["fp"]
+            flat[f"{prefix}_fn"] = detail["fn"]
+            flat[f"{prefix}_f1"] = detail["f1"]
+            flat[f"{prefix}_timing_mae_s"] = (
+                detail["matched_timing_mae_frames"] / fps
+            )
+    return flat
 
 
 def quaternion_angle_error(first: torch.Tensor, second: torch.Tensor) -> torch.Tensor:
@@ -226,6 +357,22 @@ def evaluate(args: argparse.Namespace) -> int:
     checkpoint = args.checkpoint.resolve()
     names = read_names(clips_path)
     metadata = motion_metadata(names, bank)
+    active_reference_sha256 = selected_file_hashes(names, bank)
+    if (args.reference_contact_manifest is None) != (
+        args.contact_validation_report is None
+    ):
+        raise ValueError(
+            "reference-contact manifest and validation report must be supplied together"
+        )
+    reference_contact: dict[str, np.ndarray] | None = None
+    contact_provenance: dict[str, Any] | None = None
+    if args.reference_contact_manifest is not None:
+        reference_contact, contact_provenance = load_validated_contact_proxy(
+            args.reference_contact_manifest,
+            args.contact_validation_report,
+            names,
+            active_reference_sha256,
+        )
     phases = [float(value) for value in args.phases.split(",") if value]
     manifest = load_or_create_manifest(
         args.conditions.resolve(),
@@ -352,6 +499,11 @@ def evaluate(args: argparse.Namespace) -> int:
         dtype=torch.long,
         device=device,
     )
+    if reference_contact is not None:
+        if any(not np.isclose(record["fps"], 50.0) for record in metadata):
+            raise ValueError("validated contact timing currently requires 50 Hz references")
+        if not np.isclose(env.step_dt, 1.0 / 50.0):
+            raise ValueError("environment step does not align with 50 Hz contact labels")
 
     cmd.assign_clips(clip_ids, at_start=True)
     cmd.time_steps[:] = cmd.motion.clip_start[clip_ids] + local_starts
@@ -442,6 +594,11 @@ def evaluate(args: argparse.Namespace) -> int:
     previous_common_acceleration: torch.Tensor | None = None
 
     max_steps = int(horizons.max())
+    contact_history = (
+        None
+        if reference_contact is None
+        else torch.zeros((max_steps, num_envs, 2), dtype=torch.bool, device=device)
+    )
     with torch.inference_mode():
         for step in range(max_steps):
             actions = policy(obs)
@@ -607,6 +764,12 @@ def evaluate(args: argparse.Namespace) -> int:
                 contact |= (torch.linalg.vector_norm(force_history, dim=-1) > 1.0).any(
                     dim=2
                 )
+            if contact.shape != (num_envs, 2):
+                raise RuntimeError(
+                    f"unexpected foot-contact shape {tuple(contact.shape)}"
+                )
+            if contact_history is not None:
+                contact_history[step] = contact & active[:, None]
             contact_fraction = contact.float().mean(dim=1)
             foot_velocity = cmd.robot_body_lin_vel_w[:, foot_body_indexes, :2]
             foot_speed = torch.linalg.vector_norm(foot_velocity, dim=-1)
@@ -790,6 +953,17 @@ def evaluate(args: argparse.Namespace) -> int:
                 elif name == "common_body_jerk_error_mps3":
                     count = common_jerk_count[index].clamp_min(1.0)
                 row[f"{name}_mean"] = float(common_metric_sum[name][index] / count)
+        if reference_contact is not None and contact_history is not None:
+            survived = int(survived_steps[index])
+            observed = contact_history[:survived, index].cpu().numpy()
+            row.update(
+                score_contact_window(
+                    reference_contact[condition["clip"]],
+                    observed,
+                    start_frame=int(condition["start_frame"]),
+                    fps=50.0,
+                )
+            )
         rows.append(row)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
@@ -802,12 +976,13 @@ def evaluate(args: argparse.Namespace) -> int:
     meta = {
         "schema_version": "paired_eval_output/1",
         "classification": "post-audit evaluator; does not replace sealed outputs",
+        "task": task,
         "checkpoint": str(checkpoint),
         "checkpoint_sha256": sha256_file(checkpoint),
         "clips": str(clips_path),
         "clips_sha256": sha256_file(clips_path),
         "bank": str(bank),
-        "selected_reference_sha256": selected_file_hashes(names, bank),
+        "selected_reference_sha256": active_reference_sha256,
         "common_reference_bank": (
             None if common_reference_path is None else str(common_reference_path)
         ),
@@ -818,6 +993,7 @@ def evaluate(args: argparse.Namespace) -> int:
         ),
         "conditions": str(args.conditions.resolve()),
         "conditions_sha256": sha256_file(args.conditions.resolve()),
+        "validated_reference_contact": contact_provenance,
         "evaluator_sha256": sha256_file(Path(__file__).resolve()),
         "device": args.device,
         "nominal": args.nominal,
@@ -832,6 +1008,7 @@ def evaluate(args: argparse.Namespace) -> int:
                 ROOT / "climb" / "commands.py",
                 ROOT / "climb" / "env_cfg.py",
                 ROOT / "climb" / "motion_bank.py",
+                ROOT / "climb" / "contact_timing.py",
                 ROOT
                 / "mjlab-1.6.0"
                 / "src"
@@ -893,6 +1070,8 @@ def main() -> int:
     parser.add_argument("--clips", type=Path)
     parser.add_argument("--bank", type=Path)
     parser.add_argument("--common-reference-bank", type=Path)
+    parser.add_argument("--reference-contact-manifest", type=Path)
+    parser.add_argument("--contact-validation-report", type=Path)
     parser.add_argument("--conditions", type=Path)
     parser.add_argument("--out", type=Path)
     parser.add_argument("--phases", default=DEFAULT_PHASES)

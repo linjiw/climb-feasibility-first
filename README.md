@@ -2,6 +2,10 @@
 
 **Project page:** https://linjiw.github.io/climb-feasibility-first/ ·
 **Tool:** [refeas](https://github.com/linjiw/refeas) (dynamic-feasibility screen, Apache-2.0) ·
+**Feasibility table:** [`datasets/README.md`](datasets/README.md) (internal candidate; public release blocked) ·
+**Harness guide:** [`paper/PRACTITIONERS_GUIDE_HARNESS_TRAPS.md`](paper/PRACTITIONERS_GUIDE_HARNESS_TRAPS.md) ·
+**Phase-G table shell:** [`paper/PHASE_G_RESULT_TABLE_SHELL.md`](paper/PHASE_G_RESULT_TABLE_SHELL.md) ·
+**Paper completion plan:** [`plan/PAPER_COMPLETION_2026-09-04.md`](plan/PAPER_COMPLETION_2026-09-04.md) ·
 **Companion note (draft):** [`paper/companion/companion_note_draft.md`](paper/companion/companion_note_draft.md) ·
 **Flagship draft (with slots):** [`paper/flagship/DRAFT_full.md`](paper/flagship/DRAFT_full.md)
 
@@ -66,7 +70,7 @@ The closed conformance certificate remains tied to that historical commit. New w
 fresh isolated Newton v1.5.0 environment; the existing bridge currently reports a 1.6.0.dev0
 package and is not the recertification environment (`plan/NEWTON_SEGMENT_DIRECTION_2026-08-21.md`).
 
-## Status (2026-08-26)
+## Status (2026-09-04)
 
 Done: sampler collapse + non-floor (sealed ✓; upstream mjlab #1153 / whole_body_tracking #73),
 grounded repair (sealed ✓), dual-stack conformance |Δq̇| ≤ 3×10⁻⁵ (measured, four coupling errors
@@ -78,9 +82,14 @@ endpoints pass, regression stop), E-HYG (sealed pruning null), P-SIGN (sealed fa
 but benefit/coverage gates fail and raw-reference policy transfer is null). DFRP v1 now has a
 fail-closed, source-motion-bound exact contract: a frozen CPU panel admits 22/26 flagged repairs
 and 4/4 byte-identical controls, yielding 36 units and 10,561 legal starts; four failures remain
-excluded, and this is not a bank-wide recovery or policy claim. Pending 🕐: Newton v1.5 isolated
-recertification and its no-training predictive gate, a separately sealed segment-native follow-up
-under the corrected lifecycle/evaluator (the exploratory pilot was only 0.014 TV from control, so
-adaptive allocation remains untested), and E3 support moderation. The durable BONES-SEED screen is
-now `reports/feasibility_sonic/{hygiene_screen.csv,COMPLETED.json}`. Results
-freeze Dec 1; RSS 2027 target.
+excluded, and this is not a bank-wide recovery or policy claim. Newton v1.5 isolated
+recertification passed on two hash-bound units, but its sealed no-training predictive gate failed
+on valid data (adaptive partial ρ = 0.141, p = 0.158; LOCO lift −0.006), so Newton remains an
+instrument and G3 must never run. Pending 🕐: the unsealed exact-support G2−G1 segment-native
+follow-up (the exploratory pilot was only 0.014 TV from control, so adaptive allocation remains
+untested) and E3 support moderation. The durable BONES-SEED screen is now
+`reports/feasibility_sonic/{hygiene_screen.csv,COMPLETED.json}`. The current machine audit and
+next-direction brief are in `plan/NEXT_RESEARCH_2026-09-03.md`; the current citation boundary
+and eight-page completion path are in `paper/CITATION_CHECK_2026-09-04.md` and
+`plan/PAPER_COMPLETION_2026-09-04.md`. Results freeze Dec 1; ICRA 2027 is the immediate
+eight-page decision, with the full draft retained as the RSS-scale source.

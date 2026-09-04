@@ -300,8 +300,10 @@ class SegmentNativeMotionCommand(MultiClipMotionCommand):
     def segment_telemetry(self) -> dict[str, object]:
         """Return runtime state needed to audit a smoke or checkpoint."""
         concentration = self.sampler.concentration()
+        success_rates = self.sampler.conditional_success_rates()
+        learning_progress = self.sampler.learning_progress()
         return {
-            "schema_version": "segment_command_telemetry/1",
+            "schema_version": "segment_command_telemetry/2",
             "mode": self.sampler.mode,
             "unit_table_sha256": self.sampler.manifest["unit_table_sha256"],
             "horizon_steps": self.sampler.horizon_steps,
@@ -311,16 +313,28 @@ class SegmentNativeMotionCommand(MultiClipMotionCommand):
             "censored_resets": self.censored_resets,
             "invalid_start_count": self.invalid_start_count,
             "invalid_reference_frame_count": self.invalid_reference_frame_count,
+            "sampler_seed": int(self.cfg.sampler_seed),
+            "training_seed": int(self._env.cfg.seed),
             "top1_probability": concentration.top1_probability,
             "entropy_effective_units": concentration.entropy_effective_units,
             "adaptation_total_variation": (
                 self.sampler.adaptation_total_variation()
             ),
             "rank": self.sampler.rank,
+            "exploration_ratio": self.sampler.exploration_ratio,
+            "difficulty_power": self.sampler.difficulty_power,
+            "progress_window": self.sampler.progress_window,
+            "progress_floor": self.sampler.progress_floor,
+            "max_unit_probability": self.sampler.max_unit_probability,
+            "max_clip_probability": self.sampler.max_clip_probability,
             "rank_saturation_fraction": self.sampler.saturation_fraction(),
             "lifetime_attempts": self.sampler.lifetime_attempts.tolist(),
             "lifetime_failures": self.sampler.lifetime_failures.tolist(),
             "probabilities": self.sampler.probabilities.tolist(),
+            "conditional_success_rates": success_rates.tolist(),
+            "learning_progress": (
+                None if learning_progress is None else learning_progress.tolist()
+            ),
         }
 
     def assign_segments(

@@ -15,7 +15,7 @@ from .segment_command import (
     SegmentNativeMotionCommandCfg,
     segment_trial_timeout,
 )
-from .segment_runtime import SamplingMode
+from .segment_runtime import RankMode, SamplingMode
 
 
 def segment_native_g1_tracking_env_cfg(
@@ -25,6 +25,13 @@ def segment_native_g1_tracking_env_cfg(
     segment_sampling_mode: SamplingMode = "adaptive",
     sampler_seed: int = 0,
     env_seed: int | None = None,
+    segment_rank: RankMode = "failure",
+    segment_exploration_ratio: float = 0.1,
+    segment_difficulty_power: float = 1.0,
+    segment_progress_window: int = 10,
+    segment_progress_floor: float = 0.01,
+    max_unit_probability: float | None = 0.05,
+    max_clip_probability: float | None = 0.25,
     play: bool = False,
     verify_motion_hashes: bool = True,
     failure_penalty: float = -10.0,
@@ -46,6 +53,13 @@ def segment_native_g1_tracking_env_cfg(
         segment_manifest=segment_manifest,
         segment_sampling_mode=segment_sampling_mode,
         sampler_seed=sampler_seed,
+        segment_rank=segment_rank,
+        segment_exploration_ratio=segment_exploration_ratio,
+        segment_difficulty_power=segment_difficulty_power,
+        segment_progress_window=segment_progress_window,
+        segment_progress_floor=segment_progress_floor,
+        max_unit_probability=max_unit_probability,
+        max_clip_probability=max_clip_probability,
         verify_motion_hashes=verify_motion_hashes,
     )
     # The fixed segment horizon is the only time limit.  Keeping the upstream

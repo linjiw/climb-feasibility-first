@@ -1,0 +1,53 @@
+{
+ "builder_sha256": "870685978e74d82273ac02097702ce1e665b007f117f76cadbb14914a537ae08",
+ "classification": "outcome-blind reference-only instrument-validation panel",
+ "counts": {
+  "development": 10,
+  "feasible_hard_reference": 10,
+  "feasible_remainder": 10,
+  "validation": 10
+ },
+ "inputs": {
+  "panel_manifest": {
+   "path": "reports/g_segment/panel/panel_manifest.json",
+   "sha256": "77819dc8967075c074b5c187cde36c3e0e64c6ef4ebd514fbef5feece8d2dd97"
+  },
+  "strata": {
+   "path": "reports/g_segment/panel/strata.csv",
+   "sha256": "b4ca9953a4cf2c408169337adcb9e227c3840c64cd5ac36b1a81168cc5921e93"
+  },
+  "strata_manifest": {
+   "path": "reports/g_segment/panel/strata.manifest.json",
+   "sha256": "934f80be46e413e9ed825ad6d7fe6f782f02ea49e6a05ac9b67a497a6463c435"
+  }
+ },
+ "motion_sha256": {
+  "BMLmovi_Subject_47_F_MoSh_Subject_47_F_2_poses_120_jpos": "c946a78716ec7792d5e58af3ca1e0295d21667db48fe1749d100f2edc67bbd6c",
+  "BMLmovi_Subject_70_F_MoSh_Subject_70_F_15_poses_120_jpos": "52c64ae2b53a25b17eb0adb6452025c20621a85684e4d26012207f2f6575ee3e",
+  "CMU_118_118_14_poses_120_jpos": "655cfd5ba2eecb463c3fc688a076eccd2377f38bba6d8e6d4df562c957405ba8",
+  "CMU_132_132_48_poses_120_jpos": "2c9cc9bd01b710a91721103bef84f97de465d1795c77bd14d2aeb211eead496d",
+  "CMU_143_143_34_poses_60_jpos": "183d5e57620501817f958bd7cbf5e1988c84311cf18c9e79b65814f45589456e",
+  "CMU_55_55_05_poses_120_jpos": "e7728076ac3c021ade88b87d950f9b75e8580d01cea566420642a596cc0e8fe7",
+  "CMU_62_62_18_poses_60_jpos": "1c7e853dd2ad0e9bed8e328cab145720c32489ebb5d43ceb24caf72a3ca269d1",
+  "Eyes_Japan_Dataset_aita_walk-09-handbag-aita_poses_120_jpos": "f7d2b5a16c29efe60e2e77e5fd529bd829c6079285f5ed56c9c1c846f476ca0e",
+  "Eyes_Japan_Dataset_kaiwa_turn-03-look_at-kaiwa_poses_120_jpos": "45438b14f58fd7f1a8107451b128766015b46522def11d1bc3f63b8f78f4e14e",
+  "Eyes_Japan_Dataset_kawaguchi_pose-02-rest-kawaguchi_poses_120_jpos": "b81b48b0a534b86929b43b12646cf10240c949d796f460ce756023657355e9a3",
+  "Eyes_Japan_Dataset_shiono_walk-02-drank-shiono_poses_120_jpos": "aec91b96e16a89aff73eab1da3482a83365f7a46626279915b785301ebb34fec",
+  "KIT_167_turn_left09_poses_100_jpos": "1acda66253ed9df0bdb3dc6389caf1b82c493dd486ebc99aaf873fb83788ff91",
+  "KIT_379_push_recovery_left10_poses_100_jpos": "eff7baaca37ab5a40c8339d35851e7324dca659b2c908ad93192a6d5c3e5a713",
+  "KIT_425_step_over_gap02_poses_100_jpos": "b2652c71f6de1efdf348fe5b31b71448bd2a86eed6034f61153d179d83005909",
+  "KIT_442_conversation01_poses_100_jpos": "4db55d7b53491ed85f4b5ceb87c2daf0318419a0b657836b546cf7a9b3da235e",
+  "KIT_4_RightTurn08_poses_100_jpos": "af5a705544786db2ba25b11f5448c623e755cf98a268959893ef19de35da69a6",
+  "KIT_513_turn_left04_poses_100_jpos": "967627642d35104ac821c578235c9e60ca35539d07a38f2f9e11430c150d6cee",
+  "KIT_572_wave_right02_poses_100_jpos": "d5e83a797695e8069f40d595f8fc4f65def25bc2ed8bb7456debf3a6cde07d4a",
+  "KIT_675_dry_left_arm_10_poses_100_jpos": "4492f9f6bf9da8fb6203f28e0d1cb9a4180561b1264f926abb1e08b40a768aae",
+  "KIT_952_wipe_back_biglcircles03_poses_100_jpos": "b7f8db41694944bd019a689b2e97338c382d2a16377ff937709cc0ac281c1eec"
+ },
+ "output": {
+  "path": "reports/g_segment/contact_validation/panel.csv",
+  "sha256": "962f0b71e13dc7050fb89ae1e04e10d7ce902f444443ed907f7c47cfc8679017"
+ },
+ "schema_version": "contact_validation_panel/1",
+ "seed": 20260903,
+ "selection_rule": "within each frozen feasible-hard/remainder stratum, order by SHA256(seed:clip), take first 10, assign ranks 1-5 to rater development and 6-10 to held-out validation"
+}
