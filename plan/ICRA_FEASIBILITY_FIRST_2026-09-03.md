@@ -107,8 +107,8 @@ before parsing any endpoint row.
 | Newton | **ready as an instrument** | isolated Newton 1.5.0 / Warp 1.16 stack allocates on CUDA; measured two-unit recertification passes; its predictive gate failed, so G3 remains killed |
 | Phase-G compact inputs | **ready** | exact unit table, 100-clip disjoint panel, 2,800 paired conditions, 25/75 outcome-blind strata, hash-complete evaluation provenance, analyzer and calibration synthetic tests |
 | contact-timing instrument | **ready; validation pending** | fixed proxy builder, synchronized reference-only dual-view renderer, 10-development/10-held-out panel, source/model/tool hashes, per-foot event scorer, and evaluator gate pass synthetic/model/render tests; no force-plate truth is claimed and manual labels are absent |
-| G2 calibration | **ready except payload** | finite 12-setting design, PPO/environment/sampler seed binding, ledger-only selector, independent validation, and training-only launcher pass synthetic/dry-run checks |
-| Phase-G motion payload | **blocked** | `bank/amass` is absent; all 800 source motions must exist and match the unit-table hashes |
+| G2 calibration | **ready** | finite 12-setting design, PPO/environment/sampler seed binding, ledger-only selector, independent validation, training-only launcher, and all 800 calibration motion identities pass strict preflight |
+| Phase-G motion payload | **ready** | the ignored `bank/amass` symlink exposes a licensed local reconstruction; all 800 training plus 100 disjoint evaluation SHA-256 identities pass |
 | Phase-G seal | **not yet allowed** | calibration result, contact-timing disposition, and current-hardware 512-env footprint remain open |
 
 ## Hardware-consequence bridge
@@ -170,7 +170,8 @@ vendor limits, an emergency-stop procedure, and a separate safety approval.
 
 ## Immediate next action
 
-Restore the licensed AMASS→G1 bank at `bank/amass`, then run:
+The licensed AMASS→G1 bank is restored at `bank/amass`, and this check now reports 18 ok, three
+warnings, and zero blockers:
 
 ```bash
 source research.env
@@ -178,9 +179,9 @@ mjlab-1.6.0/.venv/bin/python tools/research_preflight.py \
   --g2-stage calibration --verify-motion-hashes --strict
 ```
 
-If all blockers clear, build the fixed contact proxy and blinded reference renders, run the 12
-calibration candidates at 50 iterations, select with `tools/calibrate_g2_treatment.py`, and
-validate the one selection on seed 20260904. Copy only the validated sampler parameters into the
-Phase-G draft; then record either a passing contact-instrument report or an explicit
-exploratory-only disposition, measure the 512-env footprint, and seal. Do not launch
-confirmation seeds or inspect Phase-G evaluator endpoints before those steps are complete.
+Next, run the 12 calibration candidates at 50 iterations, select with
+`tools/calibrate_g2_treatment.py`, and validate the one selection on seed 20260904. Copy only the
+validated sampler parameters into the Phase-G draft; then record either a passing
+contact-instrument report or an explicit exploratory-only disposition, measure the 512-env
+footprint, and seal. Do not launch confirmation seeds or inspect Phase-G evaluator endpoints
+before those steps are complete.

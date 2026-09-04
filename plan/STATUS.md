@@ -28,7 +28,7 @@ discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 |---|---|---|
 | **Newton 1.5 recertification (N-b)** | **PASS** on one easy + one contact-rich hash-bound DFRP v1 unit after seven live-model residuals were mirrored; zero dispersion across independent rebuilds. Conformance only; no policy or predictive claim. | `plan/NEWTON15_RECERT_RESULT.md`, `reports/newton15_recert/` |
 | **Newton predictive gate (N-c) — FAIL (valid)** | Sealed `b1773fc5…` before outcomes; attempt 4 was **not tested** (harness `env_spacing` artifact + one unlearnable unit), then addendum 1 sealed a unit-level exclusion with ≥36 required. **Attempt 5 (2026-08-28) is valid; sealed verdict FAIL:** adaptive partial ρ +0.14 (p 0.16), LOCO lift −0.006; grounded ρ +0.02, lift −0.036; 40 units. **G3 never runs; Newton is an instrument.** | `plan/NEWTON_PRED_RESULT.md`, `reports/newton15_pred/`, `autoresearch/autoresearch-260827-0040/research_log.md` |
-| **Phase-G seal draft** | `PREREGISTRATION_G_SEGMENT.md` remains unsealed. Done: ALP rank and explicit launcher plumbing; exact `tier_800` guard-0 unit table (1,184 attribution units / 368,951 legal starts); disjoint 100-clip panel with 2,800 conditions; outcome-blind 25/75 reference-hard strata; liveness-weighted continuous TrackingScore analyzer with six synthetic branches; hash-complete checkpoint/evaluator provenance manifest; finite endpoint-blind 50-iteration treatment-calibration grid and selector; exploratory-only checkpoint rank agreement among ALP, failure, and `p(1-p)`; `tools/run_when_free.sh`; a fail-closed licensed-bank intake that distinguishes 800-motion calibration from 900-motion full scope; and a source-hash-bound contact-timing instrument with a balanced 20-clip blinded-validation panel, three-branch scorer, and evaluator gate. The contact proxy is not validated and remains exploratory. G0 was removed before sealing because its uniform-over-clips allocation confounds the intended support-hygiene contrast; Phase G is now the controlled G2−G1 test. The compute estimate is 49.15 M transitions / approximately 1.37 training GPU-hours per full arm at the pilot rate. Current blockers are the absent licensed motion payload, unrun treatment calibration/validation, unresolved contact-timing disposition, unmeasured current-hardware footprint, and the intentionally absent seal. | `plan/PREREGISTRATION_G_SEGMENT.md`, `plan/G_CONTACT_TIMING_VALIDATION.md`, `plan/ICRA_FEASIBILITY_FIRST_2026-09-03.md`, `plan/PAPER_COMPLETION_2026-09-04.md`, `tools/research_preflight.py` |
+| **Phase-G seal draft** | `PREREGISTRATION_G_SEGMENT.md` remains unsealed. Done: ALP rank and explicit launcher plumbing; exact `tier_800` guard-0 unit table (1,184 attribution units / 368,951 legal starts); disjoint 100-clip panel with 2,800 conditions; outcome-blind 25/75 reference-hard strata; liveness-weighted continuous TrackingScore analyzer with six synthetic branches; hash-complete checkpoint/evaluator provenance manifest; finite endpoint-blind 50-iteration treatment-calibration grid and selector; exploratory-only checkpoint rank agreement among ALP, failure, and `p(1-p)`; `tools/run_when_free.sh`; a fail-closed licensed-bank intake that distinguishes 800-motion calibration from 900-motion full scope; and a source-hash-bound contact-timing instrument with a balanced 20-clip blinded-validation panel, three-branch scorer, and evaluator gate. The licensed local payload now passes all 900 committed identities and the strict calibration preflight reports 18 ok / 3 warnings / 0 blockers. The contact proxy is not validated and remains exploratory. G0 was removed before sealing because its uniform-over-clips allocation confounds the intended support-hygiene contrast; Phase G is now the controlled G2−G1 test. The compute estimate is 49.15 M transitions / approximately 1.37 training GPU-hours per full arm at the pilot rate. Remaining pre-seal work is treatment calibration/validation, contact-timing disposition, current-hardware footprint, and the seal. | `plan/PREREGISTRATION_G_SEGMENT.md`, `plan/G_CONTACT_TIMING_VALIDATION.md`, `plan/ICRA_FEASIBILITY_FIRST_2026-09-03.md`, `plan/PAPER_COMPLETION_2026-09-04.md`, `tools/research_preflight.py` |
 | **Companion release** | Blocked only on Linji's three decisions (`paper/LINJI_SIGNOFF_ASK_2026-08-26.md`, drafted, not sent). | `paper/` |
 
 ## Payoff directive (2026-08-21, Linji): approvals and launches
@@ -110,14 +110,14 @@ to file the upstream drafts.
 
 ## Next scheduled
 
-Writing-first through Sept 12: Linji's author/scope pass remains the companion critical path; the
-figure-injected HTML was refreshed 2026-08-26. The flagship §8 mechanism rewrite and DFRP v1 method
-integration also landed, followed by draft assembly and a fresh red-team sweep. No GPU training
-runs before Sept 15.
+Writing-first remains active while the ICRA-sized manuscript is assembled from the flagship;
+`paper/icra/OUTLINE.md` now fixes the eight-page causal spine. Linji's author/scope pass remains
+the companion critical path.
 
 Newton gates 1–2 are closed: conformance passed, but the predictive gate failed on valid data and
-killed G3. Restore and hash-check the licensed AMASS→G1 payload, measure the current-hardware
-512-env footprint, then review and seal the G1/G2 design before any new outcome exists. The
+killed G3. The licensed AMASS→G1 payload now passes all 900 hashes. Next run the endpoint-blind
+calibration and independent validation, measure the current-hardware 512-env footprint, then
+review and seal the G1/G2 design before any confirmation outcome exists. The
 one-seed wiring screen stops unless TV(G2,G1), entropy-effective units, invalid frames, and
 rejected-start mass all pass; additional seeds do not launch on a failed manipulation. E3 remains
 the independent sealed uniform-arm experiment. Dec 1 results freeze.

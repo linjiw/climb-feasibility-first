@@ -4,7 +4,7 @@
 > dataset candidate, and actuator-bridge boundaries continue in
 > `plan/ICRA_FEASIBILITY_FIRST_2026-09-03.md`.
 
-**Status:** unsealed research direction and environment audit, 2026-09-03. This file does not
+**Status:** unsealed research direction and environment audit, updated 2026-09-04. This file does not
 amend any sealed result. Endpoint-blind treatment calibration may run before the Phase-G seal;
 confirmatory G1/G2 training may not.
 
@@ -86,25 +86,25 @@ clip-duration exposure. Phase G now spends compute only on the controlled G2−G
 | Feasible-hard endpoint | ready | reference-only demand ranking creates a hash-bound 25/75 panel split; survival-weighted analyzer and six synthetic decision/provenance branches pass |
 | Evaluation provenance | ready | training ledgers bind checkpoint/launcher hashes; evaluator sidecars bind checkpoint/task/conditions/references; `tools/build_g_run_manifest.py` creates the fail-closed analyzer input without parsing outcomes |
 | Contact-timing instrument | ready; real validation pending | fixed kinematic proxy builder, reference-only dual-view renderer, balanced outcome-blind 10-development/10-held-out panel, immutable manifests, one-to-one ±40 ms scorer, and evaluator validation gate pass synthetic/model/render tests; no manual labels exist, so the metric remains exploratory |
-| G2 calibration | ready except payload | 12-setting finite design, PPO/environment/sampler seed binding, ledger-only selector, independent validation, and training-only launcher pass synthetic/dry-run checks |
+| G2 calibration | ready | 12-setting finite design, PPO/environment/sampler seed binding, ledger-only selector, independent validation, training-only launcher, and exact 800-motion payload pass preflight |
 | Training launcher | ready for explicit rank | `CLIMB_SEGMENT_RANK`, numeric sampler contract, and configurable checkpoint interval reach the command configuration; regression tests added |
 | Clip-level release candidate | ready internally | typed 10,705-row Parquet and manifest reproduce the aggregate screen; AMASS license review blocks public distribution |
-| Motion payload | **blocked** | the licensed AMASS→G1 `.npz` bank is absent from this checkout and no hash-matching copy was found under `/home/linjiw` |
+| Motion payload | **ready** | ignored `bank/amass` symlink exposes a licensed local reconstruction; the full intake verifies all 800 training plus 100 disjoint evaluation SHA-256 identities |
 | Historical policy checkpoints | optional / absent | ignored checkpoint files are absent; only historical reruns need them, while Phase-G G1/G2 train from scratch |
 | Seal | open by design | calibration may run unsealed; review the calibrated contract, contact-timing disposition, and 512-env footprint before confirmation |
 
-Last verified on this machine, 2026-09-03: **16 checks passed, four warnings, one blocker** for
-the calibration stage. The sole blocker is the licensed motion payload. Warnings cover the
-pending real contact-timing labels, the deliberately absent confirmation seal, and the optional
-historical policy checkpoint, plus the currently busy shared GPU. It was at 62% utilization with
-8,369 MiB free during this check; availability is a point measurement, not a reservation.
+Last verified on this machine, 2026-09-04: **18 checks passed, three warnings, zero blockers** for
+the calibration stage, including all 800 calibration motion hashes. Warnings cover the pending
+real contact-timing labels, the deliberately absent confirmation seal, and the optional historical
+policy checkpoint. The shared GPU had 8,753 MiB free at 59% utilization during the strict check;
+availability is a point measurement, not a reservation.
 
-The blocker-resolution contract is now explicit in
+The completed blocker-resolution record is in
 `plan/NEXT_STAGE_PAYLOAD_INTAKE_2026-09-03.md`. Calibration requires the 800 hash-bound training
 motions; full confirmation requires those plus 100 hash- and name-disjoint evaluation motions,
-for 900 unique identities. `tools/restore_phase_g_bank.py` validates a researcher-supplied local
-directory before optionally creating the ignored `bank/amass` symlink. It does not download,
-copy, or substitute motion data.
+for 900 unique identities. `tools/restore_phase_g_bank.py` verified the full local reconstruction
+before creating the ignored `bank/amass` symlink. It does not download, copy, or redistribute
+motion data.
 
 Newton 1.5.0 remains the evidence-bound environment. The official
 [Newton changelog](https://github.com/newton-physics/newton/blob/main/CHANGELOG.md) lists 1.5.1
@@ -151,15 +151,14 @@ unsealed Phase-G draft.
 The hierarchy, statistics, navigation, and responsive layouts remain readable, and every local
 link resolves. The revised home page leads with the three-stage feasibility-first system; the
 segment-native page presents the endpoint-blind calibration and continuous endpoint without
-promoting G2 as a result. Newton remains an instrument, G3 is closed, and G2−G1 is pending. This
-review is of the local 2026-09-03 candidate. The public GitHub Pages site still serves the
-2026-08-21 version; publishing requires the normal reviewed commit/push workflow.
+promoting G2 as a result. Newton remains an instrument, G3 is closed, the exact 900-file payload
+is restored locally, and G2−G1 remains pending calibration and sealing.
 
 ## Verification record
 
 ```text
 python -m pytest -q  # CLIMB launch variables cleared
-1155 passed, 10 warnings
+1156 passed, 10 warnings
 
 MJLab CUDA/MJWarp cart-pole smoke
 4 environments, 5 steps, finite rewards: PASS
@@ -186,7 +185,7 @@ passing, failing, and deterministic-repeat comparator branches: PASS
 
 python tools/research_preflight.py --g2-stage calibration \
   --verify-motion-hashes --strict
-16 ok, 4 warnings, 1 blocker (licensed bank absent; shared GPU at 62%; expected fail-closed result)
+18 ok, 3 warnings, 0 blockers (all 800 calibration motion identities pass)
 
 git diff --check
 PASS

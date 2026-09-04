@@ -22,11 +22,11 @@ results.
 
 ## Operational bottleneck
 
-The scientific design is ready; the exact motion payload is not. Phase-G calibration requires the
-800 hash-bound training motions, and full confirmation requires those 800 plus the 100 disjoint
-evaluation motions. No aggregate or sidecar in this checkout reconstructs the missing trajectories.
-Substituting a different retarget would change the experimental substrate and confound the only
-intended variable, G2 versus G1 allocation.
+The exact motion-payload bottleneck closed on 2026-09-04: a licensed local reconstruction matches
+all 800 hash-bound training motions and all 100 disjoint evaluation motions, and the strict
+calibration preflight reports zero blockers. The next experimental bottleneck is endpoint-blind
+treatment calibration and independent validation; confirmation still requires footprint review,
+contact-proxy disposition, and the Phase-G seal.
 
 The writing bottleneck is equally concrete: the flagship currently carries too many experiments,
 four broad contributions, and an outdated nearest-neighbour claim. Recent work already establishes
@@ -107,8 +107,8 @@ Do not add another comparison after reading endpoints.
 
 | date | deliverable | stop rule |
 |---|---|---|
-| Sep 4–5 | publish corrected project page; update related work and eight-page outline | no “first feasibility filter” or generic “data quality matters” claim remains |
-| Sep 5–6 | exact payload intake and hash verification | if 800 files fail identity, calibration does not run |
+| Sep 4–5 | publish corrected project page; update related work and eight-page outline | **page and `paper/icra/OUTLINE.md` complete;** no “first feasibility filter” or generic “data quality matters” claim remains |
+| Sep 5–6 | exact payload intake and hash verification | **complete: 900/900 identities pass;** any future mismatch stops calibration |
 | Sep 6–7 | 12-setting endpoint-blind calibration plus independent validation | failed validation returns Phase G to design; do not choose the next row using endpoints |
 | Sep 7–8 | contact-proxy disposition, 512-env footprint, rank diagnostic, final contract review, seal | any unresolved must be frozen as exploratory/omitted; no endpoint access |
 | Sep 8–10 | three-seed G1/G2 confirmation, paired evaluation, frozen analysis | manipulation/provenance failure produces `not_tested` |
@@ -116,10 +116,10 @@ Do not add another comparison after reading endpoints.
 | Sep 10–14 | compress to eight pages, render, arithmetic/citation/anonymity audit | every abstract/conclusion number must trace to one printed cell |
 | Sep 15 | author submission decision and upload | no submission claim without a verified PDF and author approval |
 
-If the payload is still absent at the Sep 6 intake gate, stop treating ICRA Phase G as the critical
-path. Finish the screen/benchmark manuscript from measured evidence or carry the full integrated
-paper to RSS 2027. Do not replace the exact bank, waive the seal, reduce the manipulation gate, or
-write a proposed outcome in past tense to preserve a deadline.
+If a future intake recheck fails, stop treating ICRA Phase G as the critical path. Finish the
+screen/benchmark manuscript from measured evidence or carry the full integrated paper to RSS 2027.
+Do not replace the exact bank, waive the seal, reduce the manipulation gate, or write a proposed
+outcome in past tense to preserve a deadline.
 
 ## Eight-page manuscript allocation
 
