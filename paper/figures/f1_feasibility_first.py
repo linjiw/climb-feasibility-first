@@ -22,6 +22,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "paper/figures/f1_feasibility_first"
+DOCS_OUT = ROOT / "docs/assets/f1_feasibility_first.png"
 
 RED = "#B3261E"
 RED_FILL = "#F7DEDB"
@@ -309,8 +310,15 @@ def main() -> None:
     )
     fig.tight_layout(w_pad=2.0)
     for extension in ("png", "pdf"):
-        fig.savefig(OUT.with_suffix(f".{extension}"), dpi=180, bbox_inches="tight")
-    print(f"wrote {OUT}.png/.pdf")
+        metadata = {"CreationDate": None, "ModDate": None} if extension == "pdf" else None
+        fig.savefig(
+            OUT.with_suffix(f".{extension}"),
+            dpi=180,
+            bbox_inches="tight",
+            metadata=metadata,
+        )
+    fig.savefig(DOCS_OUT, dpi=180, bbox_inches="tight")
+    print(f"wrote {OUT}.png/.pdf and {DOCS_OUT}")
 
 
 if __name__ == "__main__":
