@@ -13,8 +13,8 @@ central claim is narrow enough for the existing tables to hold:
 > signal. CLIMB screens and routes the final robot-space trajectory, constructs exact admissible
 > support, and applies learning-progress allocation only inside a hard feasibility gate.
 
-The revised working title is **“Feasibility-Gated Humanoid Motion Tracking: Separating Reference
-Physics from Curriculum Difficulty.”** The complete framing and next experiment cards are in
+The revised working title is **“CLIMB: Feasibility-Gated Motion Tracking for Generalist Humanoid
+Controllers.”** The complete framing and next experiment cards are in
 `plan/METHOD_REFRAME_2026-09-04.md`. A “prevents pathological collapse” headline remains reserved
 for a future matched dirty-support gate experiment; Phase G isolates allocator value inside a
 fixed gate.

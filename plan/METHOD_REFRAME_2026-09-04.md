@@ -149,8 +149,7 @@ validated evaluator; torque commands alone do not establish thermal or electrica
 
 The revised paper title is:
 
-> **Feasibility-Gated Humanoid Motion Tracking: Separating Reference Physics from Curriculum
-> Difficulty**
+> **CLIMB: Feasibility-Gated Motion Tracking for Generalist Humanoid Controllers**
 
 The stronger alternative—“Preventing Pathological Curriculum Collapse”—is reserved for a passed
 H1 gate-and-outcome comparison. “FeasTrack” is not introduced: CLIMB is already the repository and

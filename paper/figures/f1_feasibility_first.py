@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Compose the ICRA Figure 1 problem/mechanism contrast.
+"""Compose the ICRA Figure 1 CLIMB system pipeline.
 
-Panel (a) is an interpretation diagram grounded in the three-seed campaign.
-Panel (b) is measured from ``reports/N1_clip44_knee_id.json``.
-Panel (c) is a schematic of the frozen Phase-G exact-support contract; it is
-explicitly not a policy result.
+The diagram separates reference feasibility, bank-relative support, and
+intrinsic motion demand before policy outcomes enter the allocator. Counts are
+read from the frozen exact-support and DFRP artifacts rather than hand-entered.
 """
 
 from __future__ import annotations
@@ -18,8 +17,7 @@ matplotlib.use("Agg")
 matplotlib.rcParams["pdf.fonttype"] = 42
 matplotlib.rcParams["ps.fonttype"] = 42
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
-import numpy as np
+from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -30,24 +28,40 @@ RED = "#B3261E"
 RED_FILL = "#F7DEDB"
 TEAL = "#0B7285"
 TEAL_FILL = "#D9EEF1"
+BLUE = "#315A8C"
+BLUE_FILL = "#E1EAF4"
+GOLD = "#9A6700"
+GOLD_FILL = "#F5EBCF"
 INK = "#15222B"
 GRAY = "#5C6B75"
-LIGHT_GRAY = "#E8ECEF"
+LIGHT_GRAY = "#F1F3F4"
+WHITE = "#FFFFFF"
 
 
-def rounded_box(ax, xy, width, height, text, *, edge, face, fontsize=9.5) -> None:
+def rounded_box(
+    ax,
+    xy: tuple[float, float],
+    width: float,
+    height: float,
+    text: str,
+    *,
+    edge: str,
+    face: str,
+    fontsize: float = 9.0,
+    linewidth: float = 1.25,
+) -> None:
     """Draw one centered rounded box in axes coordinates."""
-    box = FancyBboxPatch(
+    patch = FancyBboxPatch(
         xy,
         width,
         height,
-        boxstyle="round,pad=0.025,rounding_size=0.03",
-        linewidth=1.3,
+        boxstyle="round,pad=0.018,rounding_size=0.025",
+        linewidth=linewidth,
         edgecolor=edge,
         facecolor=face,
         transform=ax.transAxes,
     )
-    ax.add_patch(box)
+    ax.add_patch(patch)
     ax.text(
         xy[0] + width / 2,
         xy[1] + height / 2,
@@ -57,18 +71,27 @@ def rounded_box(ax, xy, width, height, text, *, edge, face, fontsize=9.5) -> Non
         va="center",
         fontsize=fontsize,
         color=INK,
+        linespacing=1.25,
     )
 
 
-def arrow(ax, start, stop, *, color=GRAY, rad=0.0) -> None:
-    """Draw an arrow between axes-coordinate points."""
+def arrow(
+    ax,
+    start: tuple[float, float],
+    stop: tuple[float, float],
+    *,
+    color: str = GRAY,
+    rad: float = 0.0,
+    linewidth: float = 1.25,
+) -> None:
+    """Draw a directed connection in axes coordinates."""
     ax.add_patch(
         FancyArrowPatch(
             start,
             stop,
             arrowstyle="-|>",
             mutation_scale=10,
-            linewidth=1.2,
+            linewidth=linewidth,
             color=color,
             connectionstyle=f"arc3,rad={rad}",
             transform=ax.transAxes,
@@ -76,261 +99,207 @@ def arrow(ax, start, stop, *, color=GRAY, rad=0.0) -> None:
     )
 
 
-def campaign_summary() -> tuple[int, float, float]:
-    """Return the repeated-attractor seed count and campaign peak range."""
-    dose = json.loads((ROOT / "reports/A5_coverage_dose.json").read_text())
-    attractor = json.loads((ROOT / "reports/A7_attractor.json").read_text())["arms"]["adaptive"]
-    per_seed = attractor["per_seed"]
-    if not attractor["same_clip_across_seeds"]:
-        raise ValueError("Figure 1 requires the recorded shared adaptive attractor")
-    peaks = [float(row["max_top1"]) for row in dose["runs"] if row["arm"] == "adaptive"]
-    if len(peaks) != len(per_seed):
-        raise ValueError("Adaptive campaign and attractor seed counts disagree")
-    return len(per_seed), min(peaks), max(peaks)
+def artifact_counts() -> tuple[int, int, int, int]:
+    """Read exact-support and repair counts from their result artifacts."""
+    units = json.loads((ROOT / "reports/g_segment/unit_table.json").read_text())
+    repairs = json.loads(
+        (ROOT / "reports/dfrp_v1_exact_panel/iter1/result.json").read_text()
+    )
+    return (
+        int(repairs["counts"]["flagged_exact_ready"]),
+        int(repairs["counts"]["flagged"]),
+        int(units["counts"]["admissible_units"]),
+        int(units["counts"]["legal_starts"]),
+    )
 
 
-def failure_loop(ax) -> None:
-    """Panel a: policy error feeds exposure without a feasibility check."""
-    n_seeds, peak_min, peak_max = campaign_summary()
-    ax.set_axis_off()
+def draw_factorization(ax) -> None:
+    """Draw the three quantities that CLIMB keeps separate."""
+    ax.text(
+        0.015,
+        0.915,
+        "Tracking difficulty is a gated object",
+        transform=ax.transAxes,
+        fontsize=10.2,
+        fontweight="bold",
+        color=INK,
+        va="center",
+    )
+    factor_y = 0.84
+    box_w = 0.205
     rounded_box(
         ax,
-        (0.04, 0.58),
-        0.35,
-        0.18,
-        "retargeted\nreference\ndefect",
-        edge=RED,
-        face=RED_FILL,
+        (0.30, factor_y),
+        box_w,
+        0.095,
+        r"FEASIBILITY  $\mathcal{F}(r;M,E)$" "\nrobot + scene admissibility",
+        edge=TEAL,
+        face=TEAL_FILL,
+        fontsize=8.2,
+    )
+    ax.text(
+        0.518,
+        factor_y + 0.048,
+        r"$\times$",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=14,
     )
     rounded_box(
         ax,
-        (0.60, 0.58),
-        0.35,
-        0.18,
-        "persistent\npolicy\nfailure",
+        (0.535, factor_y),
+        box_w,
+        0.095,
+        r"SUPPORT  $\mathcal{S}(r;\mathcal{B})$" "\nbank-relative representation",
+        edge=BLUE,
+        face=BLUE_FILL,
+        fontsize=8.2,
+    )
+    ax.text(
+        0.753,
+        factor_y + 0.048,
+        r"$\times$",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=14,
+    )
+    rounded_box(
+        ax,
+        (0.77, factor_y),
+        box_w,
+        0.095,
+        r"INTRINSIC  $\mathcal{I}(r)$" "\nmotion demand",
+        edge=GOLD,
+        face=GOLD_FILL,
+        fontsize=8.2,
+    )
+
+
+def draw_pipeline(ax) -> None:
+    """Draw the screen--repair--allocate data-to-policy loop."""
+    repaired, repair_total, units, starts = artifact_counts()
+    y = 0.40
+    height = 0.27
+
+    rounded_box(
+        ax,
+        (0.02, y + 0.035),
+        0.12,
+        0.20,
+        "ROBOT-SPACE\nMOTION STREAM\n\nrobot + scene model",
         edge=GRAY,
         face=LIGHT_GRAY,
+        fontsize=8.3,
     )
     rounded_box(
         ax,
-        (0.32, 0.20),
-        0.36,
+        (0.18, y),
         0.18,
-        "sampler assigns\nmore\nexposure",
+        height,
+        "1  ·  refeas SCREEN\n\ncontact-free inverse dynamics\n+ contact-capacity LP\n\nframe-level slack + cause",
+        edge=TEAL,
+        face=TEAL_FILL,
+        fontsize=8.4,
+    )
+    rounded_box(
+        ax,
+        (0.40, y),
+        0.20,
+        height,
+        "2  ·  DFRP ROUTE + REPAIR\n\nadmit supported intervals\nproject candidate contacts\nre-screen + fidelity gates\n\n"
+        f"{repaired}/{repair_total} panel candidates qualify",
+        edge=BLUE,
+        face=BLUE_FILL,
+        fontsize=8.25,
+    )
+    rounded_box(
+        ax,
+        (0.64, y),
+        0.20,
+        height,
+        "3  ·  EXACT-SUPPORT ALP\n\nnon-wrapping legal starts\nhard gate: rejected mass = 0\nunit + clip concentration caps\n\n"
+        f"{units:,} units · {starts:,} starts",
+        edge=GOLD,
+        face=GOLD_FILL,
+        fontsize=8.25,
+    )
+    rounded_box(
+        ax,
+        (0.875, y + 0.035),
+        0.105,
+        0.20,
+        "G1 TRACKING\nPOLICY\n\npaired held-out\nevaluation",
+        edge=INK,
+        face=WHITE,
+        fontsize=8.3,
+    )
+
+    arrow(ax, (0.14, y + 0.135), (0.18, y + 0.135))
+    arrow(ax, (0.36, y + 0.135), (0.40, y + 0.135))
+    arrow(ax, (0.60, y + 0.135), (0.64, y + 0.135))
+    arrow(ax, (0.84, y + 0.135), (0.875, y + 0.135))
+
+    rounded_box(
+        ax,
+        (0.425, 0.18),
+        0.15,
+        0.095,
+        "QUARANTINE\nresidual / excess distortion",
         edge=RED,
         face=RED_FILL,
+        fontsize=7.9,
+        linewidth=1.0,
     )
-    arrow(ax, (0.39, 0.67), (0.60, 0.67))
-    arrow(ax, (0.76, 0.58), (0.62, 0.38), color=RED)
-    arrow(ax, (0.34, 0.29), (0.18, 0.58), color=RED)
+    arrow(ax, (0.50, y), (0.50, 0.275), color=RED, linewidth=1.0)
+
+    arrow(
+        ax,
+        (0.94, y + 0.235),
+        (0.74, y + height),
+        color=TEAL,
+        rad=0.42,
+        linewidth=1.35,
+    )
     ax.text(
-        0.5,
-        0.04,
-        f"Observed in {n_seeds}/{n_seeds} seeds: the same attractor recurs.\n"
-        f"Campaign peak top-1 mass: {peak_min:.2f}–{peak_max:.2f}.",
+        0.84,
+        0.735,
+        "policy outcomes update learning progress\nonly inside admitted support",
         transform=ax.transAxes,
         ha="center",
-        va="bottom",
-        fontsize=8.6,
-        color=INK,
+        va="center",
+        fontsize=8.0,
+        color=TEAL,
     )
-    ax.set_title("(a) Defect-driven failure loop", loc="left", fontsize=10.8, pad=9)
 
-
-def unsupported_trace(ax) -> None:
-    """Panel b: measured unsupported force for the shared attractor."""
-    payload = json.loads((ROOT / "reports/N1_clip44_knee_id.json").read_text())
-    frames = payload["frames"]
-    time = np.array([float(row["t"]) for row in frames])
-    no_contact = np.array([int(row["n_contacts"]) == 0 for row in frames])
-    unsupported = np.array(
-        [
-            float(row["real"]["tl_unsupported_force_N"])
-            if row["real"]["tl_unsupported_force_N"] is not None
-            else (
-                float(row["real"]["unsupported_force_N"])
-                if int(row["n_contacts"]) == 0
-                else 0.0
-            )
-            for row in frames
-        ]
-    )
-    weight = float(payload["total_mass_kg"]) * 9.81
-    descent = (time >= 0.75) & (time <= 1.75)
-    descent_median = float(np.median(unsupported[descent]))
-    descent_no_contact = float(np.mean(no_contact[descent]))
-
-    ax.fill_between(time, unsupported, color=RED, alpha=0.23, step="mid")
-    ax.plot(time, unsupported, color=RED, linewidth=1.25)
-    ax.fill_between(
-        time,
-        0,
-        390,
-        where=no_contact & (unsupported > 0.5 * weight),
-        color=RED,
-        alpha=0.09,
-        step="mid",
-    )
-    ax.axhline(weight, color=GRAY, linestyle="--", linewidth=1.0)
     ax.text(
-        9.75,
-        weight - 10,
-        f"robot weight {weight:.0f} N",
-        ha="right",
-        va="top",
-        fontsize=8.2,
-        color=GRAY,
-    )
-    ax.annotate(
-        f"0.75–1.75 s: no contact on {descent_no_contact:.0%} of frames\n"
-        f"median unsupported ≈{descent_median:.0f} N",
-        xy=(1.27, 322),
-        xytext=(3.1, 345),
+        0.5,
+        0.065,
+        "Screening changes admission; DFRP recovers qualified data; ALP changes compute allocation. "
+        "Each interface is measured separately.",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
         fontsize=8.5,
-        color=INK,
-        arrowprops={"arrowstyle": "-|>", "color": RED, "lw": 1.0},
-    )
-    ax.set_xlim(0, 9.9)
-    ax.set_ylim(0, 390)
-    ax.set_xlabel("reference time [s]", fontsize=9.5)
-    ax.set_ylabel("unsupported force [N]", fontsize=9.5)
-    ax.tick_params(labelsize=8.5)
-    ax.set_title("(b) Robot-space feasibility screen", loc="left", fontsize=10.8, pad=9)
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
-
-
-def support_contract(ax) -> None:
-    """Panel c: same support, only allocation varies."""
-    unit_table = json.loads((ROOT / "reports/g_segment/unit_table.json").read_text())
-    n_units = int(unit_table["counts"]["admissible_units"])
-    n_starts = int(unit_table["counts"]["legal_starts"])
-    ax.set_axis_off()
-    ax.set_title("(c) Identical support, changed allocation", loc="left", fontsize=10.8, pad=9)
-
-    feasible = [(0.03, 0.24), (0.36, 0.30), (0.76, 0.20)]
-    rejected = [(0.27, 0.08), (0.67, 0.08)]
-    timeline_y = 0.76
-    ax.text(0.0, timeline_y + 0.08, "screened reference", transform=ax.transAxes, fontsize=8.5)
-    for start, width in feasible:
-        ax.add_patch(
-            Rectangle(
-                (start, timeline_y),
-                width,
-                0.06,
-                transform=ax.transAxes,
-                facecolor=TEAL,
-                edgecolor="none",
-            )
-        )
-    for start, width in rejected:
-        ax.add_patch(
-            Rectangle(
-                (start, timeline_y),
-                width,
-                0.06,
-                transform=ax.transAxes,
-                facecolor=RED,
-                edgecolor="none",
-                hatch="////",
-            )
-        )
-    ax.text(0.03, timeline_y - 0.06, "feasible intervals", transform=ax.transAxes, fontsize=8.0, color=TEAL)
-    ax.text(0.62, timeline_y - 0.06, "excluded", transform=ax.transAxes, fontsize=8.0, color=RED)
-
-    unit_x = np.array([0.08, 0.22, 0.43, 0.58, 0.80, 0.91])
-    control = np.array([0.55, 0.48, 0.70, 0.62, 0.50, 0.66])
-    treatment = np.array([0.30, 0.72, 0.42, 0.82, 0.52, 0.58])
-    bar_w = 0.035
-    base_y = 0.28
-    scale = 0.24
-    for x, height in zip(unit_x, control, strict=True):
-        ax.add_patch(
-            Rectangle(
-                (x - bar_w, base_y),
-                bar_w,
-                height * scale,
-                transform=ax.transAxes,
-                facecolor=GRAY,
-                edgecolor="none",
-            )
-        )
-    for x, height in zip(unit_x, treatment, strict=True):
-        ax.add_patch(
-            Rectangle(
-                (x, base_y),
-                bar_w,
-                height * scale,
-                transform=ax.transAxes,
-                facecolor=TEAL,
-                edgecolor="none",
-            )
-        )
-    ax.plot([0.03, 0.97], [base_y, base_y], transform=ax.transAxes, color=INK, linewidth=0.8)
-    ax.text(0.03, base_y + 0.22, "allocation over identical units", transform=ax.transAxes, fontsize=8.5)
-    legend_y = 0.18
-    ax.add_patch(Rectangle((0.10, legend_y), 0.035, 0.035, transform=ax.transAxes, facecolor=GRAY))
-    ax.text(0.155, legend_y + 0.017, "G1 uniform", transform=ax.transAxes, fontsize=8.0, va="center")
-    ax.add_patch(Rectangle((0.52, legend_y), 0.035, 0.035, transform=ax.transAxes, facecolor=TEAL))
-    ax.text(0.575, legend_y + 0.017, "G2 ALP", transform=ax.transAxes, fontsize=8.0, va="center")
-    ax.add_patch(
-        FancyBboxPatch(
-            (-0.02, 0.0),
-            1.04,
-            0.14,
-            boxstyle="round,pad=0.004,rounding_size=0.01",
-            linewidth=0.9,
-            edgecolor=TEAL,
-            facecolor=TEAL_FILL,
-            transform=ax.transAxes,
-            clip_on=False,
-        )
-    )
-    ax.text(
-        0.5,
-        0.108,
-        f"Same support: {n_units:,} units",
-        transform=ax.transAxes,
-        ha="center",
-        va="center",
-        fontsize=8.0,
-        color=INK,
-    )
-    ax.text(
-        0.5,
-        0.068,
-        f"{n_starts:,} starts · same hashes · PPO · compute",
-        transform=ax.transAxes,
-        ha="center",
-        va="center",
-        fontsize=8.0,
-        color=INK,
-    )
-    ax.text(
-        0.5,
-        0.027,
-        "Policy outcome pending",
-        transform=ax.transAxes,
-        ha="center",
-        va="center",
-        fontsize=8.2,
         color=INK,
     )
 
 
 def main() -> None:
     """Render PNG and vector PDF outputs."""
-    fig, axes = plt.subplots(1, 3, figsize=(9.3, 3.7), gridspec_kw={"width_ratios": [1.0, 1.25, 1.1]})
-    failure_loop(axes[0])
-    unsupported_trace(axes[1])
-    support_contract(axes[2])
+    fig, ax = plt.subplots(figsize=(9.6, 3.45))
+    ax.set_axis_off()
+    draw_factorization(ax)
+    draw_pipeline(ax)
     fig.suptitle(
-        "Feasibility-gated tracking: screen reference physics before allocating learning",
-        fontsize=12.2,
-        y=1.01,
+        "CLIMB: close the reference–physics loop before allocating policy updates",
+        fontsize=12.0,
+        y=0.995,
         color=INK,
+        fontweight="bold",
     )
-    fig.tight_layout(w_pad=2.0)
+    fig.subplots_adjust(left=0.015, right=0.985, bottom=0.02, top=0.92)
     for extension in ("png", "pdf"):
         metadata = {"CreationDate": None, "ModDate": None} if extension == "pdf" else None
         fig.savefig(

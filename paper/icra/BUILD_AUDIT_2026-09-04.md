@@ -9,8 +9,8 @@ not authorize Phase-G endpoint access or convert pending text into a result.
 |---|---|
 | official class | PaperCept `ieeeconf.cls`, SHA-256 `4befef671c2a996889d325f5170d3387bf42aac9a37dcaa93724ad49816e4ec2` |
 | compiler | Tectonic 0.17.0 static Linux build, archive SHA-256 `8533d07f9ccbd7a65824b9e0459041bca34af1eb33daba48f59215593753a3b7` |
-| output | `paper/icra/ICRA_DRAFT.pdf`, SHA-256 `f86345d656b5949012935ec32651641cd712021b70c6ad57b6c744a917b6638c` |
-| page gate | 6 of 8 total pages |
+| output | `paper/icra/ICRA_DRAFT.pdf`, SHA-256 `89fe723521691d549c93a45157ddaa1a51092eeea9b63fd342cfaa3f1f60815a` |
+| page gate | 7 of 8 total pages |
 | page geometry | US Letter, 612 × 792 pt |
 | fonts | all embedded; zero Type 3 fonts |
 | layout log | zero overfull boxes |
@@ -29,12 +29,11 @@ reruns it twice and records the matching PDF digest under the pinned inputs.
 
 ## Remaining paper-critical slots
 
-- Replace the Phase-G pending sentence and subsection only through the exhaustive frozen status.
-- Add the calibration/validation and confirmation result tables without exceeding the remaining
-  page budget.
+- Keep the ALP-versus-uniform endpoint out of the claim set until the frozen manipulation and
+  provenance gates pass; if completed, add only the bounded result and its seed/clip uncertainty.
 - Replace the generic anonymous-artifact availability sentence with the final anonymous review
   artifact route.
 - Run the bounded 2025–2026 proceedings novelty check, PDF checker, and final anonymity sweep.
 
-The six-page count leaves two pages for the frozen Phase-G result objects; it is capacity evidence,
-not a submission-ready verdict.
+The seven-page count leaves one page for a bounded result object or reviewer-critical method
+detail; it is capacity evidence, not a submission-ready verdict.

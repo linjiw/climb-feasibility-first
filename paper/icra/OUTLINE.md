@@ -1,4 +1,4 @@
-# Feasibility-Gated Humanoid Motion Tracking — ICRA 2027 manuscript outline
+# CLIMB: Feasibility-Gated Motion Tracking for Generalist Humanoid Controllers — ICRA 2027 outline
 
 **Status:** unsealed writing scaffold, 2026-09-04. This file contains no new result and does
 not authorize endpoint access. Phase-G cells remain conditional on the calibration,
@@ -6,56 +6,49 @@ independent-validation, seal, manipulation, and provenance gates.
 
 ## Paper contract
 
-**Working title:** *Feasibility-Gated Humanoid Motion Tracking: Separating Reference Physics
-from Curriculum Difficulty*
+**Working title:** *CLIMB: Feasibility-Gated Motion Tracking for Generalist Humanoid Controllers*
 
 **Operational bottleneck.** A failure-adaptive sampler can assign increasing training exposure
 to a motion that the robot cannot realize under the modeled contacts and actuator limits. In
 that case, policy error is not evidence of controllable difficulty, and sampling it more often
 does not isolate the allocation problem.
 
-**Method claim.** CLIMB treats reference feasibility as an explicit input to curriculum design.
-It screens the final robot-space motion, routes each interval to admit / contextualize / repair /
-quarantine, and assigns learning-progress mass only inside exact admissible support. The current
-binary gate is the testable special case of feasibility-conditioned allocation; a smooth score is
-a separate future intervention.
+**Method claim.** CLIMB is a closed-loop data-to-policy framework with three interfaces:
+`refeas` screens the final robot-space motion; DFRP projects eligible contacts and re-qualifies
+the complete trajectory; and exact-support ALP assigns learning-progress mass only inside hard
+admissible support. Policy outcomes update allocation but never override admission.
 
-**Evidence claim.** On the tested AMASS-to-`whole_body_tracking`-to-Unitree-G1 pipeline, the
-screen identifies inadmissible reference intervals before policy training and the exact-support
-interface isolates the remaining effect of adaptive allocation. Bank rates stay paired with their
-corpus, retargeter, robot, and scene.
+**Evidence claim.** On the tested artifacts, the screen identifies inadmissible robot-space
+intervals before policy training, DFRP qualifies 22/26 stratified repair candidates while leaving
+4/4 feasible controls unchanged, and feasibility features improve difficulty transfer across
+policies from 0.567 to 0.609 on 100 held-out clips. Bank rates stay paired with their corpus,
+retargeter, robot, and scene.
 
 **Contribution list.** Keep these three noun-phrase contributions and use the same comparison
 classes in the result tables.
 
-1. **Reference--physics misalignment diagnosis:** the repeated curriculum attractor is tied to an
-   unsupported robot-space interval, and the screen reports 2,442 of 10,705 clips above the fixed
-   infeasible-frame threshold on the primary pipeline.
-2. **The CLIMB method:** contact/torque screening, cause-aware routing, and a hard feasibility gate
-   produce 1,184 admissible units and 368,951 legal starts with fixed terminals, concentration
-   caps, paired conditions, and content hashes.
-3. **Claim-isolating evaluation:** bank-scale and cross-implementation screen tests, a qualified
-   repair path, and calibrated learning-progress versus deployment-uniform allocation on identical
-   support.
+1. **RPM factorization and `refeas`:** a final-trajectory screen tested at bank scale and across
+   two implementations.
+2. **DFRP:** a fail-closed contact projection that qualifies 22/26 stratified candidates while
+   leaving 4/4 feasible controls unchanged.
+3. **Exact-support ALP:** 1,184 units and 368,951 starts, zero rejected mass, and bounded unit/clip
+   allocation.
 
-Contribution 3 becomes an empirical result only after Phase G is complete. If Phase G cannot
-be completed, rename it “a preregistered controlled allocation protocol” in the abstract,
-introduction, and conclusion.
+The third contribution is currently a mechanism and interface claim. Policy superiority requires
+a passed matched endpoint and is not part of the present abstract or conclusion.
 
 ## Abstract skeleton — seven sentences, about 175 words
 
-1. **Ground and gap:** Adaptive curricula concentrate updates on hard motion, but policy error
-   conflates controllable difficulty with inadmissible reference dynamics.
-2. **Mechanism:** Define reference--physics misalignment and its curriculum consequence.
-3. **Observed consequence:** Report the three-seed attractor and localized unsupported wrench.
-4. **Method:** Introduce CLIMB's screen, routing rule, and exact-support binary gate.
-5. **Current method scale:** Report the 1,184 units and 368,951 legal starts.
-6. **Measured setup/result:** Report the primary 10,705-clip count together with the separate
-   4,950-clip production-bank result and 39/40 implementation agreement.
-7. **Controlled outcome:** Replace the current calibration-status sentence with exactly one
-   Phase-G branch—`positive`,
-   `null`, `inconclusive`, or `not_tested`—and include the comparator, independent unit, primary
-   metric, estimate, interval, and scope.
+1. **Ground and gap:** Outcome-adaptive curricula treat persistent error as learnable difficulty,
+   but a retargeted reference can demand contact or actuator effort the robot and scene cannot supply.
+2. **Factorization:** Define RPM and separate feasibility, bank support, and intrinsic demand.
+3. **Method:** Introduce `refeas`, DFRP, and exact-support capped ALP in that order.
+4. **Observed consequence:** Report the three-seed recurrent attractor and its localized unsupported wrench.
+5. **Screen evidence:** Report the 10,705-clip count and 39/40 same-input implementation agreement.
+6. **Repair and transfer evidence:** Report 22/26 repair qualification, 4/4 no-op controls, and
+   cross-policy transfer from 0.567 to 0.609 on 100 clips.
+7. **Bounded conclusion:** State that the interfaces separate admissibility, policy learning, and
+   compute allocation without claiming an ALP endpoint win.
 
 Do not use “first,” “novel,” “safe,” “general,” “significantly,” or “outperforms” unless the
 final evidence licenses the word under `paper/PHASE_G_RESULT_TABLE_SHELL.md`.
@@ -216,7 +209,7 @@ that are omitted from the short paper.
 
 | object | job | source | non-claim |
 |---|---|---|---|
-| Fig. 1 | hook-scenario plus mechanism contrast: concentrated exposure on an unsupported interval → analytic screen → identical-support allocation test | `paper/figures/f1_feasibility_first.py` → `.png/.pdf`; measured panel from `reports/N1_clip44_knee_id.json` | not a full software architecture and not evidence that G2 wins |
+| Fig. 1 | complete data-to-policy framework: factorization → `refeas` screen → DFRP repair/re-qualification → exact-support ALP → policy outcomes | `paper/figures/f1_feasibility_first.py` → `.png/.pdf`; artifact counts loaded from frozen JSON | repair callout is a stratified panel; support counts are not policy-performance evidence |
 | Fig. 2 | bank-scale count with the primary and production pipelines visually separated; include 40-clip implementation agreement | `paper/figures/f2_bank_scale.py` → `.png/.pdf`; data in `reports/feasibility_all/`, `reports/feasibility_sonic/`, `reports/feasibility_xcheck/` | not a causal comparison of retargeters; enriched agreement panel is not prevalence |
 | Fig. 3 | Phase-G primary estimate and declared secondaries, or a gate-failure diagram if `not_tested` | `paper/PHASE_G_RESULT_TABLE_SHELL.md` and future sealed result | no endpoint panel if manipulation/provenance fails |
 | Table 1 | Phase-G manipulation, primary contrast, survival, and common-survivor safeguards | frozen G tables | exactly one exhaustive status |
