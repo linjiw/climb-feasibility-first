@@ -126,9 +126,9 @@ order and hash are already bound inside `reports/g_segment/unit_table.json`:
 mjlab-1.6.0/.venv/bin/python tools/research_preflight.py --materialize-clips
 ```
 
-After the licensed bank is restored, add `--verify-motion-hashes`; all 800 calibration identities
-must pass before a calibration launch, and all 900 full-scope identities must pass before the seal
-or confirmatory training. The ignored local `research.env` is ready to source;
+Hash verification is now mandatory: all 800 calibration identities pass before the calibration
+launch, and all 900 full-scope identities must continue to pass before the seal or confirmatory
+training. The ignored local `research.env` is ready to source;
 `research.env.example` is the shareable template. The preflight treats a missing or changed G2
 contract as a blocker. The local GPU is shared, so a passing preflight is not ownership; launch
 remains routed through `tools/run_when_free.sh`.
@@ -158,7 +158,7 @@ is restored locally, and G2−G1 remains pending calibration and sealing.
 
 ```text
 python -m pytest -q  # CLIMB launch variables cleared
-1156 passed, 10 warnings
+1158 passed, 10 warnings
 
 MJLab CUDA/MJWarp cart-pole smoke
 4 environments, 5 steps, finite rewards: PASS
