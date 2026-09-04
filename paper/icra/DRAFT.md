@@ -292,9 +292,15 @@ the 8.0--8.5 s rise again becomes unsupported. Every trained policy has zero sur
 0, while the tested late 8 s offset survives. This explains why random-offset averaging had
 previously made an untrackable prefix look partially learnable.
 
-**[Fig. 1: sampler concentration and the time-aligned unsupported descent; sources
-`f2_collapse` and `f3_anatomy`. Caption must say that temporal coincidence plus the modeled wrench
-diagnosis is pipeline-specific and does not prove all adaptive collapse has this cause.]**
+![The feasibility-first trial interface.](../figures/f1_feasibility_first.png)
+
+**Fig. 1. The feasibility-first trial interface.** (a) In the motivating closed-loop simulation
+campaign, the same attractor recurs in 3/3 adaptive seeds; 0.87--0.89 is the campaign maximum
+top-1 mass and does not belong to that clip in every seed. (b) A reference-only robot-space audit
+localizes the attractor's unsupported interval. This pipeline-specific temporal and modeled-wrench
+diagnosis does not establish that all adaptive collapse has this cause. (c) The preregistered G1/G2
+comparison keeps the 1,184 units, 368,951 legal starts, hashes, PPO implementation, and compute
+fixed while changing allocation. No Phase-G policy outcome is shown.
 
 ### 5.2 Infeasibility prevalence is pipeline-dependent
 

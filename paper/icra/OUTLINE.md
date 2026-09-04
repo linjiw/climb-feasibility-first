@@ -210,7 +210,7 @@ that are omitted from the short paper.
 
 | object | job | source | non-claim |
 |---|---|---|---|
-| Fig. 1 | hook-scenario plus mechanism contrast: concentrated exposure on an unsupported interval → analytic screen → identical-support allocation test | `paper/figures/f2_collapse.py`, `paper/figures/f3_anatomy.py`, exact-support schematic to compose | not a full software architecture and not evidence that G2 wins |
+| Fig. 1 | hook-scenario plus mechanism contrast: concentrated exposure on an unsupported interval → analytic screen → identical-support allocation test | `paper/figures/f1_feasibility_first.py` → `.png/.pdf`; measured panel from `reports/N1_clip44_knee_id.json` | not a full software architecture and not evidence that G2 wins |
 | Fig. 2 | bank-scale count with the primary and production pipelines visually separated; include 40-clip implementation agreement | `reports/feasibility_all/`, `reports/feasibility_sonic/`, `reports/feasibility_xcheck/` | not a causal comparison of retargeters |
 | Fig. 3 | Phase-G primary estimate and declared secondaries, or a gate-failure diagram if `not_tested` | `paper/PHASE_G_RESULT_TABLE_SHELL.md` and future sealed result | no endpoint panel if manipulation/provenance fails |
 | Table 1 | screen definition, assumptions, thresholds, cost, and raw denominators | `reports/feasibility_all/`, `reports/feasibility_sonic/` | thresholds are design choices, not discovered constants |
