@@ -179,7 +179,9 @@ def main() -> int:
                 gated([
                     str(PYTHON), "tools/eval_paired_v2.py", "--checkpoint", str(checkpoint),
                     "--clips", str(ROOT / "reports/g_segment/panel/panel.txt"),
-                    "--bank", str(ROOT / "bank/amass"), "--conditions", str(CONDITIONS),
+                    "--bank", str(ROOT / "bank/amass"),
+                    "--common-reference-bank", str(ROOT / "bank/amass"),
+                    "--conditions", str(CONDITIONS),
                     "--episodes", "4", "--window", "3", "--seed", "20260910",
                     "--joint-noise-seed", "20260911", "--joint-noise", "0.05",
                     "--nconmax", "70", "--out", str(output),

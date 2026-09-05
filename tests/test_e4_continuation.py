@@ -69,3 +69,24 @@ def test_result_rewrite_rejected(tmp_path):
     runner.write_once(path, {"status": "not_tested"})
     with pytest.raises(ValueError, match="overwrite"):
         runner.write_once(path, {"status": "pass_for_evaluation"})
+
+
+def test_passed_gate_builds_all_cells_with_common_reference(isolated, monkeypatch):
+    out, _ = isolated
+    passing = {"status": "pass_for_evaluation", "policy_endpoints_opened": False}
+    runner.write_once(out / "seed1/manipulation_result.json", passing)
+    monkeypatch.setattr(runner, "evaluate", lambda *args: passing)
+    commands = []
+    monkeypatch.setattr(runner, "gated", lambda command, log, seed: commands.append(command))
+    monkeypatch.setattr(runner, "collect_run", lambda *args: ({"ledgers": []}, {}))
+    monkeypatch.setattr(runner, "manipulation_gate", lambda manifest: {"pass": True})
+    monkeypatch.setattr(runner, "build_manifest", lambda *args: {})
+    assert runner.main() == 0
+    evaluations = [c for c in commands if "tools/eval_paired_v2.py" in c]
+    assert len(evaluations) == 24
+    for command in evaluations:
+        bank = command[command.index("--bank") + 1]
+        common = command[command.index("--common-reference-bank") + 1]
+        assert bank == common
+        assert command[command.index("--episodes") + 1] == "4"
+        assert command[command.index("--seed") + 1] == "20260910"

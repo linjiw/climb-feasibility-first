@@ -7,8 +7,9 @@ Measured verification, 2026-09-05. No confirmatory policy endpoint is reported.
 - Method equations and E4 results visually inspected in `method.png` and
   `results.png`; project-page E4 section inspected in `site_e4.png`.
 - `mjlab-1.6.0/.venv/bin/python -m pytest tests/test_e4_continuation.py -q`:
-  five tests passed, including missing/changed/failed seed-1 records and a
-  failed all-seed gate preventing evaluator launch.
+  six tests passed, including missing/changed/failed seed-1 records, a
+  failed all-seed gate preventing evaluator launch, and explicit common-reference
+  binding in all 24 evaluation commands.
 - `tools/run_e4_confirmation.py --dry-run`: four remaining training arms and
   24 evaluation cells, gated by the existing seed-1 and complete-manipulation
   contracts.
