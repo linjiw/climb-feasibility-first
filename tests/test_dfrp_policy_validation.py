@@ -152,6 +152,7 @@ def test_recovery_receipt_cannot_mask_missing_payload(monkeypatch, tmp_path):
 def test_same_checkpoint_and_raw_common_reference_in_both_cells(monkeypatch, cells, tmp_path):
     monkeypatch.setattr(runner, "OUT", tmp_path / "new")
     monkeypatch.setattr(runner, "analyze", lambda *a: {"status": "synthetic"})
+    monkeypatch.setattr(runner.subprocess, "run", lambda *a, **k: None)
     calls = []
     monkeypatch.setattr(runner, "gated", lambda command, *a: calls.append(command))
     checkpoint = tmp_path / "test_phase_g_g1_s1/model_3999.pt"

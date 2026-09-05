@@ -6,14 +6,22 @@ discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 
 ## State as of 2026-08-21 (writing-side snapshot — what a reader needs to know first)
 
-**2026-09-05 execution update:** G1 seed 1 launched at 02:01:35 local time through
-the shared-GPU gate; G2 seed 1 follows in the same sealed chain. Linji subsequently
+**2026-09-05 execution update:** G1 seed 1 completed 4,000 iterations at 02:33:27
+local time (`rc=0`, 1,912 s); G2 seed 1 launched immediately afterward through
+the shared-GPU gate in the same sealed chain. Linji subsequently
 authorized the full three-seed E4 comparison and the DFRP same-policy deployment
 test. `plan/E4_CONTINUATION_2026-09-05.md` records this extended approval; it
 supersedes the earlier execution-scope limit without editing any sealed file.
 `tools/run_e4_confirmation.py` composes the existing sealed entrypoints, checks
 the seed-1 result again, and permits seeds 2–3 only on a passed gate. E4 endpoints
-remain pending. DFRP payload recovery is required for the 26-clip paired test.
+remain pending. The continuation is running and waiting for the seed-1 decision.
+The DFRP worker is queued behind E4 with a pre-outcome design: 26 clips, 656
+conditions per reference arm, and the fixed G1 seed-1 final checkpoint. All 26
+upstream arrays are recovered/hash-verified; CPU NPZ reconstruction was rejected
+(0/26 historical identities matched), and exact CUDA recovery is required before
+evaluation. See `reports/dfrp_policy_validation_2026-09-05/README.md`. The paired
+analyzer and complete-panel figure preserve failures and label their one-policy,
+windowed scope; 18 focused tests pass. All 41 E4 sealed artifacts are unchanged.
 
 | item | state | where |
 |---|---|---|

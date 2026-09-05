@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import fcntl
 import json
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -126,6 +127,10 @@ def evaluate_cells(design_path: Path, checkpoint: Path, raw: Path, repaired: Pat
         ], OUT / f"{arm}.log", 1)
     result = analyze(design_path, OUT / "raw.csv", OUT / "repaired.csv")
     write_once(OUT / "result.json", result)
+    subprocess.run([
+        str(PYTHON), "paper/figures/f_dfrp_tracking.py", "--result", str(OUT / "result.json"),
+        "--design", str(design_path), "--out", str(OUT / "tracking_comparison"),
+    ], check=True)
 
 
 def main() -> int:

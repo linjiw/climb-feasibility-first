@@ -22,6 +22,8 @@ reports/clip44_gate.html
 
 # local simulator products; retain only adjudicated CSV/JSON summaries
 reports/**/training/
+reports/g_segment/confirmation/.continuation.lock
+reports/dfrp_policy_validation_2026-09-05/.validation.lock
 
 # bulky per-clip screen shards; their manifests and aggregate tables are versioned
 reports/eligibility/screens/

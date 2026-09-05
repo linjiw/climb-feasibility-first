@@ -29,6 +29,11 @@ missing trials, reference/checkpoint/software/randomization mismatch, retained
 failures, explicit survivor denominators, equal clip weighting, missing payload
 rejection, and refusal to launch while E4 is active. Preparation starts no simulator.
 
+`paper/figures/f_dfrp_tracking.py --synthetic --out /tmp/climb-dfrp-figure-synthetic`
+also passes and was visually inspected. The synthetic image is not a research
+result and is not published. After validated measurement, the worker renders all
+26 clips with a complete clip-key CSV, including regressions and unchanged controls.
+
 Launch command (one instance only; waits for E4):
 
 ```bash
