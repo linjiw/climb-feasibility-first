@@ -1,0 +1,526 @@
+{
+ "schema_version": "dfrp_policy_validation_design/1",
+ "classification": "exploratory design written before policy endpoints",
+ "checkpoint_selection": "Exact Uniform seed 1, final iteration 3999",
+ "conditions": {
+  "path": "reports/dfrp_policy_validation_2026-09-05/conditions.json",
+  "sha256": "b73877f1ce8a758b1e153ccc726ecde7d6f798a169e810d5a09bb69ef1d8ddd1"
+ },
+ "clip_list": {
+  "path": "reports/dfrp_policy_validation_2026-09-05/clips.txt",
+  "sha256": "5f67bd91f386ed521cbb44a6d78d14e490aa1d87308e4f39dd8e0fb514990e73"
+ },
+ "curated_manifest": {
+  "path": "reports/dfrp_v1_exact_panel/iter1/curated_manifest.json",
+  "sha256": "11b19f591a585e2360b3c4848d3afb2b7af01282a4c66bd30092e890c18cef7e"
+ },
+ "training_clips": {
+  "path": "bank/tiers/tier_800.txt",
+  "sha256": "87cbeb8ea677c5855948269d89e77dd748b410cdb4c4e9b0594b9c2f5160306e"
+ },
+ "evaluator_sha256": "284886608d81ff957e69b32a5a9d1448917ee0a9867a7c23253831b53233e367",
+ "analyzer_sha256": "d540f8074b18db15228a8832a5a702ceec0c277444164116c24de4c7abc1cea9",
+ "bootstrap": {
+  "unit": "clip",
+  "replicates": 10000,
+  "seed": 20260905
+ },
+ "common_fidelity_reference": "raw historical bank in both cells",
+ "claims": "Windowed fixed-policy reference effect; not full-clip or training benefit.",
+ "clips": [
+  {
+   "clip": "BMLmovi_Subject_1_F_MoSh_Subject_1_F_13_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": true,
+   "raw_sha256": "6c06c0e3d52d52fd84cfdca419088b343fb19cdc36dc7cc800cbd4dc05478965",
+   "repaired_sha256": "dbafd8c75a2e84c87fb04cfb2dd6c1d95d00ee195967a65089e0b954c0a2f57c",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.44999998807907104,
+    "root_displacement_m_p95": 0.016556942835450172,
+    "root_displacement_m_max": 0.019604921340942383,
+    "body_mpjpe_m_mean": 0.0024175168946385384,
+    "body_mpjpe_m_p95": 0.016969680786132812,
+    "body_mpjpe_m_max": 0.1300303041934967,
+    "root_velocity_delta_mps_p95": 0.3971835672855377,
+    "root_velocity_delta_mps_max": 0.49012306332588196,
+    "root_acceleration_delta_mps2_p95": 10.74463939666748,
+    "root_acceleration_delta_mps2_max": 12.716989517211914
+   }
+  },
+  {
+   "clip": "BMLmovi_Subject_39_F_MoSh_Subject_39_F_7_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "a73d3e55dd4c5075194d8c0bd1520ed57ab5533d339b1f2227fd3121e9e2d981",
+   "repaired_sha256": "6c26c409d70c930c36852f28aac8fd38d0404c0ccc258bc83b3d5cbea640db42",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.3314822316169739,
+    "root_displacement_m_p95": 0.03199167922139168,
+    "root_displacement_m_max": 0.03639906644821167,
+    "body_mpjpe_m_mean": 0.004779602400958538,
+    "body_mpjpe_m_p95": 0.03375041484832764,
+    "body_mpjpe_m_max": 0.1490011215209961,
+    "root_velocity_delta_mps_p95": 0.2497422844171524,
+    "root_velocity_delta_mps_max": 0.8460617065429688,
+    "root_acceleration_delta_mps2_p95": 14.668937683105469,
+    "root_acceleration_delta_mps2_max": 21.32896614074707
+   }
+  },
+  {
+   "clip": "ACCAD_Female1Walking_c3d_B14_-_walk_turn_right_(135)_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "9ecf4a14596f989b66901ac51c5d59a1edec10957991f012074ec9723d284fd4",
+   "repaired_sha256": "8c3d5a0b88ae1b38daca71e9aae87415c4ad4e9bbefc7263ae354ce0af1f1991",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.3124428391456604,
+    "root_displacement_m_p95": 0.02557763084769249,
+    "root_displacement_m_max": 0.03417295217514038,
+    "body_mpjpe_m_mean": 0.0041008200496435165,
+    "body_mpjpe_m_p95": 0.026440981775522232,
+    "body_mpjpe_m_max": 0.14702901244163513,
+    "root_velocity_delta_mps_p95": 0.2581663131713867,
+    "root_velocity_delta_mps_max": 0.8184328079223633,
+    "root_acceleration_delta_mps2_p95": 13.771332740783691,
+    "root_acceleration_delta_mps2_max": 20.460817337036133
+   }
+  },
+  {
+   "clip": "SFU_0018_0018_DanceTurns001_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "c91565f3e367e1335776c2e2d454fe3e24ba33e8504870f4db6cf4ca37c026a3",
+   "repaired_sha256": "28f3462419ed00c9bf81e684c43b907fe65af39a5b88b223745355c26d9967d0",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.19952213764190674,
+    "root_displacement_m_p95": 0.01825999654829502,
+    "root_displacement_m_max": 0.02386331558227539,
+    "body_mpjpe_m_mean": 0.0022067371755838394,
+    "body_mpjpe_m_p95": 0.018493875861167908,
+    "body_mpjpe_m_max": 0.13565246760845184,
+    "root_velocity_delta_mps_p95": 0.20307651162147522,
+    "root_velocity_delta_mps_max": 0.5953614711761475,
+    "root_acceleration_delta_mps2_p95": 11.65410327911377,
+    "root_acceleration_delta_mps2_max": 23.883037567138672
+   }
+  },
+  {
+   "clip": "KIT_3_throw_right05_poses_100_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "1b042b171c445d1f1065694d2e6f1f5e9a7d18538af890cc554127ec86f2e481",
+   "repaired_sha256": "2f23086f5603eaf1376d8bda2a7cc6053a006dff7f326f4ff62bb903c89c6001",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.25,
+    "root_displacement_m_p95": 0.031878210604190826,
+    "root_displacement_m_max": 0.03905254602432251,
+    "body_mpjpe_m_mean": 0.0035216372925788164,
+    "body_mpjpe_m_p95": 0.03379406780004501,
+    "body_mpjpe_m_max": 0.10088896006345749,
+    "root_velocity_delta_mps_p95": 0.0627327710390091,
+    "root_velocity_delta_mps_max": 0.9649668335914612,
+    "root_acceleration_delta_mps2_p95": 13.040043830871582,
+    "root_acceleration_delta_mps2_max": 24.124176025390625
+   }
+  },
+  {
+   "clip": "BMLmovi_Subject_6_F_MoSh_Subject_6_F_7_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "61d6eb3c436d273e3eb02bc7fd996ceeaedb33064733d06fd343be0db10c6ee6",
+   "repaired_sha256": "59d40acaed2d4768bef4d53efd3acf24ca99e72f5cca29fc8f4930175c6c5de2",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.01604367047548294,
+    "joint_delta_rad_max": 0.27311623096466064,
+    "root_displacement_m_p95": 0.030747273936867714,
+    "root_displacement_m_max": 0.03235691785812378,
+    "body_mpjpe_m_mean": 0.008327029645442963,
+    "body_mpjpe_m_p95": 0.031874239444732666,
+    "body_mpjpe_m_max": 0.12775222957134247,
+    "root_velocity_delta_mps_p95": 0.5467041730880737,
+    "root_velocity_delta_mps_max": 0.7776051759719849,
+    "root_acceleration_delta_mps2_p95": 17.586793899536133,
+    "root_acceleration_delta_mps2_max": 19.698774337768555
+   }
+  },
+  {
+   "clip": "CMU_06_06_08_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "cb0af7647f0c214077fd6913bc032f60f80e8b5869d5bc4044d77174717d7666",
+   "repaired_sha256": "2a4ddfb32130607acb0d389ee94e0213436d5d441d1c53eb6ebb09ae015523e3",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.00978284515440464,
+    "joint_delta_rad_max": 0.29177653789520264,
+    "root_displacement_m_p95": 0.035801082849502563,
+    "root_displacement_m_max": 0.03712862730026245,
+    "body_mpjpe_m_mean": 0.009334634058177471,
+    "body_mpjpe_m_p95": 0.037102486938238144,
+    "body_mpjpe_m_max": 0.07950814068317413,
+    "root_velocity_delta_mps_p95": 0.7325631976127625,
+    "root_velocity_delta_mps_max": 1.1537423133850098,
+    "root_acceleration_delta_mps2_p95": 23.030521392822266,
+    "root_acceleration_delta_mps2_max": 27.52013397216797
+   }
+  },
+  {
+   "clip": "BMLmovi_Subject_76_F_MoSh_Subject_76_F_12_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "2acc9411e3f9c1d72e0e8bcecacd76e6b838cf9f8d6d3d815e1235b5072ddbd5",
+   "repaired_sha256": "7f49b86def78d0a68d6336a11983684d5bc166f629a73764fcf78eda30cf9b87",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.2900022268295288,
+    "root_displacement_m_p95": 0.030202364549040794,
+    "root_displacement_m_max": 0.036421358585357666,
+    "body_mpjpe_m_mean": 0.00573949096724391,
+    "body_mpjpe_m_p95": 0.031282663345336914,
+    "body_mpjpe_m_max": 0.11851978302001953,
+    "root_velocity_delta_mps_p95": 0.4898586571216583,
+    "root_velocity_delta_mps_max": 0.9029773473739624,
+    "root_acceleration_delta_mps2_p95": 18.378267288208008,
+    "root_acceleration_delta_mps2_max": 23.207876205444336
+   }
+  },
+  {
+   "clip": "ACCAD_Male1General_c3d_General_A5_-_Pick_Up_Box_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "b8849193bbaf861d10b0032031374b2c07d70010912f0b7591f93d700d7200a2",
+   "repaired_sha256": "b88e4deaf0462667f94f5905cc7d73e5a39ddd7d7755b7a766bb742ad77bc45f",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.09372317790985107,
+    "root_displacement_m_p95": 0.04589198902249336,
+    "root_displacement_m_max": 0.049597084522247314,
+    "body_mpjpe_m_mean": 0.005677479784935713,
+    "body_mpjpe_m_p95": 0.047491252422332764,
+    "body_mpjpe_m_max": 0.06315147876739502,
+    "root_velocity_delta_mps_p95": 0.09072421491146088,
+    "root_velocity_delta_mps_max": 0.8337313532829285,
+    "root_acceleration_delta_mps2_p95": 0.5008331537246704,
+    "root_acceleration_delta_mps2_max": 20.843265533447266
+   }
+  },
+  {
+   "clip": "BMLhandball_S07_Expert_Trial_upper_right_left_195_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "30b971802ef258ddb63b73ef1c133243ac73a11ae213f4e85d92e313fb206534",
+   "repaired_sha256": "996ed0202902488a1866475b6036f81de2625c6009bd34e76f682ffac7a556c2",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.15898001194000244,
+    "root_displacement_m_p95": 0.043167732656002045,
+    "root_displacement_m_max": 0.05990290641784668,
+    "body_mpjpe_m_mean": 0.0046385969035327435,
+    "body_mpjpe_m_p95": 0.04716974496841431,
+    "body_mpjpe_m_max": 0.10005174577236176,
+    "root_velocity_delta_mps_p95": 0.0704013928771019,
+    "root_velocity_delta_mps_max": 0.952936053276062,
+    "root_acceleration_delta_mps2_p95": 0.5026455521583557,
+    "root_acceleration_delta_mps2_max": 23.823423385620117
+   }
+  },
+  {
+   "clip": "CMU_137_137_20_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "765b0cbcc7a70a8a0ca389e0d0571d6bf5104ed79fe7f27a92ae5d8e2019cbeb",
+   "repaired_sha256": "39dab8838297ae922f4ade8a4e8f0eca5fb8ab86c4e5bbd8d6f59d8f85c7f5dc",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.3095417618751526,
+    "root_displacement_m_p95": 0.03593045473098755,
+    "root_displacement_m_max": 0.05838960409164429,
+    "body_mpjpe_m_mean": 0.005631209351122379,
+    "body_mpjpe_m_p95": 0.03723031282424927,
+    "body_mpjpe_m_max": 0.14980588853359222,
+    "root_velocity_delta_mps_p95": 0.10022415220737457,
+    "root_velocity_delta_mps_max": 1.149839997291565,
+    "root_acceleration_delta_mps2_p95": 14.111929893493652,
+    "root_acceleration_delta_mps2_max": 28.74601936340332
+   }
+  },
+  {
+   "clip": "BMLmovi_Subject_60_F_MoSh_Subject_60_F_10_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "8d6932cee2f487a8006237c04ed2ca415a0488d16ba3ed99255e833d5754234b",
+   "repaired_sha256": "aee51c38ff59d61bf429f4ff68e86ea9ce3358e67a33b1fc75b90e8dea94e253",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.19387686252593994,
+    "root_displacement_m_p95": 0.04966128617525101,
+    "root_displacement_m_max": 0.05320537090301514,
+    "body_mpjpe_m_mean": 0.007592370267957449,
+    "body_mpjpe_m_p95": 0.051490843296051025,
+    "body_mpjpe_m_max": 0.07191549986600876,
+    "root_velocity_delta_mps_p95": 0.08391270786523819,
+    "root_velocity_delta_mps_max": 1.287271499633789,
+    "root_acceleration_delta_mps2_p95": 8.511530876159668,
+    "root_acceleration_delta_mps2_max": 32.181785583496094
+   }
+  },
+  {
+   "clip": "BMLmovi_Subject_39_F_MoSh_Subject_39_F_2_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "03522fce63698ab4c9b95194c28927076a6bc07a4ea9a6ea4c330ec6fe637637",
+   "repaired_sha256": "c4fe97e43e4bf281de42349b194734736acd4c3e2306d1199e649c9e55179b60",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.021535973995923996,
+    "joint_delta_rad_max": 0.3275075852870941,
+    "root_displacement_m_p95": 0.047588638961315155,
+    "root_displacement_m_max": 0.05535686016082764,
+    "body_mpjpe_m_mean": 0.014648040756583214,
+    "body_mpjpe_m_p95": 0.0546303391456604,
+    "body_mpjpe_m_max": 0.14784112572669983,
+    "root_velocity_delta_mps_p95": 0.5926911234855652,
+    "root_velocity_delta_mps_max": 1.0792776346206665,
+    "root_acceleration_delta_mps2_p95": 21.408981323242188,
+    "root_acceleration_delta_mps2_max": 26.981952667236328
+   }
+  },
+  {
+   "clip": "CMU_18_19_Justin_18_06_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "c541a6bfbc9c5c5ac54ea14ac3acdf18d2cca9f602cd7f6103babe2fc81cd9cc",
+   "repaired_sha256": "6fadefb42537f34aabb054fda952227815736c7c84cc12a039afeb3d45138540",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0012412681244313717,
+    "joint_delta_rad_max": 0.15907955169677734,
+    "root_displacement_m_p95": 0.047979436814785004,
+    "root_displacement_m_max": 0.04928946495056152,
+    "body_mpjpe_m_mean": 0.011680896393954754,
+    "body_mpjpe_m_p95": 0.04906219244003296,
+    "body_mpjpe_m_max": 0.0979120135307312,
+    "root_velocity_delta_mps_p95": 0.8675605654716492,
+    "root_velocity_delta_mps_max": 1.7105598449707031,
+    "root_acceleration_delta_mps2_p95": 25.820404052734375,
+    "root_acceleration_delta_mps2_max": 42.76399230957031
+   }
+  },
+  {
+   "clip": "KIT_167_walking_run03_poses_100_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "7373a634dbbbd0e4e90acaca7d2e96e49af0f917de825fda1042d47483e4c797",
+   "repaired_sha256": "0e2c3a123d75fe69808775ce4f465d3df43d15d787f25d35e509c34452ff6bc2",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.006478595081716776,
+    "joint_delta_rad_max": 0.22938764095306396,
+    "root_displacement_m_p95": 0.04342035576701164,
+    "root_displacement_m_max": 0.04501056671142578,
+    "body_mpjpe_m_mean": 0.01138383150100708,
+    "body_mpjpe_m_p95": 0.04469197988510132,
+    "body_mpjpe_m_max": 0.12559498846530914,
+    "root_velocity_delta_mps_p95": 0.9098462462425232,
+    "root_velocity_delta_mps_max": 1.1098999977111816,
+    "root_acceleration_delta_mps2_p95": 27.453073501586914,
+    "root_acceleration_delta_mps2_max": 44.28080749511719
+   }
+  },
+  {
+   "clip": "Transitions_mocap_mazen_c3d_walkbackwards_turntwist180_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "92076e66cd936cc0319d055f0e697f993cb52dca585d8c6fd7408aba9722ef06",
+   "repaired_sha256": "797af4aa965fe34490642640453d5b33a626494184329ed4ae39653a0b9a8ff5",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.2796110510826111,
+    "root_displacement_m_p95": 0.04259311407804489,
+    "root_displacement_m_max": 0.052178263664245605,
+    "body_mpjpe_m_mean": 0.008133012801408768,
+    "body_mpjpe_m_p95": 0.04760080575942993,
+    "body_mpjpe_m_max": 0.14516745507717133,
+    "root_velocity_delta_mps_p95": 0.6381943225860596,
+    "root_velocity_delta_mps_max": 1.3044551610946655,
+    "root_acceleration_delta_mps2_p95": 18.822189331054688,
+    "root_acceleration_delta_mps2_max": 32.85978317260742
+   }
+  },
+  {
+   "clip": "CMU_32_32_10_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "c5233edf120b28539589a8183ed11618a5517dfad9e62b13be8562d3f321fe94",
+   "repaired_sha256": "c7b9ffb8617b29df58872489c29525f42a3f6f0c54661af89275008fa0ca1a12",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.21943187713623047,
+    "root_displacement_m_p95": 0.04900383949279785,
+    "root_displacement_m_max": 0.07786482572555542,
+    "body_mpjpe_m_mean": 0.005470894742757082,
+    "body_mpjpe_m_p95": 0.05148357152938843,
+    "body_mpjpe_m_max": 0.08012264966964722,
+    "root_velocity_delta_mps_p95": 0.07522881031036377,
+    "root_velocity_delta_mps_max": 1.3364101648330688,
+    "root_acceleration_delta_mps2_p95": 0.45177677273750305,
+    "root_acceleration_delta_mps2_max": 66.68023681640625
+   }
+  },
+  {
+   "clip": "BMLhandball_S07_Expert_Trial_upper_right_left_213_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "9002999baf6d2f4b4ecbda09bcd6a00b2eca5b8e5f2aa664fc70d83107897da4",
+   "repaired_sha256": "de76cba7597cf5631f3198645c1d3d25e1cc1324321d1c23b36d8f839686e706",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.18289372324943542,
+    "root_displacement_m_p95": 0.07358687371015549,
+    "root_displacement_m_max": 0.07592648267745972,
+    "body_mpjpe_m_mean": 0.009519665502011776,
+    "body_mpjpe_m_p95": 0.07365590333938599,
+    "body_mpjpe_m_max": 0.09515461325645447,
+    "root_velocity_delta_mps_p95": 0.08140697330236435,
+    "root_velocity_delta_mps_max": 0.9447071552276611,
+    "root_acceleration_delta_mps2_p95": 0.2834184169769287,
+    "root_acceleration_delta_mps2_max": 23.61766242980957
+   }
+  },
+  {
+   "clip": "CMU_22_23_Rory_22_03_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "238580d59b1f7ef5aa8ef8666fca4ac085c40bd1e17f57487e55a1403db4c2ba",
+   "repaired_sha256": "9fad86dbadb770f61589d63c3135a1eff00e6ac6105c9a9debb5f40c8f648d38",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.1620849370956421,
+    "root_displacement_m_p95": 0.06814172863960266,
+    "root_displacement_m_max": 0.07405966520309448,
+    "body_mpjpe_m_mean": 0.012532197870314121,
+    "body_mpjpe_m_p95": 0.0699303150177002,
+    "body_mpjpe_m_max": 0.09914382547140121,
+    "root_velocity_delta_mps_p95": 0.11740368604660034,
+    "root_velocity_delta_mps_max": 1.5563483238220215,
+    "root_acceleration_delta_mps2_p95": 20.45096206665039,
+    "root_acceleration_delta_mps2_max": 73.83232116699219
+   }
+  },
+  {
+   "clip": "BMLhandball_S02_Novice_Trial_upper_left_140_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "e09dd6935a254010a492824707c2b910183363159edc69f6aeb9ee0de7be52d2",
+   "repaired_sha256": "9e2368b6f3e888f137a7b4163b4141a763080384b1a3ab03d95a6209d8df8b93",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.012286665849387646,
+    "joint_delta_rad_max": 0.15000000596046448,
+    "root_displacement_m_p95": 0.05944918096065521,
+    "root_displacement_m_max": 0.06484782695770264,
+    "body_mpjpe_m_mean": 0.01940939575433731,
+    "body_mpjpe_m_p95": 0.0628393143415451,
+    "body_mpjpe_m_max": 0.10466612875461578,
+    "root_velocity_delta_mps_p95": 0.1274261325597763,
+    "root_velocity_delta_mps_max": 1.0370358228683472,
+    "root_acceleration_delta_mps2_p95": 19.660940170288086,
+    "root_acceleration_delta_mps2_max": 25.925870895385742
+   }
+  },
+  {
+   "clip": "Eyes_Japan_Dataset_kanno_walk-03-sneak-kanno_poses_120_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "676e7523456d7c3800e8cb22719e433409606f57a16c0ffdea275fd70e2d34ec",
+   "repaired_sha256": "0f4bd8eb1146c71ca437951a283c1cf41826c1c5004f5249e3a2357b1b2c7da2",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0026558637619018555,
+    "joint_delta_rad_max": 0.2756204605102539,
+    "root_displacement_m_p95": 0.06061068922281265,
+    "root_displacement_m_max": 0.0685194730758667,
+    "body_mpjpe_m_mean": 0.015930356457829475,
+    "body_mpjpe_m_p95": 0.06299624592065811,
+    "body_mpjpe_m_max": 0.14823471009731293,
+    "root_velocity_delta_mps_p95": 0.1495307981967926,
+    "root_velocity_delta_mps_max": 1.494579792022705,
+    "root_acceleration_delta_mps2_p95": 20.724084854125977,
+    "root_acceleration_delta_mps2_max": 72.36088562011719
+   }
+  },
+  {
+   "clip": "KIT_513_seesaw_up02_poses_100_jpos",
+   "qualified_repair": true,
+   "training_overlap": false,
+   "raw_sha256": "ac2ee043d71325653def12d8c782cfe9ab40eec607ae48c697bd661666ee188a",
+   "repaired_sha256": "72703fcf7aec3f9aaee608ca2ae0b2677f263fe2acba45acf33e38e8f5db5382",
+   "reference_distortion": {
+    "finite": true,
+    "joint_delta_rad_p95": 0.0,
+    "joint_delta_rad_max": 0.1742662489414215,
+    "root_displacement_m_p95": 0.07286150753498077,
+    "root_displacement_m_max": 0.07451176643371582,
+    "body_mpjpe_m_mean": 0.016765693202614784,
+    "body_mpjpe_m_p95": 0.07302796840667725,
+    "body_mpjpe_m_max": 0.10590951144695282,
+    "root_velocity_delta_mps_p95": 0.10069308429956436,
+    "root_velocity_delta_mps_max": 0.9279676079750061,
+    "root_acceleration_delta_mps2_p95": 0.9725755453109741,
+    "root_acceleration_delta_mps2_max": 23.199190139770508
+   }
+  },
+  {
+   "clip": "BMLmovi_Subject_69_F_MoSh_Subject_69_F_11_poses_120_jpos",
+   "qualified_repair": false,
+   "training_overlap": false,
+   "raw_sha256": "85beb7a2bd96099b51918603e9a3f405e6fe231e5eb540c4d5a7ef6259df0ae0",
+   "repaired_sha256": "85beb7a2bd96099b51918603e9a3f405e6fe231e5eb540c4d5a7ef6259df0ae0",
+   "reference_distortion": null
+  },
+  {
+   "clip": "CMU_108_108_14_poses_120_jpos",
+   "qualified_repair": false,
+   "training_overlap": false,
+   "raw_sha256": "d466e540adeaed70de9709cad2eec4cd81a1a3c42114af71364f1468a7f42c87",
+   "repaired_sha256": "d466e540adeaed70de9709cad2eec4cd81a1a3c42114af71364f1468a7f42c87",
+   "reference_distortion": null
+  },
+  {
+   "clip": "BMLhandball_S06_Novice_Trial_upper_left_187_poses_120_jpos",
+   "qualified_repair": false,
+   "training_overlap": false,
+   "raw_sha256": "c947f1ba33675af5b7674fdce8bbc78fab1544d4c59f1adb558989bebcfeb390",
+   "repaired_sha256": "c947f1ba33675af5b7674fdce8bbc78fab1544d4c59f1adb558989bebcfeb390",
+   "reference_distortion": null
+  },
+  {
+   "clip": "KIT_675_walk_with_handrail_right07_poses_100_jpos",
+   "qualified_repair": false,
+   "training_overlap": true,
+   "raw_sha256": "385728da8427ef5175dc4b422dc4e63a2546aa6c8a77bededbe4b4d33611ca42",
+   "repaired_sha256": "385728da8427ef5175dc4b422dc4e63a2546aa6c8a77bededbe4b4d33611ca42",
+   "reference_distortion": null
+  }
+ ]
+}

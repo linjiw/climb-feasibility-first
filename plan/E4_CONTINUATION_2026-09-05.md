@@ -45,6 +45,30 @@ Raw and repaired NPZ identities must match the existing manifest before evaluati
 At intake, only 2/26 raw and 1/26 selected payloads exist at their recorded paths;
 recovering the remaining exact identities is the immediate data prerequisite.
 
+### Pre-outcome implementation detail
+
+`reports/dfrp_policy_validation_2026-09-05/design.json` binds the historical
+manifest, clip list, evaluator, analyzer, and 656 paired conditions per reference
+arm. Seven requested phases are deduplicated on short timelines, with four
+replicates per distinct start: 644 full three-second windows and 12 shorter
+windows. Environment/noise seeds are 20260905/20260906. Both training-overlap
+clips also occur in the active admissible-unit table.
+
+The existing evaluator stores trial aggregates, not paired per-frame traces.
+Accordingly, its survivor-quality analysis uses **paired complete-window
+survivors**, reports the eligible and retained denominators, and does not claim
+to reproduce the pilot's common-alive-frame estimator. Clip-weighted summaries
+and 10,000 paired clip-bootstrap draws (seed 20260905) describe motion-panel
+uncertainty only; there is one preselected policy checkpoint. Initial states
+and termination targets follow the assigned reference, while randomization and
+raw-reference quality scoring are paired.
+
+The DFRP orchestrator waits until E4 has a terminal manipulation/analysis decision
+and releases its execution lock, then uses the same shared-GPU availability gate.
+An E4 manipulation failure stops E4 confirmation, not this independently requested
+exploratory E3 test. If exact CUDA recovery fails, neither DFRP policy cell runs.
+No outcome-dependent recovery substitution or checkpoint selection is allowed.
+
 ## Writing claim map
 
 | Claim | Evidence and limit |
