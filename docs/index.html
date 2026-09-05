@@ -80,7 +80,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
 </style>
 
 <div class="hero"><div class="wrap">
-  <span class="eyebrow">CLIMB · Robotixx · project page · updated 2026-09-04</span>
+  <span class="eyebrow">CLIMB · Robotixx · project page · updated 2026-09-05</span>
   <h1>CLIMB: feasibility-gated motion tracking for generalist humanoid controllers.</h1>
   <p class="sub">CLIMB is a method for generalist humanoid tracking that screens the final robot-space motion,
   routes admissible, repairable, missing-context, and quarantined intervals, and applies learning progress only
@@ -95,7 +95,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
   </div>
   <div class="heroctas">
     <a class="primary" href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/METHOD_REFRAME_2026-09-04.md">Method + next research →</a>
-    <a class="primary" href="segment-native.html">Exact-support G2 direction →</a>
+    <a class="primary" href="#e4">E4 exact-support tracking →</a>
     <a class="primary" href="companion.html">Read the companion note →</a>
     <a class="ghost" href="flagship.html">Flagship working draft</a>
     <a class="ghost" href="https://github.com/linjiw/refeas">refeas — the screen (pip-able)</a>
@@ -371,11 +371,12 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
   </div>
 </section>
 
-<section>
-  <span class="numeral">08 · Latest research checkpoint</span>
+<section id="e4">
+  <span class="numeral">08 · E4 exact-support tracking</span>
   <h2>Segment-native training works; survival lift is unresolved <span class="pill expl">exploratory</span></h2>
   <p class="kicker">The GPU lifecycle, bounded curriculum, and paired evaluator pass. One seed shows a motion-quality
-  signal but no established survival benefit. The exact licensed payload passes 900/900 identities, and the 12-row endpoint-blind sampler screen has finished; selection and independent validation remain before any confirmation run.</p>
+  signal but no established survival benefit. All 900 licensed payload identities pass, calibration and independent validation are complete,
+  and the sealed seed-1 confirmation is running. The remaining seeds follow only if its manipulation gate passes.</p>
   <div class="grid">
     <div class="card"><h3>GPU path and objective repaired</h3>
       <p>An 8-env lifecycle trace completed 24/24 exact trials with no wrap. Two 512-env arms then ran 200 iterations
@@ -392,11 +393,12 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       (95 % CI 1.90–6.63 mm) and anchor-orientation error by 0.0280 rad (0.0163–0.0397).
       Anchor position, joint error, and work remain unresolved; this is one-seed exploratory evidence.</p>
       <span class="ev">tools/analyze_segment_pilot.py · reports/segment_v2_pilot/</span></div>
-    <div class="card"><h3>Current gate: treatment separation</h3>
+    <div class="card"><h3>E4: calibrated allocation</h3>
       <p>The adaptive distribution ended only 1.40 % total-variation from its control (correlation 0.998), despite healthy entropy.
-      The next G2 arm uses absolute learning progress over 1,184 exact attribution units / 368,951 legal starts and must first hold TV in [0.05, 0.15],
-      entropy-effective units ≥ 12, and invalid/censored mass at zero.</p>
-      <span class="ev">reports/g_segment/calibration/screen_runs.json · endpoint-blind</span></div>
+      The subsequent 12-candidate ALP calibration selected ρ = 0.40 and λ = 0.05. Independent validation measured mean TV 0.1056,
+      at least 700.1 effective units, maximum unit mass 0.0134, and zero invalid/censored events over its 50-iteration run.
+      E4 compares Exact ALP and Exact Uniform over 1,184 units / 368,951 legal starts. Long-run tracking results are pending.</p>
+      <span class="ev">reports/g_segment/calibration/result.json · measured calibration</span></div>
   </div>
   <div class="callout"><p><strong>Full implementation note:</strong> see the
     <a href="segment-native.html">segment-native training and next-direction page</a>
@@ -441,12 +443,14 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       <p>The registered decision was explicit: valid-data failure leaves Newton as an analysis instrument and forbids
       Newton-fragility-weighted training. A raw per-axis correlation does not override the joint gate.</p>
       <span class="ev">adaptive: p = 0.158 · LOCO lift −0.006</span></div>
-    <div class="card"><h3>Highest-value next test <span class="pill slot">draft</span></h3>
-      <p>Compare G2 learning-progress allocation with G1 deployment-uniform allocation on the same exact support.
-      G0 was removed because it also changes clip-duration exposure. Read the manipulation gate before any endpoint; a passed-gate null is scientifically decisive.</p>
-      <span class="ev">plan/NEXT_RESEARCH_2026-09-03.md</span></div>
+    <div class="card"><h3>E4 confirmation <span class="pill sealed">sealed · running</span></h3>
+      <p>Exact ALP and Exact Uniform share the same feasible support, 512 environments, and 4,000 iterations.
+      The three-seed protocol checks sampler manipulation before measuring TrackingScore, survival, and common-survivor fidelity.
+      Seed 1 is running; its frozen gate controls continuation to seeds 2–3.</p>
+      <span class="ev">plan/G_SEGMENT_FREEZE.sha256 · plan/E4_CONTINUATION_2026-09-05.md</span></div>
   </div>
-  <div class="callout"><p><strong>Current gate and paper path:</strong> the licensed local reconstruction passes all 800 training and 100 evaluation identities, strict calibration preflight has zero blockers, and the 12 endpoint-blind sampler runs are complete. Selection, independent validation, footprint review, contact-proxy disposition, and sealing still precede confirmation. The corrected two-arm design, current literature boundary, and ICRA-sized completion schedule are recorded in
+  <div class="callout"><p><strong>E4 research status, 5 September 2026:</strong> all 900 reference identities pass, confirmation preflight has zero blockers, and the 41-file seal is committed before training. Independent calibration passes; contact timing remains exploratory. The next DFRP comparison will evaluate the fixed Exact Uniform checkpoint on raw and repaired references, including all four unchanged controls. The execution plan and claim boundaries are recorded in
+    <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/E4_CONTINUATION_2026-09-05.md">the E4 and DFRP continuation record</a>; manuscript milestones remain in
     <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/PAPER_COMPLETION_2026-09-04.md">the paper-completion checkpoint</a>.</p></div>
 </section>
 

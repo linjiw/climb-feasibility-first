@@ -165,8 +165,8 @@ thermal, compliance, latency, and structural limits remain outside this model-re
 
 We use the compiled MuJoCo model underlying the tracking environment. Contact-free inverse
 dynamics returns the generalized force required for the prescribed acceleration. The six
-free-joint coordinates define the base wrench $W_t$ that the environment must supply; the
-remaining coordinates define contact-free joint torque $\tau^{\mathrm{free}}_t$. A collision
+free-joint coordinates define the base wrench $\mathbf W_t$ that the environment must supply; the
+remaining coordinates define contact-free joint torque $\boldsymbol\tau_{\mathrm{free},t}$. A collision
 geometry becomes a candidate contact when its exact distance to the plane is at most
 $g=0.06$\,m.
 
@@ -180,12 +180,12 @@ setting lies between these observed failure modes; it is not a universal constan
 For each candidate point we construct a four-edge pyramidal friction cone with coefficient 0.6 in
 the primary model; a simulator-matched view makes non-foot contacts frictionless. Mapping
 nonnegative generator magnitudes $f_t$ through the contact Jacobian yields both base-wrench
-matrix $A_t f_t$ and joint-torque contribution $J_t f_t$. A weighted nonnegative least-squares
+matrix $\mathbf A_t\mathbf f_t$ and joint-torque contribution $\mathbf J_t\mathbf f_t$. A weighted nonnegative least-squares
 problem first exposes the unconstrained residual, with angular-wrench rows weighted by two. We
 then solve a linear program minimizing $\ell_1$ wrench slack subject to
 \begin{equation}
--\tau_{\max} \leq \tau^{\mathrm{free}}_t-J_t f_t \leq \tau_{\max},
-\qquad f_t\geq0.
+-\boldsymbol\tau_{\max} \leq \boldsymbol\tau_{\mathrm{free},t}-\mathbf J_t\mathbf f_t \leq \boldsymbol\tau_{\max},
+\qquad \mathbf f_t\geq0.
 \label{eq:contact}
 \end{equation}
 The translational component of the resulting weighted residual defines unsupported force. With
@@ -212,9 +212,10 @@ candidate support geometry, $d(h_t,E;q_t)$ its signed distance to the scene, and
 target clearance. The repair is the contact-manifold projection
 \begin{align}
 \min_{\delta z,\Delta\theta}\quad &
-\sum_{t\in\mathcal T}
+\sum_{t\in\mathcal T}\Bigl[
  w_z\delta z_t^2+w_q\|\Delta\theta_t\|_2^2
- +w_s(\delta z_{t+1}-\delta z_t)^2 \nonumber\\
+ \nonumber\\
+&\hspace{1.5em}+w_s(\delta z_{t+1}-\delta z_t)^2\Bigr] \nonumber\\
 \mathrm{s.t.}\quad &
 \widetilde q_t=q_t-\delta z_t e_z+S_t\Delta\theta_t,
 \nonumber\\
@@ -336,17 +337,17 @@ root, joint, body, velocity, and acceleration deviations are secondary diagnosti
 
 \subsection{E4: feasibility-gated allocation ablation}
 
-Phase G compares two 512-environment, 4,000-iteration arms with confirmation seeds 1--3. G1
-samples uniformly over legal starts. G2 estimates each unit's Beta-smoothed conditional success
+E4 compares two 512-environment, 4,000-iteration arms with confirmation seeds 1--3. Exact Uniform
+samples uniformly over legal starts. Exact ALP estimates each unit's Beta-smoothed conditional success
 rate $s_u(k)$ and ranks absolute learning progress
 \begin{equation}
 \mathrm{LP}_u(k)=|s_u(k)-s_u(k-10)|.
 \end{equation}
 Its focus distribution is proportional to the legal-start prior times
-$\mathrm{LP}_u+\lambda$; exploration $\rho$ mixes the G1 prior back in before fixed unit and clip
+$\mathrm{LP}_u+\lambda$; exploration $\rho$ mixes the Exact Uniform prior back in before fixed unit and clip
 caps.
 
-Before sealing, a 12-row grid crosses
+A calibration grid with 12 candidates crosses
 $\rho\in\{0.05,0.10,0.20,0.40\}$ and
 $\lambda\in\{0.001,0.01,0.05\}$. Each row runs 50 iterations on seed 20260903. Only sampler
 ledgers at iterations 30, 40, and 49 enter selection. A row passes when mean TV is in
@@ -355,12 +356,9 @@ top-1 probability is at most 0.05, invalid/censored counts are zero, and final r
 below 0.90. The passing row nearest TV 0.10 is repeated on seed 20260904. Failure returns the
 study to design without endpoint access.
 
-The endpoint-blind calibration selected $\rho=0.40$, $\lambda=0.05$. Its screen TVs are
-0.1310/0.1063/0.0865 (mean 0.1079); the independent-seed TVs are
-0.1292/0.1045/0.0831 (mean 0.1056). The latter retains at least 700.1 entropy-effective units,
-at most 0.0134 top-1 mass, zero invalid or censored events, and 0.2365 final saturation. This is
-a passed manipulation calibration, not an ALP policy-performance result; the G2--G1 endpoint
-remains sealed and unread.
+Calibration uses sampler telemetry alone to establish treatment separation independently of
+tracking outcomes. The selected settings are $\rho=0.40$ and $\lambda=0.05$; allocation
+measurements are reported with E4 in Sec.~\ref{sec:e4results}.
 
 After a 400-iteration warm-up, the confirmation gate applies the same separation,
 concentration, validity, seed, and provenance checks. Only a passed gate unlocks the primary
@@ -376,7 +374,7 @@ inconclusive, or \texttt{not\_tested}.
 
 \section{Results}
 
-\subsection{RPM creates a curriculum attractor}
+\subsection{E1: Curriculum collapse under RPM}
 
 Adaptive peak top-1 mass is 0.884/0.870/0.893 across campaign seeds, and the same BMLmovi
 kneel-and-crawl clip repeatedly becomes dominant in all three. The maximum belongs to another
@@ -392,7 +390,7 @@ of frames have no candidate contact and median unsupported force is 329\,N; the 
 8.0--8.5\,s rise again becomes unsupported. Every trained policy has zero survival from frame
 zero, while the tested late 8\,s offset survives.
 
-\subsection{\texttt{refeas} is pipeline-conditioned and reproducible}
+\subsection{E2: Bank-scale screening and difficulty transfer}
 
 Under the strict rule, 2,442 of 10,705 primary-pipeline clips are flagged (22.8\%). Category
 rates range from 12.9\% for quiet motion to 58.6\% for dynamic motion, and source rates from
@@ -435,7 +433,7 @@ architecture, not evidence of cross-architecture or cross-robot transfer.
   \label{fig:bank}
 \end{figure*}
 
-\subsection{DFRP restores exact support on a stratified panel}
+\subsection{E3: Contact-manifold repair via DFRP}
 
 DFRP qualifies 22/26 flagged candidates (84.6\%) and all four feasible controls pass as
 byte-identical no-ops. The resulting 26-clip curated view contains 36 admissible units and 10,561
@@ -444,7 +442,31 @@ candidates remain above the 5\% residual-infeasibility ceiling, and two more rea
 but violate the 10\,mm contact-IK bound; all four are quarantined. Thus 84.6\% is a qualification
 rate on the frozen panel, not a bank-wide recovery rate or a policy-benefit estimate.
 
-\subsection{Alternative routing and allocation controls}
+Reference continuity remains a separate diagnostic. Across all 26 flagged candidates, the 95th
+percentile of per-clip root-velocity and root-acceleration deviation statistics is 1.210\,m/s and
+34.91\,m/s$^2$, respectively. These derivative changes motivate the same-policy raw/repaired
+tracking comparison; passing the contact gate alone does not establish smooth execution.
+
+\subsection{E4: Exact-support tracking and curriculum stability}
+\label{sec:e4results}
+
+The 50-iteration calibration establishes measurable allocation separation on exact support.
+Two of 12 candidates satisfy the calibration criteria. The selected setting has mean TV
+0.1079 across three screen checkpoints and 0.1056 on an independent seed. Independent validation
+retains at least 700.1 entropy-effective units, with maximum unit mass 0.0134, zero invalid or
+censored events, and final rank saturation 0.2365. These measurements validate the short-run
+allocation interface. E4's three-seed policy comparison is in progress; long-run stability and
+tracking effects require its completed measurements. Historical E1 clip mass and E4 unit mass
+have different denominators and are not a direct before/after comparison.
+
+An earlier exact-support pilot provides exploratory fidelity evidence. Across 22,321 paired
+common-survivor frames, adaptive-minus-uniform body-position error is $-4.20$\,mm (95\%
+unit-bootstrap interval $[-6.63,-1.90]$\,mm) and anchor-orientation error is $-0.02795$\,rad
+($[-0.03966,-0.01628]$\,rad). Its allocation separation is only 0.014 TV, below the treatment
+criterion. Survival remains inconclusive, and these conditional errors do not establish an ALP
+effect or equivalent survival.
+
+\paragraph{Alternative routing and allocation controls}
 
 The historical evaluator contains 29 flagged clips among 100. Across three policies, flagged
 clips score 6.0--8.4 survival points below the all-clip aggregate and 8.4--11.8 below the
@@ -461,12 +483,7 @@ $[-0.0497,+0.0134]$ and leaves 0.199 mass on hard-rejected starts, failing its p
 manipulation gate. These outcomes do not establish a universal failure of pruning or soft
 weighting; they show that neither tested substitute implements exact admission.
 
-An earlier exact-support pilot provides a bounded fidelity signal rather than an allocation win.
-Across 22,321 paired common-survivor frames, the adaptive-minus-uniform body-position error is
-$-4.20$\,mm (95\% unit-bootstrap interval $[-6.63,-1.90]$\,mm) and anchor-orientation error is
-$-0.02795$\,rad ($[-0.03966,-0.01628]$\,rad). The allocation changes by only 0.014 TV, however,
-so survival and success remain inconclusive and the pilot cannot attribute those improvements to
-ALP. Similarly, an earlier repair-all policy study estimates a $+0.0397$ deployment change but
+An earlier repair-all policy study estimates a $+0.0397$ deployment change but
 misses its $+0.05$ smallest effect of interest and its coverage gate. Negative controls therefore
 remain design evidence: they separate detection, admission, repair qualification, and policy
 allocation instead of treating them as one intervention.

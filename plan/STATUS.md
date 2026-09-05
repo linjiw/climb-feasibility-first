@@ -6,6 +6,15 @@ discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
 
 ## State as of 2026-08-21 (writing-side snapshot — what a reader needs to know first)
 
+**2026-09-05 execution update:** G1 seed 1 launched at 02:01:35 local time through
+the shared-GPU gate; G2 seed 1 follows in the same sealed chain. Linji subsequently
+authorized the full three-seed E4 comparison and the DFRP same-policy deployment
+test. `plan/E4_CONTINUATION_2026-09-05.md` records this extended approval; it
+supersedes the earlier execution-scope limit without editing any sealed file.
+`tools/run_e4_confirmation.py` composes the existing sealed entrypoints, checks
+the seed-1 result again, and permits seeds 2–3 only on a passed gate. E4 endpoints
+remain pending. DFRP payload recovery is required for the 26-clip paired test.
+
 | item | state | where |
 |---|---|---|
 | **N3 completed and unblinded** | Frozen arithmetic gate E1∧E4 passes (ground16 0.750/0.750; random16 0.000), but the adaptive arm violates E2 (heldout Δ −0.0346; easy 0.857), triggering the frozen preflight stop. E3 fails (late max top-1 0.784); descent prediction misses (1.000/0.688). Report as a **mixed sealed outcome**, not unqualified causal closure. | `reports/N3_result.json`, `plan/N3_RESULT.md` |

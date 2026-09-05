@@ -1,5 +1,18 @@
 # Results log — every paper-bound number and its artifact path (policy: RESEARCH_PLAN_v5)
 
+**2026-09-05 manuscript usage update:** E4 calibration now appears in Results §5.4;
+its values remain measured 50-iteration calibration, not confirmation endpoints.
+E3 now reports the existing all-26-candidate p95-of-per-clip-p95 root-velocity
+deviation 1.210 m/s and root-acceleration deviation 34.91 m/s² from
+`reports/dfrp_v1_exact_panel/iter1/result.json` → `fidelity` (measured reference
+distortion; not tracking error or a qualification threshold).
+The earlier one-seed exact-support pilot's 22,321 common-survivor frames have
+adaptive-minus-uniform body-position error −4.20 mm (95% unit-bootstrap interval
+[−6.63,−1.90] mm) and anchor-orientation error −0.02795 rad
+([−0.03966,−0.01628] rad), from `reports/segment_v2_pilot/result.json` and
+`tools/analyze_segment_pilot.py`; exploratory, insufficient allocation separation
+(TV 0.014), no ALP attribution or survival-equivalence claim.
+
 > **Corrections 2026-08-19:** three numbers in this log were wrong and are fixed in place —
 > the exposure attribution (C1), the saturation-at-fall replicate count and mean (C2), and
 > the per-actuator identity, now withdrawn (C3). Evidence, ground truth and reproduce
