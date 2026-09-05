@@ -373,12 +373,12 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
 
 <section id="e4">
   <span class="numeral">08 · E4 exact-support tracking</span>
-  <h2>Segment-native training works; survival lift is unresolved <span class="pill expl">exploratory</span></h2>
+  <h2>Exact-support curriculum: calibrated allocation and paired tracking <span class="pill expl">measured + exploratory</span></h2>
   <p class="kicker">The GPU lifecycle, bounded curriculum, and paired evaluator pass. One seed shows a motion-quality
   signal but no established survival benefit. All 900 licensed payload identities pass, calibration and independent validation are complete,
   and the sealed seed-1 confirmation is running. The remaining seeds follow only if its manipulation gate passes.</p>
   <div class="grid">
-    <div class="card"><h3>GPU path and objective repaired</h3>
+    <div class="card"><h3>Exact-support lifecycle validation</h3>
       <p>An 8-env lifecycle trace completed 24/24 exact trials with no wrap. Two 512-env arms then ran 200 iterations
       each (2.46 M steps/arm). A diagnosed early-failure incentive was corrected symmetrically with a failure-only event cost;
       invalid starts, invalid frames, and censored resets stayed at zero.</p>
@@ -399,7 +399,16 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       at least 700.1 effective units, maximum unit mass 0.0134, and zero invalid/censored events over its 50-iteration run.
       E4 compares Exact ALP and Exact Uniform over 1,184 units / 368,951 legal starts. Long-run tracking results are pending.</p>
       <span class="ev">reports/g_segment/calibration/result.json · measured calibration</span></div>
+    <div class="card"><h3>E4 confirmation <span class="pill sealed">sealed · running</span></h3>
+      <p>Exact ALP and Exact Uniform share the same feasible support, 512 environments, and 4,000 iterations.
+      The three-seed protocol checks sampler manipulation before measuring TrackingScore, survival, and common-survivor fidelity.
+      Exact Uniform seed 1 has completed training; Exact ALP seed 1 is running.
+      Their frozen sampler gate controls continuation to seeds 2–3.</p>
+      <span class="ev">plan/G_SEGMENT_FREEZE.sha256 · plan/E4_CONTINUATION_2026-09-05.md</span></div>
   </div>
+  <div class="callout"><p><strong>E4 research status, 5 September 2026:</strong> all 900 reference identities pass, confirmation preflight has zero blockers, and the 41-file seal is committed before training. Independent calibration passes; contact timing remains exploratory. A separate DFRP comparison is queued: 22 qualified repairs plus four unchanged controls, 656 paired conditions per reference arm, and a fixed Exact Uniform checkpoint. Historical payload identity checks must pass before evaluation; no repaired-policy tracking gain is claimed yet. The execution plan and claim boundaries are recorded in
+    <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/E4_CONTINUATION_2026-09-05.md">the E4 and DFRP continuation record</a>; manuscript milestones remain in
+    <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/PAPER_COMPLETION_2026-09-04.md">the paper-completion checkpoint</a>.</p></div>
   <div class="callout"><p><strong>Full implementation note:</strong> see the
     <a href="segment-native.html">segment-native training and next-direction page</a>
     for the lifecycle, training telemetry, paired evaluation, limits, and next causal design.</p></div>
@@ -422,6 +431,10 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
     <div class="card"><h3>Exact MJLab handoff</h3>
       <p>The curated 26-clip view yields 36 units and 10,561 legal 50-step starts. Runtime verifies motion, sidecar, DFRP payload, and unit-table identities before sampling.</p>
       <span class="ev">plan/DFRP_V1_EXACT_PANEL_RESULT_2026-08-21.md</span></div>
+    <div class="card"><h3>Fixed-policy tracking validation <span class="pill expl">queued</span></h3>
+      <p>The final Exact Uniform seed-1 policy is preselected for raw-versus-repaired evaluation. The paired design includes
+      all 22 qualified repairs and four controls; failures, short windows, and two training-overlap clips remain in the accounting.</p>
+      <span class="ev"><a href="https://github.com/linjiw/climb-feasibility-first/tree/master/reports/dfrp_policy_validation_2026-09-05">Design and execution record</a> · no policy result yet</span></div>
   </div>
   <div class="callout"><p><strong>Claim boundary:</strong> 22/26 is a stratified exact-panel implementation gate, not a bank-wide recovery rate. It establishes a trustworthy handoff artifact; policy and hardware benefits remain untested.</p></div>
 </section>
@@ -429,7 +442,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
 <section>
   <span class="numeral">10 · Alternative instrument sanity check</span>
   <h2>Newton remains a validated referee, not a curriculum signal <span class="pill neg">sealed ✗</span></h2>
-  <p class="kicker">Newton v1.5 passed same-state conformance, then the tested three-axis fragility vector failed its sealed no-training predictive gate on valid data. The result bounds that alternative instrument and leaves G2 versus G1 on identical exact feasible support as the smallest unresolved allocation test.</p>
+  <p class="kicker">Newton v1.5 passed same-state conformance, then the tested three-axis fragility vector failed its sealed no-training predictive gate on valid data. This bounds the alternative instrument's predictive use; E4 independently compares Exact ALP with Exact Uniform on identical feasible support.</p>
   <div class="grid">
     <div class="card"><h3>Conformance passed <span class="pill sealed">measured ✓</span></h3>
       <p>On one easy and one contact-rich hash-bound unit, placement, first observation, first action, resynchronized state,
@@ -439,20 +452,11 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       <p>Across 40 valid units, the three-axis Newton vector misses both predeclared gates: partial ρ ≥ 0.25 and
       held-out-clip LOCO lift ≥ 0.05. The grounded replication also fails.</p>
       <span class="ev">plan/NEWTON_PRED_RESULT.md · reports/newton15_pred/result.json</span></div>
-    <div class="card"><h3>G3 stays killed</h3>
+    <div class="card"><h3>No Newton-weighted allocation</h3>
       <p>The registered decision was explicit: valid-data failure leaves Newton as an analysis instrument and forbids
       Newton-fragility-weighted training. A raw per-axis correlation does not override the joint gate.</p>
       <span class="ev">adaptive: p = 0.158 · LOCO lift −0.006</span></div>
-    <div class="card"><h3>E4 confirmation <span class="pill sealed">sealed · running</span></h3>
-      <p>Exact ALP and Exact Uniform share the same feasible support, 512 environments, and 4,000 iterations.
-      The three-seed protocol checks sampler manipulation before measuring TrackingScore, survival, and common-survivor fidelity.
-      Exact Uniform seed 1 has completed training; Exact ALP seed 1 is running.
-      Their frozen sampler gate controls continuation to seeds 2–3.</p>
-      <span class="ev">plan/G_SEGMENT_FREEZE.sha256 · plan/E4_CONTINUATION_2026-09-05.md</span></div>
   </div>
-  <div class="callout"><p><strong>E4 research status, 5 September 2026:</strong> all 900 reference identities pass, confirmation preflight has zero blockers, and the 41-file seal is committed before training. Independent calibration passes; contact timing remains exploratory. A separate DFRP comparison is queued: 22 qualified repairs plus four unchanged controls, 656 paired conditions per reference arm, and a fixed Exact Uniform checkpoint. Historical payload identity checks must pass before evaluation; no repaired-policy tracking gain is claimed yet. The execution plan and claim boundaries are recorded in
-    <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/E4_CONTINUATION_2026-09-05.md">the E4 and DFRP continuation record</a>; manuscript milestones remain in
-    <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/PAPER_COMPLETION_2026-09-04.md">the paper-completion checkpoint</a>.</p></div>
 </section>
 
 <footer><div class="wrap">

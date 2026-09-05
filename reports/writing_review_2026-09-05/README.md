@@ -5,7 +5,9 @@ Measured verification, 2026-09-05. No confirmatory policy endpoint is reported.
 - `bash paper/icra/build.sh`: passed, seven US Letter pages, embedded fonts,
   no Type 3 fonts, overfull boxes, or unresolved citations.
 - Method equations and E4 results visually inspected in `method.png` and
-  `results.png`; project-page E4 section inspected in `site_e4.png`.
+  `results.png`; project-page E4 section inspected in `site_e4.png`, with the
+  updated confirmation/queued-DFRP status in `site_execution.png`. E4 execution
+  now sits with E4 evidence, separate from the Newton control analysis.
 - `mjlab-1.6.0/.venv/bin/python -m pytest tests/test_e4_continuation.py -q`:
   six tests passed, including missing/changed/failed seed-1 records, a
   failed all-seed gate preventing evaluator launch, and explicit common-reference
