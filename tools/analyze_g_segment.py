@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draft Phase-G analysis: manipulation and provenance gates, then G2 - G1.
+"""Phase-G analysis: manipulation and provenance gates, then G2 - G1.
 
 Inputs are a hash-complete run manifest (per arm and seed: evaluator CSVs,
 metadata, policy checkpoints, and sampler ledgers), the endpoint-blind

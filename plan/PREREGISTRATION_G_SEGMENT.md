@@ -1,10 +1,11 @@
-# Pre-registration (DRAFT) — Phase G: one causal test of segment-native allocation
+# Pre-registration — Phase G: one causal test of segment-native allocation
 
-**Status:** DRAFT, **unsealed and seal-ready pending approval**. Written 2026-08-27 on CPU;
-updated 2026-09-04 after the Newton N-c result, a launch-readiness audit, the feasibility-first
-narrative review, a bounded primary-source curriculum scan, and the endpoint-blind G2
-calibration plus independent validation.
-Target seal date **2026-09-10**. Confirmatory training is not authorized until the seal hash
+**Status:** **approved for seal, pre-outcome**. Written 2026-08-27 on CPU; finalized 2026-09-05
+after the Newton N-c result, launch-readiness audit, feasibility-first narrative review,
+bounded primary-source curriculum scan, endpoint-blind G2 calibration and independent
+validation, and a final seal audit. Linji explicitly approved the Phase-G seal and seed-1 G1/G2
+launch on 2026-09-05; scope is recorded in `plan/G_SEGMENT_APPROVAL_2026-09-05.md`.
+Confirmatory training is not authorized until the seal hash
 exists in `plan/G_SEGMENT_FREEZE.sha256` and every item in §9 is closed. The endpoint-blind
 calibration explicitly defined in §3 may run unsealed after the licensed bank passes hash
 verification because its launcher cannot invoke the evaluator.
@@ -137,9 +138,9 @@ two established allocation heuristics; it does not establish why either ranking 
 training seed, rank, difficulty power, exploration, window, floor, cap, and calibration
 save-interval settings and passes them through
 `climb/segment_env_cfg.py` into both registered segment tasks. `research.env.example` records the
-selected G2 confirmation profile while retaining the seal and approval warning. The future seal
-binds both launcher files; a readiness check blocks if
-the G2 environment is absent or differs from the draft contract.
+selected G2 confirmation profile while retaining the seal and approval warning. The seal binds
+the training entry point, shared-GPU gate, seed-1 orchestrator, and ledger-only seed-1 gate; a
+readiness check blocks if the G2 environment is absent or differs from this contract.
 
 ## 4. Manipulation gates — calibration first, confirmation before endpoint readout
 
@@ -172,6 +173,12 @@ explicitly labelled experiment design; do not reopen this analysis. Gate failure
 **not tested**, never as a null.
 
 G1 has its own control check: TV from its declared uniform distribution < 0.01.
+
+The seed-1 decision is executed by `tools/check_g_seed1_manipulation.py` directly from the
+training ledgers and their bound checkpoints. Its input surface contains no evaluator CSV or
+metadata field. `tools/run_g_segment_seed1.sh` launches G1 then G2, invokes that ledger-only
+gate, and stops. Evaluator commands are a later action permitted only when this result says
+`pass_for_evaluation`.
 
 ## 5. Evaluation
 
@@ -223,7 +230,7 @@ G1 has its own control check: TV from its declared uniform distribution < 0.01.
 - Any repaired-reference contrast (G-2 later, not here) reports the N7 2×2 decomposition
   (policy / reference / interaction) plus fidelity diagnostics.
 
-## 6. Decision rule (draft; to be frozen verbatim at seal time)
+## 6. Decision rule (approved verbatim for the seal)
 
 TrackingScore SESOI = **+0.02 absolute** on its [0, 1] scale. Survival SESOI remains **+0.05**.
 
@@ -268,7 +275,7 @@ task, budget, support, and evaluator.
 | S1 ✅ | ALP rank implemented in `climb/segment_runtime.py`, plumbed through `segment_command.py`, `segment_env_cfg.py`, and `climb_segment_train.py`; `W`, `λ`, configuration propagation, and resume equivalence tested | re-hash at seal; `tests/test_segment_runtime.py`, `tests/test_segment_env_cfg.py` |
 | S2 ✅ | `tier_800` guard-0 exact unit table built from full-mode screens of all 800 clips | `reports/g_segment/unit_table.json`, SHAs in §2 |
 | S3 ✅ | condition manifest for the 100-clip panel built with `eval_paired_v2.build_conditions` | `reports/g_segment/eval_conditions.json`, SHA in §5 |
-| S4 ✅ (draft) | analyzer `tools/analyze_g_segment.py`: manipulation gate first, then hash-complete evaluation provenance gate; bind calibration, PPO/environment/sampler seed, unit table, checkpoint, training entrypoint, evaluator, conditions, active/common references, CSV, and metadata before parsing endpoint rows; primary liveness-weighted TrackingScore on feasible-hard-reference; survival/all-panel/AULC decomposition; common-survivor non-harm; positive/null/inconclusive/not-tested rules | `--synthetic` passes positive, null, inconclusive, low-TV, wrong-seed, and wrong-checkpoint-provenance branches; `tools/build_g_run_manifest.py` constructs the accepted manifest without parsing CSV rows; re-hash at seal |
+| S4 ✅ | analyzer `tools/analyze_g_segment.py`: manipulation gate first, then hash-complete evaluation provenance gate; bind calibration, PPO/environment/sampler seed, unit table, checkpoint, training entrypoint, evaluator, conditions, active/common references, CSV, and metadata before parsing endpoint rows; primary liveness-weighted TrackingScore on feasible-hard-reference; survival/all-panel/AULC decomposition; common-survivor non-harm; positive/null/inconclusive/not-tested rules | `--synthetic` passes positive, null, inconclusive, low-TV, wrong-seed, and wrong-checkpoint-provenance branches; `tools/build_g_run_manifest.py` constructs the accepted manifest without parsing CSV rows |
 | S5 ✅ | `tools/run_when_free.sh` gates on free memory **and** utilization ≤ 60 %, retries on OOM / `Failed to allocate`, and appends per-attempt elapsed GPU-hours plus baseline/peak VRAM to durable sentinels. SHA-256 `ba945375055f2dee1a15437de2abfcdaac49306f6135e9fdd856094e890d87ac`. Thirteen 512-env calibration launches completed: 36--49 s, sampled peak-total VRAM 3,598--8,441 MiB, sampled peak delta 2,278--7,254 MiB. The availability gate remains conservatively 14,000 MiB because the peak outlier is retained rather than explained away | `tests/test_run_when_free.py`; `plan/G2_CALIBRATION_RESULT_2026-09-04.md` |
 | S6 ✅ | confirmation training seeds fixed: **1, 2, 3** (seed 1 is the early manipulation gate); G0 removed before seal for comparator confounding; only seed 3 may be dropped for budget | — |
 | S7 ✅ | G3 pointer: N-c failed on valid data; `PARKING.md` records that G3 must never run | `plan/NEWTON_PRED_RESULT.md` |
@@ -276,17 +283,22 @@ task, budget, support, and evaluator.
 | S9 ✅ | outcome-blind 25/75 evaluation strata built from reference features only | `reports/g_segment/panel/strata.csv`, adjacent manifest |
 | S10 ✅ (exploratory-only disposition) | fixed proxy builder, reference-only dual-view renderer, outcome-blind 20-clip panel, one-to-one event scorer, passing/failing/insufficient-support synthetic branches, and evaluator gating are implemented; independent rater artifacts are absent, so contact timing is explicitly frozen out of the Phase-G v1 verdict | `plan/G_CONTACT_TIMING_VALIDATION.md`, `plan/G_CONTACT_TIMING_DISPOSITION_2026-09-04.md`, `reports/g_segment/contact_validation/` |
 | S11 ✅ | fail-closed local intake separates the 800-motion calibration scope from the 900-motion full scope and checks committed SHA-256 identities before linking; all 900 identities pass, and the 512-env calibration footprint is measured | `tools/restore_phase_g_bank.py`, `tools/research_preflight.py`, `plan/G2_CALIBRATION_RESULT_2026-09-04.md`; strict calibration preflight has zero blockers; confirmation additionally requires the Phase-G seal |
-| S12 ✅ (draft) | post-warm-up sampler ledgers expose conditional success and pre-mixture ALP vectors; the frozen analyzer reports Spearman agreement with failure and `p(1-p)` as exploratory-only | `climb/segment_command.py`, `tools/analyze_g_segment.py`, `paper/PHASE_G_RESULT_TABLE_SHELL.md`; re-hash at seal |
+| S12 ✅ | post-warm-up sampler ledgers expose conditional success and pre-mixture ALP vectors; the frozen analyzer reports Spearman agreement with failure and `p(1-p)` as exploratory-only | `climb/segment_command.py`, `tools/analyze_g_segment.py`, `paper/PHASE_G_RESULT_TABLE_SHELL.md` |
+| S13 ✅ | endpoint-blind seed-1 gate accepts only G1/G2 sampler-ledger directories, verifies checkpoint and training-entrypoint hashes, applies the confirmation manipulation contract, and emits no evaluator endpoint | `tools/check_g_seed1_manipulation.py --synthetic`; `tools/run_g_segment_seed1.sh` stops before evaluation and invokes this gate after both arms |
 
 Seal: `sha256sum plan/PREREGISTRATION_G_SEGMENT.md plan/G2_CALIBRATION_GRID.json
 tools/calibrate_g2_treatment.py tools/analyze_g_segment.py tools/build_g_run_manifest.py
 tools/eval_paired_v2.py tools/build_g_eval_panel.py
 tools/run_g2_calibration.py tools/build_g_eval_strata.py tools/climb_segment_train.py
+tools/check_g_seed1_manipulation.py tools/run_g_segment_seed1.sh tools/run_when_free.sh
 tools/restore_phase_g_bank.py tools/research_preflight.py
 tools/build_contact_validation_panel.py tools/build_reference_contact_labels.py
 tools/render_contact_validation.py tools/validate_contact_proxy.py
 plan/G_CONTACT_TIMING_VALIDATION.md
 plan/G_CONTACT_TIMING_DISPOSITION_2026-09-04.md
+plan/G_SEGMENT_APPROVAL_2026-09-05.md
+plan/G2_CALIBRATION_RESULT_2026-09-04.md
+paper/PHASE_G_RESULT_TABLE_SHELL.md
 reports/g_segment/panel/panel.txt
 reports/g_segment/panel/panel_manifest.json reports/g_segment/panel/strata.csv
 reports/g_segment/panel/strata.manifest.json

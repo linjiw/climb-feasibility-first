@@ -1,8 +1,9 @@
-# Phase-G result tables — frozen topology, no results
+# Phase-G result tables — calibration measured, policy topology frozen
 
-**Status:** unsealed table shell, 2026-09-04. Every result cell is intentionally `pending`.
-This file defines what will be reported; it is not evidence that a run occurred. Rows may not be
-removed after results are known. Any additional analysis must be labelled exploratory.
+**Status:** approved pre-outcome table shell, finalized 2026-09-05. Tables G-A/G-B contain the
+endpoint-blind calibration measurements available before the seal. Confirmatory policy cells
+remain intentionally `pending`. This file defines what will be reported; rows may not be removed
+after results are known. Any additional analysis must be labelled exploratory.
 
 ## Table G-A — endpoint-blind ALP calibration
 
@@ -13,18 +14,18 @@ survival, checkpoint evaluation, or tracking endpoint is available to the select
 
 | candidate | exploration `rho` | ALP floor `lambda` | TV 30 | TV 40 | TV 49 | TV mean ± SD | min effective units | max top-1 | invalid/censored | final saturation | pass |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| rho005_floor0001 | 0.05 | 0.001 | pending | pending | pending | pending | pending | pending | pending | pending | pending |
-| rho005_floor0010 | 0.05 | 0.010 | pending | pending | pending | pending | pending | pending | pending | pending | pending |
-| rho005_floor0050 | 0.05 | 0.050 | pending | pending | pending | pending | pending | pending | pending | pending | pending |
-| rho010_floor0001 | 0.10 | 0.001 | pending | pending | pending | pending | pending | pending | pending | pending | pending |
-| rho010_floor0010 | 0.10 | 0.010 | pending | pending | pending | pending | pending | pending | pending | pending | pending |
-| rho010_floor0050 | 0.10 | 0.050 | pending | pending | pending | pending | pending | pending | pending | pending | pending |
-| rho020_floor0001 | 0.20 | 0.001 | pending | pending | pending | pending | pending | pending | pending | pending | pending |
-| rho020_floor0010 | 0.20 | 0.010 | pending | pending | pending | pending | pending | pending | pending | pending | pending |
-| rho020_floor0050 | 0.20 | 0.050 | pending | pending | pending | pending | pending | pending | pending | pending | pending |
-| rho040_floor0001 | 0.40 | 0.001 | pending | pending | pending | pending | pending | pending | pending | pending | pending |
-| rho040_floor0010 | 0.40 | 0.010 | pending | pending | pending | pending | pending | pending | pending | pending | pending |
-| rho040_floor0050 | 0.40 | 0.050 | pending | pending | pending | pending | pending | pending | pending | pending | pending |
+| rho005_floor0001 | 0.05 | 0.001 | 0.3562 | 0.3894 | 0.4020 | 0.3825 ± 0.0193 | 700.1 | 0.0072 | 0 | 0.2948 | fail |
+| rho005_floor0010 | 0.05 | 0.010 | 0.3099 | 0.3051 | 0.3013 | 0.3054 ± 0.0035 | 742.8 | 0.0079 | 0 | 0.2804 | fail |
+| rho005_floor0050 | 0.05 | 0.050 | 0.2150 | 0.1634 | 0.1293 | 0.1692 ± 0.0352 | 719.3 | 0.0113 | 0 | 0.2584 | fail |
+| rho010_floor0001 | 0.10 | 0.001 | 0.3346 | 0.3622 | 0.3947 | 0.3638 ± 0.0245 | 734.3 | 0.0075 | 0 | 0.2584 | fail |
+| rho010_floor0010 | 0.10 | 0.010 | 0.2993 | 0.2890 | 0.2754 | 0.2879 ± 0.0098 | 752.7 | 0.0122 | 0 | 0.2889 | fail |
+| rho010_floor0050 | 0.10 | 0.050 | 0.2030 | 0.1662 | 0.1266 | 0.1653 ± 0.0312 | 720.1 | 0.0144 | 0 | 0.2584 | fail |
+| rho020_floor0001 | 0.20 | 0.001 | 0.2880 | 0.3205 | 0.3232 | 0.3106 ± 0.0160 | 752.0 | 0.0089 | 0 | 0.2745 | fail |
+| rho020_floor0010 | 0.20 | 0.010 | 0.2591 | 0.2524 | 0.2334 | 0.2483 ± 0.0109 | 757.7 | 0.0087 | 0 | 0.2593 | fail |
+| rho020_floor0050 | 0.20 | 0.050 | 0.1849 | 0.1370 | 0.1109 | 0.1443 ± 0.0306 | 718.2 | 0.0131 | 0 | 0.2542 | pass |
+| rho040_floor0001 | 0.40 | 0.001 | 0.2202 | 0.2283 | 0.2464 | 0.2316 ± 0.0110 | 754.5 | 0.0078 | 0 | 0.2551 | fail |
+| rho040_floor0010 | 0.40 | 0.010 | 0.2026 | 0.1872 | 0.1819 | 0.1906 ± 0.0087 | 752.7 | 0.0113 | 0 | 0.2584 | fail |
+| **rho040_floor0050** | **0.40** | **0.050** | **0.1310** | **0.1063** | **0.0865** | **0.1079 ± 0.0182** | **691.2** | **0.0154** | **0** | **0.2255** | **pass / selected** |
 
 Selection is deterministic among passing rows: nearest mean TV to 0.10, then smallest TV SD,
 then declared row order. A row passes only if mean TV is in `[0.05, 0.15]`, each TV is in
@@ -39,7 +40,7 @@ next-best screen row after inspecting policy endpoints.
 
 | selected candidate | screen pass | validation TV 30/40/49 | validation TV mean ± SD | min effective units | max top-1 | invalid/censored | final saturation | validation pass |
 |---|---|---|---:|---:|---:|---:|---:|---|
-| pending | pending | pending | pending | pending | pending | pending | pending | pending |
+| rho040_floor0050 | pass | 0.1292 / 0.1045 / 0.0831 | 0.1056 ± 0.0188 | 700.1 | 0.0134 | 0 | 0.2365 | pass |
 
 ## Table G-B2 — exploratory rank agreement
 
@@ -112,10 +113,10 @@ exploratory and cannot affect the Phase-G verdict.
 
 | stage / population | comparison | reference events / minimum subgroup | micro-F1 | minimum subgroup F1 | median timing error | status / 95% CI |
 |---|---|---:|---:|---:|---:|---|
-| held-out instrument panel | rater A vs rater B | pending | pending | pending | pending | pending |
-| held-out instrument panel | fixed proxy vs consensus | pending | pending | pending | pending | pending |
-| feasible-hard common survivors | G2 − G1 contact-event F1 | pending | pending | pending | pending | pending |
-| all-panel common survivors | G2 − G1 contact-event F1 | pending | pending | pending | pending | pending |
+| held-out instrument panel | rater A vs rater B | — | — | — | — | not run; exploratory-only disposition |
+| held-out instrument panel | fixed proxy vs consensus | — | — | — | — | not run; exploratory-only disposition |
+| feasible-hard common survivors | G2 − G1 contact-event F1 | — | — | — | — | excluded from Phase-G v1 verdict |
+| all-panel common survivors | G2 − G1 contact-event F1 | — | — | — | — | excluded from Phase-G v1 verdict |
 
 ## Exhaustive status line
 
@@ -125,5 +126,6 @@ invalid or censored trials, calibration-file mismatch, parameter mismatch, seed 
 evaluation-provenance mismatch. G0 was removed before sealing because its uniform-over-clips
 sampler and G1's uniform-over-legal-starts sampler confound support hygiene with clip-duration
 exposure; no G1−G0 result may be added to this table after readout.
-Contact timing remains exploratory unless its source-hash-bound reference labels are validated
-before the seal.
+Contact timing is frozen exploratory-only for Phase G v1 under
+`plan/G_CONTACT_TIMING_DISPOSITION_2026-09-04.md`; the instrument was not human-validated before
+the seal and no contact-timing row can enter the verdict.
