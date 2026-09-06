@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CLIMB research update: two replicated relative-progress allocation runs, a calibrated failure baseline, and the fixed four-arm experiment for held-out humanoid tracking.">
+<title>Relative progress: evidence and next experiment · CLIMB</title>
+<link rel="stylesheet" href="assets/research-update.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to research update</a>
+<header class="hero"><div class="wrap">
+  <nav aria-label="Project navigation"><a href="index.html">← CLIMB project</a><a href="#evidence">Results</a><a href="#method">Method</a><a href="#experiment">Next experiment</a><a href="#artifacts">Evidence files</a></nav>
+  <p class="eyebrow">Research update · 5 September 2026</p>
+  <h1>A curriculum that keeps changing what the robot practices.</h1>
+  <p class="sub">Relative-progress sampling sustains allocation contrast in two full training runs. <b>The next test is whether that changes held-out tracking quality.</b></p>
+  <div class="statrow" aria-label="Current evidence">
+    <div class="stat"><div class="v">2 / 2</div><div class="k">relative-progress development runs pass the allocation gate</div></div>
+    <div class="stat"><div class="v">0.0832 · 0.0827</div><div class="k">mean post-warm-up TV from the deployment prior</div></div>
+    <div class="stat"><div class="v">Pending</div><div class="k">held-out policy benefit in the new four-arm confirmation</div></div>
+  </div>
+</div></header>
+<main id="main" class="wrap">
+<section id="status">
+  <span class="numeral">Current checkpoint</span>
+  <h2>Allocation is reproducible; policy utility is the open question.</h2>
+  <p>Our most promising direction is scale-relative learning progress within CLIMB’s existing exact feasibility gate. The two completed relative-progress runs support a narrow claim: the sampler maintains a meaningful change in exposure as training proceeds. They do not establish better tracking, a useful ranking of tasks, or transfer to hardware.</p>
+  <div class="callout"><p><strong>Static research snapshot, <time id="snapshot-time" datetime="2026-09-05T23:10:07.932029-04:00">5 September 2026, 23:10 EDT</time>.</strong> The fixed conditional-failure baseline D has passed seed 31. Seed 32 is still running; its latest saved iteration at this snapshot is <strong id="d32-iteration">2,800</strong>. Four development smokes passed. Four smokes through the confirmation training entrypoint remain queued behind both D passes. Confirmation remains disabled until these prerequisites pass. This page is a dated record, not a live job monitor.</p></div>
+</section>
+<section id="evidence">
+  <span class="numeral">01 · What changed</span>
+  <h2>The failed gate gave us a specific next hypothesis.</h2>
+  <div class="grid">
+    <article class="card"><h3>E4: sealed decision <span class="pill neg">not_tested</span></h3><p>Both seed-1 training arms finished, but absolute-progress sampling reached mean post-warm-up TV of only <strong>0.029659</strong>, below the frozen 0.05 minimum. Policy endpoints stayed closed and seeds 2–3 stopped. This is an inadequate intervention, not a measured policy null.</p></article>
+    <article class="card"><h3>Repair: measured exploratory result</h3><p>The fixed-policy comparison finished on 26 clips and 656 paired conditions per reference arm. Repaired minus raw TrackingScore was <strong>−0.001003</strong>, with clip-bootstrap 95% CI <strong>[−0.008588, +0.008020]</strong>. It demonstrated no aggregate tracking gain. The separate 22/26 repair qualification rate describes the physics screen.</p></article>
+    <article class="card"><h3>Relative progress: replicated allocation</h3><p>One fixed candidate completed two fresh runs of 512 environments and 4,000 PPO iterations. Both passed full sampler replay and the allocation gate. All recorded invalid-start, invalid-reference, and censored-reset counters stayed at zero.</p></article>
+  </div>
+  <p>Replay of E4’s saved sampler states showed that the fixed additive floor increasingly dominated the focus distribution as absolute progress shrank. We therefore normalized the existing progress signal by its deployment-weighted mean, leaving the estimator and admitted starts fixed.</p>
+  <div class="scroll" role="region" aria-label="Completed development runs" tabindex="0"><table>
+    <caption>Measured exploratory allocation · 4,000 iterations per run</caption>
+    <thead><tr><th scope="col">Run</th><th scope="col">Mean TV</th><th scope="col">Minimum effective units</th><th scope="col">Completed trials</th><th scope="col">Decision</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Relative R · seed 11</th><td>0.083211</td><td>616.25</td><td>1,087,814</td><td>Manipulation pass</td></tr>
+      <tr><th scope="row">Relative R · seed 12</th><td>0.082728</td><td>618.61</td><td>1,086,192</td><td>Manipulation pass</td></tr>
+      <tr><th scope="row">Failure D · seed 31</th><td>0.084955</td><td>625.06</td><td>1,113,773</td><td>Calibration pass</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">TV is total variation: half the summed absolute probability differences from the deployment prior. Effective units summarize distribution breadth using entropy. Each run has 41 saved snapshots, including 37 from iteration 400 onward. Those correlated snapshots are not independent training seeds. E4 used a different saved cadence, so its mean is a diagnostic reference rather than a matched estimate.</p>
+  <figure><a href="assets/relative-progress/allocation_comparison.png"><img src="assets/relative-progress/allocation_comparison.png" width="2400" height="740" alt="Three development histories show sustained relative-progress allocation contrast; the failure baseline starts with lower contrast and grows later. Effective support remains broad and final saturation is below its limit."></a><figcaption><strong>Complete verified R11, R12 and D31 histories.</strong> Similar average TV conceals different exposure schedules: D starts near the prior and changes more late in training. The dashed TV line is a minimum for the post-warm-up mean, not a per-checkpoint requirement. Replication is unequal and development seeds differ; this figure is not a paired method comparison. <a href="assets/relative-progress/snapshots.csv">Download all 123 snapshots (CSV)</a> · <a href="assets/relative-progress/allocation_comparison.pdf">PDF figure</a>.</figcaption></figure>
+</section>
+<section id="method">
+  <span class="numeral">02 · Method design</span>
+  <h2>Keep the signal’s scale from erasing its ranking.</h2>
+  <p>Let <var>b</var> be the deployment prior over admitted motion units and <var>g</var> the existing nonnegative absolute change in smoothed conditional success. Set its deployment-weighted mean to <var>μ</var> = Σ<sub>u</sub> <var>b</var><sub>u</sub><var>g</var><sub>u</sub>. With complete history and positive <var>μ</var>, use:</p>
+  <pre aria-label="Fixed relative-progress allocation formula">wᵤ = gᵤ / μ + 2
+qᵤ = bᵤ wᵤ / 3
+pᵤ = 0.40 bᵤ + 0.60 qᵤ
+Apply the existing joint unit and clip caps.</pre>
+  <p>Before active caps, this is exactly <strong>80% deployment prior + 20% normalized progress distribution</strong>. A common positive rescaling of all progress values leaves it unchanged. With incomplete history or zero mean progress, the existing prior/cap fallback applies. This is a different normalization of the same information source.</p>
+  <p>The controlled setting stays fixed: Unitree G1 in pinned mjlab 1.6.0, a flat scene, 800 training motions, 1,184 admitted units, 368,951 exact legal starts, and 50-step trials that cannot wrap or leave an admitted interval. PPO, observations, actions, rewards, the progress estimator, and the 0.05 unit / 0.25 clip probability caps remain matched.</p>
+  <div class="callout"><p><strong>Main unresolved mechanism:</strong> absolute progress includes both improvement and decline. About 46.6% and 46.8% of the positive excess allocation mass in the two R histories went to declining success estimates, averaged over post-warm-up snapshots. That might reflect useful recovery from forgetting or estimation noise. These percentages describe excess probability mass, not the fraction of all training samples. More TV alone cannot resolve this.</p></div>
+  <p>Learning-progress curricula and failure-based motion sampling already have precedents. The proposed contribution is an auditable composition with exact support and a controlled policy test; the normalization alone is a small engineering change. No novelty or best-performance claim is established here.</p>
+</section>
+<section id="experiment">
+  <span class="numeral">03 · Fixed research plan</span>
+  <h2>Four allocation rules. The same training budget and held-out conditions.</h2>
+  <div class="scroll" role="region" aria-label="Planned experimental arms" tabindex="0"><table class="arms">
+    <thead><tr><th scope="col">Arm</th><th scope="col">Allocation rule</th><th scope="col">Question</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">U</th><td>Deployment-uniform prior</td><td>Does adapting exposure help at all?</td></tr>
+      <tr><th scope="row">A</th><td>Existing absolute-progress floor</td><td>Does the scale correction matter?</td></tr>
+      <tr><th scope="row">R</th><td>Fixed relative-progress rule above</td><td>Does sustained progress allocation improve tracking?</td></tr>
+      <tr><th scope="row">D</th><td>Conditional failure, fixed ρ = 0.8, power 1, floor 0</td><td>Is progress more useful than practicing failures?</td></tr>
+    </tbody>
+  </table></div>
+  <p>Run all four arms on fresh paired training seeds <strong>21, 22 and 23</strong>, with 512 environments and 4,000 iterations per run. Evaluate checkpoints <strong>1000, 2000, 3000 and 3999</strong> on 100 held-out clips, including 25 feasible-hard clips, using 2,800 paired conditions per evaluation cell. This gives 12 training jobs and 48 evaluation cells. All 12 training manipulation checks precede evaluation.</p>
+  <p>The primary endpoint is the final-checkpoint <strong>R−U difference in feasible-hard clip-mean, liveness-weighted TrackingScore</strong>. A benefit decision requires a mean gain of at least +0.02, a positive lower seed-level 95% t-confidence bound, and an all-panel lower bound above −0.01. With valid preceding gates, a hard-panel upper bound below +0.02 rules out the target-sized benefit; other unresolved cases remain inconclusive under the fixed decision rules. Gate failures retain their declared <code>not_tested</code> or invalid status.</p>
+  <p>R−A, R−D, learning curves, survivor-conditioned pose error with coverage, all-condition mechanical work with exposure, and elapsed cost are secondary descriptions. R−D is not a pure ranking-only ablation: startup behavior and floor/cap composition differ. A paired hierarchical bootstrap is supplementary to the primary seed-level interval.</p>
+  <div class="grid">
+    <article class="card"><h3>Next: finish baseline validation</h3><p>Require both fixed D seeds to pass complete calibration, then replay all four confirmation-entrypoint smokes. Preserve any failed attempt and apply the declared stop rule.</p></article>
+    <article class="card"><h3>Then: freeze before confirmation</h3><p>The implemented freeze command verifies reference identities, source bindings, every prerequisite and all twelve unchanged configuration hashes. It writes a new contract and seal only when ready; the old sealed experiment remains intact.</p></article>
+    <article class="card"><h3>Finally: measure policy utility</h3><p>Execute the fixed schedule once, validate all manipulation and pairing records, then aggregate outcomes. No favorable-checkpoint selection, optional seed additions, or outcome-driven threshold changes.</p></article>
+  </div>
+  <p><strong>Precision is a real limitation.</strong> With three paired seeds, the primary 95% t-interval half-width is 2.484 times the observed seed-difference standard deviation. At an observed mean of +0.02, a positive lower bound needs that SD below about 0.00805. A prospective precision audit explores hypothetical normal-distribution scenarios; it is not measured power or a forecast. An inconclusive result is plausible and will be retained.</p>
+  <p>The implementation now includes checkpoint-linked sampler telemetry, complete history replay, paired-evaluation provenance checks, a strict campaign analyzer, and the finalization command. Four short seed-41 simulator smokes passed. The successful synthetic freeze test establishes software behavior; actual seed-51 smokes and the policy experiment remain pending.</p>
+</section>
+<section id="artifacts">
+  <span class="numeral">04 · Inspect the record</span>
+  <h2>Evidence, design and reproducible boundaries</h2>
+  <p>The downloads below export already measured results and identify their original artifacts by repository-relative path and SHA-256. They contain no trained weights or licensed motion payloads. The live partial run is excluded from the completed-run comparison.</p>
+  <ul>
+    <li><a href="assets/relative-progress/research_snapshot.json">Research snapshot (JSON)</a>: completed-run metrics, E4 disposition, repair result, pending prerequisites, and source identities.</li>
+    <li><a href="assets/relative-progress/snapshots.csv">Allocation histories (CSV)</a> and <a href="assets/relative-progress/allocation_comparison.pdf">figure (PDF)</a>: all saved R11, R12 and D31 allocation snapshots.</li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/RESEARCH_DESIGN_RELATIVE_PROGRESS_2026-09-05.md">Full research design</a>, <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/RELATIVE_CONFIRMATION_EXECUTION_2026-09-05.md">confirmation execution plan</a>, and <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/RELATIVE_CONFIRMATION_FREEZER_2026-09-05.md">freeze procedure</a>.</li>
+    <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/RELATIVE_DESIGN_PRECISION_2026-09-05.md">Prospective precision audit</a> and <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/paper/RESULTS_LOG.md">paper results ledger</a>.</li>
+  </ul>
+  <p class="note"><strong>Labels:</strong> sealed means the protocol or decision is preserved; measured means observed in the stated experiment; exploratory limits generalization; pending means the evidence does not yet exist. Simulator qualification does not establish hardware feasibility. Repair uncertainty here resamples clips for one fixed policy, not training seeds; numerical repeatability and repair-specific effects remain separate questions.</p>
+</section>
+</main>
+<footer><div class="wrap"><p>CLIMB · Research in progress · <a href="index.html">Project overview</a> · <a href="segment-native.html">Earlier segment-native experiments</a></p></div></footer>
+</body>
+</html>

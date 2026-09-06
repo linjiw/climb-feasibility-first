@@ -1,5 +1,224 @@
 # CLIMB / feasibility-first — status against Research Plan v5
 
+## 2026-09-05 final freeze command implemented; actual prerequisites pending
+
+`tools/freeze_relative_confirmation.sh` now verifies and resolves the draft's
+fixed prerequisites, reproduces all configurations, and creates a new contract,
+profile copy, schedule, receipt and seal only after complete passes. It never
+launches jobs. The actual draft correctly returns pending with zero output;
+D seed 32 and all four seed-51 new-trainer smokes remain required.
+
+Four command tests pass using actual pending evidence and complete synthetic
+positive evidence; the existing full strict-contract integration test also
+passes. Shell/Python syntax, whitespace and all 41 sealed artifacts pass.
+Queued runtime identities are unchanged. D seed 32 remains running, latest
+complete snapshot 2100 at 2026-09-05T23:00:09.003995-04:00; no complete decision is inferred.
+Implementation, exact command and validation scope:
+`plan/RELATIVE_CONFIRMATION_FREEZER_2026-09-05.md`.
+
+## 2026-09-05 first fixed D calibration passes; replication running
+
+D seed 31 completed all 4,000 iterations and its complete decision reproduces:
+mean post-warm-up TV 0.0849553, minimum effective units 625.0617, final saturation
+0.727196, 1,113,773 completed trials and zero invalid/censored events. Seed 32
+launched 22:24:12 EDT; latest complete snapshot is iteration 1400 at
+2026-09-05T22:47:38.697601-04:00. Its full result remains pending.
+
+The three-history R/R/D allocation figure shows similar mean contrast but
+different startup/time profiles. This is unequal exploratory replication,
+not paired policy evidence. The current draft still passes CPU preflight;
+D seed 32 and four seed-51 entrypoint smokes remain required before a new
+prospective freeze. Eleven targeted replay/calibration tests pass, with
+compilation, whitespace and all 41 sealed artifacts unchanged. Full result,
+comparison and freeze steps: `plan/RELATIVE_D_SEED31_RESULT_2026-09-05.md`.
+
+## 2026-09-05 prospective precision audit; calibration continues
+
+The unchanged three-seed decision now has a prospective precision audit and
+exportable figure. Hypothetical normal-model scenarios show that the all-panel
+non-regression requirement can limit a positive decision even when the hard-panel
+mean improves. No variance is fitted from policy outcomes, and no seed, method,
+threshold or budget changes. Twenty-nine targeted mathematical/analysis tests
+pass; all 41 sealed artifacts and queued runtime identities are unchanged.
+
+D seed 31 remains active: latest complete snapshot 2900 at
+2026-09-05T22:08:24.759600-04:00. This is not a complete calibration decision. D seed 32
+and the new-trainer seed-51 smokes retain their original prerequisites. Full
+assumptions, calculations and how an inconclusive result informs a separate
+future study: `plan/RELATIVE_DESIGN_PRECISION_2026-09-05.md`.
+
+## 2026-09-05 four-arm smokes pass; D calibration running (21:57 EDT)
+
+All seed-41 U/A/R/D lifecycle smokes completed and reproduce: 191/183/177/198
+completed trials, respectively, with zero invalid/censored events. Their actual
+checkpoints pass strict CPU actor loading and exact normalization restoration
+through the evaluator's runner; no policy forward call or rollout was made.
+Targeted checkpoint/evaluator verification: **27 tests passed in 3.31 s**;
+compilation, whitespace and all 41 sealed artifacts pass.
+
+D seed 31 is now training. Its latest complete snapshot at 21:57:36 EDT is
+iteration 2100 of final 3999; full calibration is pending. The unchanged
+supervisor continues to D seed 32 only after a complete pass, followed by the
+queued new-trainer seed-51 smokes. Confirmation remains disabled and no policy
+benefit is established. Results, scope and next decision rules:
+`plan/RELATIVE_DEVELOPMENT_SMOKES_2026-09-05.md`. Earlier waiting states below
+are historical snapshots.
+
+## 2026-09-05 evaluator launch blocker corrected
+
+**175 tests passed in 292.93 s**; compilation and whitespace checks pass, and
+all 41 sealed Phase-G artifacts are unchanged. The replacement seed-51
+supervisor is queued behind the unchanged fixed-D calibration.
+
+The actual evaluator CLI rejected the sealed condition file's two additional
+provenance fields despite exact agreement on all 2,800 conditions. A separate
+adapter now validates the unchanged sealed file and complete payload, reuses
+the sealed rollout code, and records its identity in evaluation metadata.
+The scheduler and strict verifier bind that adapter. Both sealed files and
+all scientific settings remain unchanged.
+
+The original seed-51 worker was superseded while waiting, before any smoke
+launched. Its artifacts remain preserved. Current preparation is
+`reports/relative_progress_2026-09-05/confirmation_preparation_adapter/`;
+the replacement lifecycle queue uses `confirmation_entrypoint_smokes_adapter/`.
+The original seed-41 smoke and fixed-D calibration workers remain unchanged.
+Confirmation is still disabled, and policy utility remains pending.
+
+The new full synthetic campaign exercises the strict contract schema and actual
+production verifiers. Actual evaluator CLI/configuration tests reach the simulator
+boundary for all four arms. This corrects the earlier integration gap without
+claiming actual GPU rollout validation. Full correction and evidence scope:
+`plan/RELATIVE_EVALUATOR_ADAPTER_2026-09-05.md`. Older preparation/queue paragraphs
+below are historical snapshots.
+
+## 2026-09-05 confirmation execution prepared (21:08 EDT)
+
+The fixed confirmation trainer, checkpoint ledger and 60-job scheduler are
+implemented. The draft records 12 arm/seed configurations, 12 training jobs,
+48 paired evaluation cells, and 375 runtime source/asset hashes including
+36 G1 assets. Actual CPU preflight reproduces the input audit and all
+configuration identities; the draft correctly rejects confirmation execution.
+**Confirmation remains disabled; policy benefit remains pending.**
+
+Integrated verification: **152 tests passed in 109.93 s**, Python compilation
+and whitespace checks pass, and all 41 sealed Phase-G artifacts are unchanged.
+Tests cover the new ledger and scheduling failures; positive complete execution
+through the new frozen-contract branch and simulator/evaluator validation are
+still pending. A new seed-51 U/A/R/D entrypoint-smoke supervisor waits behind
+the existing fixed D calibration, which follows seed-41 development smokes.
+The existing workers retain their source bindings and shared-GPU gate.
+
+Design, exact artifact paths, execution order, test scope and remaining gates:
+`plan/RELATIVE_CONFIRMATION_EXECUTION_2026-09-05.md`. This supersedes only the
+implementation-pending statements in earlier historical snapshots.
+
+## 2026-09-05 relative manipulation replicated (20:25 EDT review)
+
+**R1 and R2 both pass.** Seed 12 completed all 4,000 iterations: mean TV
+0.0827283, minimum effective units 618.6115, final saturation 0.7331081,
+1,086,192 completed trials and zero invalid/censored events. Both complete
+smoke/long studies reproduce. This establishes two-seed exploratory allocation
+replication, not policy benefit. The fixed seed-12 ranking diagnostic gives
+46.8090% declining-estimate excess mass and adjacent rank correlation 0.402925.
+
+The CPU reference audit verifies all 900 motion identities and reconstructs all
+2,800 conditions. Training-cost accounting is implemented and integrated with
+run-directory/seed checks. The source-bound four-arm smoke and D-calibration
+workers remain alive; GPU availability is the next execution dependency.
+Confirmation trainer/scheduler, remaining runtime/asset audit and prospective
+freeze remain pending. Full result, diagnostic denominator/caption corrections,
+cost scope and next decision: `plan/RELATIVE_PROGRESS_REPLICATION_RESULT_2026-09-05.md`.
+The running/pending R2 paragraphs below are historical snapshots.
+
+## 2026-09-05 independent replication running (18:37 EDT)
+
+**R2 seed 12 is now running.** The previous queue stopped at a prelaunch GPU
+poll miss, without starting training. Its terminal artifacts remain preserved.
+The unchanged experiment was relaunched in `continuation_gate_retry/`: the
+8-environment, 20-iteration smoke passed with 192 completed trials and zero
+invalid/censored events; full 512-environment, 4,000-iteration training started
+18:30:27 EDT. At the latest checkpoint it reached iteration 600. This is an
+interim state, not a full manipulation pass. Fresh downstream smoke/calibration
+supervisors wait on the same fixed scientific gates.
+
+The campaign loader now passes a complete synthetic integration fixture using
+the real prerequisite, sampler and evaluator-provenance verifiers, with all
+12 training runs and 48 evaluation cells. Paired pose/work secondaries preserve
+survivor counts and failed-condition work/exposure. These are implementation
+tests, not policy evidence. Source/input audit, confirmation execution,
+training-cost accounting and prospective freeze remain pending. Details and
+exact execution records: `plan/RELATIVE_CONFIRMATION_READINESS_2026-09-05.md`.
+This update supersedes the corresponding waiting/prototype-validation states
+below; scientific results and source-bound study designs are unchanged.
+
+## 2026-09-05 signal diagnostic and calibration queue (17:03 EDT)
+
+**New measured exploratory finding:** in completed R1 seed 11, declining
+success estimates receive 46.6047% of positive excess sampling mass, averaged
+without weighting across 37 post-warm-up snapshots. Adjacent progress-ranking
+correlation averages 0.422362 across 36 pairs. These are correlated sampler
+history summaries, not evidence that practice helps or is wasted. The fixed
+candidate and D profile are unchanged. Definitions, limitations and artifacts:
+`plan/RELATIVE_SIGNAL_DIAGNOSIS_2026-09-05.md`.
+
+**Execution:** unchanged R2 seed 12 still waits for shared-GPU availability.
+The four-arm smoke supervisor waits for R2; the new two-seed fixed-D calibration
+supervisor waits for those smokes. Source-bound launch records and logs are in
+`reports/relative_progress_2026-09-05/`. No new training or policy evaluation has
+started. The outer campaign loader is implemented as a tested development
+prototype; end-to-end campaign verification, secondary quality/work analysis,
+confirmation runner and prospective freeze remain pending. This update
+supersedes only the corresponding implementation-pending statements below.
+
+## 2026-09-05 research execution addendum (11:45 local)
+
+**Completed R1 update:** seed 11 finished 4,000 iterations and passed the full
+manipulation gate (mean TV 0.0832114 over all 37 post-warm-up snapshots; minimum
+effective units 616.2498; final saturation 0.737331; zero invalid/censored events).
+The first continuation stopped on a path-spelling bookkeeping bug before seed
+12 launch. Both original results reproduce exactly; the corrected continuation
+is queued behind the shared-GPU gate in `continuation_recovery/`. Four prospective
+U/A/R/D profiles and their CPU verification are implemented, with simulator smokes
+queued only after R2 passes. Full result, preserved failure, baseline choice and
+commands: `plan/RELATIVE_PROGRESS_R1_RESULT_2026-09-05.md`.
+The earlier running/pending paragraphs below are historical snapshots.
+
+**Continuation update:** R1 remains active. The user authorized further execution;
+the separate `tools/continue_relative_progress.py` supervisor is waiting for its
+complete result, will reproduce it, and will launch unchanged seed-12 smoke/full
+replication only on a pass. See `plan/RELATIVE_PROGRESS_CONTINUATION_2026-09-05.md`
+and `reports/relative_progress_2026-09-05/continuation/design.json`. The R3
+statistical kernel and failure-preserving condition aggregation are implemented
+and synthetically tested. The fixed 900-file input set verified; R3 baseline
+calibration, four-arm lifecycle verification and authenticated evaluator ingestion
+remain pending. No R3 endpoint or training seed has been opened/launched.
+
+This addendum supersedes the earlier same-day **pending** execution statements
+below; historical snapshots and sealed contracts remain unchanged.
+
+- **E4: sealed decision `not_tested`.** Both seed-1 arms completed, but ALP
+  post-warm-up mean TV 0.0296587 fails the frozen 0.05 minimum. Seeds 2–3 stop
+  and E4 policy endpoints remain unopened. Decision:
+  `reports/g_segment/confirmation/seed1/manipulation_result.json`.
+- **DFRP: measured exploratory fixed-policy panel.** Across 26 clips and 656
+  conditions per arm, clip-weighted TrackingScore delta is −0.001003
+  (clip-bootstrap 95% CI [−0.008588,+0.008020]); no aggregate gain is established.
+  This is one policy and windowed execution. Unchanged-control differences and
+  the separate same-reference repeat constrain interpretation.
+  `reports/dfrp_policy_validation_2026-09-05/result.json`.
+- **Next direction: exact-gated scale-relative progress.** Full design, current
+  evidence review, baselines, independent seeds, stop rules and compute plan:
+  `plan/RESEARCH_DESIGN_RELATIVE_PROGRESS_2026-09-05.md`. R0 smoke **passed**:
+  seed 11, 8 environments, 20 iterations, 184 completed trials, zero invalid or
+  censored events, state/probability replay and provenance verified; 19 focused
+  tests passed. R1 **running**, launched 11:45:22 EDT: fresh seed 11, 512
+  environments, 4,000 iterations on the separate RelativeALP-Probe task.
+  `reports/relative_progress_2026-09-05/README.md` contains exact commands and
+  live artifact locations. Allocation efficacy and policy benefit remain pending.
+
+The current user request authorizes this new implementation and simulation
+study. It does not revive failed frozen arms or change any historical seal.
+
 Updated 2026-09-05. **v5 (`RESEARCH_PLAN_v5.md`, sealed `4d490cf8…`) is authoritative**: D1
 evaluation policy, D2 spin-out, D3 new seals, D4 writing-first window to Sept 15. v4's freeze
 discipline continues underneath. Seals manifest: `plan/SEALS_2026-08-19.sha256`.
@@ -238,3 +457,17 @@ A1–A7 complete; A4 filed upstream (mjlab#1153, whole_body_tracking#73).
 - `SolverMuJoCo.get_max_contact_count()` → `NotImplementedError` on MuJoCo-C.
 - `builder.rigid_gap` defaults to 0.1 m and applies to imported MJCF shapes and the ground plane.
 - MJCF import rounds geometry through float32 `wp.transform`; for bit-conformance against a MuJoCo reference the compiled MJWarp model needs the source spec's float64 values.
+
+## 2026-09-05 23:10 EDT — public research checkpoint
+
+Prepared the GitHub Pages update requested by the user. The new relative-progress
+page explains the two complete allocation replications, first fixed-D calibration,
+E4 `not_tested` decision, completed DFRP comparison, method and fixed four-arm
+confirmation plan. D32 was saved through iteration 2800 at the dated public
+snapshot; no complete pass or held-out policy benefit is claimed. The read-only
+freeze check still reports D32 and four entrypoint smokes pending.
+
+Desktop/mobile, light/dark, local-link and numeric-export checks pass; all 41
+Phase-G seal entries pass. The publication record and screenshots are in
+`plan/PAGES_RESEARCH_UPDATE_2026-09-05.md` and
+`reports/pages_update_2026-09-05/`. Runtime sources and queued jobs are unchanged.

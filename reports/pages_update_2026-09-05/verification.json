@@ -1,0 +1,18 @@
+{
+  "classification": "publication verification; no new scientific performance measurement",
+  "numeric_export_checks": "pass",
+  "browser_checks": "12 page/theme/viewport combinations passed; no broken images, local links, script errors or document overflow",
+  "visual_review": "desktop, mobile dark, and complete evidence section inspected",
+  "phase_g_seal": "41 entries passed",
+  "whitespace": "git diff --check passed",
+  "files": {
+    "docs/index.html": "87829fabe187ed9059d2d3dcf01097b2466370ffd0490f99c7d5d612865b58d0",
+    "docs/segment-native.html": "43c6d2a12b461d0c86d815f5698180c116d54c801e973a219eebaa6705b71e4e",
+    "docs/relative-progress.html": "6ed684aa1f8cb91a007d6de202cbffa3815991b974add25dd6d0e0eb62124990",
+    "docs/assets/research-update.css": "62ff00ac8e4ea77cf3241e5cff00014f289bcf14e6e8126a82a40a63d7ba97b5",
+    "docs/assets/relative-progress/snapshots.csv": "5aed481841c2459d9852c1126be62ed5d1c43ea992d17b29b0b3ccc67bbc056c",
+    "docs/assets/relative-progress/allocation_comparison.png": "4037b61b398456d59159791399fd99b4e4deb834421867b2a2aff5f98ceb5ce3",
+    "docs/assets/relative-progress/research_snapshot.json": "4210bbd52bb44084f3936b1100b59f17af3ddf72ed1f6d96438c4f0823baa477",
+    "docs/assets/relative-progress/allocation_comparison.pdf": "172684bba934ec33983dcd9ad1c272d539d3e3b9601d9499f59e853ed470eabc"
+  }
+}

@@ -75,3 +75,168 @@ adaptive-minus-uniform body-position error −4.20 mm (95% unit-bootstrap interv
 | DFRP v0 legacy routing: 644/2,442 (26.4 %) strict-flagged clips fit the 8 cm primary displacement budget; 962 (39.4 %) additional clips fit 8–15 cm; all are legacy root-only and qualification-incomplete, so zero are training-eligible. Two-clip root+IK development view: 1 feasible byte-identical no-op + 1 repair 0.1010→0.0303 infeasible, 39.8 mm root, 0.992 mm contact residual, 76 legal starts total | DFRP direction / future §8 method | `reports/dfrp_v0/{census,dev_panel}/`, `plan/DFRP_V0_RESULT_2026-08-21.md` | unsealed measured implementation; no policy outcome |
 | DFRP v1 frozen exact panel: 22/26 flagged candidates (84.6 %) pass residual ≤5 %, root ≤8 cm, joint-limit, IK-residual ≤10 mm, hash-bound exact-support, and legal-start gates; 4/4 feasible controls are byte-identical/ready. Curated view: 26 clips, 36 units, 10,561 legal 50-step starts; median/p95 CPU runtime 2.57/6.29 s per clip. Two residual-infeasibility and two IK-qualification failures are excluded. | ICRA E3 / result §3; DFRP direction / flagship future §8 method | `reports/dfrp_v1_exact_panel/iter1/{result.json,curated_manifest.json,unit_table.json}`, `plan/DFRP_V1_EXACT_PANEL_RESULT_2026-08-21.md` | unsealed measured implementation on a stratified panel; not a bank-wide recovery rate or policy outcome |
 | Phase-G endpoint-blind G2 manipulation calibration: 2/12 screen candidates pass; deterministic selection rho 0.40 / lambda 0.05 has screen TV 0.1310/0.1063/0.0865 (mean 0.1079), then independent-seed TV 0.1292/0.1045/0.0831 (mean 0.1056), minimum 700.1 effective units, maximum top-1 0.0134, zero invalid/censored events, and saturation 0.2365 | Phase-G preregistration / future ICRA experiment | `reports/g_segment/calibration/result.json`, 39 hash-bound ledgers, `plan/G2_CALIBRATION_RESULT_2026-09-04.md` | unsealed measured manipulation only; no evaluator or policy-performance endpoint read; no policy-benefit claim |
+
+
+## 2026-09-05 execution addendum: E4 disposition and next candidate
+
+These entries supersede earlier pending labels for the named experiments only.
+No sealed artifact, endpoint definition, or prior outcome has been amended.
+
+| Number or disposition | Use and limitation | Artifact | Class |
+| --- | --- | --- | --- |
+| E4 seed-1 mean post-warm-up TV 0.0296587 < 0.05; both 4,000-iteration arms complete; `not_tested` | Future E4 results wording; policy endpoints unopened, seeds 2–3 stopped. This is not a policy null. | `reports/g_segment/confirmation/seed1/manipulation_result.json` | sealed manipulation decision |
+| Absolute-floor focus-normalizer share 64.3% at iteration 500 → 93.6% at 3999; relative κ=2 replay mean TV 0.0854, range 0.0560–0.1087, eight snapshots | Motivation for separate candidate; fixed recorded histories cannot establish live allocation or learning benefit. | `reports/g_segment/confirmation/allocation_diagnosis.json` | measured replay plus exploratory counterfactual |
+| DFRP one-policy, 26 clips, 656 paired conditions per arm: clip-weighted TrackingScore raw 0.392505 → repaired 0.391502, Δ −0.001003, clip-bootstrap 95% CI [−0.008588,+0.008020]; raw/repaired trial successes 409/656 and 397/656 | Future repair follow-up; no aggregate gain established. Clip-weighted score and trial-level success denominators differ. Short windows, two training-overlap clips, unchanged-control numerical differences, and one policy limit scope. | `reports/dfrp_policy_validation_2026-09-05/result.json`, `strata.all.all_conditions` | measured exploratory fixed-policy deployment comparison |
+| Relative-progress R0: seed 11, 8 environments, 20 iterations, 184 completed trials, 0 invalid/censored events, 17 s; strict smoke pass | Implementation evidence only; incomplete history gives approximately zero TV. R1 launched with 512 environments / 4,000 iterations; sustained manipulation and policy benefit remain pending. | `reports/relative_progress_2026-09-05/smoke_result.json`, `smoke_s11.log`, `study_s11/design.json` | measured exploratory lifecycle smoke; long-run result pending |
+
+
+## 2026-09-05 R1 completed manipulation result
+
+| Number / disposition | Scope and limitation | Artifact | Class |
+| --- | --- | --- | --- |
+| Relative ALP seed 11: full 4,000 iterations / 512 environments; 41 checkpoints, 37 post-warm-up snapshots; mean TV 0.0832114, individual range [0.0489606,0.1082347]; min effective units 616.2498; max post-warm-up unit/clip mass 0.0177383/0.0184985; final saturation 0.737331; 1,087,814 completed trials, zero invalid/censored events; manipulation pass | Replaces pending R1 label only. One exploratory seed; no tracking or rank-informativeness claim. TV band applies to the run mean, not every snapshot. The earlier E4 uses a different seed and is not a paired performance comparator. | `reports/relative_progress_2026-09-05/study_s11/long_result.json`, `seed11_recovery_verification.json`, `continuation_recovery/seed11_figure/` | measured exploratory manipulation |
+| R1 elapsed training 2,680 s (0.744444 GPU-hours elapsed); shared-GPU baseline/peak total 1,382/12,841 MiB | Shared GPU, including other processes; not isolated allocator overhead, process memory or throughput benchmark | `reports/relative_progress_2026-09-05/study_s11/long.log` | measured execution cost |
+
+The first continuation stopped before seed 12 because it resolved relative smoke
+ledger keys to absolute paths. Both original smoke/long results replay exactly
+when path spelling is preserved; the corrected wrapper changes no scientific
+threshold or checker. Failed source/design/log are retained. Seed 12 remains
+queued, with independent replication and policy benefit pending; see
+`plan/RELATIVE_PROGRESS_R1_RESULT_2026-09-05.md`.
+
+## 2026-09-05 R1 sampler-signal diagnostic
+
+These descriptive numbers are recorded for possible future paper use; they do
+not change a sealed result or establish policy benefit.
+
+| Number / disposition | Scope and limitation | Artifact | Class |
+| --- | --- | --- | --- |
+| Declining estimated success receives 0.4660473 of positive excess sampling mass | Unweighted mean of 37 post-warm-up snapshot fractions in R1 seed 11; denominator is positive probability mass above deployment prior, not all trials. Forgetting and estimation noise are unresolved alternatives. | `reports/relative_progress_2026-09-05/rank_signal_s11/result.json` | measured exploratory sampler diagnostic |
+| Adjacent absolute-progress ranking Spearman correlation 0.4223621; progress/failure 0.2814350; progress/recent-attempt count 0.4607236 | Means over 36 adjacent snapshot pairs or 37 within-snapshot correlations, respectively. Correlated observations, endogenous exposure, no inferential or independent-replication claim. | `reports/relative_progress_2026-09-05/rank_signal_s11/result.json`, `snapshots.csv` | measured exploratory correlations |
+| Fixed D allocation on R histories has mean TV 0.0859453 | Holds R histories fixed; not a D training result and not used for profile selection. Actual D seeds 31/32 remain pending. | `reports/relative_progress_2026-09-05/rank_signal_s11/result.json` | exploratory counterfactual replay |
+
+Definitions, execution queue and remaining confirmation requirements:
+`plan/RELATIVE_SIGNAL_DIAGNOSIS_2026-09-05.md`. No diagnostic changes the
+queued independent replication, baseline profile, or policy endpoint rules.
+
+## 2026-09-05 R2 lifecycle and execution addendum
+
+| Number / disposition | Scope and limitation | Artifact | Class |
+| --- | --- | --- | --- |
+| Relative ALP seed-12 smoke: 8 environments, 20 iterations, 192 completed trials, zero invalid/censored events, 17 s, strict `smoke_pass` | Lifecycle evidence only. Full 512-environment / 4,000-iteration replication launched 18:30:27 EDT; complete manipulation and policy benefit remain pending. | `reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/smoke_result.json`, `smoke.log`, `long_command.json` | measured exploratory simulator smoke |
+
+The preceding `continuation_recovery` attempt stopped at a GPU poll miss before
+seed-12 training launched. It is an operational stop, not a manipulation failure
+or discarded seed. Original logs/design/terminal records remain preserved.
+`plan/RELATIVE_CONFIRMATION_READINESS_2026-09-05.md` documents the unchanged
+restart and developing secondary-analysis definitions. Synthetic campaign test
+results do not supply any new paper-bound policy-performance number.
+
+## 2026-09-05 completed relative-ALP replication and input audit
+
+| Number / disposition | Scope and limitation | Artifact | Class |
+| --- | --- | --- | --- |
+| Seed 12: 4,000 iterations / 512 environments; 41 snapshots, 37 post-warm-up; mean TV 0.0827283432, range [0.0507759,0.1013988], minimum effective units 618.611481, maximum unit/clip mass 0.0223513/0.0223513, final saturation 0.7331081, 1,086,192 completed trials, zero invalid/censored events; manipulation pass | Both planned development seeds now pass and reproduce. Sustained allocation only; policy utility, ranking utility and transfer remain pending. Probability extrema/effective-unit minimum are post-warm-up. | `reports/relative_progress_2026-09-05/replication_review.json`, `continuation_gate_retry/study_s12/long_result.json` | measured exploratory simulation replication |
+| Seed-12 declining-estimate share of positive excess mass 0.4680896; adjacent rank correlation 0.4029245; progress/failure correlation 0.2747052; progress/new-attempt correlation 0.4469226; D fixed-history TV 0.0849016 | Unweighted correlated-snapshot summaries: 37 excess/failure/TV snapshots, 36 adjacent-rank/attempt intervals. Positive excess mass is not all training draws; D replay is not D training. | `reports/relative_progress_2026-09-05/rank_signal_s12_corrected/result.json`, `replicated_rank_diagnostic.csv` | measured exploratory diagnostics and counterfactual |
+| Full R1/R2 elapsed training: 2,680 + 3,373 = 6,053 s, 1.681389 elapsed GPU-hours | Two full probes only; excludes smokes, waiting, engineering, evaluations and prior studies. Shared device, not GPU-active time, isolated overhead, or energy. The intervening gate miss launched no training. | `reports/relative_progress_2026-09-05/replication_execution_cost.json` | measured scoped execution cost |
+| 900 motion identities verified; 800 training / 100 evaluation, zero content overlap; 2,800 conditions reconstructed from current headers | CPU reference-input audit only; does not certify confirmation execution or policy performance. | `reports/relative_progress_2026-09-05/replication_reference_audit.json` | measured input verification |
+
+**Corrections without changed measurements:** the earlier seed-11 attempt-count
+correlation 0.4607236 averages **36** valid adjacent-snapshot intervals, not 37;
+the first post-warm-up snapshot has no predecessor. The seed-12 diagnostic's
+initial figure title incorrectly said “Seed 11”; its JSON already said seed 12.
+The original figure/source are preserved, with an equality-checked caption
+correction in `rank_signal_s12/caption_correction.json`. Use the corrected
+seed-12 figure. No scientific gate, rank statistic, or sealed result changed.
+
+
+## 2026-09-05 confirmation implementation disposition
+
+The fixed confirmation trainer, checkpoint ledger and scheduler are implemented;
+the actual draft passes CPU source/configuration/reference preflight. The draft
+keeps confirmation disabled. New seed-51 entrypoint smokes are queued after
+fixed D calibration; simulator validation, the complete new frozen-contract
+integration audit, prospective freeze and policy utility remain **pending**.
+No paper-bound policy-performance number changes in this update. Synthetic
+tests and configuration audits are implementation evidence only. See
+`plan/RELATIVE_CONFIRMATION_EXECUTION_2026-09-05.md` and
+`reports/relative_progress_2026-09-05/confirmation_execution_verification.json`.
+
+
+## 2026-09-05 evaluator compatibility correction
+
+**Measured implementation defect:** the sealed evaluator rejects the sealed
+Phase-G condition file because it contains two additional provenance fields;
+all shared fields and all 2,800 conditions match exactly. The prior reference
+input audit did not certify the evaluator CLI. A separate adapter validates
+the unchanged sealed file, complete payload and provenance, then reuses the
+sealed rollout implementation. New evaluation metadata binds the adapter.
+No scientific condition, sealed source, sealed manifest or paper-bound policy
+number changes. Strict-contract synthetic integration is implementation evidence;
+actual benchmark execution and policy utility remain **pending**. The previous
+seed-51 queue was superseded before any smoke launched. Details and preserved
+identities: `plan/RELATIVE_EVALUATOR_ADAPTER_2026-09-05.md`.
+
+
+## 2026-09-05 completed four-arm development lifecycle
+
+| Number / disposition | Scope and limitation | Artifact | Class |
+| --- | --- | --- | --- |
+| U/A/R/D seed-41 smokes: 191/183/177/198 completed trials; eight environments, 20 iterations each; all four smoke passes with zero invalid/censored events | Complete source-bound sampler/checkpoint replay reproduces. Short-run counts are lifecycle counters, not policy comparisons. | `reports/relative_progress_2026-09-05/development_smoke_review/result.json` | measured development simulation |
+| U/A/R/D elapsed smoke job time: 20/21/18/16 seconds; total 75 seconds, 0.020833 elapsed GPU-hours | These four jobs only, shared device; excludes queue time, CPU checks and all other studies. Not GPU-active time or energy. | Same review, original four smoke logs | measured scoped execution cost |
+| All four actual development checkpoints pass strict CPU actor-only loading, including exact normalization restoration | Fixed zero observation stub; no simulator, policy forward call or rollout. Runtime tracking and policy utility remain pending. | `reports/relative_progress_2026-09-05/development_smoke_review/checkpoint_loading.json` | measured CPU lifecycle verification |
+
+D seed-31 calibration is now running; its interim snapshots are not a complete
+scientific pass. Assigned seeds, profiles and held-out endpoint rules remain
+unchanged. No paper-bound policy-performance number changes. Next research
+plan: `plan/RELATIVE_DEVELOPMENT_SMOKES_2026-09-05.md`.
+
+
+## 2026-09-05 prospective three-seed precision sensitivity
+
+| Quantity | Scope and limitation | Artifact | Class |
+| --- | --- | --- | --- |
+| Fixed three-seed 95% t-interval half-width = 2.4841377 × sample SD; observed mean +0.02 requires sample SD <0.0080511 for positive lower bound; observed panel mean zero requires SD <0.0040255 for the −0.01 guard | Algebra of the existing decision rule; not an estimate of actual training-seed variability. | `reports/relative_progress_2026-09-05/design_precision/result.json` | prospective design calculation |
+| Hypothetical hard-panel benefit probabilities at (true mean, population SD): (+0.02,0.01) 30.8889%; (+0.02,0.02) 14.7528%; (+0.04,0.01) 90.8375%; (+0.04,0.02) 46.6744% | IID normal paired-seed model, illustrative unfitted parameters; one necessary gate only, conditional on all manipulation/provenance gates. Not measured policy evidence or full campaign power. | Same result; `hypothetical_primary.csv` | hypothetical operating scenarios |
+| With hypothetical all-panel mean zero and SD 0.01, guard pass probability 17.8610%; combining hard mean +0.04/SD 0.01 gives full-positive Frechet bounds [8.6985%,17.8610%] | Does not assume independence of hard/full-panel summaries; normal approximation and no fitted variances. | Same result; `design_precision.pdf` | hypothetical bounds |
+
+No method, assigned seed, budget, condition, threshold or queued source changes.
+No benchmark policy outcomes are read. The sensitivity informs interpretation of
+an inconclusive result and does not authorize optional seed additions. Exact
+assumptions, derivation and next-study distinctions:
+`plan/RELATIVE_DESIGN_PRECISION_2026-09-05.md`.
+
+
+## 2026-09-05 fixed D seed-31 complete calibration
+
+| Number / disposition | Scope and limitation | Artifact | Class |
+| --- | --- | --- | --- |
+| D seed 31: 4,000 iterations, 512 environments; mean TV 0.0849553389 over 37 post-warm-up snapshots, range [0.0083017,0.1182816]; minimum effective units 625.061738; maximum unit/clip mass 0.0172129/0.0172129; final saturation 0.727195946; 1,113,773 completed trials; zero invalid/censored events; calibration_pass | All 41 checkpoint/sampler histories reproduce. One fixed-baseline development seed only; planned seed 32 remains pending. Mean gate does not constrain each snapshot, and D has no upper 0.15 gate. | `reports/relative_progress_2026-09-05/failure_seed31_review/result.json`, original `failure_calibration_gate_retry/seed31_result.json` | measured exploratory calibration |
+| D seed-31 elapsed training: 2,229 s / 0.619167 GPU-hours; one launch, successful terminal | Shared device; baseline/peak total memory 388/9,519 MiB. Excludes smokes, queue, evaluation and CPU engineering; not speed, energy or isolated GPU-active-time evidence. | Same review, original `seed31.log` | measured scoped execution cost |
+
+The complete R11/R12/D31 allocation figure keeps unequal replications separate.
+Similar mean TV does not establish identical allocation, comparable startup
+exposure, progress-ranking utility or policy quality. No benchmark policy
+endpoint was opened. Result and next freeze requirements:
+`plan/RELATIVE_D_SEED31_RESULT_2026-09-05.md`.
+
+
+## 2026-09-05 prospective freeze command implementation
+
+The finalization command is implemented and tested. It refuses incomplete
+actual prerequisites without writing enabled profiles, and verifies/seals a
+complete explicitly synthetic contract without launching jobs. This supplies
+implementation evidence only. Actual D replication, new-trainer lifecycle,
+confirmation freeze and held-out policy utility remain **pending**. No
+paper-bound performance number or scientific design changes. Details:
+`plan/RELATIVE_CONFIRMATION_FREEZER_2026-09-05.md`.
+
+## 2026-09-05 public relative-progress research checkpoint
+
+The GitHub Pages update exports the already recorded R11/R12/D31 allocation
+histories, E4 `not_tested` disposition and fixed-policy DFRP result with their
+claim boundaries. No measured performance value changes. Public source identities
+and the 23:10 EDT pending-state snapshot are in
+`docs/assets/relative-progress/research_snapshot.json`; explanation and fixed
+next-study design are in `docs/relative-progress.html`. Partial D32 progress is
+operational status only and is excluded from the completed-run figure and table.

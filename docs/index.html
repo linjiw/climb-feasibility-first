@@ -94,8 +94,8 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
     <div class="stat"><div class="v">0.567 → 0.609</div><div class="k">cross-policy difficulty transfer once feasibility features join the atlas (perm p = 0.01)</div></div>
   </div>
   <div class="heroctas">
-    <a class="primary" href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/METHOD_REFRAME_2026-09-04.md">Method + next research →</a>
-    <a class="primary" href="#e4">E4 exact-support tracking →</a>
+    <a class="primary" href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/RESEARCH_DESIGN_RELATIVE_PROGRESS_2026-09-05.md">Method + next research →</a>
+    <a class="primary" href="relative-progress.html">Latest research: relative progress →</a>
     <a class="primary" href="companion.html">Read the companion note →</a>
     <a class="ghost" href="flagship.html">Flagship working draft</a>
     <a class="ghost" href="https://github.com/linjiw/refeas">refeas — the screen (pip-able)</a>
@@ -103,6 +103,14 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
 </div></div>
 
 <div class="wrap">
+
+<section id="latest-research">
+  <span class="numeral">Latest research · 5 September 2026</span>
+  <h2>Relative progress sustains allocation in two full runs <span class="pill expl">measured · exploratory</span></h2>
+  <p class="kicker">The new sampler passes its allocation gate at mean TV 0.0832 and 0.0827. Held-out tracking benefit remains pending. The fixed failure baseline has passed its first calibration seed; the second is running at this dated snapshot.</p>
+  <div class="callout"><p><strong>Why this direction:</strong> E4’s seed-1 mean TV fell to 0.029659, below its frozen 0.05 gate; policy endpoints stayed closed and seeds 2–3 stopped. Normalizing the same progress signal by its weighted mean sustains the intended change in practice. The next test compares uniform, absolute progress, relative progress, and conditional failure on fresh paired seeds.</p>
+  <p><a href="relative-progress.html"><strong>Read the latest results, method, fixed experiment plan and evidence →</strong></a></p></div>
+</section>
 
 <section>
   <span class="numeral">00 · The CLIMB method</span>
@@ -376,7 +384,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
   <h2>Exact-support curriculum: calibrated allocation and paired tracking <span class="pill expl">measured + exploratory</span></h2>
   <p class="kicker">The GPU lifecycle, bounded curriculum, and paired evaluator pass. One seed shows a motion-quality
   signal but no established survival benefit. All 900 licensed payload identities pass, calibration and independent validation are complete,
-  and the sealed seed-1 confirmation is running. The remaining seeds follow only if its manipulation gate passes.</p>
+  but the completed sealed seed-1 confirmation failed its allocation gate. Its decision is <code>not_tested</code>; policy endpoints remain closed and seeds 2–3 stopped. The newer relative-progress studies are summarized above.</p>
   <div class="grid">
     <div class="card"><h3>Exact-support lifecycle validation</h3>
       <p>An 8-env lifecycle trace completed 24/24 exact trials with no wrap. Two 512-env arms then ran 200 iterations
@@ -397,18 +405,16 @@ footer .links{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:.6rem}
       <p>The adaptive distribution ended only 1.40 % total-variation from its control (correlation 0.998), despite healthy entropy.
       The subsequent 12-candidate ALP calibration selected ρ = 0.40 and λ = 0.05. Independent validation measured mean TV 0.1056,
       at least 700.1 effective units, maximum unit mass 0.0134, and zero invalid/censored events over its 50-iteration run.
-      E4 compares Exact ALP and Exact Uniform over 1,184 units / 368,951 legal starts. Long-run tracking results are pending.</p>
+      E4 compared Exact ALP and Exact Uniform over 1,184 units / 368,951 legal starts. Its short calibration did not predict sustained long-run contrast: the completed seed-1 allocation gate failed.</p>
       <span class="ev">reports/g_segment/calibration/result.json · measured calibration</span></div>
-    <div class="card"><h3>E4 confirmation <span class="pill sealed">sealed · running</span></h3>
+    <div class="card"><h3>E4 confirmation <span class="pill neg">sealed · not_tested</span></h3>
       <p>Exact ALP and Exact Uniform share the same feasible support, 512 environments, and 4,000 iterations.
       The three-seed protocol checks sampler manipulation before measuring TrackingScore, survival, and common-survivor fidelity.
-      Exact Uniform seed 1 has completed training; Exact ALP seed 1 is running.
-      Their frozen sampler gate controls continuation to seeds 2–3.</p>
+      Both seed-1 arms completed training. Mean post-warm-up adaptive TV was 0.029659, below the required 0.05.
+      The frozen gate stopped continuation to seeds 2–3; no E4 policy-null claim follows.</p>
       <span class="ev">plan/G_SEGMENT_FREEZE.sha256 · plan/E4_CONTINUATION_2026-09-05.md</span></div>
   </div>
-  <div class="callout"><p><strong>E4 research status, 5 September 2026:</strong> all 900 reference identities pass, confirmation preflight has zero blockers, and the 41-file seal is committed before training. Independent calibration passes; contact timing remains exploratory. A separate DFRP comparison is queued: 22 qualified repairs plus four unchanged controls, 656 paired conditions per reference arm, and a fixed Exact Uniform checkpoint. Historical payload identity checks must pass before evaluation; no repaired-policy tracking gain is claimed yet. The execution plan and claim boundaries are recorded in
-    <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/E4_CONTINUATION_2026-09-05.md">the E4 and DFRP continuation record</a>; manuscript milestones remain in
-    <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/PAPER_COMPLETION_2026-09-04.md">the paper-completion checkpoint</a>.</p></div>
+  <div class="callout"><p><strong>Updated disposition, 5 September 2026:</strong> the E4 allocation decision is <code>not_tested</code>. The separate fixed-policy DFRP comparison is complete: 26 clips, 656 paired conditions per reference arm, repaired minus raw TrackingScore −0.001003 (clip-bootstrap 95% CI −0.008588 to +0.008020). No aggregate tracking gain was demonstrated. This does not change the separate 22/26 physics-screen qualification result. See <a href="relative-progress.html">the latest research update</a> for the full interpretation, downloadable evidence and next experiment.</p></div>
   <div class="callout"><p><strong>Full implementation note:</strong> see the
     <a href="segment-native.html">segment-native training and next-direction page</a>
     for the lifecycle, training telemetry, paired evaluation, limits, and next causal design.</p></div>

@@ -1,0 +1,171 @@
+{
+  "schema_version": "climb_public_research_snapshot/1",
+  "snapshot_time": "2026-09-05T23:10:07.932029-04:00",
+  "classification": "measured exploratory development; confirmation policy benefit pending",
+  "export_scope": "Selected metrics from preserved original records; not a replacement for original decisions or a full reproduction bundle.",
+  "completed_allocation_runs": [
+    {
+      "arm": "R",
+      "seed": 11,
+      "status": "manipulation_pass",
+      "post_warmup_snapshots": 37,
+      "mean_tv": 0.08321139322547161,
+      "tv_range": [
+        0.048960607638450844,
+        0.10823470586052537
+      ],
+      "minimum_effective_units": 616.2498459907964,
+      "maximum_unit_mass": 0.017738289680994238,
+      "maximum_clip_mass": 0.018498544791837757,
+      "final_saturation": 0.737331081081081,
+      "completed_trials": 1087814,
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 2680,
+        "elapsed_gpu_hours": 0.7444444444444445,
+        "shared_gpu_baseline_mib": 1382,
+        "shared_gpu_peak_total_mib": 12841,
+        "started": "2026-09-05T11:45:22-04:00",
+        "finished": "2026-09-05T12:30:02-04:00"
+      },
+      "source_decision": {
+        "path": "reports/relative_progress_2026-09-05/study_s11/long_result.json",
+        "sha256": "08315ff233877da3c318c977cce23eaaec73e5bd4b5c434edaa84f5a00df3b9b"
+      }
+    },
+    {
+      "arm": "R",
+      "seed": 12,
+      "status": "manipulation_pass",
+      "post_warmup_snapshots": 37,
+      "mean_tv": 0.08272834315222899,
+      "tv_range": [
+        0.05077592128766127,
+        0.10139880213566149
+      ],
+      "minimum_effective_units": 618.6114813979663,
+      "maximum_unit_mass": 0.022351269900814374,
+      "maximum_clip_mass": 0.022351269900814374,
+      "final_saturation": 0.7331081081081081,
+      "completed_trials": 1086192,
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 3373,
+        "elapsed_gpu_hours": 0.9369444444444445,
+        "shared_gpu_baseline_mib": 1018,
+        "shared_gpu_peak_total_mib": 11760,
+        "started": "2026-09-05T18:30:27-04:00",
+        "finished": "2026-09-05T19:26:40-04:00"
+      },
+      "source_decision": {
+        "path": "reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long_result.json",
+        "sha256": "207651b3ed2e6f22ce6c4abaf165a55ce65b7953c268fc96eae6e1b80a8c67ec"
+      }
+    },
+    {
+      "arm": "D",
+      "seed": 31,
+      "status": "calibration_pass",
+      "post_warmup_snapshots": 37,
+      "mean_tv": 0.08495533886493581,
+      "tv_range": [
+        0.008301689933997434,
+        0.11828161773447501
+      ],
+      "minimum_effective_units": 625.0617376866245,
+      "maximum_unit_mass": 0.017212927821653595,
+      "maximum_clip_mass": 0.017212927821653595,
+      "final_saturation": 0.7271959459459459,
+      "completed_trials": 1113773,
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 2229,
+        "elapsed_gpu_hours": 0.6191666666666666,
+        "shared_gpu_baseline_mib": 388,
+        "shared_gpu_peak_total_mib": 9519,
+        "started": "2026-09-05T21:44:31-04:00",
+        "finished": "2026-09-05T22:21:40-04:00"
+      },
+      "source_decision": {
+        "path": "reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed31_result.json",
+        "sha256": "a026a4caeb0a318362f5335326cf74ee85c69fbc079c1f721e5121095635e51c"
+      }
+    }
+  ],
+  "e4": {
+    "status": "not_tested",
+    "mean_post_warmup_tv": 0.02965872580820417,
+    "policy_endpoints_opened": false,
+    "source": {
+      "path": "reports/g_segment/confirmation/seed1/manipulation_result.json",
+      "sha256": "3fe6ea66e2ba926862af155d1fe14b080bc16327db11d6562dfaee541719b3cf"
+    }
+  },
+  "dfrp": {
+    "classification": "exploratory fixed-policy reference comparison",
+    "conditions_per_arm": 656,
+    "clips": 26,
+    "tracking_score": {
+      "raw": 0.39250490671844224,
+      "repaired": 0.3915021945330933,
+      "repaired_minus_raw": -0.0010027121853489356,
+      "clip_bootstrap_95ci": [
+        -0.008587761487532734,
+        0.008020236553921721
+      ]
+    },
+    "source": {
+      "path": "reports/dfrp_policy_validation_2026-09-05/result.json",
+      "sha256": "b62d1e2a09bf5d12d8cccb5693ff3f3c6c9533c3918fb7e3c5905cbaf3ed492e"
+    }
+  },
+  "pending": {
+    "D_seed32": "running; full calibration decision unavailable",
+    "D_seed32_latest_saved_iteration": 2800,
+    "ledger": {
+      "path": "reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_2800_segment.json",
+      "sha256": "a5133238e4892040dfd844a34a8c3aae01c5b4ba343d19bc32fda59b486c79fb"
+    },
+    "entrypoint_seed51": "U/A/R/D queued behind both D calibration passes",
+    "confirmation_enabled": false,
+    "last_freeze_check_time": "2026-09-05T22:59:12.021560-04:00",
+    "last_freeze_check_source": {
+      "path": "reports/relative_progress_2026-09-05/freeze_command_validation/actual_readiness.json",
+      "sha256": "0762a7a0f4daba072b43af1c530b5b86e76736d054c678105dcc60794c5491e7"
+    }
+  },
+  "sources": [
+    {
+      "path": "reports/relative_progress_2026-09-05/failure_seed31_review/result.json",
+      "sha256": "cdfbc6458ff4ac860c4cfa976b983aff170f142029995ef43b03a9ee70210a0b"
+    },
+    {
+      "path": "reports/relative_progress_2026-09-05/failure_seed31_review/snapshots.csv",
+      "sha256": "5aed481841c2459d9852c1126be62ed5d1c43ea992d17b29b0b3ccc67bbc056c"
+    },
+    {
+      "path": "reports/relative_progress_2026-09-05/failure_seed31_review/allocation_comparison.png",
+      "sha256": "4037b61b398456d59159791399fd99b4e4deb834421867b2a2aff5f98ceb5ce3"
+    },
+    {
+      "path": "reports/relative_progress_2026-09-05/failure_seed31_review/allocation_comparison.pdf",
+      "sha256": "172684bba934ec33983dcd9ad1c272d539d3e3b9601d9499f59e853ed470eabc"
+    }
+  ],
+  "limitations": [
+    "Only supplied completed runs; any unfinished assigned replication stays pending.",
+    "Different development seeds; no paired policy contrast or method-level uncertainty estimate.",
+    "Similar TV does not mean similar allocation, useful progress ranks, or equal startup behavior.",
+    "D has no 0.15 upper mean-TV gate; do not impose the R upper gate on D.",
+    "Cost is elapsed shared-device training time only; excludes smokes, waiting, evaluation and engineering."
+  ]
+}
