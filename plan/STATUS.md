@@ -471,3 +471,14 @@ Desktop/mobile, light/dark, local-link and numeric-export checks pass; all 41
 Phase-G seal entries pass. The publication record and screenshots are in
 `plan/PAGES_RESEARCH_UPDATE_2026-09-05.md` and
 `reports/pages_update_2026-09-05/`. Runtime sources and queued jobs are unchanged.
+
+## 2026-09-05 23:15 EDT — research update live
+
+Published the reviewed research update to GitHub Pages. Build `c132ac1` passed;
+all eight deployed page/asset responses returned HTTP 200 and matched local
+bytes. The main page links the new method/results/experiment explanation at
+https://linjiw.github.io/climb-feasibility-first/relative-progress.html.
+Deployment evidence: `reports/pages_update_2026-09-05/deployment_verification.json`.
+The public snapshot remains explicitly dated 23:10 EDT. A subsequent operational
+check found D32 saved through iteration 3000, still without a complete calibration
+decision. The fixed prerequisite and confirmation sequence is unchanged.

@@ -1,0 +1,63 @@
+{
+  "checked_at_utc": "2026-09-06T03:15:07.223073+00:00",
+  "deployed_commit": "c132ac181cc59b13b657936fe7ec48af3b4ac92d",
+  "pages_build": "built",
+  "files": [
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/index.html",
+      "http_status": 200,
+      "bytes": 376948,
+      "matches_local_bytes": true,
+      "sha256": "87829fabe187ed9059d2d3dcf01097b2466370ffd0490f99c7d5d612865b58d0"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/segment-native.html",
+      "http_status": 200,
+      "bytes": 27585,
+      "matches_local_bytes": true,
+      "sha256": "43c6d2a12b461d0c86d815f5698180c116d54c801e973a219eebaa6705b71e4e"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/relative-progress.html",
+      "http_status": 200,
+      "bytes": 15088,
+      "matches_local_bytes": true,
+      "sha256": "6ed684aa1f8cb91a007d6de202cbffa3815991b974add25dd6d0e0eb62124990"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/research-update.css",
+      "http_status": 200,
+      "bytes": 7294,
+      "matches_local_bytes": true,
+      "sha256": "62ff00ac8e4ea77cf3241e5cff00014f289bcf14e6e8126a82a40a63d7ba97b5"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/relative-progress/research_snapshot.json",
+      "http_status": 200,
+      "bytes": 6667,
+      "matches_local_bytes": true,
+      "sha256": "4210bbd52bb44084f3936b1100b59f17af3ddf72ed1f6d96438c4f0823baa477"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/relative-progress/snapshots.csv",
+      "http_status": 200,
+      "bytes": 14278,
+      "matches_local_bytes": true,
+      "sha256": "5aed481841c2459d9852c1126be62ed5d1c43ea992d17b29b0b3ccc67bbc056c"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/relative-progress/allocation_comparison.png",
+      "http_status": 200,
+      "bytes": 220920,
+      "matches_local_bytes": true,
+      "sha256": "4037b61b398456d59159791399fd99b4e4deb834421867b2a2aff5f98ceb5ce3"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/relative-progress/allocation_comparison.pdf",
+      "http_status": 200,
+      "bytes": 21851,
+      "matches_local_bytes": true,
+      "sha256": "172684bba934ec33983dcd9ad1c272d539d3e3b9601d9499f59e853ed470eabc"
+    }
+  ]
+}

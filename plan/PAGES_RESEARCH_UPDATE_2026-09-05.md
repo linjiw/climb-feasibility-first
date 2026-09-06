@@ -48,3 +48,14 @@ Publishing uses the repository's existing legacy GitHub Pages configuration:
 `master`, `/docs`. The live update is
 https://linjiw.github.io/climb-feasibility-first/relative-progress.html.
 Deployment success must be checked after the scoped publication commit is pushed.
+
+## Deployment verified
+
+The publication was pushed as `8150baa` plus the CSV-preservation correction
+`c132ac1`. GitHub reports commit `c132ac181cc59b13b657936fe7ec48af3b4ac92d`
+built successfully at 2026-09-06 03:14:34 UTC (23:14:34 EDT, 5 September).
+At 03:15:07 UTC, direct HTTPS checks returned 200 and exact local-byte matches
+for all three pages, the stylesheet, JSON snapshot, CSV, PNG and PDF.
+See `reports/pages_update_2026-09-05/deployment_verification.json`.
+The separate web-reader tool could not open the site; direct HTTPS verification
+completed successfully and supplies the deployment evidence.
