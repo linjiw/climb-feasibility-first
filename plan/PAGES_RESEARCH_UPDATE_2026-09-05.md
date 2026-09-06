@@ -34,7 +34,10 @@ and existing sealed artifacts were not modified by this publication work.
 - Export audit: all 123 CSV rows present, each 37-snapshot mean reproduces,
   original source hashes match, and figure/CSV copies are byte-identical.
 - `sha256sum -c plan/G_SEGMENT_FREEZE.sha256`: all 41 entries pass.
-- `git diff --check`: passes.
+- `git diff --check`: passes. The staged check initially flagged the copied
+  CSV's standard CRLF row endings. A path-specific `.gitattributes` entry
+  preserves those original bytes and recognizes CRLF; the full publication
+  diff check then passes without changing the evidence export.
 
 Screenshots: [desktop](../reports/pages_update_2026-09-05/relative-progress_1440_light.png),
 [mobile dark](../reports/pages_update_2026-09-05/relative-progress_390_dark.png),
