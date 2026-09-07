@@ -2,3 +2,5 @@
 # Preserve simulator CSV line endings and log whitespace exactly.
 reports/** -text -whitespace
 reports/**/*.log -diff
+# Preserve the earlier public CSV export's standard CRLF row endings.
+docs/assets/relative-progress/snapshots.csv -text whitespace=cr-at-eol
