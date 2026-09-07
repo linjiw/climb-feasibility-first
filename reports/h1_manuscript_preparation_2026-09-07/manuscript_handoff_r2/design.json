@@ -1,0 +1,25 @@
+{
+  "root": "/home/linjiw/climb-feasibility-first",
+  "work": "/home/linjiw/climb-feasibility-first/reports/h1_manuscript_preparation_2026-09-07/manuscript_handoff_r2",
+  "report": "/home/linjiw/climb-feasibility-first/reports/h1_submission_results_2026-09-07",
+  "python": "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+  "sources": {
+    "/home/linjiw/climb-feasibility-first/paper/icra/complete_h1_handoff.py": "04d0e3015f72ec4c50145f1fb25c089da14ea7fbdeaf129a093da03c9b898c4f",
+    "/home/linjiw/climb-feasibility-first/paper/icra/integrate_h1.py": "397f02a86c3e04451191610da8a323a44e05a1f067d6e65f5b94dc2857de9089",
+    "/home/linjiw/climb-feasibility-first/paper/icra/report_h1.py": "db203656f1bac7f91b08a1990b681a9a8bbdc2c0c601c6b564492c5763ed5262",
+    "/home/linjiw/climb-feasibility-first/paper/icra/package_review.py": "f706eb129e613fde1da63fbe7e50ef9bd8f70326585eead7f7dc39c33a504152",
+    "/home/linjiw/climb-feasibility-first/paper/icra/export_markdown.py": "44ac06d56444c3111226f83cbed79f1e81028d213a50da7f17d833a9d691b00d"
+  },
+  "base_files": {
+    "/home/linjiw/climb-feasibility-first/paper/icra/root.tex": "1a50c021223123cb4f7087858f4ef8bde0f9c251e9316013008a82eaf59063b8",
+    "/home/linjiw/climb-feasibility-first/paper/icra/build.sh": "403426c65e0f5d98f5c56daf449d6d98239125ae4cf02176bf5c2bc01a3537a6",
+    "/home/linjiw/climb-feasibility-first/paper/icra/references.bib": "86e4536bd1c8fdf83aa9155a3e5866b90643f7a8e8cf5f5cc6c1f5b6432d0c08"
+  },
+  "report_terminal": "/home/linjiw/climb-feasibility-first/reports/h1_manuscript_preparation_2026-09-07/handoff/terminal.json",
+  "cutoff": "2026-09-13T06:00:00+00:00",
+  "scope": "unsealed manuscript candidate only; no scientific contract change, no submission, no website update",
+  "supersedes": {
+    "design": "/home/linjiw/climb-feasibility-first/reports/h1_manuscript_preparation_2026-09-07/manuscript_handoff/design.json",
+    "reason": "Unsealed manuscript adds explicit historical non-floor qualification; H1 scientific contract unchanged."
+  }
+}

@@ -93,9 +93,12 @@ text = re.sub(r'(?m)^\| (?:— \| ?)+$', lambda m: m.group().replace('—', '---
 text = re.sub(r'(?m)^%.*\n?', '', text)
 text = re.sub(r'\n{3,}', '\n\n', text)
 header = f'# {title.replace(chr(92)+chr(92), " ").replace("--", "–")}\n\n'
-header += ('**Status: unsealed manuscript, September 7, 2026.** Generated from `root.tex`; '
+h1_note = ('The completed H1 admission result is reported separately from the allocation study.'
+           if r'\label{sec:h1result}' in source else
+           'H1 is pending and supplies no contribution or result here.')
+header += ('**Status: unsealed manuscript.** Generated from `root.tex`; '
            'the compiled PDF is the submission-layout authority. The allocation result is '
-           'complete and inconclusive. H1 is pending and supplies no contribution or result here.\n\n')
+           'complete and inconclusive. ' + h1_note + '\n\n')
 footer = '\n\n## References\n\nFull bibliographic entries are maintained in [references.bib](references.bib) and rendered in [the PDF](ICRA_DRAFT.pdf). Citation order:\n\n'
 footer += '\n'.join(f'{i}. `{key}`' for i, key in enumerate(keys, 1)) + '\n'
 output = header + text.strip() + footer

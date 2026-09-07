@@ -1,6 +1,6 @@
 # When Failure Is Not Difficulty: Screening Reference–Physics Misalignment  and Testing Adaptive Allocation on Exact Support for Humanoid Motion Tracking
 
-**Status: unsealed manuscript, September 7, 2026.** Generated from `root.tex`; the compiled PDF is the submission-layout authority. The allocation result is complete and inconclusive. H1 is pending and supplies no contribution or result here.
+**Status: unsealed manuscript.** Generated from `root.tex`; the compiled PDF is the submission-layout authority. The allocation result is complete and inconclusive. H1 is pending and supplies no contribution or result here.
 
 ## Abstract
 
@@ -258,6 +258,11 @@ three seeds per arm, and 100 disjoint evaluation motions with eight episodes per
 failure-adaptive, clip-uniform, and normalized grounded samplers. We report exposure, attractor
 identity, held-out survival, and the attractor's modeled contact-capacity residual. This campaign
 establishes the motivating failure case; the later four-arm study separately compares exact-support allocators.
+The historical adaptive arm adds exploration mass before normalization, which does
+not guarantee a probability floor. Its collapse therefore diagnoses that particular
+sampler/reference combination. The current D baseline instead retains a normalized
+80% prior component; the historical result does not establish that every
+failure-adaptive allocator will collapse under RPM.
 
 ### E2: bank scale, agreement, and transfer
 
@@ -295,6 +300,13 @@ and reference targets are common. All twelve training gates passed before any he
 cell opened. Checkpoints 1000, 2000, 3000 and 3999 give 48 evaluation cells on 100 unchanged
 held-out clips, including 25 feasible-hard clips selected from reference features. Each cell
 contains 2,800 conditions, evaluated over uninterrupted windows of up to three seconds.
+
+The actor and critic are observation-normalized ELU multilayer perceptrons with
+hidden widths 512/256/128, taking 160 and 286 observation coordinates, respectively;
+the actor outputs 29 joint-position commands. Physics runs at 200 Hz with 50 Hz
+control. PPO uses Adam (initial learning rate $10^{-3}$, adaptive KL target 0.01),
+five epochs, four minibatches, clipping 0.2, discount 0.99, GAE coefficient 0.95
+and entropy coefficient 0.005. These settings are shared across arms.
 
 The primary score is liveness-weighted reference tracking:
 

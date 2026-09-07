@@ -52,3 +52,7 @@ paper/icra/build/
 reports/**/g1_tracking/
 reports/**/events.out.tfevents.*
 reports/**/*.lock
+
+# Isolated, synthetic manuscript-layout workspaces (retain result PDF/logs).
+reports/h1_manuscript_preparation_2026-09-07/synthetic_layout*/workspace/
+reports/h1_manuscript_preparation_2026-09-07/synthetic_layout*/SYNTHETIC_REPORT/

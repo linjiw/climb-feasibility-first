@@ -1,0 +1,29 @@
+{
+  "time": "2026-09-07T11:46:57.776650+00:00",
+  "checks": [
+    {
+      "manifest": "/home/linjiw/climb-feasibility-first/plan/G_SEGMENT_FREEZE.sha256",
+      "entries": 41,
+      "failures": []
+    },
+    {
+      "manifest": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256",
+      "entries": 7,
+      "failures": []
+    },
+    {
+      "manifest": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/H1_FREEZE.sha256",
+      "entries": 624,
+      "failures": []
+    },
+    {
+      "editing_guard": "handoff",
+      "failures": []
+    },
+    {
+      "editing_guard": "manuscript_handoff_r2",
+      "failures": []
+    }
+  ],
+  "status": "pass"
+}

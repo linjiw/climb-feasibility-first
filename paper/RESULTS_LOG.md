@@ -1,5 +1,36 @@
 # Results log — every paper-bound number and its artifact path (policy: RESEARCH_PLAN_v5)
 
+## 2026-09-07 07:43 EDT — learner disclosure and H1 manuscript preparation
+
+**Measured configuration and document checks; no new policy outcome.** The
+manuscript now states shared actor/critic hidden widths 512/256/128, ELU and
+observation normalization; actor input 160, critic input 286, and 29 joint-position
+outputs. Simulation timestep 0.005 s with decimation 4 gives 200 Hz physics and
+50 Hz control. PPO: Adam, initial learning rate 0.001, adaptive KL target 0.01,
+five epochs, four minibatches, clip 0.2, gamma 0.99, GAE 0.95, entropy 0.005.
+All twelve allocation configurations and the eight completed H1 designs agree
+on the learner settings. Source paths and hashes:
+`reports/h1_manuscript_preparation_2026-09-07/learner_configuration.json`.
+The new E1 qualification distinguishes its historical pre-normalization
+exploration addition from current D's normalized 80% prior component. It does
+not establish that RPM alone causes collapse for every allocator.
+
+**Pending H1:** both GPU smokes pass; eight full training runs pass, ninth running,
+zero evaluation cells. The stored training snapshot records 49,152,000 transitions
+and 41 states per completed run. These are integrity/exposure checks, not an
+admission benefit. No decision threshold, seed, reference, or frozen source changes.
+
+**Measured document validation:** actual PDF seven pages, SHA-256
+`c38db9617a6c4e05866386d6e49e93056330a043881099b173816f7abb4fb7d3`;
+seven rendered pages visually inspected. Anonymous statistical companion SHA-256
+`77a8a5fdb2cb7dc7b8c0676677922eea92057a285d0e3d2f74cabd891aa94989`.
+Companion checksums and paired-seed t replay pass. Four synthetic ingestion tests
+pass. The isolated eight-page H1 layout uses explicitly synthetic values and
+must never be cited as measured H1 evidence. Artifacts and execution provenance:
+`reports/h1_manuscript_preparation_2026-09-07/` and
+`plan/H1_MANUSCRIPT_HANDOFF_2026-09-07.md`.
+The complete allocation numbers and **inconclusive** disposition are unchanged.
+
 ## 2026-09-07 Fable submission manuscript and frozen H1
 
 **Manuscript update, no scientific contract or completed numeric result changed.**

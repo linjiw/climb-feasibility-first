@@ -1,5 +1,35 @@
 # CLIMB / feasibility-first — status against Research Plan v5
 
+## September 7, 07:43 EDT — H1 eight runs complete; manuscript handoff running
+
+**Measured training integrity; H1 policy result pending.** Both seed-81 GPU
+smokes passed. Eight of ten full training runs (on/off seeds 1041–1044) passed
+all training gates, each with 49,152,000 transitions and 41 saved states. The
+ninth run, on/1045, is running; off/1045 follows. No held-out evaluation cell has
+started. All ten training runs must pass before the forty cells open. The shared
+GPU and the frozen resource gate determine remaining wall time.
+
+Scheduler PID 3010547 remains live in the isolated H1 worktree. Two durable CPU
+workers now connect the complete campaign to a manuscript candidate: reporter
+PID 3357512 and manuscript worker PID 3377266. They require exact full replay,
+verify source hashes, and stop on missing/changed evidence. No partial H1 effect
+is exported. The manuscript worker preserves the current paper if integration
+fails; a passing build still requires visual, claim and author review.
+
+The actual manuscript remains seven pages and reports the completed allocation
+result as **inconclusive**. It now discloses the shared learner/PPO configuration
+and qualifies the historical collapse as a non-floor sampler/reference case.
+Seven page images were inspected. The anonymous statistical companion replays
+all included paired-seed t intervals. A separate, prominently marked synthetic
+H1 layout fits eight pages; its values are not research results.
+
+Current PDF SHA-256:
+`c38db9617a6c4e05866386d6e49e93056330a043881099b173816f7abb4fb7d3`.
+Execution, exact commands and remaining completion gates:
+`plan/H1_MANUSCRIPT_HANDOFF_2026-09-07.md`.
+Build addendum: `paper/icra/BUILD_AUDIT_2026-09-07_ADDENDUM.md`.
+The Fable H1/manuscript-only scope remains in force.
+
 ## September 7, 01:20 EDT — Fable manuscript rebuilt; H1 frozen and queued
 
 The seven-page ICRA manuscript now reports the completed allocation result as

@@ -1,0 +1,20 @@
+{
+  "classification": "postprocessing only; no new experiment or decision rule",
+  "root": "/home/linjiw/climb-feasibility-first",
+  "work": "/home/linjiw/climb-feasibility-first/reports/h1_manuscript_preparation_2026-09-07/handoff",
+  "campaign": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign",
+  "output": "/home/linjiw/climb-feasibility-first/reports/h1_submission_results_2026-09-07",
+  "sources": {
+    "/home/linjiw/climb-feasibility-first/paper/icra/report_h1.py": "db203656f1bac7f91b08a1990b681a9a8bbdc2c0c601c6b564492c5763ed5262",
+    "/home/linjiw/climb-feasibility-first/paper/icra/follow_h1.py": "51c89ef12e087f73b137a793272d6c70393c184a51ea2bf9d8319057bec121a8"
+  },
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-feasibility-first/paper/icra/report_h1.py",
+    "--campaign",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign",
+    "--out-dir",
+    "/home/linjiw/climb-feasibility-first/reports/h1_submission_results_2026-09-07"
+  ],
+  "cutoff": "2026-09-13T04:30:00+00:00"
+}

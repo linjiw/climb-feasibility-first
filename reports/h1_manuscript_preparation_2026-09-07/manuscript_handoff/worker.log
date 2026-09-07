@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/linjiw/climb-feasibility-first/paper/icra/complete_h1_handoff.py", line 109, in <module>
+    main()
+    ~~~~^^
+  File "/home/linjiw/climb-feasibility-first/paper/icra/complete_h1_handoff.py", line 38, in main
+    raise RuntimeError('manuscript handoff STOP requested')
+RuntimeError: manuscript handoff STOP requested

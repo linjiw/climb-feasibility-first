@@ -1,0 +1,139 @@
+{
+  "classification": "training integrity snapshot; no partial H1 policy result",
+  "timestamp": "2026-09-07T11:14:23.630576+00:00",
+  "completed_training_runs": 8,
+  "completed_evaluation_cells": 0,
+  "current": {
+    "status": "running",
+    "job": {
+      "stage": "train",
+      "arm": "on",
+      "seed": 1045,
+      "id": "train_on_s1045"
+    },
+    "pid": 3350363,
+    "updated_at": "2026-09-07T11:03:45.912562+00:00"
+  },
+  "completed": [
+    {
+      "job": {
+        "stage": "train",
+        "arm": "off",
+        "seed": 1041,
+        "id": "train_off_s1041"
+      },
+      "result": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_off_s1041/result.json",
+        "sha256": "643cf09656a1e05aabfdd81c5f019b5a44e63faa71cca8aa5cfec3bcf876e0a1"
+      },
+      "transitions": 49152000,
+      "checkpoint_count": 41,
+      "status": "gate_training_pass"
+    },
+    {
+      "job": {
+        "stage": "train",
+        "arm": "off",
+        "seed": 1042,
+        "id": "train_off_s1042"
+      },
+      "result": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_off_s1042/result.json",
+        "sha256": "2b0c02b61d95ae675dee51e45b4917e6991e77fb30c2b8ab68d7deaebdb8cf20"
+      },
+      "transitions": 49152000,
+      "checkpoint_count": 41,
+      "status": "gate_training_pass"
+    },
+    {
+      "job": {
+        "stage": "train",
+        "arm": "off",
+        "seed": 1043,
+        "id": "train_off_s1043"
+      },
+      "result": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_off_s1043/result.json",
+        "sha256": "786aa9aafcac671e3e2e85d3eb956063f09ea3f294d1203d7fb25f341584e014"
+      },
+      "transitions": 49152000,
+      "checkpoint_count": 41,
+      "status": "gate_training_pass"
+    },
+    {
+      "job": {
+        "stage": "train",
+        "arm": "off",
+        "seed": 1044,
+        "id": "train_off_s1044"
+      },
+      "result": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_off_s1044/result.json",
+        "sha256": "411c8e75570c0c939e4de259c9f87e5b0d6d8a89939514e59aec5347d369ab66"
+      },
+      "transitions": 49152000,
+      "checkpoint_count": 41,
+      "status": "gate_training_pass"
+    },
+    {
+      "job": {
+        "stage": "train",
+        "arm": "on",
+        "seed": 1041,
+        "id": "train_on_s1041"
+      },
+      "result": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_on_s1041/result.json",
+        "sha256": "544f1194fc4c54da61901d7d768da75ea23d789a44ba9907cb4c80c238ad4cad"
+      },
+      "transitions": 49152000,
+      "checkpoint_count": 41,
+      "status": "gate_training_pass"
+    },
+    {
+      "job": {
+        "stage": "train",
+        "arm": "on",
+        "seed": 1042,
+        "id": "train_on_s1042"
+      },
+      "result": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_on_s1042/result.json",
+        "sha256": "7892330f4babe9d279ae7bfdfd62fdda61209a0693a637b583585a1f3a06db58"
+      },
+      "transitions": 49152000,
+      "checkpoint_count": 41,
+      "status": "gate_training_pass"
+    },
+    {
+      "job": {
+        "stage": "train",
+        "arm": "on",
+        "seed": 1043,
+        "id": "train_on_s1043"
+      },
+      "result": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_on_s1043/result.json",
+        "sha256": "8cf8c4d835ca9e7d58bb1b7c456b50ddaaf8840eeeccd26e7b445c676c413538"
+      },
+      "transitions": 49152000,
+      "checkpoint_count": 41,
+      "status": "gate_training_pass"
+    },
+    {
+      "job": {
+        "stage": "train",
+        "arm": "on",
+        "seed": 1044,
+        "id": "train_on_s1044"
+      },
+      "result": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_on_s1044/result.json",
+        "sha256": "507b5eea27e1dc412fdea4e0259d562aebe38e20ba17ce23b4b1e6923c1ef0e9"
+      },
+      "transitions": 49152000,
+      "checkpoint_count": 41,
+      "status": "gate_training_pass"
+    }
+  ]
+}

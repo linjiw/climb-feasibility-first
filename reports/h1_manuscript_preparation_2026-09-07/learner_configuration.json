@@ -1,0 +1,153 @@
+{
+  "status": "shared_learner_configuration_pass",
+  "classification": "configuration evidence, not a tracking result",
+  "allocation_runs": 12,
+  "completed_h1_runs": 8,
+  "common": {
+    "actor": {
+      "hidden_dims": [
+        512,
+        256,
+        128
+      ],
+      "activation": "elu",
+      "obs_normalization": true,
+      "cnn_cfg": null,
+      "distribution_cfg": {
+        "class_name": "GaussianDistribution",
+        "init_std": 1.0,
+        "std_type": "scalar"
+      },
+      "rnn_type": null,
+      "rnn_hidden_dim": 256,
+      "rnn_num_layers": 1,
+      "class_name": "MLPModel"
+    },
+    "critic": {
+      "hidden_dims": [
+        512,
+        256,
+        128
+      ],
+      "activation": "elu",
+      "obs_normalization": true,
+      "cnn_cfg": null,
+      "distribution_cfg": null,
+      "rnn_type": null,
+      "rnn_hidden_dim": 256,
+      "rnn_num_layers": 1,
+      "class_name": "MLPModel"
+    },
+    "algorithm": {
+      "num_learning_epochs": 5,
+      "num_mini_batches": 4,
+      "learning_rate": 0.001,
+      "schedule": "adaptive",
+      "gamma": 0.99,
+      "lam": 0.95,
+      "entropy_coef": 0.005,
+      "desired_kl": 0.01,
+      "max_grad_norm": 1.0,
+      "value_loss_coef": 1.0,
+      "use_clipped_value_loss": true,
+      "clip_param": 0.2,
+      "normalize_advantage_per_mini_batch": false,
+      "optimizer": "adam",
+      "share_cnn_encoders": false,
+      "class_name": "PPO"
+    },
+    "num_steps_per_env": 24,
+    "max_iterations": 4000
+  },
+  "sources": [
+    {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/U_s21/g1_tracking/relative_confirmation_U_s21/params/agent.yaml",
+      "sha256": "be3277c34a7fed4c9f6121c942d6f9ed9e21618189a2e41153e24f14fc1bc845"
+    },
+    {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/U_s22/g1_tracking/relative_confirmation_U_s22/params/agent.yaml",
+      "sha256": "478813cfbcfde08cded00607315305a90223dfa96b97d2f2b12386af07d98ba1"
+    },
+    {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/U_s23/g1_tracking/relative_confirmation_U_s23/params/agent.yaml",
+      "sha256": "7139d5705cb79372bd9888e13efe95956d0abfbbcf5e88a00c97d7c7cc5470ac"
+    },
+    {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/A_s21/g1_tracking/relative_confirmation_A_s21/params/agent.yaml",
+      "sha256": "6417de7f0dc73ba9d7eb8b0a248bd6b207ed3bf5be76bcca6ddc8c586c035768"
+    },
+    {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/A_s22/g1_tracking/relative_confirmation_A_s22/params/agent.yaml",
+      "sha256": "4a87ac23b1c594d9f6b0c20bb4fc691f5f3ae2ff5f343a20bf2ede6dd38558af"
+    },
+    {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/A_s23/g1_tracking/relative_confirmation_A_s23/params/agent.yaml",
+      "sha256": "4b1791da242d80f5b502583a267cb472ba6bab3480f832aa9e56ebb53a1bb707"
+    },
+    {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/R_s21/g1_tracking/relative_confirmation_R_s21/params/agent.yaml",
+      "sha256": "a9f65d6cc0e966c12be50428efdcd0c8aba1fdca3d6861a5f5a52e96c81c7926"
+    },
+    {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/R_s22/g1_tracking/relative_confirmation_R_s22/params/agent.yaml",
+      "sha256": "bd8afdb4d04f41e00d5997d434c43d1baf9fd962ff815b461fee6106dc9965b2"
+    },
+    {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/R_s23/g1_tracking/relative_confirmation_R_s23/params/agent.yaml",
+      "sha256": "03be67c4beb8f24aa4c6e9ff4a772358c0ccc8e3654c31805b88401ec2b33e07"
+    },
+    {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/D_s21/g1_tracking/relative_confirmation_D_s21/params/agent.yaml",
+      "sha256": "46810902ef69533f49200d22362a9435b2bbcc531bf14284de9ed5a969ddd708"
+    },
+    {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/D_s22/g1_tracking/relative_confirmation_D_s22/params/agent.yaml",
+      "sha256": "42dbcf389b2beaec556b3e78c0716040fb37af7bb09b7a1145469d98be3ffb86"
+    },
+    {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/D_s23/g1_tracking/relative_confirmation_D_s23/params/agent.yaml",
+      "sha256": "cbb25d58b222a196f07a673f5a2464264c0f90a5824bbe9308a7103dc023d543"
+    },
+    {
+      "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_off_s1041/design.json",
+      "sha256": "3e07aa28f09a26be984c0a4503d24f4f08ecd697066fe2ab33f0e8583a963083"
+    },
+    {
+      "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_off_s1042/design.json",
+      "sha256": "f5ab6cc6dd5dbccfb66d199428700a76748d7779e7224c392a407f2f220f2b28"
+    },
+    {
+      "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_off_s1043/design.json",
+      "sha256": "600852399a4edf0e440accf676dad3314599c34d222406c4734093630bf63397"
+    },
+    {
+      "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_off_s1044/design.json",
+      "sha256": "1402261b8e63198091cef8826a7f1f4224fe334cd2e68487f7039c4a8037a2dc"
+    },
+    {
+      "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_on_s1041/design.json",
+      "sha256": "d6b227f2942834dbf8d7d6e1dc936f1e4f67f82f60ac685538e437ccba73ffae"
+    },
+    {
+      "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_on_s1042/design.json",
+      "sha256": "32055f24fae6d3047c58cfc4f79b7ee3441d957458604f0df3b59b4cafd710f2"
+    },
+    {
+      "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_on_s1043/design.json",
+      "sha256": "3a56f08ac6004115105a63052608e70687f1fbdd5fbe40e516a741a931e5d2d9"
+    },
+    {
+      "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_on_s1044/design.json",
+      "sha256": "e8fa1efd8114c2b19c6db0e18af3a13281eaa5979eaf9ac92f8a5a967f2176ef"
+    }
+  ],
+  "simulation_timestep_s": 0.005,
+  "control_decimation": 4,
+  "actor_observations": 160,
+  "critic_observations": 286,
+  "actions": 29,
+  "dimension_evidence": [
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/U_s21.log",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/train_on_s1041.log"
+  ]
+}

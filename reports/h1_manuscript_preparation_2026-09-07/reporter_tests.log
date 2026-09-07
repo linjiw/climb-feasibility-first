@@ -1,0 +1,9 @@
+test_allocation_ratio_zero_mass_and_top1 (__main__.ReportChecks.test_allocation_ratio_zero_mass_and_top1) ... ok
+test_foreign_contract_rejected (__main__.ReportChecks.test_foreign_contract_rejected) ... ok
+test_modified_analysis_rejected (__main__.ReportChecks.test_modified_analysis_rejected) ... ok
+test_partial_terminal_rejected_before_analysis (__main__.ReportChecks.test_partial_terminal_rejected_before_analysis) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+OK

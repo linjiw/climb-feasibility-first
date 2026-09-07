@@ -21,7 +21,11 @@ result artifacts and the website are unchanged. The one-time migration script
 `revise_completed_results.py` records how the earlier draft was revised; it is
 not part of the build and must not be reapplied to the current source.
 
-H1 is a separate prospectively frozen five-seed admission experiment. No pending
-H1 outcome appears in the abstract or contribution list. Its result can enter only
-after the complete comparison passes provenance and the calendar rules. Final
-author review, the H1 inclusion decision and submission remain outstanding.
+H1 is a separate prospectively frozen five-seed admission experiment. Its result
+can enter only after the complete comparison passes provenance and the calendar
+rules. `report_h1.py` reproduces the frozen campaign before exporting its results;
+`integrate_h1.py` inserts a verified result into the unsealed manuscript.
+`package_review.py` builds an anonymous statistical companion whose paired-seed
+intervals can be recomputed without motion payloads. Current execution and build
+status live under `reports/h1_manuscript_preparation_2026-09-07/`. Final visual
+review and author review remain necessary before submission.

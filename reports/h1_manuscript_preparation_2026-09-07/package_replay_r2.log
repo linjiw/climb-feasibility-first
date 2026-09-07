@@ -1,0 +1,4 @@
+allocation_paired.csv feasible_hard_difference mean -0.015068459267959947 t95 [np.float64(-0.09435842624903064), np.float64(0.06422150771311073)] n 3
+allocation_paired.csv all_panel_difference mean -0.009315506381973216 t95 [np.float64(-0.11404632768409208), np.float64(0.09541531492014564)] n 3
+Stored registered disposition: inconclusive
+Paired-seed statistics reproduced. This check does not authenticate training or redefine a decision rule.

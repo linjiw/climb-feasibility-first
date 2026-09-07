@@ -1,5 +1,15 @@
 # Red-team audit — "what exposure, harness, or data artifact could explain this instead?"
 
+September 7, 07:43 EDT manuscript addendum: the historical adaptive sampler
+added exploration mass before normalization and lacked a guaranteed probability
+floor. E1's collapse is evidence about that sampler/reference combination, not
+proof that RPM alone defeats current D with its normalized 80% prior component.
+The explicit qualification is in Experimental Design E1. Shared learner/PPO
+settings are now disclosed from authenticated configurations. Seven current PDF
+pages inspected; no H1 outcome is present. Actual H1 integration will require a
+new complete-result claim and visual audit. Evidence:
+`paper/icra/BUILD_AUDIT_2026-09-07_ADDENDUM.md`.
+
 September 7 manuscript addendum: see `paper/icra/REVIEW_2026-09-07.md` for the
 completed-result claim audit. The three-seed allocation comparison is inconclusive;
 H1 is a separately sealed five-pair test with no outcome yet. Previous rows below
