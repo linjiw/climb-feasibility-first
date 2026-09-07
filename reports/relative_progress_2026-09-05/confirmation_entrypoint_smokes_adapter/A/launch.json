@@ -1,0 +1,9 @@
+{
+  "contract": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation_adapter/draft_contract.json",
+  "campaign_contract_sha256": "74857935900acac9c14b2a865845c658da89a8e06bbfeac72ac96d6bc91552f2",
+  "arm": "A",
+  "seed": 51,
+  "configuration_sha256": "a2fbb54f84e1eb3d4be97ffb056b574f8fc66c46d72d1902182134e6f8678d57",
+  "run_dir": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/A/g1_tracking/relative_confirmation_smoke_A_s51",
+  "policy_endpoints_opened": false
+}

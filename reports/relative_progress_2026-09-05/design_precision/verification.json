@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-09-05T22:07:06.556311-04:00",
+  "classification": "mathematical design verification; no empirical policy evidence",
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "checks": [
+    {
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/test_relative_design_precision.py",
+        "tests/test_relative_policy_analysis.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": ".............................                                            [100%]\n29 passed in 0.32s\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "paper/figures/relative_design_precision.py",
+        "tests/test_relative_design_precision.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "phase_g_sealed_files_unchanged": 41,
+  "source_sha256": {
+    "paper/figures/relative_design_precision.py": "6ebebf7ad637bb706f208c3a2bc553d580c4f8c732e4238e9c1617c97270cba5",
+    "tests/test_relative_design_precision.py": "b3f648399dafbc3a97fee8a06b35e0bd182fd80cb0e40cbffd715326c907bf28"
+  }
+}

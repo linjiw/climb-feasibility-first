@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-09-06T12:07:34.406722-04:00",
+  "classification": "training integrity only; policy endpoints unopened",
+  "arms": {
+    "U": {
+      "status": "replayed_gate_pass",
+      "snapshots": 41,
+      "mean_tv": 0.0,
+      "final": {
+        "iteration": 3999,
+        "tv": 0.0,
+        "effective_units": 624.0341112730893,
+        "saturation": 0.7331081081081081,
+        "sampler_clock": 1920,
+        "completed_trials": 1086702
+      },
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 2014,
+        "elapsed_gpu_hours": 0.5594444444444444,
+        "shared_gpu_baseline_mib": 718,
+        "shared_gpu_peak_total_mib": 11874,
+        "started": "2026-09-06T10:28:51-04:00",
+        "finished": "2026-09-06T11:02:25-04:00"
+      }
+    },
+    "A": {
+      "status": "replayed_gate_pass",
+      "snapshots": 41,
+      "mean_tv": 0.029759170164293084,
+      "final": {
+        "iteration": 3999,
+        "tv": 0.02077772716593916,
+        "effective_units": 632.873104778792,
+        "saturation": 0.737331081081081,
+        "sampler_clock": 1920,
+        "completed_trials": 1084430
+      },
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 2221,
+        "elapsed_gpu_hours": 0.6169444444444444,
+        "shared_gpu_baseline_mib": 506,
+        "shared_gpu_peak_total_mib": 11981,
+        "started": "2026-09-06T11:25:41-04:00",
+        "finished": "2026-09-06T12:02:42-04:00"
+      }
+    }
+  }
+}

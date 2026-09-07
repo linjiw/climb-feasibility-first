@@ -1,2 +1,4 @@
-# Preserve the exported CSV exactly, including its standard CRLF row endings.
-docs/assets/relative-progress/snapshots.csv -text whitespace=cr-at-eol
+# Measured artifacts are hash-bound byte records, not editable source text.
+# Preserve simulator CSV line endings and log whitespace exactly.
+reports/** -text -whitespace
+reports/**/*.log -diff

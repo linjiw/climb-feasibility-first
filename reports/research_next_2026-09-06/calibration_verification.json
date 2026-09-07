@@ -1,0 +1,20 @@
+{
+  "classification": "measured development allocation; no policy endpoints",
+  "both_decisions_reproduced": true,
+  "seeds": {
+    "31": {
+      "status": "calibration_pass",
+      "mean_tv": 0.08495533886493581,
+      "minimum_post_warmup_effective_units": 625.0617376866245,
+      "final_saturation": 0.7271959459459459,
+      "completed_trials": 1113773
+    },
+    "32": {
+      "status": "calibration_pass",
+      "mean_tv": 0.0859387132989198,
+      "minimum_post_warmup_effective_units": 624.2887988698436,
+      "final_saturation": 0.7381756756756757,
+      "completed_trials": 1118388
+    }
+  }
+}

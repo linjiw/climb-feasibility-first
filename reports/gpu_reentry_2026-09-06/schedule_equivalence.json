@@ -1,0 +1,7 @@
+{
+  "status": "pass",
+  "jobs": 60,
+  "allowed_difference": "campaign output directory only",
+  "old_sha256": "1c247f979c16ef02d9d1566758aace8e9a415402da7fe8dc83348c65d461c6a6",
+  "new_sha256": "83ba0e2dc3d0ffc421e994a6eda7adb1416d89e72b70fd457f7f1c9e6d368ef4"
+}

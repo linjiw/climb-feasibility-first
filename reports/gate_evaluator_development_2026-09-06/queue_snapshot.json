@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-09-06T13:21:21.920126-04:00",
+  "gpu": "4287 MiB, 97 %",
+  "supervisors": "    PID     ELAPSED STAT\n2008052    02:53:34 Ssl\n2011481    02:51:54 Ssl\n2011482    02:51:54 Ss\n2286869       34:49 Ss\n",
+  "training_gates": [
+    "A_s21_training_gate.json",
+    "U_s21_training_gate.json"
+  ],
+  "endpoint_access_exists": false,
+  "gpu_validation_started": false
+}

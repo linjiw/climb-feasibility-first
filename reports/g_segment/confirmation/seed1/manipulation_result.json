@@ -1,0 +1,171 @@
+{
+ "schema_version": "g_segment_seed1_manipulation/1",
+ "classification": "measured sampler-only manipulation; no policy endpoint read",
+ "status": "not_tested",
+ "policy_endpoints_opened": false,
+ "gate": {
+  "calibration": {
+   "design_sha256": "c1eb9b757d2bf7f1e893fc646599d720a1750e4030624c5254fc3d70dde381de",
+   "result_sha256": "e92106706e5b58d492aaeee6d2bd2b421dad6dfc3d70b822193c74d26592105b",
+   "selected": {
+    "id": "rho040_floor0050",
+    "exploration_ratio": 0.4,
+    "progress_floor": 0.05
+   }
+  },
+  "G2": {
+   "1": {
+    "ledgers_after_warmup": 8,
+    "mean_tv": 0.02965872580820417,
+    "min_entropy_effective_units": 618.8415552394343,
+    "max_top1_probability": 0.01685302967257747,
+    "invalid_frames": 0,
+    "censored_resets": 0,
+    "final_saturation_fraction": 0.768581081081081,
+    "contract_mismatches": {},
+    "pass": false
+   }
+  },
+  "G1": {
+   "1": {
+    "ledgers_after_warmup": 8,
+    "mean_tv": 0.0,
+    "min_entropy_effective_units": 624.0341112730893,
+    "max_top1_probability": 0.016427655704958112,
+    "invalid_frames": 0,
+    "censored_resets": 0,
+    "final_saturation_fraction": 0.7390202702702703,
+    "contract_mismatches": {},
+    "pass": true
+   }
+  },
+  "pass": false
+ },
+ "exploratory_rank_agreement": {
+  "classification": "exploratory sampler-only; no decision role",
+  "status": "available",
+  "rows": [
+   {
+    "seed": "1",
+    "iteration": 500,
+    "units": 1184,
+    "rho_alp_failure": -0.3065747785138385,
+    "rho_alp_competence_frontier": 0.31367938192935446,
+    "rho_failure_competence_frontier": -0.9513650585914118
+   },
+   {
+    "seed": "1",
+    "iteration": 1000,
+    "units": 1184,
+    "rho_alp_failure": -0.003004541503349414,
+    "rho_alp_competence_frontier": 0.20593370952361126,
+    "rho_failure_competence_frontier": 0.5978233157806352
+   },
+   {
+    "seed": "1",
+    "iteration": 1500,
+    "units": 1184,
+    "rho_alp_failure": 0.265017614262064,
+    "rho_alp_competence_frontier": 0.451746043330064,
+    "rho_failure_competence_frontier": 0.6895964356262572
+   },
+   {
+    "seed": "1",
+    "iteration": 2000,
+    "units": 1184,
+    "rho_alp_failure": 0.3443717738968399,
+    "rho_alp_competence_frontier": 0.5286239653691329,
+    "rho_failure_competence_frontier": 0.7017277854911739
+   },
+   {
+    "seed": "1",
+    "iteration": 2500,
+    "units": 1184,
+    "rho_alp_failure": 0.41813242099730674,
+    "rho_alp_competence_frontier": 0.5792855379781507,
+    "rho_failure_competence_frontier": 0.7286593646622859
+   },
+   {
+    "seed": "1",
+    "iteration": 3000,
+    "units": 1184,
+    "rho_alp_failure": 0.4515741147033625,
+    "rho_alp_competence_frontier": 0.6109426605806886,
+    "rho_failure_competence_frontier": 0.744580604926272
+   },
+   {
+    "seed": "1",
+    "iteration": 3500,
+    "units": 1184,
+    "rho_alp_failure": 0.4376758702678847,
+    "rho_alp_competence_frontier": 0.5760833824292771,
+    "rho_failure_competence_frontier": 0.761545091267584
+   },
+   {
+    "seed": "1",
+    "iteration": 3999,
+    "units": 1184,
+    "rho_alp_failure": 0.5252981682674066,
+    "rho_alp_competence_frontier": 0.6570910934915261,
+    "rho_failure_competence_frontier": 0.776609852948704
+   }
+  ],
+  "missing": []
+ },
+ "inputs": {
+  "G1": {
+   "run_dir": "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-01-38_phase_g_g1_s1",
+   "ledger_sha256": {
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-01-38_phase_g_g1_s1/model_0_segment.json": "1d86494f142a1a15d227f99174266fb9eaeb40b8f340333d7e80ed15c453694a",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-01-38_phase_g_g1_s1/model_500_segment.json": "26f00040ac480951f1db75dffc3a18edd650f83f3f82408b6d0a93a06875e7eb",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-01-38_phase_g_g1_s1/model_1000_segment.json": "c0de957f88456417f2fbf8c290b7a1345aa0bf7edeb5db93052be3c18e550a80",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-01-38_phase_g_g1_s1/model_1500_segment.json": "ff4c47e21f6323de88d374b8fec56ba06a6d2f7b799927e896d3cf062e68a4cd",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-01-38_phase_g_g1_s1/model_2000_segment.json": "43abed0fd009cc00ab0bc3cd637d58e5410b5c0698349e2d33e28cdc167fc1fb",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-01-38_phase_g_g1_s1/model_2500_segment.json": "a9052ab6ee2b6e102a4ffcad2d82cc147b289bc78da48b1463e04b91e3bf2a73",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-01-38_phase_g_g1_s1/model_3000_segment.json": "66bca2222a9d441e00a5d81ce092c34c17f7d5ce6d285c66ea5661a761a31a88",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-01-38_phase_g_g1_s1/model_3500_segment.json": "4097ea2eea9db0ffc3403457f86354d9a4d1b8f10fa19fda0eb0766e5d67e239",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-01-38_phase_g_g1_s1/model_3999_segment.json": "55fd2a6906486fbe9da89203e977a4e8b196336344191dc8e48345218589ccc3"
+   },
+   "checkpoint_sha256": {
+    "0": "ec96ea96f9adaaef4b846e7e185254848396e3c18db1fb035ac96ac46d7b5887",
+    "500": "1cef78fec9eb8ce037cf279399d0e7d7977046f44bdc6739467ac25bd1a77273",
+    "1000": "7450518029169d086a68b5bcacfde2e7e5b65badea8c64ee5a7013a9005602e9",
+    "1500": "53b758727162f98a9826e2e8e9e5c1284d78b49326d8881cb9977d7c522a84e4",
+    "2000": "d5baa2054376b2b63270cda5c709c60d414dcdfa6c708fab12f15f70503b85e3",
+    "2500": "f3ddc916df43160e17d6bbc43d9decd658f588ffbb4f6999248aa5f91f0fd98e",
+    "3000": "79209d5d2e6e7bcedc72f3644eed3fc97459031f5ecc1d86b1c95954ad19b271",
+    "3500": "851688f06c96d14ff50462d6ce2817da411ce2fcd1a19f493c3c4d29176aa056",
+    "3999": "e2d08c23d1c9f007349e6100b281d44de3300ee77e126e35110eb6c0402bb818"
+   }
+  },
+  "G2": {
+   "run_dir": "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-33-30_phase_g_g2_s1",
+   "ledger_sha256": {
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-33-30_phase_g_g2_s1/model_0_segment.json": "4db57df49f2160b0d989f526b4410358faa4429b4d22454c407b619505d2109f",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-33-30_phase_g_g2_s1/model_500_segment.json": "306fc569d6c8405a002f8978c059ebfc9ee15c7f554e05d191c3786586ba56bb",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-33-30_phase_g_g2_s1/model_1000_segment.json": "2a2957fe429f74ecaaeeb640fba8cc032690e9a4ab5d173b9aee554f38ea9ef6",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-33-30_phase_g_g2_s1/model_1500_segment.json": "6e31c88df424b4dff47e117cf8e19d37e75d99bafb856768396a8c54d2f3b557",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-33-30_phase_g_g2_s1/model_2000_segment.json": "5dec5a4ca3a13175bba415307e5a328e7b2290a9585d8018c39fb1eaedcee0b4",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-33-30_phase_g_g2_s1/model_2500_segment.json": "9c982b4c9e26fe7b070d49ed77a1f6c2a3ac62a63c2f688da6f67aa545999848",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-33-30_phase_g_g2_s1/model_3000_segment.json": "a0cb3bb8badea52d89e5907330ea33f621a7038a2a5936c3edb3f18f4845155d",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-33-30_phase_g_g2_s1/model_3500_segment.json": "48685022d00b54ef58a8460c640fa4a962f034bc84e1f868d91db1413d26a93b",
+    "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-33-30_phase_g_g2_s1/model_3999_segment.json": "051339904b3cfc376d1fc6783786c1c42f5ddb05c5d8b980f3e5f81397fa56b2"
+   },
+   "checkpoint_sha256": {
+    "0": "db536dec9346e16eca541af7edb8757242d2c5e54bb0616bbeecf05c1658b79b",
+    "500": "9006592d11f7423f80e8cf4e2a11b96c1e0df6658b2aba60d0aa3b01fb223420",
+    "1000": "576a1f47e1d9f625981c71f58619df2ee7d2fd88aa28f384585aa403a1e3ade2",
+    "1500": "da876c07c72df5ee51cf08be3885f7db53e28aafafbf5c923d95c5701fd9c474",
+    "2000": "d5e8faf22144e51f3e77057da680f935cd35363d44568921eb8040246e521e20",
+    "2500": "9c935a88df7102eb48dacee11cb83d12550cb403be78d6c1d412b1bbfd40d357",
+    "3000": "39d7846eefded1ec8e60368b67b66f734371da2a4c6d87b3067e231391646b89",
+    "3500": "82ca1203de7b6daf1044d9d970988bd087bb24eecc9b96ceb9dd3eff07c46b72",
+    "3999": "7692462c57502acdfdedef31a0c05fff79352dcc0d6811547ca93544bf0df2fc"
+   }
+  },
+  "calibration_design_sha256": "c1eb9b757d2bf7f1e893fc646599d720a1750e4030624c5254fc3d70dde381de",
+  "calibration_result_sha256": "e92106706e5b58d492aaeee6d2bd2b421dad6dfc3d70b822193c74d26592105b",
+  "training_entrypoint_sha256": "6b8b1b490978cf4a5007801a5d85541f1523510faca7c6eda6b5df3a6ec9ce47",
+  "gate_tool_sha256": "7a04105e43986a7327c6ded847f3a7451b7dd976139ff132355e57a10c4b6ebd"
+ }
+}

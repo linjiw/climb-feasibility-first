@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-09-06T12:22:30.395683-04:00",
+  "gpu": "4323 MiB, 95 %",
+  "scheduler": "    PID     ELAPSED STAT\n2008052    01:54:42 Ssl\n2011481    01:53:02 Ssl\n2011482    01:53:02 Ss\n",
+  "training_gates": [
+    "A_s21_training_gate.json",
+    "U_s21_training_gate.json"
+  ],
+  "job_logs": [
+    "U_s21.log",
+    "A_s21.log"
+  ],
+  "endpoint_access_exists": false,
+  "terminal_exists": false
+}

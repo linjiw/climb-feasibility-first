@@ -1,0 +1,49 @@
+{
+  "recorded_at": "2026-09-06T02:36:27.385919-04:00",
+  "cwd": "/home/linjiw/climb-feasibility-first",
+  "smoke": {
+    "argv": [
+      "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/tools/smoke_physics_sensitivity.py",
+      "--campaign-root",
+      "/home/linjiw/climb-feasibility-first",
+      "--contract-sha256",
+      "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013",
+      "--out-dir",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_sensitivity_2026-09-06/cpu_smoke"
+    ],
+    "observed_exit_code": 0,
+    "task": "Climb-G1-Physics-Sensitivity-Actuator-Fixture",
+    "seed": 26090641,
+    "device": "cpu",
+    "scope": "216 integrated world physics substeps plus nonintegrated clamp/reset probes; no PPO/policy/reference",
+    "stdout": "interactive tool transcript; not captured to a raw file"
+  },
+  "analyzer": {
+    "argv": [
+      "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_physics_sensitivity_smoke.py",
+      "--campaign-root",
+      "/home/linjiw/climb-feasibility-first",
+      "--smoke-dir",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_sensitivity_2026-09-06/cpu_smoke",
+      "--out",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_sensitivity_2026-09-06/trace_verification.json"
+    ],
+    "observed_exit_code": 0
+  },
+  "plot": {
+    "argv": [
+      "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/paper/figures/physics_sensitivity_fixture.py",
+      "--smoke-dir",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_sensitivity_2026-09-06/cpu_smoke",
+      "--verification",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_sensitivity_2026-09-06/trace_verification.json",
+      "--out-prefix",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_sensitivity_2026-09-06/intervention_checks"
+    ],
+    "observed_exit_code": 0,
+    "visually_inspected": true
+  }
+}

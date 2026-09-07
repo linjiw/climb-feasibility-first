@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-09-05T18:29:57.916542-04:00",
+  "pid": 1091692,
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-feasibility-first/tools/run_relative_policy_smokes.py",
+    "--replication-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry",
+    "--seed11-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11",
+    "--out-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry"
+  ],
+  "reason": "fresh execution after prelaunch GPU gate miss; no previous seed-12 training launch",
+  "policy_endpoints_opened": false
+}

@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-09-06T10:27:48.431630-04:00",
+  "pid": 2008052,
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-feasibility-first/tools/run_relative_confirmation.py",
+    "--contract",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/contract.json",
+    "--contract-sha256",
+    "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013",
+    "--out-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06",
+    "--gpu-wait-seconds",
+    "86400"
+  ],
+  "cwd": "/home/linjiw/climb-feasibility-first",
+  "classification": "authorized operational reentry after prelaunch GPU timeout; first scientific attempt",
+  "previous_terminal": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign/terminal_status.json",
+    "sha256": "243b112f026c34d3b4090a082b650f71efd472d7f75c8f412fc8a6b6462fe47a"
+  },
+  "preserved": [
+    "contract",
+    "scientific sources",
+    "seeds",
+    "budgets",
+    "thresholds",
+    "GPU memory/utilization gate",
+    "training-before-evaluation ordering"
+  ],
+  "operational_changes": [
+    "fresh campaign output directory",
+    "GPU wait allowance 86400 s, previously 7200 s"
+  ],
+  "automatic_scientific_retries": 0
+}

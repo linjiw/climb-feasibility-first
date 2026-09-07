@@ -1,0 +1,525 @@
+{
+  "classification": "synthetic validation only; no measured policy outcomes",
+  "branches": {
+    "positive": {
+      "schema_version": "relative_policy_statistics/1",
+      "status": "positive",
+      "primary_R_minus_U": {
+        "paired_seed_deltas": {
+          "21": 0.040000000000000036,
+          "22": 0.04100000000000003,
+          "23": 0.039000000000000035
+        },
+        "mean": 0.040000000000000036,
+        "sd_across_seeds": 0.0009999999999999974,
+        "seed_t_95ci": [
+          0.037515862288280494,
+          0.04248413771171958
+        ],
+        "independent_units": 3,
+        "df": 2,
+        "hierarchical_paired_95ci_supplementary": [
+          0.03900000000000004,
+          0.04100000000000003
+        ]
+      },
+      "all_panel_nonregression": {
+        "paired_seed_deltas": {
+          "21": 0.040000000000000036,
+          "22": 0.04100000000000004,
+          "23": 0.03900000000000004
+        },
+        "mean": 0.040000000000000036,
+        "sd_across_seeds": 0.0010000000000000009,
+        "seed_t_95ci": [
+          0.03751586228828049,
+          0.042484137711719584
+        ],
+        "independent_units": 3,
+        "df": 2,
+        "hierarchical_paired_95ci_supplementary": [
+          0.039000000000000035,
+          0.041000000000000036
+        ]
+      },
+      "primary_effect_requirement_pass": true,
+      "nonregression_pass": true,
+      "secondary_descriptive": {
+        "R_minus_A": {
+          "feasible_hard": {
+            "paired_seed_deltas": {
+              "21": 0.040000000000000036,
+              "22": 0.04100000000000003,
+              "23": 0.039000000000000035
+            },
+            "mean": 0.040000000000000036,
+            "sd_across_seeds": 0.0009999999999999974,
+            "seed_t_95ci": [
+              0.037515862288280494,
+              0.04248413771171958
+            ],
+            "independent_units": 3,
+            "df": 2
+          },
+          "all_panel": {
+            "paired_seed_deltas": {
+              "21": 0.040000000000000036,
+              "22": 0.04100000000000004,
+              "23": 0.03900000000000004
+            },
+            "mean": 0.040000000000000036,
+            "sd_across_seeds": 0.0010000000000000009,
+            "seed_t_95ci": [
+              0.03751586228828049,
+              0.042484137711719584
+            ],
+            "independent_units": 3,
+            "df": 2
+          }
+        },
+        "R_minus_D": {
+          "feasible_hard": {
+            "paired_seed_deltas": {
+              "21": 0.040000000000000036,
+              "22": 0.04100000000000003,
+              "23": 0.039000000000000035
+            },
+            "mean": 0.040000000000000036,
+            "sd_across_seeds": 0.0009999999999999974,
+            "seed_t_95ci": [
+              0.037515862288280494,
+              0.04248413771171958
+            ],
+            "independent_units": 3,
+            "df": 2
+          },
+          "all_panel": {
+            "paired_seed_deltas": {
+              "21": 0.040000000000000036,
+              "22": 0.04100000000000004,
+              "23": 0.03900000000000004
+            },
+            "mean": 0.040000000000000036,
+            "sd_across_seeds": 0.0010000000000000009,
+            "seed_t_95ci": [
+              0.03751586228828049,
+              0.042484137711719584
+            ],
+            "independent_units": 3,
+            "df": 2
+          }
+        }
+      },
+      "analysis": {
+        "seed_order": [
+          21,
+          22,
+          23
+        ],
+        "primary_clips": 25,
+        "panel_clips": 100,
+        "sesoi": 0.02,
+        "nonregression_margin": -0.01,
+        "bootstrap_seed": 20260905,
+        "bootstrap_draws": 10000
+      },
+      "limitations": [
+        "Three training seeds give imprecise seed-level inference.",
+        "Hierarchical intervals and secondary contrasts do not override the primary decision.",
+        "A negative SESOI decision is not an equivalence claim."
+      ]
+    },
+    "negative_for_prespecified_effect": {
+      "schema_version": "relative_policy_statistics/1",
+      "status": "negative_for_prespecified_effect",
+      "primary_R_minus_U": {
+        "paired_seed_deltas": {
+          "21": 0.0,
+          "22": 0.0010000000000000009,
+          "23": -0.0010000000000000009
+        },
+        "mean": 0.0,
+        "sd_across_seeds": 0.0010000000000000009,
+        "seed_t_95ci": [
+          -0.0024841377117195483,
+          0.0024841377117195483
+        ],
+        "independent_units": 3,
+        "df": 2,
+        "hierarchical_paired_95ci_supplementary": [
+          -0.0010000000000000009,
+          0.0010000000000000009
+        ]
+      },
+      "all_panel_nonregression": {
+        "paired_seed_deltas": {
+          "21": 0.0,
+          "22": 0.0010000000000000009,
+          "23": -0.0010000000000000009
+        },
+        "mean": 0.0,
+        "sd_across_seeds": 0.0010000000000000009,
+        "seed_t_95ci": [
+          -0.0024841377117195483,
+          0.0024841377117195483
+        ],
+        "independent_units": 3,
+        "df": 2,
+        "hierarchical_paired_95ci_supplementary": [
+          -0.0010000000000000009,
+          0.0010000000000000009
+        ]
+      },
+      "primary_effect_requirement_pass": false,
+      "nonregression_pass": true,
+      "secondary_descriptive": {
+        "R_minus_A": {
+          "feasible_hard": {
+            "paired_seed_deltas": {
+              "21": 0.0,
+              "22": 0.0010000000000000009,
+              "23": -0.0010000000000000009
+            },
+            "mean": 0.0,
+            "sd_across_seeds": 0.0010000000000000009,
+            "seed_t_95ci": [
+              -0.0024841377117195483,
+              0.0024841377117195483
+            ],
+            "independent_units": 3,
+            "df": 2
+          },
+          "all_panel": {
+            "paired_seed_deltas": {
+              "21": 0.0,
+              "22": 0.0010000000000000009,
+              "23": -0.0010000000000000009
+            },
+            "mean": 0.0,
+            "sd_across_seeds": 0.0010000000000000009,
+            "seed_t_95ci": [
+              -0.0024841377117195483,
+              0.0024841377117195483
+            ],
+            "independent_units": 3,
+            "df": 2
+          }
+        },
+        "R_minus_D": {
+          "feasible_hard": {
+            "paired_seed_deltas": {
+              "21": 0.0,
+              "22": 0.0010000000000000009,
+              "23": -0.0010000000000000009
+            },
+            "mean": 0.0,
+            "sd_across_seeds": 0.0010000000000000009,
+            "seed_t_95ci": [
+              -0.0024841377117195483,
+              0.0024841377117195483
+            ],
+            "independent_units": 3,
+            "df": 2
+          },
+          "all_panel": {
+            "paired_seed_deltas": {
+              "21": 0.0,
+              "22": 0.0010000000000000009,
+              "23": -0.0010000000000000009
+            },
+            "mean": 0.0,
+            "sd_across_seeds": 0.0010000000000000009,
+            "seed_t_95ci": [
+              -0.0024841377117195483,
+              0.0024841377117195483
+            ],
+            "independent_units": 3,
+            "df": 2
+          }
+        }
+      },
+      "analysis": {
+        "seed_order": [
+          21,
+          22,
+          23
+        ],
+        "primary_clips": 25,
+        "panel_clips": 100,
+        "sesoi": 0.02,
+        "nonregression_margin": -0.01,
+        "bootstrap_seed": 20260905,
+        "bootstrap_draws": 10000
+      },
+      "limitations": [
+        "Three training seeds give imprecise seed-level inference.",
+        "Hierarchical intervals and secondary contrasts do not override the primary decision.",
+        "A negative SESOI decision is not an equivalence claim."
+      ]
+    },
+    "inconclusive": {
+      "schema_version": "relative_policy_statistics/1",
+      "status": "inconclusive",
+      "primary_R_minus_U": {
+        "paired_seed_deltas": {
+          "21": 0.06000000000000005,
+          "22": -0.020000000000000018,
+          "23": 0.040000000000000036
+        },
+        "mean": 0.02666666666666669,
+        "sd_across_seeds": 0.04163331998932269,
+        "seed_t_95ci": [
+          -0.076756233582897,
+          0.1300895669162304
+        ],
+        "independent_units": 3,
+        "df": 2,
+        "hierarchical_paired_95ci_supplementary": [
+          -0.020000000000000018,
+          0.060000000000000074
+        ]
+      },
+      "all_panel_nonregression": {
+        "paired_seed_deltas": {
+          "21": 0.060000000000000074,
+          "22": -0.020000000000000018,
+          "23": 0.040000000000000036
+        },
+        "mean": 0.0266666666666667,
+        "sd_across_seeds": 0.0416333199893227,
+        "seed_t_95ci": [
+          -0.07675623358289702,
+          0.13008956691623041
+        ],
+        "independent_units": 3,
+        "df": 2,
+        "hierarchical_paired_95ci_supplementary": [
+          -0.020000000000000018,
+          0.06000000000000006
+        ]
+      },
+      "primary_effect_requirement_pass": false,
+      "nonregression_pass": false,
+      "secondary_descriptive": {
+        "R_minus_A": {
+          "feasible_hard": {
+            "paired_seed_deltas": {
+              "21": 0.06000000000000005,
+              "22": -0.020000000000000018,
+              "23": 0.040000000000000036
+            },
+            "mean": 0.02666666666666669,
+            "sd_across_seeds": 0.04163331998932269,
+            "seed_t_95ci": [
+              -0.076756233582897,
+              0.1300895669162304
+            ],
+            "independent_units": 3,
+            "df": 2
+          },
+          "all_panel": {
+            "paired_seed_deltas": {
+              "21": 0.060000000000000074,
+              "22": -0.020000000000000018,
+              "23": 0.040000000000000036
+            },
+            "mean": 0.0266666666666667,
+            "sd_across_seeds": 0.0416333199893227,
+            "seed_t_95ci": [
+              -0.07675623358289702,
+              0.13008956691623041
+            ],
+            "independent_units": 3,
+            "df": 2
+          }
+        },
+        "R_minus_D": {
+          "feasible_hard": {
+            "paired_seed_deltas": {
+              "21": 0.06000000000000005,
+              "22": -0.020000000000000018,
+              "23": 0.040000000000000036
+            },
+            "mean": 0.02666666666666669,
+            "sd_across_seeds": 0.04163331998932269,
+            "seed_t_95ci": [
+              -0.076756233582897,
+              0.1300895669162304
+            ],
+            "independent_units": 3,
+            "df": 2
+          },
+          "all_panel": {
+            "paired_seed_deltas": {
+              "21": 0.060000000000000074,
+              "22": -0.020000000000000018,
+              "23": 0.040000000000000036
+            },
+            "mean": 0.0266666666666667,
+            "sd_across_seeds": 0.0416333199893227,
+            "seed_t_95ci": [
+              -0.07675623358289702,
+              0.13008956691623041
+            ],
+            "independent_units": 3,
+            "df": 2
+          }
+        }
+      },
+      "analysis": {
+        "seed_order": [
+          21,
+          22,
+          23
+        ],
+        "primary_clips": 25,
+        "panel_clips": 100,
+        "sesoi": 0.02,
+        "nonregression_margin": -0.01,
+        "bootstrap_seed": 20260905,
+        "bootstrap_draws": 10000
+      },
+      "limitations": [
+        "Three training seeds give imprecise seed-level inference.",
+        "Hierarchical intervals and secondary contrasts do not override the primary decision.",
+        "A negative SESOI decision is not an equivalence claim."
+      ]
+    },
+    "nonregression_failure": {
+      "schema_version": "relative_policy_statistics/1",
+      "status": "inconclusive",
+      "primary_R_minus_U": {
+        "paired_seed_deltas": {
+          "21": 0.040000000000000036,
+          "22": 0.040000000000000036,
+          "23": 0.040000000000000036
+        },
+        "mean": 0.040000000000000036,
+        "sd_across_seeds": 0.0,
+        "seed_t_95ci": [
+          0.040000000000000036,
+          0.040000000000000036
+        ],
+        "independent_units": 3,
+        "df": 2,
+        "hierarchical_paired_95ci_supplementary": [
+          0.040000000000000036,
+          0.040000000000000036
+        ]
+      },
+      "all_panel_nonregression": {
+        "paired_seed_deltas": {
+          "21": -0.05000000000000001,
+          "22": -0.05000000000000001,
+          "23": -0.05000000000000001
+        },
+        "mean": -0.05000000000000001,
+        "sd_across_seeds": 0.0,
+        "seed_t_95ci": [
+          -0.05000000000000001,
+          -0.05000000000000001
+        ],
+        "independent_units": 3,
+        "df": 2,
+        "hierarchical_paired_95ci_supplementary": [
+          -0.05960000000000001,
+          -0.0392
+        ]
+      },
+      "primary_effect_requirement_pass": true,
+      "nonregression_pass": false,
+      "secondary_descriptive": {
+        "R_minus_A": {
+          "feasible_hard": {
+            "paired_seed_deltas": {
+              "21": 0.040000000000000036,
+              "22": 0.040000000000000036,
+              "23": 0.040000000000000036
+            },
+            "mean": 0.040000000000000036,
+            "sd_across_seeds": 0.0,
+            "seed_t_95ci": [
+              0.040000000000000036,
+              0.040000000000000036
+            ],
+            "independent_units": 3,
+            "df": 2
+          },
+          "all_panel": {
+            "paired_seed_deltas": {
+              "21": -0.05000000000000001,
+              "22": -0.05000000000000001,
+              "23": -0.05000000000000001
+            },
+            "mean": -0.05000000000000001,
+            "sd_across_seeds": 0.0,
+            "seed_t_95ci": [
+              -0.05000000000000001,
+              -0.05000000000000001
+            ],
+            "independent_units": 3,
+            "df": 2
+          }
+        },
+        "R_minus_D": {
+          "feasible_hard": {
+            "paired_seed_deltas": {
+              "21": 0.040000000000000036,
+              "22": 0.040000000000000036,
+              "23": 0.040000000000000036
+            },
+            "mean": 0.040000000000000036,
+            "sd_across_seeds": 0.0,
+            "seed_t_95ci": [
+              0.040000000000000036,
+              0.040000000000000036
+            ],
+            "independent_units": 3,
+            "df": 2
+          },
+          "all_panel": {
+            "paired_seed_deltas": {
+              "21": -0.05000000000000001,
+              "22": -0.05000000000000001,
+              "23": -0.05000000000000001
+            },
+            "mean": -0.05000000000000001,
+            "sd_across_seeds": 0.0,
+            "seed_t_95ci": [
+              -0.05000000000000001,
+              -0.05000000000000001
+            ],
+            "independent_units": 3,
+            "df": 2
+          }
+        }
+      },
+      "analysis": {
+        "seed_order": [
+          21,
+          22,
+          23
+        ],
+        "primary_clips": 25,
+        "panel_clips": 100,
+        "sesoi": 0.02,
+        "nonregression_margin": -0.01,
+        "bootstrap_seed": 20260905,
+        "bootstrap_draws": 10000
+      },
+      "limitations": [
+        "Three training seeds give imprecise seed-level inference.",
+        "Hierarchical intervals and secondary contrasts do not override the primary decision.",
+        "A negative SESOI decision is not an equivalence claim."
+      ]
+    },
+    "not_tested": {
+      "status": "not_tested",
+      "reason": "manipulation gate failed"
+    },
+    "invalid": {
+      "status": "invalid",
+      "reason": "provenance gate failed"
+    }
+  }
+}

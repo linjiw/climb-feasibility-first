@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-09-06T01:46:49.498585-04:00",
+  "classification": "development verification; full H1 outcome pending",
+  "pytest": {
+    "argv": [
+      "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_gate_runtime.py"
+    ],
+    "cwd": "/home/linjiw/climb-gate-ablation-2026-09-06",
+    "observed_result": "11 passed in 3.44s"
+  },
+  "compile": {
+    "files": [
+      "climb/gate_ablation.py",
+      "tools/prepare_gate_runtime.py",
+      "tools/train_gate_smoke.py",
+      "tools/analyze_gate_smokes.py"
+    ],
+    "passed": true
+  },
+  "checks": [
+    {
+      "label": "phase_g_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0
+    },
+    {
+      "label": "confirmation_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256"
+      ],
+      "returncode": 0
+    },
+    {
+      "label": "original_whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0
+    },
+    {
+      "label": "H1_whitespace",
+      "argv": [
+        "git",
+        "-C",
+        "/home/linjiw/climb-gate-ablation-2026-09-06",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0
+    }
+  ],
+  "original_sources_unchanged": 130,
+  "queued_diagnostic_bindings_unchanged": 520,
+  "new_source_sha256": {
+    "/home/linjiw/climb-gate-ablation-2026-09-06/climb/gate_ablation.py": "dba64b750cf65dffe836424122778b1dc6922b317b169ca2c8cf0e426e8df88b",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/tools/prepare_gate_runtime.py": "f00a943ccdf2a2eb89741f42963be7c1544d4ded7fcdd765a9e4aa5b2427a7ac",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/tools/train_gate_smoke.py": "a4ae914f1a847b72f4e671560225a8eb13bc621660be4fdd66a4674fe4af82d6",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/tools/analyze_gate_smokes.py": "1b351041eb8b4722c56430650442bc9359a6c53deffc92e1df9d8098939025fb",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/tests/test_gate_runtime.py": "4e820103c071eddac5d958c2dee1cf67ae6e468018d94962c0dc3419d55e3a17"
+  },
+  "artifacts": {
+    "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_runtime_2026-09-06/paired_smoke_result.json": "a084b7b9dda4e3e48e921e3f7c1e80c041d08d10a485ff20156f41ba8b9c6e47",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_runtime_2026-09-06/manifests/result.json": "b9c3f2a00d98aaaf11055b136f157918b51003f05bede5747864ed100994f473",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_runtime_2026-09-06/h1_study_draft.json": "5bd144c0beec35346d2ea738286b73ad0a6d4c1e0d0c84f87ca71c272ef27eaa"
+  },
+  "new_file_trailing_whitespace_pass": true
+}

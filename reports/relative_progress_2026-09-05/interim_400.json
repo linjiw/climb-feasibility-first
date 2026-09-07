@@ -1,0 +1,14 @@
+{
+  "classification": "exploratory interim telemetry; not a complete manipulation decision",
+  "iteration": 400,
+  "ledger_path": "reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_400_segment.json",
+  "ledger_sha256": "cb3bed05129e345ee35462e34872dbcd503a80bd667637294946db8a7abea32f",
+  "tv": 0.06316811332221806,
+  "effective_units": 625.0427627193877,
+  "top1_unit_mass": 0.015620672791668885,
+  "completed_trials": 152890,
+  "invalid_start_count": 0,
+  "invalid_reference_frame_count": 0,
+  "censored_resets": 0,
+  "policy_endpoints_opened": false
+}

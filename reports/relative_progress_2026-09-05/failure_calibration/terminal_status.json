@@ -1,0 +1,5 @@
+{
+  "status": "execution_stopped",
+  "reason": "four-arm smoke prerequisite failed",
+  "policy_endpoints_opened": false
+}

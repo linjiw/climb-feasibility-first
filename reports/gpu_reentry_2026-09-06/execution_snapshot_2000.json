@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-09-06T10:46:32.812549-04:00",
+  "classification": "interim checkpoint health, not a completed training or policy-benefit gate",
+  "arm": "U",
+  "seed": 21,
+  "iteration": 2000,
+  "checkpoint": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/U_s21/g1_tracking/relative_confirmation_U_s21/model_2000.pt",
+    "sha256": "f6c286d5607d5c07bcb56512375fa53ef5fff7fef45e5913e907555aa11dfcc1"
+  },
+  "ledger_sha256": "e75615424bc02fc67a924509fd1d7fe1e88748a9c24bd6b403a6a89b12978eb8",
+  "finite_saved_tensors": 76,
+  "telemetry": {
+    "completed_trials": 575886,
+    "failed_trials": 201403,
+    "invalid_start_count": 0,
+    "invalid_reference_frame_count": 0,
+    "censored_resets": 0
+  },
+  "confirmation_endpoints_opened": false
+}

@@ -1,0 +1,9 @@
+{
+  "status": "baseline_calibration_pass",
+  "seeds": [
+    31,
+    32
+  ],
+  "next": "freeze complete prospective campaign before any confirmation launch",
+  "policy_endpoints_opened": false
+}

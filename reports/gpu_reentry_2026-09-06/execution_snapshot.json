@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-09-06T10:41:51.113722-04:00",
+  "campaign": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06",
+  "training_arm": "U",
+  "seed": 21,
+  "latest_complete_checkpoint": {
+    "iteration": 1700,
+    "checkpoint": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/U_s21/g1_tracking/relative_confirmation_U_s21/model_1700.pt",
+      "sha256": "a14583180688636930c64cdda4df06c76876acb31abc34e18c3736e2239480be"
+    },
+    "ledger": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/U_s21/g1_tracking/relative_confirmation_U_s21/model_1700_segment.json",
+      "sha256": "0e8770f49c0204e239d5cf3791cfa3d2048c23950c569123fe8e0d9b85db5e14"
+    },
+    "telemetry": {
+      "completed_trials": 498543,
+      "failed_trials": 193875,
+      "invalid_start_count": 0,
+      "invalid_reference_frame_count": 0,
+      "censored_resets": 0
+    },
+    "classification": "interim training telemetry; complete training gate and policy benefit pending"
+  },
+  "campaign_terminal_exists": false,
+  "confirmation_endpoint_access_exists": false
+}

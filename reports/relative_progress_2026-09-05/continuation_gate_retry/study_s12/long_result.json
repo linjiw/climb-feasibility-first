@@ -1,0 +1,594 @@
+{
+  "schema_version": "relative_progress_probe_result/1",
+  "status": "manipulation_pass",
+  "classification": "exploratory simulation manipulation; no policy-benefit test",
+  "policy_endpoints_opened": false,
+  "seed": 12,
+  "stage": "long",
+  "gate": {
+    "mean_tv": 0.08272834315222899,
+    "tv_pass": true,
+    "effective_units_pass": true,
+    "final_saturation_pass": true
+  },
+  "snapshots": [
+    {
+      "iteration": 0,
+      "tv": 5.536080288312019e-17,
+      "effective_units": 624.0341112730887,
+      "top1_unit_mass": 0.016427655704958112,
+      "max_clip_mass": 0.017178432908434998,
+      "saturation": 0.0,
+      "completed_trials": 449
+    },
+    {
+      "iteration": 100,
+      "tv": 0.07530688329830004,
+      "effective_units": 668.4078703756085,
+      "top1_unit_mass": 0.014867759404377793,
+      "max_clip_mass": 0.01691548786580052,
+      "saturation": 0.28800675675675674,
+      "completed_trials": 50217
+    },
+    {
+      "iteration": 200,
+      "tv": 0.07380090784734875,
+      "effective_units": 641.4269776867445,
+      "top1_unit_mass": 0.015179433817580992,
+      "max_clip_mass": 0.016451504308928413,
+      "saturation": 0.16891891891891891,
+      "completed_trials": 87887
+    },
+    {
+      "iteration": 300,
+      "tv": 0.06924462571624385,
+      "effective_units": 624.9066649114243,
+      "top1_unit_mass": 0.01705127586574425,
+      "max_clip_mass": 0.018913976183130225,
+      "saturation": 0.10641891891891891,
+      "completed_trials": 121681
+    },
+    {
+      "iteration": 400,
+      "tv": 0.057991341278307594,
+      "effective_units": 618.6114813979663,
+      "top1_unit_mass": 0.016287492124958156,
+      "max_clip_mass": 0.017147781014134007,
+      "saturation": 0.08108108108108109,
+      "completed_trials": 152466
+    },
+    {
+      "iteration": 500,
+      "tv": 0.05354152419048584,
+      "effective_units": 619.2236853495416,
+      "top1_unit_mass": 0.015315330144193678,
+      "max_clip_mass": 0.016742679207749023,
+      "saturation": 0.07601351351351351,
+      "completed_trials": 180926
+    },
+    {
+      "iteration": 600,
+      "tv": 0.05077592128766127,
+      "effective_units": 625.566367942944,
+      "top1_unit_mass": 0.015935897110599652,
+      "max_clip_mass": 0.017133070021777136,
+      "saturation": 0.06756756756756757,
+      "completed_trials": 208282
+    },
+    {
+      "iteration": 700,
+      "tv": 0.051890186264711896,
+      "effective_units": 626.1674205161225,
+      "top1_unit_mass": 0.016542992127218856,
+      "max_clip_mass": 0.016542992127218856,
+      "saturation": 0.0625,
+      "completed_trials": 234949
+    },
+    {
+      "iteration": 800,
+      "tv": 0.05396333663696426,
+      "effective_units": 632.5876142451368,
+      "top1_unit_mass": 0.01520929975910736,
+      "max_clip_mass": 0.01607471919795493,
+      "saturation": 0.06756756756756757,
+      "completed_trials": 261383
+    },
+    {
+      "iteration": 900,
+      "tv": 0.056014458260195465,
+      "effective_units": 639.8257306171037,
+      "top1_unit_mass": 0.018740397605667716,
+      "max_clip_mass": 0.018740397605667716,
+      "saturation": 0.06925675675675676,
+      "completed_trials": 287554
+    },
+    {
+      "iteration": 1000,
+      "tv": 0.06165442835809269,
+      "effective_units": 649.8269891522193,
+      "top1_unit_mass": 0.015156156197634623,
+      "max_clip_mass": 0.01573722177926581,
+      "saturation": 0.08192567567567567,
+      "completed_trials": 313554
+    },
+    {
+      "iteration": 1100,
+      "tv": 0.06333499873837758,
+      "effective_units": 649.5632751297443,
+      "top1_unit_mass": 0.01617129178594595,
+      "max_clip_mass": 0.01687761561949307,
+      "saturation": 0.125,
+      "completed_trials": 339559
+    },
+    {
+      "iteration": 1200,
+      "tv": 0.06672475348283544,
+      "effective_units": 644.137960706914,
+      "top1_unit_mass": 0.015356960905837548,
+      "max_clip_mass": 0.01636161809424673,
+      "saturation": 0.21368243243243243,
+      "completed_trials": 365499
+    },
+    {
+      "iteration": 1300,
+      "tv": 0.0787708233004824,
+      "effective_units": 662.3053206262921,
+      "top1_unit_mass": 0.014061605647683655,
+      "max_clip_mass": 0.015377688692105585,
+      "saturation": 0.31334459459459457,
+      "completed_trials": 391385
+    },
+    {
+      "iteration": 1400,
+      "tv": 0.0788873794362313,
+      "effective_units": 663.1514077755265,
+      "top1_unit_mass": 0.013320344102521163,
+      "max_clip_mass": 0.01568904955037679,
+      "saturation": 0.3842905405405405,
+      "completed_trials": 417238
+    },
+    {
+      "iteration": 1500,
+      "tv": 0.07519337129655733,
+      "effective_units": 646.4794073378406,
+      "top1_unit_mass": 0.01610306647816538,
+      "max_clip_mass": 0.01610306647816538,
+      "saturation": 0.4358108108108108,
+      "completed_trials": 443166
+    },
+    {
+      "iteration": 1600,
+      "tv": 0.07867898565184574,
+      "effective_units": 655.4325862612152,
+      "top1_unit_mass": 0.0143744736918231,
+      "max_clip_mass": 0.015550475405843048,
+      "saturation": 0.4577702702702703,
+      "completed_trials": 469040
+    },
+    {
+      "iteration": 1700,
+      "tv": 0.08599673917446915,
+      "effective_units": 653.0682804778043,
+      "top1_unit_mass": 0.016247328439243057,
+      "max_clip_mass": 0.016537172466107374,
+      "saturation": 0.49493243243243246,
+      "completed_trials": 494868
+    },
+    {
+      "iteration": 1800,
+      "tv": 0.08848721447688607,
+      "effective_units": 653.6457804083103,
+      "top1_unit_mass": 0.01458890413113641,
+      "max_clip_mass": 0.015324329574893061,
+      "saturation": 0.518581081081081,
+      "completed_trials": 520648
+    },
+    {
+      "iteration": 1900,
+      "tv": 0.08922692931766413,
+      "effective_units": 652.7161522431039,
+      "top1_unit_mass": 0.014317128070885875,
+      "max_clip_mass": 0.015990096453425844,
+      "saturation": 0.5574324324324325,
+      "completed_trials": 546488
+    },
+    {
+      "iteration": 2000,
+      "tv": 0.0907368533343504,
+      "effective_units": 653.678130030954,
+      "top1_unit_mass": 0.014414481224880425,
+      "max_clip_mass": 0.016506319429241377,
+      "saturation": 0.5591216216216216,
+      "completed_trials": 572305
+    },
+    {
+      "iteration": 2100,
+      "tv": 0.08789658626841468,
+      "effective_units": 647.2992362223971,
+      "top1_unit_mass": 0.013824943802548496,
+      "max_clip_mass": 0.0158067823671924,
+      "saturation": 0.5844594594594594,
+      "completed_trials": 598186
+    },
+    {
+      "iteration": 2200,
+      "tv": 0.08925702613094272,
+      "effective_units": 648.0790021494723,
+      "top1_unit_mass": 0.0163448862083212,
+      "max_clip_mass": 0.0163448862083212,
+      "saturation": 0.575168918918919,
+      "completed_trials": 624034
+    },
+    {
+      "iteration": 2300,
+      "tv": 0.08921916139036806,
+      "effective_units": 654.0101837974238,
+      "top1_unit_mass": 0.01350224991662052,
+      "max_clip_mass": 0.01737383369498278,
+      "saturation": 0.597972972972973,
+      "completed_trials": 649817
+    },
+    {
+      "iteration": 2400,
+      "tv": 0.09063971046624912,
+      "effective_units": 653.4103856935952,
+      "top1_unit_mass": 0.013997009145234503,
+      "max_clip_mass": 0.015770544553589172,
+      "saturation": 0.6081081081081081,
+      "completed_trials": 675658
+    },
+    {
+      "iteration": 2500,
+      "tv": 0.093450284776846,
+      "effective_units": 648.4232767625249,
+      "top1_unit_mass": 0.014186721302223088,
+      "max_clip_mass": 0.015907047934182173,
+      "saturation": 0.6097972972972973,
+      "completed_trials": 701449
+    },
+    {
+      "iteration": 2600,
+      "tv": 0.09192185609687928,
+      "effective_units": 642.9754340084171,
+      "top1_unit_mass": 0.015469729979810205,
+      "max_clip_mass": 0.015614742099891186,
+      "saturation": 0.606418918918919,
+      "completed_trials": 727179
+    },
+    {
+      "iteration": 2700,
+      "tv": 0.09243132158293887,
+      "effective_units": 652.5257615217284,
+      "top1_unit_mass": 0.013722314688338642,
+      "max_clip_mass": 0.01584656867349352,
+      "saturation": 0.6359797297297297,
+      "completed_trials": 752989
+    },
+    {
+      "iteration": 2800,
+      "tv": 0.09284765357911393,
+      "effective_units": 645.9953772189917,
+      "top1_unit_mass": 0.015702265285846746,
+      "max_clip_mass": 0.0159839432527729,
+      "saturation": 0.6494932432432432,
+      "completed_trials": 778715
+    },
+    {
+      "iteration": 2900,
+      "tv": 0.09422202015944099,
+      "effective_units": 644.9838203527669,
+      "top1_unit_mass": 0.014197745459663076,
+      "max_clip_mass": 0.016621624763812543,
+      "saturation": 0.6452702702702703,
+      "completed_trials": 804453
+    },
+    {
+      "iteration": 3000,
+      "tv": 0.09473365500749345,
+      "effective_units": 652.2474052291287,
+      "top1_unit_mass": 0.015093679707370458,
+      "max_clip_mass": 0.015909129058504765,
+      "saturation": 0.652027027027027,
+      "completed_trials": 830197
+    },
+    {
+      "iteration": 3100,
+      "tv": 0.09293815085612622,
+      "effective_units": 646.2425924744205,
+      "top1_unit_mass": 0.014232336473490134,
+      "max_clip_mass": 0.016566192525210365,
+      "saturation": 0.6596283783783784,
+      "completed_trials": 855873
+    },
+    {
+      "iteration": 3200,
+      "tv": 0.0878233831743187,
+      "effective_units": 633.6352251923325,
+      "top1_unit_mass": 0.022351269900814374,
+      "max_clip_mass": 0.022351269900814374,
+      "saturation": 0.6587837837837838,
+      "completed_trials": 881602
+    },
+    {
+      "iteration": 3300,
+      "tv": 0.0955624098632616,
+      "effective_units": 641.1020283894402,
+      "top1_unit_mass": 0.015402860278115167,
+      "max_clip_mass": 0.015402860278115167,
+      "saturation": 0.6638513513513513,
+      "completed_trials": 907265
+    },
+    {
+      "iteration": 3400,
+      "tv": 0.0936534567184768,
+      "effective_units": 649.3026697753353,
+      "top1_unit_mass": 0.015260110805610185,
+      "max_clip_mass": 0.015260110805610185,
+      "saturation": 0.668918918918919,
+      "completed_trials": 932877
+    },
+    {
+      "iteration": 3500,
+      "tv": 0.10139880213566149,
+      "effective_units": 655.6374343784498,
+      "top1_unit_mass": 0.01442825321705133,
+      "max_clip_mass": 0.016108389206565536,
+      "saturation": 0.6739864864864865,
+      "completed_trials": 958524
+    },
+    {
+      "iteration": 3600,
+      "tv": 0.09571471575572871,
+      "effective_units": 633.8732819841923,
+      "top1_unit_mass": 0.017610065376184092,
+      "max_clip_mass": 0.017820116771181154,
+      "saturation": 0.6951013513513513,
+      "completed_trials": 984151
+    },
+    {
+      "iteration": 3700,
+      "tv": 0.09960561310926722,
+      "effective_units": 637.4672875900908,
+      "top1_unit_mass": 0.0170057938176273,
+      "max_clip_mass": 0.0170057938176273,
+      "saturation": 0.7035472972972973,
+      "completed_trials": 1009743
+    },
+    {
+      "iteration": 3800,
+      "tv": 0.10009360361718656,
+      "effective_units": 645.4194032915632,
+      "top1_unit_mass": 0.016941677327075792,
+      "max_clip_mass": 0.018043318053816912,
+      "saturation": 0.7128378378378378,
+      "completed_trials": 1035284
+    },
+    {
+      "iteration": 3900,
+      "tv": 0.0984674278311984,
+      "effective_units": 635.6683870229622,
+      "top1_unit_mass": 0.014600674783474835,
+      "max_clip_mass": 0.015872965148417083,
+      "saturation": 0.7271959459459459,
+      "completed_trials": 1060856
+    },
+    {
+      "iteration": 3999,
+      "tv": 0.09720261362644102,
+      "effective_units": 638.7361994561526,
+      "top1_unit_mass": 0.016177958514487674,
+      "max_clip_mass": 0.01717172660531617,
+      "saturation": 0.7331081081081081,
+      "completed_trials": 1086192
+    }
+  ],
+  "bindings": {
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_0_segment.json": {
+      "ledger": "9ce21fd9ab2d55d0be0f2a8d6a8f0a0482aee53b0652dc81529a4d144431da95",
+      "sampler": "5b8bb0676d4cd7ae5e762a243663a86040fbddc8bfa85dd9c35d1789311260ba",
+      "checkpoint": "8a7a2ff67eeab584ffe8d59de116b96b57a504b4c58a7ba3a1c517ed63c7c9f1"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_100_segment.json": {
+      "ledger": "c8c6d1ec54c130a7f82f6d89509d811a42dd253f884846a29afbd7774c03c5f9",
+      "sampler": "4443525a2a2e41a7a0eef6c1a7dd0a9cd7502543344981cdb19237a4978b25a6",
+      "checkpoint": "2e6b88c81944b6db8c1cc3a59d318aa56edeafd11073662ebcbb4e7362eb0b0d"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_200_segment.json": {
+      "ledger": "b7c778adce5b11db403f633eaa15b24da9048d1db111dafd30f87cfe01dee7a2",
+      "sampler": "af0a837f45b90f2438b5a10df84b097958c1db47270d24ec4b9b26f5d577940c",
+      "checkpoint": "3c5da06bbe4f4e39123490e04ae758844c1663563c7d81f83a9afd2e0e8c09a9"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_300_segment.json": {
+      "ledger": "ea84502b17535b07dc4bcfc95c278c0af6f509b703172f5361271384d3a1d14d",
+      "sampler": "a9d22eefb0a8413835833145dd3ecda7f015a77c248347a809575eaee3633f10",
+      "checkpoint": "db56eb34207bf98cfefc444aed36195fdbefca2388b835938b1788872790c09e"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_400_segment.json": {
+      "ledger": "e404b40f5c10f4ad0606fc09d058021cea6992431353c75aa32d628daba8f541",
+      "sampler": "8c66baa771c5e8359af61159ac892d2b54e11b1b4971dc5847fc31b3152254c8",
+      "checkpoint": "70ded52bf172c28ce92100720c8f41d76dc1a075c6c25e38a3189ba30a8a053c"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_500_segment.json": {
+      "ledger": "37931e37a6aa1bafc0cc6580964eae6947ae1dd1a54866f22f88bbe2cbeff468",
+      "sampler": "bf5257fee35915fcba2a0e6a08e1e229b1d909626e02eac9dfaac376f61628c1",
+      "checkpoint": "ef42ee78459113d1aaa39a9a22c57485166dc278696a53efca15b59955d71274"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_600_segment.json": {
+      "ledger": "44b903bd68dc61841551c1f2515819394a85afe036279e40b10dc965b555c6c6",
+      "sampler": "aece88160360dad49b3ec74d6d33e57340b723914238793a526d1604ea74e55f",
+      "checkpoint": "eee7d7dff0d3b4ba2c671c60c7453e674473800e2562e186b727c14cc5e21e76"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_700_segment.json": {
+      "ledger": "e50363380c0e53d30022dc7e22ffed5c41ea274cf63b5035ce33ce36456ca81e",
+      "sampler": "eac7c8da09c3b63d77552c7040a0fe9b820d78e75bb11738ad9c8578f57cae9f",
+      "checkpoint": "8a446556217de0a037ef295a4b80c2bec8dc3ffa6fc6a9f15cf8d8bdf5d0e797"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_800_segment.json": {
+      "ledger": "529b957965df4b78116497ffa868097d9006defd05c2b6c40c6977a104e1303b",
+      "sampler": "2894f0da7e1e97693d0a620bce8f6dd3d979090317ab8cb2ea48a1b9e3f897e8",
+      "checkpoint": "629999cb9a602b65363c8f8d57e1bca6009024d37524ffb889eb95fb1e460865"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_900_segment.json": {
+      "ledger": "6aa3b61c9fbe8d11bc970b70a8c4c006a17f3fce8ba1e50ba09339191a7a266b",
+      "sampler": "ca5d6093818bf7d47d6bf04c61f31f0bc6574c46a8d603ad0f4059e2a11de6f9",
+      "checkpoint": "afbd472ef972dae215ea17e4ab6316083f231cafb64dc6da93acf37542e6cd43"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1000_segment.json": {
+      "ledger": "da960b00a711f7510d84f1710ab0704b2d41e81cd638c60e54643174e1d5f2a7",
+      "sampler": "723e3d0cba591f850d4ca195a7b430af872c7c18a33c75461cb8f18bad79334c",
+      "checkpoint": "897df7024e7f39086310f90a03c9bc9d1c844c13799c56e2897b2937983aa4b5"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1100_segment.json": {
+      "ledger": "a7c2708d603daa7ff870506e1cbf98fa3ed7fe118a3e1ae6f1f4205f216de136",
+      "sampler": "1dabce21021f5a192150de71c5d9a90323f41f21431adac484b1f5a7e0c0b50e",
+      "checkpoint": "99acce23d83d1e84cea91e407f8c8e0a1123bba6f9eb3c26689509aef84f4017"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1200_segment.json": {
+      "ledger": "223748e5e3c782739192a9a36dcc266ea8c93109f5330d154609e0a0fdf38d4d",
+      "sampler": "cf66668290c1c940dfed510594def07f216d6206d675684541d2965793dd34dc",
+      "checkpoint": "12c576f3e48a03ec68e9edbc2426edba631c12632b00b46d11f2d74034f1fe45"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1300_segment.json": {
+      "ledger": "9074e3bafa6eb54e844c83c292f0d5344ca27fc23d749af5a77f762f17607d52",
+      "sampler": "536844d7c94d7f728f9454466db12bad3016446296ceace186753edd42dc65b3",
+      "checkpoint": "b80b8ee06e65ddc90350028f82e239ba76dfaa063e1a434a562933d76621ae8e"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1400_segment.json": {
+      "ledger": "31550ec64ac76c59fb029af45482a1b25dad1846db406215a90864e75dbc5dd0",
+      "sampler": "22130e5bceb966bd21e69268b76f11d01684aa30f2b66eb8fa54cd75caa72e41",
+      "checkpoint": "026716065985d6d771eeb0c259d262edbcd9850f9d041fb3645e56114ce5fe91"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1500_segment.json": {
+      "ledger": "9d9f606fb82a8ef655dff4523b23c8988438309c356554d292a365cccc5ff3ac",
+      "sampler": "95ed13254db146e9c8cc28dc349f6a82cfe224464b94f460cd13a7ce4a9833ba",
+      "checkpoint": "0d6878f483be36cb05e0550c0a56a3d78265955705a0c0af2a983aaf2f56c57f"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1600_segment.json": {
+      "ledger": "9d521fbd6376f0d00582c0d2133dd31f32f7d5a87ce71362471e285ad5ff2131",
+      "sampler": "45b28dd84bb76a9af2fee502d080eb3a105e16a06488a537c6ff97318f5997fc",
+      "checkpoint": "fbe796b9ac57cf28a28af69b85fd1b082d5e8a051699a1528c579466ced484b1"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1700_segment.json": {
+      "ledger": "d98a9c619d29cb6f0836e06530f4e5d0e9230b129261d258fe112b6eff957d04",
+      "sampler": "0f228135a75b1f97b5209a451aabf27982fb6ff0f2e056b0b1b208c8719d5bd2",
+      "checkpoint": "9aa53dd146ee3273df0ac241519f415f0e2e73430fdf63ce9c72d163a68328b2"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1800_segment.json": {
+      "ledger": "ccd148c9b2b22a0a03d862b9e9dcaa15a6cb71e4cd824e5b7f29ccd444dcef7a",
+      "sampler": "6e11b2160dabf7c5078b115e55e01b7db6d91e809f490e1dfd064c8b30cd9dc3",
+      "checkpoint": "858dd1e21376d58df8ed82779c31e4206776e189dcadbf250372646438db5d7f"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1900_segment.json": {
+      "ledger": "15ee5436dae7323c02c2f6b8619dea5446f08d2abb85155c619cce2194eb9b84",
+      "sampler": "9206dd1785a3817a1690d79ab8a7492602c8d9438ed2666adb64e103cefbdd68",
+      "checkpoint": "58a1669c36910bb4b390756643a19a27792f7676fb4e0173144ea7a4a2688d3a"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2000_segment.json": {
+      "ledger": "75322c5fe32491824fcea6c02a8a866246c75ed01fee555c5679bad9b9c4382a",
+      "sampler": "65c60cef8680b100032b393f17a81c1cdd5e37a9ce4e52afc97b970fc76daf7d",
+      "checkpoint": "ba5aae898c4aa2ad7343a9035c9d445795f138fa021edce2366e9de25f05ff5a"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2100_segment.json": {
+      "ledger": "3807abf0cd76fef7d5bf958bc29ec2c4ce1f89010a46d993c2951967524d2e0c",
+      "sampler": "99877354d664a21ad9feccd0efc2f55bc54fa7f28215aab640771d4213a141b1",
+      "checkpoint": "d4a15d45d869a8aab0dde6ce3cefaf032e0b5c92cab2167b71a0da77ac20218b"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2200_segment.json": {
+      "ledger": "4070b64f6a94be9a8636fd8ee99ceed0e09bc4a3b092c537cb4a7e08224e95ee",
+      "sampler": "657236e0bce9ad265e3794720701f4f48f64cb3f16d796c45e61997854dfae10",
+      "checkpoint": "e0e88c45dcc6ff85e6d320d6e78b994f3a9f1cb58d7b5f5364b280f4acfa1898"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2300_segment.json": {
+      "ledger": "3d0f275ed293d5c29836aa5d213814c03f5a8c1f94eebf8b5fca02d305bf5ec5",
+      "sampler": "0519cb0970a907fab4182c353076bea396ae125185a9b8229fab2ec86282eb59",
+      "checkpoint": "25e9db67a7e6142185de587f8df62ad26af2119d53ab102d923e1d4bda11a672"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2400_segment.json": {
+      "ledger": "45ba28b82fa1171eda88fe8615604ecc726f01cc4096e884d2b964331d232007",
+      "sampler": "4313f306f4ba10a153075f6d6f7682b8c89e25117ecfc6592f211eace12b302f",
+      "checkpoint": "9e430aa1ec856726d2d726dfc540dd991f054f4ad5c4c288199eeb82dbdef556"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2500_segment.json": {
+      "ledger": "ccdb0bd7ccfab585dcf0e2d57a7931f237694abf48155f8c4938704f485158b6",
+      "sampler": "ddb3d568f7b4038dfaec9743f189184e85cb0292894f599205550be9918000bb",
+      "checkpoint": "a5adccfd061dc94d61b48c81fbe4a6cbcdc1f389f314b17456419592b837faa4"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2600_segment.json": {
+      "ledger": "382f0f91fbd0729b2056ec9c89e54da58f1e6f6884ba4ae5418e2c6646e24cda",
+      "sampler": "40875509c2cc9e85641f067f1831f72ac8e5a39b749b66a3595b5bd1e6846488",
+      "checkpoint": "32c3bde32601fa5cc440e72d91b943af6dfb9b28905a479f35ea32ee607fc53b"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2700_segment.json": {
+      "ledger": "55dfed068c4b85e07c3dad02d2bddb9609b904bd842c0fe9d45efa2c7e8ee6b5",
+      "sampler": "a1f05effed6c440ccb4a0c9d4a5d38b4fcea081405bf4398d14933942f20604c",
+      "checkpoint": "561a40c2eb47918ad417dc4ccff09c9f8c5adf0c6d2c53bd56ffe2728dbc5d8c"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2800_segment.json": {
+      "ledger": "f8a88554fa71abcf24bcdb5edab0211d7777468391be785dafa14d9a72b2cfba",
+      "sampler": "62abdb4b519baa7bf3ad5556e34cb14291c17abdc14da0e189b156fa326885e4",
+      "checkpoint": "3e1336cf70a84f70f157b78483f0f4dbded6f8e61826c4d6d80861e1eb79663f"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2900_segment.json": {
+      "ledger": "1c291d8579e60794f53fbb26e57c779b01476a8949d8bbe2ea6d41312203920d",
+      "sampler": "d8543e282bc990e4d3ecfb49819ebdb9f6645355e0225fecc9e557e49b436de1",
+      "checkpoint": "05616015156d43ae64693c9ec69d815b0e652ee65da233d1e32d2b84efb61f8d"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3000_segment.json": {
+      "ledger": "c6d16d9ff469d29e8f22ec03539ef886d63b475b8ce0118503e392e0048476ac",
+      "sampler": "b47409ca9b4b9029311f7bdb19608c0edd8220ef48bf69d2b1fc0c0fcda6a110",
+      "checkpoint": "3f9e2222642f08acb8e1bf612950fe8873a5c34a3bcb067be88cd8425dcc7823"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3100_segment.json": {
+      "ledger": "9952284cea0400fd69ab99b14c029480f6e39b30a0bc4a739e978f136de2d0ed",
+      "sampler": "87650ce915726f72d31cae3ee4cc518b0e11dcb9f3a178116594b3a097a2b4bb",
+      "checkpoint": "b5137afa8d55e80796b6a962741408f3bf7419a8d04959d7e2fb28a7bdc1edd5"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3200_segment.json": {
+      "ledger": "d44584a1d6ba9add74e741d2d4a52af73dc678f9a940d2cc28bc1424a58278fd",
+      "sampler": "f22a578e9d3863967665182d27c41a8dc5684f2fe8abc91a999d0f2ef1725ca3",
+      "checkpoint": "ee65a3cf8e007040e24b46aec19b47a19765256ccd5b9d227b5627c3418b1753"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3300_segment.json": {
+      "ledger": "e23b6f70ef91830a8e1a974313c52700d86b6360b4a7dea576c2b7ba43f92a33",
+      "sampler": "8aea6b0c58a579b6bfd2f843cd2ba69df1223d9472b733de4b170511ad7b2827",
+      "checkpoint": "9f8437df945748d130b27503a221982ee1e84e9fddb9691dc0d59803d266fb8e"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3400_segment.json": {
+      "ledger": "b86ba5468c82237b26606e4c1bfcb5e0967232e55552f5250e4faaa01af64547",
+      "sampler": "ae008e29512898b2ff645f2059319c28c579ed8b9b6a40bfe6d473226dfd2121",
+      "checkpoint": "d82dd11067d7cb4cb979a0f51be22e6578cef6fe795a94f8a6b10acce14dbdd5"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3500_segment.json": {
+      "ledger": "03cd7e0d13ae983115f19fd11373e098ca7a805eb04e16a340d3d7f211dad207",
+      "sampler": "0cc57c19aae7457431e004870da9f799ad05e9e3bcffff0a082915353cbfdb67",
+      "checkpoint": "ea938fcb78249c0df77b8bf8a0c1c32aa30f06585f0888eb6c39d1a0ade026fc"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3600_segment.json": {
+      "ledger": "96550606bfdfa08b90554fc1fcea0e1d55abdc2edfe3b1730bb2cabe2cd1a0c8",
+      "sampler": "3a8ceefa269ac6d6dcb7cc7d7ee57440a89cc631db1f71a1133d1481322fd856",
+      "checkpoint": "b35b5c587d6cdde4ec93dba125009ed2bc710acac581329696a06e355ec67fdd"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3700_segment.json": {
+      "ledger": "b7798efed60aa8f7dcd7d98f6f887a8022f2ec49a7b58b545d8c58cf50e2aa0e",
+      "sampler": "bfff76e363340bab5085e55929c1b9b69b9f2c098cfeff6ea5052eeff37cf0b2",
+      "checkpoint": "3e942509999c62ec2d4cf4a7bf87c418ca6cd640d4dd83465cb2f08d3a460271"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3800_segment.json": {
+      "ledger": "8aa0a8d2339fe996308a464985d310aa5beff8eab3b832686330ca4bca24c8cb",
+      "sampler": "c6b560da9c238b9e33d2946b612bd803fd6f0a39358513dbfdf078feee08691c",
+      "checkpoint": "00c913264d5e6d58976774417d094ae0519288307e817cac89b09527aedd1345"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3900_segment.json": {
+      "ledger": "eaf13bf0a32c0d2a87f6ffd3af63b4cd3eaa487d52efe719908b3f9592fe6784",
+      "sampler": "8abf8f0a3e958c0a245ea31ae9df8c0ed2152ba0f22e3205cba904f01ea2ccd1",
+      "checkpoint": "0126f134ff0f54b2a4aafdc6f3b7ed0eb3876093598c040c4a15db713a56800b"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3999_segment.json": {
+      "ledger": "d6605afca53582c1e38d3ff6094fef0443db63d397f0f13a690a21392f602c08",
+      "sampler": "5be9d0fcd8600870e2084d08aaff436c0fb2f270329f5bcf162c0013a791988d",
+      "checkpoint": "1343762b4c3bb9036ebbbeea38b6fc83cbb7af30e2c48b94a70d4ba3c7f3fe5a"
+    }
+  },
+  "manifest_sha256": "a98c48541fbc4aa4627d9b24c5a08e9e67f0d6bc9bb94103da57313b94766739",
+  "checker_sha256": "dcb9e5f9e30d199ad6179bfe83915b482875df77ec2fe02a46059ba31d18f985"
+}

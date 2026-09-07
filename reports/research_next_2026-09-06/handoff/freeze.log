@@ -1,0 +1,12 @@
+{
+  "status": "frozen_before_confirmation",
+  "contract": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/contract.json",
+    "sha256": "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013"
+  },
+  "seal": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256",
+    "sha256": "be07c2e497dccc9c7d5508c7fa2c6f611b5dcadff228a16a35329122844d6335"
+  },
+  "jobs_launched": 0
+}

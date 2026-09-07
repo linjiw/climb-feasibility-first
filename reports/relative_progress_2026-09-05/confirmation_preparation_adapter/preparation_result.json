@@ -1,0 +1,20 @@
+{
+  "status": "prepared_not_frozen",
+  "confirmation_enabled": false,
+  "jobs_launched": 0,
+  "configuration_count": 12,
+  "training_jobs": 12,
+  "evaluation_jobs": 48,
+  "runtime_file_count": 376,
+  "g1_asset_count": 36,
+  "draft_contract": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation_adapter/draft_contract.json",
+    "sha256": "74857935900acac9c14b2a865845c658da89a8e06bbfeac72ac96d6bc91552f2"
+  },
+  "policy_endpoints_opened": false,
+  "remaining": [
+    "four-arm development smokes and fixed D calibration",
+    "simulator smoke of the new confirmation entrypoint and checkpoint ledger",
+    "complete frozen-contract/evaluator integration audit and prospective freeze"
+  ]
+}

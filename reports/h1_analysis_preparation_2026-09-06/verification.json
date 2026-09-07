@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-09-06T14:44:23.942463-04:00",
+  "checks": [
+    {
+      "name": "compile",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/h1_analysis_protocol.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_h1_analysis_protocol.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "phase_g_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "confirmation_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256"
+      ],
+      "returncode": 0
+    }
+  ],
+  "unchanged_original_runtime_files": 376,
+  "sources": {
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/h1_analysis_protocol.py": "0331f3fc5cc6dec1bbd24b58ecc662d595b3ab656e4734288c48f52587333cda",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_h1_analysis_protocol.py": "ee906cb1a1aa095b48e5e85707582df100b67ff3599eed6f0a12eb922036553b"
+  },
+  "synthetic_output": {
+    "path": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/h1_analysis_preparation_2026-09-06/synthetic.json",
+    "sha256": "1b146bdbf7db6cb59d45ce41b787a2987ae7100bdee80e861607591640d77903"
+  },
+  "tests": {
+    "argv": [
+      "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+      "-m",
+      "pytest",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_h1_analysis_protocol.py",
+      "-q"
+    ],
+    "cwd": "/home/linjiw/climb-feasibility-first",
+    "returncode": 0
+  },
+  "test_stdout": "................                                                         [100%]\n16 passed in 0.38s\n",
+  "full_training_enabled": false,
+  "production_scheduler_implemented": false
+}

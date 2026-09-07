@@ -1,0 +1,25 @@
+{
+  "seed": 11,
+  "status": "pass",
+  "results": {
+    "smoke": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/smoke_result.json",
+      "sha256": "c56605bd66c330d2a3e51f8fe7524b444bf5b41a24bf4b182eb566e249b1ad49",
+      "status": "smoke_pass",
+      "gate": null
+    },
+    "long": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long_result.json",
+      "sha256": "08315ff233877da3c318c977cce23eaaec73e5bd4b5c434edaa84f5a00df3b9b",
+      "status": "manipulation_pass",
+      "gate": {
+        "mean_tv": 0.08321139322547161,
+        "tv_pass": true,
+        "effective_units_pass": true,
+        "final_saturation_pass": true
+      }
+    }
+  },
+  "design_sha256": "b9ea06978bbc8aac9ef7874322e0869e4ea75250a7267a0b407fa7b68a73f2f2",
+  "terminal_sha256": "1b857e87902e590d6fe97e308f0a60849acb215322a702a72dbac23037c5d06e"
+}

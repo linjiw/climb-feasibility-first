@@ -1,0 +1,10 @@
+{
+  "classification": "caption correction only; values unchanged",
+  "old_directory": "rank_signal_s12",
+  "corrected_directory": "rank_signal_s12_corrected",
+  "reason": "Hardcoded Seed 11 figure title replaced with the recorded seed; both JSONs correctly identified seed 12.",
+  "original_tool_sha256": "43c55b4dd54717a4eac29ba86c2b81414ed618b3c79eb1e33b1c1858cbebdc57",
+  "corrected_tool_sha256": "f6ff5bd1a80a48b0cee087748c4f385ef1fe41e4c32046a2306e671fb5648053",
+  "all_non_source_fields_identical": true,
+  "csv_bytes_identical": true
+}

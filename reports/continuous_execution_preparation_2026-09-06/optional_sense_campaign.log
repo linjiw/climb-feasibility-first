@@ -1,0 +1,1 @@
+{"status": "execution_stopped", "reason": "GPU gate unavailable: 10559 MiB, 64%", "completed_cells": [], "automatic_retries": 0, "full_evaluation_enabled": false}

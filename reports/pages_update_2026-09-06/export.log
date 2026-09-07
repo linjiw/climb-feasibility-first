@@ -1,0 +1,11 @@
+U 21 verified
+A 21 verified
+R 21 verified
+D 21 verified
+A 22 verified
+R 22 verified
+D 22 verified
+U 22 verified
+R 23 verified
+D 23 verified
+{"schema_version": "climb_public_progress/1", "snapshot_time": "2026-09-06T22:17:40.396652-04:00", "classification": "measured simulation training integrity and allocation; policy utility pending", "campaign_contract_sha256": "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013", "training_jobs_complete": 10, "training_jobs_total": 12, "verified_checkpoint_states": 410, "evaluation_cells_total": 48, "endpoint_access_exists": false, "policy_outcomes_read_by_exporter": false, "pending_training": [{"arm": "U", "seed": 23, "latest_saved_iteration": 1100}, {"arm": "A", "seed": 23, "latest_saved_iteration": null}], "unit_of_replication": "training seed; checkpoint states and evaluation conditions are correlated", "mean_tv_window": "37 saved states at iterations 400 through 3999 inclusive"}

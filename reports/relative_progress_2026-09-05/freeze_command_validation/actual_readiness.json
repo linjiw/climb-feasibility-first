@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-09-05T22:59:12.021560-04:00",
+  "argv": [
+    "bash",
+    "tools/freeze_relative_confirmation.sh",
+    "--draft",
+    "reports/relative_progress_2026-09-05/confirmation_preparation_adapter/draft_contract.json",
+    "--draft-sha256",
+    "74857935900acac9c14b2a865845c658da89a8e06bbfeac72ac96d6bc91552f2",
+    "--out-dir",
+    "reports/relative_progress_2026-09-05/confirmation_freeze",
+    "--check-only"
+  ],
+  "returncode": 2,
+  "result": {
+    "status": "prerequisites_pending",
+    "missing": {
+      "entrypoint U seed51": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/U_result.json",
+      "entrypoint A seed51": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/A_result.json",
+      "entrypoint R seed51": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/R_result.json",
+      "entrypoint D seed51": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/D_result.json",
+      "D seed32 decision": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32_result.json"
+    },
+    "confirmation_enabled": false,
+    "files_written": 0,
+    "jobs_launched": 0
+  },
+  "stderr": ""
+}

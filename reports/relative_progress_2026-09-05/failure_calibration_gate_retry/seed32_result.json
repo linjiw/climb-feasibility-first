@@ -1,0 +1,593 @@
+{
+  "schema_version": "relative_failure_calibration/1",
+  "seed": 32,
+  "status": "calibration_pass",
+  "classification": "exploratory fixed-baseline manipulation calibration",
+  "policy_endpoints_opened": false,
+  "gate": {
+    "mean_tv": 0.0859387132989198,
+    "tv_pass": true,
+    "effective_units_pass": true,
+    "saturation_pass": true
+  },
+  "snapshots": [
+    {
+      "iteration": 0,
+      "tv": 0.0,
+      "effective_units": 624.0341112730887,
+      "top1_unit_mass": 0.016427655704958112,
+      "max_clip_mass": 0.017178432908434998,
+      "saturation": 0.0,
+      "completed_trials": 452
+    },
+    {
+      "iteration": 100,
+      "tv": 0.004381351087020615,
+      "effective_units": 620.950322577177,
+      "top1_unit_mass": 0.016654849817599217,
+      "max_clip_mass": 0.017115858118974564,
+      "saturation": 0.28040540540540543,
+      "completed_trials": 50661
+    },
+    {
+      "iteration": 200,
+      "tv": 0.0044279806856266386,
+      "effective_units": 622.60483311357,
+      "top1_unit_mass": 0.016635441968603094,
+      "max_clip_mass": 0.0171098561721389,
+      "saturation": 0.16131756756756757,
+      "completed_trials": 88888
+    },
+    {
+      "iteration": 300,
+      "tv": 0.00580517364877859,
+      "effective_units": 623.448398705307,
+      "top1_unit_mass": 0.016691971971267323,
+      "max_clip_mass": 0.01705254319440117,
+      "saturation": 0.10641891891891891,
+      "completed_trials": 122892
+    },
+    {
+      "iteration": 400,
+      "tv": 0.0077852110326178635,
+      "effective_units": 624.2887988698436,
+      "top1_unit_mass": 0.016730602170814922,
+      "max_clip_mass": 0.017006867185434545,
+      "saturation": 0.09543918918918919,
+      "completed_trials": 154509
+    },
+    {
+      "iteration": 500,
+      "tv": 0.010934830878282453,
+      "effective_units": 625.6790481128094,
+      "top1_unit_mass": 0.016729918149872437,
+      "max_clip_mass": 0.01699388795161346,
+      "saturation": 0.08277027027027027,
+      "completed_trials": 184249
+    },
+    {
+      "iteration": 600,
+      "tv": 0.015406053735790884,
+      "effective_units": 626.7498154914521,
+      "top1_unit_mass": 0.016888564646153667,
+      "max_clip_mass": 0.016888564646153667,
+      "saturation": 0.07179054054054054,
+      "completed_trials": 212416
+    },
+    {
+      "iteration": 700,
+      "tv": 0.020764871573008964,
+      "effective_units": 628.2258825681216,
+      "top1_unit_mass": 0.016918433266200406,
+      "max_clip_mass": 0.016918433266200406,
+      "saturation": 0.07263513513513513,
+      "completed_trials": 239687
+    },
+    {
+      "iteration": 800,
+      "tv": 0.02709051774213385,
+      "effective_units": 630.2279058833972,
+      "top1_unit_mass": 0.016812497828922558,
+      "max_clip_mass": 0.016812497828922558,
+      "saturation": 0.06925675675675676,
+      "completed_trials": 266494
+    },
+    {
+      "iteration": 900,
+      "tv": 0.034203335194987465,
+      "effective_units": 631.4649646846487,
+      "top1_unit_mass": 0.017055543463762864,
+      "max_clip_mass": 0.017055543463762864,
+      "saturation": 0.07094594594594594,
+      "completed_trials": 293105
+    },
+    {
+      "iteration": 1000,
+      "tv": 0.042069188061849117,
+      "effective_units": 632.3279721537757,
+      "top1_unit_mass": 0.01722418711755017,
+      "max_clip_mass": 0.01722418711755017,
+      "saturation": 0.07263513513513513,
+      "completed_trials": 319761
+    },
+    {
+      "iteration": 1100,
+      "tv": 0.050831035885151796,
+      "effective_units": 634.3706062130757,
+      "top1_unit_mass": 0.017227144724260117,
+      "max_clip_mass": 0.017227144724260117,
+      "saturation": 0.0945945945945946,
+      "completed_trials": 346316
+    },
+    {
+      "iteration": 1200,
+      "tv": 0.05874360523635404,
+      "effective_units": 635.3517133055691,
+      "top1_unit_mass": 0.01745724387165625,
+      "max_clip_mass": 0.01745724387165625,
+      "saturation": 0.1570945945945946,
+      "completed_trials": 372865
+    },
+    {
+      "iteration": 1300,
+      "tv": 0.06573827864943471,
+      "effective_units": 635.8945549922147,
+      "top1_unit_mass": 0.017004550679869147,
+      "max_clip_mass": 0.017004550679869147,
+      "saturation": 0.24070945945945946,
+      "completed_trials": 399405
+    },
+    {
+      "iteration": 1400,
+      "tv": 0.07259022536740353,
+      "effective_units": 635.985962021638,
+      "top1_unit_mass": 0.017121043468661237,
+      "max_clip_mass": 0.017121043468661237,
+      "saturation": 0.3251689189189189,
+      "completed_trials": 426072
+    },
+    {
+      "iteration": 1500,
+      "tv": 0.0794514664004465,
+      "effective_units": 636.8527142098818,
+      "top1_unit_mass": 0.017132599985301176,
+      "max_clip_mass": 0.017132599985301176,
+      "saturation": 0.40540540540540543,
+      "completed_trials": 452660
+    },
+    {
+      "iteration": 1600,
+      "tv": 0.08438185268766336,
+      "effective_units": 636.7608163052438,
+      "top1_unit_mass": 0.01727306541476487,
+      "max_clip_mass": 0.01727306541476487,
+      "saturation": 0.4484797297297297,
+      "completed_trials": 479237
+    },
+    {
+      "iteration": 1700,
+      "tv": 0.09002350723934723,
+      "effective_units": 637.1506860646308,
+      "top1_unit_mass": 0.017384549027626574,
+      "max_clip_mass": 0.017384549027626574,
+      "saturation": 0.5160472972972973,
+      "completed_trials": 505819
+    },
+    {
+      "iteration": 1800,
+      "tv": 0.09239289824820565,
+      "effective_units": 637.0853988452379,
+      "top1_unit_mass": 0.01734653069468959,
+      "max_clip_mass": 0.01734653069468959,
+      "saturation": 0.5228040540540541,
+      "completed_trials": 532441
+    },
+    {
+      "iteration": 1900,
+      "tv": 0.09359038307517986,
+      "effective_units": 636.420672369478,
+      "top1_unit_mass": 0.017105716241073505,
+      "max_clip_mass": 0.017105716241073505,
+      "saturation": 0.5515202702702703,
+      "completed_trials": 559057
+    },
+    {
+      "iteration": 2000,
+      "tv": 0.09584900177771995,
+      "effective_units": 635.1802634783493,
+      "top1_unit_mass": 0.016874976208026186,
+      "max_clip_mass": 0.016874976208026186,
+      "saturation": 0.5625,
+      "completed_trials": 585778
+    },
+    {
+      "iteration": 2100,
+      "tv": 0.09808102139160184,
+      "effective_units": 635.4327863705631,
+      "top1_unit_mass": 0.016546307381970448,
+      "max_clip_mass": 0.016546307381970448,
+      "saturation": 0.589527027027027,
+      "completed_trials": 612386
+    },
+    {
+      "iteration": 2200,
+      "tv": 0.10159363612360306,
+      "effective_units": 634.6088254166223,
+      "top1_unit_mass": 0.01667697183520729,
+      "max_clip_mass": 0.01667697183520729,
+      "saturation": 0.6182432432432432,
+      "completed_trials": 639096
+    },
+    {
+      "iteration": 2300,
+      "tv": 0.10396608726107691,
+      "effective_units": 633.7415180442208,
+      "top1_unit_mass": 0.01664131589878592,
+      "max_clip_mass": 0.01664131589878592,
+      "saturation": 0.6393581081081081,
+      "completed_trials": 665755
+    },
+    {
+      "iteration": 2400,
+      "tv": 0.10600897459683506,
+      "effective_units": 634.1158951866713,
+      "top1_unit_mass": 0.01643913117895607,
+      "max_clip_mass": 0.016478260523413956,
+      "saturation": 0.6528716216216216,
+      "completed_trials": 692358
+    },
+    {
+      "iteration": 2500,
+      "tv": 0.107116436288315,
+      "effective_units": 635.4296641453365,
+      "top1_unit_mass": 0.01616791198799149,
+      "max_clip_mass": 0.01639514694298858,
+      "saturation": 0.6545608108108109,
+      "completed_trials": 718965
+    },
+    {
+      "iteration": 2600,
+      "tv": 0.10841677182397284,
+      "effective_units": 633.7587916229045,
+      "top1_unit_mass": 0.016649696304111457,
+      "max_clip_mass": 0.016649696304111457,
+      "saturation": 0.6570945945945946,
+      "completed_trials": 745656
+    },
+    {
+      "iteration": 2700,
+      "tv": 0.11053164046467412,
+      "effective_units": 634.0874335733039,
+      "top1_unit_mass": 0.0160982374494821,
+      "max_clip_mass": 0.016359843583748333,
+      "saturation": 0.674831081081081,
+      "completed_trials": 772295
+    },
+    {
+      "iteration": 2800,
+      "tv": 0.11116482100273958,
+      "effective_units": 632.0784135305908,
+      "top1_unit_mass": 0.016123956927991793,
+      "max_clip_mass": 0.01616595989704514,
+      "saturation": 0.6773648648648649,
+      "completed_trials": 798969
+    },
+    {
+      "iteration": 2900,
+      "tv": 0.11281395861951055,
+      "effective_units": 632.0366087029221,
+      "top1_unit_mass": 0.015672641788730467,
+      "max_clip_mass": 0.016114446320000295,
+      "saturation": 0.6942567567567568,
+      "completed_trials": 825625
+    },
+    {
+      "iteration": 3000,
+      "tv": 0.11344016827115233,
+      "effective_units": 632.0538737916461,
+      "top1_unit_mass": 0.015461481042455816,
+      "max_clip_mass": 0.01613779810158678,
+      "saturation": 0.6858108108108109,
+      "completed_trials": 852294
+    },
+    {
+      "iteration": 3100,
+      "tv": 0.11421731208455968,
+      "effective_units": 631.3071653726399,
+      "top1_unit_mass": 0.015629463973887946,
+      "max_clip_mass": 0.016326962151504365,
+      "saturation": 0.6900337837837838,
+      "completed_trials": 878999
+    },
+    {
+      "iteration": 3200,
+      "tv": 0.11488076959342965,
+      "effective_units": 629.8400519613997,
+      "top1_unit_mass": 0.01579415155421296,
+      "max_clip_mass": 0.01628005429648132,
+      "saturation": 0.7136824324324325,
+      "completed_trials": 905720
+    },
+    {
+      "iteration": 3300,
+      "tv": 0.11623620152673504,
+      "effective_units": 632.1056108922468,
+      "top1_unit_mass": 0.015586231941031212,
+      "max_clip_mass": 0.016247650710777613,
+      "saturation": 0.7128378378378378,
+      "completed_trials": 932325
+    },
+    {
+      "iteration": 3400,
+      "tv": 0.11589662862753926,
+      "effective_units": 631.13684342032,
+      "top1_unit_mass": 0.015511370986072697,
+      "max_clip_mass": 0.016440336741826413,
+      "saturation": 0.7170608108108109,
+      "completed_trials": 958992
+    },
+    {
+      "iteration": 3500,
+      "tv": 0.11680011851298562,
+      "effective_units": 630.1472070552957,
+      "top1_unit_mass": 0.015937499964433176,
+      "max_clip_mass": 0.016246574650502152,
+      "saturation": 0.7094594594594594,
+      "completed_trials": 985614
+    },
+    {
+      "iteration": 3600,
+      "tv": 0.11695316692769285,
+      "effective_units": 630.6857627392516,
+      "top1_unit_mass": 0.01577652704014981,
+      "max_clip_mass": 0.016421134477870265,
+      "saturation": 0.7128378378378378,
+      "completed_trials": 1012231
+    },
+    {
+      "iteration": 3700,
+      "tv": 0.11621700754380467,
+      "effective_units": 630.5399234585095,
+      "top1_unit_mass": 0.016391814252241805,
+      "max_clip_mass": 0.016391814252241805,
+      "saturation": 0.7153716216216216,
+      "completed_trials": 1038892
+    },
+    {
+      "iteration": 3800,
+      "tv": 0.11749910558687146,
+      "effective_units": 629.7219766370472,
+      "top1_unit_mass": 0.0162347153066783,
+      "max_clip_mass": 0.016267896835960867,
+      "saturation": 0.7179054054054054,
+      "completed_trials": 1065529
+    },
+    {
+      "iteration": 3900,
+      "tv": 0.1173070640354037,
+      "effective_units": 630.472772070113,
+      "top1_unit_mass": 0.016500026283149043,
+      "max_clip_mass": 0.016500026283149043,
+      "saturation": 0.7195945945945946,
+      "completed_trials": 1092147
+    },
+    {
+      "iteration": 3999,
+      "tv": 0.1187452389919525,
+      "effective_units": 629.4314045059674,
+      "top1_unit_mass": 0.016393960812325244,
+      "max_clip_mass": 0.016393960812325244,
+      "saturation": 0.7381756756756757,
+      "completed_trials": 1118388
+    }
+  ],
+  "bindings": {
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_0_segment.json": {
+      "ledger": "4286677bc73b6f962da59dd5d973c9bd92813e36f8ee94f04678a6de7d349b4c",
+      "state": "191b0247f35dc0e1a0631a41e77f45f688ff0f1361ff84a03f86c9e1b10de70f",
+      "checkpoint": "5ceb7bc59572980094110e2d3b4450f5c5b7c4618c95118398a36c3e5ce5c8a3"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_100_segment.json": {
+      "ledger": "90f98df2831da36dcffcb56e379784f5ff47e58e70e5068db2f213b5c14199ea",
+      "state": "7f42db306571a097217fc95bc7cc543b79546f2b0e43a854420d48ebe39f55f9",
+      "checkpoint": "f8bcdebede1478f1e6eb6f51a3f9c7fbbb6b49b4eb993d687c3d06b0fa247ade"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_200_segment.json": {
+      "ledger": "19b3ca2c1cbb5c846da99354abac90884609e9c5a47cdb501500bb46982052d0",
+      "state": "354d8f4b48d350be2bbeda333b91fa3a1810ca14eb885de586f448e1ade5299a",
+      "checkpoint": "114250601d9fb31fdcc25260ac1d004a90fbf7fb70957e457165aa74cfca636f"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_300_segment.json": {
+      "ledger": "95d6cf97f4e1e73a8775887c9207b5709446c972ab30b1ad694d5f47c235b628",
+      "state": "8c3948fb19ce7d253ef0011a2a1b4dba09527ace271321434257a8ee2b3cc7e9",
+      "checkpoint": "4ff561dc5e107762ec7d631c05878f0d598e8e6c7adaacc68d528d8758e279f4"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_400_segment.json": {
+      "ledger": "d3d35536a6b46ce24121002126db13560f9351898e04ba387453f15d94e208ad",
+      "state": "6ccad14c478998ecc9dd9e86217da5afecd6587a6fba53c576113a04040b4890",
+      "checkpoint": "b67c67ca0b58946f5d8c7e1422ddd10e0a0ad53c479e06897122ce19a7353645"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_500_segment.json": {
+      "ledger": "f648ae357ecd465f39aaae251584df60848773297947fd4539412a52d07a49bb",
+      "state": "2d04bf2d6ffe71687efafc5a0ce50cd39b2a9b683098590ad51a9b59d927c9e4",
+      "checkpoint": "2f6487e75803ce81d4c1ed9277a7979888c7c077ba3679bfdbd25fe390b15d8f"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_600_segment.json": {
+      "ledger": "58f09f84a463491211a125c5c5e741156cfad5fc3fd7e4792cd3ce50644eb394",
+      "state": "6b15109e9465162151acd24f7904222f2e003bce33dba80ba9b700400af8e129",
+      "checkpoint": "08942471511d7415c3a55ac29c8d9d54f2ccc3722baa9be9a476620b9d5757ab"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_700_segment.json": {
+      "ledger": "da648b975f1f17bccbf6b0128c7788153f352abcc51ae7d9e8f77c1f8869ffae",
+      "state": "769b4003d514dc82bdebd3db75f61dbd30a17f74090d0a9fbecf766ce3aba2b6",
+      "checkpoint": "0982f442d78f0ad42cd069f318b09f7d220781792a199660faf323b7118e0c66"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_800_segment.json": {
+      "ledger": "7710d67a35193b97aa776aaf1676863a61859ee9727a5b6e58181a66a95f205a",
+      "state": "a34c33b0f1274e4d4806589900a5673cca86fbcfd0ac0717ab3a9c5a342e1dd3",
+      "checkpoint": "43c843b78e2fea568b30188053ba36985a84175b50fc91b5cbc9d079bfb9c331"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_900_segment.json": {
+      "ledger": "bbb551a81940373b59762d09acf7c213ba1368905e554fa877c356af3dbbce8f",
+      "state": "a32e38562c7e68993f0863f153c7d08f43596a1f7053b25c6008a04068ae9851",
+      "checkpoint": "5e77f9fe2f66bc63fcf15677c479893d403914b3aba16c63455ec6d3195c0358"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_1000_segment.json": {
+      "ledger": "12294072bdf5698b448f505eaab5c265ca1f047b02adbd9e64b92b6f66aa8902",
+      "state": "e07d94acdb35adba702f58227b6588c2d71a5b95c1fb0ff1ab485736d5b4f361",
+      "checkpoint": "43849c71c6345fda1a4de6090fc108017a09ed516371c1d82671546ff4b29e15"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_1100_segment.json": {
+      "ledger": "bc3861799ae57427eb2ff0a4b5d3bee8d69d7295979428f222a8143f659b9097",
+      "state": "6945d85bd51d65babdd231f2c9c17c0e834b43da38091043c5d610a7592ad08c",
+      "checkpoint": "2bfd1b04cf56ab2615dbfee663d056a60982087d1a902abf5f42817ae8326f1b"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_1200_segment.json": {
+      "ledger": "a3ec435931f3092cc2adf6cc8f59572d2939363b29b78c9f8ffbf87cce1b4822",
+      "state": "2c5bddeea6cdc264c4c6ad93c95131234f1c9a18e36d7f23803cc5b6739f5a57",
+      "checkpoint": "6cf928ead165877cdd99bd70fe1b4cf6045a7d462d12b6f54589a826d33528f1"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_1300_segment.json": {
+      "ledger": "a50f0e234ea8b09b0c735ffa99f5e801889db955a616824f0cea45a1d5864a8e",
+      "state": "cdd2e5176e5da753cf1026a9f020f0724830f64ca2a900e072d76a3d63889f01",
+      "checkpoint": "b95604434e683d3226477acbe63c48db8e76c591efa7fa0920d32e670771ea29"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_1400_segment.json": {
+      "ledger": "102eeabc46dcff2d49950e36f7fe591c41932db255a84a5347340c94fc9cc3bb",
+      "state": "f753a3ea57d687c70ee7d594cfa4b809292a4f7846ef0345b4020687ff2f0c13",
+      "checkpoint": "80ca16c63c021bfc4b5cd0ad606450c75c38f0075a2023ce1b752d3b39ae084a"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_1500_segment.json": {
+      "ledger": "fd2ce05278fe389e30f977364ad385ef978ab477430ddc0a2ef8c23bed7c58c6",
+      "state": "22b5338898832f2269657d0831476c01cc4811f0f8975de6212959d9379814b8",
+      "checkpoint": "63d1f67821d1b1b1faea06d54a8bfac7e4afd4d16e4668bb89352e4bb61351b3"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_1600_segment.json": {
+      "ledger": "c72466d9825ff262456052fecf543d853d457138a9a35c09569f57623b6309ce",
+      "state": "3d257552e1323a61cb399256902618580095aee1e402c1514673f187152648a3",
+      "checkpoint": "9ac2e9b5003391032c5ca6961eeaea9ca8cd7cd8a186d7d8d1682224934d1a47"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_1700_segment.json": {
+      "ledger": "cbba76b3104d4d6dca9983460afca1a795be29ee6a9f44f8e60c593005c458da",
+      "state": "f0738e1c868e24a11c8a55d6a1c5b8bc145a18ef9beca688592b766b7eb121d3",
+      "checkpoint": "937cfed83d8a22f01fdbc6f654234afed06111561175806c0d2f56c3c1c88de1"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_1800_segment.json": {
+      "ledger": "a02e18cc5fa330217929731582d56b61116daa5dccafd84efb714867ab04e644",
+      "state": "78beb3d1ba06aaeb21268312c0a091ab5ef33912c4ea077468a4c4d60f15f25a",
+      "checkpoint": "a1ce7856e5ef5cf5aca73bae4c3663e5f39e898a3cbaa7ff7c4e44ce5ada7c7b"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_1900_segment.json": {
+      "ledger": "53022bd88cd112eb501d18df87d71d07b050e3e620a626a78a7ad541aba010e6",
+      "state": "8ee6f9335d7bd9380ce076742222c8e2112967a7c1ae949b203ae23a555682e3",
+      "checkpoint": "a4c3ae81b747e9aec1335e71c603d54eba62b4118fc86f5d84e5112ee4b05fa8"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_2000_segment.json": {
+      "ledger": "23bd6e1677514990735d745a238933904918ccc49f08877bb62f09391ce89c3a",
+      "state": "712876b95e6548da7e4fef6fd8c45a2471e115c2b93109689f273b5ae3f2d4bd",
+      "checkpoint": "d2d2ef1974a0b74acc5ebc24f2fd47c9721edd2187596c57a349803630cc732e"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_2100_segment.json": {
+      "ledger": "60bf56b3b756236ed183bd4da6047f5103c1dc09f4ff3f78a20ba94a3a23c469",
+      "state": "e0ff35d4c246cb92c146c7ef5ebb36a0d9177e8e1cd02ff31967d9317f4bde40",
+      "checkpoint": "ebc9dc99feb0b025927e3f2e44b5a54b2882bee00e48d7e5ec3733b897642400"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_2200_segment.json": {
+      "ledger": "3807f2772b78140b9e54d232cdde703b62a6bcdf0b748f1310867b941dd48b67",
+      "state": "4571958af860e30db6cffa3575b9bad0b51f66c3eb8453498a93fcc8421d2004",
+      "checkpoint": "ff0be749d2aaa896b0de615d6241490e470070beccb7a3db1d23997066f585ac"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_2300_segment.json": {
+      "ledger": "a977d2538994defc5c97c60b508df7d3673622472aa2bd272852217d52693a0b",
+      "state": "f54533fbc6b50b671f79d9abcde6fdf39150424c3f3afca2aced396e4bff8c6e",
+      "checkpoint": "e28e01691817d5e39e36ff0d0acd482a1743d3ba92a1068d4803c149638686c1"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_2400_segment.json": {
+      "ledger": "7f7ab1eb78a5369750d52d536cf36c52b06465f74ab7cc92f5f586a9114752a4",
+      "state": "9666046db7ea03c85db0f8863173c0ed290f703817d420b41e0ade8cc2f22846",
+      "checkpoint": "3b0b4338e613edd8516ed044231d8b1016225c468aeda7971272ee68b96574e2"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_2500_segment.json": {
+      "ledger": "eae74739ce0f650286100b671ccb67116c11de34844c5a24803789e2f3143d5f",
+      "state": "52d2778297dbcdecb4ed51458cd7069d03fb321b213d1e35eaee1689603ba552",
+      "checkpoint": "58190fa2b8aa75f271b243e1ede3b346224996827fa30130e3eef85afd2560c9"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_2600_segment.json": {
+      "ledger": "c67895c320dbc3d2b2e15c460428ce519a76b3f9c4eb9757d78146073f3507a9",
+      "state": "52e74cf02ca73d1f692d3596bd56cdab6724dceca9eac4a5991db3ccd731808d",
+      "checkpoint": "2c5358a4cd23826bc36d9c9619695f7cfa27b1307e8ce304fcc82aa35cebbdfd"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_2700_segment.json": {
+      "ledger": "3d036e18427805d6557ebf93a04fcbc9088d8bf0967df75cbfb7cc38deac51ec",
+      "state": "6d2bec0af60b87a26387309deaa887576a91c64667bc8978f82909c965e3012a",
+      "checkpoint": "10cad082a38d8b8efbbac300a462d5e62ff92308f28b6fd1d417c78ccb8d3989"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_2800_segment.json": {
+      "ledger": "a5133238e4892040dfd844a34a8c3aae01c5b4ba343d19bc32fda59b486c79fb",
+      "state": "7f6b81cf5cbcc3334c1782ac9d2aa3f30825c17905f1fe71c9a8f12c60a5f39e",
+      "checkpoint": "3e0adb293114d1437d14807cd5886d1b35b6dc858a7c0f1f6113062a40d05950"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_2900_segment.json": {
+      "ledger": "7ebac95257621cc25d5bdd9d68fc5723e5251cf1987da91edd1051afa8f4e39a",
+      "state": "823ded08c796b56c6bd3e6ff569cc2916c431072ebae7cf7697d8401e4bc77df",
+      "checkpoint": "7589486a8809140524676c3240190be27bcef943b24905bffde69222a9c5876c"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_3000_segment.json": {
+      "ledger": "8492c20997a77988b9fd2724917e87cd427ffb9f6994276f9dafe903de660025",
+      "state": "6db810f0bf53ca7189e5fac9f4cded1d92dbe2865a3f0187de54a60a1e11f945",
+      "checkpoint": "1533c1a141e308789b94f0353dabd15ae52721ab315a60c36d6703f2df314fae"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_3100_segment.json": {
+      "ledger": "263f7e9a2364add530cba8f9244bb84eceb427fdfd5398012f5b91bf394bd6e1",
+      "state": "3c52dea827c8760eca9db83ac90bb17300c4ce45a1cf89dd073ed733e91c2c50",
+      "checkpoint": "7f6d4dad041cee01064bcdcac8f666970527b8d5a63bbfd15fd518866cdc7405"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_3200_segment.json": {
+      "ledger": "0ac987a00ba30d8c7f35a8ab74a38defe86df380990addc1971b504a19f2d755",
+      "state": "8fd7ae8aa6ea785690decabbbda56d5feca1e9aa3aa75f30bd57e20b8e8140d5",
+      "checkpoint": "86f5c19a2dfad7874ab747c17f6e932b6f0c5dada9d4af0fa13fa07c6ddfc8e1"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_3300_segment.json": {
+      "ledger": "db9ceab3dd4d8c3a5385c493c7bd2bb723e66d0b1a51ad616c1d306545144e10",
+      "state": "2b32d5723cd59223cddb2ce9b9cdc198c1335c3a9b349e6ff0150593bcb68c19",
+      "checkpoint": "4966522216cc0a5937f087f495e733ef9f36f26e5690ba2023c05849922393a5"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_3400_segment.json": {
+      "ledger": "2466b717fa07096d6fccb05787246986fda8a82b7e2f826d228091148b60fc2f",
+      "state": "6f93bc0dbce6737f193fc336c776954cff60c9321cd57b7f96f9f2109c7e78a9",
+      "checkpoint": "a768d05101b56950c3c5b287f52a9348b29dc953571575eceddaaccf1ca22da9"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_3500_segment.json": {
+      "ledger": "d2b80e614ec21010829b545f75c161e8058bb48bb20d51ae9bca194ea43c3ac2",
+      "state": "67a85291c4021b917512ef46e18d0d3afcab5581de8a2b282808171283893d59",
+      "checkpoint": "ea7a338056d93649817ac1469e42285c4ce8b224b1f2f34927f6f108959bb937"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_3600_segment.json": {
+      "ledger": "f9507d7ca49dc0309db09ffb1099e111c10722f3497d448361501a50cf0e03de",
+      "state": "4876536e0868c809a00048fca01679a574748506441220fc57aeead00b66ec05",
+      "checkpoint": "0f2a14a55016ab4e3a8c01f6bb2990b1c012e3ef43ec3af29037750ff790cc11"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_3700_segment.json": {
+      "ledger": "e477971efde4f77fe7953a01f5cb31457b2890add39ec6da8997efaafb08fdf6",
+      "state": "0f7af8a169b50bb3182c69ccedae06c3fdfd8ec7bb7e42a6f60619585de6f3dd",
+      "checkpoint": "14828d293ebd39e98e8e7c51ecfa1ddcd9e163e1661928e8c33ce03a4977611f"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_3800_segment.json": {
+      "ledger": "b20b8ae4155af3d7bf360d75aebf96c1670478ab42f1027b942262d831ffe3b0",
+      "state": "36a01c6d8e0b95f895514b7e15994d26dc3279315f5da877a5bb45514e238ff7",
+      "checkpoint": "a0b82603c91542f16b1eea5d9c6a9ca9f3f3d879c19af06943977c1e23d03dc7"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_3900_segment.json": {
+      "ledger": "d37162b708734cffde83e9f299b4208e388c50fbf8c8952fc13344910dfef8af",
+      "state": "1fda25df5ad352c401cc8c99b1477a6a0bbcfa031cb9367cacf13b14295801ee",
+      "checkpoint": "de53a435f16c0556d514b08e1a8acfc6c0adf8a1dbc950b8e1b0fae0f15458a4"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_3999_segment.json": {
+      "ledger": "5932abacb8c626f55dc628be94174c733554b45cc988cd85d763b336d9d53d37",
+      "state": "562415ec5632dd9063acbed8e2e76c5790efe487e2ab9063f98173b3b9d15612",
+      "checkpoint": "d92e9c5ec8b41bac136da16578d90fe7b7366c96c1f5633d17c8eb6e32b46188"
+    }
+  },
+  "profile_contract_sha256": "60610018e5bd8a9d0874281666dfe81417275ad2b69e575bc748aa93a6dfb448",
+  "verifier_sha256": "8abd89df9416da8de617263f519f5a6c56beaac3b5837e87b43f8800e6742190"
+}

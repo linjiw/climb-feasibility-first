@@ -1,0 +1,217 @@
+{
+  "classification": "static source-dependency inventory; not a complete freeze or runtime attestation",
+  "timestamp": "2026-09-05T18:40:57.372262-04:00",
+  "entrypoints": [
+    "tools/analyze_relative_campaign.py",
+    "tools/train_relative_policy.py",
+    "tools/eval_paired_v2.py"
+  ],
+  "local_file_count": 24,
+  "files": {
+    "climb/__init__.py": {
+      "sha256": "bcdc55c7caf424fcc4fe602d96d64b92031ff240644421f6d2cbd51ac3a1abdb",
+      "local_imports": [
+        "climb/commands.py",
+        "climb/env_cfg.py",
+        "climb/motion_bank.py"
+      ]
+    },
+    "climb/commands.py": {
+      "sha256": "9f3c9c342701d92ed7e8da8583f16b8df803708a99f28b9249af3be7595fc94e",
+      "local_imports": [
+        "climb/eligibility.py",
+        "climb/motion_bank.py"
+      ]
+    },
+    "climb/contact_timing.py": {
+      "sha256": "7980a9c3a4c0b9b0bef4fca937bc55dcfaaa1b22f4802229e38ec397d121dbc3",
+      "local_imports": []
+    },
+    "climb/dfrp.py": {
+      "sha256": "847d5dc28b875b2d127b549925985aab5810dce348a0d1a7e0c48e049cfab8e0",
+      "local_imports": []
+    },
+    "climb/eligibility.py": {
+      "sha256": "bd225ab96bd2447559426b5f22ac28206144ad2007939fe2c9cc67d8e5fa478f",
+      "local_imports": []
+    },
+    "climb/env_cfg.py": {
+      "sha256": "86ec36241a6aaa0152f4602198ba04cb88eba3f0e676484a283e9a0b19965bc8",
+      "local_imports": [
+        "climb/commands.py"
+      ]
+    },
+    "climb/motion_bank.py": {
+      "sha256": "e9149ce08661f5f6f56e0ea1b9a542aa5c788232d9661044c7f340c947681129",
+      "local_imports": []
+    },
+    "climb/relative_progress.py": {
+      "sha256": "f5f562bbb9a37d13e6762f7315d5253a2b8e424850bcfa39c53cbc6cc5ce528d",
+      "local_imports": [
+        "climb/segment_command.py",
+        "climb/segment_runtime.py"
+      ]
+    },
+    "climb/segment_command.py": {
+      "sha256": "da0132e6facd00ec088f6fafdd7f3aa8ab0a405644f7f56bc61a056c4855a696",
+      "local_imports": [
+        "climb/commands.py",
+        "climb/segment_curriculum.py",
+        "climb/segment_runtime.py"
+      ]
+    },
+    "climb/segment_curriculum.py": {
+      "sha256": "dd3fe6f54ab11b09e8ba28d29504f4b6d1403f7102ac9fc0ce3ca1082df24b8e",
+      "local_imports": []
+    },
+    "climb/segment_env_cfg.py": {
+      "sha256": "dda2a3c044235e102bf05c30fdd26ea2cb5f6610f57426807e432497d765b5f2",
+      "local_imports": [
+        "climb/env_cfg.py",
+        "climb/segment_command.py",
+        "climb/segment_runtime.py"
+      ]
+    },
+    "climb/segment_runtime.py": {
+      "sha256": "2b2631e2fffdebb70eac8d885daca4689283e52c0674ddfcd79d29dc0591e50f",
+      "local_imports": [
+        "climb/dfrp.py",
+        "climb/segment_curriculum.py"
+      ]
+    },
+    "tools/analyze_relative_campaign.py": {
+      "sha256": "3a3e450d4b3760747408e24d08ec15f0571429ca7636d70891cec16f6ea31613",
+      "local_imports": [
+        "climb/relative_progress.py",
+        "climb/segment_runtime.py",
+        "tools/analyze_relative_policy.py",
+        "tools/check_relative_progress_probe.py",
+        "tools/continue_relative_progress.py",
+        "tools/relative_policy_provenance.py",
+        "tools/relative_policy_secondaries.py",
+        "tools/run_relative_failure_calibration.py"
+      ]
+    },
+    "tools/analyze_relative_policy.py": {
+      "sha256": "131b48e7a58f2ea46fa77d184cbe4ac132a7211713291502668cc06ae71b33f1",
+      "local_imports": []
+    },
+    "tools/check_relative_progress_probe.py": {
+      "sha256": "dcb9e5f9e30d199ad6179bfe83915b482875df77ec2fe02a46059ba31d18f985",
+      "local_imports": [
+        "climb/relative_progress.py"
+      ]
+    },
+    "tools/climb_segment_train.py": {
+      "sha256": "6b8b1b490978cf4a5007801a5d85541f1523510faca7c6eda6b5df3a6ec9ce47",
+      "local_imports": [
+        "climb/__init__.py",
+        "climb/env_cfg.py",
+        "climb/segment_command.py",
+        "climb/segment_env_cfg.py",
+        "climb/segment_runtime.py"
+      ]
+    },
+    "tools/continue_relative_progress.py": {
+      "sha256": "3baa1be54cee1d450d2c6428c40eaa93d39be5f3e1a468bdf076c6dfafb2f818",
+      "local_imports": [
+        "tools/check_relative_progress_probe.py",
+        "tools/run_relative_progress_study.py"
+      ]
+    },
+    "tools/eval_paired_v2.py": {
+      "sha256": "284886608d81ff957e69b32a5a9d1448917ee0a9867a7c23253831b53233e367",
+      "local_imports": [
+        "climb/__init__.py",
+        "climb/contact_timing.py",
+        "climb/motion_bank.py"
+      ]
+    },
+    "tools/relative_policy_provenance.py": {
+      "sha256": "ee86a6403ed7fae999caa8085afff1a54cb4c3f47d93e1bab5b5c6717e14218e",
+      "local_imports": [
+        "tools/check_relative_progress_probe.py"
+      ]
+    },
+    "tools/relative_policy_secondaries.py": {
+      "sha256": "f68b197a39f8f3abca292786c7fdc7f68d24b4a8eec7ca7baab245f4454adda3",
+      "local_imports": [
+        "tools/analyze_relative_policy.py"
+      ]
+    },
+    "tools/run_relative_failure_calibration.py": {
+      "sha256": "8abd89df9416da8de617263f519f5a6c56beaac3b5837e87b43f8800e6742190",
+      "local_imports": [
+        "climb/segment_runtime.py",
+        "tools/check_relative_progress_probe.py",
+        "tools/continue_relative_progress.py",
+        "tools/run_relative_policy_smokes.py",
+        "tools/run_relative_progress_study.py",
+        "tools/train_relative_policy.py"
+      ]
+    },
+    "tools/run_relative_policy_smokes.py": {
+      "sha256": "64765c9e8308557874f7bae5073367e5fca0d55e4ff404cef06ee5fa940b6cdd",
+      "local_imports": [
+        "climb/relative_progress.py",
+        "climb/segment_runtime.py",
+        "tools/check_relative_progress_probe.py",
+        "tools/continue_relative_progress.py",
+        "tools/run_relative_progress_study.py",
+        "tools/train_relative_policy.py"
+      ]
+    },
+    "tools/run_relative_progress_study.py": {
+      "sha256": "f8811bcbf2cb2f25909e9354281b1c2d261e5168db4f56b55bdba2b8ef182e96",
+      "local_imports": [
+        "tools/check_relative_progress_probe.py"
+      ]
+    },
+    "tools/train_relative_policy.py": {
+      "sha256": "70c30484cad3031ed3606d7e9625645f4cf926135499a6a0030b5cbe7ac4f13e",
+      "local_imports": [
+        "climb/relative_progress.py",
+        "climb/segment_env_cfg.py",
+        "tools/climb_segment_train.py"
+      ]
+    }
+  },
+  "dynamic_loading_sites": [],
+  "external_or_unresolved_module_roots": [
+    "__future__",
+    "analyze_relative_policy",
+    "argparse",
+    "check_relative_progress_probe",
+    "climb",
+    "collections",
+    "continue_relative_progress",
+    "csv",
+    "dataclasses",
+    "datetime",
+    "hashlib",
+    "importlib",
+    "json",
+    "math",
+    "mjlab",
+    "numpy",
+    "os",
+    "pathlib",
+    "relative_policy_provenance",
+    "relative_policy_secondaries",
+    "run_relative_failure_calibration",
+    "run_relative_policy_smokes",
+    "run_relative_progress_study",
+    "scipy",
+    "subprocess",
+    "sys",
+    "time",
+    "torch",
+    "train_relative_policy",
+    "typing"
+  ],
+  "limitations": [
+    "AST inventory includes imports in unexecuted branches.",
+    "Runtime plugin discovery, indirect file access, external packages and subprocess programs require separate audit.",
+    "This report does not enable confirmation or modify source-bound runs."
+  ]
+}

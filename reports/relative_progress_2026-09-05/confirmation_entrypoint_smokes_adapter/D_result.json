@@ -1,0 +1,25 @@
+{
+  "status": "entrypoint_smoke_pass",
+  "arm": "D",
+  "seed": 51,
+  "run_dir": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/D/g1_tracking/relative_confirmation_smoke_D_s51",
+  "draft_contract": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation_adapter/draft_contract.json",
+    "sha256": "74857935900acac9c14b2a865845c658da89a8e06bbfeac72ac96d6bc91552f2"
+  },
+  "completed_trials": 187,
+  "bindings": {
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/D/g1_tracking/relative_confirmation_smoke_D_s51/model_0_segment.json": {
+      "ledger": "6f7792201afb4466cb1761a45e814412b4de1872ce344e18b964b4f8bfc3e15a",
+      "sampler": "e72f6825757b80959c3525d7f5f9d2a0379fc1c5cee2d6cdf874f064650ceefe",
+      "checkpoint": "b851a1eaa94bb984c1f181efc1def045c30ddc8f397d3d58f6b249832ab787c3"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/D/g1_tracking/relative_confirmation_smoke_D_s51/model_19_segment.json": {
+      "ledger": "de33cf47f6aa966f04a74d7b19b65b0d9d63179b1b4b643a91176960379f2f57",
+      "sampler": "4b26eda511329dec21abc7b8abfc494c724947d5bc737aaefa64d68d2587c417",
+      "checkpoint": "b0d33c81bf289324b32cc87e6e5dc6b1714f6f70407de1916eec722b90a52ac0"
+    }
+  },
+  "policy_endpoints_opened": false,
+  "checker_sha256": "4152c4a18d1fdd401fe1dfe3f32acfa76ecb2b8577c5eeb905cf2591028c1c05"
+}

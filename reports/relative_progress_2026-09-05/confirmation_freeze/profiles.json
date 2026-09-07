@@ -1,0 +1,92 @@
+{
+  "schema_version": "relative_policy_profiles/1",
+  "classification": "prospective fixed profiles; not a confirmation launch authorization or result",
+  "unit_table_sha256": "a52a668e5570c24e01a1af821164cbd19a38a3cd9007f245f78494ce11af9606",
+  "arms": {
+    "U": {
+      "mode": "uniform",
+      "rank": "learning_progress",
+      "exploration_ratio": 0.4,
+      "difficulty_power": 0.0,
+      "progress_floor": 0.05,
+      "relative_factor": null
+    },
+    "A": {
+      "mode": "adaptive",
+      "rank": "learning_progress",
+      "exploration_ratio": 0.4,
+      "difficulty_power": 0.0,
+      "progress_floor": 0.05,
+      "relative_factor": null
+    },
+    "R": {
+      "mode": "adaptive",
+      "rank": "learning_progress",
+      "exploration_ratio": 0.4,
+      "difficulty_power": 0.0,
+      "progress_floor": 0.0,
+      "relative_factor": 2.0
+    },
+    "D": {
+      "mode": "adaptive",
+      "rank": "failure",
+      "exploration_ratio": 0.8,
+      "difficulty_power": 1.0,
+      "progress_floor": 0.0,
+      "relative_factor": null
+    }
+  },
+  "common": {
+    "progress_window": 10,
+    "max_unit_probability": 0.05,
+    "max_clip_probability": 0.25,
+    "failure_penalty": -10.0,
+    "verify_motion_hashes": true,
+    "save_interval": 100
+  },
+  "smoke": {
+    "seeds": [
+      41
+    ],
+    "num_envs": 8,
+    "iterations": 20
+  },
+  "calibration": {
+    "arms": [
+      "D"
+    ],
+    "seeds": [
+      31,
+      32
+    ],
+    "num_envs": 512,
+    "iterations": 4000,
+    "post_warmup_iteration": 400,
+    "minimum_mean_tv": 0.05,
+    "minimum_effective_units": 12,
+    "maximum_final_saturation": 0.9
+  },
+  "confirmation": {
+    "seeds": [
+      21,
+      22,
+      23
+    ],
+    "num_envs": 512,
+    "iterations": 4000,
+    "evaluation_iterations": [
+      1000,
+      2000,
+      3000,
+      3999
+    ],
+    "enabled": true
+  },
+  "tuning": {
+    "new_outcome_driven_parameter_changes_per_arm": 0,
+    "candidate_count_per_arm": 1,
+    "selection": "none; calibration is pass/fail only",
+    "historical_development_costs_matched": false
+  },
+  "D_rationale": "Use conditional failure rate with 0.8 exploration: the same effective mixture coefficient as R at rho=0.4,kappa=2 before active caps. Cap-floor decomposition and startup history differ; R-D is not a strictly rank-only ablation."
+}

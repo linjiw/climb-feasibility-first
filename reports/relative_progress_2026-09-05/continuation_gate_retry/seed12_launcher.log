@@ -1,0 +1,7 @@
+LAUNCH attempt=1 free_mib=15293 util_pct=19 baseline_vram_mib=1010 2026-09-05T18:30:10-04:00
+DONE rc=0 attempt=1 elapsed_s=17 gpu_hours=0.004722 baseline_vram_mib=1010 peak_total_vram_mib=3419 peak_delta_mib=2409 2026-09-05T18:30:27-04:00
+{"stage": "smoke", "status": "smoke_pass"}
+LAUNCH attempt=1 free_mib=15285 util_pct=7 baseline_vram_mib=1018 2026-09-05T18:30:27-04:00
+DONE rc=0 attempt=1 elapsed_s=3373 gpu_hours=0.936944 baseline_vram_mib=1018 peak_total_vram_mib=11760 peak_delta_mib=10742 2026-09-05T19:26:40-04:00
+{"stage": "long", "status": "manipulation_pass"}
+{"status": "completed", "seed": 12, "policy_endpoints_opened": false, "next": "independent manipulation replication; policy benefit remains pending"}

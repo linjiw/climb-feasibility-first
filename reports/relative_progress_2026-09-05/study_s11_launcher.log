@@ -1,0 +1,4 @@
+LAUNCH attempt=1 free_mib=14921 util_pct=13 baseline_vram_mib=1382 2026-09-05T11:45:22-04:00
+DONE rc=0 attempt=1 elapsed_s=2680 gpu_hours=0.744444 baseline_vram_mib=1382 peak_total_vram_mib=12841 peak_delta_mib=11459 2026-09-05T12:30:02-04:00
+{"stage": "long", "status": "manipulation_pass"}
+{"status": "completed", "seed": 11, "policy_endpoints_opened": false, "next": "independent manipulation replication; policy benefit remains pending"}

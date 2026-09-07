@@ -1,0 +1,6 @@
+Waiting for both fixed D calibration passes
+U: entrypoint_smoke_pass
+A: entrypoint_smoke_pass
+R: entrypoint_smoke_pass
+D: entrypoint_smoke_pass
+{"status": "four_arm_entrypoint_smoke_pass", "next": "final contract audit and prospective freeze", "policy_endpoints_opened": false}

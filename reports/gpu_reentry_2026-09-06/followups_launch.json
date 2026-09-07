@@ -1,0 +1,30 @@
+{
+  "pilot_queue": {
+    "pid": 2011481,
+    "argv": [
+      "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+      "/home/linjiw/climb-signal-quality-2026-09-06/tools/queue_frozen_progress_pilot.py",
+      "--design",
+      "/home/linjiw/climb-feasibility-first/reports/gpu_reentry_2026-09-06/pilot_queue_design.json",
+      "--design-sha256",
+      "5f03aef77f7f6ff2ecec9397f61fc3a879d05d080c26a2a361bd32a652455c5f",
+      "--out-dir",
+      "/home/linjiw/climb-signal-quality-2026-09-06/reports/frozen_progress_pilot_2026-09-06/queue_gpu_reentry_2026-09-06"
+    ],
+    "cwd": "/home/linjiw/climb-feasibility-first"
+  },
+  "efficiency_queue": {
+    "pid": 2011482,
+    "argv": [
+      "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/tools/follow_confirmation_reentry.py",
+      "--binding",
+      "/home/linjiw/climb-feasibility-first/reports/gpu_reentry_2026-09-06/efficiency_binding.json",
+      "--binding-sha256",
+      "e15116f7053c55f310db7b617f7580bc2539897591df76bd726caae4662bb5cf",
+      "--out",
+      "/home/linjiw/climb-feasibility-first/reports/gpu_reentry_2026-09-06/efficiency_after_confirmation.json"
+    ],
+    "cwd": "/home/linjiw/climb-feasibility-first"
+  }
+}

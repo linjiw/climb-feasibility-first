@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-09-05T21:20:56.418809-04:00",
+  "status": "adapter_draft_cpu_preflight_pass",
+  "classification": "implementation evidence only",
+  "original_evaluator_rejection": "/home/linjiw/climb-feasibility-first/reports/g_segment/eval_conditions.json: existing condition manifest differs from requested setup",
+  "shared_payload_mismatches": [],
+  "extra_sealed_fields": {
+    "classification": "outcome-blind Phase-G evaluation conditions; built before any Phase-G arm exists",
+    "panel_txt_sha256": "ec23b7b959dbb6bd05015f5821c99ac9d5a70dd966ef5448443d060b4a3127fe"
+  },
+  "preserved_condition_sha256": "74b723d42c4050eea9f4ea7ff87d22771e8e32c5155b56829900bf4cb3744a4e",
+  "preserved_evaluator_sha256": "284886608d81ff957e69b32a5a9d1448917ee0a9867a7c23253831b53233e367",
+  "adapter": {
+    "path": "/home/linjiw/climb-feasibility-first/tools/eval_relative_confirmation.py",
+    "sha256": "c30b3161819443124ef2a608688a9b9152d3e44657860c3ee9e092a5615ef2d5",
+    "protocol": "sealed_phase_g_extra_provenance/1"
+  },
+  "conditions_reproduced": 2800,
+  "configuration_digests_reproduced": 12,
+  "runtime_inventory_reproduced": true,
+  "draft_contract": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation_adapter/draft_contract.json",
+    "sha256": "74857935900acac9c14b2a865845c658da89a8e06bbfeac72ac96d6bc91552f2"
+  },
+  "confirmation_rejection": "confirmation requires a prospective frozen contract",
+  "simulator_constructed": false,
+  "policy_endpoints_opened": false
+}

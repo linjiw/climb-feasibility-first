@@ -1,0 +1,16 @@
+{
+  "status": "actual_draft_cpu_preflight_pass",
+  "timestamp": "2026-09-05T21:05:35.432681-04:00",
+  "elapsed_s": 1.3048438580008224,
+  "draft_contract": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation/draft_contract.json",
+    "sha256": "f2d9f2afdfc70a6954017459411e344fa14837c6725c854dff103565c40e6c19"
+  },
+  "configuration_digests_reproduced": 12,
+  "runtime_inventory_reproduced": true,
+  "reference_audit_reproduced": true,
+  "confirmation_rejection": "confirmation requires a prospective frozen contract",
+  "simulator_constructed": false,
+  "policy_endpoints_opened": false,
+  "limitation": "Draft smoke preflight only; positive frozen-contract execution remains pending."
+}

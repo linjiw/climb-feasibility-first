@@ -1,0 +1,266 @@
+{
+  "schema_version": "relative_confirmation_contract/1",
+  "status": "frozen_before_confirmation",
+  "classification": "prospective simulation confirmation; no policy result",
+  "profiles": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/profiles.json",
+    "sha256": "954a88efaf667daf0640ece95246a1b52131f31c5f3735b3f6a65000ff675bce"
+  },
+  "bank": "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8",
+  "unit_table": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/g_segment/unit_table.json",
+    "sha256": "a98c48541fbc4aa4627d9b24c5a08e9e67f0d6bc9bb94103da57313b94766739"
+  },
+  "training_clips": {
+    "path": "/home/linjiw/climb-feasibility-first/bank/tiers/tier_800.txt",
+    "sha256": "87cbeb8ea677c5855948269d89e77dd748b410cdb4c4e9b0594b9c2f5160306e"
+  },
+  "panel": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/g_segment/panel/panel_manifest.json",
+    "sha256": "77819dc8967075c074b5c187cde36c3e0e64c6ef4ebd514fbef5feece8d2dd97"
+  },
+  "conditions": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/g_segment/eval_conditions.json",
+    "sha256": "74b723d42c4050eea9f4ea7ff87d22771e8e32c5155b56829900bf4cb3744a4e"
+  },
+  "strata": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/g_segment/panel/strata.csv",
+    "sha256": "e2b57f3616b9695b076bedc085263707af94f517fbde349d73fe38805660e200"
+  },
+  "panel_manifest": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/g_segment/panel/panel_manifest.json",
+    "sha256": "77819dc8967075c074b5c187cde36c3e0e64c6ef4ebd514fbef5feece8d2dd97"
+  },
+  "reference_audit": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/replication_reference_audit.json",
+    "sha256": "d8b3bc22e4c87e53f14750cbab615a0a3218c2fdb4cbb19407f43d4f9fd5d257"
+  },
+  "runtime_inventory": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation_adapter/runtime_inventory.json",
+    "sha256": "5b6503010c75aaa6e2aeaf5556cb3085398d6318b1cad311b83425a052bc3c3e"
+  },
+  "software_versions": {
+    "python": "3.13.15",
+    "torch": "2.9.0+cu128",
+    "numpy": "2.5.1",
+    "mjlab": "1.6.0",
+    "mujoco": "3.11.0",
+    "mujoco-warp": "3.11.0",
+    "rsl-rl-lib": "5.4.2"
+  },
+  "training_entrypoint": {
+    "path": "/home/linjiw/climb-feasibility-first/tools/train_relative_confirmation.py",
+    "sha256": "4152c4a18d1fdd401fe1dfe3f32acfa76ecb2b8577c5eeb905cf2591028c1c05"
+  },
+  "evaluator": {
+    "path": "/home/linjiw/climb-feasibility-first/tools/eval_paired_v2.py",
+    "sha256": "284886608d81ff957e69b32a5a9d1448917ee0a9867a7c23253831b53233e367"
+  },
+  "evaluator_adapter": {
+    "path": "/home/linjiw/climb-feasibility-first/tools/eval_relative_confirmation.py",
+    "sha256": "c30b3161819443124ef2a608688a9b9152d3e44657860c3ee9e092a5615ef2d5"
+  },
+  "training_sources": {
+    "tools/train_relative_confirmation.py": {
+      "path": "/home/linjiw/climb-feasibility-first/tools/train_relative_confirmation.py",
+      "sha256": "4152c4a18d1fdd401fe1dfe3f32acfa76ecb2b8577c5eeb905cf2591028c1c05"
+    },
+    "tools/relative_confirmation_setup.py": {
+      "path": "/home/linjiw/climb-feasibility-first/tools/relative_confirmation_setup.py",
+      "sha256": "17212348d419e9368a822965858643f3e802601fa876ec7ca084342dd4f8a794"
+    },
+    "tools/climb_segment_train.py": {
+      "path": "/home/linjiw/climb-feasibility-first/tools/climb_segment_train.py",
+      "sha256": "6b8b1b490978cf4a5007801a5d85541f1523510faca7c6eda6b5df3a6ec9ce47"
+    },
+    "climb/relative_progress.py": {
+      "path": "/home/linjiw/climb-feasibility-first/climb/relative_progress.py",
+      "sha256": "f5f562bbb9a37d13e6762f7315d5253a2b8e424850bcfa39c53cbc6cc5ce528d"
+    },
+    "climb/segment_runtime.py": {
+      "path": "/home/linjiw/climb-feasibility-first/climb/segment_runtime.py",
+      "sha256": "2b2631e2fffdebb70eac8d885daca4689283e52c0674ddfcd79d29dc0591e50f"
+    },
+    "climb/segment_curriculum.py": {
+      "path": "/home/linjiw/climb-feasibility-first/climb/segment_curriculum.py",
+      "sha256": "dd3fe6f54ab11b09e8ba28d29504f4b6d1403f7102ac9fc0ce3ca1082df24b8e"
+    },
+    "climb/segment_command.py": {
+      "path": "/home/linjiw/climb-feasibility-first/climb/segment_command.py",
+      "sha256": "da0132e6facd00ec088f6fafdd7f3aa8ab0a405644f7f56bc61a056c4855a696"
+    },
+    "climb/segment_env_cfg.py": {
+      "path": "/home/linjiw/climb-feasibility-first/climb/segment_env_cfg.py",
+      "sha256": "dda2a3c044235e102bf05c30fdd26ea2cb5f6610f57426807e432497d765b5f2"
+    },
+    "tools/freeze_relative_confirmation.sh": {
+      "path": "/home/linjiw/climb-feasibility-first/tools/freeze_relative_confirmation.sh",
+      "sha256": "2df03e74c9734917dd605793e1b8571688f2a09408d2f3d681f8490ba8fc6cdf"
+    }
+  },
+  "analysis_sources": {
+    "analyze_relative_campaign.py": {
+      "path": "/home/linjiw/climb-feasibility-first/tools/analyze_relative_campaign.py",
+      "sha256": "d374d10c3fe2af790e0246720f4c01f0ae9b41a9954f53aa832908a716cc5b5b"
+    },
+    "analyze_relative_policy.py": {
+      "path": "/home/linjiw/climb-feasibility-first/tools/analyze_relative_policy.py",
+      "sha256": "131b48e7a58f2ea46fa77d184cbe4ac132a7211713291502668cc06ae71b33f1"
+    },
+    "relative_policy_provenance.py": {
+      "path": "/home/linjiw/climb-feasibility-first/tools/relative_policy_provenance.py",
+      "sha256": "12b9c97afb9262e9bb540eba1820d207616c7a13d2008038368c931980d9340d"
+    },
+    "relative_policy_secondaries.py": {
+      "path": "/home/linjiw/climb-feasibility-first/tools/relative_policy_secondaries.py",
+      "sha256": "f68b197a39f8f3abca292786c7fdc7f68d24b4a8eec7ca7baab245f4454adda3"
+    },
+    "analyze_relative_cost.py": {
+      "path": "/home/linjiw/climb-feasibility-first/tools/analyze_relative_cost.py",
+      "sha256": "ea6a9ac60e71f269657f541f79fdb181b91f480675ca36fc353a9f5b4c04e8a1"
+    }
+  },
+  "evaluator_sources": {
+    "climb/commands.py": {
+      "path": "/home/linjiw/climb-feasibility-first/climb/commands.py",
+      "sha256": "9f3c9c342701d92ed7e8da8583f16b8df803708a99f28b9249af3be7595fc94e"
+    },
+    "climb/env_cfg.py": {
+      "path": "/home/linjiw/climb-feasibility-first/climb/env_cfg.py",
+      "sha256": "86ec36241a6aaa0152f4602198ba04cb88eba3f0e676484a283e9a0b19965bc8"
+    },
+    "climb/motion_bank.py": {
+      "path": "/home/linjiw/climb-feasibility-first/climb/motion_bank.py",
+      "sha256": "e9149ce08661f5f6f56e0ea1b9a542aa5c788232d9661044c7f340c947681129"
+    },
+    "climb/contact_timing.py": {
+      "path": "/home/linjiw/climb-feasibility-first/climb/contact_timing.py",
+      "sha256": "7980a9c3a4c0b9b0bef4fca937bc55dcfaaa1b22f4802229e38ec397d121dbc3"
+    },
+    "mjlab-1.6.0/src/mjlab/envs/manager_based_rl_env.py": {
+      "path": "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/src/mjlab/envs/manager_based_rl_env.py",
+      "sha256": "e05034969baaa6ca38d7587190eef95d468fd413f182edd2c8d387c2950701f1"
+    },
+    "mjlab-1.6.0/src/mjlab/tasks/tracking/mdp/commands.py": {
+      "path": "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/src/mjlab/tasks/tracking/mdp/commands.py",
+      "sha256": "b8700e65bb519b5e68962216ed78a107f6a3c02bab2ff75854e62b1983d1ad97"
+    }
+  },
+  "configuration_sha256": {
+    "U": {
+      "21": "d973ea1e389dcb350dcc5ce6f991073328d02f8a5604790dcaf555f06ae9e62e",
+      "22": "ccc7796763578a050eab61ae6ad87bfe860ec57ad1a77f9643ce0c60155e519f",
+      "23": "47dbb76a04229889993376557f66b91a0144e19ff548fb7f115090dccef86877"
+    },
+    "A": {
+      "21": "4894e70837b07da195f8859d0a0fc24358760d675692a93392c2d9983af921ac",
+      "22": "3773de6e9ef8917ac6747c0809b2cad3be6e7a24a5db669f0e51f7f483d1173b",
+      "23": "5568c2194d6fd4545cbe88b9862da02f1ad6dd60a2eea32a4f9ef709e1e03112"
+    },
+    "R": {
+      "21": "901603c4e9048e77797267ef124297b63b91c2bcdd7692462e5aae5034cd1251",
+      "22": "86eb727a35d44010df8670a6feb8aaf0a87c3797429b840a16a5b207ee55587d",
+      "23": "29b756a92feda0d46d032b6e55bdb068bc5f590bd7db0dbc181d975a315508bf"
+    },
+    "D": {
+      "21": "8044edc90fac8a190f4c267a9220e180f99935ae8a4cc457fcca62e21d2078de",
+      "22": "7a01d80cdd0b7321aa6d9a7bea15bfc3e940aa2a650bc4867778b64ca0c8144b",
+      "23": "31cb3a934f5854185330ff91560f9cfad148425af19fb45b22a4147e5bb06bae"
+    }
+  },
+  "relative_replication": {
+    "11": {
+      "study_dir": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11",
+      "decision": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long_result.json",
+        "sha256": "08315ff233877da3c318c977cce23eaaec73e5bd4b5c434edaa84f5a00df3b9b"
+      }
+    },
+    "12": {
+      "study_dir": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12",
+      "decision": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long_result.json",
+        "sha256": "207651b3ed2e6f22ce6c4abaf165a55ce65b7953c268fc96eae6e1b80a8c67ec"
+      }
+    }
+  },
+  "failure_calibration": {
+    "31": {
+      "decision": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed31_result.json",
+        "sha256": "a026a4caeb0a318362f5335326cf74ee85c69fbc079c1f721e5121095635e51c"
+      },
+      "execution_design": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/design.json",
+        "sha256": "f3233b108f3af03a024baf171a15e90129c743a09044b16517c1b4641dae5b90"
+      }
+    },
+    "32": {
+      "decision": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32_result.json",
+        "sha256": "e67f3d65b665bf30a268731ccb6b0b72ccccac57aa54956a7a6c8d508c95a295"
+      },
+      "execution_design": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/design.json",
+        "sha256": "f3233b108f3af03a024baf171a15e90129c743a09044b16517c1b4641dae5b90"
+      }
+    }
+  },
+  "entrypoint_smokes": {
+    "U": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/U_result.json",
+      "sha256": "034835139e62b6bab8dc38378b26133cf9da65ee75932b293070566495cb2325"
+    },
+    "A": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/A_result.json",
+      "sha256": "4d3bc4d45eabddced44742816b2b7f62ba6ee677a0b46464c8e803b9f3586043"
+    },
+    "R": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/R_result.json",
+      "sha256": "40565f99742945267e9d808d24e7e3cae6f3447694a0fe172dce0cc957ee28ce"
+    },
+    "D": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/D_result.json",
+      "sha256": "965bcc480f0b1a9b32b8dbda3a65ed2e8e057d8cd5461be742f46096a5da8d20"
+    }
+  },
+  "panel_clips": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/g_segment/panel/panel.txt",
+    "sha256": "ec23b7b959dbb6bd05015f5821c99ac9d5a70dd966ef5448443d060b4a3127fe"
+  },
+  "four_arm_smokes": {
+    "design": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/design.json",
+      "sha256": "dd0af43aea83aed95f3267e191910a28703317c9ed0de39910a92147c977ea25"
+    },
+    "decisions": {
+      "U": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/U_result.json",
+        "sha256": "7e51bf1e756b49adf3d5b89d88b20a63b17212dc2594ff1a1795c1b86854831a"
+      },
+      "A": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/A_result.json",
+        "sha256": "96e33166abdd24674b7271c4f6a4b74d55d9b4e0365dec73f4f465bdcd5eff7c"
+      },
+      "R": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/R_result.json",
+        "sha256": "ff4d574fb2d0313c7d76fa5a4704b4182120a9eea2875354b0b570077b0db4ec"
+      },
+      "D": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/D_result.json",
+        "sha256": "39abe48c3cd1fabfca8d8676f5b65b65a2d66a56c70dbf652db197368c83f812"
+      }
+    }
+  },
+  "freeze_provenance": {
+    "draft": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation_adapter/draft_contract.json",
+      "sha256": "74857935900acac9c14b2a865845c658da89a8e06bbfeac72ac96d6bc91552f2"
+    },
+    "entrypoint": {
+      "path": "/home/linjiw/climb-feasibility-first/tools/freeze_relative_confirmation.sh",
+      "sha256": "2df03e74c9734917dd605793e1b8571688f2a09408d2f3d681f8490ba8fc6cdf"
+    },
+    "created_at": "2026-09-06T01:03:13.195010-04:00"
+  }
+}

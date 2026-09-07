@@ -1,0 +1,8 @@
+{
+  "classification": "measured exploratory manipulation",
+  "results": {
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long_result.json": "08315ff233877da3c318c977cce23eaaec73e5bd4b5c434edaa84f5a00df3b9b"
+  },
+  "plotter_sha256": "8e2e8b668373b46b414bd3dd88cbce76b398370e156f4e1108d5252cd012b2c3",
+  "note": "TV band constrains the post-warm-up mean; saturation threshold applies at final iteration."
+}

@@ -1,0 +1,19 @@
+{
+  "classification": "entrypoint lifecycle only; no policy benefit",
+  "draft_contract": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation/draft_contract.json",
+    "sha256": "f2d9f2afdfc70a6954017459411e344fa14837c6725c854dff103565c40e6c19"
+  },
+  "calibration_dir": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry",
+  "arms": [
+    "U",
+    "A",
+    "R",
+    "D"
+  ],
+  "seed": 51,
+  "num_envs": 8,
+  "iterations": 20,
+  "supervisor_sha256": "cfd2c5ed7d32134703d37d3c11dd47461863235d1dd640b9e9d194c1d19193f2",
+  "policy_endpoints_opened": false
+}

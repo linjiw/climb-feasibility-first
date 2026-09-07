@@ -1,0 +1,10 @@
+original completed
+unchanged completed
+delay_5ms completed
+delay_10ms completed
+delay_20ms completed
+knee_120nm completed
+knee_90nm completed
+friction_0p3 completed
+friction_1p2 completed
+{"status": "execution_stopped", "reason": "same-device original/unchanged CSV parity failed", "completed_cells": ["original", "unchanged", "delay_5ms", "delay_10ms", "delay_20ms", "knee_120nm", "knee_90nm", "friction_0p3", "friction_1p2"], "automatic_cell_retries": 0, "full_evaluation_enabled": false}

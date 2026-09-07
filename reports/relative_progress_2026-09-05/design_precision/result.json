@@ -1,0 +1,285 @@
+{
+  "classification": "prospective hypothetical normal-model sensitivity; not measured policy evidence",
+  "assumptions": [
+    "Independent identically distributed normal paired training-seed deltas.",
+    "Means and SDs are illustrative choices, not fitted from any training or evaluation outcomes.",
+    "Normal approximation does not enforce bounded score differences.",
+    "Hard-panel and all-panel dependence is unspecified; only marginal and Frechet bounds are given.",
+    "All training/provenance gates are assumed passed; these probabilities exclude their failures."
+  ],
+  "seed_count": 3,
+  "df": 2,
+  "two_sided_95_t_critical": 4.302652729696142,
+  "ci_half_width_per_sample_sd": 2.4841377117195456,
+  "sesoi": 0.02,
+  "nonregression_margin": -0.01,
+  "max_sample_sd_for_positive_lower_ci_at_mean_SESOI": 0.008051083442614699,
+  "max_sample_sd_for_nonregression_at_zero_mean": 0.0040255417213073495,
+  "inequalities": "Sample SD must be strictly below these boundary values.",
+  "primary_scenarios": [
+    {
+      "true_hard_delta": 0.0,
+      "paired_seed_sd": 0.005,
+      "benefit_gate_probability": 1.986944684322808e-12,
+      "lower_ci_above_zero_probability": 0.025000000000573938,
+      "negative_for_SESOI_probability": 0.9084887436859278
+    },
+    {
+      "true_hard_delta": 0.01,
+      "paired_seed_sd": 0.005,
+      "benefit_gate_probability": 0.000249378238124363,
+      "lower_ci_above_zero_probability": 0.4707477062005081,
+      "negative_for_SESOI_probability": 0.4707477062005081
+    },
+    {
+      "true_hard_delta": 0.02,
+      "paired_seed_sd": 0.005,
+      "benefit_gate_probability": 0.4781721978648234,
+      "lower_ci_above_zero_probability": 0.9084887436859278,
+      "negative_for_SESOI_probability": 0.025000000000573938
+    },
+    {
+      "true_hard_delta": 0.03,
+      "paired_seed_sd": 0.005,
+      "benefit_gate_probability": 0.9948473448645251,
+      "lower_ci_above_zero_probability": 0.99508907662368,
+      "negative_for_SESOI_probability": 1.7250854919573427e-06
+    },
+    {
+      "true_hard_delta": 0.04,
+      "paired_seed_sd": 0.005,
+      "benefit_gate_probability": 0.9999182049042831,
+      "lower_ci_above_zero_probability": 0.9999182049062367,
+      "negative_for_SESOI_probability": 4.3444533461686335e-15
+    },
+    {
+      "true_hard_delta": 0.06,
+      "paired_seed_sd": 0.005,
+      "benefit_gate_probability": 0.9999999993216062,
+      "lower_ci_above_zero_probability": 0.9999999993216063,
+      "negative_for_SESOI_probability": 0.0
+    },
+    {
+      "true_hard_delta": 0.0,
+      "paired_seed_sd": 0.01,
+      "benefit_gate_probability": 0.0001396924783984392,
+      "lower_ci_above_zero_probability": 0.025000000000573938,
+      "negative_for_SESOI_probability": 0.4707477062005081
+    },
+    {
+      "true_hard_delta": 0.01,
+      "paired_seed_sd": 0.01,
+      "benefit_gate_probability": 0.023003350364461553,
+      "lower_ci_above_zero_probability": 0.17861005525167792,
+      "negative_for_SESOI_probability": 0.17861005525167792
+    },
+    {
+      "true_hard_delta": 0.02,
+      "paired_seed_sd": 0.01,
+      "benefit_gate_probability": 0.30888883512878085,
+      "lower_ci_above_zero_probability": 0.4707477062005081,
+      "negative_for_SESOI_probability": 0.025000000000573938
+    },
+    {
+      "true_hard_delta": 0.03,
+      "paired_seed_sd": 0.01,
+      "benefit_gate_probability": 0.7287367494463443,
+      "lower_ci_above_zero_probability": 0.7452680066701087,
+      "negative_for_SESOI_probability": 0.000645338528550497
+    },
+    {
+      "true_hard_delta": 0.04,
+      "paired_seed_sd": 0.01,
+      "benefit_gate_probability": 0.9083751757336083,
+      "lower_ci_above_zero_probability": 0.9084887436859278,
+      "negative_for_SESOI_probability": 1.7250854919395552e-06
+    },
+    {
+      "true_hard_delta": 0.06,
+      "paired_seed_sd": 0.01,
+      "benefit_gate_probability": 0.9950890766227216,
+      "lower_ci_above_zero_probability": 0.99508907662368,
+      "negative_for_SESOI_probability": 4.3336009006759945e-15
+    },
+    {
+      "true_hard_delta": 0.0,
+      "paired_seed_sd": 0.02,
+      "benefit_gate_probability": 0.009203351549165998,
+      "lower_ci_above_zero_probability": 0.025000000000573938,
+      "negative_for_SESOI_probability": 0.17861005525167792
+    },
+    {
+      "true_hard_delta": 0.01,
+      "paired_seed_sd": 0.02,
+      "benefit_gate_probability": 0.048034843855638595,
+      "lower_ci_above_zero_probability": 0.07893147718817095,
+      "negative_for_SESOI_probability": 0.07893147718817095
+    },
+    {
+      "true_hard_delta": 0.02,
+      "paired_seed_sd": 0.02,
+      "benefit_gate_probability": 0.14752752711850187,
+      "lower_ci_above_zero_probability": 0.17861005525167792,
+      "negative_for_SESOI_probability": 0.025000000000573938
+    },
+    {
+      "true_hard_delta": 0.03,
+      "paired_seed_sd": 0.02,
+      "benefit_gate_probability": 0.30052639794735236,
+      "lower_ci_above_zero_probability": 0.31633641182862826,
+      "negative_for_SESOI_probability": 0.005175578710074171
+    },
+    {
+      "true_hard_delta": 0.04,
+      "paired_seed_sd": 0.02,
+      "benefit_gate_probability": 0.466744179726594,
+      "lower_ci_above_zero_probability": 0.4707477062005081,
+      "negative_for_SESOI_probability": 0.0006453385285505272
+    },
+    {
+      "true_hard_delta": 0.06,
+      "paired_seed_sd": 0.02,
+      "benefit_gate_probability": 0.7452377744002152,
+      "lower_ci_above_zero_probability": 0.7452680066701087,
+      "negative_for_SESOI_probability": 1.7250854919573427e-06
+    },
+    {
+      "true_hard_delta": 0.0,
+      "paired_seed_sd": 0.04,
+      "benefit_gate_probability": 0.02129936008166807,
+      "lower_ci_above_zero_probability": 0.025000000000573938,
+      "negative_for_SESOI_probability": 0.07893147718817095
+    },
+    {
+      "true_hard_delta": 0.01,
+      "paired_seed_sd": 0.04,
+      "benefit_gate_probability": 0.04213985207270568,
+      "lower_ci_above_zero_probability": 0.04658215471768126,
+      "negative_for_SESOI_probability": 0.04658215471768126
+    },
+    {
+      "true_hard_delta": 0.02,
+      "paired_seed_sd": 0.04,
+      "benefit_gate_probability": 0.07448710927530443,
+      "lower_ci_above_zero_probability": 0.07893147718817095,
+      "negative_for_SESOI_probability": 0.025000000000573938
+    },
+    {
+      "true_hard_delta": 0.03,
+      "paired_seed_sd": 0.04,
+      "benefit_gate_probability": 0.11936362326492578,
+      "lower_ci_above_zero_probability": 0.12306826258617433,
+      "negative_for_SESOI_probability": 0.01206187294129717
+    },
+    {
+      "true_hard_delta": 0.04,
+      "paired_seed_sd": 0.04,
+      "benefit_gate_probability": 0.17603799289494015,
+      "lower_ci_above_zero_probability": 0.17861005525167792,
+      "negative_for_SESOI_probability": 0.00517557871007416
+    },
+    {
+      "true_hard_delta": 0.06,
+      "paired_seed_sd": 0.04,
+      "benefit_gate_probability": 0.3156208730933935,
+      "lower_ci_above_zero_probability": 0.31633641182862826,
+      "negative_for_SESOI_probability": 0.000645338528550497
+    }
+  ],
+  "hypothetical_zero_panel_mean_bounds": [
+    {
+      "hard_delta": 0.02,
+      "hard_sigma": 0.005,
+      "panel_delta": 0.0,
+      "panel_sigma": 0.005,
+      "benefit_probability": 0.4781721978648234,
+      "nonregression_probability": 0.4707477062005081,
+      "full_positive_lower_bound": 0.0,
+      "full_positive_upper_bound": 0.4707477062005081
+    },
+    {
+      "hard_delta": 0.04,
+      "hard_sigma": 0.005,
+      "panel_delta": 0.0,
+      "panel_sigma": 0.005,
+      "benefit_probability": 0.9999182049042831,
+      "nonregression_probability": 0.4707477062005081,
+      "full_positive_lower_bound": 0.47066591110479106,
+      "full_positive_upper_bound": 0.4707477062005081
+    },
+    {
+      "hard_delta": 0.02,
+      "hard_sigma": 0.01,
+      "panel_delta": 0.0,
+      "panel_sigma": 0.01,
+      "benefit_probability": 0.30888883512878085,
+      "nonregression_probability": 0.17861005525167792,
+      "full_positive_lower_bound": 0.0,
+      "full_positive_upper_bound": 0.17861005525167792
+    },
+    {
+      "hard_delta": 0.04,
+      "hard_sigma": 0.01,
+      "panel_delta": 0.0,
+      "panel_sigma": 0.01,
+      "benefit_probability": 0.9083751757336083,
+      "nonregression_probability": 0.17861005525167792,
+      "full_positive_lower_bound": 0.0869852309852861,
+      "full_positive_upper_bound": 0.17861005525167792
+    },
+    {
+      "hard_delta": 0.02,
+      "hard_sigma": 0.02,
+      "panel_delta": 0.0,
+      "panel_sigma": 0.02,
+      "benefit_probability": 0.14752752711850187,
+      "nonregression_probability": 0.07893147718817095,
+      "full_positive_lower_bound": 0.0,
+      "full_positive_upper_bound": 0.07893147718817095
+    },
+    {
+      "hard_delta": 0.04,
+      "hard_sigma": 0.02,
+      "panel_delta": 0.0,
+      "panel_sigma": 0.02,
+      "benefit_probability": 0.466744179726594,
+      "nonregression_probability": 0.07893147718817095,
+      "full_positive_lower_bound": 0.0,
+      "full_positive_upper_bound": 0.07893147718817095
+    },
+    {
+      "hard_delta": 0.02,
+      "hard_sigma": 0.04,
+      "panel_delta": 0.0,
+      "panel_sigma": 0.04,
+      "benefit_probability": 0.07448710927530443,
+      "nonregression_probability": 0.04658215471768126,
+      "full_positive_lower_bound": 0.0,
+      "full_positive_upper_bound": 0.04658215471768126
+    },
+    {
+      "hard_delta": 0.04,
+      "hard_sigma": 0.04,
+      "panel_delta": 0.0,
+      "panel_sigma": 0.04,
+      "benefit_probability": 0.17603799289494015,
+      "nonregression_probability": 0.04658215471768126,
+      "full_positive_lower_bound": 0.0,
+      "full_positive_upper_bound": 0.04658215471768126
+    }
+  ],
+  "software": {
+    "numpy": "2.5.1",
+    "scipy": "1.16.2"
+  },
+  "source_sha256": {
+    "/home/linjiw/climb-feasibility-first/paper/figures/relative_design_precision.py": "6ebebf7ad637bb706f208c3a2bc553d580c4f8c732e4238e9c1617c97270cba5",
+    "/home/linjiw/climb-feasibility-first/tools/analyze_relative_policy.py": "131b48e7a58f2ea46fa77d184cbe4ac132a7211713291502668cc06ae71b33f1"
+  },
+  "references": [
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.t.html",
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.nct.html"
+  ],
+  "policy_endpoints_opened": false,
+  "design_changed": false
+}

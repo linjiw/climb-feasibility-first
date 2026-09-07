@@ -1,0 +1,21 @@
+{
+  "status": "frozen_before_confirmation",
+  "contract": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/contract.json",
+    "sha256": "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013"
+  },
+  "source_draft": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation_adapter/draft_contract.json",
+    "sha256": "74857935900acac9c14b2a865845c658da89a8e06bbfeac72ac96d6bc91552f2"
+  },
+  "freeze_entrypoint": {
+    "path": "/home/linjiw/climb-feasibility-first/tools/freeze_relative_confirmation.sh",
+    "sha256": "2df03e74c9734917dd605793e1b8571688f2a09408d2f3d681f8490ba8fc6cdf"
+  },
+  "configuration_digests_verified": 12,
+  "training_jobs": 12,
+  "evaluation_jobs": 48,
+  "all_prerequisites_reproduced": true,
+  "policy_endpoints_opened": false,
+  "jobs_launched": 0
+}

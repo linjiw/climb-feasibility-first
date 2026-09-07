@@ -1,0 +1,162 @@
+{
+  "timestamp": "2026-09-06T20:19:45.017291-04:00",
+  "status": "completed_training_gates_replayed",
+  "classification": "training integrity and allocation only; no policy utility",
+  "training_jobs": 8,
+  "snapshots": 328,
+  "results": [
+    {
+      "arm": "U",
+      "seed": 21,
+      "snapshots": 41,
+      "mean_tv": 0.0,
+      "completed_trials": 1086702,
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 2014,
+        "elapsed_gpu_hours": 0.5594444444444444,
+        "shared_gpu_baseline_mib": 718,
+        "shared_gpu_peak_total_mib": 11874,
+        "started": "2026-09-06T10:28:51-04:00",
+        "finished": "2026-09-06T11:02:25-04:00"
+      }
+    },
+    {
+      "arm": "A",
+      "seed": 21,
+      "snapshots": 41,
+      "mean_tv": 0.029759170164293084,
+      "completed_trials": 1084430,
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 2221,
+        "elapsed_gpu_hours": 0.6169444444444444,
+        "shared_gpu_baseline_mib": 506,
+        "shared_gpu_peak_total_mib": 11981,
+        "started": "2026-09-06T11:25:41-04:00",
+        "finished": "2026-09-06T12:02:42-04:00"
+      }
+    },
+    {
+      "arm": "R",
+      "seed": 21,
+      "snapshots": 41,
+      "mean_tv": 0.08348494896009954,
+      "completed_trials": 1083411,
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 2734,
+        "elapsed_gpu_hours": 0.7594444444444445,
+        "shared_gpu_baseline_mib": 1797,
+        "shared_gpu_peak_total_mib": 10587,
+        "started": "2026-09-06T14:25:25-04:00",
+        "finished": "2026-09-06T15:10:59-04:00"
+      }
+    },
+    {
+      "arm": "D",
+      "seed": 21,
+      "snapshots": 41,
+      "mean_tv": 0.08391068947163956,
+      "completed_trials": 1116479,
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 2619,
+        "elapsed_gpu_hours": 0.7275,
+        "shared_gpu_baseline_mib": 1799,
+        "shared_gpu_peak_total_mib": 10479,
+        "started": "2026-09-06T16:31:13-04:00",
+        "finished": "2026-09-06T17:14:52-04:00"
+      }
+    },
+    {
+      "arm": "A",
+      "seed": 22,
+      "snapshots": 41,
+      "mean_tv": 0.02933859420427059,
+      "completed_trials": 1082658,
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 1852,
+        "elapsed_gpu_hours": 0.5144444444444445,
+        "shared_gpu_baseline_mib": 1214,
+        "shared_gpu_peak_total_mib": 8205,
+        "started": "2026-09-06T18:29:16-04:00",
+        "finished": "2026-09-06T19:00:08-04:00"
+      }
+    },
+    {
+      "arm": "R",
+      "seed": 22,
+      "snapshots": 41,
+      "mean_tv": 0.0824919974124211,
+      "completed_trials": 1087418,
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 1407,
+        "elapsed_gpu_hours": 0.3908333333333333,
+        "shared_gpu_baseline_mib": 567,
+        "shared_gpu_peak_total_mib": 2979,
+        "started": "2026-09-06T19:00:29-04:00",
+        "finished": "2026-09-06T19:23:56-04:00"
+      }
+    },
+    {
+      "arm": "D",
+      "seed": 22,
+      "snapshots": 41,
+      "mean_tv": 0.08586509252074585,
+      "completed_trials": 1116999,
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 1412,
+        "elapsed_gpu_hours": 0.39222222222222225,
+        "shared_gpu_baseline_mib": 567,
+        "shared_gpu_peak_total_mib": 2979,
+        "started": "2026-09-06T19:24:15-04:00",
+        "finished": "2026-09-06T19:47:47-04:00"
+      }
+    },
+    {
+      "arm": "U",
+      "seed": 22,
+      "snapshots": 41,
+      "mean_tv": 0.0,
+      "completed_trials": 1086071,
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 1407,
+        "elapsed_gpu_hours": 0.3908333333333333,
+        "shared_gpu_baseline_mib": 567,
+        "shared_gpu_peak_total_mib": 2979,
+        "started": "2026-09-06T19:48:06-04:00",
+        "finished": "2026-09-06T20:11:33-04:00"
+      }
+    }
+  ],
+  "endpoint_access_exists": false
+}

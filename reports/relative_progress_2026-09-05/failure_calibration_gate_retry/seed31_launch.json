@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-feasibility-first/tools/train_relative_policy.py",
+    "Climb-Tracking-Flat-Unitree-G1-Policy-D-Development",
+    "--env.scene.num-envs",
+    "512",
+    "--agent.max-iterations",
+    "4000",
+    "--agent.logger",
+    "tensorboard",
+    "--agent.run-name",
+    "D_calibration_s31",
+    "--log-root",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed31"
+  ],
+  "environment": {
+    "CLIMB_BANK": "/home/linjiw/climb-feasibility-first/bank/amass",
+    "CLIMB_CLIPS": "/home/linjiw/climb-feasibility-first/bank/tiers/tier_800.txt",
+    "CLIMB_SEGMENT_MANIFEST": "/home/linjiw/climb-feasibility-first/reports/g_segment/unit_table.json",
+    "CLIMB_POLICY_ARM": "D",
+    "CLIMB_POLICY_STAGE": "calibration",
+    "CLIMB_POLICY_SEED": "31"
+  }
+}

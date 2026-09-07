@@ -1,0 +1,17 @@
+{
+  "pid": 1722327,
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-signal-quality-2026-09-06/tools/advance_bound_confirmation.py",
+    "--root",
+    "/home/linjiw/climb-feasibility-first",
+    "--out-dir",
+    "/home/linjiw/climb-feasibility-first/reports/research_next_2026-09-06/handoff",
+    "--smoke-pid",
+    "1541297"
+  ],
+  "source_sha256": "0205d6e28383b1bfae83903a1dd6bbaae08d779a7385b8d237eb6536d515cbac",
+  "created_at": "2026-09-06T00:39:30.377294-04:00",
+  "status": "queued_after_existing_smokes",
+  "confirmation_jobs_launched_at_record": 0
+}

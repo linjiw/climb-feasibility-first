@@ -1,0 +1,114 @@
+{
+  "status": "paired_development_trace_replay_pass",
+  "matched_initial_states": true,
+  "matched_startup_randomization": true,
+  "policy_benefit_comparison": false,
+  "results": [
+    {
+      "rows": [
+        {
+          "condition_id": "KIT_1229_flexion_with_help_02_poses_100_jpos@0:r0",
+          "horizon_steps": 429,
+          "scored_steps": 429,
+          "success": true,
+          "tracking_score": 0.5861679368022443,
+          "failure_frame": null
+        },
+        {
+          "condition_id": "KIT_1229_flexion_with_help_02_poses_100_jpos@0:r1",
+          "horizon_steps": 429,
+          "scored_steps": 429,
+          "success": true,
+          "tracking_score": 0.5566318772288299,
+          "failure_frame": null
+        },
+        {
+          "condition_id": "KIT_1229_in_out_rotation_with_help_03_poses_100_jpos@0:r0",
+          "horizon_steps": 306,
+          "scored_steps": 306,
+          "success": true,
+          "tracking_score": 0.5927939007855674,
+          "failure_frame": null
+        },
+        {
+          "condition_id": "KIT_1229_in_out_rotation_with_help_03_poses_100_jpos@0:r1",
+          "horizon_steps": 306,
+          "scored_steps": 306,
+          "success": true,
+          "tracking_score": 0.6623148990494704,
+          "failure_frame": null
+        }
+      ],
+      "vector_steps": 429,
+      "failed_attempts": 0,
+      "completed_attempts": 4,
+      "partial_active_steps": 123,
+      "retired_reset_events": 0,
+      "retired_reference_write_events": 2,
+      "active_resets_or_reference_writes": 0,
+      "status": "continuous_trace_replay_pass",
+      "design_sha256": "92c1db2b9463ddd4ec0bec365ec9c49efe0feb5c304836f040c76b1cde6e6959",
+      "receipt_sha256": "15d22413cd82111a54bb2f7e8e9016652346132b52675e0e04b5d3774322c698",
+      "source_run": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/continuous_execution_development_2026-09-06/run",
+      "verifier_sha256": "535a3c6694c6bc748f949aed19d65a3e0f8707ddf469453a3060a5ec3024fc78",
+      "initial_state_sha256": "d63249539716b78e6e32c11fd437d50975e9a0d023e0f9a8b863d0e73173c14f",
+      "startup_randomization_sha256": "5d972a4b411ce26972ff5691d93bb178719dac30acebafbbd218348702179207",
+      "full_evaluation_enabled": false,
+      "classification": "independent CPU development trace replay; no method comparison",
+      "checked_at": "2026-09-07T00:20:59.330666-04:00"
+    },
+    {
+      "rows": [
+        {
+          "condition_id": "KIT_1229_flexion_with_help_02_poses_100_jpos@0:r0",
+          "horizon_steps": 429,
+          "scored_steps": 49,
+          "success": false,
+          "tracking_score": 0.05805965894836216,
+          "failure_frame": 49
+        },
+        {
+          "condition_id": "KIT_1229_flexion_with_help_02_poses_100_jpos@0:r1",
+          "horizon_steps": 429,
+          "scored_steps": 64,
+          "success": false,
+          "tracking_score": 0.054484959286574104,
+          "failure_frame": 64
+        },
+        {
+          "condition_id": "KIT_1229_in_out_rotation_with_help_03_poses_100_jpos@0:r0",
+          "horizon_steps": 306,
+          "scored_steps": 40,
+          "success": false,
+          "tracking_score": 0.07702252482400061,
+          "failure_frame": 40
+        },
+        {
+          "condition_id": "KIT_1229_in_out_rotation_with_help_03_poses_100_jpos@0:r1",
+          "horizon_steps": 306,
+          "scored_steps": 37,
+          "success": false,
+          "tracking_score": 0.038887974521378765,
+          "failure_frame": 37
+        }
+      ],
+      "vector_steps": 64,
+      "failed_attempts": 4,
+      "completed_attempts": 0,
+      "partial_active_steps": 27,
+      "retired_reset_events": 5,
+      "retired_reference_write_events": 5,
+      "active_resets_or_reference_writes": 0,
+      "status": "continuous_trace_replay_pass",
+      "design_sha256": "32afe7fc330edbc6c39d93a3ecb0085d9425b1394731a8449863af37fc2bfd20",
+      "receipt_sha256": "75e00598a190097a16f4e9d4fe13019b421c6653a97a8aaaff1b13fdac3f6564",
+      "source_run": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/continuous_failure_development_2026-09-07/run",
+      "verifier_sha256": "535a3c6694c6bc748f949aed19d65a3e0f8707ddf469453a3060a5ec3024fc78",
+      "initial_state_sha256": "d63249539716b78e6e32c11fd437d50975e9a0d023e0f9a8b863d0e73173c14f",
+      "startup_randomization_sha256": "5d972a4b411ce26972ff5691d93bb178719dac30acebafbbd218348702179207",
+      "full_evaluation_enabled": false,
+      "classification": "independent CPU development trace replay; no method comparison",
+      "checked_at": "2026-09-07T00:20:59.358246-04:00"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-09-05T22:45:51.276407-04:00",
+  "classification": "prospective freeze preparation; not a freeze",
+  "draft": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation_adapter/draft_contract.json",
+    "sha256": "74857935900acac9c14b2a865845c658da89a8e06bbfeac72ac96d6bc91552f2"
+  },
+  "draft_preflight": "pass",
+  "known_completed": {
+    "R_seed11": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long_result.json",
+      "sha256": "08315ff233877da3c318c977cce23eaaec73e5bd4b5c434edaa84f5a00df3b9b"
+    },
+    "R_seed12": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long_result.json",
+      "sha256": "207651b3ed2e6f22ce6c4abaf165a55ce65b7953c268fc96eae6e1b80a8c67ec"
+    },
+    "D_seed31": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed31_result.json",
+      "sha256": "a026a4caeb0a318362f5335326cf74ee85c69fbc079c1f721e5121095635e51c"
+    },
+    "development_U_s41": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/U_result.json",
+      "sha256": "7e51bf1e756b49adf3d5b89d88b20a63b17212dc2594ff1a1795c1b86854831a"
+    },
+    "development_A_s41": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/A_result.json",
+      "sha256": "96e33166abdd24674b7271c4f6a4b74d55d9b4e0365dec73f4f465bdcd5eff7c"
+    },
+    "development_R_s41": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/R_result.json",
+      "sha256": "ff4d574fb2d0313c7d76fa5a4704b4182120a9eea2875354b0b570077b0db4ec"
+    },
+    "development_D_s41": {
+      "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/D_result.json",
+      "sha256": "39abe48c3cd1fabfca8d8676f5b65b65a2d66a56c70dbf652db197368c83f812"
+    }
+  },
+  "required_pending": {
+    "D_seed32": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32_result.json",
+    "entrypoint_U_s51": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/U_result.json",
+    "entrypoint_A_s51": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/A_result.json",
+    "entrypoint_R_s51": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/R_result.json",
+    "entrypoint_D_s51": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/D_result.json"
+  },
+  "newly_available_not_yet_verified": {},
+  "confirmation_enabled": false,
+  "policy_endpoints_opened": false,
+  "freeze_actions_after_all_pass": [
+    "Reproduce complete D seed32 and all four seed51 results, not terminal booleans alone.",
+    "Preserve draft; make a new profile copy changing only confirmation.enabled to true.",
+    "Replace pending artifact records with verified exact path/hash bindings.",
+    "Rebuild and match all twelve configuration hashes and current runtime/input identities.",
+    "Create a new prospective contract and new seal; never modify the Phase-G seal.",
+    "Run strict full contract verification before any confirmation seed or output directory.",
+    "Launch the fixed schedule once; all twelve training gates precede evaluation."
+  ]
+}

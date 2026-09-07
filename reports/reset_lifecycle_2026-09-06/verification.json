@@ -1,0 +1,151 @@
+{
+  "timestamp": "2026-09-06T12:23:04.824227-04:00",
+  "checks": [
+    {
+      "name": "tests_final",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "pytest",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_physics_reset_fixture.py",
+        "-q"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "compile",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_physics_reset_fixture.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_physics_reset_fixed.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_physics_reset_fixture.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_physics_reset_fixture.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "phase_g_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "confirmation_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256"
+      ],
+      "returncode": 0
+    }
+  ],
+  "unchanged_runtime_files": 376,
+  "comparisons": [
+    {
+      "condition": "original",
+      "unaffected_world_2_matches_no_injection_before_and_after_fix": true,
+      "non_delay_full_csv_unchanged": true,
+      "csv_sha256": {
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_evaluator_development_2026-09-06/original/evaluation.csv": "15cf798f2aa3373af7441e5697caeac4929f73ae7e7e43d9c96deb8dd42f7f1e",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixture_2026-09-06/original/evaluation.csv": "7454eae90ffc12d9425f594475e5135b59a14dc183e4aa11018b9c8fde26eb8f",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixed_2026-09-06/original/evaluation.csv": "7454eae90ffc12d9425f594475e5135b59a14dc183e4aa11018b9c8fde26eb8f"
+      }
+    },
+    {
+      "condition": "unchanged",
+      "unaffected_world_2_matches_no_injection_before_and_after_fix": true,
+      "non_delay_full_csv_unchanged": true,
+      "csv_sha256": {
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_evaluator_development_2026-09-06/unchanged/evaluation.csv": "15cf798f2aa3373af7441e5697caeac4929f73ae7e7e43d9c96deb8dd42f7f1e",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixture_2026-09-06/unchanged/evaluation.csv": "7454eae90ffc12d9425f594475e5135b59a14dc183e4aa11018b9c8fde26eb8f",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixed_2026-09-06/unchanged/evaluation.csv": "7454eae90ffc12d9425f594475e5135b59a14dc183e4aa11018b9c8fde26eb8f"
+      }
+    },
+    {
+      "condition": "delay_5ms",
+      "unaffected_world_2_matches_no_injection_before_and_after_fix": true,
+      "non_delay_full_csv_unchanged": null,
+      "csv_sha256": {
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_evaluator_development_2026-09-06/delay_5ms/evaluation.csv": "2d330d8ec43f9efd6ff2626667c25fcf72f65d9b91a69fa443bf329f77140fe3",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixture_2026-09-06/delay_5ms/evaluation.csv": "c717376faf076a7e748d206529267c7b035dd63fa972f59a74f208167d073ca0",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixed_2026-09-06/delay_5ms/evaluation.csv": "c717376faf076a7e748d206529267c7b035dd63fa972f59a74f208167d073ca0"
+      }
+    },
+    {
+      "condition": "delay_10ms",
+      "unaffected_world_2_matches_no_injection_before_and_after_fix": true,
+      "non_delay_full_csv_unchanged": null,
+      "csv_sha256": {
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_evaluator_development_2026-09-06/delay_10ms/evaluation.csv": "823fc0e7172b9c63cf66ebd2b4c4317e5e3a013c4bc4fb1ce3c659ad9d2c4b48",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixture_2026-09-06/delay_10ms/evaluation.csv": "3a53273aa497d3365d4e8ed58bee7e545857eb0eb70b1616713e49e0513b7498",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixed_2026-09-06/delay_10ms/evaluation.csv": "3a53273aa497d3365d4e8ed58bee7e545857eb0eb70b1616713e49e0513b7498"
+      }
+    },
+    {
+      "condition": "delay_20ms",
+      "unaffected_world_2_matches_no_injection_before_and_after_fix": true,
+      "non_delay_full_csv_unchanged": null,
+      "csv_sha256": {
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_evaluator_development_2026-09-06/delay_20ms/evaluation.csv": "54246ad02810fd9d7e8fe8db4ef7a688b4a84dd10358ea9c5eedb1ada4f0b95a",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixture_2026-09-06/delay_20ms/evaluation.csv": "93874fddfeed2d86dfe8b382dd17416b7c895f1c9687b18a5a09887689e9e295",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixed_2026-09-06/delay_20ms/evaluation.csv": "93874fddfeed2d86dfe8b382dd17416b7c895f1c9687b18a5a09887689e9e295"
+      }
+    },
+    {
+      "condition": "knee_120nm",
+      "unaffected_world_2_matches_no_injection_before_and_after_fix": true,
+      "non_delay_full_csv_unchanged": true,
+      "csv_sha256": {
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_evaluator_development_2026-09-06/knee_120nm/evaluation.csv": "15cf798f2aa3373af7441e5697caeac4929f73ae7e7e43d9c96deb8dd42f7f1e",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixture_2026-09-06/knee_120nm/evaluation.csv": "7454eae90ffc12d9425f594475e5135b59a14dc183e4aa11018b9c8fde26eb8f",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixed_2026-09-06/knee_120nm/evaluation.csv": "7454eae90ffc12d9425f594475e5135b59a14dc183e4aa11018b9c8fde26eb8f"
+      }
+    },
+    {
+      "condition": "knee_90nm",
+      "unaffected_world_2_matches_no_injection_before_and_after_fix": true,
+      "non_delay_full_csv_unchanged": true,
+      "csv_sha256": {
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_evaluator_development_2026-09-06/knee_90nm/evaluation.csv": "15cf798f2aa3373af7441e5697caeac4929f73ae7e7e43d9c96deb8dd42f7f1e",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixture_2026-09-06/knee_90nm/evaluation.csv": "7454eae90ffc12d9425f594475e5135b59a14dc183e4aa11018b9c8fde26eb8f",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixed_2026-09-06/knee_90nm/evaluation.csv": "7454eae90ffc12d9425f594475e5135b59a14dc183e4aa11018b9c8fde26eb8f"
+      }
+    },
+    {
+      "condition": "friction_0p3",
+      "unaffected_world_2_matches_no_injection_before_and_after_fix": true,
+      "non_delay_full_csv_unchanged": true,
+      "csv_sha256": {
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_evaluator_development_2026-09-06/friction_0p3/evaluation.csv": "4323b180e1f8546357f402b7c82f92f8c9a78a37b02c81c718787ff8f2dea341",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixture_2026-09-06/friction_0p3/evaluation.csv": "de61b38a87fc0bfb98fdf773aabab5102cafda62e36c61fc26edf943b2575fb8",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixed_2026-09-06/friction_0p3/evaluation.csv": "de61b38a87fc0bfb98fdf773aabab5102cafda62e36c61fc26edf943b2575fb8"
+      }
+    },
+    {
+      "condition": "friction_1p2",
+      "unaffected_world_2_matches_no_injection_before_and_after_fix": true,
+      "non_delay_full_csv_unchanged": true,
+      "csv_sha256": {
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_evaluator_development_2026-09-06/friction_1p2/evaluation.csv": "a2a68b1fa28556d4ef466b29c740e4b86348c63cab570e67732c95469e5d1425",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixture_2026-09-06/friction_1p2/evaluation.csv": "006c320d99ea7a12ebdb0824c4adfc354dacb721bbb023333056741d20f017e4",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixed_2026-09-06/friction_1p2/evaluation.csv": "006c320d99ea7a12ebdb0824c4adfc354dacb721bbb023333056741d20f017e4"
+      }
+    }
+  ],
+  "failed_audit": {
+    "path": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixture_2026-09-06/failed_audit.json",
+    "sha256": "cb1d0c33311a555c283fd966c2d8a761c8e87e173a1186bc7fbc564a69e6b486"
+  },
+  "fixed_verification": {
+    "path": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixed_2026-09-06/verification.json",
+    "sha256": "4f5ac23cc2e587a454994b6992e1ad7fc139e4a134ae9c2b99d21a5ef028b50a"
+  },
+  "confirmation_endpoints_opened": false
+}

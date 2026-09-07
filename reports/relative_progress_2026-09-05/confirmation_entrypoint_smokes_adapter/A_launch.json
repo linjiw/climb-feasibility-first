@@ -1,0 +1,18 @@
+{
+  "log": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/A.log",
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-feasibility-first/tools/train_relative_confirmation.py",
+    "--contract",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation_adapter/draft_contract.json",
+    "--contract-sha256",
+    "74857935900acac9c14b2a865845c658da89a8e06bbfeac72ac96d6bc91552f2",
+    "--arm",
+    "A",
+    "--seed",
+    "51",
+    "--smoke",
+    "--out-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/A"
+  ]
+}

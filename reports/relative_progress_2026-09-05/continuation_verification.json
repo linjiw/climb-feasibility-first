@@ -1,0 +1,18 @@
+{
+  "classification": "implementation verification; not measured policy outcomes",
+  "tests": {
+    "command": "mjlab-1.6.0/.venv/bin/python -m pytest tests/test_relative_progress.py tests/test_relative_progress_probe.py tests/test_relative_progress_continuation.py tests/test_relative_policy_analysis.py -q",
+    "passed": 42,
+    "elapsed_s": 5.07
+  },
+  "python_compilation": "pass",
+  "git_diff_check": "pass",
+  "phase_g_41_file_seal": "unchanged",
+  "sources": {
+    "tools/continue_relative_progress.py": "2c41a0f518bbdbc4ad8cabf6984f445046db5218732147c38e3d71f791bb65d7",
+    "tools/plot_relative_progress.py": "8e2e8b668373b46b414bd3dd88cbce76b398370e156f4e1108d5252cd012b2c3",
+    "tools/analyze_relative_policy.py": "131b48e7a58f2ea46fa77d184cbe4ac132a7211713291502668cc06ae71b33f1",
+    "tests/test_relative_progress_continuation.py": "12d5273a496026b4e63228371084014ff66d99237165408a103e2b16b8d9304c",
+    "tests/test_relative_policy_analysis.py": "7d3e200bd730cfe35af36ad1cf538f86960db4e82dc249a5cfdb0c18e7265da7"
+  }
+}

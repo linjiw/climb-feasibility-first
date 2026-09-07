@@ -1,0 +1,401 @@
+{
+  "classification": "checkpoint structure audit; restore behavior not tested",
+  "checkpoints": [
+    {
+      "seed": 11,
+      "iteration": 1000,
+      "checkpoint_keys": [
+        "actor_state_dict",
+        "critic_state_dict",
+        "infos",
+        "iter",
+        "optimizer_state_dict"
+      ],
+      "normalizer_keys": {
+        "actor_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ],
+        "critic_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ]
+      },
+      "optimizer_present": true,
+      "optimizer_learning_rates": [
+        5.062500000000002e-05
+      ],
+      "info_keys": [
+        "env_state"
+      ],
+      "sampler_state_file": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_1000_segment_sampler.pt"
+    },
+    {
+      "seed": 11,
+      "iteration": 1900,
+      "checkpoint_keys": [
+        "actor_state_dict",
+        "critic_state_dict",
+        "infos",
+        "iter",
+        "optimizer_state_dict"
+      ],
+      "normalizer_keys": {
+        "actor_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ],
+        "critic_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ]
+      },
+      "optimizer_present": true,
+      "optimizer_learning_rates": [
+        1e-05
+      ],
+      "info_keys": [
+        "env_state"
+      ],
+      "sampler_state_file": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_1900_segment_sampler.pt"
+    },
+    {
+      "seed": 11,
+      "iteration": 2000,
+      "checkpoint_keys": [
+        "actor_state_dict",
+        "critic_state_dict",
+        "infos",
+        "iter",
+        "optimizer_state_dict"
+      ],
+      "normalizer_keys": {
+        "actor_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ],
+        "critic_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ]
+      },
+      "optimizer_present": true,
+      "optimizer_learning_rates": [
+        2.2500000000000008e-05
+      ],
+      "info_keys": [
+        "env_state"
+      ],
+      "sampler_state_file": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_2000_segment_sampler.pt"
+    },
+    {
+      "seed": 11,
+      "iteration": 3000,
+      "checkpoint_keys": [
+        "actor_state_dict",
+        "critic_state_dict",
+        "infos",
+        "iter",
+        "optimizer_state_dict"
+      ],
+      "normalizer_keys": {
+        "actor_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ],
+        "critic_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ]
+      },
+      "optimizer_present": true,
+      "optimizer_learning_rates": [
+        1e-05
+      ],
+      "info_keys": [
+        "env_state"
+      ],
+      "sampler_state_file": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_3000_segment_sampler.pt"
+    },
+    {
+      "seed": 11,
+      "iteration": 3900,
+      "checkpoint_keys": [
+        "actor_state_dict",
+        "critic_state_dict",
+        "infos",
+        "iter",
+        "optimizer_state_dict"
+      ],
+      "normalizer_keys": {
+        "actor_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ],
+        "critic_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ]
+      },
+      "optimizer_present": true,
+      "optimizer_learning_rates": [
+        2.2500000000000008e-05
+      ],
+      "info_keys": [
+        "env_state"
+      ],
+      "sampler_state_file": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_3900_segment_sampler.pt"
+    },
+    {
+      "seed": 11,
+      "iteration": 3999,
+      "checkpoint_keys": [
+        "actor_state_dict",
+        "critic_state_dict",
+        "infos",
+        "iter",
+        "optimizer_state_dict"
+      ],
+      "normalizer_keys": {
+        "actor_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ],
+        "critic_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ]
+      },
+      "optimizer_present": true,
+      "optimizer_learning_rates": [
+        3.3750000000000014e-05
+      ],
+      "info_keys": [
+        "env_state"
+      ],
+      "sampler_state_file": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_3999_segment_sampler.pt"
+    },
+    {
+      "seed": 12,
+      "iteration": 1000,
+      "checkpoint_keys": [
+        "actor_state_dict",
+        "critic_state_dict",
+        "infos",
+        "iter",
+        "optimizer_state_dict"
+      ],
+      "normalizer_keys": {
+        "actor_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ],
+        "critic_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ]
+      },
+      "optimizer_present": true,
+      "optimizer_learning_rates": [
+        1e-05
+      ],
+      "info_keys": [
+        "env_state"
+      ],
+      "sampler_state_file": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1000_segment_sampler.pt"
+    },
+    {
+      "seed": 12,
+      "iteration": 1900,
+      "checkpoint_keys": [
+        "actor_state_dict",
+        "critic_state_dict",
+        "infos",
+        "iter",
+        "optimizer_state_dict"
+      ],
+      "normalizer_keys": {
+        "actor_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ],
+        "critic_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ]
+      },
+      "optimizer_present": true,
+      "optimizer_learning_rates": [
+        1e-05
+      ],
+      "info_keys": [
+        "env_state"
+      ],
+      "sampler_state_file": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1900_segment_sampler.pt"
+    },
+    {
+      "seed": 12,
+      "iteration": 2000,
+      "checkpoint_keys": [
+        "actor_state_dict",
+        "critic_state_dict",
+        "infos",
+        "iter",
+        "optimizer_state_dict"
+      ],
+      "normalizer_keys": {
+        "actor_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ],
+        "critic_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ]
+      },
+      "optimizer_present": true,
+      "optimizer_learning_rates": [
+        1e-05
+      ],
+      "info_keys": [
+        "env_state"
+      ],
+      "sampler_state_file": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2000_segment_sampler.pt"
+    },
+    {
+      "seed": 12,
+      "iteration": 3000,
+      "checkpoint_keys": [
+        "actor_state_dict",
+        "critic_state_dict",
+        "infos",
+        "iter",
+        "optimizer_state_dict"
+      ],
+      "normalizer_keys": {
+        "actor_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ],
+        "critic_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ]
+      },
+      "optimizer_present": true,
+      "optimizer_learning_rates": [
+        1e-05
+      ],
+      "info_keys": [
+        "env_state"
+      ],
+      "sampler_state_file": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3000_segment_sampler.pt"
+    },
+    {
+      "seed": 12,
+      "iteration": 3900,
+      "checkpoint_keys": [
+        "actor_state_dict",
+        "critic_state_dict",
+        "infos",
+        "iter",
+        "optimizer_state_dict"
+      ],
+      "normalizer_keys": {
+        "actor_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ],
+        "critic_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ]
+      },
+      "optimizer_present": true,
+      "optimizer_learning_rates": [
+        1e-05
+      ],
+      "info_keys": [
+        "env_state"
+      ],
+      "sampler_state_file": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3900_segment_sampler.pt"
+    },
+    {
+      "seed": 12,
+      "iteration": 3999,
+      "checkpoint_keys": [
+        "actor_state_dict",
+        "critic_state_dict",
+        "infos",
+        "iter",
+        "optimizer_state_dict"
+      ],
+      "normalizer_keys": {
+        "actor_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ],
+        "critic_state_dict": [
+          "obs_normalizer._mean",
+          "obs_normalizer._var",
+          "obs_normalizer._std",
+          "obs_normalizer.count"
+        ]
+      },
+      "optimizer_present": true,
+      "optimizer_learning_rates": [
+        1e-05
+      ],
+      "info_keys": [
+        "env_state"
+      ],
+      "sampler_state_file": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3999_segment_sampler.pt"
+    }
+  ]
+}

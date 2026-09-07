@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-09-05T18:41:34.092129-04:00",
+  "classification": "execution snapshot; interim training is not a complete scientific gate",
+  "stages": [
+    {
+      "stage": "continuation_gate_retry",
+      "launch_pid": 1091691,
+      "source_mismatches": [],
+      "process_snapshot": "    PID     ELAPSED STAT\n1091691       11:36 Ssl\n",
+      "terminal_exists": false
+    },
+    {
+      "stage": "policy_smokes_gate_retry",
+      "launch_pid": 1091692,
+      "source_mismatches": [],
+      "process_snapshot": "    PID     ELAPSED STAT\n1091692       11:36 Ssl\n",
+      "terminal_exists": false
+    },
+    {
+      "stage": "failure_calibration_gate_retry",
+      "launch_pid": 1091693,
+      "source_mismatches": [],
+      "process_snapshot": "    PID     ELAPSED STAT\n1091693       11:36 Ssl\n",
+      "terminal_exists": false
+    }
+  ],
+  "seed12": {
+    "smoke_status": "smoke_pass",
+    "latest_saved_iteration": 800,
+    "latest_ledger": "reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_800_segment.json",
+    "latest_ledger_sha256": "529b957965df4b78116497ffa868097d9006defd05c2b6c40c6977a104e1303b",
+    "long_terminal_exists": false
+  },
+  "policy_endpoints_opened": false
+}

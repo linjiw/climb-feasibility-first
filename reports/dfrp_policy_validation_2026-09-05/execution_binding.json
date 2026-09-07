@@ -1,0 +1,8 @@
+{
+ "design_sha256": "9954186057633ca0bb40116cd45e54d9f929d78c110bfd6350213b0d86b0b72d",
+ "checkpoint": "/home/linjiw/climb-feasibility-first/reports/g_segment/confirmation/seed1/training/g1_tracking/2026-09-05_02-01-38_phase_g_g1_s1/model_3999.pt",
+ "checkpoint_sha256": "e2d08c23d1c9f007349e6100b281d44de3300ee77e126e35110eb6c0402bb818",
+ "raw_bank": "/home/linjiw/climb-feasibility-first/bank/dfrp_validation_recovery/raw_verified",
+ "repaired_bank": "/home/linjiw/climb-feasibility-first/bank/dfrp_validation_recovery/repaired",
+ "classification": "pre-evaluation identity binding; no policy results"
+}

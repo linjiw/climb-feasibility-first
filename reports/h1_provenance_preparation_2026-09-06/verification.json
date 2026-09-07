@@ -1,0 +1,17 @@
+{
+  "status": "h1_provenance_development_pass",
+  "tests_passed": 19,
+  "compilation": "pass",
+  "diff_whitespace_checks": "pass (original and isolated worktree)",
+  "production_manifest_ingestion_enabled": false,
+  "full_h1_training_enabled": false,
+  "artifacts": {
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/h1_evaluation_provenance.py": "ab6a51b58f940ff55075a0983c09e625fe936fdf5e8dcf7be95cacebf2a91bc0",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_h1_evaluation_provenance.py": "13ccd5ab892c552e9769267547f107a4533c0d5bb2a02849d17902f86638318c",
+    "/home/linjiw/climb-feasibility-first/reports/h1_provenance_preparation_2026-09-06/development_verification.json": "6cc5a08df84f3aef636200d12ba9f0ebcd07f92586cf37b633df2eecdd273790",
+    "/home/linjiw/climb-feasibility-first/reports/h1_provenance_preparation_2026-09-06/tests.log": "f722f4f126bdcfb1fa46da26d2475c80698070e08fc6c127bbbdfba5503cccb5",
+    "/home/linjiw/climb-feasibility-first/reports/h1_provenance_preparation_2026-09-06/confirmation_replay.json": "686f5136217a49825aaf41077a26413c0eecded9c6e0f48a36fad7dc891b63bc",
+    "/home/linjiw/climb-feasibility-first/reports/h1_provenance_preparation_2026-09-06/integrity.json": "8f00c2e4c797f7f854b43921fd089796f7ca6a92717f918c75d4a11ff7d9a03e",
+    "/home/linjiw/climb-feasibility-first/reports/h1_provenance_preparation_2026-09-06/gate_integrity.json": "75b31d8ac9ef5129c285ad3a799d42ae410d8a40eef116328307caccf2261ef7"
+  }
+}

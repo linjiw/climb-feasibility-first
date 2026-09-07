@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-09-05T21:57:13.754617-04:00",
+  "status": "four_arm_actor_loading_pass",
+  "classification": "measured CPU development-checkpoint lifecycle audit",
+  "arms": [
+    {
+      "arm": "U",
+      "seed": 41,
+      "iteration": 19,
+      "status": "strict_actor_load_pass",
+      "checkpoint": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/U/g1_tracking/2026-09-05_21-39-40_policy_U_smoke_s41/model_19.pt",
+        "sha256": "86d297ac0e90ba8f289449d6b7b96a9f17349af1f8da6029afa6ce74705f1e7c"
+      },
+      "actor_observation_dim": 160,
+      "critic_observation_dim": 286,
+      "action_dim": 29,
+      "actor_tensors_restored": 13,
+      "normalization_tensors_restored": 4,
+      "critic_unchanged": true,
+      "training_iteration_not_restored": true,
+      "common_step_counter_restored": true,
+      "simulator_constructed": false,
+      "policy_forward_calls": 0,
+      "policy_endpoints_opened": false
+    },
+    {
+      "arm": "A",
+      "seed": 41,
+      "iteration": 19,
+      "status": "strict_actor_load_pass",
+      "checkpoint": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/A/g1_tracking/2026-09-05_21-41-32_policy_A_smoke_s41/model_19.pt",
+        "sha256": "99f29cfd19797453df6d6708ddb382ef644a76987ded9cae96ac99e6cbed7f25"
+      },
+      "actor_observation_dim": 160,
+      "critic_observation_dim": 286,
+      "action_dim": 29,
+      "actor_tensors_restored": 13,
+      "normalization_tensors_restored": 4,
+      "critic_unchanged": true,
+      "training_iteration_not_restored": true,
+      "common_step_counter_restored": true,
+      "simulator_constructed": false,
+      "policy_forward_calls": 0,
+      "policy_endpoints_opened": false
+    },
+    {
+      "arm": "R",
+      "seed": 41,
+      "iteration": 19,
+      "status": "strict_actor_load_pass",
+      "checkpoint": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/R/g1_tracking/2026-09-05_21-43-22_policy_R_smoke_s41/model_19.pt",
+        "sha256": "b930b7af67bb62e80a11bfb53f9b524605ac37352329dd6fc0045ed3159fb271"
+      },
+      "actor_observation_dim": 160,
+      "critic_observation_dim": 286,
+      "action_dim": 29,
+      "actor_tensors_restored": 13,
+      "normalization_tensors_restored": 4,
+      "critic_unchanged": true,
+      "training_iteration_not_restored": true,
+      "common_step_counter_restored": true,
+      "simulator_constructed": false,
+      "policy_forward_calls": 0,
+      "policy_endpoints_opened": false
+    },
+    {
+      "arm": "D",
+      "seed": 41,
+      "iteration": 19,
+      "status": "strict_actor_load_pass",
+      "checkpoint": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/D/g1_tracking/2026-09-05_21-44-10_policy_D_smoke_s41/model_19.pt",
+        "sha256": "e83440f89f10519bd0a2688be8b743c593d304f5015d959524f89947e749c4d6"
+      },
+      "actor_observation_dim": 160,
+      "critic_observation_dim": 286,
+      "action_dim": 29,
+      "actor_tensors_restored": 13,
+      "normalization_tensors_restored": 4,
+      "critic_unchanged": true,
+      "training_iteration_not_restored": true,
+      "common_step_counter_restored": true,
+      "simulator_constructed": false,
+      "policy_forward_calls": 0,
+      "policy_endpoints_opened": false
+    }
+  ],
+  "runner_task_id": "Climb-Tracking-Flat-Unitree-G1",
+  "load_configuration": {
+    "actor": true
+  },
+  "strict": true,
+  "map_location": "cpu",
+  "environment": "fixed zero observation stub; actor/critic dimensions 160/286 and 29 actions",
+  "limitation": "No simulator, policy forward call, benchmark condition or rollout; runtime observation correctness and GPU behavior remain pending.",
+  "source_sha256": {
+    "tests/test_relative_checkpoint_loading.py": "096f00bd1bdb4dff9d9a6e1e6fcfb3814c4c481f567a8df3a66f37d7f8a10eb2",
+    "mjlab-1.6.0/src/mjlab/rl/runner.py": "61e9200bf304e3df71096cd69f28f4d5973157e61cdc549fc21b6f156326f77e",
+    "mjlab-1.6.0/.venv/lib/python3.13/site-packages/rsl_rl/algorithms/ppo.py": "c0137efa23a809891c277890ace19b407d7f5cae4b26cf99fff8085009b5deb2",
+    "tools/eval_paired_v2.py": "284886608d81ff957e69b32a5a9d1448917ee0a9867a7c23253831b53233e367"
+  },
+  "policy_endpoints_opened": false
+}

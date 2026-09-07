@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-09-05T22:59:12.051394-04:00",
+  "classification": "implementation checks; synthetic positive freeze only",
+  "checks": [
+    {
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/test_relative_freeze_transition.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "4 passed in 99.90s (0:01:39)\n",
+      "output_scope": "Final summary from completed execution session 69088."
+    },
+    {
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/test_relative_confirmation_integration.py::test_full_new_contract_preflight_and_analysis_without_gate_stubs",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "1 passed in 79.85s (0:01:19)\n",
+      "output_scope": "Final summary from completed execution session 28083."
+    },
+    {
+      "argv": [
+        "bash",
+        "-n",
+        "tools/freeze_relative_confirmation.sh"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "tests/test_relative_freeze_transition.py",
+        "tests/relative_confirmation_fixture.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "embedded_python_compiles": true,
+  "phase_g_sealed_files_unchanged": 41,
+  "source_sha256": {
+    "tools/freeze_relative_confirmation.sh": "2df03e74c9734917dd605793e1b8571688f2a09408d2f3d681f8490ba8fc6cdf",
+    "tests/test_relative_freeze_transition.py": "9a2d84f27b805186e30ce209304d347b928da802f3798e4fb8610ed90cf7c5ea",
+    "tests/relative_confirmation_fixture.py": "48605e3da7acfb977fecda5ab22b641f797144b1b2c50ed2fcf1bdba45a75ddb"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-09-07T00:24:23.483922-04:00",
+  "classification": "reference-only readiness census; not an admission or tracking result",
+  "panel_clips": 100,
+  "feasible_hard_reference_labels": 25,
+  "duration_s": {
+    "min": 4.98,
+    "median": 9.440000000000001,
+    "max": 72.06,
+    "sum": 1403.22
+  },
+  "clips_longer_than_three_seconds": 100,
+  "clips_with_located_named_frame_artifacts": 0,
+  "artifact_search_scope": "reports/**/*.json and reports/**/*.json.gz in screen/sidecar directories",
+  "full_continuous_admission_manifest_ready": false,
+  "existing_screener_runtime_ready": {
+    "hardcoded_bank_exists": false,
+    "default_bridge_python_exists": false,
+    "legacy_compiled_model_candidates": 0
+  },
+  "policy_outcomes_opened": false,
+  "inputs": {
+    "reports/g_segment/panel/panel.txt": "ec23b7b959dbb6bd05015f5821c99ac9d5a70dd966ef5448443d060b4a3127fe",
+    "reports/g_segment/panel/panel_manifest.json": "77819dc8967075c074b5c187cde36c3e0e64c6ef4ebd514fbef5feece8d2dd97",
+    "reports/g_segment/panel/strata.csv": "e2b57f3616b9695b076bedc085263707af94f517fbde349d73fe38805660e200",
+    "tools/n1_knee_id.py": "94bc3f65509ddf8b2948d01ed56a941c44b80401d3dacee4c8479bc930d0b2b3",
+    "tools/screen_segments.py": "993c448af3185f955bea7f7718c1849837b7d9957366bbf3d8fcd618f208915b"
+  },
+  "census_sha256": "826ec29bf6ed77f41750c565c3ea310142f095b5810575c1de60f1a70f4e7431",
+  "auditor_sha256": "71c8369ecc79aa4092d40be96faf2291e64b8d468b82e6d18a7def1ba3cbc9cb",
+  "next_step": "Recover and authenticate frame screens, or separately bind a reproducible screen model and runtime before deriving contiguous admitted intervals. Clip-level feasibility summaries are insufficient."
+}

@@ -1,0 +1,105 @@
+{
+  "classification": "development instrumentation only; no H1 benefit, robustness or transfer conclusion",
+  "phase_a": {
+    "status": "frozen_before_confirmation",
+    "all_prerequisites_reproduced": true,
+    "configuration_digests_verified": 12,
+    "source": {
+      "workspace": "climb-feasibility-first",
+      "artifact": "reports/relative_progress_2026-09-05/confirmation_freeze/freeze_result.json",
+      "sha256": "367019f2c7e02d32517f22fc521ccebaf747731f8bffcaa34e9427957c89b8b2"
+    }
+  },
+  "D_calibration": {
+    "results": {
+      "31": {
+        "status": "calibration_pass",
+        "mean_tv": 0.08495533886493581,
+        "minimum_post_warmup_effective_units": 625.0617376866245,
+        "final_saturation": 0.7271959459459459,
+        "completed_trials": 1113773
+      },
+      "32": {
+        "status": "calibration_pass",
+        "mean_tv": 0.0859387132989198,
+        "minimum_post_warmup_effective_units": 624.2887988698436,
+        "final_saturation": 0.7381756756756757,
+        "completed_trials": 1118388
+      }
+    },
+    "source": {
+      "workspace": "climb-feasibility-first",
+      "artifact": "reports/research_next_2026-09-06/calibration_verification.json",
+      "sha256": "b033d8465f04d1ee76bee09eefba1a844965aaf40e4a974e37fde7c2ca3097e6"
+    }
+  },
+  "H1_CPU_evaluation": {
+    "summary": {
+      "status": "gate_development_evaluator_pass",
+      "classification": "measured H1 CPU train-to-evaluation conformance; no gate benefit estimate",
+      "episode_rows": 8,
+      "confirmation_endpoints_opened": false,
+      "full_evaluation_enabled": false
+    },
+    "source": {
+      "workspace": "climb-icra-evidence-2026-09-06",
+      "artifact": "reports/gate_evaluator_environment_fixed_2026-09-06/verification.json",
+      "sha256": "dac1598cd0247c951469e9a38dd0b35eab4c4ca3c1b8c92ba937d04f740aa024"
+    }
+  },
+  "H1_cell_provenance": {
+    "status": "h1_provenance_development_pass",
+    "tests_passed": 19,
+    "production_manifest_ingestion_enabled": false,
+    "full_training_enabled": false,
+    "source": {
+      "workspace": "climb-feasibility-first",
+      "artifact": "reports/h1_provenance_preparation_2026-09-06/verification.json",
+      "sha256": "82ac37f69c7fc08999d53bb350b698a4bf691a2b70ee8ab7c177d8dd9aa7d369"
+    }
+  },
+  "natural_CPU_lifecycle": {
+    "summary": {
+      "status": "natural_entity_lifecycle_pass",
+      "classification": "measured development lifecycle; selected training clips, single development policy",
+      "episode_rows": 63,
+      "partial_reset_events": 29,
+      "entity_reset_events": 101,
+      "motion_resample_events": 37,
+      "natural_failure_rows": 21,
+      "early_success_rows": 10,
+      "previous_csvs_exact_match": true,
+      "original_unchanged_csv_exact_match": true,
+      "policy_immutability_pass": true,
+      "confirmation_endpoints_opened": false,
+      "full_evaluation_enabled": false
+    },
+    "source": {
+      "workspace": "climb-icra-evidence-2026-09-06",
+      "artifact": "reports/natural_entity_lifecycle_2026-09-06/verification.json",
+      "sha256": "c77d95bec8294ed502e5f308e3f0a7d11f9442d8dcfc9abfa2f604567b7c8b37"
+    }
+  },
+  "device_entrypoint_CPU": {
+    "summary": {
+      "status": "device_lifecycle_pass",
+      "classification": "development conformance only; no policy benefit or physical transfer claim",
+      "episode_rows": 21,
+      "policy_immutability_pass": true,
+      "full_evaluation_enabled": false
+    },
+    "source": {
+      "workspace": "climb-icra-evidence-2026-09-06",
+      "artifact": "reports/device_lifecycle_cpu_2026-09-06/verification.json",
+      "sha256": "cb8d4304dcf56c1488e3d29a4ed16da12ff919af9d3bab2029dbd8067a7e4cef"
+    }
+  },
+  "pending": [
+    "Confirmation held-out policy results",
+    "Frozen-policy independent stationarity study",
+    "Full H1 gate-on/off comparison",
+    "Nine-cell CUDA lifecycle validation",
+    "Full S1 physical-sensitivity study",
+    "Hardware/HIL motion tracking"
+  ]
+}

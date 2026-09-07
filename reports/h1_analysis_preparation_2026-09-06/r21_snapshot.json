@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-09-06T14:44:23.942463-04:00",
+  "classification": "interim R21 training integrity; full training gate and policy utility pending",
+  "checkpoint": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/R_s21/g1_tracking/relative_confirmation_R_s21/model_2100.pt",
+    "sha256": "9a06d379117863cc250ac991e17a510801f9bf8f91c8a280ef771beb1490bdb2"
+  },
+  "ledger": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/R_s21/g1_tracking/relative_confirmation_R_s21/model_2100_segment.json",
+    "sha256": "79805f8d014f40589d091f6e0bff2be2b915e23c70dcbcdbfef07a64ec921d5d"
+  },
+  "sampler": {
+    "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/R_s21/g1_tracking/relative_confirmation_R_s21/model_2100_segment_sampler.pt",
+    "sha256": "e1ebcab98f25d58aac1c987398f2c17ac9ce904e215a4f96f4886e2da8505bc2"
+  },
+  "iteration": 2100,
+  "completed_trials": 596494,
+  "failed_trials": 197689,
+  "invalid_or_censored_events": 0,
+  "finite_checkpoint_tensors": 76,
+  "sampler_probability_replay": true,
+  "point_allocation_tv": 0.0882566243200943,
+  "complete_training_gates": [
+    "A_s21_training_gate.json",
+    "U_s21_training_gate.json"
+  ],
+  "endpoint_access_exists": false,
+  "gpu": "7685 MiB, 66 %",
+  "supervisors": "    PID     ELAPSED STAT\n2008052    04:16:36 Ssl\n2011481    04:14:56 Ssl\n2011482    04:14:56 Ss\n2286869    01:57:51 Ss\n"
+}

@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-feasibility-first/tools/run_relative_progress_study.py",
+    "--seed",
+    "12",
+    "--out-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12"
+  ]
+}

@@ -1,0 +1,1291 @@
+{
+  "classification": "measured configuration and CPU model compilation; no policy rollout or hardware validation",
+  "contract_sha256": "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013",
+  "verified_configurations": {
+    "U:21": "d973ea1e389dcb350dcc5ce6f991073328d02f8a5604790dcaf555f06ae9e62e",
+    "U:22": "ccc7796763578a050eab61ae6ad87bfe860ec57ad1a77f9643ce0c60155e519f",
+    "U:23": "47dbb76a04229889993376557f66b91a0144e19ff548fb7f115090dccef86877",
+    "A:21": "4894e70837b07da195f8859d0a0fc24358760d675692a93392c2d9983af921ac",
+    "A:22": "3773de6e9ef8917ac6747c0809b2cad3be6e7a24a5db669f0e51f7f483d1173b",
+    "A:23": "5568c2194d6fd4545cbe88b9862da02f1ad6dd60a2eea32a4f9ef709e1e03112",
+    "R:21": "901603c4e9048e77797267ef124297b63b91c2bcdd7692462e5aae5034cd1251",
+    "R:22": "86eb727a35d44010df8670a6feb8aaf0a87c3797429b840a16a5b207ee55587d",
+    "R:23": "29b756a92feda0d46d032b6e55bdb068bc5f590bd7db0dbc181d975a315508bf",
+    "D:21": "8044edc90fac8a190f4c267a9220e180f99935ae8a4cc457fcca62e21d2078de",
+    "D:22": "7a01d80cdd0b7321aa6d9a7bea15bfc3e940aa2a650bc4867778b64ca0c8144b",
+    "D:23": "31cb3a934f5854185330ff91560f9cfad148425af19fb45b22a4147e5bb06bae"
+  },
+  "policy_endpoints_opened": false,
+  "cpu_compiled_actuators": [
+    {
+      "actuator": "left_shoulder_pitch_joint",
+      "joint": "left_shoulder_pitch_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -25.0,
+        25.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "left_shoulder_roll_joint",
+      "joint": "left_shoulder_roll_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -25.0,
+        25.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "left_shoulder_yaw_joint",
+      "joint": "left_shoulder_yaw_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -25.0,
+        25.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "left_elbow_joint",
+      "joint": "left_elbow_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -25.0,
+        25.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "left_wrist_roll_joint",
+      "joint": "left_wrist_roll_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -25.0,
+        25.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_shoulder_pitch_joint",
+      "joint": "right_shoulder_pitch_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -25.0,
+        25.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_shoulder_roll_joint",
+      "joint": "right_shoulder_roll_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -25.0,
+        25.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_shoulder_yaw_joint",
+      "joint": "right_shoulder_yaw_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -25.0,
+        25.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_elbow_joint",
+      "joint": "right_elbow_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -25.0,
+        25.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_wrist_roll_joint",
+      "joint": "right_wrist_roll_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -25.0,
+        25.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "left_hip_pitch_joint",
+      "joint": "left_hip_pitch_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -88.0,
+        88.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "left_hip_yaw_joint",
+      "joint": "left_hip_yaw_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -88.0,
+        88.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_hip_pitch_joint",
+      "joint": "right_hip_pitch_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -88.0,
+        88.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_hip_yaw_joint",
+      "joint": "right_hip_yaw_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -88.0,
+        88.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "waist_yaw_joint",
+      "joint": "waist_yaw_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -88.0,
+        88.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "left_hip_roll_joint",
+      "joint": "left_hip_roll_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -139.0,
+        139.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "left_knee_joint",
+      "joint": "left_knee_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -139.0,
+        139.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_hip_roll_joint",
+      "joint": "right_hip_roll_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -139.0,
+        139.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_knee_joint",
+      "joint": "right_knee_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -139.0,
+        139.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "left_wrist_pitch_joint",
+      "joint": "left_wrist_pitch_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -5.0,
+        5.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "left_wrist_yaw_joint",
+      "joint": "left_wrist_yaw_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -5.0,
+        5.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_wrist_pitch_joint",
+      "joint": "right_wrist_pitch_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -5.0,
+        5.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_wrist_yaw_joint",
+      "joint": "right_wrist_yaw_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -5.0,
+        5.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "waist_roll_joint",
+      "joint": "waist_roll_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -50.0,
+        50.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "waist_pitch_joint",
+      "joint": "waist_pitch_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -50.0,
+        50.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "left_ankle_pitch_joint",
+      "joint": "left_ankle_pitch_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -50.0,
+        50.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "left_ankle_roll_joint",
+      "joint": "left_ankle_roll_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -50.0,
+        50.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_ankle_pitch_joint",
+      "joint": "right_ankle_pitch_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -50.0,
+        50.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actuator": "right_ankle_roll_joint",
+      "joint": "right_ankle_roll_joint",
+      "force_limited": true,
+      "force_range_nm": [
+        -50.0,
+        50.0
+      ],
+      "gear": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "configured_actuators": [
+    {
+      "type": "mjlab.actuator.builtin_actuator.BuiltinPositionActuatorCfg",
+      "fields": {
+        "target_names_expr": [
+          ".*_elbow_joint",
+          ".*_shoulder_pitch_joint",
+          ".*_shoulder_roll_joint",
+          ".*_shoulder_yaw_joint",
+          ".*_wrist_roll_joint"
+        ],
+        "transmission_type": {
+          "enum": "mjlab.actuator.actuator.TransmissionType",
+          "value": "joint"
+        },
+        "armature": 0.003609725,
+        "frictionloss": null,
+        "viscous_damping": null,
+        "delay_min_lag": 0,
+        "delay_max_lag": 0,
+        "delay_hold_prob": 0.0,
+        "delay_update_period": 0,
+        "delay_per_env_phase": true,
+        "stiffness": 14.25062309787429,
+        "damping": 0.907222843292423,
+        "effort_limit": 25.0
+      }
+    },
+    {
+      "type": "mjlab.actuator.builtin_actuator.BuiltinPositionActuatorCfg",
+      "fields": {
+        "target_names_expr": [
+          ".*_hip_pitch_joint",
+          ".*_hip_yaw_joint",
+          "waist_yaw_joint"
+        ],
+        "transmission_type": {
+          "enum": "mjlab.actuator.actuator.TransmissionType",
+          "value": "joint"
+        },
+        "armature": 0.01017752004132231,
+        "frictionloss": null,
+        "viscous_damping": null,
+        "delay_min_lag": 0,
+        "delay_max_lag": 0,
+        "delay_hold_prob": 0.0,
+        "delay_update_period": 0,
+        "delay_per_env_phase": true,
+        "stiffness": 40.17923863450712,
+        "damping": 2.557889775413375,
+        "effort_limit": 88.0
+      }
+    },
+    {
+      "type": "mjlab.actuator.builtin_actuator.BuiltinPositionActuatorCfg",
+      "fields": {
+        "target_names_expr": [
+          ".*_hip_roll_joint",
+          ".*_knee_joint"
+        ],
+        "transmission_type": {
+          "enum": "mjlab.actuator.actuator.TransmissionType",
+          "value": "joint"
+        },
+        "armature": 0.025101924999999997,
+        "frictionloss": null,
+        "viscous_damping": null,
+        "delay_min_lag": 0,
+        "delay_max_lag": 0,
+        "delay_hold_prob": 0.0,
+        "delay_update_period": 0,
+        "delay_per_env_phase": true,
+        "stiffness": 99.09842777666111,
+        "damping": 6.308801853496639,
+        "effort_limit": 139.0
+      }
+    },
+    {
+      "type": "mjlab.actuator.builtin_actuator.BuiltinPositionActuatorCfg",
+      "fields": {
+        "target_names_expr": [
+          ".*_wrist_pitch_joint",
+          ".*_wrist_yaw_joint"
+        ],
+        "transmission_type": {
+          "enum": "mjlab.actuator.actuator.TransmissionType",
+          "value": "joint"
+        },
+        "armature": 0.00425,
+        "frictionloss": null,
+        "viscous_damping": null,
+        "delay_min_lag": 0,
+        "delay_max_lag": 0,
+        "delay_hold_prob": 0.0,
+        "delay_update_period": 0,
+        "delay_per_env_phase": true,
+        "stiffness": 16.77832748089279,
+        "damping": 1.06814150219,
+        "effort_limit": 5.0
+      }
+    },
+    {
+      "type": "mjlab.actuator.builtin_actuator.BuiltinPositionActuatorCfg",
+      "fields": {
+        "target_names_expr": [
+          "waist_pitch_joint",
+          "waist_roll_joint"
+        ],
+        "transmission_type": {
+          "enum": "mjlab.actuator.actuator.TransmissionType",
+          "value": "joint"
+        },
+        "armature": 0.00721945,
+        "frictionloss": null,
+        "viscous_damping": null,
+        "delay_min_lag": 0,
+        "delay_max_lag": 0,
+        "delay_hold_prob": 0.0,
+        "delay_update_period": 0,
+        "delay_per_env_phase": true,
+        "stiffness": 28.50124619574858,
+        "damping": 1.814445686584846,
+        "effort_limit": 50.0
+      }
+    },
+    {
+      "type": "mjlab.actuator.builtin_actuator.BuiltinPositionActuatorCfg",
+      "fields": {
+        "target_names_expr": [
+          ".*_ankle_pitch_joint",
+          ".*_ankle_roll_joint"
+        ],
+        "transmission_type": {
+          "enum": "mjlab.actuator.actuator.TransmissionType",
+          "value": "joint"
+        },
+        "armature": 0.00721945,
+        "frictionloss": null,
+        "viscous_damping": null,
+        "delay_min_lag": 0,
+        "delay_max_lag": 0,
+        "delay_hold_prob": 0.0,
+        "delay_update_period": 0,
+        "delay_per_env_phase": true,
+        "stiffness": 28.50124619574858,
+        "damping": 1.814445686584846,
+        "effort_limit": 50.0
+      }
+    }
+  ],
+  "command_delay_physics_steps": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "physics_timestep_s": 0.005,
+  "control_decimation": 4,
+  "control_timestep_s": 0.02,
+  "training_steps_per_iteration": 24,
+  "training_envs": 512,
+  "terrain": {
+    "type": "mjlab.terrains.terrain_entity.TerrainEntityCfg",
+    "fields": {
+      "init_state": {
+        "type": "mjlab.entity.entity.EntityCfg.InitialStateCfg",
+        "fields": {
+          "pos": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rot": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lin_vel": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ang_vel": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "joint_pos": {
+            ".*": 0.0
+          },
+          "joint_vel": {
+            ".*": 0.0
+          }
+        }
+      },
+      "spec_fn": {
+        "callable": "mjlab.entity.entity.EntityCfg.<lambda>.<locals>.<lambda>"
+      },
+      "articulation": null,
+      "sort_actuators": false,
+      "lights": [
+        {
+          "type": "mjlab.utils.spec_config.LightCfg",
+          "fields": {
+            "name": "sun",
+            "body": "world",
+            "mode": "fixed",
+            "target": null,
+            "type": "directional",
+            "castshadow": true,
+            "pos": [
+              0.0,
+              0.0,
+              1.5
+            ],
+            "dir": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "cutoff": 45.0,
+            "exponent": 10.0,
+            "diffuse": null,
+            "specular": null,
+            "ambient": null,
+            "active": true,
+            "attenuation": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      ],
+      "cameras": [],
+      "textures": [
+        {
+          "type": "mjlab.utils.spec_config.TextureCfg",
+          "fields": {
+            "name": "groundplane",
+            "type": "2d",
+            "builtin": "checker",
+            "rgb1": [
+              0.2,
+              0.3,
+              0.4
+            ],
+            "rgb2": [
+              0.1,
+              0.2,
+              0.3
+            ],
+            "width": 300,
+            "height": 300,
+            "mark": "edge",
+            "markrgb": [
+              0.8,
+              0.8,
+              0.8
+            ],
+            "random": 0.01,
+            "file": null,
+            "cubefiles": null,
+            "gridsize": null,
+            "gridlayout": null,
+            "nchannel": 3,
+            "hflip": false,
+            "vflip": false
+          }
+        }
+      ],
+      "materials": [
+        {
+          "type": "mjlab.utils.spec_config.MaterialCfg",
+          "fields": {
+            "name": "groundplane",
+            "rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "texuniform": true,
+            "texrepeat": [
+              4.0,
+              4.0
+            ],
+            "reflectance": 0.2,
+            "texture": "groundplane",
+            "geom_names_expr": [
+              "terrain$"
+            ]
+          }
+        }
+      ],
+      "meshes": [],
+      "geoms": [],
+      "collisions": [],
+      "terrain_type": "plane",
+      "terrain_generator": null,
+      "env_spacing": 2.0,
+      "max_init_terrain_level": null,
+      "num_envs": 1,
+      "debug_vis": false
+    }
+  },
+  "training_events": {
+    "base_com": {
+      "type": "mjlab.managers.event_manager.EventTermCfg",
+      "fields": {
+        "func": {
+          "callable": "mjlab.envs.mdp.dr.body.body_com_offset"
+        },
+        "params": {
+          "asset_cfg": {
+            "type": "mjlab.managers.scene_entity_config.SceneEntityCfg",
+            "fields": {
+              "name": "robot",
+              "joint_names": null,
+              "joint_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "body_names": [
+                "torso_link"
+              ],
+              "body_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "geom_names": null,
+              "geom_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "site_names": null,
+              "site_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "actuator_names": null,
+              "actuator_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "tendon_names": null,
+              "tendon_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "camera_names": null,
+              "camera_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "light_names": null,
+              "light_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "material_names": null,
+              "material_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "texture_names": null,
+              "texture_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "pair_names": null,
+              "pair_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "preserve_order": false
+            }
+          },
+          "operation": "add",
+          "ranges": {
+            "0": [
+              -0.025,
+              0.025
+            ],
+            "1": [
+              -0.05,
+              0.05
+            ],
+            "2": [
+              -0.05,
+              0.05
+            ]
+          }
+        },
+        "mode": "startup",
+        "interval_range_s": null,
+        "is_global_time": false,
+        "min_step_count_between_reset": 0
+      }
+    },
+    "encoder_bias": {
+      "type": "mjlab.managers.event_manager.EventTermCfg",
+      "fields": {
+        "func": {
+          "callable": "mjlab.envs.mdp.dr.joint.encoder_bias"
+        },
+        "params": {
+          "asset_cfg": {
+            "type": "mjlab.managers.scene_entity_config.SceneEntityCfg",
+            "fields": {
+              "name": "robot",
+              "joint_names": null,
+              "joint_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "body_names": null,
+              "body_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "geom_names": null,
+              "geom_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "site_names": null,
+              "site_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "actuator_names": null,
+              "actuator_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "tendon_names": null,
+              "tendon_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "camera_names": null,
+              "camera_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "light_names": null,
+              "light_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "material_names": null,
+              "material_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "texture_names": null,
+              "texture_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "pair_names": null,
+              "pair_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "preserve_order": false
+            }
+          },
+          "bias_range": [
+            -0.01,
+            0.01
+          ]
+        },
+        "mode": "startup",
+        "interval_range_s": null,
+        "is_global_time": false,
+        "min_step_count_between_reset": 0
+      }
+    },
+    "foot_friction": {
+      "type": "mjlab.managers.event_manager.EventTermCfg",
+      "fields": {
+        "func": {
+          "callable": "mjlab.envs.mdp.dr.geom.geom_friction"
+        },
+        "params": {
+          "asset_cfg": {
+            "type": "mjlab.managers.scene_entity_config.SceneEntityCfg",
+            "fields": {
+              "name": "robot",
+              "joint_names": null,
+              "joint_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "body_names": null,
+              "body_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "geom_names": "^(left|right)_foot[1-7]_collision$",
+              "geom_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "site_names": null,
+              "site_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "actuator_names": null,
+              "actuator_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "tendon_names": null,
+              "tendon_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "camera_names": null,
+              "camera_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "light_names": null,
+              "light_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "material_names": null,
+              "material_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "texture_names": null,
+              "texture_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "pair_names": null,
+              "pair_ids": {
+                "slice": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "preserve_order": false
+            }
+          },
+          "operation": "abs",
+          "ranges": [
+            0.3,
+            1.2
+          ],
+          "shared_random": true
+        },
+        "mode": "startup",
+        "interval_range_s": null,
+        "is_global_time": false,
+        "min_step_count_between_reset": 0
+      }
+    },
+    "push_robot": {
+      "type": "mjlab.managers.event_manager.EventTermCfg",
+      "fields": {
+        "func": {
+          "callable": "mjlab.envs.mdp.events.push_by_setting_velocity"
+        },
+        "params": {
+          "velocity_range": {
+            "pitch": [
+              -0.52,
+              0.52
+            ],
+            "roll": [
+              -0.52,
+              0.52
+            ],
+            "x": [
+              -0.5,
+              0.5
+            ],
+            "y": [
+              -0.5,
+              0.5
+            ],
+            "yaw": [
+              -0.78,
+              0.78
+            ],
+            "z": [
+              -0.2,
+              0.2
+            ]
+          }
+        },
+        "mode": "interval",
+        "interval_range_s": [
+          1.0,
+          3.0
+        ],
+        "is_global_time": false,
+        "min_step_count_between_reset": 0
+      }
+    }
+  },
+  "robot_collisions": [
+    {
+      "type": "mjlab.utils.spec_config.CollisionCfg",
+      "fields": {
+        "geom_names_expr": [
+          ".*_collision"
+        ],
+        "contype": 1,
+        "conaffinity": 1,
+        "condim": {
+          ".*_collision": 1,
+          "^(left|right)_foot[1-7]_collision$": 3
+        },
+        "priority": {
+          ".*": 0,
+          "^(left|right)_foot[1-7]_collision$": 1
+        },
+        "friction": {
+          "^(left|right)_foot[1-7]_collision$": [
+            0.6
+          ]
+        },
+        "solref": null,
+        "solimp": null,
+        "margin": null,
+        "gap": null,
+        "solmix": null,
+        "disable_other_geoms": true
+      }
+    }
+  ],
+  "evaluation_nominal": false,
+  "evaluation_source_observation": "eval_paired_v2.py removes push and observation corruption; nominal also removes startup COM/friction/encoder events",
+  "manufacturer_reference": {
+    "url": "https://www.unitree.com/g1/",
+    "checked_date": "2026-09-06",
+    "maximum_knee_torque_nm": {
+      "G1": 90,
+      "G1_EDU": 120
+    },
+    "scope": "public product specification, not calibration of a particular robot or complete motor curves"
+  },
+  "limitations": [
+    "CPU compilation verifies configured force clamps, not realized saturation during policy rollouts.",
+    "No identified robot serial/revision, measured latency, thermal derating or torque-speed validation.",
+    "Nominal linkage armatures are approximations documented in g1_constants.py.",
+    "Friction randomization and collision configuration are not measured contact fidelity.",
+    "Command delay is distinct from motor response lag and observation latency.",
+    "Do not modify the frozen model; sensitivity tests require a separate prospective protocol."
+  ],
+  "tool_sha256": "8d8abfe88cd1a82b82545f10d0bcd434d8ed4faa5ea26cfab5ed002925bc8997"
+}

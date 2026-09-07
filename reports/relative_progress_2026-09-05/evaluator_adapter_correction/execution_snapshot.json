@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-09-05T21:26:03.738637-04:00",
+  "classification": "operational snapshot only",
+  "workers": [
+    {
+      "stage": "policy_smokes_gate_retry",
+      "pid": 1091692,
+      "process": "1091692    02:56:06 Ssl",
+      "source_mismatches": [],
+      "terminal": null
+    },
+    {
+      "stage": "failure_calibration_gate_retry",
+      "pid": 1091693,
+      "process": "1091693    02:56:06 Ssl",
+      "source_mismatches": [],
+      "terminal": null
+    },
+    {
+      "stage": "confirmation_entrypoint_smokes_adapter",
+      "pid": 1541297,
+      "process": "1541297       00:20 Ss",
+      "source_mismatches": [],
+      "terminal": null
+    }
+  ],
+  "runtime_mismatches": [],
+  "gpu_memory_free_and_utilization": "8553 MiB, 47 %",
+  "confirmation_enabled": false,
+  "policy_endpoints_opened": false
+}

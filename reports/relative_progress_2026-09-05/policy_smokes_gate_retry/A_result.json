@@ -1,0 +1,32 @@
+{
+  "status": "smoke_pass",
+  "arm": "A",
+  "seed": 41,
+  "classification": "development lifecycle only; no policy-benefit result",
+  "snapshots": [
+    {
+      "iteration": 0,
+      "completed_trials": 8,
+      "tv": 0.0,
+      "top1_unit_mass": 0.016427655704958112
+    },
+    {
+      "iteration": 19,
+      "completed_trials": 183,
+      "tv": 0.0,
+      "top1_unit_mass": 0.016427655704958112
+    }
+  ],
+  "bindings": {
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/A/g1_tracking/2026-09-05_21-41-32_policy_A_smoke_s41/model_0_segment.json": {
+      "ledger": "be92b3bd0da675757d3fc315aa91e7053b3ebecc582aff79e98836d8c16341ab",
+      "sampler": "30551868b54641befde0519c5d4b5be872884f6ba783ba5f9eb47f27a68d23fe",
+      "checkpoint": "32305a94077f076e72d1ce31500ae475a46bc68d513534389d80f26bbdd3cc51"
+    },
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/A/g1_tracking/2026-09-05_21-41-32_policy_A_smoke_s41/model_19_segment.json": {
+      "ledger": "7dec2ce225203a37720aa3ba9a023172131a1a5cc64798e5c7d8e0615ae737ab",
+      "sampler": "c1beeee7edb8a315bce655c1f4a53250539d3ab4da3fbe4d447b4012f3ef773d",
+      "checkpoint": "99f29cfd19797453df6d6708ddb382ef644a76987ded9cae96ac99e6cbed7f25"
+    }
+  }
+}

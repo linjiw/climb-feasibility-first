@@ -1,0 +1,9 @@
+{
+  "contract": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/contract.json",
+  "campaign_contract_sha256": "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013",
+  "arm": "D",
+  "seed": 21,
+  "configuration_sha256": "8044edc90fac8a190f4c267a9220e180f99935ae8a4cc457fcca62e21d2078de",
+  "run_dir": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/D_s21/g1_tracking/relative_confirmation_D_s21",
+  "policy_endpoints_opened": false
+}

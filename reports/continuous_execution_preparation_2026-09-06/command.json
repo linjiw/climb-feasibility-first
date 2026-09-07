@@ -1,0 +1,10 @@
+[
+  "/home/linjiw/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/bin/python3.13",
+  "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_continuous_development.py",
+  "--design",
+  "/home/linjiw/climb-icra-evidence-2026-09-06/reports/continuous_execution_development_2026-09-06/design.json",
+  "--design-sha256",
+  "92c1db2b9463ddd4ec0bec365ec9c49efe0feb5c304836f040c76b1cde6e6959",
+  "--out-dir",
+  "/home/linjiw/climb-icra-evidence-2026-09-06/reports/continuous_execution_development_2026-09-06/run"
+]

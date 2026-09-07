@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-09-05T21:07:56.626720-04:00",
+  "pid": 1490062,
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-feasibility-first/tools/run_relative_entrypoint_smokes.py",
+    "--draft",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation/draft_contract.json",
+    "--draft-sha256",
+    "f2d9f2afdfc70a6954017459411e344fa14837c6725c854dff103565c40e6c19",
+    "--calibration-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry",
+    "--out-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "log": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_launcher.log",
+  "stage": "entrypoint_smokes_waiting_for_fixed_D",
+  "confirmation_enabled": false,
+  "policy_endpoints_opened": false
+}

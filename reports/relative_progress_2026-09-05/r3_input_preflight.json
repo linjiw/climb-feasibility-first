@@ -1,0 +1,117 @@
+{
+ "schema_version": "climb_research_preflight/1",
+ "root": "/home/linjiw/climb-feasibility-first",
+ "checks": [
+  {
+   "name": "Phase-G unit table",
+   "status": "ok",
+   "detail": "800 clips, 1184 admissible units, 368,951 legal starts; canonical hash passes"
+  },
+  {
+   "name": "Phase-G clip list",
+   "status": "ok",
+   "detail": "800-name list matches 87cbeb8ea677c5855948269d89e77dd748b410cdb4c4e9b0594b9c2f5160306e"
+  },
+  {
+   "name": "Phase-G payload contract",
+   "status": "ok",
+   "detail": "full scope binds 900 identities (800 training, 100 evaluation)"
+  },
+  {
+   "name": "AMASS\u2192G1 motion bank",
+   "status": "ok",
+   "detail": "full scope: 800 training + 100 evaluation = 900 unique motions present; all 900 SHA-256 identities pass"
+  },
+  {
+   "name": "evaluation panel",
+   "status": "ok",
+   "detail": "100 rows, 100 unique clips"
+  },
+  {
+   "name": "evaluation reference identities",
+   "status": "ok",
+   "detail": "100 hash-bound motions; panel match=True"
+  },
+  {
+   "name": "evaluation conditions",
+   "status": "ok",
+   "detail": "2800 conditions over 100 clips; panel match=True, full-window=True"
+  },
+  {
+   "name": "evaluation strata",
+   "status": "ok",
+   "detail": "counts={'feasible_hard_reference': 25, 'feasible_remainder': 75}, panel match=True"
+  },
+  {
+   "name": "feasibility dataset",
+   "status": "ok",
+   "detail": "10,705-row internal candidate hash 31849ec4b72ac19a6fbb233f935b8e910d2a48b1ec88917c03202b9f5ca91dfe; public distribution blocked"
+  },
+  {
+   "name": "Phase-G instruments",
+   "status": "ok",
+   "detail": "six decision/provenance branches match current analyzer; hash-complete manifest builder present"
+  },
+  {
+   "name": "contact-timing instrument",
+   "status": "ok",
+   "detail": "20-clip outcome-blind panel and three-branch validation scorer pass"
+  },
+  {
+   "name": "contact-timing validation",
+   "status": "warning",
+   "detail": "real blinded labels absent; metric remains exploratory and cannot affect the Phase-G verdict"
+  },
+  {
+   "name": "Unitree G1 model",
+   "status": "ok",
+   "detail": "MJCF hash febdcbeffbbf84051556ae41a5ac1b43fb479a5d76bdb3f54824dbc2721c20aa"
+  },
+  {
+   "name": "MJLab simulator",
+   "status": "ok",
+   "detail": "MuJoCo/MJWarp 3.11.0/3.11.0, Warp 1.14.0, Torch 2.9.0+cu128, CUDA=True, 4-env/5-step smoke=True, missing tasks=[]"
+  },
+  {
+   "name": "Newton 1.5 stack",
+   "status": "ok",
+   "detail": "newton=1.5.0, warp=1.16.0, mujoco=3.11.0, mujoco_warp=3.11.0, Torch=2.9.0+cu128, CUDA allocation=cuda:0"
+  },
+  {
+   "name": "shared GPU",
+   "status": "warning",
+   "detail": "NVIDIA GeForce RTX 5080: 7595/16303 MiB free, 8214 MiB used, 97% utilization; launch remains gap-gated"
+  },
+  {
+   "name": "Newton conformance record",
+   "status": "ok",
+   "detail": "measured two-unit conformance PASS"
+  },
+  {
+   "name": "Newton scope guard",
+   "status": "ok",
+   "detail": "Newton remains an analysis instrument; G3 must never run"
+  },
+  {
+   "name": "Phase-G seal",
+   "status": "ok",
+   "detail": "present at /home/linjiw/climb-feasibility-first/plan/G_SEGMENT_FREEZE.sha256"
+  },
+  {
+   "name": "G2 launch contract",
+   "status": "blocker",
+   "detail": "stage=confirmation; missing=['CLIMB_SEGMENT_RANK', 'CLIMB_SEGMENT_DIFFICULTY_POWER', 'CLIMB_SEGMENT_PROGRESS_WINDOW', 'CLIMB_SEGMENT_MAX_UNIT_PROBABILITY', 'CLIMB_SEGMENT_MAX_CLIP_PROBABILITY', 'CLIMB_SEGMENT_FAILURE_PENALTY', 'CLIMB_VERIFY_MOTION_HASHES', 'CLIMB_SEGMENT_SAVE_INTERVAL'], mismatched={}, seed=None, candidate_pair=None"
+  },
+  {
+   "name": "policy checkpoint",
+   "status": "warning",
+   "detail": "not configured; Phase-G G1/G2 train from scratch, but old conformance/probe reruns need their archived checkpoints"
+  }
+ ],
+ "summary": {
+  "ok": 17,
+  "warning": 3,
+  "blocker": 1
+ },
+ "launch_ready": false
+}

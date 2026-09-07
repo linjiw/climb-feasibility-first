@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-09-05T21:18:03.500432-04:00",
+  "status": "superseded_before_any_smoke_launch",
+  "pid": 1490062,
+  "reason": "Actual evaluator rejects two sealed provenance-only condition fields; adapter and refreshed runtime required.",
+  "policy_endpoints_opened": false,
+  "training_launched": false,
+  "sealed_files_modified": false,
+  "source_before": {
+    "tools/run_relative_confirmation.py": "d353f43b02c05f73177f607eeea19fb29a5e518e3c486d442b3d4eb74e8a4002",
+    "tools/relative_confirmation_setup.py": "195570559c87b68c5278dde878ff0d4ca8bc31ecda0e14ea8a02394fb4ded039",
+    "tools/prepare_relative_confirmation.py": "797dc35e7c207107773ef01b5bb063ec33144fa97d9fa4866de0be5782556f5c",
+    "tools/relative_policy_provenance.py": "ee86a6403ed7fae999caa8085afff1a54cb4c3f47d93e1bab5b5c6717e14218e"
+  }
+}

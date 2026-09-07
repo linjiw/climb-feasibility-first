@@ -1,0 +1,6 @@
+{
+  "status": "prelaunch_interpreter_error",
+  "reason": "Resolving the venv Python symlink selected the base interpreter without numpy; no simulation ran.",
+  "correction": "Use the pinned venv path without resolving the executable symlink.",
+  "design_changed": false
+}

@@ -1,0 +1,309 @@
+{
+  "timestamp": "2026-09-05T21:56:22.408543-04:00",
+  "status": "four_arm_smokes_reverified",
+  "classification": "measured development lifecycle; not policy benefit",
+  "arms": {
+    "U": {
+      "result": {
+        "status": "smoke_pass",
+        "arm": "U",
+        "seed": 41,
+        "classification": "development lifecycle only; no policy-benefit result",
+        "snapshots": [
+          {
+            "iteration": 0,
+            "completed_trials": 8,
+            "tv": 0.0,
+            "top1_unit_mass": 0.016427655704958112
+          },
+          {
+            "iteration": 19,
+            "completed_trials": 191,
+            "tv": 0.0,
+            "top1_unit_mass": 0.016427655704958112
+          }
+        ],
+        "bindings": {
+          "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/U/g1_tracking/2026-09-05_21-39-40_policy_U_smoke_s41/model_0_segment.json": {
+            "ledger": "01918758d1de4a3c8b70f8cce08ef2415e325c75a98d227b4c7daffe04a72da8",
+            "sampler": "0519db1ec4191d67d9b867668f422b9d57819da09feb1f51d4df60e82adb1086",
+            "checkpoint": "07c5c87dc4f7aaf803fcccfc85af88894b9ec5bff92d20eca93b90335283fab3"
+          },
+          "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/U/g1_tracking/2026-09-05_21-39-40_policy_U_smoke_s41/model_19_segment.json": {
+            "ledger": "bd22211951abf1d39af9ba6d5b4b8db9c080a9192ef5db07276e17764eb3dc18",
+            "sampler": "33fcd4ea2352bb5a4159e1b80d217c323f23881bb511fdddf415691f7c350487",
+            "checkpoint": "86d297ac0e90ba8f289449d6b7b96a9f17349af1f8da6029afa6ce74705f1e7c"
+          }
+        }
+      },
+      "decision": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/U_result.json",
+        "sha256": "7e51bf1e756b49adf3d5b89d88b20a63b17212dc2594ff1a1795c1b86854831a"
+      },
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 20,
+        "elapsed_gpu_hours": 0.005555555555555556,
+        "shared_gpu_baseline_mib": 972,
+        "shared_gpu_peak_total_mib": 7222,
+        "started": "2026-09-05T21:39:38-04:00",
+        "finished": "2026-09-05T21:39:58-04:00"
+      },
+      "launch": {
+        "argv": [
+          "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+          "/home/linjiw/climb-feasibility-first/tools/train_relative_policy.py",
+          "Climb-Tracking-Flat-Unitree-G1-Policy-U-Development",
+          "--env.scene.num-envs",
+          "8",
+          "--agent.max-iterations",
+          "20",
+          "--agent.logger",
+          "tensorboard",
+          "--agent.run-name",
+          "policy_U_smoke_s41",
+          "--log-root",
+          "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/U"
+        ],
+        "environment": {
+          "CLIMB_BANK": "/home/linjiw/climb-feasibility-first/bank/amass",
+          "CLIMB_CLIPS": "/home/linjiw/climb-feasibility-first/bank/tiers/tier_800.txt",
+          "CLIMB_SEGMENT_MANIFEST": "/home/linjiw/climb-feasibility-first/reports/g_segment/unit_table.json",
+          "CLIMB_POLICY_ARM": "U",
+          "CLIMB_POLICY_STAGE": "smoke",
+          "CLIMB_POLICY_SEED": "41"
+        }
+      }
+    },
+    "A": {
+      "result": {
+        "status": "smoke_pass",
+        "arm": "A",
+        "seed": 41,
+        "classification": "development lifecycle only; no policy-benefit result",
+        "snapshots": [
+          {
+            "iteration": 0,
+            "completed_trials": 8,
+            "tv": 0.0,
+            "top1_unit_mass": 0.016427655704958112
+          },
+          {
+            "iteration": 19,
+            "completed_trials": 183,
+            "tv": 0.0,
+            "top1_unit_mass": 0.016427655704958112
+          }
+        ],
+        "bindings": {
+          "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/A/g1_tracking/2026-09-05_21-41-32_policy_A_smoke_s41/model_0_segment.json": {
+            "ledger": "be92b3bd0da675757d3fc315aa91e7053b3ebecc582aff79e98836d8c16341ab",
+            "sampler": "30551868b54641befde0519c5d4b5be872884f6ba783ba5f9eb47f27a68d23fe",
+            "checkpoint": "32305a94077f076e72d1ce31500ae475a46bc68d513534389d80f26bbdd3cc51"
+          },
+          "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/A/g1_tracking/2026-09-05_21-41-32_policy_A_smoke_s41/model_19_segment.json": {
+            "ledger": "7dec2ce225203a37720aa3ba9a023172131a1a5cc64798e5c7d8e0615ae737ab",
+            "sampler": "c1beeee7edb8a315bce655c1f4a53250539d3ab4da3fbe4d447b4012f3ef773d",
+            "checkpoint": "99f29cfd19797453df6d6708ddb382ef644a76987ded9cae96ac99e6cbed7f25"
+          }
+        }
+      },
+      "decision": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/A_result.json",
+        "sha256": "96e33166abdd24674b7271c4f6a4b74d55d9b4e0365dec73f4f465bdcd5eff7c"
+      },
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 21,
+        "elapsed_gpu_hours": 0.005833333333333334,
+        "shared_gpu_baseline_mib": 972,
+        "shared_gpu_peak_total_mib": 7304,
+        "started": "2026-09-05T21:41:28-04:00",
+        "finished": "2026-09-05T21:41:49-04:00"
+      },
+      "launch": {
+        "argv": [
+          "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+          "/home/linjiw/climb-feasibility-first/tools/train_relative_policy.py",
+          "Climb-Tracking-Flat-Unitree-G1-Policy-A-Development",
+          "--env.scene.num-envs",
+          "8",
+          "--agent.max-iterations",
+          "20",
+          "--agent.logger",
+          "tensorboard",
+          "--agent.run-name",
+          "policy_A_smoke_s41",
+          "--log-root",
+          "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/A"
+        ],
+        "environment": {
+          "CLIMB_BANK": "/home/linjiw/climb-feasibility-first/bank/amass",
+          "CLIMB_CLIPS": "/home/linjiw/climb-feasibility-first/bank/tiers/tier_800.txt",
+          "CLIMB_SEGMENT_MANIFEST": "/home/linjiw/climb-feasibility-first/reports/g_segment/unit_table.json",
+          "CLIMB_POLICY_ARM": "A",
+          "CLIMB_POLICY_STAGE": "smoke",
+          "CLIMB_POLICY_SEED": "41"
+        }
+      }
+    },
+    "R": {
+      "result": {
+        "status": "smoke_pass",
+        "arm": "R",
+        "seed": 41,
+        "classification": "development lifecycle only; no policy-benefit result",
+        "snapshots": [
+          {
+            "iteration": 0,
+            "completed_trials": 8,
+            "tv": 0.0,
+            "top1_unit_mass": 0.016427655704958112
+          },
+          {
+            "iteration": 19,
+            "completed_trials": 177,
+            "tv": 0.0,
+            "top1_unit_mass": 0.016427655704958112
+          }
+        ],
+        "bindings": {
+          "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/R/g1_tracking/2026-09-05_21-43-22_policy_R_smoke_s41/model_0_segment.json": {
+            "ledger": "1854fb017a32919d0134aab3c13982b8fe907413ab65e98b695aca7b6cfd092d",
+            "sampler": "73f576d8a0b5e1d2cc561751d75fb3cb7ccee28f3b37d53e7c408371cf12747c",
+            "checkpoint": "66088f1cc2c966ea30c6e05bd74bcf37b3c8e515a69e049f7d660e89d3937513"
+          },
+          "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/R/g1_tracking/2026-09-05_21-43-22_policy_R_smoke_s41/model_19_segment.json": {
+            "ledger": "8c52cfffe63a1ad4a201461d4e04cad8974023b29a07c3041a2ea38861caf06c",
+            "sampler": "5ffaae594d09dd00b879241ba6957817d647cd60e6f08e57c259e06616b59e36",
+            "checkpoint": "b930b7af67bb62e80a11bfb53f9b524605ac37352329dd6fc0045ed3159fb271"
+          }
+        }
+      },
+      "decision": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/R_result.json",
+        "sha256": "ff4d574fb2d0313c7d76fa5a4704b4182120a9eea2875354b0b570077b0db4ec"
+      },
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 18,
+        "elapsed_gpu_hours": 0.005,
+        "shared_gpu_baseline_mib": 777,
+        "shared_gpu_peak_total_mib": 7222,
+        "started": "2026-09-05T21:43:19-04:00",
+        "finished": "2026-09-05T21:43:37-04:00"
+      },
+      "launch": {
+        "argv": [
+          "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+          "/home/linjiw/climb-feasibility-first/tools/train_relative_policy.py",
+          "Climb-Tracking-Flat-Unitree-G1-Policy-R-Development",
+          "--env.scene.num-envs",
+          "8",
+          "--agent.max-iterations",
+          "20",
+          "--agent.logger",
+          "tensorboard",
+          "--agent.run-name",
+          "policy_R_smoke_s41",
+          "--log-root",
+          "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/R"
+        ],
+        "environment": {
+          "CLIMB_BANK": "/home/linjiw/climb-feasibility-first/bank/amass",
+          "CLIMB_CLIPS": "/home/linjiw/climb-feasibility-first/bank/tiers/tier_800.txt",
+          "CLIMB_SEGMENT_MANIFEST": "/home/linjiw/climb-feasibility-first/reports/g_segment/unit_table.json",
+          "CLIMB_POLICY_ARM": "R",
+          "CLIMB_POLICY_STAGE": "smoke",
+          "CLIMB_POLICY_SEED": "41"
+        }
+      }
+    },
+    "D": {
+      "result": {
+        "status": "smoke_pass",
+        "arm": "D",
+        "seed": 41,
+        "classification": "development lifecycle only; no policy-benefit result",
+        "snapshots": [
+          {
+            "iteration": 0,
+            "completed_trials": 8,
+            "tv": 0.0,
+            "top1_unit_mass": 0.016427655704958112
+          },
+          {
+            "iteration": 19,
+            "completed_trials": 198,
+            "tv": 0.016032254914314308,
+            "top1_unit_mass": 0.0180029370038698
+          }
+        ],
+        "bindings": {
+          "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/D/g1_tracking/2026-09-05_21-44-10_policy_D_smoke_s41/model_0_segment.json": {
+            "ledger": "cfad352a1ee5c4ba718208fc2a4b4171e5ff9d1f7f7377a5f1a1907628fa43f9",
+            "sampler": "c64a8528f9042a6958460292cc3be159290942bd52ac3bcbe2d6e613515b720f",
+            "checkpoint": "c24222d7c85f684d8f6b2ef467bbead66e0f8c1dd8f8587c003f08e6e34b83ad"
+          },
+          "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/D/g1_tracking/2026-09-05_21-44-10_policy_D_smoke_s41/model_19_segment.json": {
+            "ledger": "5779184684d8d1f519961f493d8acc85826c27ce3c59be37075e4e7956aab124",
+            "sampler": "42c1cad6b33952496c98aa63c06fccf3fc7b1df44817edbf205ccd2d085b38b5",
+            "checkpoint": "e83440f89f10519bd0a2688be8b743c593d304f5015d959524f89947e749c4d6"
+          }
+        }
+      },
+      "decision": {
+        "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/D_result.json",
+        "sha256": "39abe48c3cd1fabfca8d8676f5b65b65a2d66a56c70dbf652db197368c83f812"
+      },
+      "execution_cost": {
+        "status": "completed",
+        "actual_launches": 1,
+        "returncode": 0,
+        "oom_reported": false,
+        "elapsed_s": 16,
+        "elapsed_gpu_hours": 0.0044444444444444444,
+        "shared_gpu_baseline_mib": 388,
+        "shared_gpu_peak_total_mib": 2723,
+        "started": "2026-09-05T21:44:07-04:00",
+        "finished": "2026-09-05T21:44:23-04:00"
+      },
+      "launch": {
+        "argv": [
+          "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+          "/home/linjiw/climb-feasibility-first/tools/train_relative_policy.py",
+          "Climb-Tracking-Flat-Unitree-G1-Policy-D-Development",
+          "--env.scene.num-envs",
+          "8",
+          "--agent.max-iterations",
+          "20",
+          "--agent.logger",
+          "tensorboard",
+          "--agent.run-name",
+          "policy_D_smoke_s41",
+          "--log-root",
+          "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/D"
+        ],
+        "environment": {
+          "CLIMB_BANK": "/home/linjiw/climb-feasibility-first/bank/amass",
+          "CLIMB_CLIPS": "/home/linjiw/climb-feasibility-first/bank/tiers/tier_800.txt",
+          "CLIMB_SEGMENT_MANIFEST": "/home/linjiw/climb-feasibility-first/reports/g_segment/unit_table.json",
+          "CLIMB_POLICY_ARM": "D",
+          "CLIMB_POLICY_STAGE": "smoke",
+          "CLIMB_POLICY_SEED": "41"
+        }
+      }
+    }
+  },
+  "total_elapsed_s": 75,
+  "policy_endpoints_opened": false
+}

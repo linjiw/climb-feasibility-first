@@ -1,0 +1,54 @@
+{
+  "schema_version": "relative_execution_cost/1",
+  "classification": "measured execution cost only",
+  "scope": "Two full relative-ALP probes and the intervening unlaunched R2 gate miss; excludes smokes, queue time, engineering, and historical studies",
+  "runs": {
+    "R1_long": {
+      "status": "completed",
+      "actual_launches": 1,
+      "returncode": 0,
+      "oom_reported": false,
+      "elapsed_s": 2680,
+      "elapsed_gpu_hours": 0.7444444444444445,
+      "shared_gpu_baseline_mib": 1382,
+      "shared_gpu_peak_total_mib": 12841,
+      "started": "2026-09-05T11:45:22-04:00",
+      "finished": "2026-09-05T12:30:02-04:00",
+      "log": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long.log",
+      "log_sha256": "9a8daa163581ed48ffe0f4f5285103b52db29f144c80e9622ab2e6b3342edaa9"
+    },
+    "R2_prelaunch_stop": {
+      "status": "not_launched",
+      "actual_launches": 0,
+      "elapsed_s": 0,
+      "elapsed_gpu_hours": 0.0,
+      "gate_polls": 1,
+      "finished": "2026-09-05T17:36:03-04:00",
+      "log": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_recovery/study_s12/smoke.log",
+      "log_sha256": "36dbe4afb3a4c0eb209a6af276bc977db473ae85246efaaf8563d6b51b16ea21"
+    },
+    "R2_long": {
+      "status": "completed",
+      "actual_launches": 1,
+      "returncode": 0,
+      "oom_reported": false,
+      "elapsed_s": 3373,
+      "elapsed_gpu_hours": 0.9369444444444445,
+      "shared_gpu_baseline_mib": 1018,
+      "shared_gpu_peak_total_mib": 11760,
+      "started": "2026-09-05T18:30:27-04:00",
+      "finished": "2026-09-05T19:26:40-04:00",
+      "log": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long.log",
+      "log_sha256": "1148b0746a6cfe689f20781bcb35778f67b41cb28a1f1f0f4a943a7e37a41267"
+    }
+  },
+  "total_elapsed_s": 6053,
+  "total_elapsed_gpu_hours": 1.6813888888888888,
+  "analyzer_sha256": "ea6a9ac60e71f269657f541f79fdb181b91f480675ca36fc353a9f5b4c04e8a1",
+  "policy_endpoints_opened": false,
+  "limitations": [
+    "Elapsed GPU-hours are wall time while a job runs, not GPU-active time or energy.",
+    "Memory values cover the shared device, not an isolated process.",
+    "Only the named logs are included; queue time, engineering, and omitted studies are excluded."
+  ]
+}

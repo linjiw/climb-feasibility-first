@@ -1,5 +1,391 @@
 # CLIMB / feasibility-first — status against Research Plan v5
 
+## 2026-09-07 Fable revision 4 adopted: H1 and manuscript only
+
+The user-directed submission priority supersedes the earlier C1-first roadmap.
+Pause C1, S1, signal/noise studies, practice branches, sampler changes and hardware
+until September 16. Keep docs/ and historical drafts unchanged. The current paper
+claims RPM measurement, screening and exact support with the completed inconclusive
+allocation result. H1 is its sole prospective additional experiment.
+
+Choose a fixed five-pair H1 design before outcomes; no conditional sixth seed,
+no expansion of the completed confirmation. Rewrite the ICRA manuscript now around
+measured results, and apply H1's launch/training calendar cutoffs. Implementation,
+interpretation corrections and worktree identities:
+`plan/FABLE_SUBMISSION_DECISION_2026-09-07.md`.
+
+## 2026-09-07 continuous failure retirement passes; held-out support audit
+
+A separately bound CPU development run on the same two full training references
+uses undertrained R41 checkpoint 19. All four attempts fail naturally at steps
+49/64/40/37 (0.98/1.28/0.80/0.74 seconds); scoring retires each at first failure.
+Independent trace replay passes for this run and the earlier four-success run,
+with identical initial physical states and startup randomization. Five resets
+and five reference writes affect retired worlds only; no active attempt restarts.
+Fourteen new integrity tests pass. This is development coverage, not a policy
+benefit or a causal training-budget comparison.
+
+All 100 held-out reference payloads match frozen hashes, and all are longer than
+three seconds. No corresponding named frame-screen/sidecar records were found
+in the scoped report-tree search. Full continuous admission therefore remains
+unverified: clip-level feasibility does not certify an entire sequence. The
+legacy screen's model/runtime paths are absent and need authenticated recovery
+or a separately declared reproducible replacement before C1 selection.
+
+Result, exact commands, scope and next steps:
+`plan/CONTINUOUS_FAILURE_AND_REFERENCE_READINESS_2026-09-07.md`.
+The original confirmation remains complete and inconclusive. C1's full U/D/R
+comparison, H1 benefit and hardware transfer remain pending.
+
+## 2026-09-06 complete confirmation: inconclusive; continuous development passes
+
+All **12 training runs and 48 held-out cells** are complete. Exact full JSON
+replay passes, including 492 saved training states. Final feasible-hard R−U
+is **−0.0150684593**, two-sided seed t 95% CI **[−0.0943584262, +0.0642215077]**.
+All-panel R−U is −0.0093155064, CI [−0.1140463277, +0.0954153149]; the
+non-regression guard does not pass. Registered disposition: **inconclusive**.
+Exploratory hard AULC R−U is negative in all seeds (mean −0.0289846414).
+Neither a policy-benefit claim nor an efficiency-accelerator claim is supported.
+Do not interpret the wide primary interval as proof of harm or a ruled-out benefit.
+
+The original efficiency worker's tuple-versus-JSON-list comparison failed; an
+isolated verifier reproduces every serialized number exactly. Failed records
+and frozen sources are preserved. The frozen-policy development pilot completed,
+without establishing stationarity or a noise floor.
+
+A new CPU continuous-execution adapter completes four attempts on two fully
+admitted training references lasting 8.58/6.12 seconds, using development R11/2000.
+No active reset/reference rewrite occurs. This is development continuity evidence,
+not a U/D/R comparison. Thirteen support/continuity tests pass. CUDA lifecycle
+validation stopped on an optional camera/raycast-graph assertion; its separately
+bound correction passes seven tests. The nine-cell GPU reentry subsequently
+completed all cells, but its aggregate
+original/unchanged exact CSV parity check failed. Individual lifecycle replay
+is recorded separately; no automatic cell retries or full study is enabled.
+
+Result, figure, exports and provenance:
+`reports/relative_confirmation_results_2026-09-06/README.md`.
+Adopted research question, continuous/H1 priority and September submission milestones:
+`plan/USEFUL_PRACTICE_SUBMISSION_2026-09-06.md`.
+
+The completed result and revised research story are live on GitHub Pages:
+site commit `140d225`, successful build and eight exact public file matches.
+Receipt: `reports/confirmation_pages_2026-09-06/deployment_verification.json`.
+
+## 2026-09-06 ten training runs verified; public research story refreshed
+
+At the 22:17 EDT evidence snapshot, confirmation is 10/12 trained and 0/48
+evaluated. R23 and D23 join all completed seed-21/22 arms; all ten independently
+replay across 410 saved states. U23 is running; A23 is queued. Tracking benefit
+remains pending. The scheduler and three follow-on supervisors remain active.
+
+The refactored project site connects exact support, repair's exploratory non-gain,
+the earlier E4 gate failure, relative-progress allocation and the studies needed
+for policy utility, mechanism attribution and physical sensitivity. It includes a
+working abstract, per-seed allocation figures/data, conditional research decisions
+and explicitly dated historical drafts. Full H1 and S1 outcome studies remain
+pending. Publication evidence: `plan/PAGES_RESEARCH_STORY_2026-09-06.md`.
+Published site commit `99cb95a` passed its Pages build and exact HTTP byte checks
+for fourteen pages/assets. Publication used a separate checkout; the local research
+branch and unfinished scientific work are preserved.
+
+## 2026-09-06 eight confirmation runs complete; H1 cell provenance tested
+
+At 20:26 EDT, all U/A/R/D runs for seeds 21 and 22 are complete and independently
+replay across 328 saved checkpoint states. R23 is running, with checkpoint 1700
+saved. R mean allocation TV is 0.08348495 (seed 21) and 0.08249200 (seed 22).
+No held-out endpoint has opened; policy utility remains pending.
+
+The isolated H1 cell provenance checker passes both existing CPU development
+cells and 19 integrity tests. It rejects broken training links, incomplete runtime
+metadata and missing/unpaired evaluation grids. Production H1 manifest ingestion,
+full scheduler and freeze remain pending; full H1 training is disabled.
+
+Original seals, 376 original runtime files, 386 gate source files and all queued
+follow-on bindings match. All four supervisors remain alive. Evidence and next
+execution gates: `plan/H1_PROVENANCE_PREPARATION_2026-09-06.md`.
+
+## 2026-09-06 R21 training active; H1 statistical/order kernel tested
+
+R seed 21 is now training on GPU. At 14:44 EDT, checkpoint 2100 passes its
+content hash, all 76 checkpoint tensors are finite, and saved sampler probabilities
+replay exactly. Cumulative completed/failed trials are 596,494/197,689 with zero
+invalid/censored events. Point allocation TV is 0.08825662. These are interim
+training measurements; the full R21 gate and policy benefit remain pending.
+U21/A21 are complete; no held-out endpoint is open.
+
+The isolated H1 development kernel now implements the proposed paired seed-level
+decision and a six-training-before-24-outcome-read ordering helper. Sixteen tests
+pass, including separation of improvement from margin-based preservation,
+all-panel guard failure, bootstrap non-rescue and zero outcome reads when the
+last training check fails. The CLI consumes synthetic fixtures only. This is
+not the production scheduler or full-study authentication/freeze.
+
+Both original seals and all 376 runtime hashes match. Full evidence and remaining
+work: `plan/H1_ANALYSIS_PREPARATION_2026-09-06.md`.
+
+## 2026-09-06 H1 training-to-evaluation development path verified
+
+Both existing full-entrypoint CPU training smokes (seed 81, 8 environments,
+20 PPO iterations) independently replay under the unchanged gate draft. Gate-on
+has 183 completed trials and zero rejected-support trials; gate-off has 173 and
+25 respectively. Initial actor hashes match. This is distinct from the earlier
+seed-71 runtime smoke.
+
+Both saved policies now pass paired CPU development evaluation: eight episode
+rows on two training clips, matching initial physical states and common references,
+exact checkpoint-to-loaded-policy equality, unchanged policy/normalization tensors
+and valid nonzero clip scores. A missing pinned-environment link caused the first
+metadata write to fail; that incomplete result is preserved. A fresh rerun after
+restoring the link passes without changing sources or scientific settings.
+Nine integrity tests pass; 376 original and 386 gate-runtime source hashes match.
+
+At 13:21 EDT confirmation remains **2/12 trained, 0/48 evaluated**, and GPU
+validation has not started. All four supervisors remain alive. The H1 full study
+is disabled pending original confirmation, complete seed audit, GPU entrypoint
+smokes, full paired analysis/scheduling and its own freeze. Details:
+`plan/H1_EVALUATOR_DEVELOPMENT_2026-09-06.md`.
+
+## 2026-09-06 device entrypoint validated; GPU conformance queue active
+
+A general device entrypoint now records actual Warp CUDA graph launches alongside
+the established policy, physical, environment-reset and entity-reset telemetry.
+Its CPU smoke (original, unchanged, 20 ms delay) passes on 21 episode rows and
+reproduces previous CSVs exactly. Eleven tests pass, including synthetic graph
+receipt rejection and fail-closed queue prerequisites. Both seals and all 376
+original runtime hashes remain unchanged.
+
+The fixed nine-cell GPU development design is now bound and its queue is active
+(PID 2286869). It waits for successful completion of both the exact 60-job
+confirmation schedule and the already queued frozen-policy pilot, then applies
+the existing 14,000 MiB / at-most-60% GPU gate. No automatic retries, no full
+physical study and no held-out input in this development queue.
+
+At 12:47 EDT, GPU validation is **0/9 started**; confirmation remains **2/12
+training jobs complete, 0/48 evaluated**. All four supervisors are alive.
+Actual CUDA conformance is pending. Design, checks and operational details:
+`plan/GPU_DEVICE_VALIDATION_QUEUE_2026-09-06.md`.
+
+## 2026-09-06 natural failures and early successful retirement verified on CPU
+
+The fixed training-only development batch now covers naturally failing policies,
+successful retirement before the vector horizon, and early vector-loop completion.
+Across original plus eight physical conditions, the audited replay contains 63
+episode rows, 21 natural failure rows, 10 early successful rows, 29 environment
+resets and 101 entity-reset calls (37 command-driven resamples). These are correlated
+development cases, not independent policy-benefit or robustness replications.
+
+The first recording omitted robot resets triggered by motion resampling after
+clip wraparound. That incomplete audit is preserved. An expanded entity recorder
+now accounts for both reset paths; all nine output CSVs remain byte-identical to
+the previous runs. Original/unchanged parity, native score accounting, reset
+isolation, realized command delays, physical checks and policy immutability pass.
+Eleven regression tests pass; both seals and 376 original runtime hashes match.
+
+At 12:37 EDT, confirmation remains **2/12 complete, 0/48 evaluated**. The scheduler
+and follow-on workers are alive; R21 waits for GPU capacity. GPU validation and a
+separately bound general physical-evaluation adapter/freeze are the next gates.
+Full result: `plan/NATURAL_POLICY_LIFECYCLE_2026-09-06.md`.
+
+## 2026-09-06 injected reset fixture exposes and resolves delay-clock defect
+
+The next CPU lifecycle fixture found that partial reset calls the global actuator
+write path, appending a non-physics command frame and advancing delay counters in
+unselected worlds. All three delayed conditions fail the preserved pre-fix audit;
+the other six conditions pass. This is a measured software defect under explicit
+injected termination signals, not naturally occurring policy failure evidence.
+
+An isolated, source-bound correction writes reset-world controls without advancing
+delayed history. All nine corrected conditions pass: 36 fixture rows, 27 partial
+resets, failure/retirement score accounting, failure at the final horizon and
+per-world realized delay replay. Policy tensors remain unchanged. The unaffected
+world's full CSV row matches the no-injection reference before and after the fix;
+no tracking gain is attributed to it. Thirteen regression tests pass. Both seals
+and all 376 original runtime files remain unchanged.
+
+At 12:22 EDT confirmation is still **2/12 complete, 0/48 evaluated**; the scheduler
+and follow-on workers are alive. R21 waits for shared GPU capacity. Natural policy
+failures, successful early retirement and GPU conformance remain pending before
+full physical-sensitivity evaluation. Details and preserved failure artifacts:
+`plan/PHYSICS_RESET_LIFECYCLE_2026-09-06.md`.
+
+## 2026-09-06 two complete confirmation arms; inference immutability verified
+
+At 12:10 EDT, **2/12 training jobs are complete**: U21 and A21 each finished
+4,000 iterations. Independent replay of all 41 saved states per arm reproduces
+both original training gates exactly, with zero invalid/censored events. U mean
+allocation TV is 0; A is 0.02975917. A's weak allocation change is allowed by its
+frozen comparator rule. These are training/manipulation measurements, not policy
+benefit. The scheduler is alive; R21 is next, waiting for the unchanged GPU gate
+(14,000 MiB free and utilization at most 60%). Other jobs currently occupy GPU
+memory. **0/48 held-out cells** have run; all twelve training gates must pass first.
+
+The next CPU development check also completed: the original evaluator plus all
+eight physical-sensitivity conditions retain all 9 actor parameter tensors and
+4 normalization buffers exactly across 450 vector inference calls. Every CSV
+matches its previous development run byte for byte. This replays the same 36
+short training-clip rows; it adds integrity evidence, not independent efficacy
+replications. Nine targeted tests pass. Failure/reset coverage, GPU conformance
+and a separate physical-sensitivity freeze remain pending. The frozen-policy
+noise pilot and efficiency postprocessor remain queued behind confirmation.
+
+Current evidence and exact commands:
+`plan/CONFIRMATION_PROGRESS_AND_IMMUTABILITY_2026-09-06.md`.
+Earlier snapshots below are historical.
+
+## 2026-09-06 GPU campaign actually running; development evaluator parity passes
+
+The overnight queue stopped before its first job because the GPU wait expired;
+its empty manifest and stop records are preserved. Following the user's explicit
+GPU execution request, the unchanged frozen campaign was relaunched into
+`confirmation_freeze/campaign_gpu_reentry_2026-09-06/`. All 60 jobs reproduce
+exactly after replacing output paths. Only the operational wait allowance changed
+to 24 hours; scientific settings, resource gate and one-attempt rule are fixed.
+
+**U seed 21 is training on GPU.** At 10:46:32 EDT checkpoint 2000 was hash-verified:
+575,886 completed trials, 201,403 failures, zero invalid or censored events,
+and all 76 saved tensors finite. This is interim telemetry; the full training gate and policy
+benefit remain pending. No confirmation endpoint has been opened. The existing
+pilot and efficiency continuations now wait on this campaign's eventual terminal.
+
+Independent CPU work completed the original evaluator plus all eight physical
+adapter conditions using R11/2000 and two training clips: 36 short episode rows,
+exact original/unchanged CSV parity, identical startup/initial observations and
+actions, and verified realized delay/force/friction telemetry. These are measured
+development lifecycle checks. Knee-only limits were not reached on these clips;
+GPU parity, policy failure/reset coverage and explicit parameter immutability
+receipts remain required before full S1 evaluation.
+
+Fifteen tests pass; all 376 original runtime hashes and both checked seals remain
+unchanged. Full result and next work:
+`plan/GPU_REENTRY_AND_EVALUATOR_PROGRESS_2026-09-06.md`. Live operational records:
+`reports/gpu_reentry_2026-09-06/`. Earlier waiting-state entries below are historical.
+Latest checkpoint evidence: `reports/gpu_reentry_2026-09-06/execution_snapshot_2000.json`.
+
+## 2026-09-06 physical-sensitivity intervention operators verified on CPU
+
+All eight physical-sensitivity conditions now pass a pinned-G1 CPU actuator
+fixture: unchanged; 5/10/20 ms command delays; knee-only limits 120/90 N·m; foot
+friction 0.3/1.2. Named knee edits preserve hip-roll limits and actuator ordering.
+Both signed force clamps, exact per-physics-step delays, targeted friction and
+partial-reset buffer behavior are verified. Shared fixture initial states and the
+repeated baseline match exactly. These are **measured instrumentation checks**;
+no trained policy or held-out reference was evaluated.
+
+Independent saved-trace validation and 14 tests pass. The measured figure and
+non-executable S1 preparation draft are in the isolated ICRA worktree. All 376
+original runtime files and both checked seals remain unchanged. Confirmation is
+still waiting for shared-GPU capacity at the final snapshot; both follow-on queues
+remain alive. No additional GPU job was launched.
+
+Next: integrate the operators into a separate paired evaluator and establish
+zero-intervention agreement and actual startup pairing on development data,
+then complete policy-rollout/GPU lifecycle checks before a separate freeze.
+Full result and scope: `plan/PHYSICS_SENSITIVITY_INSTRUMENTATION_2026-09-06.md`.
+Exact commands and verification: `reports/physics_sensitivity_stage_2026-09-06/`.
+
+## 2026-09-06 ICRA roadmap, efficiency preparation and physical-assumption audit
+
+Phase A is complete and the original frozen U/A/R/D scheduler remains active,
+waiting for shared-GPU capacity before its first arm at this audit. The primary
+decision retains its **two-sided** 95% paired t interval and all-panel guard;
+bootstrap and learning curves remain supplementary. No endpoint was opened.
+
+The isolated `/home/linjiw/climb-icra-evidence-2026-09-06` worktree now contains
+an efficiency postprocessor and CPU physical-assumption audit. All 12 frozen
+configuration hashes reproduce; compilation confirms both knee clamps at
+±139 N·m, versus public Unitree maximum-knee specifications of 90 N·m (G1) and
+120 N·m (G1 EDU). The configuration uses zero command delay, plane terrain,
+and non-nominal startup randomization in evaluation. These are **measured
+configuration facts**, not physical calibration or policy robustness evidence.
+
+Fourteen focused tests pass; all 376 bound runtime files and both checked seals
+remain unchanged. A single CPU postprocessor waits for the original terminal and
+will reproduce the complete original analysis before deriving exploratory
+efficiency summaries. It cannot launch or retry scientific jobs. The original
+confirmation and frozen-policy pilot queues retain priority. A separate eight-
+condition physical-sensitivity study is drafted but not executable or launched.
+
+Full reconciliation with the user's guidance, evidence, next experiment and
+claim limits: `plan/ICRA_EVIDENCE_ROADMAP_2026-09-06.md`. Commands, measured audit,
+tests and live postprocessor record: `reports/icra_evidence_2026-09-06/`.
+
+## 2026-09-06 matched gate runtime and CPU PPO lifecycle pass
+
+The H1 gate-on/off runtime now uses the shared audited candidate-start partition
+and identical D/controller/PPO settings. Gate-on reproduces original feasible
+support and initial probabilities exactly. Both CPU smokes pass from identical
+initial actor tensors: seed 71, eight environments, 20 PPO iterations per arm,
+3,840 transitions each. Gate-on completed 179 trials with zero rejected-support
+trials; gate-off completed 196, including 32 from restored support. Both have zero
+invalid/censored events and exact saved sampler replay. These are **measured
+lifecycle checks**, not policy-benefit evidence; no held-out outcome was opened.
+
+The gate-off prior floor guarantees rejected sampling probability at least
+0.0923025281 under the fixed support/caps, providing an admission-specific
+manipulation check. Eleven targeted tests pass. Full H1 training remains disabled;
+its prospective draft and implementation requirements are recorded in
+`plan/MATCHED_GATE_RUNTIME_2026-09-06.md`.
+
+New code and smoke artifacts are isolated in
+`/home/linjiw/climb-gate-ablation-2026-09-06`. Original confirmation sources and
+the source-bound frozen-policy pilot are unchanged. Both queues remain active;
+confirmation is still waiting for shared-GPU capacity before its first arm.
+
+## 2026-09-06 confirmation frozen; frozen-policy CPU smoke passes
+
+All four seed-51 entrypoint smokes passed. The existing freezer produced contract
+`8f2192a9…` and the unchanged 60-job confirmation scheduler is active. At the
+01:21 EDT snapshot it was waiting for shared-GPU capacity before its first
+training arm; confirmation policy outcomes remain **pending**.
+
+The separate worktree now has an actual frozen-policy instrumentation collector
+and analyzer. R11/iteration 2000 passed a CPU simulator smoke: 8 environments,
+12 estimator ticks, 4,800 transitions, 98 completed trials, zero invalid/censored
+events, exact active/shadow estimator replay, and unchanged actor/normalizers.
+This is **measured instrumentation**, not a stationary-policy noise result.
+A bound GPU smoke followed by the fixed 512-environment/100-tick pilot is queued
+strictly behind completed confirmation, with one attempt per job.
+
+The H1 candidate audit found that existing `source_units` are already feasible
+frame runs. A separate full legal-start partition preserves all 1,184 feasible
+units and adds 465 rejected-start intervals. It admits 368,951 of 417,072 legal
+starts; the 11.5378% excluded share is an uncapped prior count, not policy benefit.
+The candidate artifact is not training enabled. Seventeen scoped tests pass.
+Design, exact commands/artifacts, limitations and next decisions:
+`plan/FROZEN_PROGRESS_PILOT_AND_GATE_AUDIT_2026-09-06.md`.
+
+## 2026-09-06 useful-practice plan; fixed confirmation continuation queued
+
+Both fixed D calibrations now pass and reproduce in full. Seed 32 completed
+4,000 iterations, mean post-warm-up TV 0.08593871, minimum post-warm-up effective
+units 624.28880, final saturation 0.73817568, 1,118,388 completed trials and zero
+invalid/censored events. This remains development allocation evidence.
+
+At 00:44 EDT, the existing seed-51 entrypoint-smoke worker was waiting for the
+shared GPU; no smoke trainer had launched. The actual freeze check identifies
+only these four results as pending. An external supervisor is queued to run the
+existing freezer and exact confirmation scheduler after their complete pass,
+with failure stops and no scientific-job retries. Original campaign sources,
+profiles, seals, seeds, budgets and endpoints remain unchanged. Confirmation
+policy benefit is still **pending**; a queue is not a completed comparison.
+Live handoff: `reports/research_next_2026-09-06/handoff_launch.json` and `handoff/`.
+
+The separate worktree `/home/linjiw/climb-signal-quality-2026-09-06` contains new
+diagnostics. Its independently reproduced Gaussian illustration gives analytical
+TV 0.06048797 without learning; it is **synthetic**, not a diagnosis of R11/R12.
+The actual estimator uses 50-step ticks, decay 0.99 and a 10-tick window, making
+settling cost and checkpoint cadence explicit follow-on design constraints.
+Twelve development checkpoints and their sampler states are hash-inventoried;
+optimizer and actor/critic normalizers are present, with restoration untested.
+
+Next scientific priorities and exact evidence limits:
+`plan/USEFUL_PRACTICE_NEXT_STEPS_2026-09-06.md`. Complete the unchanged U/A/R/D
+policy comparison; prepare a small frozen-policy instrumentation pilot separately;
+prioritize matched D gate-on/off as the next full comparison; use local practice
+branches and reliability-aware method changes conditionally. No new diagnostic
+GPU study or H1 arm has launched.
+
 ## 2026-09-05 final freeze command implemented; actual prerequisites pending
 
 `tools/freeze_relative_confirmation.sh` now verifies and resolves the draft's

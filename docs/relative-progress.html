@@ -3,32 +3,47 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="CLIMB research update: two replicated relative-progress allocation runs, a calibrated failure baseline, and the fixed four-arm experiment for held-out humanoid tracking.">
-<title>Relative progress: evidence and next experiment · CLIMB</title>
-<link rel="stylesheet" href="assets/research-update.css">
+<meta name="description" content="CLIMB research update: ten verified confirmation training runs, per-seed allocation histories, and the frozen held-out humanoid tracking experiment.">
+<title>Relative progress: confirmation evidence and protocol · CLIMB</title>
+<link rel="stylesheet" href="assets/research-story.css">
 </head>
 <body>
+<div class="archive-banner" role="note"><strong>New complete result · 6 September, 23:47 EDT:</strong> all 12 training runs and 48 held-out cells finished. The registered policy result is inconclusive; the all-panel guard does not pass. <a href="index.html#results">Read paired policy results and the revised research plan</a>. The allocation progress snapshots below retain their earlier timestamps.</div>
 <a class="skip" href="#main">Skip to research update</a>
 <header class="hero"><div class="wrap">
-  <nav aria-label="Project navigation"><a href="index.html">← CLIMB project</a><a href="#evidence">Results</a><a href="#method">Method</a><a href="#experiment">Next experiment</a><a href="#artifacts">Evidence files</a></nav>
-  <p class="eyebrow">Research update · 5 September 2026</p>
-  <h1>A curriculum that keeps changing what the robot practices.</h1>
-  <p class="sub">Relative-progress sampling sustains allocation contrast in two full training runs. <b>The next test is whether that changes held-out tracking quality.</b></p>
+  <nav aria-label="Project navigation"><a href="index.html">← CLIMB project</a><a href="#evidence">Results</a><a href="#method">Method</a><a href="#experiment">Confirmation protocol</a><a href="#artifacts">Evidence files</a></nav>
+  <p class="eyebrow">Confirmation update · 6 September 2026</p>
+  <h1>Changed exposure. Tracking benefit still to test.</h1>
+  <p class="sub">All three relative-progress confirmation seeds pass the allocation gate. <b>The fixed four-arm campaign will test whether that exposure improves held-out tracking.</b></p>
   <div class="statrow" aria-label="Current evidence">
-    <div class="stat"><div class="v">2 / 2</div><div class="k">relative-progress development runs pass the allocation gate</div></div>
-    <div class="stat"><div class="v">0.0832 · 0.0827</div><div class="k">mean post-warm-up TV from the deployment prior</div></div>
+    <div class="stat"><div class="v">10 / 12</div><div class="k">confirmation training runs complete and independently verified</div></div>
+    <div class="stat"><div class="v">410</div><div class="k">saved checkpoint states replayed across completed runs</div></div>
     <div class="stat"><div class="v">Pending</div><div class="k">held-out policy benefit in the new four-arm confirmation</div></div>
   </div>
 </div></header>
 <main id="main" class="wrap">
-<section id="status">
-  <span class="numeral">Current checkpoint</span>
-  <h2>Allocation is reproducible; policy utility is the open question.</h2>
-  <p>Our most promising direction is scale-relative learning progress within CLIMB’s existing exact feasibility gate. The two completed relative-progress runs support a narrow claim: the sampler maintains a meaningful change in exposure as training proceeds. They do not establish better tracking, a useful ranking of tasks, or transfer to hardware.</p>
-  <div class="callout"><p><strong>Static research snapshot, <time id="snapshot-time" datetime="2026-09-05T23:10:07.932029-04:00">5 September 2026, 23:10 EDT</time>.</strong> The fixed conditional-failure baseline D has passed seed 31. Seed 32 is still running; its latest saved iteration at this snapshot is <strong id="d32-iteration">2,800</strong>. Four development smokes passed. Four smokes through the confirmation training entrypoint remain queued behind both D passes. Confirmation remains disabled until these prerequisites pass. This page is a dated record, not a live job monitor.</p></div>
-</section>
+<section id="status"><span class="numeral">Current checkpoint</span><h2>The intervention is measurable; the policy comparison remains unopened.</h2>
+<p>All U/A/R/D runs for seeds 21 and 22, plus R23 and D23, have completed 4,000 iterations and passed their declared training gates. Every saved sampler state replays exactly, with zero recorded invalid-start, invalid-reference or censored-reset events. A is retained under its frozen comparator rule even when allocation contrast is weak.</p>
+<div class="callout"><p><strong>Static snapshot · 6 September 2026, 22:17 EDT.</strong> U23 is running, with checkpoint 1100 saved; A23 is queued. The scheduler and follow-on workers remain active. No held-out evaluation cell has started. Both D calibration seeds and all four seed-51 confirmation-entrypoint smokes passed before the immutable freeze. The original overnight attempt timed out waiting for GPU capacity before any scientific job; its record is preserved. The active operational re-entry uses the same scientific contract and schedule.</p></div>
+<p><a href="index.html#roadmap">Read how this experiment fits the wider research plan →</a></p></section>
 <section id="evidence">
-  <span class="numeral">01 · What changed</span>
+<span class="numeral">01 · Current confirmation measurements</span><h2>Relative progress and conditional failure sustain allocation contrast.</h2>
+<p>Each completed run below has 512 environments, 4,000 PPO iterations and 41 verified saved states. Mean TV averages the 37 saved states at iterations 400–3999. Incomplete U23/A23 runs are excluded from the measured table and figure; no value is imputed.</p>
+<div class="scroll" role="region" aria-label="Verified confirmation training results" tabindex="0"><table><caption>Measured training allocation · no policy-utility inference</caption><thead><tr><th scope="col">Arm and seed</th><th scope="col">Mean TV</th><th scope="col">Completed trials</th><th scope="col">Decision</th></tr></thead><tbody><tr><th scope="row">U · seed 21</th><td>0.000000000</td><td>1,086,702</td><td>Training gate pass</td></tr>
+<tr><th scope="row">U · seed 22</th><td>0.000000000</td><td>1,086,071</td><td>Training gate pass</td></tr>
+<tr><th scope="row">A · seed 21</th><td>0.029759170</td><td>1,084,430</td><td>Training gate pass</td></tr>
+<tr><th scope="row">A · seed 22</th><td>0.029338594</td><td>1,082,658</td><td>Training gate pass</td></tr>
+<tr><th scope="row">R · seed 21</th><td>0.083484949</td><td>1,083,411</td><td>Training gate pass</td></tr>
+<tr><th scope="row">R · seed 22</th><td>0.082491997</td><td>1,087,418</td><td>Training gate pass</td></tr>
+<tr><th scope="row">R · seed 23</th><td>0.082332844</td><td>1,089,129</td><td>Training gate pass</td></tr>
+<tr><th scope="row">D · seed 21</th><td>0.083910689</td><td>1,116,479</td><td>Training gate pass</td></tr>
+<tr><th scope="row">D · seed 22</th><td>0.085865093</td><td>1,116,999</td><td>Training gate pass</td></tr>
+<tr><th scope="row">D · seed 23</th><td>0.083983853</td><td>1,117,687</td><td>Training gate pass</td></tr>
+</tbody></table></div>
+<figure><a href="assets/progress-2026-09-06/confirmation_allocation.png"><img src="assets/progress-2026-09-06/confirmation_allocation.png" width="2376" height="738" alt="Allocation TV histories by training seed. Relative-progress R and conditional-failure D sustain higher exposure contrast than absolute-progress A; U remains at the prior. Seed 23 currently includes only completed R and D runs."></a><figcaption><strong>All 410 verified confirmation snapshots.</strong> Lines show within-run histories, not independent replications or tracking learning curves. The dashed 0.05 line is a mean-TV gate for R/D, not a per-checkpoint requirement and not A's gate. Similar mean TV does not make R and D identical treatments. <a href="assets/progress-2026-09-06/allocation_snapshots.csv">CSV data</a> · <a href="assets/progress-2026-09-06/confirmation_allocation.pdf">PDF figure</a> · <a href="assets/progress-2026-09-06/research_snapshot.json">Verified summary and source hashes</a>.</figcaption></figure>
+<h3 class="tight">Interpretation before policy outcomes</h3><p>R passes in all three confirmation seeds (mean TV 0.083485, 0.082492, 0.082333); D also passes in all three. A's completed runs remain near 0.029–0.030. D begins near the prior and increases its allocation contrast later; R changes exposure earlier and follows a different trajectory. This reproduces the exposure distinction that motivated relative normalization. It does not show that R selects learnable motions better than D or that either improves tracking.</p>
+
+  <span class="numeral">Development evidence · before confirmation</span>
   <h2>The failed gate gave us a specific next hypothesis.</h2>
   <div class="grid">
     <article class="card"><h3>E4: sealed decision <span class="pill neg">not_tested</span></h3><p>Both seed-1 training arms finished, but absolute-progress sampling reached mean post-warm-up TV of only <strong>0.029659</strong>, below the frozen 0.05 minimum. Policy endpoints stayed closed and seeds 2–3 stopped. This is an inadequate intervention, not a measured policy null.</p></article>
@@ -43,6 +58,7 @@
       <tr><th scope="row">Relative R · seed 11</th><td>0.083211</td><td>616.25</td><td>1,087,814</td><td>Manipulation pass</td></tr>
       <tr><th scope="row">Relative R · seed 12</th><td>0.082728</td><td>618.61</td><td>1,086,192</td><td>Manipulation pass</td></tr>
       <tr><th scope="row">Failure D · seed 31</th><td>0.084955</td><td>625.06</td><td>1,113,773</td><td>Calibration pass</td></tr>
+      <tr><th scope="row">Failure D · seed 32</th><td>0.085939</td><td>624.29</td><td>1,118,388</td><td>Calibration pass</td></tr>
     </tbody>
   </table></div>
   <p class="note">TV is total variation: half the summed absolute probability differences from the deployment prior. Effective units summarize distribution breadth using entropy. Each run has 41 saved snapshots, including 37 from iteration 400 onward. Those correlated snapshots are not independent training seeds. E4 used a different saved cadence, so its mean is a diagnostic reference rather than a matched estimate.</p>
@@ -74,23 +90,25 @@ Apply the existing joint unit and clip caps.</pre>
     </tbody>
   </table></div>
   <p>Run all four arms on fresh paired training seeds <strong>21, 22 and 23</strong>, with 512 environments and 4,000 iterations per run. Evaluate checkpoints <strong>1000, 2000, 3000 and 3999</strong> on 100 held-out clips, including 25 feasible-hard clips, using 2,800 paired conditions per evaluation cell. This gives 12 training jobs and 48 evaluation cells. All 12 training manipulation checks precede evaluation.</p>
-  <p>The primary endpoint is the final-checkpoint <strong>R−U difference in feasible-hard clip-mean, liveness-weighted TrackingScore</strong>. A benefit decision requires a mean gain of at least +0.02, a positive lower seed-level 95% t-confidence bound, and an all-panel lower bound above −0.01. With valid preceding gates, a hard-panel upper bound below +0.02 rules out the target-sized benefit; other unresolved cases remain inconclusive under the fixed decision rules. Gate failures retain their declared <code>not_tested</code> or invalid status.</p>
+  <p>The primary endpoint is the final-checkpoint <strong>R−U difference in feasible-hard clip-mean, liveness-weighted TrackingScore</strong>. A benefit decision requires a mean gain of at least +0.02, a positive lower two-sided seed-level 95% t-confidence bound (df = 2), and an all-panel lower bound above −0.01. With valid preceding gates, a hard-panel upper bound below +0.02 rules out the target-sized benefit; other unresolved cases remain inconclusive under the fixed decision rules. Gate failures retain their declared <code>not_tested</code> or invalid status.</p>
   <p>R−A, R−D, learning curves, survivor-conditioned pose error with coverage, all-condition mechanical work with exposure, and elapsed cost are secondary descriptions. R−D is not a pure ranking-only ablation: startup behavior and floor/cap composition differ. A paired hierarchical bootstrap is supplementary to the primary seed-level interval.</p>
   <div class="grid">
-    <article class="card"><h3>Next: finish baseline validation</h3><p>Require both fixed D seeds to pass complete calibration, then replay all four confirmation-entrypoint smokes. Preserve any failed attempt and apply the declared stop rule.</p></article>
-    <article class="card"><h3>Then: freeze before confirmation</h3><p>The implemented freeze command verifies reference identities, source bindings, every prerequisite and all twelve unchanged configuration hashes. It writes a new contract and seal only when ready; the old sealed experiment remains intact.</p></article>
-    <article class="card"><h3>Finally: measure policy utility</h3><p>Execute the fixed schedule once, validate all manipulation and pairing records, then aggregate outcomes. No favorable-checkpoint selection, optional seed additions, or outcome-driven threshold changes.</p></article>
-  </div>
+<article class="card"><h3>Complete: calibrate and freeze</h3><p>D31/D32 and all four seed-51 confirmation-entrypoint smokes passed. Source bindings, replay logs and all 12 configuration hashes were verified before sealing the current contract. Scientific settings remain fixed.</p></article>
+<article class="card"><h3>Running: finish all training</h3><p>Ten training gates pass at this snapshot. U23 is running, followed by A23. The scheduler opens policy evaluation only after all twelve gates pass; a failure retains its declared disposition.</p></article>
+<article class="card"><h3>Next: measure policy utility</h3><p>Run the 48 evaluation cells and validate all training, pairing and provenance records before aggregation. The queued efficiency postprocessor requires exact reproduction of the original complete analysis.</p></article>
+</div>
   <p><strong>Precision is a real limitation.</strong> With three paired seeds, the primary 95% t-interval half-width is 2.484 times the observed seed-difference standard deviation. At an observed mean of +0.02, a positive lower bound needs that SD below about 0.00805. A prospective precision audit explores hypothetical normal-distribution scenarios; it is not measured power or a forecast. An inconclusive result is plausible and will be retained.</p>
-  <p>The implementation now includes checkpoint-linked sampler telemetry, complete history replay, paired-evaluation provenance checks, a strict campaign analyzer, and the finalization command. Four short seed-41 simulator smokes passed. The successful synthetic freeze test establishes software behavior; actual seed-51 smokes and the policy experiment remain pending.</p>
+  <p>The implementation includes checkpoint-linked sampler telemetry, complete history replay, paired-evaluation provenance checks and a strict campaign analyzer. All four actual seed-51 smokes passed before the contract freeze. Sample-efficiency analysis, the frozen-policy pilot and CUDA lifecycle checks are queued with separate prerequisites; these queued stages are not completed evidence.</p>
 </section>
 <section id="artifacts">
   <span class="numeral">04 · Inspect the record</span>
   <h2>Evidence, design and reproducible boundaries</h2>
-  <p>The downloads below export already measured results and identify their original artifacts by repository-relative path and SHA-256. They contain no trained weights or licensed motion payloads. The live partial run is excluded from the completed-run comparison.</p>
+  <p>The downloads below export already measured results and identify their original artifacts by repository-relative path and SHA-256. They contain no trained weights or licensed motion payloads. Incomplete training runs are excluded from the completed-run comparison. No held-out policy outcomes were read by the public exporter.</p>
   <ul>
-    <li><a href="assets/relative-progress/research_snapshot.json">Research snapshot (JSON)</a>: completed-run metrics, E4 disposition, repair result, pending prerequisites, and source identities.</li>
-    <li><a href="assets/relative-progress/snapshots.csv">Allocation histories (CSV)</a> and <a href="assets/relative-progress/allocation_comparison.pdf">figure (PDF)</a>: all saved R11, R12 and D31 allocation snapshots.</li>
+    <li><a href="assets/progress-2026-09-06/research_snapshot.json">6 September confirmation snapshot (JSON)</a>: ten completed runs, incomplete arms, 410 verified states and source hashes; <a href="assets/progress-2026-09-06/allocation_snapshots.csv">all confirmation snapshots (CSV)</a>.</li>
+    <li><a href="assets/relative-progress/research_snapshot.json">5 September historical snapshot (JSON)</a>: development metrics, E4 disposition, repair result, and prerequisite status at that earlier date.</li>
+    <li><a href="assets/progress-2026-09-06/development_evidence.json">Development and calibration evidence (JSON)</a>: completed freeze prerequisites, D31/D32, CPU evaluation and lifecycle checks; full outcome studies remain pending.</li>
+    <li><a href="assets/relative-progress/snapshots.csv">Allocation histories (CSV)</a> and <a href="assets/relative-progress/allocation_comparison.pdf">figure (PDF)</a>: all saved R11, R12 and D31 allocation snapshots; the historical figure predates D32 completion.</li>
     <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/RESEARCH_DESIGN_RELATIVE_PROGRESS_2026-09-05.md">Full research design</a>, <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/RELATIVE_CONFIRMATION_EXECUTION_2026-09-05.md">confirmation execution plan</a>, and <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/RELATIVE_CONFIRMATION_FREEZER_2026-09-05.md">freeze procedure</a>.</li>
     <li><a href="https://github.com/linjiw/climb-feasibility-first/blob/master/plan/RELATIVE_DESIGN_PRECISION_2026-09-05.md">Prospective precision audit</a> and <a href="https://github.com/linjiw/climb-feasibility-first/blob/master/paper/RESULTS_LOG.md">paper results ledger</a>.</li>
   </ul>

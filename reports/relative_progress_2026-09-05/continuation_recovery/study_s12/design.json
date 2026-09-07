@@ -1,0 +1,26 @@
+{
+  "schema_version": "relative_progress_execution/1",
+  "seed": 12,
+  "task": "Climb-Tracking-Flat-Unitree-G1-RelativeALP-Probe",
+  "created_utc": "2026-09-05T21:35:33.076799+00:00",
+  "sources": {
+    "tools/run_relative_progress_study.py": "f8811bcbf2cb2f25909e9354281b1c2d261e5168db4f56b55bdba2b8ef182e96",
+    "tools/check_relative_progress_probe.py": "dcb9e5f9e30d199ad6179bfe83915b482875df77ec2fe02a46059ba31d18f985",
+    "tools/train_relative_progress_probe.py": "3166fce585d22d5d9dfcc8c525150cf274ef2dc98e5e69c8861ab76ce9069c29",
+    "climb/relative_progress.py": "f5f562bbb9a37d13e6762f7315d5253a2b8e424850bcfa39c53cbc6cc5ce528d",
+    "plan/RESEARCH_DESIGN_RELATIVE_PROGRESS_2026-09-05.md": "07e4e393fdc5e3fffcccadf95e5f8173736136166f2c8b8a2ce4a57bf6198a36",
+    "plan/RELATIVE_ALP_PROBE_2026-09-05.md": "9ef59af34246215b0ef3fb696b161eaa39274b749ed2e44da21e3ccf49928eec",
+    "plan/G_SEGMENT_FREEZE.sha256": "0a51b4803a51d9b6eb1fb51f8be77638ea2cc70ba5700dbdbc79ac0dfca94a55"
+  },
+  "environment": {
+    "CLIMB_BANK": "/home/linjiw/climb-feasibility-first/bank/amass",
+    "CLIMB_CLIPS": "/home/linjiw/climb-feasibility-first/bank/tiers/tier_800.txt",
+    "CLIMB_SEGMENT_MANIFEST": "/home/linjiw/climb-feasibility-first/reports/g_segment/unit_table.json",
+    "CLIMB_RELATIVE_SEED": "12"
+  },
+  "stages": [
+    "smoke",
+    "long"
+  ],
+  "policy_endpoints_opened": false
+}

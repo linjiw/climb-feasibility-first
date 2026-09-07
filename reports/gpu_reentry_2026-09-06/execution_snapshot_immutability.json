@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-09-06T12:12:38.291733-04:00",
+  "gpu": "4288 MiB, 62 %",
+  "processes": "    PID     ELAPSED STAT COMMAND\n2008052    01:44:50 Ssl  /home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python /home/linjiw/climb-feasibility-first/tools/run_relative_confirmation.py --contract /home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/contract.json --contract-sha256 8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013 --out-dir /home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06 --gpu-wait-seconds 86400\n2011481    01:43:10 Ssl  /home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python /home/linjiw/climb-signal-quality-2026-09-06/tools/queue_frozen_progress_pilot.py --design /home/linjiw/climb-feasibility-first/reports/gpu_reentry_2026-09-06/pilot_queue_design.json --design-sha256 5f03aef77f7f6ff2ecec9397f61fc3a879d05d080c26a2a361bd32a652455c5f --out-dir /home/linjiw/climb-signal-quality-2026-09-06/reports/frozen_progress_pilot_2026-09-06/queue_gpu_reentry_2026-09-06\n2011482    01:43:10 Ss   /home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python /home/linjiw/climb-icra-evidence-2026-09-06/tools/follow_confirmation_reentry.py --binding /home/linjiw/climb-feasibility-first/reports/gpu_reentry_2026-09-06/efficiency_binding.json --binding-sha256 e15116f7053c55f310db7b617f7580bc2539897591df76bd726caae4662bb5cf --out /home/linjiw/climb-feasibility-first/reports/gpu_reentry_2026-09-06/efficiency_after_confirmation.json\n",
+  "completed_training_gates": [
+    "A_s21_training_gate.json",
+    "U_s21_training_gate.json"
+  ],
+  "endpoint_access_exists": false,
+  "terminal_exists": false,
+  "job_logs": [
+    "U_s21.log",
+    "A_s21.log"
+  ]
+}

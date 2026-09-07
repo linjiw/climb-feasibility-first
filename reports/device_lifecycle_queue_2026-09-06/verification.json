@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-09-06T12:47:17.162899-04:00",
+  "checks": [
+    {
+      "name": "compile",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_device_lifecycle.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_device_lifecycle.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/queue_device_lifecycle.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_device_lifecycle_queue.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "phase_g_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "confirmation_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "tests",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "pytest",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_device_lifecycle_queue.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "11 passed in 1.19s",
+      "record": "completed before queue launch in this session"
+    }
+  ],
+  "unchanged_runtime_files": 376,
+  "gpu_design_sha256": "6d445e068966dae661e10679d4e9d44ffac8a6e0321351f22e1df7ed6ed40b46",
+  "queue_verified_waiting_for_both_prerequisites": true,
+  "gpu_cells_started": 0,
+  "sources": {
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_device_lifecycle.py": "cc7fd91871d5de66bb87224d2883aa0f84c3be8c2b939a7f4c66d1854f8c0c6f",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_device_lifecycle.py": "0c39500c9ed94d4a11a368f030db6bbba0059e77db3c6ae689b5117bdf478a01",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/queue_device_lifecycle.py": "8e2a5aa52d044029997a76b11b3d6c763c6c520cffc4e4189af68a2077628c51",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_device_lifecycle_queue.py": "373dfab43d495ae1a426fe5821c05d089e56e954b500e12c49c821085898999d"
+  },
+  "cpu_verification": {
+    "path": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/device_lifecycle_cpu_2026-09-06/verification.json",
+    "sha256": "cb8d4304dcf56c1488e3d29a4ed16da12ff919af9d3bab2029dbd8067a7e4cef"
+  }
+}

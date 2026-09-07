@@ -1,0 +1,13 @@
+{
+  "pid": 1039495,
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-feasibility-first/tools/run_relative_policy_smokes.py",
+    "--replication-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_recovery",
+    "--seed11-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11",
+    "--out-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes"
+  ]
+}

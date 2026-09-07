@@ -1,0 +1,23 @@
+{
+  "classification": "operational snapshot only",
+  "timestamp": "2026-09-05T20:28:56.275486-04:00",
+  "replication_status": "replicated_manipulation",
+  "queued_stages": [
+    {
+      "stage": "policy_smokes_gate_retry",
+      "launch_pid": 1091692,
+      "source_mismatches": [],
+      "process": "    PID     ELAPSED STAT\n1091692    01:58:58 Ssl\n",
+      "terminal_exists": false
+    },
+    {
+      "stage": "failure_calibration_gate_retry",
+      "launch_pid": 1091693,
+      "source_mismatches": [],
+      "process": "    PID     ELAPSED STAT\n1091693    01:58:58 Ssl\n",
+      "terminal_exists": false
+    }
+  ],
+  "gpu_memory_free_and_utilization": "8555 MiB, 59 %\n",
+  "policy_endpoints_opened": false
+}

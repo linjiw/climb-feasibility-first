@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-09-05T23:00:09.003995-04:00",
+  "classification": "operational snapshot only",
+  "D_seed32_latest_snapshot": 2100,
+  "ledger": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32/g1_tracking/2026-09-05_22-24-15_D_calibration_s32/model_2100_segment.json",
+  "ledger_sha256": "60bf56b3b756236ed183bd4da6047f5103c1dc09f4ff3f78a20ba94a3a23c469",
+  "completed_trials": 612386,
+  "invalid_start_count": 0,
+  "invalid_reference_frame_count": 0,
+  "censored_resets": 0,
+  "source_mismatches": [],
+  "runtime_mismatches": [],
+  "workers": "    PID     ELAPSED STAT\n1091693    04:30:11 Ssl\n1541297    01:34:25 Ss\n",
+  "actual_confirmation_frozen": false,
+  "policy_endpoints_opened": false
+}

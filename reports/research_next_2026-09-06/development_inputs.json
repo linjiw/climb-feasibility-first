@@ -1,0 +1,320 @@
+{
+  "classification": "development input inventory; no policy rollout or held-out endpoint read",
+  "checkpoints": [
+    {
+      "development_seed": 11,
+      "iteration": 1000,
+      "files": [
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_1000.pt",
+          "sha256": "a30ba21625949713b719a52d5a68f56ebd80189bf4448285e1d97389fd76e86a",
+          "bytes": 6769269
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_1000_segment.json",
+          "sha256": "91eeb693b6c47def28d5042cc115a92dbcad7a9a7c7b533c47e21515f74fd355",
+          "bytes": 189412
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_1000_segment_sampler.pt",
+          "sha256": "7f567caa325ee7a0782b230dbb8e378292841393ae77dab97f40b07ff10fa70b",
+          "bytes": 180070
+        }
+      ]
+    },
+    {
+      "development_seed": 11,
+      "iteration": 1900,
+      "files": [
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_1900.pt",
+          "sha256": "76b16accc7fec998a00a41d74ab763a4f7349bc8d907e7ed77764f382986bb21",
+          "bytes": 6769269
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_1900_segment.json",
+          "sha256": "0e11f1c90042e9ee6e4876c7e45a8138f09d708d1ad8e7dda8672ef069a5380a",
+          "bytes": 190344
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_1900_segment_sampler.pt",
+          "sha256": "201fcca2062281daafd8f162e0b1c420c2825149603b9e6fda70dc756c1368cf",
+          "bytes": 180070
+        }
+      ]
+    },
+    {
+      "development_seed": 11,
+      "iteration": 2000,
+      "files": [
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_2000.pt",
+          "sha256": "ec26fdcd0524410ea5dff806de5ca4bd94428fad7ba556bc782b4656f6a03afd",
+          "bytes": 6769269
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_2000_segment.json",
+          "sha256": "d9e1cee41aa0ab530036ffa04f6a31d45d9a00b3f5e9c4b0cd3b952850260c35",
+          "bytes": 190477
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_2000_segment_sampler.pt",
+          "sha256": "350e02eb138ddc502ab0170192e38f4ea62034378a5a6a905721e5e838bb79f8",
+          "bytes": 180070
+        }
+      ]
+    },
+    {
+      "development_seed": 11,
+      "iteration": 3000,
+      "files": [
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_3000.pt",
+          "sha256": "d35736fb0b000e3cb74a272423985fcc76a267e4045342e7b5b584cb9caf289b",
+          "bytes": 6769269
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_3000_segment.json",
+          "sha256": "2154ac8f70830ee4148dfa7f4d418fc358fe7514df926eaa65fc0d5f3dbdba5a",
+          "bytes": 191213
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_3000_segment_sampler.pt",
+          "sha256": "172a1f8b2ce52390bbe729abeb81a3b7c7f8dc57b6c212c87ce6f2be13e9a9be",
+          "bytes": 180070
+        }
+      ]
+    },
+    {
+      "development_seed": 11,
+      "iteration": 3900,
+      "files": [
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_3900.pt",
+          "sha256": "dc75b6154fde268ecf97c7dcbf26466bac115fcfa75f8d67ebc6500522ec6807",
+          "bytes": 6769269
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_3900_segment.json",
+          "sha256": "b559a91171a1ae18a1c58a6b8e23c1dfe12de925033b05c726b2a251dda894db",
+          "bytes": 191811
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_3900_segment_sampler.pt",
+          "sha256": "88780c05bdbdbff415585ab668a9c733afb4ce8e3aadc2e2b3ff15b74fecd405",
+          "bytes": 180070
+        }
+      ]
+    },
+    {
+      "development_seed": 11,
+      "iteration": 3999,
+      "files": [
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_3999.pt",
+          "sha256": "d4557c3668dc8f81cbf8fd4b859deda7b60791a9049cd92afcb54c919cc4c11c",
+          "bytes": 6769269
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_3999_segment.json",
+          "sha256": "9f348f540da1ef027f619a17315828510496b5a6ecfeaeb4f440bef1cc1cbe96",
+          "bytes": 191520
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long/g1_tracking/2026-09-05_11-45-25_relative_long_s11/model_3999_segment_sampler.pt",
+          "sha256": "2e208e7323789295a1e1bf89ced532237cbaee2b0fd3fe02db17ecc00d12b4a4",
+          "bytes": 180070
+        }
+      ]
+    },
+    {
+      "development_seed": 12,
+      "iteration": 1000,
+      "files": [
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1000.pt",
+          "sha256": "897df7024e7f39086310f90a03c9bc9d1c844c13799c56e2897b2937983aa4b5",
+          "bytes": 6769269
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1000_segment.json",
+          "sha256": "da960b00a711f7510d84f1710ab0704b2d41e81cd638c60e54643174e1d5f2a7",
+          "bytes": 189917
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1000_segment_sampler.pt",
+          "sha256": "723e3d0cba591f850d4ca195a7b430af872c7c18a33c75461cb8f18bad79334c",
+          "bytes": 180070
+        }
+      ]
+    },
+    {
+      "development_seed": 12,
+      "iteration": 1900,
+      "files": [
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1900.pt",
+          "sha256": "58a1669c36910bb4b390756643a19a27792f7676fb4e0173144ea7a4a2688d3a",
+          "bytes": 6769269
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1900_segment.json",
+          "sha256": "15ee5436dae7323c02c2f6b8619dea5446f08d2abb85155c619cce2194eb9b84",
+          "bytes": 190810
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_1900_segment_sampler.pt",
+          "sha256": "9206dd1785a3817a1690d79ab8a7492602c8d9438ed2666adb64e103cefbdd68",
+          "bytes": 180070
+        }
+      ]
+    },
+    {
+      "development_seed": 12,
+      "iteration": 2000,
+      "files": [
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2000.pt",
+          "sha256": "ba5aae898c4aa2ad7343a9035c9d445795f138fa021edce2366e9de25f05ff5a",
+          "bytes": 6769269
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2000_segment.json",
+          "sha256": "75322c5fe32491824fcea6c02a8a866246c75ed01fee555c5679bad9b9c4382a",
+          "bytes": 190504
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_2000_segment_sampler.pt",
+          "sha256": "65c60cef8680b100032b393f17a81c1cdd5e37a9ce4e52afc97b970fc76daf7d",
+          "bytes": 180070
+        }
+      ]
+    },
+    {
+      "development_seed": 12,
+      "iteration": 3000,
+      "files": [
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3000.pt",
+          "sha256": "3f9e2222642f08acb8e1bf612950fe8873a5c34a3bcb067be88cd8425dcc7823",
+          "bytes": 6769269
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3000_segment.json",
+          "sha256": "c6d16d9ff469d29e8f22ec03539ef886d63b475b8ce0118503e392e0048476ac",
+          "bytes": 191405
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3000_segment_sampler.pt",
+          "sha256": "b47409ca9b4b9029311f7bdb19608c0edd8220ef48bf69d2b1fc0c0fcda6a110",
+          "bytes": 180070
+        }
+      ]
+    },
+    {
+      "development_seed": 12,
+      "iteration": 3900,
+      "files": [
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3900.pt",
+          "sha256": "0126f134ff0f54b2a4aafdc6f3b7ed0eb3876093598c040c4a15db713a56800b",
+          "bytes": 6769269
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3900_segment.json",
+          "sha256": "eaf13bf0a32c0d2a87f6ffd3af63b4cd3eaa487d52efe719908b3f9592fe6784",
+          "bytes": 191908
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3900_segment_sampler.pt",
+          "sha256": "8abf8f0a3e958c0a245ea31ae9df8c0ed2152ba0f22e3205cba904f01ea2ccd1",
+          "bytes": 180070
+        }
+      ]
+    },
+    {
+      "development_seed": 12,
+      "iteration": 3999,
+      "files": [
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3999.pt",
+          "sha256": "1343762b4c3bb9036ebbbeea38b6fc83cbb7af30e2c48b94a70d4ba3c7f3fe5a",
+          "bytes": 6769269
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3999_segment.json",
+          "sha256": "d6605afca53582c1e38d3ff6094fef0443db63d397f0f13a690a21392f602c08",
+          "bytes": 191653
+        },
+        {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long/g1_tracking/2026-09-05_18-30-29_relative_long_s12/model_3999_segment_sampler.pt",
+          "sha256": "5be9d0fcd8600870e2084d08aaff436c0fb2f270329f5bcf162c0013a791988d",
+          "bytes": 180070
+        }
+      ]
+    }
+  ],
+  "frozen_null_cells": [
+    [
+      11,
+      2000
+    ],
+    [
+      11,
+      3999
+    ],
+    [
+      12,
+      2000
+    ],
+    [
+      12,
+      3999
+    ]
+  ],
+  "independent_change_pairs": [
+    [
+      1900,
+      2000
+    ],
+    [
+      3900,
+      3999
+    ]
+  ],
+  "branch_cells": [
+    [
+      11,
+      1000
+    ],
+    [
+      11,
+      2000
+    ],
+    [
+      11,
+      3000
+    ],
+    [
+      12,
+      1000
+    ],
+    [
+      12,
+      2000
+    ],
+    [
+      12,
+      3000
+    ]
+  ],
+  "estimator": {
+    "decay": 0.99,
+    "tick_environment_steps": 50,
+    "progress_window_ticks": 10,
+    "checkpoint_interval_ppo_iterations": 100,
+    "ppo_rollout_steps": 24,
+    "ticks_for_old_mass_multiplier_below_1e_minus_3": 688,
+    "note": "Old-mass multiplier is not a bound on success-rate bias or proof of stationarity."
+  }
+}

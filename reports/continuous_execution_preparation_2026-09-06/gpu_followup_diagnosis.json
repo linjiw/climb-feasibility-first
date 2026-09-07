@@ -1,0 +1,663 @@
+{
+  "checked_at": "2026-09-07T00:03:12.264923-04:00",
+  "status": "individual_development_cells_replay_but_exact_parity_fails",
+  "aggregate_gate_pass": false,
+  "full_evaluation_enabled": false,
+  "source_run": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/device_lifecycle_optional_sense_reentry_2026-09-06",
+  "design_sha256": "ab90019f72039a1069dd7d292f51b310a8b1be1be941bdfd9036d26a9a7925cc",
+  "cells": [
+    {
+      "condition": "original",
+      "lifecycle": {
+        "condition": "original",
+        "episode_rows": 7,
+        "control_steps": 150,
+        "successes": 5,
+        "natural_failures": [
+          {
+            "step": 34,
+            "world": 2
+          },
+          {
+            "step": 39,
+            "world": 1
+          }
+        ],
+        "early_successes": [
+          {
+            "step": 56,
+            "world": 0
+          }
+        ],
+        "partial_reset_events": 2,
+        "already_retired_world_resets": 0,
+        "native_metric_values_replayed": 140,
+        "survival_steps": [
+          56.0,
+          39.0,
+          34.0,
+          150.0,
+          150.0,
+          150.0,
+          150.0
+        ],
+        "success_flags": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "entity_reset_events": 11,
+        "motion_resample_events": 7
+      },
+      "graphs": {
+        "launches": {
+          "step": 600,
+          "forward": 163,
+          "reset": 3,
+          "sense": 0
+        },
+        "device": "cuda:0",
+        "use_cuda_graph": true,
+        "sensor_context_present": false,
+        "graphs": {
+          "step": true,
+          "forward": true,
+          "reset": true,
+          "sense": false
+        }
+      },
+      "policy_immutable": true
+    },
+    {
+      "condition": "unchanged",
+      "lifecycle": {
+        "condition": "unchanged",
+        "episode_rows": 7,
+        "control_steps": 150,
+        "successes": 5,
+        "natural_failures": [
+          {
+            "step": 34,
+            "world": 2
+          },
+          {
+            "step": 39,
+            "world": 1
+          }
+        ],
+        "early_successes": [
+          {
+            "step": 56,
+            "world": 0
+          }
+        ],
+        "partial_reset_events": 2,
+        "already_retired_world_resets": 0,
+        "native_metric_values_replayed": 140,
+        "survival_steps": [
+          56.0,
+          39.0,
+          34.0,
+          150.0,
+          150.0,
+          150.0,
+          150.0
+        ],
+        "success_flags": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "entity_reset_events": 11,
+        "motion_resample_events": 7
+      },
+      "graphs": {
+        "launches": {
+          "step": 600,
+          "forward": 163,
+          "reset": 3,
+          "sense": 0
+        },
+        "device": "cuda:0",
+        "use_cuda_graph": true,
+        "sensor_context_present": false,
+        "graphs": {
+          "step": true,
+          "forward": true,
+          "reset": true,
+          "sense": false
+        }
+      },
+      "policy_immutable": true
+    },
+    {
+      "condition": "delay_5ms",
+      "lifecycle": {
+        "condition": "delay_5ms",
+        "episode_rows": 7,
+        "control_steps": 150,
+        "successes": 5,
+        "natural_failures": [
+          {
+            "step": 33,
+            "world": 2
+          },
+          {
+            "step": 38,
+            "world": 1
+          }
+        ],
+        "early_successes": [
+          {
+            "step": 56,
+            "world": 0
+          }
+        ],
+        "partial_reset_events": 4,
+        "already_retired_world_resets": 2,
+        "native_metric_values_replayed": 140,
+        "survival_steps": [
+          56.0,
+          38.0,
+          33.0,
+          150.0,
+          150.0,
+          150.0,
+          150.0
+        ],
+        "success_flags": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "entity_reset_events": 15,
+        "motion_resample_events": 7
+      },
+      "graphs": {
+        "launches": {
+          "step": 600,
+          "forward": 165,
+          "reset": 5,
+          "sense": 0
+        },
+        "device": "cuda:0",
+        "use_cuda_graph": true,
+        "sensor_context_present": false,
+        "graphs": {
+          "step": true,
+          "forward": true,
+          "reset": true,
+          "sense": false
+        }
+      },
+      "policy_immutable": true
+    },
+    {
+      "condition": "delay_10ms",
+      "lifecycle": {
+        "condition": "delay_10ms",
+        "episode_rows": 7,
+        "control_steps": 150,
+        "successes": 5,
+        "natural_failures": [
+          {
+            "step": 33,
+            "world": 2
+          },
+          {
+            "step": 38,
+            "world": 1
+          }
+        ],
+        "early_successes": [
+          {
+            "step": 56,
+            "world": 0
+          }
+        ],
+        "partial_reset_events": 4,
+        "already_retired_world_resets": 2,
+        "native_metric_values_replayed": 140,
+        "survival_steps": [
+          56.0,
+          38.0,
+          33.0,
+          150.0,
+          150.0,
+          150.0,
+          150.0
+        ],
+        "success_flags": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "entity_reset_events": 15,
+        "motion_resample_events": 7
+      },
+      "graphs": {
+        "launches": {
+          "step": 600,
+          "forward": 165,
+          "reset": 5,
+          "sense": 0
+        },
+        "device": "cuda:0",
+        "use_cuda_graph": true,
+        "sensor_context_present": false,
+        "graphs": {
+          "step": true,
+          "forward": true,
+          "reset": true,
+          "sense": false
+        }
+      },
+      "policy_immutable": true
+    },
+    {
+      "condition": "delay_20ms",
+      "lifecycle": {
+        "condition": "delay_20ms",
+        "episode_rows": 7,
+        "control_steps": 150,
+        "successes": 3,
+        "natural_failures": [
+          {
+            "step": 32,
+            "world": 2
+          },
+          {
+            "step": 34,
+            "world": 3
+          },
+          {
+            "step": 51,
+            "world": 1
+          },
+          {
+            "step": 104,
+            "world": 5
+          }
+        ],
+        "early_successes": [
+          {
+            "step": 56,
+            "world": 0
+          }
+        ],
+        "partial_reset_events": 11,
+        "already_retired_world_resets": 7,
+        "native_metric_values_replayed": 140,
+        "survival_steps": [
+          56.0,
+          51.0,
+          32.0,
+          34.0,
+          150.0,
+          104.0,
+          150.0
+        ],
+        "success_flags": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "entity_reset_events": 29,
+        "motion_resample_events": 7
+      },
+      "graphs": {
+        "launches": {
+          "step": 600,
+          "forward": 172,
+          "reset": 12,
+          "sense": 0
+        },
+        "device": "cuda:0",
+        "use_cuda_graph": true,
+        "sensor_context_present": false,
+        "graphs": {
+          "step": true,
+          "forward": true,
+          "reset": true,
+          "sense": false
+        }
+      },
+      "policy_immutable": true
+    },
+    {
+      "condition": "knee_120nm",
+      "lifecycle": {
+        "condition": "knee_120nm",
+        "episode_rows": 7,
+        "control_steps": 150,
+        "successes": 5,
+        "natural_failures": [
+          {
+            "step": 34,
+            "world": 2
+          },
+          {
+            "step": 39,
+            "world": 1
+          }
+        ],
+        "early_successes": [
+          {
+            "step": 56,
+            "world": 0
+          }
+        ],
+        "partial_reset_events": 2,
+        "already_retired_world_resets": 0,
+        "native_metric_values_replayed": 140,
+        "survival_steps": [
+          56.0,
+          39.0,
+          34.0,
+          150.0,
+          150.0,
+          150.0,
+          150.0
+        ],
+        "success_flags": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "entity_reset_events": 11,
+        "motion_resample_events": 7
+      },
+      "graphs": {
+        "launches": {
+          "step": 600,
+          "forward": 163,
+          "reset": 3,
+          "sense": 0
+        },
+        "device": "cuda:0",
+        "use_cuda_graph": true,
+        "sensor_context_present": false,
+        "graphs": {
+          "step": true,
+          "forward": true,
+          "reset": true,
+          "sense": false
+        }
+      },
+      "policy_immutable": true
+    },
+    {
+      "condition": "knee_90nm",
+      "lifecycle": {
+        "condition": "knee_90nm",
+        "episode_rows": 7,
+        "control_steps": 150,
+        "successes": 5,
+        "natural_failures": [
+          {
+            "step": 34,
+            "world": 2
+          },
+          {
+            "step": 39,
+            "world": 1
+          }
+        ],
+        "early_successes": [
+          {
+            "step": 56,
+            "world": 0
+          }
+        ],
+        "partial_reset_events": 2,
+        "already_retired_world_resets": 0,
+        "native_metric_values_replayed": 140,
+        "survival_steps": [
+          56.0,
+          39.0,
+          34.0,
+          150.0,
+          150.0,
+          150.0,
+          150.0
+        ],
+        "success_flags": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "entity_reset_events": 11,
+        "motion_resample_events": 7
+      },
+      "graphs": {
+        "launches": {
+          "step": 600,
+          "forward": 163,
+          "reset": 3,
+          "sense": 0
+        },
+        "device": "cuda:0",
+        "use_cuda_graph": true,
+        "sensor_context_present": false,
+        "graphs": {
+          "step": true,
+          "forward": true,
+          "reset": true,
+          "sense": false
+        }
+      },
+      "policy_immutable": true
+    },
+    {
+      "condition": "friction_0p3",
+      "lifecycle": {
+        "condition": "friction_0p3",
+        "episode_rows": 7,
+        "control_steps": 150,
+        "successes": 5,
+        "natural_failures": [
+          {
+            "step": 34,
+            "world": 2
+          },
+          {
+            "step": 68,
+            "world": 1
+          }
+        ],
+        "early_successes": [
+          {
+            "step": 56,
+            "world": 0
+          }
+        ],
+        "partial_reset_events": 2,
+        "already_retired_world_resets": 0,
+        "native_metric_values_replayed": 140,
+        "survival_steps": [
+          56.0,
+          68.0,
+          34.0,
+          150.0,
+          150.0,
+          150.0,
+          150.0
+        ],
+        "success_flags": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "entity_reset_events": 11,
+        "motion_resample_events": 7
+      },
+      "graphs": {
+        "launches": {
+          "step": 600,
+          "forward": 163,
+          "reset": 3,
+          "sense": 0
+        },
+        "device": "cuda:0",
+        "use_cuda_graph": true,
+        "sensor_context_present": false,
+        "graphs": {
+          "step": true,
+          "forward": true,
+          "reset": true,
+          "sense": false
+        }
+      },
+      "policy_immutable": true
+    },
+    {
+      "condition": "friction_1p2",
+      "lifecycle": {
+        "condition": "friction_1p2",
+        "episode_rows": 7,
+        "control_steps": 150,
+        "successes": 5,
+        "natural_failures": [
+          {
+            "step": 34,
+            "world": 2
+          },
+          {
+            "step": 39,
+            "world": 1
+          }
+        ],
+        "early_successes": [
+          {
+            "step": 56,
+            "world": 0
+          }
+        ],
+        "partial_reset_events": 2,
+        "already_retired_world_resets": 0,
+        "native_metric_values_replayed": 140,
+        "survival_steps": [
+          56.0,
+          39.0,
+          34.0,
+          150.0,
+          150.0,
+          150.0,
+          150.0
+        ],
+        "success_flags": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "entity_reset_events": 11,
+        "motion_resample_events": 7
+      },
+      "graphs": {
+        "launches": {
+          "step": 600,
+          "forward": 163,
+          "reset": 3,
+          "sense": 0
+        },
+        "device": "cuda:0",
+        "use_cuda_graph": true,
+        "sensor_context_present": false,
+        "graphs": {
+          "step": true,
+          "forward": true,
+          "reset": true,
+          "sense": false
+        }
+      },
+      "policy_immutable": true
+    }
+  ],
+  "original_unchanged_comparison": {
+    "rows": 7,
+    "differing_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "nonnumeric_differences": [],
+    "maximum_absolute_difference_by_field": {
+      "absolute_mechanical_work_per_actuator_j": 0.0006632804870605469,
+      "action_delta_mean_per_step": 1.8894672393798828e-05,
+      "contacting_ankle_link_speed_mean_mps": 1.6555190086364746e-05,
+      "foot_penetration_mean_m": 1.0968651622533798e-06,
+      "body_acceleration_error_mean_mps2": 0.0042819976806640625,
+      "body_jerk_error_mean_mps3": 0.2987213134765625,
+      "error_anchor_pos_mean": 1.0281801223754883e-06,
+      "error_anchor_pos_terminal": 0.00045669078826904297,
+      "error_anchor_rot_mean": 5.9761106967926025e-05,
+      "error_anchor_rot_terminal": 0.0006730780005455017,
+      "error_anchor_lin_vel_mean": 1.9118189811706543e-05,
+      "error_anchor_lin_vel_terminal": 0.0019426066428422928,
+      "error_anchor_ang_vel_mean": 7.042288780212402e-05,
+      "error_anchor_ang_vel_terminal": 0.005289644002914429,
+      "error_body_pos_mean": 8.560717105865479e-06,
+      "error_body_pos_terminal": 4.678964614868164e-05,
+      "error_body_rot_mean": 3.522634506225586e-05,
+      "error_body_rot_terminal": 0.00010249018669128418,
+      "error_body_lin_vel_mean": 3.5434961318969727e-05,
+      "error_body_lin_vel_terminal": 0.0011183656752109528,
+      "error_body_ang_vel_mean": 0.0002951622009277344,
+      "error_body_ang_vel_terminal": 0.002177804708480835,
+      "error_joint_pos_mean": 4.9948692321777344e-05,
+      "error_joint_pos_terminal": 0.0003968477249145508,
+      "error_joint_vel_mean": 0.0014901161193847656,
+      "error_joint_vel_terminal": 0.014538735151290894,
+      "common_anchor_position_error_m_mean": 1.0281801223754883e-06,
+      "common_anchor_orientation_error_rad_mean": 5.8650970458984375e-05,
+      "common_root_relative_mpkpe_m_mean": 7.398426532745361e-06,
+      "common_body_orientation_error_rad_mean": 9.34898853302002e-05,
+      "common_root_relative_velocity_error_mps_mean": 3.1441450119018555e-06,
+      "common_joint_position_error_rad_mean": 1.944601535797119e-05,
+      "common_joint_velocity_error_rps_mean": 0.00025004148483276367,
+      "common_body_acceleration_error_mps2_mean": 0.0042819976806640625,
+      "common_body_jerk_error_mps3_mean": 0.2987213134765625
+    }
+  },
+  "interpretation": "No parity tolerance changed. Causes of numerical differences remain unresolved; no robustness or transfer claim."
+}

@@ -1,0 +1,21 @@
+{
+  "status": "preliminary_no_matching_launch_markers",
+  "argv": [
+    "rg",
+    "-l",
+    "--no-ignore",
+    "-g",
+    "*.log",
+    "^\\[INFO\\] Training with:.*seed=(61|62|63),",
+    "reports",
+    "runs",
+    "logs",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/reports",
+    "/home/linjiw/climb-signal-quality-2026-09-06/reports",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/reports"
+  ],
+  "cwd": "/home/linjiw/climb-feasibility-first",
+  "returncode": 1,
+  "stdout": "",
+  "interpretation": "no matching training-start markers in searched local logs; not a complete fresh-seed audit and cannot enable H1"
+}

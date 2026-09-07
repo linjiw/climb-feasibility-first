@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-09-06T12:46:32.703757-04:00",
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/queue_device_lifecycle.py",
+    "--design",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/reports/device_lifecycle_gpu_2026-09-06/design.json",
+    "--design-sha256",
+    "6d445e068966dae661e10679d4e9d44ffac8a6e0321351f22e1df7ed6ed40b46",
+    "--out-dir",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/reports/device_lifecycle_gpu_2026-09-06/queue"
+  ],
+  "pid": 2286869,
+  "design_sha256": "6d445e068966dae661e10679d4e9d44ffac8a6e0321351f22e1df7ed6ed40b46",
+  "design_path": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/device_lifecycle_gpu_2026-09-06/design.json",
+  "classification": "GPU validation queued after confirmation and frozen-policy pilot; not executed yet"
+}

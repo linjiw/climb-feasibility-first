@@ -1,0 +1,107 @@
+{
+  "classification": "development verification; synthetic tests are not policy evidence",
+  "timestamp": "2026-09-05T17:05:51.541322-04:00",
+  "commands": [
+    {
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/test_relative_campaign.py",
+        "tests/test_relative_failure_calibration.py",
+        "tests/test_relative_policy_analysis.py",
+        "tests/test_relative_policy_profiles.py",
+        "tests/test_relative_policy_provenance.py",
+        "tests/test_relative_policy_smokes.py",
+        "tests/test_relative_progress.py",
+        "tests/test_relative_progress_continuation.py",
+        "tests/test_relative_progress_probe.py",
+        "tests/test_relative_rank_signal.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "........................................................................ [ 80%]\n..................                                                       [100%]\n90 passed in 23.62s\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "tools/analyze_relative_campaign.py",
+        "tools/analyze_relative_policy.py",
+        "tools/analyze_relative_rank_signal.py",
+        "tools/check_relative_progress_probe.py",
+        "tools/continue_relative_progress.py",
+        "tools/plot_relative_progress.py",
+        "tools/relative_policy_provenance.py",
+        "tools/run_relative_failure_calibration.py",
+        "tools/run_relative_policy_smokes.py",
+        "tools/run_relative_progress_study.py",
+        "tools/train_relative_policy.py",
+        "tools/train_relative_progress_probe.py",
+        "climb/relative_progress.py",
+        "tests/test_relative_campaign.py",
+        "tests/test_relative_failure_calibration.py",
+        "tests/test_relative_policy_analysis.py",
+        "tests/test_relative_policy_profiles.py",
+        "tests/test_relative_policy_provenance.py",
+        "tests/test_relative_policy_smokes.py",
+        "tests/test_relative_progress.py",
+        "tests/test_relative_progress_continuation.py",
+        "tests/test_relative_progress_probe.py",
+        "tests/test_relative_rank_signal.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "source_sha256": {
+    "tools/analyze_relative_campaign.py": "25fa6b3d687c68ad313f851dfb919f8b1b8415b13c3da9f007f784ccdbd3c1f5",
+    "tools/analyze_relative_policy.py": "131b48e7a58f2ea46fa77d184cbe4ac132a7211713291502668cc06ae71b33f1",
+    "tools/analyze_relative_rank_signal.py": "43c55b4dd54717a4eac29ba86c2b81414ed618b3c79eb1e33b1c1858cbebdc57",
+    "tools/check_relative_progress_probe.py": "dcb9e5f9e30d199ad6179bfe83915b482875df77ec2fe02a46059ba31d18f985",
+    "tools/continue_relative_progress.py": "3baa1be54cee1d450d2c6428c40eaa93d39be5f3e1a468bdf076c6dfafb2f818",
+    "tools/plot_relative_progress.py": "8e2e8b668373b46b414bd3dd88cbce76b398370e156f4e1108d5252cd012b2c3",
+    "tools/relative_policy_provenance.py": "ee86a6403ed7fae999caa8085afff1a54cb4c3f47d93e1bab5b5c6717e14218e",
+    "tools/run_relative_failure_calibration.py": "8abd89df9416da8de617263f519f5a6c56beaac3b5837e87b43f8800e6742190",
+    "tools/run_relative_policy_smokes.py": "64765c9e8308557874f7bae5073367e5fca0d55e4ff404cef06ee5fa940b6cdd",
+    "tools/run_relative_progress_study.py": "f8811bcbf2cb2f25909e9354281b1c2d261e5168db4f56b55bdba2b8ef182e96",
+    "tools/train_relative_policy.py": "70c30484cad3031ed3606d7e9625645f4cf926135499a6a0030b5cbe7ac4f13e",
+    "tools/train_relative_progress_probe.py": "3166fce585d22d5d9dfcc8c525150cf274ef2dc98e5e69c8861ab76ce9069c29",
+    "climb/relative_progress.py": "f5f562bbb9a37d13e6762f7315d5253a2b8e424850bcfa39c53cbc6cc5ce528d",
+    "tests/test_relative_campaign.py": "feb7f55aedc81953505cdc98baec6d0c7ed045884a1d67ec4760d70e4f02d740",
+    "tests/test_relative_failure_calibration.py": "2072ead21596d51da1bf214e8c46f13d854478de32ea6730dc90621b255eef5b",
+    "tests/test_relative_policy_analysis.py": "7d3e200bd730cfe35af36ad1cf538f86960db4e82dc249a5cfdb0c18e7265da7",
+    "tests/test_relative_policy_profiles.py": "56e09f7410bb82a1bf331aa3d593114b8b645021e63d0b0830ed5646873a3c2d",
+    "tests/test_relative_policy_provenance.py": "ef55fbb7693ad8594860d7d389c6ad33af498becdd2af1ab578500897e62d403",
+    "tests/test_relative_policy_smokes.py": "4621e82051742764ed3d724957ffb1c5aaf7d9e238c67608502348271c4c78b8",
+    "tests/test_relative_progress.py": "0ddc2e026496f6bb1ad3e13b3f7e8b682bc449798de07b2ef1ff0393318a581b",
+    "tests/test_relative_progress_continuation.py": "871a9b728469ebb6ff0f75684a42355e0f1ba12af15793f2a5b6c68f8730982f",
+    "tests/test_relative_progress_probe.py": "ece4653419ea697759fa66c50c001e86545dabf1ae6b792d7951ac3011685ea6",
+    "tests/test_relative_rank_signal.py": "d7f0bec6f39f8df3c1c23cea397a69f7a1e691a3542c8d23d905ec530dc9d9fb"
+  },
+  "phase_g_sealed_files_unchanged": 41
+}

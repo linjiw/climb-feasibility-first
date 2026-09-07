@@ -1,0 +1,108 @@
+{
+  "created_at": "2026-09-06T02:22:37.892948-04:00",
+  "classification": "CPU implementation/configuration checks only; policy outcomes pending",
+  "checks": [
+    {
+      "name": "tests",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "pytest",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_icra_efficiency.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "log": "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/tests.log"
+    },
+    {
+      "name": "compile",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_icra_efficiency.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/audit_icra_physics.py"
+      ],
+      "returncode": 0,
+      "log": "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/compile.log"
+    },
+    {
+      "name": "phase_g_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0,
+      "log": "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/phase_g_seal.log"
+    },
+    {
+      "name": "confirmation_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256"
+      ],
+      "returncode": 0,
+      "log": "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/confirmation_seal.log"
+    },
+    {
+      "name": "root_whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "log": "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/root_whitespace.log"
+    },
+    {
+      "name": "worktree_whitespace",
+      "argv": [
+        "git",
+        "-C",
+        "/home/linjiw/climb-icra-evidence-2026-09-06",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "log": "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/worktree_whitespace.log"
+    }
+  ],
+  "unchanged_runtime_files": 376,
+  "new_sources": {
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_icra_efficiency.py": "0b1c6a771917029f83d0e71af667f93f9d883c65516d2d23d229514574febd72",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/audit_icra_physics.py": "8d8abfe88cd1a82b82545f10d0bcd434d8ed4faa5ea26cfab5ed002925bc8997",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_icra_efficiency.py": "23be70276ed6edd9bd72163e58912e15796763d6319d5c3d76ac2613cb273e1e"
+  },
+  "policy_endpoints_opened": false,
+  "artifacts": {
+    "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/efficiency_queue_launch.json": "2031d0d29cba7f42872cafdee5996747f15216198912d024594dc720d7a59d89",
+    "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/physics_audit.json": "e169371be0618f7267f4862601b5adb34be6aa423845072a95ac486ed353c57e",
+    "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/efficiency_synthetic.json": "f792cb760563e57c27ade2ee54d6cbff3f7a2509da221ad8aa83827e5ec2427a",
+    "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/efficiency_readiness.json": "55aac64da9b52973e55d507cc4347d40ff91e4c43d4d2dbd1bbf4cbcfa8c2c96"
+  },
+  "queue_launch": {
+    "created_at": "2026-09-06T02:22:37.850171-04:00",
+    "pid": 1867658,
+    "argv": [
+      "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_icra_efficiency.py",
+      "--campaign-root",
+      "/home/linjiw/climb-feasibility-first",
+      "--contract-sha256",
+      "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013",
+      "--wait-seconds",
+      "172800",
+      "--out",
+      "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/efficiency_after_confirmation.json"
+    ],
+    "cwd": "/home/linjiw/climb-feasibility-first",
+    "log": "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/efficiency_queue.log",
+    "source_sha256": "0b1c6a771917029f83d0e71af667f93f9d883c65516d2d23d229514574febd72",
+    "contract_sha256": "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013",
+    "scope": "one CPU postprocessing attempt after original terminal; no scientific job launch or retry"
+  }
+}

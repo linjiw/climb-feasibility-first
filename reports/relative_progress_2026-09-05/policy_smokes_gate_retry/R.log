@@ -1,0 +1,1343 @@
+LAUNCH attempt=1 free_mib=15526 util_pct=5 baseline_vram_mib=777 2026-09-05T21:43:19-04:00
+[INFO] Training with: device=cuda:0, seed=41, rank=0
+[INFO] Using local motion file: /home/linjiw/climb-feasibility-first/bank/amass/KIT_1229_flexion_with_help_02_poses_100_jpos.npz
+[INFO] Logging experiment in directory: /home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/R/g1_tracking/2026-09-05_21-43-22_policy_R_smoke_s41
+Setting seed: 41
+Warp 1.14.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.2
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5080" (15 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/linjiw/.cache/warp/1.14.0
+Module mujoco_warp._src.smooth e597d07 load on device 'cuda:0' took 2.05 ms  (cached)
+Module _nxn_broadphase__locals__kernel_df6640ed df6640e load on device 'cuda:0' took 0.28 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_0d45ffc8 0d45ffc load on device 'cuda:0' took 0.55 ms  (cached)
+Module mujoco_warp._src.constraint 880bd7f load on device 'cuda:0' took 5.46 ms  (cached)
+Module _friction_dof__locals__kernel_196c77d2 196c77d load on device 'cuda:0' took 0.29 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_6e38514e 6e38514 load on device 'cuda:0' took 0.46 ms  (cached)
+Module _efc_contact_init__locals__kernel_6eab31b8 6eab31b load on device 'cuda:0' took 0.37 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_f9099d1d f9099d1 load on device 'cuda:0' took 0.25 ms  (cached)
+Module _efc_contact_update__locals__kernel_8aad7bfd 8aad7bf load on device 'cuda:0' took 0.27 ms  (cached)
+Module mujoco_warp._src.sensor 42e0a24 load on device 'cuda:0' took 2.58 ms  (cached)
+Module mujoco_warp._src.forward 687ddb7 load on device 'cuda:0' took 1.51 ms  (cached)
+Module mujoco_warp._src.passive 8ff6993 load on device 'cuda:0' took 1.58 ms  (cached)
+Module mujoco_warp._src.forward 2190340 load on device 'cuda:0' took 0.99 ms  (cached)
+Module _qfrc_smooth__locals__kernel_6eb3d958 6eb3d95 load on device 'cuda:0' took 0.32 ms  (cached)
+Module mujoco_warp._src.support d1e71d9 load on device 'cuda:0' took 0.24 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_beb64870 837cd89 load on device 'cuda:0' took 22.98 ms  (cached)
+Module _solve_init_dof__locals__kernel_c6f567bf c6f567b load on device 'cuda:0' took 0.23 ms  (cached)
+Module mujoco_warp._src.solver 245b5b3 load on device 'cuda:0' took 1.09 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_1971c1c1 1971c1c load on device 'cuda:0' took 0.62 ms  (cached)
+Module mul_m_kernel__locals___mul_m_fd2186c4 fd2186c load on device 'cuda:0' took 0.61 ms  (cached)
+Module _update_constraint_efc__locals__kernel_4af8f110 4af8f11 load on device 'cuda:0' took 0.71 ms  (cached)
+Module _update_constraint_init_qfrc_constraint_sparse__locals__kernel_16efb537 16efb53 load on device 'cuda:0' took 0.36 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_cb780630 cb78063 load on device 'cuda:0' took 0.31 ms  (cached)
+Module _update_gradient_grad__locals__kernel_0cbf4927 0cbf492 load on device 'cuda:0' took 0.31 ms  (cached)
+Module _update_gradient_init_h_sparse__locals__kernel_8d599502 8d59950 load on device 'cuda:0' took 0.46 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_6fe61e97 6fe61e9 load on device 'cuda:0' took 0.51 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_6fe61e97 4406f08 load on device 'cuda:0' took 0.36 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_425d32be 40254b5 load on device 'cuda:0' took 43.60 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_0509eab7 0509eab load on device 'cuda:0' took 0.31 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_59bb1059 897906f load on device 'cuda:0' took 0.49 ms  (cached)
+Module _update_constraint_efc__locals__kernel_e30beb1f e30beb1 load on device 'cuda:0' took 0.72 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_f708ee5f f708ee5 load on device 'cuda:0' took 0.55 ms  (cached)
+Module _update_gradient_grad__locals__kernel_cb93df65 cb93df6 load on device 'cuda:0' took 0.56 ms  (cached)
+Module _update_gradient_h_incremental_sparse__locals__kernel_abf1f59a abf1f59 load on device 'cuda:0' took 0.34 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_955af8fc 250c823 load on device 'cuda:0' took 53.58 ms  (cached)
+Module _contact_sort__locals__contact_sort_321f5f3e 33ea4e1 load on device 'cuda:0' took 0.79 ms  (cached)
+Module mujoco_warp._src.derivative e770e28 load on device 'cuda:0' took 1.35 ms  (cached)
+Module _next_time_builder__locals___next_time_95ad6d7a 95ad6d7 load on device 'cuda:0' took 0.62 ms  (cached)
+Module reset_data__locals__reset_xfrc_applied_03030511 0303051 load on device 'cuda:0' took 0.26 ms  (cached)
+Module reset_data__locals__reset_M_631075dd 631075d load on device 'cuda:0' took 0.21 ms  (cached)
+Module reset_data__locals__reset_mocap_6513201c 6513201 load on device 'cuda:0' took 0.20 ms  (cached)
+Module reset_data__locals__reset_contact_5c08f689 5c08f68 load on device 'cuda:0' took 0.21 ms  (cached)
+Module reset_data__locals__reset_sleep_50b990da 50b990d load on device 'cuda:0' took 0.20 ms  (cached)
+Module reset_data__locals__reset_nworld_69a10925 69a1092 load on device 'cuda:0' took 0.27 ms  (cached)
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 8      |
+| Environment device     | cuda:0 |
+| Environment seed       | 41     |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.02   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++----------------------------------------------+
+|    Active Event Terms in Mode: 'interval'    |
++-------+------------+-------------------------+
+| Index | Name       | Interval time range (s) |
++-------+------------+-------------------------+
+|   0   | push_robot |        (1.0, 3.0)       |
++-------+------------+-------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++-----------+---------------------------+
+|   Index   | Name                      |
++-----------+---------------------------+
+|     0     | base_com                  |
+|     1     | encoder_bias              |
+|     2     | foot_friction             |
++-----------+---------------------------+
++-----------------------------+
+| Domain Randomization Fields |
++-------+---------------------+
+| Index | Field Name          |
++-------+---------------------+
+|   0   | body_ipos           |
+|   1   | body_subtreemass    |
+|   2   | dof_invweight0      |
+|   3   | body_invweight0     |
+|   4   | tendon_length0      |
+|   5   | tendon_invweight0   |
+|   6   | actuator_acc0       |
+|   7   | geom_friction       |
++-------+---------------------+
+
+Module repeat_array_kernel_4f67a4c3 711f54c load on device 'cuda:0' took 0.34 ms  (cached)
+Module repeat_array_kernel_4f67a4c3 7224d07 load on device 'cuda:0' took 0.29 ms  (cached)
+Module repeat_array_kernel_4f67a4c3 b2885b0 load on device 'cuda:0' took 0.29 ms  (cached)
+[climb] motion bank: 800 clips, 2.54 h @ 50 fps, clip length min/median/max = 1.1/7.5/155.9 s
+[INFO] <CommandManager> contains 1 active terms.
++------------------------------------------+
+|           Active Command Terms           |
++-------+--------+-------------------------+
+| Index | Name   |           Type          |
++-------+--------+-------------------------+
+|   0   | motion | RelativeProgressCommand |
++-------+--------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 29) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          29 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 2 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (160,)) |
++----------+------------------------------------+------------+
+|  Index   | Name                               |   Shape    |
++----------+------------------------------------+------------+
+|    0     | command                            |   (58,)    |
+|    1     | motion_anchor_pos_b                |    (3,)    |
+|    2     | motion_anchor_ori_b                |    (6,)    |
+|    3     | base_lin_vel                       |    (3,)    |
+|    4     | base_ang_vel                       |    (3,)    |
+|    5     | joint_pos                          |   (29,)    |
+|    6     | joint_vel                          |   (29,)    |
+|    7     | actions                            |   (29,)    |
++----------+------------------------------------+------------+
++-------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (286,)) |
++-----------+------------------------------------+------------+
+|   Index   | Name                               |   Shape    |
++-----------+------------------------------------+------------+
+|     0     | command                            |   (58,)    |
+|     1     | motion_anchor_pos_b                |    (3,)    |
+|     2     | motion_anchor_ori_b                |    (6,)    |
+|     3     | body_pos                           |   (42,)    |
+|     4     | body_ori                           |   (84,)    |
+|     5     | base_lin_vel                       |    (3,)    |
+|     6     | base_ang_vel                       |    (3,)    |
+|     7     | joint_pos                          |   (29,)    |
+|     8     | joint_vel                          |   (29,)    |
+|     9     | actions                            |   (29,)    |
++-----------+------------------------------------+------------+
+
+[INFO] <TerminationManager> contains 4 active terms.
++----------------------------------+
+|     Active Termination Terms     |
++-------+---------------+----------+
+| Index | Name          | Time Out |
++-------+---------------+----------+
+|   0   | anchor_pos    |  False   |
+|   1   | anchor_ori    |  False   |
+|   2   | ee_body_pos   |  False   |
+|   3   | segment_trial |   True   |
++-------+---------------+----------+
+
+[INFO] <RewardManager> contains 10 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+------------------------+--------+
+| Index | Name                   | Weight |
++-------+------------------------+--------+
+|   0   | motion_global_root_pos |    0.5 |
+|   1   | motion_global_root_ori |    0.5 |
+|   2   | motion_body_pos        |    1.0 |
+|   3   | motion_body_ori        |    1.0 |
+|   4   | motion_body_lin_vel    |    1.0 |
+|   5   | motion_body_ang_vel    |    1.0 |
+|   6   | action_rate_l2         |   -0.1 |
+|   7   | joint_limit            |  -10.0 |
+|   8   | self_collisions        |  -10.0 |
+|   9   | failure_terminal       | -500.0 |
++-------+------------------------+--------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <NullMetricsManager> (inactive)
+[INFO] <NullRecorderManager> (inactive)
+Module mujoco_warp._src.io 19274fb load on device 'cuda:0' took 1.08 ms  (cached)
+Module _tile_cholesky_factorize_block__locals__kernel_1a8ac315 67a96c9 load on device 'cuda:0' took 15.45 ms  (cached)
+Module _tile_cholesky_solve_block__locals__kernel_be7133b6 6b45561 load on device 'cuda:0' took 20.32 ms  (cached)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (distribution): GaussianDistribution()
+  (mlp): MLP(
+    (0): Linear(in_features=160, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=256, out_features=128, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=128, out_features=29, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=286, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=256, out_features=128, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=128, out_features=1, bias=True)
+  )
+)
+Storing git diff for 'mjlab-1.6.0' in: /home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry/R/g1_tracking/2026-09-05_21-43-22_policy_R_smoke_s41/git/mjlab-1.6.0.diff
+################################################################################
+[1m                            Learning iteration 0/20                             [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 192 
+                       Steps per second: 163 
+                        Collection time: 1.084s 
+                          Learning time: 0.088s 
+                        Mean value loss: 29.1202
+                    Mean surrogate loss: -0.1167
+                      Mean entropy loss: 41.1421
+                            Mean reward: -11.36
+                    Mean episode length: 12.00
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -1.4293
+        Metrics/motion/error_anchor_rot: 0.3419
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.0440
+         Episode_Reward/self_collisions: -0.6000
+         Episode_Reward/motion_body_ori: 0.0693
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.6842
+        Episode_Termination/ee_body_pos: 1.1429
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.1503
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 0.9695
+          Metrics/motion/error_body_rot: 0.5839
+  Episode_Reward/motion_global_root_ori: 0.0855
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 5.5739
+         Episode_Reward/motion_body_pos: 0.2187
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0075
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.1441
+         Metrics/motion/error_joint_vel: 20.3964
+    Metrics/motion/error_anchor_ang_vel: 2.9279
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0001
+    Metrics/motion/segment_failure_rate: 0.8571
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.0000
+     Episode_Reward/motion_body_lin_vel: 0.1059
+  Episode_Reward/motion_global_root_pos: 0.1076
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 0.7622
+--------------------------------------------------------------------------------
+                         Iteration time: 1.17s
+                           Time elapsed: 0:00:01
+                                    ETA: 0:00:22
+
+################################################################################
+[1m                            Learning iteration 1/20                             [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 384 
+                       Steps per second: 764 
+                        Collection time: 0.215s 
+                          Learning time: 0.036s 
+                        Mean value loss: 24.3170
+                    Mean surrogate loss: -0.1064
+                      Mean entropy loss: 41.1421
+                            Mean reward: -11.72
+                    Mean episode length: 14.81
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -1.7534
+        Metrics/motion/error_anchor_rot: 0.4582
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.0883
+         Episode_Reward/self_collisions: -0.6000
+         Episode_Reward/motion_body_ori: 0.0701
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.7532
+        Episode_Termination/ee_body_pos: 1.0000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.1967
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.1608
+          Metrics/motion/error_body_rot: 0.6438
+  Episode_Reward/motion_global_root_ori: 0.0680
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 6.2229
+         Episode_Reward/motion_body_pos: 0.2565
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0086
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.1603
+         Metrics/motion/error_joint_vel: 22.6458
+    Metrics/motion/error_anchor_ang_vel: 4.7656
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0001
+    Metrics/motion/segment_failure_rate: 1.0000
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.2857
+     Episode_Reward/motion_body_lin_vel: 0.1221
+  Episode_Reward/motion_global_root_pos: 0.1214
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.0673
+--------------------------------------------------------------------------------
+                         Iteration time: 0.25s
+                           Time elapsed: 0:00:01
+                                    ETA: 0:00:12
+
+################################################################################
+[1m                            Learning iteration 2/20                             [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 576 
+                       Steps per second: 709 
+                        Collection time: 0.233s 
+                          Learning time: 0.037s 
+                        Mean value loss: 28.7892
+                    Mean surrogate loss: -0.1124
+                      Mean entropy loss: 41.1409
+                            Mean reward: -12.45
+                    Mean episode length: 18.42
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.7932
+        Metrics/motion/error_anchor_rot: 0.6645
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.1989
+         Episode_Reward/self_collisions: -1.6000
+         Episode_Reward/motion_body_ori: 0.1189
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.6354
+        Episode_Termination/ee_body_pos: 0.9000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.3015
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.3166
+          Metrics/motion/error_body_rot: 0.6779
+  Episode_Reward/motion_global_root_ori: 0.1017
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 6.7666
+         Episode_Reward/motion_body_pos: 0.3817
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0150
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.2152
+         Metrics/motion/error_joint_vel: 23.3701
+    Metrics/motion/error_anchor_ang_vel: 3.4819
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 1.0000
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.2000
+     Episode_Reward/motion_body_lin_vel: 0.1806
+  Episode_Reward/motion_global_root_pos: 0.1660
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.2632
+--------------------------------------------------------------------------------
+                         Iteration time: 0.27s
+                           Time elapsed: 0:00:01
+                                    ETA: 0:00:09
+
+################################################################################
+[1m                            Learning iteration 3/20                             [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 768 
+                       Steps per second: 716 
+                        Collection time: 0.233s 
+                          Learning time: 0.035s 
+                        Mean value loss: 27.5290
+                    Mean surrogate loss: -0.1083
+                      Mean entropy loss: 41.1377
+                            Mean reward: -12.77
+                    Mean episode length: 19.68
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.7832
+        Metrics/motion/error_anchor_rot: 0.7687
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.1286
+         Episode_Reward/self_collisions: -1.8000
+         Episode_Reward/motion_body_ori: 0.1038
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.6630
+        Episode_Termination/ee_body_pos: 1.0000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.2730
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.2671
+          Metrics/motion/error_body_rot: 0.6110
+  Episode_Reward/motion_global_root_ori: 0.0703
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 6.3076
+         Episode_Reward/motion_body_pos: 0.3835
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0126
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.2064
+         Metrics/motion/error_joint_vel: 21.9322
+    Metrics/motion/error_anchor_ang_vel: 3.7305
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 1.0000
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.1250
+     Episode_Reward/motion_body_lin_vel: 0.1905
+  Episode_Reward/motion_global_root_pos: 0.1747
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.2408
+--------------------------------------------------------------------------------
+                         Iteration time: 0.27s
+                           Time elapsed: 0:00:01
+                                    ETA: 0:00:07
+
+################################################################################
+[1m                            Learning iteration 4/20                             [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 960 
+                       Steps per second: 714 
+                        Collection time: 0.227s 
+                          Learning time: 0.041s 
+                        Mean value loss: 24.3965
+                    Mean surrogate loss: -0.1087
+                      Mean entropy loss: 41.1351
+                            Mean reward: -12.71
+                    Mean episode length: 18.98
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -1.8421
+        Metrics/motion/error_anchor_rot: 0.4817
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.0848
+         Episode_Reward/self_collisions: -1.1333
+         Episode_Reward/motion_body_ori: 0.0620
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.9943
+        Episode_Termination/ee_body_pos: 1.2222
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.2128
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.1951
+          Metrics/motion/error_body_rot: 0.7675
+  Episode_Reward/motion_global_root_ori: 0.0628
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 7.2777
+         Episode_Reward/motion_body_pos: 0.2530
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0080
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.1719
+         Metrics/motion/error_joint_vel: 24.7996
+    Metrics/motion/error_anchor_ang_vel: 4.1977
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 1.0000
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.1111
+     Episode_Reward/motion_body_lin_vel: 0.1042
+  Episode_Reward/motion_global_root_pos: 0.1226
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 0.8426
+--------------------------------------------------------------------------------
+                         Iteration time: 0.27s
+                           Time elapsed: 0:00:02
+                                    ETA: 0:00:06
+
+################################################################################
+[1m                            Learning iteration 5/20                             [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 1152 
+                       Steps per second: 733 
+                        Collection time: 0.218s 
+                          Learning time: 0.044s 
+                        Mean value loss: 26.7076
+                    Mean surrogate loss: -0.1007
+                      Mean entropy loss: 41.1335
+                            Mean reward: -12.88
+                    Mean episode length: 18.95
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -1.9818
+        Metrics/motion/error_anchor_rot: 0.5307
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.0711
+         Episode_Reward/self_collisions: -1.9000
+         Episode_Reward/motion_body_ori: 0.0823
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.8007
+        Episode_Termination/ee_body_pos: 1.0000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.1926
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.2973
+          Metrics/motion/error_body_rot: 0.6752
+  Episode_Reward/motion_global_root_ori: 0.0856
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 7.7895
+         Episode_Reward/motion_body_pos: 0.2918
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0087
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.1792
+         Metrics/motion/error_joint_vel: 24.8635
+    Metrics/motion/error_anchor_ang_vel: 4.6639
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 1.0000
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.1111
+     Episode_Reward/motion_body_lin_vel: 0.1385
+  Episode_Reward/motion_global_root_pos: 0.1451
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.1765
+--------------------------------------------------------------------------------
+                         Iteration time: 0.26s
+                           Time elapsed: 0:00:02
+                                    ETA: 0:00:05
+
+################################################################################
+[1m                            Learning iteration 6/20                             [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 1344 
+                       Steps per second: 713 
+                        Collection time: 0.227s 
+                          Learning time: 0.042s 
+                        Mean value loss: 11.4133
+                    Mean surrogate loss: -0.1022
+                      Mean entropy loss: 41.1350
+                            Mean reward: -12.87
+                    Mean episode length: 19.62
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.9540
+        Metrics/motion/error_anchor_rot: 0.6755
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.3565
+         Episode_Reward/self_collisions: -2.4800
+         Episode_Reward/motion_body_ori: 0.0893
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.8651
+        Episode_Termination/ee_body_pos: 0.8000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.2334
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 0.9686
+          Metrics/motion/error_body_rot: 0.7397
+  Episode_Reward/motion_global_root_ori: 0.0812
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 6.0191
+         Episode_Reward/motion_body_pos: 0.4068
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0157
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.2000
+          Metrics/motion/error_body_pos: 0.2114
+         Metrics/motion/error_joint_vel: 19.0241
+    Metrics/motion/error_anchor_ang_vel: 3.4471
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9898
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -8.0000
+         Episode_Termination/anchor_pos: 0.0000
+     Episode_Reward/motion_body_lin_vel: 0.2299
+  Episode_Reward/motion_global_root_pos: 0.2022
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 0.7605
+--------------------------------------------------------------------------------
+                         Iteration time: 0.27s
+                           Time elapsed: 0:00:02
+                                    ETA: 0:00:05
+
+################################################################################
+[1m                            Learning iteration 7/20                             [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 1536 
+                       Steps per second: 758 
+                        Collection time: 0.213s 
+                          Learning time: 0.040s 
+                        Mean value loss: 23.5657
+                    Mean surrogate loss: -0.1037
+                      Mean entropy loss: 41.1355
+                            Mean reward: -13.01
+                    Mean episode length: 20.08
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.8488
+        Metrics/motion/error_anchor_rot: 0.7627
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.1280
+         Episode_Reward/self_collisions: -1.7444
+         Episode_Reward/motion_body_ori: 0.1037
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.9166
+        Episode_Termination/ee_body_pos: 1.0000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.2856
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.3050
+          Metrics/motion/error_body_rot: 0.8013
+  Episode_Reward/motion_global_root_ori: 0.1050
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 7.2062
+         Episode_Reward/motion_body_pos: 0.3532
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0140
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.2431
+         Metrics/motion/error_joint_vel: 25.4711
+    Metrics/motion/error_anchor_ang_vel: 4.5077
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9848
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.4444
+     Episode_Reward/motion_body_lin_vel: 0.1833
+  Episode_Reward/motion_global_root_pos: 0.1781
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.3298
+--------------------------------------------------------------------------------
+                         Iteration time: 0.25s
+                           Time elapsed: 0:00:03
+                                    ETA: 0:00:04
+
+################################################################################
+[1m                            Learning iteration 8/20                             [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 1728 
+                       Steps per second: 658 
+                        Collection time: 0.249s 
+                          Learning time: 0.042s 
+                        Mean value loss: 17.7093
+                    Mean surrogate loss: -0.1038
+                      Mean entropy loss: 41.1367
+                            Mean reward: -13.02
+                    Mean episode length: 19.82
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.1288
+        Metrics/motion/error_anchor_rot: 0.5028
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.1463
+         Episode_Reward/self_collisions: -1.7875
+         Episode_Reward/motion_body_ori: 0.1065
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.6209
+        Episode_Termination/ee_body_pos: 1.1250
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.2396
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.2442
+          Metrics/motion/error_body_rot: 0.6039
+  Episode_Reward/motion_global_root_ori: 0.0882
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 6.4060
+         Episode_Reward/motion_body_pos: 0.3099
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0116
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.1890
+         Metrics/motion/error_joint_vel: 21.2643
+    Metrics/motion/error_anchor_ang_vel: 3.7308
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9871
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.1250
+     Episode_Reward/motion_body_lin_vel: 0.1609
+  Episode_Reward/motion_global_root_pos: 0.1483
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.1576
+--------------------------------------------------------------------------------
+                         Iteration time: 0.29s
+                           Time elapsed: 0:00:03
+                                    ETA: 0:00:04
+
+################################################################################
+[1m                            Learning iteration 9/20                             [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 1920 
+                       Steps per second: 765 
+                        Collection time: 0.212s 
+                          Learning time: 0.039s 
+                        Mean value loss: 5.6072
+                    Mean surrogate loss: -0.0959
+                      Mean entropy loss: 41.1364
+                            Mean reward: -13.05
+                    Mean episode length: 19.88
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.0693
+        Metrics/motion/error_anchor_rot: 0.7061
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.1009
+         Episode_Reward/self_collisions: -1.8250
+         Episode_Reward/motion_body_ori: 0.0720
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.7003
+        Episode_Termination/ee_body_pos: 1.0000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.2091
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.3288
+          Metrics/motion/error_body_rot: 0.6830
+  Episode_Reward/motion_global_root_ori: 0.0749
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 6.6567
+         Episode_Reward/motion_body_pos: 0.2954
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0090
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.1880
+         Metrics/motion/error_joint_vel: 24.6480
+    Metrics/motion/error_anchor_ang_vel: 1.9810
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9883
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.2500
+     Episode_Reward/motion_body_lin_vel: 0.1420
+  Episode_Reward/motion_global_root_pos: 0.1494
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.1733
+--------------------------------------------------------------------------------
+                         Iteration time: 0.25s
+                           Time elapsed: 0:00:03
+                                    ETA: 0:00:03
+
+################################################################################
+[1m                            Learning iteration 10/20                            [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 2112 
+                       Steps per second: 781 
+                        Collection time: 0.209s 
+                          Learning time: 0.037s 
+                        Mean value loss: 17.2030
+                    Mean surrogate loss: -0.1010
+                      Mean entropy loss: 41.1307
+                            Mean reward: -13.13
+                    Mean episode length: 20.29
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.1958
+        Metrics/motion/error_anchor_rot: 0.5371
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.0914
+         Episode_Reward/self_collisions: -1.5333
+         Episode_Reward/motion_body_ori: 0.0946
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.6892
+        Episode_Termination/ee_body_pos: 1.0000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.2321
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.2080
+          Metrics/motion/error_body_rot: 0.6736
+  Episode_Reward/motion_global_root_ori: 0.0956
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 6.0521
+         Episode_Reward/motion_body_pos: 0.3236
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0117
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.1954
+         Metrics/motion/error_joint_vel: 22.7375
+    Metrics/motion/error_anchor_ang_vel: 2.9208
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9892
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.2500
+     Episode_Reward/motion_body_lin_vel: 0.1629
+  Episode_Reward/motion_global_root_pos: 0.1595
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.1860
+--------------------------------------------------------------------------------
+                         Iteration time: 0.25s
+                           Time elapsed: 0:00:03
+                                    ETA: 0:00:03
+
+################################################################################
+[1m                            Learning iteration 11/20                            [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 2304 
+                       Steps per second: 867 
+                        Collection time: 0.184s 
+                          Learning time: 0.037s 
+                        Mean value loss: 7.6618
+                    Mean surrogate loss: -0.1045
+                      Mean entropy loss: 41.1287
+                            Mean reward: -13.25
+                    Mean episode length: 21.22
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.7550
+        Metrics/motion/error_anchor_rot: 0.9154
+         Episode_Termination/anchor_ori: 0.1667
+             Episode_Reward/joint_limit: -0.2694
+         Episode_Reward/self_collisions: -2.7000
+         Episode_Reward/motion_body_ori: 0.0885
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 2.0281
+        Episode_Termination/ee_body_pos: 0.6667
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.3255
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.4737
+          Metrics/motion/error_body_rot: 0.8273
+  Episode_Reward/motion_global_root_ori: 0.0717
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 7.5160
+         Episode_Reward/motion_body_pos: 0.3425
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0119
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.1667
+          Metrics/motion/error_body_pos: 0.2540
+         Metrics/motion/error_joint_vel: 24.4286
+    Metrics/motion/error_anchor_ang_vel: 5.8097
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9820
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -9.1667
+         Episode_Termination/anchor_pos: 0.1667
+     Episode_Reward/motion_body_lin_vel: 0.1690
+  Episode_Reward/motion_global_root_pos: 0.1670
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.4540
+--------------------------------------------------------------------------------
+                         Iteration time: 0.22s
+                           Time elapsed: 0:00:04
+                                    ETA: 0:00:02
+
+################################################################################
+[1m                            Learning iteration 12/20                            [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 2496 
+                       Steps per second: 637 
+                        Collection time: 0.265s 
+                          Learning time: 0.037s 
+                        Mean value loss: 14.6428
+                    Mean surrogate loss: -0.0984
+                      Mean entropy loss: 41.1292
+                            Mean reward: -13.39
+                    Mean episode length: 21.92
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.8244
+        Metrics/motion/error_anchor_rot: 0.5468
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.2602
+         Episode_Reward/self_collisions: -2.1889
+         Episode_Reward/motion_body_ori: 0.0966
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.7858
+        Episode_Termination/ee_body_pos: 1.2222
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.3117
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.2903
+          Metrics/motion/error_body_rot: 0.8093
+  Episode_Reward/motion_global_root_ori: 0.1131
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 7.8328
+         Episode_Reward/motion_body_pos: 0.3752
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0145
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.1111
+          Metrics/motion/error_body_pos: 0.2268
+         Metrics/motion/error_joint_vel: 24.8593
+    Metrics/motion/error_anchor_ang_vel: 4.3257
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9779
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -8.8889
+         Episode_Termination/anchor_pos: 0.1111
+     Episode_Reward/motion_body_lin_vel: 0.1852
+  Episode_Reward/motion_global_root_pos: 0.1680
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.2049
+--------------------------------------------------------------------------------
+                         Iteration time: 0.30s
+                           Time elapsed: 0:00:04
+                                    ETA: 0:00:02
+
+################################################################################
+[1m                            Learning iteration 13/20                            [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 2688 
+                       Steps per second: 840 
+                        Collection time: 0.193s 
+                          Learning time: 0.036s 
+                        Mean value loss: 13.1706
+                    Mean surrogate loss: -0.0951
+                      Mean entropy loss: 41.1345
+                            Mean reward: -13.19
+                    Mean episode length: 20.82
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -1.3845
+        Metrics/motion/error_anchor_rot: 0.2697
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.0661
+         Episode_Reward/self_collisions: -0.6750
+         Episode_Reward/motion_body_ori: 0.0661
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.6553
+        Episode_Termination/ee_body_pos: 1.0000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.1663
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.1628
+          Metrics/motion/error_body_rot: 0.5428
+  Episode_Reward/motion_global_root_ori: 0.0971
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 7.7275
+         Episode_Reward/motion_body_pos: 0.2211
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0054
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.1388
+         Metrics/motion/error_joint_vel: 26.3310
+    Metrics/motion/error_anchor_ang_vel: 3.8586
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9751
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.0000
+     Episode_Reward/motion_body_lin_vel: 0.0915
+  Episode_Reward/motion_global_root_pos: 0.1040
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 0.7737
+--------------------------------------------------------------------------------
+                         Iteration time: 0.23s
+                           Time elapsed: 0:00:04
+                                    ETA: 0:00:01
+
+################################################################################
+[1m                            Learning iteration 14/20                            [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 2880 
+                       Steps per second: 663 
+                        Collection time: 0.251s 
+                          Learning time: 0.038s 
+                        Mean value loss: 6.4422
+                    Mean surrogate loss: -0.0859
+                      Mean entropy loss: 41.1406
+                            Mean reward: -13.12
+                    Mean episode length: 20.60
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.2668
+        Metrics/motion/error_anchor_rot: 0.5177
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.1337
+         Episode_Reward/self_collisions: -1.3000
+         Episode_Reward/motion_body_ori: 0.0878
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.8263
+        Episode_Termination/ee_body_pos: 1.0000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.2153
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.1929
+          Metrics/motion/error_body_rot: 0.7211
+  Episode_Reward/motion_global_root_ori: 0.0923
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 7.1594
+         Episode_Reward/motion_body_pos: 0.3154
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0095
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.1810
+         Metrics/motion/error_joint_vel: 24.9806
+    Metrics/motion/error_anchor_ang_vel: 4.2561
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9770
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.0833
+     Episode_Reward/motion_body_lin_vel: 0.1594
+  Episode_Reward/motion_global_root_pos: 0.1460
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.0722
+--------------------------------------------------------------------------------
+                         Iteration time: 0.29s
+                           Time elapsed: 0:00:04
+                                    ETA: 0:00:01
+
+################################################################################
+[1m                            Learning iteration 15/20                            [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 3072 
+                       Steps per second: 627 
+                        Collection time: 0.244s 
+                          Learning time: 0.062s 
+                        Mean value loss: 2.5557
+                    Mean surrogate loss: -0.0966
+                      Mean entropy loss: 41.1425
+                            Mean reward: -13.16
+                    Mean episode length: 21.42
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -3.0846
+        Metrics/motion/error_anchor_rot: 0.4719
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.1666
+         Episode_Reward/self_collisions: -2.0000
+         Episode_Reward/motion_body_ori: 0.1216
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.7402
+        Episode_Termination/ee_body_pos: 1.0000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.3702
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.1548
+          Metrics/motion/error_body_rot: 0.6554
+  Episode_Reward/motion_global_root_ori: 0.0986
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 6.0904
+         Episode_Reward/motion_body_pos: 0.4601
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0141
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.2000
+          Metrics/motion/error_body_pos: 0.1786
+         Metrics/motion/error_joint_vel: 21.6196
+    Metrics/motion/error_anchor_ang_vel: 3.5524
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9771
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -8.0000
+         Episode_Termination/anchor_pos: 0.0000
+     Episode_Reward/motion_body_lin_vel: 0.2183
+  Episode_Reward/motion_global_root_pos: 0.1744
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.0914
+--------------------------------------------------------------------------------
+                         Iteration time: 0.31s
+                           Time elapsed: 0:00:05
+                                    ETA: 0:00:01
+
+################################################################################
+[1m                            Learning iteration 16/20                            [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 3264 
+                       Steps per second: 760 
+                        Collection time: 0.217s 
+                          Learning time: 0.036s 
+                        Mean value loss: 4.6990
+                    Mean surrogate loss: -0.1039
+                      Mean entropy loss: 41.1441
+                            Mean reward: -13.20
+                    Mean episode length: 21.66
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.3934
+        Metrics/motion/error_anchor_rot: 0.7084
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.2523
+         Episode_Reward/self_collisions: -1.4429
+         Episode_Reward/motion_body_ori: 0.0795
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.7649
+        Episode_Termination/ee_body_pos: 1.4286
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.2676
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.2175
+          Metrics/motion/error_body_rot: 0.7023
+  Episode_Reward/motion_global_root_ori: 0.0911
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 6.5251
+         Episode_Reward/motion_body_pos: 0.3046
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0078
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.2247
+         Metrics/motion/error_joint_vel: 23.2425
+    Metrics/motion/error_anchor_ang_vel: 4.0522
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0001
+    Metrics/motion/segment_failure_rate: 0.9729
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.0000
+     Episode_Reward/motion_body_lin_vel: 0.1348
+  Episode_Reward/motion_global_root_pos: 0.1457
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.1140
+--------------------------------------------------------------------------------
+                         Iteration time: 0.25s
+                           Time elapsed: 0:00:05
+                                    ETA: 0:00:00
+
+################################################################################
+[1m                            Learning iteration 17/20                            [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 3456 
+                       Steps per second: 474 
+                        Collection time: 0.338s 
+                          Learning time: 0.067s 
+                        Mean value loss: 3.1863
+                    Mean surrogate loss: -0.0989
+                      Mean entropy loss: 41.1433
+                            Mean reward: -13.16
+                    Mean episode length: 21.36
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.7383
+        Metrics/motion/error_anchor_rot: 0.6495
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.1704
+         Episode_Reward/self_collisions: -1.6500
+         Episode_Reward/motion_body_ori: 0.0870
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.8747
+        Episode_Termination/ee_body_pos: 1.0000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.3238
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.2351
+          Metrics/motion/error_body_rot: 0.7140
+  Episode_Reward/motion_global_root_ori: 0.0911
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 6.0776
+         Episode_Reward/motion_body_pos: 0.3621
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0141
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.2176
+         Metrics/motion/error_joint_vel: 21.7943
+    Metrics/motion/error_anchor_ang_vel: 3.9286
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9744
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.0000
+     Episode_Reward/motion_body_lin_vel: 0.1743
+  Episode_Reward/motion_global_root_pos: 0.1513
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.1804
+--------------------------------------------------------------------------------
+                         Iteration time: 0.40s
+                           Time elapsed: 0:00:05
+                                    ETA: 0:00:00
+
+################################################################################
+[1m                            Learning iteration 18/20                            [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 3648 
+                       Steps per second: 380 
+                        Collection time: 0.441s 
+                          Learning time: 0.063s 
+                        Mean value loss: 3.9277
+                    Mean surrogate loss: -0.0939
+                      Mean entropy loss: 41.1393
+                            Mean reward: -13.18
+                    Mean episode length: 21.39
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.9278
+        Metrics/motion/error_anchor_rot: 0.7718
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.1447
+         Episode_Reward/self_collisions: -2.0250
+         Episode_Reward/motion_body_ori: 0.0968
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 1.6363
+        Episode_Termination/ee_body_pos: 0.7500
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.3046
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.2789
+          Metrics/motion/error_body_rot: 0.7712
+  Episode_Reward/motion_global_root_ori: 0.0916
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 6.2862
+         Episode_Reward/motion_body_pos: 0.3623
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0114
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.0000
+          Metrics/motion/error_body_pos: 0.2350
+         Metrics/motion/error_joint_vel: 23.9493
+    Metrics/motion/error_anchor_ang_vel: 3.2703
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9757
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -10.0000
+         Episode_Termination/anchor_pos: 0.2500
+     Episode_Reward/motion_body_lin_vel: 0.1838
+  Episode_Reward/motion_global_root_pos: 0.1632
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.1547
+--------------------------------------------------------------------------------
+                         Iteration time: 0.50s
+                           Time elapsed: 0:00:06
+                                    ETA: 0:00:00
+
+################################################################################
+[1m                            Learning iteration 19/20                            [0m 
+
+                               Run name: policy_R_smoke_s41
+                            Total steps: 3840 
+                       Steps per second: 427 
+                        Collection time: 0.381s 
+                          Learning time: 0.069s 
+                        Mean value loss: 3.0037
+                    Mean surrogate loss: -0.0959
+                      Mean entropy loss: 41.1356
+                            Mean reward: -13.15
+                    Mean episode length: 21.92
+                        Mean action std: 1.00
+          Episode_Reward/action_rate_l2: -2.3050
+        Metrics/motion/error_anchor_rot: 0.6305
+         Episode_Termination/anchor_ori: 0.0000
+             Episode_Reward/joint_limit: -0.2128
+         Episode_Reward/self_collisions: -1.4167
+         Episode_Reward/motion_body_ori: 0.1042
+        Metrics/motion/sampling_entropy: 0.9095
+         Metrics/motion/error_joint_pos: 2.0443
+        Episode_Termination/ee_body_pos: 1.0000
+   Metrics/motion/sampling_clip_entropy: 0.9287
+ Metrics/motion/sampling_clip_top1_prob: 0.0172
+        Metrics/motion/error_anchor_pos: 0.3035
+Metrics/motion/segment_invalid_reference_frame_count: 0.0000
+ Metrics/motion/segment_censored_resets: 0.0000
+      Metrics/motion/error_body_lin_vel: 1.6676
+          Metrics/motion/error_body_rot: 0.8028
+  Episode_Reward/motion_global_root_ori: 0.0776
+      Metrics/motion/sampling_top1_prob: 0.0164
+      Metrics/motion/error_body_ang_vel: 6.1574
+         Episode_Reward/motion_body_pos: 0.3146
+Metrics/motion/sampling_unit_effective_count: 624.0341
+     Episode_Reward/motion_body_ang_vel: 0.0102
+Metrics/motion/sampling_rank_saturation_fraction: 0.0000
+      Episode_Termination/segment_trial: 0.1667
+          Metrics/motion/error_body_pos: 0.2203
+         Metrics/motion/error_joint_vel: 22.3771
+    Metrics/motion/error_anchor_ang_vel: 3.0367
+Metrics/motion/sampling_adaptation_total_variation: 0.0000
+         Metrics/motion/bank_clip_count: 800.0000
+    Metrics/motion/segment_failure_rate: 0.9729
+Metrics/motion/segment_invalid_start_count: 0.0000
+        Episode_Reward/failure_terminal: -9.1667
+         Episode_Termination/anchor_pos: 0.5000
+     Episode_Reward/motion_body_lin_vel: 0.1318
+  Episode_Reward/motion_global_root_pos: 0.1383
+       Metrics/motion/sampling_top1_bin: 0.4167
+    Metrics/motion/error_anchor_lin_vel: 1.6789
+--------------------------------------------------------------------------------
+                         Iteration time: 0.45s
+                           Time elapsed: 0:00:06
+                                    ETA: 0:00:00
+
+DONE rc=0 attempt=1 elapsed_s=18 gpu_hours=0.005000 baseline_vram_mib=777 peak_total_vram_mib=7222 peak_delta_mib=6445 2026-09-05T21:43:37-04:00

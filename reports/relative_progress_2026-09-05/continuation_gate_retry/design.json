@@ -1,0 +1,19 @@
+{
+  "schema_version": "relative_progress_continuation/1",
+  "created_utc": "2026-09-05T22:30:00.757356+00:00",
+  "predecessor": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11",
+  "predecessor_seed": 11,
+  "next_seed": 12,
+  "sources": {
+    "tools/continue_relative_progress.py": "3baa1be54cee1d450d2c6428c40eaa93d39be5f3e1a468bdf076c6dfafb2f818",
+    "tools/run_relative_progress_study.py": "f8811bcbf2cb2f25909e9354281b1c2d261e5168db4f56b55bdba2b8ef182e96",
+    "tools/check_relative_progress_probe.py": "dcb9e5f9e30d199ad6179bfe83915b482875df77ec2fe02a46059ba31d18f985",
+    "tools/train_relative_progress_probe.py": "3166fce585d22d5d9dfcc8c525150cf274ef2dc98e5e69c8861ab76ce9069c29",
+    "tools/plot_relative_progress.py": "8e2e8b668373b46b414bd3dd88cbce76b398370e156f4e1108d5252cd012b2c3",
+    "climb/relative_progress.py": "f5f562bbb9a37d13e6762f7315d5253a2b8e424850bcfa39c53cbc6cc5ce528d"
+  },
+  "predecessor_design_sha256": "b9ea06978bbc8aac9ef7874322e0869e4ea75250a7267a0b407fa7b68a73f2f2",
+  "wait_seconds": 7200,
+  "policy_endpoints_opened": false,
+  "rule": "Complete reproduced seed-11 pass is required; then unchanged seed-12 smoke and long study."
+}

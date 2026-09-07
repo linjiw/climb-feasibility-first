@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-09-05T21:57:19.798336-04:00",
+  "scope": "new checkpoint-loading audit plus affected evaluator-interface checks; prior 175-test integrated run is separate",
+  "checks": [
+    {
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/test_relative_checkpoint_loading.py",
+        "tests/test_relative_evaluator_adapter.py",
+        "tests/test_relative_evaluator_interface.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "...........................                                              [100%]\n27 passed in 3.31s\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "tests/test_relative_checkpoint_loading.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "phase_g_sealed_files_unchanged": 41,
+  "source_sha256": {
+    "tests/test_relative_checkpoint_loading.py": "096f00bd1bdb4dff9d9a6e1e6fcfb3814c4c481f567a8df3a66f37d7f8a10eb2"
+  }
+}

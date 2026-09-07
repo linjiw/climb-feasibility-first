@@ -1,0 +1,318 @@
+{
+  "checked_at": "2026-09-07T00:02:00.886569-04:00",
+  "original_runtime_files_unchanged": 376,
+  "seal_entries_pass": {
+    "plan/G_SEGMENT_FREEZE.sha256": 41,
+    "reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256": 7
+  },
+  "evaluation_cells": [
+    {
+      "arm": "U",
+      "seed": "21",
+      "iteration": "1000",
+      "rows": 2800
+    },
+    {
+      "arm": "U",
+      "seed": "21",
+      "iteration": "2000",
+      "rows": 2800
+    },
+    {
+      "arm": "U",
+      "seed": "21",
+      "iteration": "3000",
+      "rows": 2800
+    },
+    {
+      "arm": "U",
+      "seed": "21",
+      "iteration": "3999",
+      "rows": 2800
+    },
+    {
+      "arm": "U",
+      "seed": "22",
+      "iteration": "1000",
+      "rows": 2800
+    },
+    {
+      "arm": "U",
+      "seed": "22",
+      "iteration": "2000",
+      "rows": 2800
+    },
+    {
+      "arm": "U",
+      "seed": "22",
+      "iteration": "3000",
+      "rows": 2800
+    },
+    {
+      "arm": "U",
+      "seed": "22",
+      "iteration": "3999",
+      "rows": 2800
+    },
+    {
+      "arm": "U",
+      "seed": "23",
+      "iteration": "1000",
+      "rows": 2800
+    },
+    {
+      "arm": "U",
+      "seed": "23",
+      "iteration": "2000",
+      "rows": 2800
+    },
+    {
+      "arm": "U",
+      "seed": "23",
+      "iteration": "3000",
+      "rows": 2800
+    },
+    {
+      "arm": "U",
+      "seed": "23",
+      "iteration": "3999",
+      "rows": 2800
+    },
+    {
+      "arm": "A",
+      "seed": "21",
+      "iteration": "1000",
+      "rows": 2800
+    },
+    {
+      "arm": "A",
+      "seed": "21",
+      "iteration": "2000",
+      "rows": 2800
+    },
+    {
+      "arm": "A",
+      "seed": "21",
+      "iteration": "3000",
+      "rows": 2800
+    },
+    {
+      "arm": "A",
+      "seed": "21",
+      "iteration": "3999",
+      "rows": 2800
+    },
+    {
+      "arm": "A",
+      "seed": "22",
+      "iteration": "1000",
+      "rows": 2800
+    },
+    {
+      "arm": "A",
+      "seed": "22",
+      "iteration": "2000",
+      "rows": 2800
+    },
+    {
+      "arm": "A",
+      "seed": "22",
+      "iteration": "3000",
+      "rows": 2800
+    },
+    {
+      "arm": "A",
+      "seed": "22",
+      "iteration": "3999",
+      "rows": 2800
+    },
+    {
+      "arm": "A",
+      "seed": "23",
+      "iteration": "1000",
+      "rows": 2800
+    },
+    {
+      "arm": "A",
+      "seed": "23",
+      "iteration": "2000",
+      "rows": 2800
+    },
+    {
+      "arm": "A",
+      "seed": "23",
+      "iteration": "3000",
+      "rows": 2800
+    },
+    {
+      "arm": "A",
+      "seed": "23",
+      "iteration": "3999",
+      "rows": 2800
+    },
+    {
+      "arm": "R",
+      "seed": "21",
+      "iteration": "1000",
+      "rows": 2800
+    },
+    {
+      "arm": "R",
+      "seed": "21",
+      "iteration": "2000",
+      "rows": 2800
+    },
+    {
+      "arm": "R",
+      "seed": "21",
+      "iteration": "3000",
+      "rows": 2800
+    },
+    {
+      "arm": "R",
+      "seed": "21",
+      "iteration": "3999",
+      "rows": 2800
+    },
+    {
+      "arm": "R",
+      "seed": "22",
+      "iteration": "1000",
+      "rows": 2800
+    },
+    {
+      "arm": "R",
+      "seed": "22",
+      "iteration": "2000",
+      "rows": 2800
+    },
+    {
+      "arm": "R",
+      "seed": "22",
+      "iteration": "3000",
+      "rows": 2800
+    },
+    {
+      "arm": "R",
+      "seed": "22",
+      "iteration": "3999",
+      "rows": 2800
+    },
+    {
+      "arm": "R",
+      "seed": "23",
+      "iteration": "1000",
+      "rows": 2800
+    },
+    {
+      "arm": "R",
+      "seed": "23",
+      "iteration": "2000",
+      "rows": 2800
+    },
+    {
+      "arm": "R",
+      "seed": "23",
+      "iteration": "3000",
+      "rows": 2800
+    },
+    {
+      "arm": "R",
+      "seed": "23",
+      "iteration": "3999",
+      "rows": 2800
+    },
+    {
+      "arm": "D",
+      "seed": "21",
+      "iteration": "1000",
+      "rows": 2800
+    },
+    {
+      "arm": "D",
+      "seed": "21",
+      "iteration": "2000",
+      "rows": 2800
+    },
+    {
+      "arm": "D",
+      "seed": "21",
+      "iteration": "3000",
+      "rows": 2800
+    },
+    {
+      "arm": "D",
+      "seed": "21",
+      "iteration": "3999",
+      "rows": 2800
+    },
+    {
+      "arm": "D",
+      "seed": "22",
+      "iteration": "1000",
+      "rows": 2800
+    },
+    {
+      "arm": "D",
+      "seed": "22",
+      "iteration": "2000",
+      "rows": 2800
+    },
+    {
+      "arm": "D",
+      "seed": "22",
+      "iteration": "3000",
+      "rows": 2800
+    },
+    {
+      "arm": "D",
+      "seed": "22",
+      "iteration": "3999",
+      "rows": 2800
+    },
+    {
+      "arm": "D",
+      "seed": "23",
+      "iteration": "1000",
+      "rows": 2800
+    },
+    {
+      "arm": "D",
+      "seed": "23",
+      "iteration": "2000",
+      "rows": 2800
+    },
+    {
+      "arm": "D",
+      "seed": "23",
+      "iteration": "3000",
+      "rows": 2800
+    },
+    {
+      "arm": "D",
+      "seed": "23",
+      "iteration": "3999",
+      "rows": 2800
+    }
+  ],
+  "evaluation_rows": 134400,
+  "targeted_tests": {
+    "continuous_support": 13,
+    "serialized_replay": 5,
+    "optional_sensor_graph": 7,
+    "total_passed": 25
+  },
+  "compiled_source_sha256": {
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/continuous_execution_support.py": "cec099ec8402e710823239b4871a65e95dae6b49e27ab775d397ea3b4925a7f0",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_continuous_development.py": "4e2490ebba6b3fb4ba8229da0d6099d088f8d2f4695601e93c3cbc73d0a55f9f",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/replay_serialized_confirmation.py": "da62000e92f0a39ae48dddf2a21a157924d2863deec25312f85743e78cd16888",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/device_optional_sense.py": "9dad3a48baff3c6252343dc02c92be1704707271edde4cb8c6f0af23315dd65f"
+  },
+  "full_followup_studies_enabled": false,
+  "unrelated_archived_seal_attempt": {
+    "manifest": "plan/FGAS_FREEZE.sha256",
+    "status": "not_verifiable_missing_local_payload",
+    "first_missing_path": "bank/tiers/tier_mixed100.txt",
+    "manifest_or_payload_changes": false
+  }
+}

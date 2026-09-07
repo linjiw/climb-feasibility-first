@@ -1,0 +1,96 @@
+LAUNCH attempt=1 free_mib=15092 util_pct=17 baseline_vram_mib=1211 2026-09-05T11:11:35-04:00
+8 inputs, 8 to convert (0 already present)
+Warp 1.14.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.2
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5080" (15 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/linjiw/.cache/warp/1.14.0
+Module mujoco_warp._src.smooth e597d07 load on device 'cuda:0' took 2.08 ms  (cached)
+Module _nxn_broadphase__locals__kernel_df6640ed df6640e load on device 'cuda:0' took 0.30 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_0d45ffc8 0d45ffc load on device 'cuda:0' took 0.44 ms  (cached)
+Module mujoco_warp._src.constraint 880bd7f load on device 'cuda:0' took 0.21 ms  (cached)
+Module _friction_dof__locals__kernel_196c77d2 196c77d load on device 'cuda:0' took 0.28 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_6e38514e 6e38514 load on device 'cuda:0' took 0.29 ms  (cached)
+Module _efc_contact_init__locals__kernel_6eab31b8 6eab31b load on device 'cuda:0' took 0.26 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_f9099d1d f9099d1 load on device 'cuda:0' took 0.24 ms  (cached)
+Module _efc_contact_update__locals__kernel_8aad7bfd 8aad7bf load on device 'cuda:0' took 0.35 ms  (cached)
+Module mujoco_warp._src.sensor 42e0a24 load on device 'cuda:0' took 1.57 ms  (cached)
+Module mujoco_warp._src.forward 687ddb7 load on device 'cuda:0' took 0.84 ms  (cached)
+Module mujoco_warp._src.passive 8ff6993 load on device 'cuda:0' took 0.90 ms  (cached)
+Module mujoco_warp._src.forward 2190340 load on device 'cuda:0' took 0.76 ms  (cached)
+Module _qfrc_smooth__locals__kernel_6eb3d958 6eb3d95 load on device 'cuda:0' took 0.22 ms  (cached)
+Module mujoco_warp._src.support d1e71d9 load on device 'cuda:0' took 0.24 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_beb64870 837cd89 load on device 'cuda:0' took 20.18 ms  (cached)
+Module _solve_init_dof__locals__kernel_c6f567bf c6f567b load on device 'cuda:0' took 0.23 ms  (cached)
+Module mujoco_warp._src.solver 245b5b3 load on device 'cuda:0' took 1.04 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_1971c1c1 1971c1c load on device 'cuda:0' took 0.26 ms  (cached)
+Module mul_m_kernel__locals___mul_m_fd2186c4 fd2186c load on device 'cuda:0' took 0.30 ms  (cached)
+Module _update_constraint_efc__locals__kernel_4af8f110 4af8f11 load on device 'cuda:0' took 0.25 ms  (cached)
+Module _update_constraint_init_qfrc_constraint_sparse__locals__kernel_16efb537 16efb53 load on device 'cuda:0' took 0.40 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_cb780630 cb78063 load on device 'cuda:0' took 0.22 ms  (cached)
+Module _update_gradient_grad__locals__kernel_0cbf4927 0cbf492 load on device 'cuda:0' took 0.22 ms  (cached)
+Module _update_gradient_init_h_sparse__locals__kernel_8d599502 8d59950 load on device 'cuda:0' took 0.23 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_6fe61e97 6fe61e9 load on device 'cuda:0' took 0.24 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_6fe61e97 4406f08 load on device 'cuda:0' took 0.22 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_425d32be 40254b5 load on device 'cuda:0' took 41.40 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_0509eab7 0509eab load on device 'cuda:0' took 0.31 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_ed37dd76 64d7317 load on device 'cuda:0' took 0.41 ms  (cached)
+Module _update_constraint_efc__locals__kernel_e30beb1f e30beb1 load on device 'cuda:0' took 0.27 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_f708ee5f f708ee5 load on device 'cuda:0' took 0.24 ms  (cached)
+Module _update_gradient_grad__locals__kernel_cb93df65 cb93df6 load on device 'cuda:0' took 0.24 ms  (cached)
+Module _update_gradient_h_incremental_sparse__locals__kernel_abf1f59a abf1f59 load on device 'cuda:0' took 0.24 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_955af8fc 250c823 load on device 'cuda:0' took 45.37 ms  (cached)
+Module _contact_sort__locals__contact_sort_321f5f3e 33ea4e1 load on device 'cuda:0' took 0.32 ms  (cached)
+Module mujoco_warp._src.derivative e770e28 load on device 'cuda:0' took 0.60 ms  (cached)
+Module _next_time_builder__locals___next_time_95ad6d7a 95ad6d7 load on device 'cuda:0' took 0.27 ms  (cached)
+Module reset_data__locals__reset_xfrc_applied_03030511 0303051 load on device 'cuda:0' took 0.24 ms  (cached)
+Module reset_data__locals__reset_M_631075dd 631075d load on device 'cuda:0' took 0.20 ms  (cached)
+Module reset_data__locals__reset_mocap_6513201c 6513201 load on device 'cuda:0' took 0.20 ms  (cached)
+Module reset_data__locals__reset_contact_5c08f689 5c08f68 load on device 'cuda:0' took 0.21 ms  (cached)
+Module reset_data__locals__reset_sleep_50b990da 50b990d load on device 'cuda:0' took 0.20 ms  (cached)
+Module reset_data__locals__reset_nworld_69a10925 69a1092 load on device 'cuda:0' took 0.26 ms  (cached)
+Motion interpolated, input frames: 1076, input fps: 120.0, output frames: 448, output fps: 50.0
+[1/8] OK 000_warmup_0_120_jpos 448f 9.0s (1.73 clip/s, ETA 0.1m)
+Motion interpolated, input frames: 1076, input fps: 120.0, output frames: 448, output fps: 50.0
+[2/8] OK 000_warmup_1_120_jpos 448f 9.0s (1.69 clip/s, ETA 0.1m)
+Motion interpolated, input frames: 1076, input fps: 120.0, output frames: 448, output fps: 50.0
+[3/8] OK 000_warmup_2_120_jpos 448f 9.0s (1.80 clip/s, ETA 0.0m)
+Motion interpolated, input frames: 1076, input fps: 120.0, output frames: 448, output fps: 50.0
+[4/8] OK 000_warmup_3_120_jpos 448f 9.0s (1.87 clip/s, ETA 0.0m)
+Motion interpolated, input frames: 1076, input fps: 120.0, output frames: 448, output fps: 50.0
+[5/8] OK 000_warmup_4_120_jpos 448f 9.0s (1.91 clip/s, ETA 0.0m)
+Motion interpolated, input frames: 1076, input fps: 120.0, output frames: 448, output fps: 50.0
+[6/8] OK 000_warmup_5_120_jpos 448f 9.0s (1.94 clip/s, ETA 0.0m)
+Motion interpolated, input frames: 1076, input fps: 120.0, output frames: 448, output fps: 50.0
+[7/8] OK ACCAD_Female1Walking_c3d_B14_-_walk_turn_right_(135)_poses_120_jpos 448f 9.0s (1.96 clip/s, ETA 0.0m)
+Motion interpolated, input frames: 564, input fps: 120.0, output frames: 235, output fps: 50.0
+[8/8] OK ACCAD_Male1General_c3d_General_A5_-_Pick_Up_Box_poses_120_jpos 235f 4.7s (2.09 clip/s, ETA 0.0m)
+
+8 converted, 0 failed, in 0.1 min
+source frame rates: 120fps x8
+manifest: /home/linjiw/climb-feasibility-first/bank/dfrp_validation_recovery/probe_w6__8f/raw/manifest.jsonl
+  [8/8] shifted=8 already-ok=0
+
+shifted 8, left 0 within 5 mm
+offset distribution (m): min=-0.8345 p50=-0.8345 p95=-0.8059 max=-0.7905
+log: /home/linjiw/climb-feasibility-first/bank/dfrp_validation_recovery/probe_w6__8f/raw/ground_align.jsonl
+[
+ {
+  "clip": "ACCAD_Female1Walking_c3d_B14_-_walk_turn_right_(135)_poses_120_jpos",
+  "expected": "9ecf4a14596f989b66901ac51c5d59a1edec10957991f012074ec9723d284fd4",
+  "actual": "9ecf4a14596f989b66901ac51c5d59a1edec10957991f012074ec9723d284fd4",
+  "pass": true,
+  "path": "/home/linjiw/climb-feasibility-first/bank/dfrp_validation_recovery/probe_w6__8f/raw/ACCAD_Female1Walking_c3d_B14_-_walk_turn_right_(135)_poses_120_jpos.npz"
+ },
+ {
+  "clip": "ACCAD_Male1General_c3d_General_A5_-_Pick_Up_Box_poses_120_jpos",
+  "expected": "b8849193bbaf861d10b0032031374b2c07d70010912f0b7591f93d700d7200a2",
+  "actual": "ed5ec5eb480ac9bfb2047f18f567a5d2a33268bd24a9b3d35a2bf88549c500cf",
+  "pass": false,
+  "path": "/home/linjiw/climb-feasibility-first/bank/dfrp_validation_recovery/probe_w6__8f/raw/ACCAD_Male1General_c3d_General_A5_-_Pick_Up_Box_poses_120_jpos.npz"
+ }
+]
+Exact identities available: 25/26
+DONE rc=0 attempt=1 elapsed_s=12 gpu_hours=0.003333 baseline_vram_mib=1211 peak_total_vram_mib=1716 peak_delta_mib=505 2026-09-05T11:11:47-04:00

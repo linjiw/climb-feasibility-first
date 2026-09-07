@@ -1,0 +1,28 @@
+{
+  "schema_version": "relative_policy_smokes/1",
+  "sources": {
+    "tools/run_relative_policy_smokes.py": "64765c9e8308557874f7bae5073367e5fca0d55e4ff404cef06ee5fa940b6cdd",
+    "tools/train_relative_policy.py": "70c30484cad3031ed3606d7e9625645f4cf926135499a6a0030b5cbe7ac4f13e",
+    "plan/R3_BASELINE_CONTRACT_2026-09-05.json": "60610018e5bd8a9d0874281666dfe81417275ad2b69e575bc748aa93a6dfb448",
+    "climb/relative_progress.py": "f5f562bbb9a37d13e6762f7315d5253a2b8e424850bcfa39c53cbc6cc5ce528d",
+    "climb/segment_runtime.py": "2b2631e2fffdebb70eac8d885daca4689283e52c0674ddfcd79d29dc0591e50f",
+    "climb/segment_curriculum.py": "dd3fe6f54ab11b09e8ba28d29504f4b6d1403f7102ac9fc0ce3ca1082df24b8e",
+    "climb/segment_command.py": "da0132e6facd00ec088f6fafdd7f3aa8ab0a405644f7f56bc61a056c4855a696",
+    "climb/segment_env_cfg.py": "dda2a3c044235e102bf05c30fdd26ea2cb5f6610f57426807e432497d765b5f2",
+    "tools/continue_relative_progress.py": "3baa1be54cee1d450d2c6428c40eaa93d39be5f3e1a468bdf076c6dfafb2f818",
+    "tools/check_relative_progress_probe.py": "dcb9e5f9e30d199ad6179bfe83915b482875df77ec2fe02a46059ba31d18f985",
+    "tools/climb_segment_train.py": "6b8b1b490978cf4a5007801a5d85541f1523510faca7c6eda6b5df3a6ec9ce47",
+    "tools/run_when_free.sh": "ba945375055f2dee1a15437de2abfcdaac49306f6135e9fdd856094e890d87ac"
+  },
+  "arms": [
+    "U",
+    "A",
+    "R",
+    "D"
+  ],
+  "seed": 41,
+  "num_envs": 8,
+  "iterations": 20,
+  "prerequisite": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_recovery",
+  "policy_endpoints_opened": false
+}

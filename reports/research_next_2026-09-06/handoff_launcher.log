@@ -1,0 +1,3 @@
+waiting_for_entrypoint_smokes
+confirmation_scheduler
+{"status": "execution_stopped", "stage": "confirmation_scheduler", "reason": "Command '['/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python', '/home/linjiw/climb-feasibility-first/tools/run_relative_confirmation.py', '--contract', '/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/contract.json', '--contract-sha256', '8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013', '--out-dir', '/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze/campaign']' returned non-zero exit status 1."}

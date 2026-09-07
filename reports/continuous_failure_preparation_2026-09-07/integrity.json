@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-09-07T00:27:46.635709-04:00",
+  "original_runtime_files_unchanged": 376,
+  "seal_entries_pass": {
+    "plan/G_SEGMENT_FREEZE.sha256": 41,
+    "reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256": 7
+  },
+  "new_tests_passed": 14,
+  "replay_sha256": "0618abd89dd3e3bba3e78db351b46e08079843a1e817ac3a6888faf7ff673a06",
+  "reference_readiness_sha256": "28c65f4bb02b2dddb68b227cf1340b811d48fd54cbdff12f5ab00365f3350b50",
+  "compiled_sources": {
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/verify_continuous_trace.py": "535a3c6694c6bc748f949aed19d65a3e0f8707ddf469453a3060a5ec3024fc78",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_continuous_trace_replay.py": "3d9a6daebb5857785654eadb97cb75620d683a58ea9ba6ddb31d68d1c95308f6",
+    "/home/linjiw/climb-feasibility-first/reports/continuous_failure_preparation_2026-09-07/audit_reference_candidates.py": "71c8369ecc79aa4092d40be96faf2291e64b8d468b82e6d18a7def1ba3cbc9cb"
+  },
+  "confirmation_decision_unchanged": "inconclusive",
+  "full_followup_evaluation_enabled": false
+}

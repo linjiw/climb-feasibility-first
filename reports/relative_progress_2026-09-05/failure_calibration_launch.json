@@ -1,0 +1,11 @@
+{
+  "pid": 1062984,
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-feasibility-first/tools/run_relative_failure_calibration.py",
+    "--smoke-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes",
+    "--out-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration"
+  ]
+}

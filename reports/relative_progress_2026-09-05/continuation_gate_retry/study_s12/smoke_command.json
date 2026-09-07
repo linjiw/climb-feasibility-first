@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-feasibility-first/tools/train_relative_progress_probe.py",
+    "Climb-Tracking-Flat-Unitree-G1-RelativeALP-Probe",
+    "--env.scene.num-envs",
+    "8",
+    "--agent.max-iterations",
+    "20",
+    "--agent.logger",
+    "tensorboard",
+    "--agent.run-name",
+    "relative_smoke_s12",
+    "--log-root",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/smoke"
+  ],
+  "seed": 12
+}

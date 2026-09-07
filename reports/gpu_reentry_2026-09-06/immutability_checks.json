@@ -1,0 +1,99 @@
+{
+  "timestamp": "2026-09-06T12:12:38.291733-04:00",
+  "checks": [
+    {
+      "name": "compile",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/audit_policy_immutability.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_policy_immutability.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_policy_immutability.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "phase_g_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "confirmation_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "root_whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "worktree_whitespace",
+      "argv": [
+        "git",
+        "-C",
+        "/home/linjiw/climb-icra-evidence-2026-09-06",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "targeted_tests",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "pytest",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_policy_immutability.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "9 passed in 0.56s",
+      "record": "completed earlier in this session; not rerun"
+    }
+  ],
+  "unchanged_original_runtime_files": 376,
+  "aggregate_analysis": {
+    "argv": [
+      "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_policy_immutability.py",
+      "--run",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/reports/policy_immutability_2026-09-06",
+      "--out",
+      "/home/linjiw/climb-icra-evidence-2026-09-06/reports/policy_immutability_2026-09-06/verification.json"
+    ],
+    "returncode": 0,
+    "path": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/policy_immutability_2026-09-06/verification.json",
+    "sha256": "0430318a4bbdea1dac10b2b1aca8ff8be221c6bb7ab351f9c7475f12069ca5d9"
+  },
+  "source_sha256": {
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/audit_policy_immutability.py": "52c0ce90fb7a0f9252b37fa4eff3348c2c926e21d09b0a95503d58545deeb4e4",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_policy_immutability.py": "9c4345784ff59adf954a70aa81399687449d2eb9cd407b28dc08bf2985a06cf3",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_policy_immutability.py": "0cfc1a775efe013a2e648d7daadc1d68863f89d7e7af7e93a9347f47f8f36451"
+  }
+}

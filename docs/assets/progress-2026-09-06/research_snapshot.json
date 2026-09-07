@@ -1,0 +1,134 @@
+{
+  "schema_version": "climb_public_progress/1",
+  "snapshot_time": "2026-09-06T22:17:40.396652-04:00",
+  "classification": "measured simulation training integrity and allocation; policy utility pending",
+  "campaign_contract_sha256": "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013",
+  "training_jobs_complete": 10,
+  "training_jobs_total": 12,
+  "verified_checkpoint_states": 410,
+  "evaluation_cells_total": 48,
+  "endpoint_access_exists": false,
+  "policy_outcomes_read_by_exporter": false,
+  "completed_runs": [
+    {
+      "arm": "U",
+      "seed": 21,
+      "mean_tv": 0.0,
+      "snapshots": 41,
+      "completed_trials": 1086702,
+      "source": "reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/U_s21_training_gate.json",
+      "source_sha256": "8c691082934d69adddffbf1696a3d2b44ab8e9a3991d3e9e1fa024859bb1166f",
+      "finished": "2026-09-06T11:02:25-04:00"
+    },
+    {
+      "arm": "A",
+      "seed": 21,
+      "mean_tv": 0.029759170164293084,
+      "snapshots": 41,
+      "completed_trials": 1084430,
+      "source": "reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/A_s21_training_gate.json",
+      "source_sha256": "2504b99053405cc1c249d30505e743928761dd18f1e99230e0f735a4ded29cec",
+      "finished": "2026-09-06T12:02:42-04:00"
+    },
+    {
+      "arm": "R",
+      "seed": 21,
+      "mean_tv": 0.08348494896009954,
+      "snapshots": 41,
+      "completed_trials": 1083411,
+      "source": "reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/R_s21_training_gate.json",
+      "source_sha256": "d10a7bf06aff0382b8181f36bb7b089ee1a8faee18c66b4b8bf3804e97d578ab",
+      "finished": "2026-09-06T15:10:59-04:00"
+    },
+    {
+      "arm": "D",
+      "seed": 21,
+      "mean_tv": 0.08391068947163956,
+      "snapshots": 41,
+      "completed_trials": 1116479,
+      "source": "reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/D_s21_training_gate.json",
+      "source_sha256": "3ac2bae084b46a3d8d4a1148ad711b9e922babfbc10c5dc6805270d338b41f6a",
+      "finished": "2026-09-06T17:14:52-04:00"
+    },
+    {
+      "arm": "A",
+      "seed": 22,
+      "mean_tv": 0.02933859420427059,
+      "snapshots": 41,
+      "completed_trials": 1082658,
+      "source": "reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/A_s22_training_gate.json",
+      "source_sha256": "056c4fb967e80d7244ed1aa902a7e6724a403a0f6417f2b158eb4fc68950ca60",
+      "finished": "2026-09-06T19:00:08-04:00"
+    },
+    {
+      "arm": "R",
+      "seed": 22,
+      "mean_tv": 0.0824919974124211,
+      "snapshots": 41,
+      "completed_trials": 1087418,
+      "source": "reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/R_s22_training_gate.json",
+      "source_sha256": "e53ea6619861fb4a08c0945e038a429b160dcdae1c334e4a42ef0328e1258ba3",
+      "finished": "2026-09-06T19:23:56-04:00"
+    },
+    {
+      "arm": "D",
+      "seed": 22,
+      "mean_tv": 0.08586509252074585,
+      "snapshots": 41,
+      "completed_trials": 1116999,
+      "source": "reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/D_s22_training_gate.json",
+      "source_sha256": "0e654c5a6d0e0026713f3431d6a014852d763d58d13f3217b5cb25c834b065de",
+      "finished": "2026-09-06T19:47:47-04:00"
+    },
+    {
+      "arm": "U",
+      "seed": 22,
+      "mean_tv": 0.0,
+      "snapshots": 41,
+      "completed_trials": 1086071,
+      "source": "reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/U_s22_training_gate.json",
+      "source_sha256": "ecd43e6285d76533f7a2ce4e1424e76a6d4b5056b7f6ced0c005648a01806f8a",
+      "finished": "2026-09-06T20:11:33-04:00"
+    },
+    {
+      "arm": "R",
+      "seed": 23,
+      "mean_tv": 0.08233284378057906,
+      "snapshots": 41,
+      "completed_trials": 1089129,
+      "source": "reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/R_s23_training_gate.json",
+      "source_sha256": "095fb7798ae950d10d39ef44e5df3223a42cbe6d699f89f28c260f85a72cc8e0",
+      "finished": "2026-09-06T20:43:56-04:00"
+    },
+    {
+      "arm": "D",
+      "seed": 23,
+      "mean_tv": 0.08398385293466296,
+      "snapshots": 41,
+      "completed_trials": 1117687,
+      "source": "reports/relative_progress_2026-09-05/confirmation_freeze/campaign_gpu_reentry_2026-09-06/D_s23_training_gate.json",
+      "source_sha256": "401fbd01b15ff36639e002ec63a43c118fb5c95484fdbcbd07c1b21e30e67422",
+      "finished": "2026-09-06T21:42:45-04:00"
+    }
+  ],
+  "pending_training": [
+    {
+      "arm": "U",
+      "seed": 23,
+      "latest_saved_iteration": 1100
+    },
+    {
+      "arm": "A",
+      "seed": 23,
+      "latest_saved_iteration": null
+    }
+  ],
+  "unit_of_replication": "training seed; checkpoint states and evaluation conditions are correlated",
+  "mean_tv_window": "37 saved states at iterations 400 through 3999 inclusive",
+  "limitations": [
+    "TV measures changed exposure, not policy utility.",
+    "Incomplete arms are not imputed.",
+    "This dated export is not a live monitor.",
+    "No hardware or Sim2Real outcome is established."
+  ]
+}

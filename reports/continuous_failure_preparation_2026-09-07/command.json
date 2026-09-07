@@ -1,0 +1,10 @@
+[
+  "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+  "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_continuous_development.py",
+  "--design",
+  "/home/linjiw/climb-icra-evidence-2026-09-06/reports/continuous_failure_development_2026-09-07/design.json",
+  "--design-sha256",
+  "32afe7fc330edbc6c39d93a3ecb0085d9425b1394731a8449863af37fc2bfd20",
+  "--out-dir",
+  "/home/linjiw/climb-icra-evidence-2026-09-06/reports/continuous_failure_development_2026-09-07/run"
+]

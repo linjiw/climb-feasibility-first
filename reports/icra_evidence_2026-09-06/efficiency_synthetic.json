@@ -1,0 +1,315 @@
+{
+  "schema_version": "icra_efficiency_descriptive/1",
+  "status": "complete",
+  "classification": "synthetic validation only",
+  "original_primary_status": "inconclusive",
+  "seed_order": [
+    21,
+    22,
+    23
+  ],
+  "checkpoint_iterations": [
+    1000,
+    2000,
+    3000,
+    3999
+  ],
+  "training_transitions": [
+    12300288,
+    24588288,
+    36876288,
+    49152000
+  ],
+  "panels": {
+    "feasible_hard": {
+      "normalized_AULC_per_seed": {
+        "U": [
+          0.43329443147715907,
+          0.43329443147715907,
+          0.43329443147715907
+        ],
+        "A": [
+          0.43329443147715907,
+          0.43329443147715907,
+          0.43329443147715907
+        ],
+        "R": [
+          0.5999749916638879,
+          0.5999749916638879,
+          0.5999749916638879
+        ],
+        "D": [
+          0.43329443147715907,
+          0.43329443147715907,
+          0.43329443147715907
+        ]
+      },
+      "AULC_R_minus_U_per_seed": [
+        0.16668056018672883,
+        0.16668056018672883,
+        0.16668056018672883
+      ],
+      "paired_U_final_target": {
+        "21": {
+          "target": 0.6,
+          "arms": {
+            "U": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            },
+            "A": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            },
+            "R": {
+              "status": "attained_on_observed_grid",
+              "iteration": 2000,
+              "transitions": 24588288,
+              "budget_fraction": 0.50025
+            },
+            "D": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            }
+          }
+        },
+        "22": {
+          "target": 0.6,
+          "arms": {
+            "U": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            },
+            "A": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            },
+            "R": {
+              "status": "attained_on_observed_grid",
+              "iteration": 2000,
+              "transitions": 24588288,
+              "budget_fraction": 0.50025
+            },
+            "D": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            }
+          }
+        },
+        "23": {
+          "target": 0.6,
+          "arms": {
+            "U": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            },
+            "A": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            },
+            "R": {
+              "status": "attained_on_observed_grid",
+              "iteration": 2000,
+              "transitions": 24588288,
+              "budget_fraction": 0.50025
+            },
+            "D": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            }
+          }
+        }
+      },
+      "checkpoint_R_minus_U_per_seed": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.19999999999999996,
+          0.19999999999999996,
+          0.19999999999999996
+        ],
+        [
+          0.15000000000000002,
+          0.15000000000000002,
+          0.15000000000000002
+        ],
+        [
+          0.09999999999999998,
+          0.09999999999999998,
+          0.09999999999999998
+        ]
+      ]
+    },
+    "all_panel": {
+      "normalized_AULC_per_seed": {
+        "U": [
+          0.43329443147715907,
+          0.43329443147715907,
+          0.43329443147715907
+        ],
+        "A": [
+          0.43329443147715907,
+          0.43329443147715907,
+          0.43329443147715907
+        ],
+        "R": [
+          0.5999749916638879,
+          0.5999749916638879,
+          0.5999749916638879
+        ],
+        "D": [
+          0.43329443147715907,
+          0.43329443147715907,
+          0.43329443147715907
+        ]
+      },
+      "AULC_R_minus_U_per_seed": [
+        0.16668056018672883,
+        0.16668056018672883,
+        0.16668056018672883
+      ],
+      "paired_U_final_target": {
+        "21": {
+          "target": 0.6,
+          "arms": {
+            "U": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            },
+            "A": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            },
+            "R": {
+              "status": "attained_on_observed_grid",
+              "iteration": 2000,
+              "transitions": 24588288,
+              "budget_fraction": 0.50025
+            },
+            "D": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            }
+          }
+        },
+        "22": {
+          "target": 0.6,
+          "arms": {
+            "U": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            },
+            "A": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            },
+            "R": {
+              "status": "attained_on_observed_grid",
+              "iteration": 2000,
+              "transitions": 24588288,
+              "budget_fraction": 0.50025
+            },
+            "D": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            }
+          }
+        },
+        "23": {
+          "target": 0.6,
+          "arms": {
+            "U": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            },
+            "A": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            },
+            "R": {
+              "status": "attained_on_observed_grid",
+              "iteration": 2000,
+              "transitions": 24588288,
+              "budget_fraction": 0.50025
+            },
+            "D": {
+              "status": "attained_on_observed_grid",
+              "iteration": 3999,
+              "transitions": 49152000,
+              "budget_fraction": 1.0
+            }
+          }
+        }
+      },
+      "checkpoint_R_minus_U_per_seed": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.19999999999999996,
+          0.19999999999999996,
+          0.19999999999999996
+        ],
+        [
+          0.15000000000000002,
+          0.15000000000000002,
+          0.15000000000000002
+        ],
+        [
+          0.09999999999999998,
+          0.09999999999999998,
+          0.09999999999999998
+        ]
+      ]
+    }
+  },
+  "limitations": [
+    "Targets are each paired U seed's observed final score, not externally fixed thresholds.",
+    "Attainment is sustained only at observed checkpoints; no interpolation or monotonicity assumption.",
+    "First-observation attainment does not locate an earlier crossing; non-attainment has no finite ratio.",
+    "AULC covers iterations 1000 through 3999 only; early training is unobserved.",
+    "Checkpoints are saved after zero-indexed PPO updates; budget uses (iteration + 1) * 512 * 24.",
+    "Three trained policies per arm remain the independent units; no efficiency significance claim.",
+    "Bootstrap, target attainment and AULC cannot rescue the frozen primary decision."
+  ],
+  "policy_endpoints_opened": false
+}

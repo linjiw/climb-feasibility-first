@@ -46,3 +46,9 @@ reports/g_segment/local_bank_intake.json
 
 # generated anonymous ICRA paper build
 paper/icra/build/
+
+# Local training event streams and checkpoint directories; retain outer gates,
+# manifests, evaluation CSVs, analyses and source hashes in reports/.
+reports/**/g1_tracking/
+reports/**/events.out.tfevents.*
+reports/**/*.lock

@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-09-06T01:24:27.900924-04:00",
+  "classification": "verification of development implementation and preservation of original campaign",
+  "pytest": {
+    "argv": [
+      "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_frozen_progress_pilot.py",
+      "tests/test_gate_candidate_support.py",
+      "tests/test_frozen_progress_queue.py",
+      "tests/test_confirmation_handoff.py"
+    ],
+    "cwd": "/home/linjiw/climb-signal-quality-2026-09-06",
+    "observed_result": "17 passed in 5.67s",
+    "note": "Completed earlier this turn before queue creation; source hashes below preserve the tested files."
+  },
+  "checks": [
+    {
+      "label": "phase_g_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0
+    },
+    {
+      "label": "confirmation_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256"
+      ],
+      "returncode": 0
+    },
+    {
+      "label": "root_whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0
+    },
+    {
+      "label": "worktree_whitespace",
+      "argv": [
+        "git",
+        "-C",
+        "/home/linjiw/climb-signal-quality-2026-09-06",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0
+    }
+  ],
+  "python_compile_passed": true,
+  "new_files_trailing_whitespace_pass": true,
+  "original_sources_unchanged": 130,
+  "diagnostic_bindings_verified": 520,
+  "new_sources": {
+    "/home/linjiw/climb-signal-quality-2026-09-06/tools/frozen_progress_pilot.py": "a5e0247ae3f05170642012a39c0452c65c2a250bef81fb351dda020eae36d2ab",
+    "/home/linjiw/climb-signal-quality-2026-09-06/tools/analyze_frozen_progress_pilot.py": "14b3df69ed91117b23a9ada30e06824dcd78cf1adb473d0d56256ebdefc000ef",
+    "/home/linjiw/climb-signal-quality-2026-09-06/tools/audit_gate_candidate_support.py": "f313ba4dc8ec9eafdce7c566c32279e48d86ec5d904f0cdcf5cee8d538481ee9",
+    "/home/linjiw/climb-signal-quality-2026-09-06/tools/queue_frozen_progress_pilot.py": "2a72cf6ca064ecd187cd6079303b1cd18cad2af48e45bc8300bd0d4e556f4afb",
+    "/home/linjiw/climb-signal-quality-2026-09-06/tests/test_frozen_progress_pilot.py": "5fef30b74b6782f968515c3cababf3a5fbc35db85667371cf66cc3d41cd984c9",
+    "/home/linjiw/climb-signal-quality-2026-09-06/tests/test_gate_candidate_support.py": "a667f37d38671c345fc85aa2ecfbf59507283b0bf97438996f66751d130f4e37",
+    "/home/linjiw/climb-signal-quality-2026-09-06/tests/test_frozen_progress_queue.py": "92d208c9308f524cce02cf448473763afec2303d7c1917659aa0eacc624e9dbe"
+  },
+  "artifacts": {
+    "/home/linjiw/climb-signal-quality-2026-09-06/reports/frozen_progress_pilot_2026-09-06/cpu_smoke/result.json": "112d49df540b92452db26063755b0c8088d33e3492cefa5b06579ce2bad04a86",
+    "/home/linjiw/climb-signal-quality-2026-09-06/reports/frozen_progress_pilot_2026-09-06/cpu_smoke_analysis/summary.json": "afc4f4ef7f7a677b03e865d3d018ab0dbb87ad0fd550ceafbeeb5ddd0c4cb7ec",
+    "/home/linjiw/climb-signal-quality-2026-09-06/reports/gate_candidate_audit_2026-09-06/result.json": "6e7a9986acb6e91740ca09896b1a5e91890d3af9e6f93fd7eb03549e41d24e01",
+    "/home/linjiw/climb-signal-quality-2026-09-06/reports/frozen_progress_pilot_2026-09-06/queue_design.json": "a70dfef2e6bb2553f56cf972e8107f5b35fd1b59d81ae7cbca4585132828676a",
+    "/home/linjiw/climb-signal-quality-2026-09-06/reports/frozen_progress_pilot_2026-09-06/queue_launch.json": "dc17aa27783132d6468c7a6b6f09e1d76c4183718c73eddf5f6a1094313a2f75"
+  }
+}

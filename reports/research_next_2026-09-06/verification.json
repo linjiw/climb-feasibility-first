@@ -1,0 +1,95 @@
+{
+  "created_at": "2026-09-06T00:45:59.518213-04:00",
+  "checks": [
+    {
+      "label": "handoff_tests",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "/home/linjiw/climb-signal-quality-2026-09-06/tests/test_confirmation_handoff.py"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "compile",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "/home/linjiw/climb-signal-quality-2026-09-06/tools/advance_bound_confirmation.py",
+        "/home/linjiw/climb-signal-quality-2026-09-06/tools/reproduce_noise_only_tv.py",
+        "/home/linjiw/climb-signal-quality-2026-09-06/tests/test_confirmation_handoff.py"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "phase_g_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "root_whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "worktree_whitespace",
+      "argv": [
+        "git",
+        "-C",
+        "/home/linjiw/climb-signal-quality-2026-09-06",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "actual_freeze_check",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/tools/freeze_relative_confirmation.sh",
+        "--draft",
+        "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation_adapter/draft_contract.json",
+        "--draft-sha256",
+        "74857935900acac9c14b2a865845c658da89a8e06bbfeac72ac96d6bc91552f2",
+        "--out-dir",
+        "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_freeze",
+        "--check-only"
+      ],
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true
+    }
+  ],
+  "original_python_shell_sources_unchanged": 130,
+  "phase_g_sealed_artifacts": 41,
+  "new_and_edited_files_whitespace_pass": true,
+  "files": {
+    "/home/linjiw/climb-feasibility-first/plan/USEFUL_PRACTICE_NEXT_STEPS_2026-09-06.md": "2f4d737cb23865f2a794d2c5e4450031d53516433af50fe37b1d720c10e26303",
+    "/home/linjiw/climb-feasibility-first/plan/STATUS.md": "2a00c25f755715468f25299c2a66c137f31dffd6f9502ea100846b105a98ccfd",
+    "/home/linjiw/climb-feasibility-first/paper/RESULTS_LOG.md": "4fe5a4429f32cf7c795e8959549c5810cee5714dd5551c3a87a0cbd69e923b00",
+    "/home/linjiw/climb-feasibility-first/reports/research_next_2026-09-06/README.md": "56843f5723a010a45ea0c01bdffd45af52778b2cc871ea07d2e6b2e4ab77b9c0",
+    "/home/linjiw/climb-signal-quality-2026-09-06/tools/advance_bound_confirmation.py": "0205d6e28383b1bfae83903a1dd6bbaae08d779a7385b8d237eb6536d515cbac",
+    "/home/linjiw/climb-signal-quality-2026-09-06/tools/reproduce_noise_only_tv.py": "d0381409bbc69cfee51e491ae18ce977ce775c3728dc2135d652eb7ceb79ef92",
+    "/home/linjiw/climb-signal-quality-2026-09-06/tests/test_confirmation_handoff.py": "428d81ce6062e28d4763dc75daacf1dbf07f86761fdd398387c52c18a598a864"
+  },
+  "scope": "CPU checks and full existing calibration replay; no new simulator experiment or policy endpoint",
+  "confirmation_state": "pending four seed51 smokes; external handoff waiting"
+}

@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-09-05T17:06:40.555201-04:00",
+  "stages": [
+    {
+      "stage": "continuation_recovery",
+      "launch_pid": 1035465,
+      "process_snapshot": "    PID     ELAPSED STAT\n1035465       48:23 Ssl\n",
+      "design_sha256": "711365ccd02e75083f025b5102d2d0d32b4432fe5fb7f7b9c8f5c2b635842433",
+      "source_mismatches": [],
+      "terminal_exists": false
+    },
+    {
+      "stage": "policy_smokes",
+      "launch_pid": 1039495,
+      "process_snapshot": "    PID     ELAPSED STAT\n1039495       40:43 Ssl\n",
+      "design_sha256": "be947b608f0e127fe4542660f744fc7b6c67a5de9f1c0955315a660cc210e6c6",
+      "source_mismatches": [],
+      "terminal_exists": false
+    },
+    {
+      "stage": "failure_calibration",
+      "launch_pid": 1062984,
+      "process_snapshot": "    PID     ELAPSED STAT\n1062984       14:19 Ssl\n",
+      "design_sha256": "bc9dcf4bf04ff9a0d63289a5cb8de23b8cc6b79f3ecbabe095e5af2f45264a3f",
+      "source_mismatches": [],
+      "terminal_exists": false
+    }
+  ],
+  "gpu_free_memory_and_utilization": "7884 MiB, 58 %\n",
+  "classification": "operational snapshot; not a scientific outcome"
+}

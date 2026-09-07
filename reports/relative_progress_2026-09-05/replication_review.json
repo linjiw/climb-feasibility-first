@@ -1,0 +1,89 @@
+{
+  "classification": "measured exploratory manipulation replication; no policy-benefit result",
+  "timestamp": "2026-09-05T20:23:54.394827-04:00",
+  "verification": {
+    "11": {
+      "seed": 11,
+      "status": "pass",
+      "results": {
+        "smoke": {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/smoke_result.json",
+          "sha256": "c56605bd66c330d2a3e51f8fe7524b444bf5b41a24bf4b182eb566e249b1ad49",
+          "status": "smoke_pass",
+          "gate": null
+        },
+        "long": {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/study_s11/long_result.json",
+          "sha256": "08315ff233877da3c318c977cce23eaaec73e5bd4b5c434edaa84f5a00df3b9b",
+          "status": "manipulation_pass",
+          "gate": {
+            "mean_tv": 0.08321139322547161,
+            "tv_pass": true,
+            "effective_units_pass": true,
+            "final_saturation_pass": true
+          }
+        }
+      },
+      "design_sha256": "b9ea06978bbc8aac9ef7874322e0869e4ea75250a7267a0b407fa7b68a73f2f2",
+      "terminal_sha256": "1b857e87902e590d6fe97e308f0a60849acb215322a702a72dbac23037c5d06e"
+    },
+    "12": {
+      "seed": 12,
+      "status": "pass",
+      "results": {
+        "smoke": {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/smoke_result.json",
+          "sha256": "383e71205d434a5286ef77c28e882b5d93d3e78a90fe06580689c725a5b1e214",
+          "status": "smoke_pass",
+          "gate": null
+        },
+        "long": {
+          "path": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/continuation_gate_retry/study_s12/long_result.json",
+          "sha256": "207651b3ed2e6f22ce6c4abaf165a55ce65b7953c268fc96eae6e1b80a8c67ec",
+          "status": "manipulation_pass",
+          "gate": {
+            "mean_tv": 0.08272834315222899,
+            "tv_pass": true,
+            "effective_units_pass": true,
+            "final_saturation_pass": true
+          }
+        }
+      },
+      "design_sha256": "bee4ad4737d5a8425de7279358e312a9acb2236b79e544b0da7af09c4c10c15b",
+      "terminal_sha256": "c76c3c5563e4a342d849aae060342e6e0f39f3e0bd645fcebe0fbcc2aaa1775a"
+    }
+  },
+  "summary": {
+    "11": {
+      "status": "manipulation_pass",
+      "mean_tv": 0.08321139322547161,
+      "tv_range": [
+        0.048960607638450844,
+        0.10823470586052537
+      ],
+      "minimum_effective_units": 616.2498459907964,
+      "max_unit_mass": 0.017738289680994238,
+      "max_clip_mass": 0.018498544791837757,
+      "final_saturation": 0.737331081081081,
+      "completed_trials": 1087814,
+      "snapshots": 41,
+      "post_warmup_snapshots": 37
+    },
+    "12": {
+      "status": "manipulation_pass",
+      "mean_tv": 0.08272834315222899,
+      "tv_range": [
+        0.05077592128766127,
+        0.10139880213566149
+      ],
+      "minimum_effective_units": 618.6114813979663,
+      "max_unit_mass": 0.022351269900814374,
+      "max_clip_mass": 0.022351269900814374,
+      "final_saturation": 0.7331081081081081,
+      "completed_trials": 1086192,
+      "snapshots": 41,
+      "post_warmup_snapshots": 37
+    }
+  },
+  "policy_endpoints_opened": false
+}

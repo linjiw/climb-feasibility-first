@@ -1,0 +1,13 @@
+{
+  "status": "prerequisites_pending",
+  "missing": {
+    "entrypoint U seed51": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/U_result.json",
+    "entrypoint A seed51": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/A_result.json",
+    "entrypoint R seed51": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/R_result.json",
+    "entrypoint D seed51": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes_adapter/D_result.json",
+    "D seed32 decision": "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32_result.json"
+  },
+  "confirmation_enabled": false,
+  "files_written": 0,
+  "jobs_launched": 0
+}

@@ -1,0 +1,6 @@
+{
+  "status": "execution_stopped",
+  "reason": "GPU availability deadline; job not launched",
+  "policy_endpoints_opened": false,
+  "completed_jobs": []
+}

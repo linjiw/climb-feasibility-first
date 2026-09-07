@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-09-05T18:29:57.916812-04:00",
+  "pid": 1091693,
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-feasibility-first/tools/run_relative_failure_calibration.py",
+    "--smoke-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/policy_smokes_gate_retry",
+    "--out-dir",
+    "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/failure_calibration_gate_retry"
+  ],
+  "reason": "fresh execution after prelaunch GPU gate miss; no previous seed-12 training launch",
+  "policy_endpoints_opened": false
+}

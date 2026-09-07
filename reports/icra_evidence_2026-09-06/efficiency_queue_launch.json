@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-09-06T02:22:37.850171-04:00",
+  "pid": 1867658,
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_icra_efficiency.py",
+    "--campaign-root",
+    "/home/linjiw/climb-feasibility-first",
+    "--contract-sha256",
+    "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013",
+    "--wait-seconds",
+    "172800",
+    "--out",
+    "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/efficiency_after_confirmation.json"
+  ],
+  "cwd": "/home/linjiw/climb-feasibility-first",
+  "log": "/home/linjiw/climb-feasibility-first/reports/icra_evidence_2026-09-06/efficiency_queue.log",
+  "source_sha256": "0b1c6a771917029f83d0e71af667f93f9d883c65516d2d23d229514574febd72",
+  "contract_sha256": "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013",
+  "scope": "one CPU postprocessing attempt after original terminal; no scientific job launch or retry"
+}

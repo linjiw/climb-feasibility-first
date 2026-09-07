@@ -1,5 +1,352 @@
 # Results log — every paper-bound number and its artifact path (policy: RESEARCH_PLAN_v5)
 
+## 2026-09-07 continuous natural-failure coverage and reference census
+
+**Measured CPU development simulation:** the R41 checkpoint-19 policy produces
+four natural failures on the same two admitted training references and four
+conditions used in the prior continuous smoke. First failure steps are 49, 64,
+40 and 37 (survival 0.98, 1.28, 0.80 and 0.74 seconds). The vector loop ends at
+64 forwards, with 27 partially active steps, five retired-world environment
+resets and five retired-world reference writes. Zero active resets/reference
+writes; nine policy parameter tensors and four normalization buffers unchanged.
+No allocator comparison or causal learning claim follows from these fixtures.
+
+Independent replay also reproduces the earlier four successful attempts
+(429 forwards, 123 partially active steps), with identical startup and initial-state
+hashes across the two development runs. Fourteen new rejection tests pass.
+Artifacts: `reports/continuous_failure_preparation_2026-09-07/replay.json`,
+`smoke.log`, `tests.log`; full simulator receipt in the isolated ICRA worktree's
+`reports/continuous_failure_development_2026-09-07/run/receipt.json`.
+
+**Measured reference-only metadata:** all 100 held-out payload hashes match;
+25 retain the existing feasible-hard reference label. Raw full-reference
+transition durations are min 4.98 s, median 9.44 s, max 72.06 s, sum 1,403.22 s.
+All exceed three seconds. These are not admitted durations or performance values.
+No named corresponding frame screens/sidecars found in the declared report-tree
+search; full continuous admission is pending. Artifact:
+`reports/continuous_failure_preparation_2026-09-07/reference_readiness.json`
+and `reference_candidates.csv`. Scope and reconstruction requirements:
+`plan/CONTINUOUS_FAILURE_AND_REFERENCE_READINESS_2026-09-07.md`.
+
+## 2026-09-06 completed frozen policy confirmation and continuous development
+
+**Measured frozen simulation outcome:** all 12 trained policies and 48 held-out
+cells complete; 492 training states replay. Three independent paired training
+seeds (21/22/23); 49,152,000 transitions per policy; 100 test clips, 25 feasible-hard.
+
+| Quantity | Paired-seed mean | Two-sided seed t 95% CI (df=2) | Class |
+| --- | ---: | --- | --- |
+| Final feasible-hard R−U | −0.015068459267959947 | [−0.09435842624903064, +0.06422150771311073] | registered primary; inconclusive |
+| Final all-panel R−U | −0.009315506381973216 | [−0.11404632768409208, +0.09541531492014564] | registered guard; non-regression not established |
+| Final hard R−D | −0.006745730159873853 | [−0.021893908519565127, +0.00840244819981742] | descriptive secondary |
+| Final hard R−A | −0.006680740727722248 | [−0.07242863750148, +0.059067156046035504] | descriptive secondary |
+| Normalized hard AULC R−U, checkpoints 1000–3999 | −0.028984641429545266 | [−0.057740602250632767, −0.0002286806084577618] | exploratory; not a confirmatory harm decision |
+
+Primary seed deltas: −0.03399896411704021, −0.03298966480664032,
++0.021783251119800687. Supplementary primary paired hierarchical bootstrap CI
+[−0.04416877706957367, +0.025321222754109297]; all-panel
+[−0.04768233802225798, +0.033113661535246725]. No bootstrap rescue, equivalence,
+confirmed harm, target-benefit exclusion or efficiency-accelerator claim follows.
+AULC differences are negative in all three seeds. Preserve the registered result.
+
+Artifacts: `reports/relative_confirmation_results_2026-09-06/` contains the
+paired-result/learning-curve PNG/PDF, CSV, full-precision summary and descriptive
+attainment export. Complete original analysis SHA-256
+`2d1703da6d2d40fad9f9b17ffcf9d12036c4aaea917fb1054e81c91ed22bf3be`.
+Exact serialized replay receipt:
+`reports/continuous_execution_preparation_2026-09-06/serialized_confirmation_replay/verification.json`.
+The original postprocessing failure is preserved: only tuple/list representation
+of seed_order differed; no numeric value or scientific rule changed.
+
+**Measured development only:** CPU continuous adapter, development R11 checkpoint
+2000, two fully admitted training references, two replicates each: 4/4 complete
+at 429/306 transitions (8.58/6.12 seconds), 429 vector forwards, zero active resets
+or reference-state writes, 9 policy parameter tensors and 4 normalization buffers
+unchanged. No method comparison. Runtime failure-path and CUDA coverage pending.
+Receipt: `/home/linjiw/climb-icra-evidence-2026-09-06/reports/continuous_execution_development_2026-09-06/run/receipt.json`.
+Thirteen continuity/support tests, five serialized-replay tests and seven optional-
+sensor graph tests pass. Frozen-policy instrumentation pilot completed but no
+stationarity/noise-floor result is established. Original GPU first-cell graph
+assertion failed; corrected development queue remains distinct from full physical
+sensitivity or hardware evidence. Scope and next study design:
+`plan/USEFUL_PRACTICE_SUBMISSION_2026-09-06.md`.
+
+The subsequent corrected CUDA queue ran all nine development cells, then failed
+its aggregate original/unchanged exact CSV parity gate. Preserve that failure;
+individual lifecycle replay does not establish aggregate conformance. Diagnostic:
+`reports/continuous_execution_preparation_2026-09-06/gpu_followup_diagnosis.json`.
+Full physical-sensitivity evaluation remains disabled.
+
+## 2026-09-06 confirmation allocation and public research-story update
+
+**Measured simulation training integrity and allocation:** at 22:17 EDT, ten of
+12 confirmation training runs complete and independently replay over 410 saved
+checkpoint states. All seeds 21/22 arms plus R23/D23 pass; U23 is running and A23
+queued. No held-out endpoint has opened. Per-seed mean post-warm-up allocation TV:
+
+| Arm | Seed 21 | Seed 22 | Seed 23 |
+| --- | ---: | ---: | ---: |
+| U | 0.0 | 0.0 | Pending |
+| A | 0.029759170164293084 | 0.02933859420427059 | Pending |
+| R | 0.08348494896009954 | 0.0824919974124211 | 0.08233284378057906 |
+| D | 0.08391068947163956 | 0.08586509252074585 | 0.08398385293466296 |
+
+Each complete run has 41 replayed states and zero invalid/censored events. The
+TV mean uses 37 states from iteration 400 through 3999. Allocation histories are
+correlated within runs and establish exposure contrast, not tracking improvement.
+Public artifacts: `docs/assets/progress-2026-09-06/research_snapshot.json`,
+`allocation_snapshots.csv` and `confirmation_allocation.png`/`.pdf` in that directory.
+Original gate paths and SHA-256 identities are included in the JSON export.
+
+**Measured development / pending outcomes:** the public development summary records
+completed D31/D32 calibration, freeze prerequisites, H1 CPU evaluation/provenance
+and CPU lifecycle checks. It does not establish full H1 benefit, forgetting recovery,
+physical robustness or hardware transfer. Existing repair and E4 findings retain
+separate exploratory/sealed labels. Scope, claim-to-evidence map, statistical
+contract and next research decisions: `plan/PAGES_RESEARCH_STORY_2026-09-06.md`.
+
+## 2026-09-06 eight completed confirmation training gates and H1 provenance
+
+**Measured training allocation/integrity, not policy utility:** all four arms for
+seeds 21 and 22 complete 4,000 iterations and independently replay across 328
+saved states. Mean allocation TV for seed 21 / seed 22: U 0 / 0;
+A 0.029759170164293084 / 0.02933859420427059;
+R 0.08348494896009954 / 0.0824919974124211;
+D 0.08391068947163956 / 0.08586509252074585.
+No held-out endpoint has opened. Artifact:
+`reports/h1_provenance_preparation_2026-09-06/confirmation_replay.json`.
+
+**Measured development provenance and synthetic rejection checks:** both existing
+seed-81 CPU evaluation cells pass exact checkpoint/ledger/runtime/condition links
+and paired-state identity; 19 tests pass. The synthetic 24-cell grid is a protocol
+fixture, not completed H1 evaluation. Full H1 remains disabled. Scope, commands
+and remaining work: `plan/H1_PROVENANCE_PREPARATION_2026-09-06.md`.
+
+## 2026-09-06 R21 interim checkpoint and synthetic H1 analysis preparation
+
+**Measured interim training integrity:** R21 checkpoint 2100, verified at
+14:44:23 EDT, has 596,494 completed trials including 197,689 failures, zero
+invalid/censored events, 76 finite checkpoint tensors and exact sampler-probability
+replay. Point allocation TV is 0.0882566243200943. Full R21 gate and policy benefit
+remain pending; no held-out cell has been evaluated. Artifact:
+`reports/h1_analysis_preparation_2026-09-06/r21_snapshot.json`.
+
+**Synthetic/prospective only:** H1 paired seed-level statistical and ordering
+kernel passes 16 tests. It preserves the draft +0.02 improvement target, two-sided
+95% t interval with df=2 and −0.01 guards; preservation is a separate margin-based
+noninferiority result. Proposed supplementary bootstrap uses 10,000 draws and
+seed 20260906, pending the H1 freeze. Tests establish six verifier calls before
+24 outcome reads and zero outcome reads after any training-gate failure; they use
+synthetic callbacks, not completed H1 runs. Artifact:
+`/home/linjiw/climb-icra-evidence-2026-09-06/reports/h1_analysis_preparation_2026-09-06/synthetic.json`.
+Scope and remaining production requirements:
+`plan/H1_ANALYSIS_PREPARATION_2026-09-06.md`.
+
+## 2026-09-06 H1 entrypoint and paired development evaluator
+
+**Measured training integrity:** existing H1 seed-81 entrypoint smokes replay
+exactly (8 environments, 20 PPO iterations, 3,840 transitions per arm). Gate-on:
+183 completed trials, zero rejected-support trials. Gate-off: 173 completed trials,
+25 rejected-support trials; final rejected probability 0.11375725722182886. Both
+start from the same actor hash and have zero invalid/censored events. Artifacts:
+`/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/`.
+These are distinct from the earlier seed-71 runtime smokes.
+
+**Measured development evaluation integrity:** two checkpoint-19 policies produce
+eight episode rows on two training clips with paired startup/initial state,
+exact checkpoint-to-loaded-policy equality, unchanged normalization/parameters,
+and valid nonzero clip scores. This is an undertrained, single-seed pipeline
+smoke, not a gate-benefit estimate. A first metadata-write failure from a missing
+environment path is preserved; the fresh rerun after adding the pinned-environment
+link passes. Nine targeted tests pass. Evidence:
+`/home/linjiw/climb-icra-evidence-2026-09-06/reports/gate_evaluator_environment_fixed_2026-09-06/verification.json`.
+Full scope, failed artifact and exact commands:
+`plan/H1_EVALUATOR_DEVELOPMENT_2026-09-06.md`. Full H1 remains disabled.
+
+## 2026-09-06 device entrypoint CPU parity and pending GPU conformance
+
+**Measured development entrypoint check:** original, unchanged and 20 ms delay
+produce 21 CPU episode rows identical to their prior natural-lifecycle CSVs.
+Policy immutability, physical/reset/score replay and correct absence of CUDA
+graphs on CPU pass. These are repeated development cases, not independent policy
+effect samples. Evidence in the isolated ICRA worktree:
+`reports/device_lifecycle_cpu_2026-09-06/verification.json`.
+
+**Pending:** nine GPU development cells are source-bound and queued behind the
+complete confirmation campaign and frozen-policy pilot. Zero GPU cells have
+started at the 12:47 EDT snapshot. Actual graph-launch counts, GPU parity and
+GPU reset conformance are not yet measured. Eleven tests pass, including synthetic
+graph-receipt rejection; these do not substitute for GPU execution.
+Full design, acceptance criteria and queue records:
+`plan/GPU_DEVICE_VALIDATION_QUEUE_2026-09-06.md`.
+
+## 2026-09-06 natural-failure and early-retirement CPU lifecycle
+
+**Measured development lifecycle:** original plus eight physical conditions on
+five training clips, selected by reference duration/joint-speed RMS and fixed-list
+order before execution, produce 63 episode rows: 21 natural failures and 10 early
+successful retirements. There are 29 environment reset calls and 101 entity-reset
+calls, including 37 motion-resample calls. Nested reset calls are not episodes;
+the shared development checkpoint and paired rows are not independent efficacy
+replications. No confirmation clips are included.
+
+Baseline has natural `ee_body_pos` failures at steps 32/104, an early successful
+clip at step 56 (1.12 s), and four continuing worlds at 150 steps. The 20 ms delay
+condition retires all worlds by step 131. These establish validation-path coverage,
+not a broad robustness, sample-efficiency, transfer or recovery estimate.
+
+An initial environment-only reset trace missed command-driven robot resets and
+is preserved with `incomplete_audit.json`. The expanded entity recorder leaves
+all nine CSVs unchanged. Original/unchanged parity, native score accounting,
+world-specific reset/delay replay, physical checks and policy immutability pass;
+11 regression tests pass. Complete evidence:
+`/home/linjiw/climb-icra-evidence-2026-09-06/reports/natural_entity_lifecycle_2026-09-06/verification.json`.
+Design and exact execution: `plan/NATURAL_POLICY_LIFECYCLE_2026-09-06.md`.
+GPU conformance and the separate full physical-study freeze remain pending.
+
+## 2026-09-06 injected reset lifecycle defect and correction
+
+**Measured CPU software conformance, not natural policy failure evidence.** A
+prospectively specified injected-termination fixture fails reset isolation for
+5/10/20 ms delay, while six non-delay conditions pass. The first reset changes
+per-world command-delay counts [40,40,40,40] to [1,41,41,41], advancing unselected
+histories without a physics step. Failed artifacts are preserved in the isolated
+ICRA worktree's `reports/injected_reset_fixture_2026-09-06/failed_audit.json`.
+
+A separately source-bound development correction passes all nine cells: 36
+injected-fixture rows, 27 partial resets, 80 native metric values replayed per
+cell and 800 world-physics control records replayed per cell. Policy tensors are
+unchanged; failed/retired worlds stop contributing to metrics, and failure at
+the final horizon is scored as failure. Complete fixed evidence is in
+`/home/linjiw/climb-icra-evidence-2026-09-06/reports/injected_reset_fixed_2026-09-06/verification.json`.
+
+The unaffected world 2 CSV row matches its earlier no-injection reference for
+all nine conditions before and after the correction. No tracking improvement
+is claimed. Thirteen regression tests pass. Original confirmation sources and
+sealed decisions remain unchanged; natural failure and GPU coverage are pending.
+Details: `plan/PHYSICS_RESET_LIFECYCLE_2026-09-06.md`.
+
+## 2026-09-06 complete U21/A21 training and development inference immutability
+
+**Measured training integrity:** U21 and A21 finished 4,000 iterations, with
+1,086,702 and 1,084,430 completed trials respectively. Mean allocation TV is
+0 and 0.029759170164293084; elapsed training is 2,014 and 2,221 seconds. Both
+41-snapshot gates independently replay exactly, with zero invalid/censored events.
+A has no frozen minimum-TV requirement. Artifact:
+`reports/gpu_reentry_2026-09-06/completed_training_replay_1208.json`.
+These measurements establish neither tracking benefit nor sample efficiency;
+10 training jobs and all 48 held-out cells remain pending at this snapshot.
+
+**Measured development inference integrity:** original evaluator plus eight
+physical conditions preserve all 9 actor parameter tensors and 4 normalization
+buffers exactly, with evaluation mode throughout 450 vector forward calls.
+All nine CSVs equal their previous development counterparts byte for byte.
+This is a replay of the same 36 short training-clip rows, not new independent
+policy efficacy evidence. Source-bound design, traces and aggregate verification:
+`/home/linjiw/climb-icra-evidence-2026-09-06/reports/policy_immutability_2026-09-06/`.
+Failure/reset and GPU coverage remain pending. Full execution and limitations:
+`plan/CONFIRMATION_PROGRESS_AND_IMMUTABILITY_2026-09-06.md`.
+
+## 2026-09-06 development policy evaluator integration
+
+All artifacts in this table are in the isolated ICRA worktree
+`/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_evaluator_development_2026-09-06/`.
+Original confirmation is now training U21 in its new operational directory, but
+has no complete arm comparison or opened held-out endpoint. Its statistics and
+all historical sealed decisions remain unchanged.
+
+| Measurement | Use and limitation | Artifact | Class |
+| --- | --- | --- | --- |
+| Original evaluator + 8 adapter conditions × 4 episode rows = 36; R11/2000; first two training clips; phases 0/0.5; one-second horizons; environment seed 26090651 / joint-noise seed 26090652; all 36 survive and clip scores are nonzero | Small CPU lifecycle only; training clips, one development policy, no confirmation or transfer inference | `design.json`, per-condition CSVs/metadata/receipts, exact `*_launch.json`, `verification.json` | measured development policy rollout |
+| Original vs unchanged adapter CSV byte-identical; all 8 variants match startup RNG/physical state, initial qpos/qvel, first observations/actions; 200 recorded physics substeps × 4 worlds per adapter cell | Tests actual evaluator integration and pairing on these short conditions; no policy-triggered reset coverage or GPU graph verification | per-condition `instrumentation.pt`, `verification.json` | measured CPU evaluator conformance |
+| Unchanged maximum absolute knee force 86.40794 N·m; knee-only 120/90 N·m clamps never activate and their CSVs match unchanged | Does not establish insensitivity to reduced actuation on difficult motions | `unchanged`, `knee_120nm`, `knee_90nm` traces/CSVs; `verification.json` | measured development telemetry; limited stress coverage |
+| 20 ms delay reaches 139 N·m; 11/1,600 knee force samples are at least 98% of the limit | Substeps/joints/worlds are correlated observations, not independent replications; no broad robustness or safety conclusion | `delay_20ms/instrumentation.pt`, `verification.json` | measured development response to perturbation |
+
+The full physical-sensitivity grid remains disabled pending further lifecycle
+checks and its own prospective freeze. See
+`plan/GPU_REENTRY_AND_EVALUATOR_PROGRESS_2026-09-06.md` for scope and execution.
+
+## 2026-09-06 measured physical-intervention instrumentation
+
+Artifacts below are in `/home/linjiw/climb-icra-evidence-2026-09-06`, under
+`reports/physics_sensitivity_2026-09-06/`. No original policy endpoint or claim
+changes. The S1 physical-sensitivity preparation remains unsealed and disabled
+for full evaluation; it is distinct from historical S1 conformance experiments.
+
+| Measurement | Use and limitation | Artifact | Class |
+| --- | --- | --- | --- |
+| Eight conditions, two worlds, 12 physics steps each plus one unchanged repeat: 216 integrated world physics steps; seed 26090641; 1.65554 s fixture exercise time | Named CPU G1 actuator fixture; timing excludes original contract verification/imports and does not estimate policy/GPU cost; force/reset probes are additional nonintegrated operations | `cpu_smoke/design.json`, `cpu_smoke/result.json`; exact argv/task in original repo `reports/physics_sensitivity_stage_2026-09-06/execution.json` | measured development instrumentation |
+| Command delay 0/1/2/4 physics steps = 0/5/10/20 ms, exact saved control traces | Built-in command-buffer behavior only; not motor lag, observation delay or policy robustness | `cpu_smoke/traces.pt`, `trace_verification.json` | measured CPU command traces |
+| Knee clamp probes reach both ±120/±90 N·m in respective conditions; hip roll remains ±139 N·m; all 29 actuator signed clamps checked | Forced nonintegrated saturation probes; no trained-policy torque use or hardware calibration | same traces/verification; `intervention_checks.png` and `.pdf` | measured CPU force probes |
+| Foot sliding-friction targets 0.3/1.2 on exactly 14 foot geoms; untargeted coefficients preserved; common fixture initial states and repeated baseline exact | Model-field and deterministic reproduction checks; not measured contact response, evaluator startup pairing or independent statistical repetitions | same traces/verification | measured CPU instrumentation |
+
+Next evidence remains actual evaluator integration and policy-rollout validation.
+No tracking, efficiency, forgetting recovery, physical robustness or transfer gain
+is inferred from these fixture measurements.
+
+## 2026-09-06 ICRA physical-assumption audit and efficiency scope
+
+No confirmation policy number changes. New code is isolated in
+`/home/linjiw/climb-icra-evidence-2026-09-06`; original profiles and sources remain
+unchanged. Full scope: `plan/ICRA_EVIDENCE_ROADMAP_2026-09-06.md`.
+
+| Number or disposition | Use and limitation | Artifact | Class |
+| --- | --- | --- | --- |
+| All 12 frozen configuration hashes reproduced; 29 actuators CPU-compiled; both knee actuator force ranges [−139,+139] N·m with force limiting and unit gear | Configured clamp verification, not measured torque use, hardware fidelity or transfer | `reports/icra_evidence_2026-09-06/physics_audit.json` | measured configuration / CPU model compilation |
+| Six actuator groups have command delay min/max 0/0 physics steps; physics timestep 0.005 s; control timestep 0.02 s | No configured command delay; does not measure motor lag or sensor latency | same audit | measured configuration |
+| Training startup foot-friction range [0.3,1.2], nominal foot friction 0.6; plane terrain; sealed evaluation `nominal=false` retains startup COM/friction/encoder perturbations but removes pushes and observation corruption | Configuration and source evidence only; no robustness outcome or independent contact calibration | same audit; original `tools/eval_paired_v2.py` | measured configuration / source audit |
+| Unitree public maximum knee torque 90 N·m for G1, 120 N·m for G1 EDU, versus model 139 N·m | Public-spec discrepancy; not calibration of a robot revision or a full torque-speed/thermal model | [Unitree G1 specification](https://www.unitree.com/g1/), checked 2026-09-06; URL and values in physics audit | externally reported specification |
+| Checkpoint 2000 represents 2001/4000 = 50.025% of 49,152,000 training transitions | Zero-indexed post-update checkpoint arithmetic; no measured efficiency gain | isolated `tools/analyze_icra_efficiency.py`; original RSL-RL runner; `efficiency_synthetic.json` in report directory | calculated budget / synthetic validation |
+
+Actual efficiency status is **pending**, with no endpoints opened. The queued
+postprocessor preserves the original primary decision. Proposed S1's 96 evaluation
+cells / 268,800 condition instances are prospective budget arithmetic only, not
+executed evidence. Simulator sensitivity does not establish physical Sim2Real.
+
+## 2026-09-06 matched gate runtime lifecycle
+
+Artifacts in this section are in the separate worktree
+`/home/linjiw/climb-gate-ablation-2026-09-06`. Full H1 training remains disabled;
+the current U/A/R/D confirmation and frozen-policy diagnostic are unchanged.
+
+| Number or disposition | Use and limitation | Artifact in H1 worktree | Class |
+| --- | --- | --- | --- |
+| Gate-on/off CPU PPO smokes: seed 71, 8 environments, 20 iterations, 3,840 transitions per arm; identical initial actor tensors; on 179 completed/0 rejected-support trials, off 196 completed/32 rejected-support trials; both zero invalid/censored events and exact checkpoint sampler replay | Validates matched runtime and restored-support exercise; not policy improvement, difficulty ranking or sample efficiency. No held-out evaluation. | `reports/gate_runtime_2026-09-06/paired_smoke_result.json`; `cpu_{on,off}/run/` checkpoints and ledgers; exact argv in `cpu_{on,off}_launch.json` | measured development PPO lifecycle |
+| Final post-cap rejected sampling probability on 0, off 0.1143451525; elapsed CPU job times 24.9197 / 24.2224 s | Short-smoke allocation and scoped elapsed time only; not a full-history allocation estimate or GPU runtime forecast | same paired result and `cpu_{on,off}_execution.json` | measured development telemetry |
+| Fixed gate-off rejected probability bounds [0.0923025281, 0.2923025281] from rejected prior share 48,121/417,072 and per-unit floor 0.8 b; startup actual post-cap share 0.1153781601 | Conditional on the fixed support and valid floor/cap constraints; probability bound, not PPO transition share, wasted exposure or practical gate benefit | `reports/gate_runtime_2026-09-06/h1_study_draft.json`, `manifests/result.json`; `plan/MATCHED_GATE_RUNTIME_2026-09-06.md` | analytical bound and measured runtime construction |
+
+## 2026-09-06 frozen-policy instrumentation and H1 support audit
+
+All artifacts below are in the separate worktree
+`/home/linjiw/climb-signal-quality-2026-09-06`. Original confirmation outcomes
+remain pending and its scientific configuration is unchanged.
+
+| Number or disposition | Use and limitation | Artifact in separate worktree | Class |
+| --- | --- | --- | --- |
+| R11/2000 CPU smoke: 8 environments, 12 estimator ticks, 4,800 transitions; 98 completed trials, 11 failures; zero invalid/censored events; 8 ongoing trials at stop; exact actor/normalizer hashes and tick replay | Frozen collector lifecycle only; no PPO, stationary-null or policy-benefit inference. Seeds environment 26090601 / sampler 26090602 / actions 26090603 | `reports/frozen_progress_pilot_2026-09-06/cpu_smoke/{result.json,design.json,ticks.pt}`, exact argv `cpu_smoke_launch.json` in parent | measured development simulation |
+| CPU rollout 16.8273 s, total 22.1210 s; 90/1,184 units attempted, prior mass coverage 0.1847426894; inherited shadow attempt-mass fraction 0.9980838151 and cold/shadow absolute rate gap 0.4017311523, both prior-weighted at tick 12 | Tiny instrumentation exposure budget; neither stationary noise magnitude nor GPU runtime/burn-in estimate | `reports/frozen_progress_pilot_2026-09-06/cpu_smoke_analysis/summary.json` | measured instrumentation coverage and initialization dependence |
+| H1 candidate universe: 800 clips, 417,072 full legal H=50 starts, 368,951 admitted, 48,121 rejected (0.1153781601 of uncapped legal-start prior); 1,184 feasible + 465 rejected-start intervals = 1,649; 239 clips with rejected starts, 3 without admitted starts | Sidecar-derived support accounting, preserving existing feasible units; not post-cap mass, wasted training or gate benefit; no H1 policy trained | `reports/gate_candidate_audit_2026-09-06/{result.json,candidate_start_intervals.json,clips.json}` | measured reference-only audit; training disabled |
+
+The 512-environment/100-tick pilot remains queued behind completed confirmation.
+Its 2,560,000 transitions are a prospective instrumentation budget, not a scored
+noise-study repetition or an executed GPU result.
+
+## 2026-09-06 development calibration and research-plan addendum
+
+These entries support future manuscript use; no confirmation endpoint or prior
+sealed decision changes. Confirmation control benefit remains **pending**.
+
+| Number or disposition | Use and limitation | Artifact | Class |
+| --- | --- | --- | --- |
+| D seed 32: mean post-warm-up TV 0.0859387133; minimum post-warm-up effective units 624.2887989; final saturation 0.7381756757; 1,118,388 completed trials; zero invalid/censored events; full calibration pass | Second fixed-D allocation replication, not control benefit; both seeds 31/32 independently replayed | `reports/research_next_2026-09-06/calibration_verification.json`; original `reports/relative_progress_2026-09-05/failure_calibration_gate_retry/seed32_result.json` | measured exploratory development |
+| Gaussian stationary-noise large-unit pre-cap TV 0.0604879731; new 2,000 × 1,184-unit run, seed 260906, mean 0.0604042781, Monte Carlo SE 0.0000271173 | Illustrates that allocation contrast can exceed 0.05 without learning; equal prior, independent equal-variance Gaussian changes and inactive caps. Never subtract from actual R TV. Not the user's attached simulation. | `/home/linjiw/climb-signal-quality-2026-09-06/reports/research_next_2026-09-06/noise_only_tv.json`; generator in that worktree `tools/reproduce_noise_only_tv.py` | synthetic illustration and analytical calculation |
+| 24 proposed short branches consume 29,491,200 transitions, 5% of fixed confirmation's 589,824,000; six proposed H1 arms consume 294,912,000 | Training arithmetic only; excludes evaluation, setup and noise-study settling; no runtime estimate and no branches/H1 launched | `plan/USEFUL_PRACTICE_NEXT_STEPS_2026-09-06.md`; synthetic result above records branch arithmetic | calculated prospective budgets |
+| Actual estimator: decay 0.99 per 50-step tick; progress window 10 ticks; 688 ticks reduce inherited mass multiplier below 0.001 | Frozen-policy burn-in planning; multiplier is not a rate-bias bound or stationarity certificate. At 512 environments this is 17,612,800 transitions. | `reports/research_next_2026-09-06/development_inputs.json`; `climb/segment_runtime.py`, `climb/segment_command.py` | source audit plus calculation |
+
+The unchanged comparison is queued behind seed-51 lifecycle validation and GPU
+availability. The noise study, causal practice-value study, practical gate
+ablation and reliability-aware redesign remain **pending/proposed**.
+
 **2026-09-05 manuscript usage update:** E4 calibration now appears in Results §5.4;
 its values remain measured 50-iteration calibration, not confirmation endpoints.
 E3 now reports the existing all-26-candidate p95-of-per-clip-p95 root-velocity

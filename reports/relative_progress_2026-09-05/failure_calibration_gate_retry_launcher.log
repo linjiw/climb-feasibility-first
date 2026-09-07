@@ -1,0 +1,8 @@
+Waiting for verified four-arm lifecycle smokes
+LAUNCH attempt=1 free_mib=15915 util_pct=0 baseline_vram_mib=388 2026-09-05T21:44:31-04:00
+DONE rc=0 attempt=1 elapsed_s=2229 gpu_hours=0.619167 baseline_vram_mib=388 peak_total_vram_mib=9519 peak_delta_mib=9131 2026-09-05T22:21:40-04:00
+{"seed": 31, "status": "calibration_pass", "gate": {"mean_tv": 0.08495533886493581, "tv_pass": true, "effective_units_pass": true, "saturation_pass": true}}
+LAUNCH attempt=1 free_mib=15525 util_pct=3 baseline_vram_mib=778 2026-09-05T22:24:12-04:00
+DONE rc=0 attempt=1 elapsed_s=4288 gpu_hours=1.191111 baseline_vram_mib=778 peak_total_vram_mib=14191 peak_delta_mib=13413 2026-09-05T23:35:40-04:00
+{"seed": 32, "status": "calibration_pass", "gate": {"mean_tv": 0.0859387132989198, "tv_pass": true, "effective_units_pass": true, "saturation_pass": true}}
+{"status": "baseline_calibration_pass", "seeds": [31, 32], "next": "freeze complete prospective campaign before any confirmation launch", "policy_endpoints_opened": false}

@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-09-05T22:46:06.410666-04:00",
+  "classification": "development replay and plot validation; not policy evidence",
+  "checks": [
+    {
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/test_relative_calibration_figure.py",
+        "tests/test_relative_failure_calibration.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "...........                                                              [100%]\n11 passed in 12.51s\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "paper/figures/relative_calibration_comparison.py",
+        "tests/test_relative_calibration_figure.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "source_sha256": {
+    "paper/figures/relative_calibration_comparison.py": "901a1db064f360489e28ca256093c6e8baf49be355897b3f717a9f765fa54df6",
+    "tests/test_relative_calibration_figure.py": "66a1877fb87529102709d21397490563adcbd2cf631ae1250c917505504b7b06"
+  },
+  "phase_g_sealed_files_unchanged": 41
+}

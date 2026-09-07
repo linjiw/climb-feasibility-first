@@ -1,0 +1,80 @@
+{
+  "seed": 51,
+  "num_envs": 8,
+  "iterations": 20,
+  "after": "fixed D calibration",
+  "jobs": [
+    {
+      "arm": "U",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "/home/linjiw/climb-feasibility-first/tools/train_relative_confirmation.py",
+        "--contract",
+        "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation/draft_contract.json",
+        "--contract-sha256",
+        "f2d9f2afdfc70a6954017459411e344fa14837c6725c854dff103565c40e6c19",
+        "--arm",
+        "U",
+        "--seed",
+        "51",
+        "--smoke",
+        "--out-dir",
+        "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes/U"
+      ]
+    },
+    {
+      "arm": "A",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "/home/linjiw/climb-feasibility-first/tools/train_relative_confirmation.py",
+        "--contract",
+        "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation/draft_contract.json",
+        "--contract-sha256",
+        "f2d9f2afdfc70a6954017459411e344fa14837c6725c854dff103565c40e6c19",
+        "--arm",
+        "A",
+        "--seed",
+        "51",
+        "--smoke",
+        "--out-dir",
+        "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes/A"
+      ]
+    },
+    {
+      "arm": "R",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "/home/linjiw/climb-feasibility-first/tools/train_relative_confirmation.py",
+        "--contract",
+        "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation/draft_contract.json",
+        "--contract-sha256",
+        "f2d9f2afdfc70a6954017459411e344fa14837c6725c854dff103565c40e6c19",
+        "--arm",
+        "R",
+        "--seed",
+        "51",
+        "--smoke",
+        "--out-dir",
+        "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes/R"
+      ]
+    },
+    {
+      "arm": "D",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "/home/linjiw/climb-feasibility-first/tools/train_relative_confirmation.py",
+        "--contract",
+        "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_preparation/draft_contract.json",
+        "--contract-sha256",
+        "f2d9f2afdfc70a6954017459411e344fa14837c6725c854dff103565c40e6c19",
+        "--arm",
+        "D",
+        "--seed",
+        "51",
+        "--smoke",
+        "--out-dir",
+        "/home/linjiw/climb-feasibility-first/reports/relative_progress_2026-09-05/confirmation_entrypoint_smokes/D"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,345 @@
+{
+  "mean_tv": 0.08586509252074585,
+  "snapshots": [
+    {
+      "iteration": 0,
+      "tv": 0.0,
+      "effective_units": 624.0341112730887,
+      "saturation": 0.0,
+      "sampler_clock": 0,
+      "completed_trials": 415
+    },
+    {
+      "iteration": 100,
+      "tv": 0.004404757992308941,
+      "effective_units": 620.7641354288529,
+      "saturation": 0.2677364864864865,
+      "sampler_clock": 48,
+      "completed_trials": 49751
+    },
+    {
+      "iteration": 200,
+      "tv": 0.004740658239292619,
+      "effective_units": 622.5768685236812,
+      "saturation": 0.14611486486486486,
+      "sampler_clock": 96,
+      "completed_trials": 87315
+    },
+    {
+      "iteration": 300,
+      "tv": 0.005853214658313065,
+      "effective_units": 623.5457338432549,
+      "saturation": 0.10557432432432433,
+      "sampler_clock": 144,
+      "completed_trials": 121357
+    },
+    {
+      "iteration": 400,
+      "tv": 0.0076738548980417745,
+      "effective_units": 624.5710831804214,
+      "saturation": 0.08023648648648649,
+      "sampler_clock": 192,
+      "completed_trials": 152925
+    },
+    {
+      "iteration": 500,
+      "tv": 0.011053792323024112,
+      "effective_units": 626.0213714559593,
+      "saturation": 0.06925675675675676,
+      "sampler_clock": 240,
+      "completed_trials": 182222
+    },
+    {
+      "iteration": 600,
+      "tv": 0.015819784272832593,
+      "effective_units": 627.220406326861,
+      "saturation": 0.06756756756756757,
+      "sampler_clock": 288,
+      "completed_trials": 210203
+    },
+    {
+      "iteration": 700,
+      "tv": 0.021590363542566063,
+      "effective_units": 629.1686709575046,
+      "saturation": 0.06672297297297297,
+      "sampler_clock": 336,
+      "completed_trials": 237424
+    },
+    {
+      "iteration": 800,
+      "tv": 0.028520410511806767,
+      "effective_units": 630.6332009686076,
+      "saturation": 0.0625,
+      "sampler_clock": 384,
+      "completed_trials": 264260
+    },
+    {
+      "iteration": 900,
+      "tv": 0.03624930904632189,
+      "effective_units": 631.9765167624465,
+      "saturation": 0.06756756756756757,
+      "sampler_clock": 432,
+      "completed_trials": 290898
+    },
+    {
+      "iteration": 1000,
+      "tv": 0.04506109292514354,
+      "effective_units": 633.9122858375354,
+      "saturation": 0.08614864864864864,
+      "sampler_clock": 480,
+      "completed_trials": 317522
+    },
+    {
+      "iteration": 1100,
+      "tv": 0.05319625008241288,
+      "effective_units": 635.2026529226512,
+      "saturation": 0.09797297297297297,
+      "sampler_clock": 528,
+      "completed_trials": 344091
+    },
+    {
+      "iteration": 1200,
+      "tv": 0.06074257928386034,
+      "effective_units": 635.3279820129455,
+      "saturation": 0.16300675675675674,
+      "sampler_clock": 576,
+      "completed_trials": 370635
+    },
+    {
+      "iteration": 1300,
+      "tv": 0.0673679807031487,
+      "effective_units": 637.1384691120121,
+      "saturation": 0.25844594594594594,
+      "sampler_clock": 624,
+      "completed_trials": 397183
+    },
+    {
+      "iteration": 1400,
+      "tv": 0.07456596067179305,
+      "effective_units": 639.0585581716184,
+      "saturation": 0.3572635135135135,
+      "sampler_clock": 672,
+      "completed_trials": 423692
+    },
+    {
+      "iteration": 1500,
+      "tv": 0.07944032231740165,
+      "effective_units": 637.5944049038086,
+      "saturation": 0.4189189189189189,
+      "sampler_clock": 720,
+      "completed_trials": 450271
+    },
+    {
+      "iteration": 1600,
+      "tv": 0.08356135811948817,
+      "effective_units": 637.867319941993,
+      "saturation": 0.46030405405405406,
+      "sampler_clock": 768,
+      "completed_trials": 476857
+    },
+    {
+      "iteration": 1700,
+      "tv": 0.08739692541107727,
+      "effective_units": 637.0684015367771,
+      "saturation": 0.48057432432432434,
+      "sampler_clock": 816,
+      "completed_trials": 503496
+    },
+    {
+      "iteration": 1800,
+      "tv": 0.08958357064085981,
+      "effective_units": 635.8131401693108,
+      "saturation": 0.5304054054054054,
+      "sampler_clock": 864,
+      "completed_trials": 530133
+    },
+    {
+      "iteration": 1900,
+      "tv": 0.09264648852617859,
+      "effective_units": 634.8159305385375,
+      "saturation": 0.5506756756756757,
+      "sampler_clock": 912,
+      "completed_trials": 556790
+    },
+    {
+      "iteration": 2000,
+      "tv": 0.09491236844858147,
+      "effective_units": 634.1945016674832,
+      "saturation": 0.5709459459459459,
+      "sampler_clock": 960,
+      "completed_trials": 583404
+    },
+    {
+      "iteration": 2100,
+      "tv": 0.09872683604609145,
+      "effective_units": 635.4741309804788,
+      "saturation": 0.5869932432432432,
+      "sampler_clock": 1008,
+      "completed_trials": 609976
+    },
+    {
+      "iteration": 2200,
+      "tv": 0.09986667607590181,
+      "effective_units": 635.6336264984893,
+      "saturation": 0.6047297297297297,
+      "sampler_clock": 1056,
+      "completed_trials": 636639
+    },
+    {
+      "iteration": 2300,
+      "tv": 0.10209569224871604,
+      "effective_units": 636.0167248353234,
+      "saturation": 0.625,
+      "sampler_clock": 1104,
+      "completed_trials": 663226
+    },
+    {
+      "iteration": 2400,
+      "tv": 0.10331730896787528,
+      "effective_units": 635.476484298338,
+      "saturation": 0.6300675675675675,
+      "sampler_clock": 1152,
+      "completed_trials": 689923
+    },
+    {
+      "iteration": 2500,
+      "tv": 0.10474405895938031,
+      "effective_units": 636.4575821301036,
+      "saturation": 0.6393581081081081,
+      "sampler_clock": 1200,
+      "completed_trials": 716633
+    },
+    {
+      "iteration": 2600,
+      "tv": 0.10652137779525246,
+      "effective_units": 635.9829318916045,
+      "saturation": 0.6570945945945946,
+      "sampler_clock": 1248,
+      "completed_trials": 743383
+    },
+    {
+      "iteration": 2700,
+      "tv": 0.10766066617806144,
+      "effective_units": 636.1838075830711,
+      "saturation": 0.668918918918919,
+      "sampler_clock": 1296,
+      "completed_trials": 770087
+    },
+    {
+      "iteration": 2800,
+      "tv": 0.1089048055595733,
+      "effective_units": 636.9935149637652,
+      "saturation": 0.660472972972973,
+      "sampler_clock": 1344,
+      "completed_trials": 796784
+    },
+    {
+      "iteration": 2900,
+      "tv": 0.10920838418954366,
+      "effective_units": 636.9124093723887,
+      "saturation": 0.6503378378378378,
+      "sampler_clock": 1392,
+      "completed_trials": 823460
+    },
+    {
+      "iteration": 3000,
+      "tv": 0.11041613332526087,
+      "effective_units": 635.1397999506752,
+      "saturation": 0.668918918918919,
+      "sampler_clock": 1440,
+      "completed_trials": 850170
+    },
+    {
+      "iteration": 3100,
+      "tv": 0.1115106644400663,
+      "effective_units": 634.3102846243589,
+      "saturation": 0.6807432432432432,
+      "sampler_clock": 1488,
+      "completed_trials": 876839
+    },
+    {
+      "iteration": 3200,
+      "tv": 0.11341856528774925,
+      "effective_units": 634.6239062504684,
+      "saturation": 0.7018581081081081,
+      "sampler_clock": 1536,
+      "completed_trials": 903475
+    },
+    {
+      "iteration": 3300,
+      "tv": 0.1151500217042324,
+      "effective_units": 634.9171554322564,
+      "saturation": 0.7077702702702703,
+      "sampler_clock": 1584,
+      "completed_trials": 930227
+    },
+    {
+      "iteration": 3400,
+      "tv": 0.11667373467579237,
+      "effective_units": 634.4895324038456,
+      "saturation": 0.714527027027027,
+      "sampler_clock": 1632,
+      "completed_trials": 956933
+    },
+    {
+      "iteration": 3500,
+      "tv": 0.11820889183513124,
+      "effective_units": 633.917666293152,
+      "saturation": 0.7179054054054054,
+      "sampler_clock": 1680,
+      "completed_trials": 983701
+    },
+    {
+      "iteration": 3600,
+      "tv": 0.11877031790839443,
+      "effective_units": 634.02404038263,
+      "saturation": 0.7128378378378378,
+      "sampler_clock": 1728,
+      "completed_trials": 1010361
+    },
+    {
+      "iteration": 3700,
+      "tv": 0.11875582471839645,
+      "effective_units": 631.1472642119663,
+      "saturation": 0.7271959459459459,
+      "sampler_clock": 1776,
+      "completed_trials": 1037102
+    },
+    {
+      "iteration": 3800,
+      "tv": 0.11975590246119452,
+      "effective_units": 630.8497310740541,
+      "saturation": 0.7246621621621622,
+      "sampler_clock": 1824,
+      "completed_trials": 1063842
+    },
+    {
+      "iteration": 3900,
+      "tv": 0.12186513681965086,
+      "effective_units": 626.2993255771463,
+      "saturation": 0.7381756756756757,
+      "sampler_clock": 1872,
+      "completed_trials": 1090561
+    },
+    {
+      "iteration": 3999,
+      "tv": 0.1220550123467937,
+      "effective_units": 625.8602270234055,
+      "saturation": 0.7381756756756757,
+      "sampler_clock": 1920,
+      "completed_trials": 1116999
+    }
+  ],
+  "execution_cost": {
+    "status": "completed",
+    "actual_launches": 1,
+    "returncode": 0,
+    "oom_reported": false,
+    "elapsed_s": 1412,
+    "elapsed_gpu_hours": 0.39222222222222225,
+    "shared_gpu_baseline_mib": 567,
+    "shared_gpu_peak_total_mib": 2979,
+    "started": "2026-09-06T19:24:15-04:00",
+    "finished": "2026-09-06T19:47:47-04:00"
+  }
+}

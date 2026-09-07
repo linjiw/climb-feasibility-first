@@ -1,0 +1,14 @@
+Waiting for independent manipulation replication
+LAUNCH attempt=1 free_mib=15331 util_pct=2 baseline_vram_mib=972 2026-09-05T21:39:38-04:00
+DONE rc=0 attempt=1 elapsed_s=20 gpu_hours=0.005556 baseline_vram_mib=972 peak_total_vram_mib=7222 peak_delta_mib=6250 2026-09-05T21:39:58-04:00
+U: smoke_pass
+LAUNCH attempt=1 free_mib=15331 util_pct=2 baseline_vram_mib=972 2026-09-05T21:41:28-04:00
+DONE rc=0 attempt=1 elapsed_s=21 gpu_hours=0.005833 baseline_vram_mib=972 peak_total_vram_mib=7304 peak_delta_mib=6332 2026-09-05T21:41:49-04:00
+A: smoke_pass
+LAUNCH attempt=1 free_mib=15526 util_pct=5 baseline_vram_mib=777 2026-09-05T21:43:19-04:00
+DONE rc=0 attempt=1 elapsed_s=18 gpu_hours=0.005000 baseline_vram_mib=777 peak_total_vram_mib=7222 peak_delta_mib=6445 2026-09-05T21:43:37-04:00
+R: smoke_pass
+LAUNCH attempt=1 free_mib=15915 util_pct=0 baseline_vram_mib=388 2026-09-05T21:44:07-04:00
+DONE rc=0 attempt=1 elapsed_s=16 gpu_hours=0.004444 baseline_vram_mib=388 peak_total_vram_mib=2723 peak_delta_mib=2335 2026-09-05T21:44:23-04:00
+D: smoke_pass
+{"status": "four_arm_smoke_pass", "next": "D calibration and evaluator provenance; no confirmation launch", "policy_endpoints_opened": false}

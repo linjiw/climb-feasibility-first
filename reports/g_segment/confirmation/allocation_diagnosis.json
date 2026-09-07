@@ -1,0 +1,597 @@
+{
+ "schema_version": "e4_allocation_diagnosis/1",
+ "classification": "measured sampler replay + exploratory fixed-snapshot counterfactuals",
+ "frozen_status": "not_tested",
+ "policy_endpoints_opened": false,
+ "seed1_result_sha256": "3fe6ea66e2ba926862af155d1fe14b080bc16327db11d6562dfaee541719b3cf",
+ "tool_sha256": "5ee3de7247a28ce55d5e21df78fa25f33917c9a422981ae18b357b25a82ef73e",
+ "mechanism": "Before caps, TV=(1-rho)*E_base|g-E_base(g)|/[2*(E_base(g)+floor)].",
+ "limitation": "Counterfactual weights hold recorded learning history fixed; they are not alternative training outcomes.",
+ "snapshots": [
+  {
+   "iteration": 500,
+   "ledger_sha256": "306fc569d6c8405a002f8978c059ebfc9ee15c7f554e05d191c3786586ba56bb",
+   "progress_prior_weighted_mean": 0.02779841487078497,
+   "progress_weighted_mad": 0.015562394612068766,
+   "floor_share_of_focus_normalizer": 0.6426866162124868,
+   "observed": {
+    "tv": 0.060010456400363454,
+    "entropy_effective_units": 618.8415552394338,
+    "top1_unit_mass": 0.016150943092256523
+   },
+   "replay_max_probability_error": 0.0,
+   "uncapped_closed_form_tv": 0.06001045640036346,
+   "cap_effect_on_tv": 6.938893903907228e-18,
+   "counterfactual_fixed_snapshot": {
+    "absolute_0": {
+     "tv": 0.16794908649727608,
+     "entropy_effective_units": 574.4839890591686,
+     "top1_unit_mass": 0.0168489590847257
+    },
+    "absolute_0.001": {
+     "tv": 0.16211720001148006,
+     "entropy_effective_units": 577.968671844917,
+     "top1_unit_mass": 0.01678426006289669
+    },
+    "absolute_0.005": {
+     "tv": 0.1423458542741731,
+     "entropy_effective_units": 588.8633418033398,
+     "top1_unit_mass": 0.01656491650527387
+    },
+    "absolute_0.01": {
+     "tv": 0.12351624795856611,
+     "entropy_effective_units": 597.9229720904934,
+     "top1_unit_mass": 0.016356020616608638
+    },
+    "absolute_0.02": {
+     "tv": 0.097675171786381,
+     "entropy_effective_units": 608.2517488495392,
+     "top1_unit_mass": 0.01606933939340216
+    },
+    "absolute_0.05": {
+     "tv": 0.060010456400363454,
+     "entropy_effective_units": 618.8415552394338,
+     "top1_unit_mass": 0.016150943092256523
+    },
+    "relative_0.5": {
+     "tv": 0.11196605766485071,
+     "entropy_effective_units": 602.8423978224641,
+     "top1_unit_mass": 0.01622788266060377,
+     "scale_invariance_max_error": 3.469446951953614e-18
+    },
+    "relative_1": {
+     "tv": 0.08397454324863803,
+     "entropy_effective_units": 612.7258514224899,
+     "top1_unit_mass": 0.016040442931441988,
+     "scale_invariance_max_error": 6.938893903907228e-18
+    },
+    "relative_2": {
+     "tv": 0.05598302883242535,
+     "entropy_effective_units": 619.6514788749954,
+     "top1_unit_mass": 0.016169513855947365,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    }
+   }
+  },
+  {
+   "iteration": 1000,
+   "ledger_sha256": "2a2957fe429f74ecaaeeb640fba8cc032690e9a4ab5d173b9aee554f38ea9ef6",
+   "progress_prior_weighted_mean": 0.01222809404550608,
+   "progress_weighted_mad": 0.007218313708756464,
+   "floor_share_of_focus_normalizer": 0.8034956038254372,
+   "observed": {
+    "tv": 0.03479929999211223,
+    "entropy_effective_units": 636.7193452448072,
+    "top1_unit_mass": 0.016196954174519898
+   },
+   "replay_max_probability_error": 0.0,
+   "uncapped_closed_form_tv": 0.03479929999211223,
+   "cap_effect_on_tv": 0.0,
+   "counterfactual_fixed_snapshot": {
+    "absolute_0": {
+     "tv": 0.17709171229532497,
+     "entropy_effective_units": 630.1712959793209,
+     "top1_unit_mass": 0.01628196264342007
+    },
+    "absolute_0.001": {
+     "tv": 0.16370416669078738,
+     "entropy_effective_units": 634.508006040217,
+     "top1_unit_mass": 0.016183971744156662
+    },
+    "absolute_0.005": {
+     "tv": 0.12569551262647097,
+     "entropy_effective_units": 642.6495254909927,
+     "top1_unit_mass": 0.015905765245252782
+    },
+    "absolute_0.01": {
+     "tv": 0.09742149318757015,
+     "entropy_effective_units": 644.7089454023454,
+     "top1_unit_mass": 0.015781801116473787
+    },
+    "absolute_0.02": {
+     "tv": 0.067192745235547,
+     "entropy_effective_units": 643.0707966225781,
+     "top1_unit_mass": 0.015982202228488784
+    },
+    "absolute_0.05": {
+     "tv": 0.03479929999211223,
+     "entropy_effective_units": 636.7193452448072,
+     "top1_unit_mass": 0.016196954174519898
+    },
+    "relative_0.5": {
+     "tv": 0.11806114153021663,
+     "entropy_effective_units": 643.5430953111498,
+     "top1_unit_mass": 0.015849885033066682,
+     "scale_invariance_max_error": 8.673617379884035e-19
+    },
+    "relative_1": {
+     "tv": 0.08854585614766249,
+     "entropy_effective_units": 644.6444720520702,
+     "top1_unit_mass": 0.01584064204284831,
+     "scale_invariance_max_error": 3.469446951953614e-18
+    },
+    "relative_2": {
+     "tv": 0.05903057076510832,
+     "entropy_effective_units": 641.9299483744118,
+     "top1_unit_mass": 0.016036313263551573,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    }
+   }
+  },
+  {
+   "iteration": 1500,
+   "ledger_sha256": "6e31c88df424b4dff47e117cf8e19d37e75d99bafb856768396a8c54d2f3b557",
+   "progress_prior_weighted_mean": 0.006826443419781946,
+   "progress_weighted_mad": 0.005339971775543151,
+   "floor_share_of_focus_normalizer": 0.8798720629170049,
+   "observed": {
+    "tv": 0.028190951892394393,
+    "entropy_effective_units": 641.7321148529228,
+    "top1_unit_mass": 0.015433043224005294
+   },
+   "replay_max_probability_error": 0.0,
+   "uncapped_closed_form_tv": 0.0281909518923944,
+   "cap_effect_on_tv": 6.938893903907228e-18,
+   "counterfactual_fixed_snapshot": {
+    "absolute_0": {
+     "tv": 0.23467440278207374,
+     "entropy_effective_units": 660.3823022459003,
+     "top1_unit_mass": 0.008584200974597996
+    },
+    "absolute_0.001": {
+     "tv": 0.20468959484378138,
+     "entropy_effective_units": 668.2528374900694,
+     "top1_unit_mass": 0.009402136848456298
+    },
+    "absolute_0.005": {
+     "tv": 0.13545843630244017,
+     "entropy_effective_units": 673.2064520305684,
+     "top1_unit_mass": 0.01164851054125374
+    },
+    "absolute_0.01": {
+     "tv": 0.095206782128395,
+     "entropy_effective_units": 667.2936002010194,
+     "top1_unit_mass": 0.013068639871164833
+    },
+    "absolute_0.02": {
+     "tv": 0.05971688112340785,
+     "entropy_effective_units": 656.3608868891309,
+     "top1_unit_mass": 0.014320768519465758
+    },
+    "absolute_0.05": {
+     "tv": 0.028190951892394393,
+     "entropy_effective_units": 641.7321148529228,
+     "top1_unit_mass": 0.015433043224005294
+    },
+    "relative_0.5": {
+     "tv": 0.15644960185471585,
+     "entropy_effective_units": 673.6852066599437,
+     "top1_unit_mass": 0.010907915639466373,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    },
+    "relative_1": {
+     "tv": 0.11733720139103686,
+     "entropy_effective_units": 671.3701032658809,
+     "top1_unit_mass": 0.01228785065583931,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    },
+    "relative_2": {
+     "tv": 0.07822480092735792,
+     "entropy_effective_units": 662.7562877705536,
+     "top1_unit_mass": 0.013667785672212242,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    }
+   }
+  },
+  {
+   "iteration": 2000,
+   "ledger_sha256": "5dec5a4ca3a13175bba415307e5a328e7b2290a9585d8018c39fb1eaedcee0b4",
+   "progress_prior_weighted_mean": 0.005487550734044687,
+   "progress_weighted_mad": 0.004716657134141779,
+   "floor_share_of_focus_normalizer": 0.9011030283108573,
+   "observed": {
+    "tv": 0.02550116416247499,
+    "entropy_effective_units": 636.7670846469795,
+    "top1_unit_mass": 0.015963519327514386
+   },
+   "replay_max_probability_error": 0.0,
+   "uncapped_closed_form_tv": 0.025501164162475,
+   "cap_effect_on_tv": 6.938893903907228e-18,
+   "counterfactual_fixed_snapshot": {
+    "absolute_0": {
+     "tv": 0.2578558648148639,
+     "entropy_effective_units": 617.6736413658584,
+     "top1_unit_mass": 0.011734525374308337
+    },
+    "absolute_0.001": {
+     "tv": 0.21810960688400638,
+     "entropy_effective_units": 635.1327972326311,
+     "top1_unit_mass": 0.01245793094338106
+    },
+    "absolute_0.005": {
+     "tv": 0.13492160144209553,
+     "entropy_effective_units": 654.0395449603578,
+     "top1_unit_mass": 0.013972002193092602
+    },
+    "absolute_0.01": {
+     "tv": 0.0913635192898572,
+     "entropy_effective_units": 653.4877950921493,
+     "top1_unit_mass": 0.014764785233495335
+    },
+    "absolute_0.02": {
+     "tv": 0.055517187783464365,
+     "entropy_effective_units": 646.9731202012022,
+     "top1_unit_mass": 0.01541720981866413
+    },
+    "absolute_0.05": {
+     "tv": 0.02550116416247499,
+     "entropy_effective_units": 636.7670846469795,
+     "top1_unit_mass": 0.015963519327514386
+    },
+    "relative_0.5": {
+     "tv": 0.17190390987657592,
+     "entropy_effective_units": 648.7123316540083,
+     "top1_unit_mass": 0.013298902151191595,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    },
+    "relative_1": {
+     "tv": 0.12892793240743194,
+     "entropy_effective_units": 654.414429949597,
+     "top1_unit_mass": 0.014081090539633224,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    },
+    "relative_2": {
+     "tv": 0.08595195493828796,
+     "entropy_effective_units": 652.870699149407,
+     "top1_unit_mass": 0.014863278928074854,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    }
+   }
+  },
+  {
+   "iteration": 2500,
+   "ledger_sha256": "9c982b4c9e26fe7b070d49ed77a1f6c2a3ac62a63c2f688da6f67aa545999848",
+   "progress_prior_weighted_mean": 0.00487692141900915,
+   "progress_weighted_mad": 0.004613163471676125,
+   "floor_share_of_focus_normalizer": 0.9111298284797769,
+   "observed": {
+    "tv": 0.025219145056184618,
+    "entropy_effective_units": 635.0164439624223,
+    "top1_unit_mass": 0.01635417318447557
+   },
+   "replay_max_probability_error": 0.0,
+   "uncapped_closed_form_tv": 0.02521914505618464,
+   "cap_effect_on_tv": 2.0816681711721685e-17,
+   "counterfactual_fixed_snapshot": {
+    "absolute_0": {
+     "tv": 0.28377513652537306,
+     "entropy_effective_units": 577.2280319771252,
+     "top1_unit_mass": 0.015600803238877041
+    },
+    "absolute_0.001": {
+     "tv": 0.23548877768322646,
+     "entropy_effective_units": 605.4289529857238,
+     "top1_unit_mass": 0.01574149806991674
+    },
+    "absolute_0.005": {
+     "tv": 0.1401194747625799,
+     "entropy_effective_units": 640.4113147644499,
+     "top1_unit_mass": 0.0160193812709396
+    },
+    "absolute_0.01": {
+     "tv": 0.09302657468731948,
+     "entropy_effective_units": 645.5524821976963,
+     "top1_unit_mass": 0.016156598650301716
+    },
+    "absolute_0.02": {
+     "tv": 0.0556318452027317,
+     "entropy_effective_units": 642.7057854466385,
+     "top1_unit_mass": 0.016265557894128917
+    },
+    "absolute_0.05": {
+     "tv": 0.025219145056184618,
+     "entropy_effective_units": 635.0164439624223,
+     "top1_unit_mass": 0.01635417318447557
+    },
+    "relative_0.5": {
+     "tv": 0.1891834243502487,
+     "entropy_effective_units": 626.1495268944764,
+     "top1_unit_mass": 0.015876420727570735,
+     "scale_invariance_max_error": 3.469446951953614e-18
+    },
+    "relative_1": {
+     "tv": 0.14188756826268653,
+     "entropy_effective_units": 640.0473755555373,
+     "top1_unit_mass": 0.01601422947191758,
+     "scale_invariance_max_error": 8.673617379884035e-19
+    },
+    "relative_2": {
+     "tv": 0.09459171217512435,
+     "entropy_effective_units": 645.5301778282644,
+     "top1_unit_mass": 0.016152038216264424,
+     "scale_invariance_max_error": 3.469446951953614e-18
+    }
+   }
+  },
+  {
+   "iteration": 3000,
+   "ledger_sha256": "a0cb3bb8badea52d89e5907330ea33f621a7038a2a5936c3edb3f18f4845155d",
+   "progress_prior_weighted_mean": 0.004147428194585877,
+   "progress_weighted_mad": 0.004131092251537229,
+   "floor_share_of_focus_normalizer": 0.9234048904468454,
+   "observed": {
+    "tv": 0.022888024727739265,
+    "entropy_effective_units": 634.2429806787478,
+    "top1_unit_mass": 0.01685302967257747
+   },
+   "replay_max_probability_error": 0.0,
+   "uncapped_closed_form_tv": 0.02288802472773928,
+   "cap_effect_on_tv": 1.3877787807814457e-17,
+   "counterfactual_fixed_snapshot": {
+    "absolute_0": {
+     "tv": 0.29881835617528185,
+     "entropy_effective_units": 575.1583722706598,
+     "top1_unit_mass": 0.021981195220743543
+    },
+    "absolute_0.001": {
+     "tv": 0.24076638441789389,
+     "entropy_effective_units": 608.36254928165,
+     "top1_unit_mass": 0.020902299254476987
+    },
+    "absolute_0.005": {
+     "tv": 0.1354837282237093,
+     "entropy_effective_units": 643.5176876475018,
+     "top1_unit_mass": 0.018945620960060944
+    },
+    "absolute_0.01": {
+     "tv": 0.08760091646448157,
+     "entropy_effective_units": 646.5558970946502,
+     "top1_unit_mass": 0.01805571884482475
+    },
+    "absolute_0.02": {
+     "tv": 0.05132338174791797,
+     "entropy_effective_units": 642.2854985080613,
+     "top1_unit_mass": 0.017381500817651295
+    },
+    "absolute_0.05": {
+     "tv": 0.022888024727739265,
+     "entropy_effective_units": 634.2429806787478,
+     "top1_unit_mass": 0.01685302967257747
+    },
+    "relative_0.5": {
+     "tv": 0.1992122374501879,
+     "entropy_effective_units": 626.4415552707109,
+     "top1_unit_mass": 0.020130015382148397,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    },
+    "relative_1": {
+     "tv": 0.14940917808764093,
+     "entropy_effective_units": 640.9808421548789,
+     "top1_unit_mass": 0.01920442546285083,
+     "scale_invariance_max_error": 6.938893903907228e-18
+    },
+    "relative_2": {
+     "tv": 0.09960611872509392,
+     "entropy_effective_units": 646.6662249404416,
+     "top1_unit_mass": 0.01827883554355325,
+     "scale_invariance_max_error": 3.469446951953614e-18
+    }
+   }
+  },
+  {
+   "iteration": 3500,
+   "ledger_sha256": "48685022d00b54ef58a8460c640fa4a962f034bc84e1f868d91db1413d26a93b",
+   "progress_prior_weighted_mean": 0.003464360537491812,
+   "progress_weighted_mad": 0.003508046667914414,
+   "floor_share_of_focus_normalizer": 0.9352024320002399,
+   "observed": {
+    "tv": 0.01968440265242341,
+    "entropy_effective_units": 630.2779707949861,
+    "top1_unit_mass": 0.016771336910127214
+   },
+   "replay_max_probability_error": 0.0,
+   "uncapped_closed_form_tv": 0.019684402652423383,
+   "cap_effect_on_tv": -2.7755575615628914e-17,
+   "counterfactual_fixed_snapshot": {
+    "absolute_0": {
+     "tv": 0.303783047112143,
+     "entropy_effective_units": 530.1827100865197,
+     "top1_unit_mass": 0.021731577067722475
+    },
+    "absolute_0.001": {
+     "tv": 0.23573678504146897,
+     "entropy_effective_units": 576.7032253624275,
+     "top1_unit_mass": 0.02054351859479631
+    },
+    "absolute_0.005": {
+     "tv": 0.12433473216467916,
+     "entropy_effective_units": 626.5927663684969,
+     "top1_unit_mass": 0.018598486659255523
+    },
+    "absolute_0.01": {
+     "tv": 0.07816293966905104,
+     "entropy_effective_units": 634.6129995352053,
+     "top1_unit_mass": 0.0177923470181442
+    },
+    "absolute_0.02": {
+     "tv": 0.044851595196585756,
+     "entropy_effective_units": 634.4339370410868,
+     "top1_unit_mass": 0.017210745268969936
+    },
+    "absolute_0.05": {
+     "tv": 0.01968440265242341,
+     "entropy_effective_units": 630.2779707949861,
+     "top1_unit_mass": 0.016771336910127214
+    },
+    "relative_0.5": {
+     "tv": 0.20252203140809533,
+     "entropy_effective_units": 595.4251014502601,
+     "top1_unit_mass": 0.019963603280134357,
+     "scale_invariance_max_error": 3.469446951953614e-18
+    },
+    "relative_1": {
+     "tv": 0.15189152355607147,
+     "entropy_effective_units": 617.8956651997817,
+     "top1_unit_mass": 0.019079616386340294,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    },
+    "relative_2": {
+     "tv": 0.10126101570404766,
+     "entropy_effective_units": 631.698644578895,
+     "top1_unit_mass": 0.01819562949254623,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    }
+   }
+  },
+  {
+   "iteration": 3999,
+   "ledger_sha256": "051339904b3cfc376d1fc6783786c1c42f5ddb05c5d8b980f3e5f81397fa56b2",
+   "progress_prior_weighted_mean": 0.0034358478644477635,
+   "progress_weighted_mad": 0.0037362988874741236,
+   "floor_share_of_focus_normalizer": 0.9357014438478908,
+   "observed": {
+    "tv": 0.020976361581940814,
+    "entropy_effective_units": 632.8444603778191,
+    "top1_unit_mass": 0.01636566060759863
+   },
+   "replay_max_probability_error": 0.0,
+   "uncapped_closed_form_tv": 0.02097636158194083,
+   "cap_effect_on_tv": 1.734723475976807e-17,
+   "counterfactual_fixed_snapshot": {
+    "absolute_0": {
+     "tv": 0.32623378870849307,
+     "entropy_effective_units": 532.6694095649785,
+     "top1_unit_mass": 0.015463480129804827
+    },
+    "absolute_0.001": {
+     "tv": 0.25268893354659294,
+     "entropy_effective_units": 583.1445537939372,
+     "top1_unit_mass": 0.015680840058417557
+    },
+    "absolute_0.005": {
+     "tv": 0.1328722001929576,
+     "entropy_effective_units": 635.0808486302453,
+     "top1_unit_mass": 0.016034955333392085
+    },
+    "absolute_0.01": {
+     "tv": 0.08342530203904684,
+     "entropy_effective_units": 641.7046744682981,
+     "top1_unit_mass": 0.016181094369621105
+    },
+    "absolute_0.02": {
+     "tv": 0.047827997208610876,
+     "entropy_effective_units": 639.4069744746874,
+     "top1_unit_mass": 0.01628630128885147
+    },
+    "absolute_0.05": {
+     "tv": 0.020976361581940814,
+     "entropy_effective_units": 632.8444603778191,
+     "top1_unit_mass": 0.01636566060759863
+    },
+    "relative_0.5": {
+     "tv": 0.21748919247183554,
+     "entropy_effective_units": 602.835521132366,
+     "top1_unit_mass": 0.015784871988189255,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    },
+    "relative_1": {
+     "tv": 0.16311689435387666,
+     "entropy_effective_units": 626.2826885421748,
+     "top1_unit_mass": 0.01594556791738147,
+     "scale_invariance_max_error": 1.734723475976807e-18
+    },
+    "relative_2": {
+     "tv": 0.10874459623591776,
+     "entropy_effective_units": 639.6065414666174,
+     "top1_unit_mass": 0.016106263846573685,
+     "scale_invariance_max_error": 3.469446951953614e-18
+    }
+   }
+  }
+ ],
+ "counterfactual_summary": {
+  "absolute_0": {
+   "mean_tv": 0.2562726743638537,
+   "min_tv": 0.16794908649727608,
+   "max_tv": 0.32623378870849307,
+   "min_entropy_effective_units": 530.1827100865197,
+   "max_top1_unit_mass": 0.021981195220743543
+  },
+  "absolute_0.001": {
+   "mean_tv": 0.21416268113990466,
+   "min_tv": 0.16211720001148006,
+   "max_tv": 0.25268893354659294,
+   "min_entropy_effective_units": 576.7032253624275,
+   "max_top1_unit_mass": 0.020902299254476987
+  },
+  "absolute_0.005": {
+   "mean_tv": 0.1339039424986382,
+   "min_tv": 0.12433473216467916,
+   "max_tv": 0.1423458542741731,
+   "min_entropy_effective_units": 588.8633418033398,
+   "max_top1_unit_mass": 0.018945620960060944
+  },
+  "absolute_0.01": {
+   "mean_tv": 0.09371547192803592,
+   "min_tv": 0.07816293966905104,
+   "max_tv": 0.12351624795856611,
+   "min_entropy_effective_units": 597.9229720904934,
+   "max_top1_unit_mass": 0.01805571884482475
+  },
+  "absolute_0.02": {
+   "mean_tv": 0.059967100660580815,
+   "min_tv": 0.044851595196585756,
+   "max_tv": 0.097675171786381,
+   "min_entropy_effective_units": 608.2517488495392,
+   "max_top1_unit_mass": 0.017381500817651295
+  },
+  "absolute_0.05": {
+   "mean_tv": 0.02965872580820415,
+   "min_tv": 0.01968440265242341,
+   "max_tv": 0.060010456400363454,
+   "min_entropy_effective_units": 618.8415552394338,
+   "max_top1_unit_mass": 0.01685302967257747
+  },
+  "relative_0.5": {
+   "mean_tv": 0.17084844957584083,
+   "min_tv": 0.11196605766485071,
+   "max_tv": 0.21748919247183554,
+   "min_entropy_effective_units": 595.4251014502601,
+   "max_top1_unit_mass": 0.020130015382148397
+  },
+  "relative_1": {
+   "mean_tv": 0.1281363371818806,
+   "min_tv": 0.08397454324863803,
+   "max_tv": 0.16311689435387666,
+   "min_entropy_effective_units": 612.7258514224899,
+   "max_top1_unit_mass": 0.01920442546285083
+  },
+  "relative_2": {
+   "mean_tv": 0.08542422478792042,
+   "min_tv": 0.05598302883242535,
+   "max_tv": 0.10874459623591776,
+   "min_entropy_effective_units": 619.6514788749954,
+   "max_top1_unit_mass": 0.01827883554355325
+  }
+ }
+}

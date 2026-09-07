@@ -1,0 +1,30 @@
+{
+  "status": "h1_development_cell_provenance_pass",
+  "classification": "measured CPU provenance checks only",
+  "cells": [
+    {
+      "arm": "on",
+      "seed": 81,
+      "iteration": 19,
+      "csv": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/gate_evaluator_environment_fixed_2026-09-06/on/evaluation.csv",
+      "csv_sha256": "7001092df471d5f0ea07bf85abab5bbc8faf9a43fd65e2594c286297d7f332e4",
+      "metadata": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/gate_evaluator_environment_fixed_2026-09-06/on/evaluation.csv.meta.json",
+      "startup_randomization_sha256": "7fe670ef56c68beac382fc6f8fda5d0a998acf8ac4884e368426267ce84886c0",
+      "initial_state_sha256": "715dbc031c5ac60abab1436757b7a6f9c75055d3bbb1d9702ccde8eaeafeb050"
+    },
+    {
+      "arm": "off",
+      "seed": 81,
+      "iteration": 19,
+      "csv": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/gate_evaluator_environment_fixed_2026-09-06/off/evaluation.csv",
+      "csv_sha256": "49e7bcf72227952051b5fdb19e5effba39fb7572289141ece2db8a526f0801a5",
+      "metadata": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/gate_evaluator_environment_fixed_2026-09-06/off/evaluation.csv.meta.json",
+      "startup_randomization_sha256": "7fe670ef56c68beac382fc6f8fda5d0a998acf8ac4884e368426267ce84886c0",
+      "initial_state_sha256": "715dbc031c5ac60abab1436757b7a6f9c75055d3bbb1d9702ccde8eaeafeb050"
+    }
+  ],
+  "full_training_enabled": false,
+  "confirmation_endpoints_opened": false,
+  "production_manifest_ingestion_enabled": false,
+  "verifier_sha256": "ab6a51b58f940ff55075a0983c09e625fe936fdf5e8dcf7be95cacebf2a91bc0"
+}

@@ -1,0 +1,113 @@
+...F.........                                                            [100%]
+=================================== FAILURES ===================================
+_________ test_pre_fix_measured_clock_regression_rejected[delay_20ms] __________
+
+name = 'delay_20ms'
+
+    @pytest.mark.parametrize("name", ["delay_5ms", "delay_10ms", "delay_20ms"])
+    def test_pre_fix_measured_clock_regression_rejected(name):
+        data = torch.load(OLD / name / "lifecycle.pt", weights_only=True)
+        rows = list(csv.DictReader((OLD / name / "evaluation.csv").open()))
+        design = json.loads((OLD / "design.json").read_text())
+        with pytest.raises(ValueError, match="partial reset changed another world: delay_0_count"):
+>           verify_lifecycle(data, rows, design, name)
+
+../climb-icra-evidence-2026-09-06/tests/test_physics_reset_fixture.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data = {'classification': 'injected termination software fixture, not policy failure evidence', 'condition': 'delay_20ms', 'd...-02, -6.5843e-01,  9.1077e+00, -4.1045e-01,
+         -7.5063e-01,  3.9377e-01, -1.6201e-01, -7.3023e-01]])}, ...], ...}
+rows = [{'absolute_mechanical_work_per_actuator_j': '4.16085958480835', 'action_delta_mean_per_step': '0.4101673662662506', '... 'active_to_common_body_orientation_error_rad_mean': '0.0', 'active_to_common_root_relative_mpkpe_m_mean': '0.0', ...}]
+design = {'bindings': {'/home/linjiw/climb-feasibility-first/bank/amass/KIT_1229_flexion_with_help_02_poses_100_jpos.npz': '849...d-out panel', 'conditions': ['original', 'unchanged', 'delay_5ms', 'delay_10ms', 'delay_20ms', 'knee_120nm', ...], ...}
+name = 'delay_20ms'
+
+    def verify_lifecycle(data: dict, rows: list[dict], design: dict, name: str) -> dict:
+        steps, physics, resets = data["steps"], data["physics"], data["resets"]
+        if len(steps) != 50 or len(physics) != 200 or len(rows) != 4:
+            raise ValueError("incomplete fixture trace")
+        alive = torch.ones(4, dtype=torch.bool)
+        survival = torch.zeros(4)
+        success = torch.zeros(4, dtype=torch.bool)
+        sums, last, causes = {}, {}, [set() for _ in range(4)]
+        expected_resets = []
+        for index, step in enumerate(steps, 1):
+            if step["step"] != index:
+                raise ValueError("step order changed")
+            injected = torch.zeros(4, dtype=torch.bool)
+            injected[design["injected_failures"].get(str(index), [])] = True
+            if not torch.equal(step["terms"]["fixture_injected_failure"], injected):
+                raise ValueError("injected failure schedule changed")
+            if bool((injected & ~step["terminated"]).any()):
+                raise ValueError("injected failures did not terminate")
+            survival += alive.float()
+            for key, value in step["metrics"].items():
+                if key not in sums:
+                    sums[key], last[key] = torch.zeros(4), torch.zeros(4)
+                sums[key] += torch.where(alive, value, torch.zeros_like(value))
+                last[key] = torch.where(alive, value, last[key])
+            for term, values in step["terms"].items():
+                for world in torch.where(alive & step["terminated"] & values)[0].tolist():
+                    causes[world].add(term)
+            success |= alive & (index == 50) & ~step["terminated"]
+            alive &= ~(step["terminated"] | (index == 50))
+            if index < 50 and step["dones"].any():
+                expected_resets.append((index, torch.where(step["dones"])[0].tolist()))
+        if survival.tolist() != design["expected_survival_steps"] or success.int().tolist() != design["expected_success"]:
+            raise ValueError("fixture did not exercise planned scoring cases")
+        metric_checks = 0
+        for world, row in enumerate(rows):
+            if (int(row["world_id"]) != world or int(row["success"]) != int(success[world])
+                    or not np.isclose(float(row["survival_s"]), float(survival[world]) * 0.02)
+                    or set(filter(None, row["termination_causes"].split(";"))) != causes[world]):
+                raise ValueError("CSV retirement accounting differs from trace")
+            for key in sums:
+                if f"{key}_mean" not in row:
+                    continue
+                for suffix, expected in (("mean", sums[key][world] / survival[world]),
+                                         ("terminal", last[key][world])):
+                    if not np.isclose(float(row[f"{key}_{suffix}"]), float(expected), rtol=1e-6, atol=1e-7):
+                        raise ValueError("retired world contributed to CSV metrics")
+                    metric_checks += 1
+        if metric_checks == 0:
+            raise ValueError("no score-accounting coverage")
+        actual_resets = [(r["after_step"], r["ids"].tolist()) for r in resets]
+        if actual_resets != expected_resets:
+            raise ValueError("reset does not match evaluator done mask")
+        if not all(event in actual_resets for event in [(10, [0]), (20, [0]), (25, [1])]):
+            raise ValueError("missing planned active/retired reset")
+        isolation_checks = 0
+        for reset in resets:
+            if reset["physics_index"] != reset["after_step"] * 4:
+                raise ValueError("reset physics boundary differs")
+            ids = reset["ids"]
+            keep = torch.ones(4, dtype=torch.bool)
+            keep[ids] = False
+            before, after = reset["before"], reset["after"]
+            if before.keys() != after.keys():
+                raise ValueError("reset telemetry missing")
+            for key in before:
+                if not torch.equal(before[key][keep], after[key][keep]):
+>                   raise ValueError(f"partial reset changed another world: {key}")
+E                   ValueError: partial reset changed another world: delay_0_peek
+
+../climb-icra-evidence-2026-09-06/tools/analyze_physics_reset_fixture.py:85: ValueError
+
+During handling of the above exception, another exception occurred:
+
+name = 'delay_20ms'
+
+    @pytest.mark.parametrize("name", ["delay_5ms", "delay_10ms", "delay_20ms"])
+    def test_pre_fix_measured_clock_regression_rejected(name):
+        data = torch.load(OLD / name / "lifecycle.pt", weights_only=True)
+        rows = list(csv.DictReader((OLD / name / "evaluation.csv").open()))
+        design = json.loads((OLD / "design.json").read_text())
+>       with pytest.raises(ValueError, match="partial reset changed another world: delay_0_count"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'partial reset changed another world: delay_0_count'
+E         Actual message: 'partial reset changed another world: delay_0_peek'
+
+../climb-icra-evidence-2026-09-06/tests/test_physics_reset_fixture.py:39: AssertionError
+=========================== short test summary info ============================
+FAILED ../climb-icra-evidence-2026-09-06/tests/test_physics_reset_fixture.py::test_pre_fix_measured_clock_regression_rejected[delay_20ms]
+1 failed, 12 passed in 1.58s

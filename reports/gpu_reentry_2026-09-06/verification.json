@@ -1,0 +1,86 @@
+{
+  "created_at": "2026-09-06T10:41:51.140419-04:00",
+  "checks": [
+    {
+      "name": "tests",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "pytest",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_confirmation_reentry.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_physics_development.py",
+        "-q"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "compile",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/follow_confirmation_reentry.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_physics_development.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_physics_development.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_confirmation_reentry.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_physics_development.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "phase_g_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "confirmation_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "root_whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "worktree_whitespace",
+      "argv": [
+        "git",
+        "-C",
+        "/home/linjiw/climb-icra-evidence-2026-09-06",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0
+    }
+  ],
+  "unchanged_original_runtime_files": 376,
+  "sources": {
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/follow_confirmation_reentry.py": "51f4498fcb5a565e469faa3469a42c8406ddea5a0f91c04e62529c3a2232269e",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_physics_development.py": "44141db619b98df9d0c6ac429404410ace33bbc2169bfdf15a172f305e90fb01",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_physics_development.py": "f20ae2bbeeb075c327dcbb905e325dad7d5c76aadf9faed8549e47778e90363b",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_confirmation_reentry.py": "dc19f317c69165278f8f778210629edd0f334e01ad1dde17849bca77f46fea4e",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_physics_development.py": "f7132c908ee85198691c88154f827046c64fa6bc8683a84e9c188ba88daa64a0"
+  },
+  "development_verification": {
+    "path": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/physics_evaluator_development_2026-09-06/verification.json",
+    "sha256": "b1bea3ce46a52fe868b1fa77452cc8d0dec146b5816fe94b5e9e878fd1f933df"
+  },
+  "original_contract_sha256": "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013",
+  "confirmation_endpoints_opened": false,
+  "scientific_jobs_automatically_retried": 0
+}

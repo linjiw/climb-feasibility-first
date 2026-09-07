@@ -1,0 +1,3877 @@
+{
+ "schema_version": "dfrp_policy_validation_result/1",
+ "classification": "exploratory fixed-policy reference comparison",
+ "status": "measured",
+ "design_sha256": "9954186057633ca0bb40116cd45e54d9f929d78c110bfd6350213b0d86b0b72d",
+ "checkpoint_sha256": "e2d08c23d1c9f007349e6100b281d44de3300ee77e126e35110eb6c0402bb818",
+ "inputs": {
+  "raw": {
+   "csv_sha256": "93369c7ea235eca5e5574b51135619c409dfbd33c7e8d49ed9d2b53f6e644b16",
+   "metadata_sha256": "5adcac356536beab75e0902c26ac52e0839613eee7dced41ff42d5b8780ca8ad"
+  },
+  "repaired": {
+   "csv_sha256": "adc7de199402381c618e61a10234cb400d772c563e235e74cdd491f532822741",
+   "metadata_sha256": "3874f335280d032900210b741726d6ad581da3df7e345bc0929c4ee8fe8ef28f"
+  }
+ },
+ "limitations": [
+  "One checkpoint/seed; intervals reflect clip sampling only.",
+  "Window survival is not uninterrupted full-clip execution.",
+  "Complete-window survivor fidelity is selection-conditioned.",
+  "Reference assignment changes initialization and termination targets.",
+  "Outside-training clips are not an independently sampled benchmark."
+ ],
+ "strata": {
+  "all": {
+   "all_conditions": {
+    "conditions": 656,
+    "clips": 26,
+    "metrics": {
+     "success": {
+      "raw": 0.570054945054945,
+      "repaired": 0.5535714285714286,
+      "repaired_minus_raw": -0.016483516483516477,
+      "clip_bootstrap_95ci": [
+       -0.05494505494505494,
+       0.019230769230769235
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.8094086205265782,
+      "repaired": 0.8095726659158792,
+      "repaired_minus_raw": 0.00016404538930101713,
+      "clip_bootstrap_95ci": [
+       -0.014972904736109008,
+       0.01647971142626749
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.39250490671844224,
+      "repaired": 0.3915021945330933,
+      "repaired_minus_raw": -0.0010027121853489356,
+      "clip_bootstrap_95ci": [
+       -0.008587761487532734,
+       0.008020236553921721
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.09458628954918503,
+      "repaired": 0.09520180483481712,
+      "repaired_minus_raw": 0.0006155152856321128,
+      "clip_bootstrap_95ci": [
+       -0.0003581630225948328,
+       0.0016249539779632227
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.18644387659534895,
+      "repaired": 0.18722269347879092,
+      "repaired_minus_raw": 0.0007788168834420017,
+      "clip_bootstrap_95ci": [
+       -0.0025773975078993926,
+       0.0038162558872999785
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 19.546377875975203,
+      "repaired": 20.588171038653822,
+      "repaired_minus_raw": 1.0417931626786239,
+      "clip_bootstrap_95ci": [
+       0.342557895486498,
+       1.7289771674016665
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 409,
+      "failures": 247,
+      "termination_causes": {
+       "ee_body_pos": 170,
+       "anchor_pos": 71,
+       "anchor_pos;ee_body_pos": 6
+      }
+     },
+     "repaired": {
+      "successes": 397,
+      "failures": 259,
+      "termination_causes": {
+       "ee_body_pos": 184,
+       "anchor_pos": 71,
+       "anchor_pos;ee_body_pos": 4
+      }
+     }
+    }
+   },
+   "frame_zero": {
+    "conditions": 104,
+    "clips": 26,
+    "metrics": {
+     "success": {
+      "raw": 0.6346153846153846,
+      "repaired": 0.6153846153846154,
+      "repaired_minus_raw": -0.019230769230769232,
+      "clip_bootstrap_95ci": [
+       -0.09615384615384616,
+       0.038461538461538464
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.891615580233538,
+      "repaired": 0.8832356695788829,
+      "repaired_minus_raw": -0.008379910654655005,
+      "clip_bootstrap_95ci": [
+       -0.03043119270593705,
+       0.009299401828957596
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.43504301565810083,
+      "repaired": 0.43078230797992695,
+      "repaired_minus_raw": -0.004260707678173876,
+      "clip_bootstrap_95ci": [
+       -0.014443001704888719,
+       0.003439861195212339
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.0891728111399481,
+      "repaired": 0.08956346248921293,
+      "repaired_minus_raw": 0.0003906513492648418,
+      "clip_bootstrap_95ci": [
+       -0.0006986358552239834,
+       0.0014901396227427399
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.17610623565717384,
+      "repaired": 0.1764155666415508,
+      "repaired_minus_raw": 0.000309330984376944,
+      "clip_bootstrap_95ci": [
+       -0.0029558832972095563,
+       0.0033334147614928382
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 17.329316029181847,
+      "repaired": 18.61207818526488,
+      "repaired_minus_raw": 1.2827621560830336,
+      "clip_bootstrap_95ci": [
+       0.26442061605361794,
+       2.3483347503038545
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 66,
+      "failures": 38,
+      "termination_causes": {
+       "ee_body_pos": 30,
+       "anchor_pos": 7,
+       "anchor_pos;ee_body_pos": 1
+      }
+     },
+     "repaired": {
+      "successes": 64,
+      "failures": 40,
+      "termination_causes": {
+       "ee_body_pos": 38,
+       "anchor_pos": 2
+      }
+     }
+    }
+   },
+   "full_windows": {
+    "conditions": 644,
+    "clips": 23,
+    "metrics": {
+     "success": {
+      "raw": 0.6335403726708075,
+      "repaired": 0.6149068322981366,
+      "repaired_minus_raw": -0.0186335403726708,
+      "clip_bootstrap_95ci": [
+       -0.060559006211180114,
+       0.021739130434782615
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.8243167701863355,
+      "repaired": 0.8244099378881988,
+      "repaired_minus_raw": 9.316770186333463e-05,
+      "clip_bootstrap_95ci": [
+       -0.015259316770186377,
+       0.017339544513457535
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.4079421903694337,
+      "repaired": 0.4070354573996066,
+      "repaired_minus_raw": -0.0009067329698270478,
+      "clip_bootstrap_95ci": [
+       -0.00939337175219573,
+       0.008728479841333322
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.09337579887013259,
+      "repaired": 0.09370248768224107,
+      "repaired_minus_raw": 0.000326688812108514,
+      "clip_bootstrap_95ci": [
+       -0.0005873523668461248,
+       0.0012661578409917506
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.18076043873041958,
+      "repaired": 0.18120352495230316,
+      "repaired_minus_raw": 0.00044308622188357025,
+      "clip_bootstrap_95ci": [
+       -0.0031538071076136964,
+       0.003502836614349703
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 19.137043016667693,
+      "repaired": 20.113944319464405,
+      "repaired_minus_raw": 0.9769013027967128,
+      "clip_bootstrap_95ci": [
+       0.2688198381144063,
+       1.6592947078232436
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 408,
+      "failures": 236,
+      "termination_causes": {
+       "ee_body_pos": 159,
+       "anchor_pos": 71,
+       "anchor_pos;ee_body_pos": 6
+      }
+     },
+     "repaired": {
+      "successes": 396,
+      "failures": 248,
+      "termination_causes": {
+       "ee_body_pos": 173,
+       "anchor_pos": 71,
+       "anchor_pos;ee_body_pos": 4
+      }
+     }
+    }
+   },
+   "short_windows": {
+    "conditions": 12,
+    "clips": 3,
+    "metrics": {
+     "success": {
+      "raw": 0.08333333333333333,
+      "repaired": 0.08333333333333333,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.6951128064684403,
+      "repaired": 0.6958202474614302,
+      "repaired_minus_raw": 0.0007074409929899161,
+      "clip_bootstrap_95ci": [
+       -0.047535211267605626,
+       0.049657534246575374
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.2741523987275083,
+      "repaired": 0.27241384588982487,
+      "repaired_minus_raw": -0.0017385528376834085,
+      "clip_bootstrap_95ci": [
+       -0.014512626391893269,
+       0.009293326692796422
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.10386671808858712,
+      "repaired": 0.10669656967123349,
+      "repaired_minus_raw": 0.00282985158264637,
+      "clip_bootstrap_95ci": [
+       -1.4528632164001465e-06,
+       0.007664047181606293
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.2300169002264738,
+      "repaired": 0.23336965218186378,
+      "repaired_minus_raw": 0.0033527519553899765,
+      "clip_bootstrap_95ci": [
+       -0.006789714097976685,
+       0.01685514859855175
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 22.684611797332764,
+      "repaired": 24.223909219106037,
+      "repaired_minus_raw": 1.5392974217732747,
+      "clip_bootstrap_95ci": [
+       -0.11180782318115234,
+       4.730134010314941
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 1,
+      "failures": 11,
+      "termination_causes": {
+       "ee_body_pos": 11
+      }
+     },
+     "repaired": {
+      "successes": 1,
+      "failures": 11,
+      "termination_causes": {
+       "ee_body_pos": 11
+      }
+     }
+    }
+   },
+   "paired_complete_window_survivors": {
+    "conditions": 360,
+    "clips": 21,
+    "metrics": {
+     "success": {
+      "raw": 1.0,
+      "repaired": 1.0,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "survival_fraction": {
+      "raw": 1.0,
+      "repaired": 1.0,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.5090378756311876,
+      "repaired": 0.5056249994486551,
+      "repaired_minus_raw": -0.0034128761825325538,
+      "clip_bootstrap_95ci": [
+       -0.006796953641745356,
+       -0.00010290313229576247
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.08770901681823523,
+      "repaired": 0.08860329846675695,
+      "repaired_minus_raw": 0.0008942816485217106,
+      "clip_bootstrap_95ci": [
+       4.8553576155060904e-05,
+       0.0018749834061007867
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.15634942176776562,
+      "repaired": 0.15828910809490782,
+      "repaired_minus_raw": 0.0019396863271422657,
+      "clip_bootstrap_95ci": [
+       -0.00015291448825817682,
+       0.004007910968295662
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 21.003756918278867,
+      "repaired": 22.55273922629044,
+      "repaired_minus_raw": 1.5489823080115772,
+      "clip_bootstrap_95ci": [
+       0.7379716535938836,
+       2.411199576757661
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 360,
+      "failures": 0,
+      "termination_causes": {}
+     },
+     "repaired": {
+      "successes": 360,
+      "failures": 0,
+      "termination_causes": {}
+     }
+    }
+   },
+   "survivor_eligible_conditions": 644
+  },
+  "qualified_repairs": {
+   "all_conditions": {
+    "conditions": 568,
+    "clips": 22,
+    "metrics": {
+     "success": {
+      "raw": 0.5487012987012988,
+      "repaired": 0.5275974025974025,
+      "repaired_minus_raw": -0.021103896103896097,
+      "clip_bootstrap_95ci": [
+       -0.06493506493506493,
+       0.022727272727272728
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.8009019267117861,
+      "repaired": 0.8002732877129944,
+      "repaired_minus_raw": -0.0006286389987914368,
+      "clip_bootstrap_95ci": [
+       -0.018334323395750224,
+       0.018957843000301497
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.38489719795524857,
+      "repaired": 0.3833549906237177,
+      "repaired_minus_raw": -0.0015422073315309226,
+      "clip_bootstrap_95ci": [
+       -0.010534886221610435,
+       0.009049773551070605
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.09526112322489935,
+      "repaired": 0.09597087123540121,
+      "repaired_minus_raw": 0.0007097480105018455,
+      "clip_bootstrap_95ci": [
+       -0.00042577513868545535,
+       0.001901157201092399
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.18922041328442465,
+      "repaired": 0.19008017785532713,
+      "repaired_minus_raw": 0.000859764570902501,
+      "clip_bootstrap_95ci": [
+       -0.0032683343104201756,
+       0.004528079012351405
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 19.67057571860103,
+      "repaired": 20.841437469055126,
+      "repaired_minus_raw": 1.1708617504540968,
+      "clip_bootstrap_95ci": [
+       0.35467516087092293,
+       1.990084597178093
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 338,
+      "failures": 230,
+      "termination_causes": {
+       "ee_body_pos": 153,
+       "anchor_pos": 71,
+       "anchor_pos;ee_body_pos": 6
+      }
+     },
+     "repaired": {
+      "successes": 325,
+      "failures": 243,
+      "termination_causes": {
+       "ee_body_pos": 169,
+       "anchor_pos": 71,
+       "anchor_pos;ee_body_pos": 3
+      }
+     }
+    }
+   },
+   "frame_zero": {
+    "conditions": 88,
+    "clips": 22,
+    "metrics": {
+     "success": {
+      "raw": 0.6022727272727273,
+      "repaired": 0.5795454545454546,
+      "repaired_minus_raw": -0.022727272727272728,
+      "clip_bootstrap_95ci": [
+       -0.11363636363636363,
+       0.045454545454545456
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.8859560392658985,
+      "repaired": 0.8760525084922152,
+      "repaired_minus_raw": -0.009903530773683188,
+      "clip_bootstrap_95ci": [
+       -0.03543422296961512,
+       0.011593322283221952
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.42464169186934947,
+      "repaired": 0.4198957293429811,
+      "repaired_minus_raw": -0.004745962526368388,
+      "clip_bootstrap_95ci": [
+       -0.016860693573371333,
+       0.00451246769333064
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.08924878375943411,
+      "repaired": 0.08964882964606989,
+      "repaired_minus_raw": 0.00040004588663578033,
+      "clip_bootstrap_95ci": [
+       -0.0008747932808050378,
+       0.0017348847235552967
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.17920712440867315,
+      "repaired": 0.1794339670715007,
+      "repaired_minus_raw": 0.00022684266282753512,
+      "clip_bootstrap_95ci": [
+       -0.0036486194786531003,
+       0.00393712138122117
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 17.394990043206647,
+      "repaired": 18.846079988913104,
+      "repaired_minus_raw": 1.451089945706454,
+      "clip_bootstrap_95ci": [
+       0.2557042250579054,
+       2.7351219866763463
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 53,
+      "failures": 35,
+      "termination_causes": {
+       "ee_body_pos": 27,
+       "anchor_pos": 7,
+       "anchor_pos;ee_body_pos": 1
+      }
+     },
+     "repaired": {
+      "successes": 51,
+      "failures": 37,
+      "termination_causes": {
+       "ee_body_pos": 35,
+       "anchor_pos": 2
+      }
+     }
+    }
+   },
+   "full_windows": {
+    "conditions": 560,
+    "clips": 20,
+    "metrics": {
+     "success": {
+      "raw": 0.6035714285714286,
+      "repaired": 0.5803571428571429,
+      "repaired_minus_raw": -0.023214285714285708,
+      "clip_bootstrap_95ci": [
+       -0.07142857142857141,
+       0.024999999999999998
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.8112738095238095,
+      "repaired": 0.8104761904761906,
+      "repaired_minus_raw": -0.0007976190476190678,
+      "clip_bootstrap_95ci": [
+       -0.018702678571428617,
+       0.02007172619047617
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.39398160218735645,
+      "repaired": 0.39254613910762726,
+      "repaired_minus_raw": -0.0014354630797291726,
+      "clip_bootstrap_95ci": [
+       -0.011001438079523978,
+       0.009872860392806247
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.09493886533060245,
+      "repaired": 0.0952950377615967,
+      "repaired_minus_raw": 0.0003561724309942546,
+      "clip_bootstrap_95ci": [
+       -0.0006943726336716542,
+       0.001438182427747441
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.18828233551965762,
+      "repaired": 0.1887248048226216,
+      "repaired_minus_raw": 0.0004424693029639978,
+      "clip_bootstrap_95ci": [
+       -0.003692028890114417,
+       0.003965327500731554
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 19.535510196856087,
+      "repaired": 20.59254181299891,
+      "repaired_minus_raw": 1.0570316161428175,
+      "clip_bootstrap_95ci": [
+       0.23906749755144086,
+       1.8592166123539193
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 338,
+      "failures": 222,
+      "termination_causes": {
+       "ee_body_pos": 145,
+       "anchor_pos": 71,
+       "anchor_pos;ee_body_pos": 6
+      }
+     },
+     "repaired": {
+      "successes": 325,
+      "failures": 235,
+      "termination_causes": {
+       "ee_body_pos": 161,
+       "anchor_pos": 71,
+       "anchor_pos;ee_body_pos": 3
+      }
+     }
+    }
+   },
+   "short_windows": {
+    "conditions": 8,
+    "clips": 2,
+    "metrics": {
+     "success": {
+      "raw": 0.0,
+      "repaired": 0.0,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.6971830985915493,
+      "repaired": 0.6982442600810341,
+      "repaired_minus_raw": 0.0010611614894848742,
+      "clip_bootstrap_95ci": [
+       -0.047535211267605626,
+       0.049657534246575374
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.29405315563417034,
+      "repaired": 0.29144350578462197,
+      "repaired_minus_raw": -0.0026096498495484233,
+      "clip_bootstrap_95ci": [
+       -0.014512626391893269,
+       0.009293326692796422
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.09848370216786861,
+      "repaired": 0.10272920597344637,
+      "repaired_minus_raw": 0.004245503805577755,
+      "clip_bootstrap_95ci": [
+       0.0008269604295492172,
+       0.007664047181606293
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.19860119093209505,
+      "repaired": 0.20363390818238258,
+      "repaired_minus_raw": 0.005032717250287533,
+      "clip_bootstrap_95ci": [
+       -0.006789714097976685,
+       0.01685514859855175
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 21.021230936050415,
+      "repaired": 23.33039402961731,
+      "repaired_minus_raw": 2.3091630935668945,
+      "clip_bootstrap_95ci": [
+       -0.11180782318115234,
+       4.730134010314941
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 0,
+      "failures": 8,
+      "termination_causes": {
+       "ee_body_pos": 8
+      }
+     },
+     "repaired": {
+      "successes": 0,
+      "failures": 8,
+      "termination_causes": {
+       "ee_body_pos": 8
+      }
+     }
+    }
+   },
+   "paired_complete_window_survivors": {
+    "conditions": 291,
+    "clips": 18,
+    "metrics": {
+     "success": {
+      "raw": 1.0,
+      "repaired": 1.0,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "survival_fraction": {
+      "raw": 1.0,
+      "repaired": 1.0,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.5007300757246355,
+      "repaired": 0.49684788221033954,
+      "repaired_minus_raw": -0.0038821935142958897,
+      "clip_bootstrap_95ci": [
+       -0.00780655316367046,
+       1.5519246413518618e-06
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.08854941709802183,
+      "repaired": 0.0895972504516477,
+      "repaired_minus_raw": 0.0010478333536258612,
+      "clip_bootstrap_95ci": [
+       8.570750932965428e-05,
+       0.0021681084450570058
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.16173185203482449,
+      "repaired": 0.16390935887714497,
+      "repaired_minus_raw": 0.0021775068423205116,
+      "clip_bootstrap_95ci": [
+       -0.0002704466878804789,
+       0.004571949192336072
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 21.856662591189835,
+      "repaired": 23.620831847786288,
+      "repaired_minus_raw": 1.7641692565964555,
+      "clip_bootstrap_95ci": [
+       0.8316678551631161,
+       2.7053512090734775
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 291,
+      "failures": 0,
+      "termination_causes": {}
+     },
+     "repaired": {
+      "successes": 291,
+      "failures": 0,
+      "termination_causes": {}
+     }
+    }
+   },
+   "survivor_eligible_conditions": 560
+  },
+  "unchanged_controls": {
+   "all_conditions": {
+    "conditions": 88,
+    "clips": 4,
+    "metrics": {
+     "success": {
+      "raw": 0.6875,
+      "repaired": 0.6964285714285714,
+      "repaired_minus_raw": 0.008928571428571425,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.026785714285714274
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.8561954365079365,
+      "repaired": 0.860719246031746,
+      "repaired_minus_raw": 0.004523809523809513,
+      "clip_bootstrap_95ci": [
+       -0.0017857142857142794,
+       0.01535714285714282
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.4343473049160077,
+      "repaired": 0.4363118160346596,
+      "repaired_minus_raw": 0.001964511118651993,
+      "clip_bootstrap_95ci": [
+       -0.002500971463809218,
+       0.008543112548498766
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.09087470433275614,
+      "repaired": 0.09097193963160473,
+      "repaired_minus_raw": 9.723529884858237e-05,
+      "clip_bootstrap_95ci": [
+       -5.369058011897229e-05,
+       0.000334765828613727
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.17117292480543256,
+      "repaired": 0.1715065294078418,
+      "repaired_minus_raw": 0.00033360460240925566,
+      "clip_bootstrap_95ci": [
+       -0.00027171036760722383,
+       0.00118256825953722
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 18.863289741533144,
+      "repaired": 19.195205671446665,
+      "repaired_minus_raw": 0.33191592991352126,
+      "clip_bootstrap_95ci": [
+       -0.016753520284380485,
+       0.680585380111423
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 71,
+      "failures": 17,
+      "termination_causes": {
+       "ee_body_pos": 17
+      }
+     },
+     "repaired": {
+      "successes": 72,
+      "failures": 16,
+      "termination_causes": {
+       "ee_body_pos": 15,
+       "anchor_pos;ee_body_pos": 1
+      }
+     }
+    }
+   },
+   "frame_zero": {
+    "conditions": 16,
+    "clips": 4,
+    "metrics": {
+     "success": {
+      "raw": 0.8125,
+      "repaired": 0.8125,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.9227430555555556,
+      "repaired": 0.9227430555555556,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.4922502964962333,
+      "repaired": 0.49065849048312915,
+      "repaired_minus_raw": -0.0015918060131040607,
+      "clip_bootstrap_95ci": [
+       -0.0038025915032371127,
+       -2.6661441331427005e-05
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.08875496173277497,
+      "repaired": 0.08909394312649965,
+      "repaired_minus_raw": 0.00033898139372467995,
+      "clip_bootstrap_95ci": [
+       2.3515895009040833e-05,
+       0.0006544468924403191
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.1590513475239277,
+      "repaired": 0.15981436427682638,
+      "repaired_minus_raw": 0.0007630167528986931,
+      "clip_bootstrap_95ci": [
+       -1.6476958990097046e-05,
+       0.0023073749616742134
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 16.96810895204544,
+      "repaired": 17.32506826519966,
+      "repaired_minus_raw": 0.3569593131542206,
+      "clip_bootstrap_95ci": [
+       -0.11813625693321228,
+       1.1507880687713623
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 13,
+      "failures": 3,
+      "termination_causes": {
+       "ee_body_pos": 3
+      }
+     },
+     "repaired": {
+      "successes": 13,
+      "failures": 3,
+      "termination_causes": {
+       "ee_body_pos": 3
+      }
+     }
+    }
+   },
+   "full_windows": {
+    "conditions": 84,
+    "clips": 3,
+    "metrics": {
+     "success": {
+      "raw": 0.8333333333333334,
+      "repaired": 0.8452380952380952,
+      "repaired_minus_raw": 0.011904761904761899,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0357142857142857
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.9112698412698412,
+      "repaired": 0.9173015873015874,
+      "repaired_minus_raw": 0.006031746031746017,
+      "clip_bootstrap_95ci": [
+       -0.0023809523809523725,
+       0.020476190476190426
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.5010127782499488,
+      "repaired": 0.5036309126794692,
+      "repaired_minus_raw": 0.0026181344295204503,
+      "clip_bootstrap_95ci": [
+       -0.0033358423470944976,
+       0.011491102279169607
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.08295535580033347,
+      "repaired": 0.08308548715320373,
+      "repaired_minus_raw": 0.00013013135287024322,
+      "clip_bootstrap_95ci": [
+       -7.915882659809137e-05,
+       0.00044683872589043605
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.13061446013549963,
+      "repaired": 0.13106165915018037,
+      "repaired_minus_raw": 0.0004471990146807196,
+      "clip_bootstrap_95ci": [
+       -0.00042464397847652435,
+       0.0015791505575180054
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 16.48059514874504,
+      "repaired": 16.92329436256772,
+      "repaired_minus_raw": 0.4426992138226833,
+      "clip_bootstrap_95ci": [
+       -0.03307311875479613,
+       0.8326160567147411
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 70,
+      "failures": 14,
+      "termination_causes": {
+       "ee_body_pos": 14
+      }
+     },
+     "repaired": {
+      "successes": 71,
+      "failures": 13,
+      "termination_causes": {
+       "ee_body_pos": 12,
+       "anchor_pos;ee_body_pos": 1
+      }
+     }
+    }
+   },
+   "short_windows": {
+    "conditions": 4,
+    "clips": 1,
+    "metrics": {
+     "success": {
+      "raw": 0.25,
+      "repaired": 0.25,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.6909722222222223,
+      "repaired": 0.6909722222222223,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.23435088491418415,
+      "repaired": 0.23435452610023078,
+      "repaired_minus_raw": 3.6411860466212254e-06,
+      "clip_bootstrap_95ci": [
+       3.6411860466212254e-06,
+       3.6411860466212254e-06
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.11463274993002415,
+      "repaired": 0.11463129706680775,
+      "repaired_minus_raw": -1.4528632164001465e-06,
+      "clip_bootstrap_95ci": [
+       -1.4528632164001465e-06,
+       -1.4528632164001465e-06
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.2928483188152313,
+      "repaired": 0.2928411401808262,
+      "repaired_minus_raw": -7.178634405136108e-06,
+      "clip_bootstrap_95ci": [
+       -7.178634405136108e-06,
+       -7.178634405136108e-06
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 26.01137351989746,
+      "repaired": 26.010939598083496,
+      "repaired_minus_raw": -0.00043392181396484375,
+      "clip_bootstrap_95ci": [
+       -0.00043392181396484375,
+       -0.00043392181396484375
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 1,
+      "failures": 3,
+      "termination_causes": {
+       "ee_body_pos": 3
+      }
+     },
+     "repaired": {
+      "successes": 1,
+      "failures": 3,
+      "termination_causes": {
+       "ee_body_pos": 3
+      }
+     }
+    }
+   },
+   "paired_complete_window_survivors": {
+    "conditions": 69,
+    "clips": 3,
+    "metrics": {
+     "success": {
+      "raw": 1.0,
+      "repaired": 1.0,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "survival_fraction": {
+      "raw": 1.0,
+      "repaired": 1.0,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.5588846750705011,
+      "repaired": 0.5582877028785486,
+      "repaired_minus_raw": -0.0005969721919525384,
+      "clip_bootstrap_95ci": [
+       -0.001726908508349445,
+       0.00023684857600558828
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.08266661513951562,
+      "repaired": 0.08263958655741244,
+      "repaired_minus_raw": -2.7028582103192738e-05,
+      "clip_bootstrap_95ci": [
+       -0.0002892850898206234,
+       0.00018548518419266025
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.12405484016541214,
+      "repaired": 0.12456760340148494,
+      "repaired_minus_raw": 0.0005127632360727904,
+      "clip_bootstrap_95ci": [
+       0.00018709046500067772,
+       0.0011591619253158436
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 15.886322880813054,
+      "repaired": 16.144183497315364,
+      "repaired_minus_raw": 0.25786061650230724,
+      "clip_bootstrap_95ci": [
+       -0.03307311875479613,
+       0.736931838989257
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 69,
+      "failures": 0,
+      "termination_causes": {}
+     },
+     "repaired": {
+      "successes": 69,
+      "failures": 0,
+      "termination_causes": {}
+     }
+    }
+   },
+   "survivor_eligible_conditions": 84
+  },
+  "training_overlap": {
+   "all_conditions": {
+    "conditions": 56,
+    "clips": 2,
+    "metrics": {
+     "success": {
+      "raw": 0.8392857142857143,
+      "repaired": 0.875,
+      "repaired_minus_raw": 0.0357142857142857,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0714285714285714
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.9880952380952381,
+      "repaired": 0.9863095238095239,
+      "repaired_minus_raw": -0.0017857142857142239,
+      "clip_bootstrap_95ci": [
+       -0.0023809523809523725,
+       -0.0011904761904760752
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.5147345824304719,
+      "repaired": 0.5125717825265014,
+      "repaired_minus_raw": -0.002162799903970558,
+      "clip_bootstrap_95ci": [
+       -0.0033358423470944976,
+       -0.0009897574608466186
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.08961009447063718,
+      "repaired": 0.08955465030989476,
+      "repaired_minus_raw": -5.544416074241415e-05,
+      "clip_bootstrap_95ci": [
+       -0.0005577270473752644,
+       0.00044683872589043605
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.1430294934128012,
+      "repaired": 0.14407268618898733,
+      "repaired_minus_raw": 0.0010431927761861276,
+      "clip_bootstrap_95ci": [
+       0.0005072349948542498,
+       0.0015791505575180054
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 21.6998348236084,
+      "repaired": 24.16036398070199,
+      "repaired_minus_raw": 2.4605291570935925,
+      "clip_bootstrap_95ci": [
+       0.8326160567147411,
+       4.088442257472444
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 47,
+      "failures": 9,
+      "termination_causes": {
+       "ee_body_pos": 5,
+       "anchor_pos": 4
+      }
+     },
+     "repaired": {
+      "successes": 49,
+      "failures": 7,
+      "termination_causes": {
+       "ee_body_pos": 4,
+       "anchor_pos": 2,
+       "anchor_pos;ee_body_pos": 1
+      }
+     }
+    }
+   },
+   "frame_zero": {
+    "conditions": 8,
+    "clips": 2,
+    "metrics": {
+     "success": {
+      "raw": 0.75,
+      "repaired": 0.75,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.9916666666666667,
+      "repaired": 0.9966666666666667,
+      "repaired_minus_raw": 0.00500000000000006,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.01000000000000012
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.5068393266676772,
+      "repaired": 0.5048861004938352,
+      "repaired_minus_raw": -0.0019532261738420265,
+      "clip_bootstrap_95ci": [
+       -0.005051133981412992,
+       0.001144681633728939
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.0877313632518053,
+      "repaired": 0.08882864098995924,
+      "repaired_minus_raw": 0.0010972777381539345,
+      "clip_bootstrap_95ci": [
+       0.0007490906864404678,
+       0.0014454647898674011
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.15185768529772758,
+      "repaired": 0.15386962331831455,
+      "repaired_minus_raw": 0.0020119380205869675,
+      "clip_bootstrap_95ci": [
+       0.0009449832141399384,
+       0.0030788928270339966
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 21.116694688796997,
+      "repaired": 23.955514907836914,
+      "repaired_minus_raw": 2.838820219039917,
+      "clip_bootstrap_95ci": [
+       1.5345287322998047,
+       4.143111705780029
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 6,
+      "failures": 2,
+      "termination_causes": {
+       "ee_body_pos": 2
+      }
+     },
+     "repaired": {
+      "successes": 6,
+      "failures": 2,
+      "termination_causes": {
+       "ee_body_pos": 2
+      }
+     }
+    }
+   },
+   "full_windows": {
+    "conditions": 56,
+    "clips": 2,
+    "metrics": {
+     "success": {
+      "raw": 0.8392857142857143,
+      "repaired": 0.875,
+      "repaired_minus_raw": 0.0357142857142857,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0714285714285714
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.9880952380952381,
+      "repaired": 0.9863095238095239,
+      "repaired_minus_raw": -0.0017857142857142239,
+      "clip_bootstrap_95ci": [
+       -0.0023809523809523725,
+       -0.0011904761904760752
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.5147345824304719,
+      "repaired": 0.5125717825265014,
+      "repaired_minus_raw": -0.002162799903970558,
+      "clip_bootstrap_95ci": [
+       -0.0033358423470944976,
+       -0.0009897574608466186
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.08961009447063718,
+      "repaired": 0.08955465030989476,
+      "repaired_minus_raw": -5.544416074241415e-05,
+      "clip_bootstrap_95ci": [
+       -0.0005577270473752644,
+       0.00044683872589043605
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.1430294934128012,
+      "repaired": 0.14407268618898733,
+      "repaired_minus_raw": 0.0010431927761861276,
+      "clip_bootstrap_95ci": [
+       0.0005072349948542498,
+       0.0015791505575180054
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 21.6998348236084,
+      "repaired": 24.16036398070199,
+      "repaired_minus_raw": 2.4605291570935925,
+      "clip_bootstrap_95ci": [
+       0.8326160567147411,
+       4.088442257472444
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 47,
+      "failures": 9,
+      "termination_causes": {
+       "ee_body_pos": 5,
+       "anchor_pos": 4
+      }
+     },
+     "repaired": {
+      "successes": 49,
+      "failures": 7,
+      "termination_causes": {
+       "ee_body_pos": 4,
+       "anchor_pos": 2,
+       "anchor_pos;ee_body_pos": 1
+      }
+     }
+    }
+   },
+   "short_windows": {
+    "conditions": 0,
+    "clips": 0,
+    "metrics": {}
+   },
+   "paired_complete_window_survivors": {
+    "conditions": 43,
+    "clips": 2,
+    "metrics": {
+     "success": {
+      "raw": 1.0,
+      "repaired": 1.0,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "survival_fraction": {
+      "raw": 1.0,
+      "repaired": 1.0,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.5351707869041255,
+      "repaired": 0.5306129816917095,
+      "repaired_minus_raw": -0.0045578052124159996,
+      "clip_bootstrap_95ci": [
+       -0.007388701916482554,
+       -0.001726908508349445
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.0864183192451795,
+      "repaired": 0.08735029647747675,
+      "repaired_minus_raw": 0.0009319772322972583,
+      "clip_bootstrap_95ci": [
+       0.00018548518419266025,
+       0.0016784692804018564
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.13598872698015635,
+      "repaired": 0.1380238529543082,
+      "repaired_minus_raw": 0.0020351259741518274,
+      "clip_bootstrap_95ci": [
+       0.0011591619253158436,
+       0.002911090022987811
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 21.169996119605173,
+      "repaired": 23.612236217922636,
+      "repaired_minus_raw": 2.4422400983174626,
+      "clip_bootstrap_95ci": [
+       0.736931838989257,
+       4.147548357645668
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 43,
+      "failures": 0,
+      "termination_causes": {}
+     },
+     "repaired": {
+      "successes": 43,
+      "failures": 0,
+      "termination_causes": {}
+     }
+    }
+   },
+   "survivor_eligible_conditions": 56
+  },
+  "outside_training": {
+   "all_conditions": {
+    "conditions": 600,
+    "clips": 24,
+    "metrics": {
+     "success": {
+      "raw": 0.5476190476190476,
+      "repaired": 0.5267857142857143,
+      "repaired_minus_raw": -0.020833333333333325,
+      "clip_bootstrap_95ci": [
+       -0.061011904761904746,
+       0.01785714285714286
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.7945180690625233,
+      "repaired": 0.7948445944247423,
+      "repaired_minus_raw": 0.00032652536221895387,
+      "clip_bootstrap_95ci": [
+       -0.016031928107840394,
+       0.018229378889394177
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.3823191004091065,
+      "repaired": 0.38141306220030935,
+      "repaired_minus_raw": -0.0009060382087971337,
+      "clip_bootstrap_95ci": [
+       -0.009213201000617817,
+       0.00874061391765252
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.09500097247239735,
+      "repaired": 0.09567240104522734,
+      "repaired_minus_raw": 0.00067142857282999,
+      "clip_bootstrap_95ci": [
+       -0.00036088279822641653,
+       0.0017883044897600852
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.19006174186056124,
+      "repaired": 0.19081852741960792,
+      "repaired_minus_raw": 0.0007567855590466579,
+      "clip_bootstrap_95ci": [
+       -0.002967165311357743,
+       0.004120603322129075
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 19.3669231303391,
+      "repaired": 20.290488293483143,
+      "repaired_minus_raw": 0.9235651631440431,
+      "clip_bootstrap_95ci": [
+       0.24834754147699833,
+       1.6500756927632854
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 362,
+      "failures": 238,
+      "termination_causes": {
+       "ee_body_pos": 165,
+       "anchor_pos;ee_body_pos": 6,
+       "anchor_pos": 67
+      }
+     },
+     "repaired": {
+      "successes": 348,
+      "failures": 252,
+      "termination_causes": {
+       "ee_body_pos": 180,
+       "anchor_pos": 69,
+       "anchor_pos;ee_body_pos": 3
+      }
+     }
+    }
+   },
+   "frame_zero": {
+    "conditions": 96,
+    "clips": 24,
+    "metrics": {
+     "success": {
+      "raw": 0.625,
+      "repaired": 0.6041666666666666,
+      "repaired_minus_raw": -0.020833333333333332,
+      "clip_bootstrap_95ci": [
+       -0.08333333333333333,
+       0.041666666666666664
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.883277989697444,
+      "repaired": 0.8737830864882343,
+      "repaired_minus_raw": -0.009494903209209593,
+      "clip_bootstrap_95ci": [
+       -0.032813967136150236,
+       0.010111181453255295
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.42905998974063614,
+      "repaired": 0.42460699193710133,
+      "repaired_minus_raw": -0.004452997803534864,
+      "clip_bootstrap_95ci": [
+       -0.015571911653229879,
+       0.004094821233005941
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.08929293179729332,
+      "repaired": 0.08962469761415075,
+      "repaired_minus_raw": 0.0003317658168574174,
+      "clip_bootstrap_95ci": [
+       -0.0008329560650357355,
+       0.00152860738550468
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.1781269481871277,
+      "repaired": 0.17829439525182048,
+      "repaired_minus_raw": 0.0001674470646927754,
+      "clip_bootstrap_95ci": [
+       -0.0034011906342736133,
+       0.0034880771689737807
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 17.013701140880585,
+      "repaired": 18.166791791717213,
+      "repaired_minus_raw": 1.1530906508366268,
+      "clip_bootstrap_95ci": [
+       0.12809149386982122,
+       2.3360850467036167
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 60,
+      "failures": 36,
+      "termination_causes": {
+       "ee_body_pos": 28,
+       "anchor_pos": 7,
+       "anchor_pos;ee_body_pos": 1
+      }
+     },
+     "repaired": {
+      "successes": 58,
+      "failures": 38,
+      "termination_causes": {
+       "ee_body_pos": 36,
+       "anchor_pos": 2
+      }
+     }
+    }
+   },
+   "full_windows": {
+    "conditions": 588,
+    "clips": 21,
+    "metrics": {
+     "success": {
+      "raw": 0.6139455782312925,
+      "repaired": 0.5901360544217686,
+      "repaired_minus_raw": -0.0238095238095238,
+      "clip_bootstrap_95ci": [
+       -0.06972789115646257,
+       0.020408163265306128
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.8087188208616782,
+      "repaired": 0.8089909297052155,
+      "repaired_minus_raw": 0.00027210884353738785,
+      "clip_bootstrap_95ci": [
+       -0.01691723356009076,
+       0.02017063492063491
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.3977714863636205,
+      "repaired": 0.39698437881609283,
+      "repaired_minus_raw": -0.0007871075475276659,
+      "clip_bootstrap_95ci": [
+       -0.01015171716434972,
+       0.010196294351412227
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.09373443738437023,
+      "repaired": 0.09409751981294075,
+      "repaired_minus_raw": 0.00036308242857050713,
+      "clip_bootstrap_95ci": [
+       -0.0006175111431223,
+       0.0013966997127131042
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.1843538620940023,
+      "repaired": 0.18473979531071422,
+      "repaired_minus_raw": 0.0003859332167118981,
+      "clip_bootstrap_95ci": [
+       -0.0035485747210890527,
+       0.003758367758599067
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 18.892967606482863,
+      "repaired": 19.72857101839416,
+      "repaired_minus_raw": 0.8356034119112957,
+      "clip_bootstrap_95ci": [
+       0.12048171775884292,
+       1.5367167927679557
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 361,
+      "failures": 227,
+      "termination_causes": {
+       "ee_body_pos": 154,
+       "anchor_pos;ee_body_pos": 6,
+       "anchor_pos": 67
+      }
+     },
+     "repaired": {
+      "successes": 347,
+      "failures": 241,
+      "termination_causes": {
+       "ee_body_pos": 169,
+       "anchor_pos": 69,
+       "anchor_pos;ee_body_pos": 3
+      }
+     }
+    }
+   },
+   "short_windows": {
+    "conditions": 12,
+    "clips": 3,
+    "metrics": {
+     "success": {
+      "raw": 0.08333333333333333,
+      "repaired": 0.08333333333333333,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "survival_fraction": {
+      "raw": 0.6951128064684403,
+      "repaired": 0.6958202474614302,
+      "repaired_minus_raw": 0.0007074409929899161,
+      "clip_bootstrap_95ci": [
+       -0.047535211267605626,
+       0.049657534246575374
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.2741523987275083,
+      "repaired": 0.27241384588982487,
+      "repaired_minus_raw": -0.0017385528376834085,
+      "clip_bootstrap_95ci": [
+       -0.014512626391893269,
+       0.009293326692796422
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.10386671808858712,
+      "repaired": 0.10669656967123349,
+      "repaired_minus_raw": 0.00282985158264637,
+      "clip_bootstrap_95ci": [
+       -1.4528632164001465e-06,
+       0.007664047181606293
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.2300169002264738,
+      "repaired": 0.23336965218186378,
+      "repaired_minus_raw": 0.0033527519553899765,
+      "clip_bootstrap_95ci": [
+       -0.006789714097976685,
+       0.01685514859855175
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 22.684611797332764,
+      "repaired": 24.223909219106037,
+      "repaired_minus_raw": 1.5392974217732747,
+      "clip_bootstrap_95ci": [
+       -0.11180782318115234,
+       4.730134010314941
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 1,
+      "failures": 11,
+      "termination_causes": {
+       "ee_body_pos": 11
+      }
+     },
+     "repaired": {
+      "successes": 1,
+      "failures": 11,
+      "termination_causes": {
+       "ee_body_pos": 11
+      }
+     }
+    }
+   },
+   "paired_complete_window_survivors": {
+    "conditions": 317,
+    "clips": 19,
+    "metrics": {
+     "success": {
+      "raw": 1.0,
+      "repaired": 1.0,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "survival_fraction": {
+      "raw": 1.0,
+      "repaired": 1.0,
+      "repaired_minus_raw": 0.0,
+      "clip_bootstrap_95ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "tracking_score": {
+      "raw": 0.5062870428656153,
+      "repaired": 0.5029946855283335,
+      "repaired_minus_raw": -0.003292357337281665,
+      "clip_bootstrap_95ci": [
+       -0.007034366393182114,
+       0.0003309776949953454
+      ]
+     },
+     "common_root_relative_mpkpe_m_mean": {
+      "raw": 0.08784487972066216,
+      "repaired": 0.08873519341299697,
+      "repaired_minus_raw": 0.0008903136923348109,
+      "clip_bootstrap_95ci": [
+       -1.5688873037970543e-05,
+       0.0019374335633925172
+      ]
+     },
+     "common_anchor_orientation_error_rad_mean": {
+      "raw": 0.15849265279804023,
+      "repaired": 0.1604222928465499,
+      "repaired_minus_raw": 0.0019296400485096803,
+      "clip_bootstrap_95ci": [
+       -0.0003572309628990038,
+       0.004197475426960453
+      ]
+     },
+     "absolute_mechanical_work_per_actuator_j": {
+      "raw": 20.98625805498136,
+      "repaired": 22.441213227171264,
+      "repaired_minus_raw": 1.454955172189905,
+      "clip_bootstrap_95ci": [
+       0.6097680640535457,
+       2.3488559974945518
+      ]
+     }
+    },
+    "trial_accounting": {
+     "raw": {
+      "successes": 317,
+      "failures": 0,
+      "termination_causes": {}
+     },
+     "repaired": {
+      "successes": 317,
+      "failures": 0,
+      "termination_causes": {}
+     }
+    }
+   },
+   "survivor_eligible_conditions": 588
+  }
+ },
+ "per_clip": {
+  "ACCAD_Female1Walking_c3d_B14_-_walk_turn_right_(135)_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.9285714285714286,
+     "repaired": 0.9642857142857143,
+     "repaired_minus_raw": 0.0357142857142857,
+     "clip_bootstrap_95ci": [
+      0.0357142857142857,
+      0.0357142857142857
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.9957142857142858,
+     "repaired": 0.9926190476190476,
+     "repaired_minus_raw": -0.003095238095238151,
+     "clip_bootstrap_95ci": [
+      -0.003095238095238151,
+      -0.003095238095238151
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.4506484544453832,
+     "repaired": 0.4374159245554597,
+     "repaired_minus_raw": -0.013232529889923517,
+     "clip_bootstrap_95ci": [
+      -0.013232529889923517,
+      -0.013232529889923517
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.10121129639446735,
+     "repaired": 0.10419011781258243,
+     "repaired_minus_raw": 0.002978821418115077,
+     "clip_bootstrap_95ci": [
+      0.002978821418115077,
+      0.002978821418115077
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.18268837513668196,
+     "repaired": 0.1902863388614995,
+     "repaired_minus_raw": 0.0075979637248175524,
+     "clip_bootstrap_95ci": [
+      0.0075979637248175524,
+      0.0075979637248175524
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 29.753731523241317,
+     "repaired": 32.487896238054546,
+     "repaired_minus_raw": 2.734164714813229,
+     "clip_bootstrap_95ci": [
+      2.734164714813229,
+      2.734164714813229
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 26,
+     "failures": 2,
+     "termination_causes": {
+      "ee_body_pos": 2
+     }
+    },
+    "repaired": {
+     "successes": 27,
+     "failures": 1,
+     "termination_causes": {
+      "anchor_pos": 1
+     }
+    }
+   }
+  },
+  "ACCAD_Male1General_c3d_General_A5_-_Pick_Up_Box_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.35714285714285715,
+     "repaired": 0.5357142857142857,
+     "repaired_minus_raw": 0.17857142857142855,
+     "clip_bootstrap_95ci": [
+      0.17857142857142855,
+      0.17857142857142855
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.827857142857143,
+     "repaired": 0.8828571428571429,
+     "repaired_minus_raw": 0.05499999999999994,
+     "clip_bootstrap_95ci": [
+      0.05499999999999994,
+      0.05499999999999994
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.3868664200623536,
+     "repaired": 0.41919185583130186,
+     "repaired_minus_raw": 0.03232543576894825,
+     "clip_bootstrap_95ci": [
+      0.03232543576894825,
+      0.03232543576894825
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.08332697754459721,
+     "repaired": 0.08327166669602905,
+     "repaired_minus_raw": -5.531084856816304e-05,
+     "clip_bootstrap_95ci": [
+      -5.531084856816304e-05,
+      -5.531084856816304e-05
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.20577178363289153,
+     "repaired": 0.19648135240588868,
+     "repaired_minus_raw": -0.009290431227002849,
+     "clip_bootstrap_95ci": [
+      -0.009290431227002849,
+      -0.009290431227002849
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 9.654360447611127,
+     "repaired": 11.955519539969307,
+     "repaired_minus_raw": 2.30115909235818,
+     "clip_bootstrap_95ci": [
+      2.30115909235818,
+      2.30115909235818
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 10,
+     "failures": 18,
+     "termination_causes": {
+      "anchor_pos": 17,
+      "anchor_pos;ee_body_pos": 1
+     }
+    },
+    "repaired": {
+     "successes": 15,
+     "failures": 13,
+     "termination_causes": {
+      "anchor_pos": 13
+     }
+    }
+   }
+  },
+  "BMLhandball_S02_Novice_Trial_upper_left_140_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.5714285714285714,
+     "repaired": 0.42857142857142855,
+     "repaired_minus_raw": -0.14285714285714285,
+     "clip_bootstrap_95ci": [
+      -0.14285714285714285,
+      -0.14285714285714285
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.8592857142857143,
+     "repaired": 0.8335714285714285,
+     "repaired_minus_raw": -0.0257142857142858,
+     "clip_bootstrap_95ci": [
+      -0.0257142857142858,
+      -0.0257142857142858
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.41196523338967694,
+     "repaired": 0.3973403182960227,
+     "repaired_minus_raw": -0.014624915093654267,
+     "clip_bootstrap_95ci": [
+      -0.014624915093654267,
+      -0.014624915093654267
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.09200466929801873,
+     "repaired": 0.0909164332385574,
+     "repaired_minus_raw": -0.001088236059461331,
+     "clip_bootstrap_95ci": [
+      -0.001088236059461331,
+      -0.001088236059461331
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.18153446806328638,
+     "repaired": 0.18741561552243574,
+     "repaired_minus_raw": 0.005881147459149361,
+     "clip_bootstrap_95ci": [
+      0.005881147459149361,
+      0.005881147459149361
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 18.97037386894226,
+     "repaired": 18.367911543164933,
+     "repaired_minus_raw": -0.6024623257773278,
+     "clip_bootstrap_95ci": [
+      -0.6024623257773278,
+      -0.6024623257773278
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 16,
+     "failures": 12,
+     "termination_causes": {
+      "anchor_pos;ee_body_pos": 2,
+      "anchor_pos": 9,
+      "ee_body_pos": 1
+     }
+    },
+    "repaired": {
+     "successes": 12,
+     "failures": 16,
+     "termination_causes": {
+      "anchor_pos": 15,
+      "anchor_pos;ee_body_pos": 1
+     }
+    }
+   }
+  },
+  "BMLhandball_S06_Novice_Trial_upper_left_187_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.5714285714285714,
+     "repaired": 0.6071428571428571,
+     "repaired_minus_raw": 0.0357142857142857,
+     "clip_bootstrap_95ci": [
+      0.0357142857142857,
+      0.0357142857142857
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.7490476190476191,
+     "repaired": 0.7695238095238095,
+     "repaired_minus_raw": 0.020476190476190426,
+     "clip_bootstrap_95ci": [
+      0.020476190476190426,
+      0.020476190476190426
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.4492658071958196,
+     "repaired": 0.4607569094749892,
+     "repaired_minus_raw": 0.011491102279169607,
+     "clip_bootstrap_95ci": [
+      0.011491102279169607,
+      0.011491102279169607
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.07367983540253979,
+     "repaired": 0.0736006765759417,
+     "repaired_minus_raw": -7.915882659809137e-05,
+     "clip_bootstrap_95ci": [
+      -7.915882659809137e-05,
+      -7.915882659809137e-05
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.11698676965066365,
+     "repaired": 0.11656212567218713,
+     "repaired_minus_raw": -0.00042464397847652435,
+     "clip_bootstrap_95ci": [
+      -0.00042464397847652435,
+      -0.00042464397847652435
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 10.183989873954228,
+     "repaired": 10.712544577462333,
+     "repaired_minus_raw": 0.5285547035081049,
+     "clip_bootstrap_95ci": [
+      0.5285547035081049,
+      0.5285547035081049
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 16,
+     "failures": 12,
+     "termination_causes": {
+      "ee_body_pos": 12
+     }
+    },
+    "repaired": {
+     "successes": 17,
+     "failures": 11,
+     "termination_causes": {
+      "ee_body_pos": 11
+     }
+    }
+   }
+  },
+  "BMLhandball_S07_Expert_Trial_upper_right_left_195_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.8571428571428571,
+     "repaired": 0.8214285714285714,
+     "repaired_minus_raw": -0.0357142857142857,
+     "clip_bootstrap_95ci": [
+      -0.0357142857142857,
+      -0.0357142857142857
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.9497619047619048,
+     "repaired": 0.9452380952380953,
+     "repaired_minus_raw": -0.0045238095238094855,
+     "clip_bootstrap_95ci": [
+      -0.0045238095238094855,
+      -0.0045238095238094855
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.45601956003723776,
+     "repaired": 0.45420877421007594,
+     "repaired_minus_raw": -0.0018107858271618205,
+     "clip_bootstrap_95ci": [
+      -0.0018107858271618205,
+      -0.0018107858271618205
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.08347242724682603,
+     "repaired": 0.0835425489182983,
+     "repaired_minus_raw": 7.0121671472273e-05,
+     "clip_bootstrap_95ci": [
+      7.0121671472273e-05,
+      7.0121671472273e-05
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.18854447427604878,
+     "repaired": 0.18875304263617312,
+     "repaired_minus_raw": 0.00020856836012433932,
+     "clip_bootstrap_95ci": [
+      0.00020856836012433932,
+      0.00020856836012433932
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 19.51781908103398,
+     "repaired": 20.063057831355504,
+     "repaired_minus_raw": 0.5452387503215235,
+     "clip_bootstrap_95ci": [
+      0.5452387503215235,
+      0.5452387503215235
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 24,
+     "failures": 4,
+     "termination_causes": {
+      "ee_body_pos": 3,
+      "anchor_pos;ee_body_pos": 1
+     }
+    },
+    "repaired": {
+     "successes": 23,
+     "failures": 5,
+     "termination_causes": {
+      "ee_body_pos": 4,
+      "anchor_pos": 1
+     }
+    }
+   }
+  },
+  "BMLhandball_S07_Expert_Trial_upper_right_left_213_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.35714285714285715,
+     "repaired": 0.5714285714285714,
+     "repaired_minus_raw": 0.21428571428571425,
+     "clip_bootstrap_95ci": [
+      0.21428571428571425,
+      0.21428571428571425
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.6371428571428569,
+     "repaired": 0.7773809523809524,
+     "repaired_minus_raw": 0.1402380952380955,
+     "clip_bootstrap_95ci": [
+      0.1402380952380955,
+      0.1402380952380955
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.3001599530608826,
+     "repaired": 0.3782409233045951,
+     "repaired_minus_raw": 0.07808097024371247,
+     "clip_bootstrap_95ci": [
+      0.07808097024371247,
+      0.07808097024371247
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.08215133832501513,
+     "repaired": 0.0869767814874649,
+     "repaired_minus_raw": 0.0048254431624497746,
+     "clip_bootstrap_95ci": [
+      0.0048254431624497746,
+      0.0048254431624497746
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.17426749877631664,
+     "repaired": 0.17090231153581822,
+     "repaired_minus_raw": -0.0033651872404984184,
+     "clip_bootstrap_95ci": [
+      -0.0033651872404984184,
+      -0.0033651872404984184
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 14.632314324378967,
+     "repaired": 18.19024235861642,
+     "repaired_minus_raw": 3.5579280342374524,
+     "clip_bootstrap_95ci": [
+      3.5579280342374524,
+      3.5579280342374524
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 10,
+     "failures": 18,
+     "termination_causes": {
+      "ee_body_pos": 18
+     }
+    },
+    "repaired": {
+     "successes": 16,
+     "failures": 12,
+     "termination_causes": {
+      "ee_body_pos": 10,
+      "anchor_pos": 2
+     }
+    }
+   }
+  },
+  "BMLmovi_Subject_1_F_MoSh_Subject_1_F_13_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.75,
+     "repaired": 0.8214285714285714,
+     "repaired_minus_raw": 0.0714285714285714,
+     "clip_bootstrap_95ci": [
+      0.0714285714285714,
+      0.0714285714285714
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.9914285714285713,
+     "repaired": 0.9902380952380953,
+     "repaired_minus_raw": -0.0011904761904760752,
+     "clip_bootstrap_95ci": [
+      -0.0011904761904760752,
+      -0.0011904761904760752
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.5327594520200047,
+     "repaired": 0.5317696945591581,
+     "repaired_minus_raw": -0.0009897574608466186,
+     "clip_bootstrap_95ci": [
+      -0.0009897574608466186,
+      -0.0009897574608466186
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.08237903272467,
+     "repaired": 0.08182130567729473,
+     "repaired_minus_raw": -0.0005577270473752644,
+     "clip_bootstrap_95ci": [
+      -0.0005577270473752644,
+      -0.0005577270473752644
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.1408853940665722,
+     "repaired": 0.14139262906142644,
+     "repaired_minus_raw": 0.0005072349948542498,
+     "clip_bootstrap_95ci": [
+      0.0005072349948542498,
+      0.0005072349948542498
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 19.969051156725204,
+     "repaired": 24.057493414197648,
+     "repaired_minus_raw": 4.088442257472444,
+     "clip_bootstrap_95ci": [
+      4.088442257472444,
+      4.088442257472444
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 21,
+     "failures": 7,
+     "termination_causes": {
+      "ee_body_pos": 3,
+      "anchor_pos": 4
+     }
+    },
+    "repaired": {
+     "successes": 23,
+     "failures": 5,
+     "termination_causes": {
+      "ee_body_pos": 3,
+      "anchor_pos": 2
+     }
+    }
+   }
+  },
+  "BMLmovi_Subject_39_F_MoSh_Subject_39_F_2_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 1.0,
+     "repaired": 0.8928571428571429,
+     "repaired_minus_raw": -0.1071428571428571,
+     "clip_bootstrap_95ci": [
+      -0.1071428571428571,
+      -0.1071428571428571
+     ]
+    },
+    "survival_fraction": {
+     "raw": 1.0,
+     "repaired": 0.9607142857142856,
+     "repaired_minus_raw": -0.03928571428571437,
+     "clip_bootstrap_95ci": [
+      -0.03928571428571437,
+      -0.03928571428571437
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.49788256085289156,
+     "repaired": 0.4568297055428157,
+     "repaired_minus_raw": -0.04105285531007585,
+     "clip_bootstrap_95ci": [
+      -0.04105285531007585,
+      -0.04105285531007585
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.09125193554375853,
+     "repaired": 0.09723335265048913,
+     "repaired_minus_raw": 0.005981417106730599,
+     "clip_bootstrap_95ci": [
+      0.005981417106730599,
+      0.005981417106730599
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.15755943741117204,
+     "repaired": 0.17521875511322701,
+     "repaired_minus_raw": 0.017659317702054977,
+     "clip_bootstrap_95ci": [
+      0.017659317702054977,
+      0.017659317702054977
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 27.757286616734095,
+     "repaired": 31.236479929515294,
+     "repaired_minus_raw": 3.4791933127811987,
+     "clip_bootstrap_95ci": [
+      3.4791933127811987,
+      3.4791933127811987
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 28,
+     "failures": 0,
+     "termination_causes": {}
+    },
+    "repaired": {
+     "successes": 25,
+     "failures": 3,
+     "termination_causes": {
+      "ee_body_pos": 3
+     }
+    }
+   }
+  },
+  "BMLmovi_Subject_39_F_MoSh_Subject_39_F_7_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.9285714285714286,
+     "repaired": 0.9285714285714286,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.9735714285714286,
+     "repaired": 0.9911904761904762,
+     "repaired_minus_raw": 0.017619047619047534,
+     "clip_bootstrap_95ci": [
+      0.017619047619047534,
+      0.017619047619047534
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.517164866164956,
+     "repaired": 0.521151616664591,
+     "repaired_minus_raw": 0.003986750499634928,
+     "clip_bootstrap_95ci": [
+      0.003986750499634928,
+      0.003986750499634928
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.08463582263461181,
+     "repaired": 0.08523666166833468,
+     "repaired_minus_raw": 0.0006008390337228775,
+     "clip_bootstrap_95ci": [
+      0.0006008390337228775,
+      0.0006008390337228775
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.14026193852935517,
+     "repaired": 0.1437508413302047,
+     "repaired_minus_raw": 0.0034889028008495138,
+     "clip_bootstrap_95ci": [
+      0.0034889028008495138,
+      0.0034889028008495138
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 17.666094405310496,
+     "repaired": 19.91150999069214,
+     "repaired_minus_raw": 2.245415585381643,
+     "clip_bootstrap_95ci": [
+      2.245415585381643,
+      2.245415585381643
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 26,
+     "failures": 2,
+     "termination_causes": {
+      "ee_body_pos": 2
+     }
+    },
+    "repaired": {
+     "successes": 26,
+     "failures": 2,
+     "termination_causes": {
+      "ee_body_pos": 2
+     }
+    }
+   }
+  },
+  "BMLmovi_Subject_60_F_MoSh_Subject_60_F_10_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.0,
+     "repaired": 0.0,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.395952380952381,
+     "repaired": 0.38,
+     "repaired_minus_raw": -0.015952380952380996,
+     "clip_bootstrap_95ci": [
+      -0.015952380952380996,
+      -0.015952380952380996
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.15821704401736772,
+     "repaired": 0.16157903556734432,
+     "repaired_minus_raw": 0.0033619915499766007,
+     "clip_bootstrap_95ci": [
+      0.0033619915499766007,
+      0.0033619915499766007
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.10345175276909556,
+     "repaired": 0.09910731496555465,
+     "repaired_minus_raw": -0.004344437803540907,
+     "clip_bootstrap_95ci": [
+      -0.004344437803540907,
+      -0.004344437803540907
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.2659637928009033,
+     "repaired": 0.23750385136476584,
+     "repaired_minus_raw": -0.028459941436137476,
+     "clip_bootstrap_95ci": [
+      -0.028459941436137476,
+      -0.028459941436137476
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 6.347727281706674,
+     "repaired": 6.371552348136902,
+     "repaired_minus_raw": 0.02382506643022797,
+     "clip_bootstrap_95ci": [
+      0.02382506643022797,
+      0.02382506643022797
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 0,
+     "failures": 28,
+     "termination_causes": {
+      "ee_body_pos": 19,
+      "anchor_pos": 9
+     }
+    },
+    "repaired": {
+     "successes": 0,
+     "failures": 28,
+     "termination_causes": {
+      "ee_body_pos": 21,
+      "anchor_pos": 7
+     }
+    }
+   }
+  },
+  "BMLmovi_Subject_69_F_MoSh_Subject_69_F_11_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 1.0,
+     "repaired": 1.0,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "survival_fraction": {
+     "raw": 1.0,
+     "repaired": 1.0,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.5570628147130877,
+     "repaired": 0.556761958069574,
+     "repaired_minus_raw": -0.0003008566435137583,
+     "clip_bootstrap_95ci": [
+      -0.0003008566435137583,
+      -0.0003008566435137583
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.07834507578185626,
+     "repaired": 0.07836778994117465,
+     "repaired_minus_raw": 2.271415931838494e-05,
+     "clip_bootstrap_95ci": [
+      2.271415931838494e-05,
+      2.271415931838494e-05
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.12968301799680507,
+     "repaired": 0.12987010846180574,
+     "repaired_minus_raw": 0.00018709046500067772,
+     "clip_bootstrap_95ci": [
+      0.00018709046500067772,
+      0.00018709046500067772
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 15.827177081789289,
+     "repaired": 15.794103963034493,
+     "repaired_minus_raw": -0.03307311875479613,
+     "clip_bootstrap_95ci": [
+      -0.03307311875479613,
+      -0.03307311875479613
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 28,
+     "failures": 0,
+     "termination_causes": {}
+    },
+    "repaired": {
+     "successes": 28,
+     "failures": 0,
+     "termination_causes": {}
+    }
+   }
+  },
+  "BMLmovi_Subject_6_F_MoSh_Subject_6_F_7_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.5714285714285714,
+     "repaired": 0.2857142857142857,
+     "repaired_minus_raw": -0.2857142857142857,
+     "clip_bootstrap_95ci": [
+      -0.2857142857142857,
+      -0.2857142857142857
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.8338095238095239,
+     "repaired": 0.7830952380952381,
+     "repaired_minus_raw": -0.05071428571428582,
+     "clip_bootstrap_95ci": [
+      -0.05071428571428582,
+      -0.05071428571428582
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.3541174282140195,
+     "repaired": 0.32945527172332595,
+     "repaired_minus_raw": -0.024662156490693532,
+     "clip_bootstrap_95ci": [
+      -0.024662156490693532,
+      -0.024662156490693532
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.10947599528091294,
+     "repaired": 0.10983706718044621,
+     "repaired_minus_raw": 0.0003610718995332718,
+     "clip_bootstrap_95ci": [
+      0.0003610718995332718,
+      0.0003610718995332718
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.1991326761032854,
+     "repaired": 0.1992562889520611,
+     "repaired_minus_raw": 0.00012361284877571155,
+     "clip_bootstrap_95ci": [
+      0.00012361284877571155,
+      0.00012361284877571155
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 29.46398946217128,
+     "repaired": 31.617307782173157,
+     "repaired_minus_raw": 2.153318320001876,
+     "clip_bootstrap_95ci": [
+      2.153318320001876,
+      2.153318320001876
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 16,
+     "failures": 12,
+     "termination_causes": {
+      "ee_body_pos": 12
+     }
+    },
+    "repaired": {
+     "successes": 8,
+     "failures": 20,
+     "termination_causes": {
+      "ee_body_pos": 20
+     }
+    }
+   }
+  },
+  "BMLmovi_Subject_76_F_MoSh_Subject_76_F_12_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.7857142857142857,
+     "repaired": 0.6785714285714286,
+     "repaired_minus_raw": -0.1071428571428571,
+     "clip_bootstrap_95ci": [
+      -0.1071428571428571,
+      -0.1071428571428571
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.936904761904762,
+     "repaired": 0.8733333333333333,
+     "repaired_minus_raw": -0.06357142857142872,
+     "clip_bootstrap_95ci": [
+      -0.06357142857142872,
+      -0.06357142857142872
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.3865875685968275,
+     "repaired": 0.3707772256688533,
+     "repaired_minus_raw": -0.01581034292797423,
+     "clip_bootstrap_95ci": [
+      -0.01581034292797423,
+      -0.01581034292797423
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.11031588592699595,
+     "repaired": 0.10708333791366645,
+     "repaired_minus_raw": -0.003232548013329506,
+     "clip_bootstrap_95ci": [
+      -0.003232548013329506,
+      -0.003232548013329506
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.21213050399507796,
+     "repaired": 0.20717236452869006,
+     "repaired_minus_raw": -0.004958139466387901,
+     "clip_bootstrap_95ci": [
+      -0.004958139466387901,
+      -0.004958139466387901
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 38.36858711923872,
+     "repaired": 36.10902069296156,
+     "repaired_minus_raw": -2.2595664262771606,
+     "clip_bootstrap_95ci": [
+      -2.2595664262771606,
+      -2.2595664262771606
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 22,
+     "failures": 6,
+     "termination_causes": {
+      "anchor_pos": 4,
+      "ee_body_pos": 2
+     }
+    },
+    "repaired": {
+     "successes": 19,
+     "failures": 9,
+     "termination_causes": {
+      "ee_body_pos": 7,
+      "anchor_pos": 2
+     }
+    }
+   }
+  },
+  "CMU_06_06_08_poses_120_jpos": {
+   "conditions": 4,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.0,
+     "repaired": 0.0,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.8943661971830986,
+     "repaired": 0.846830985915493,
+     "repaired_minus_raw": -0.047535211267605626,
+     "clip_bootstrap_95ci": [
+      -0.047535211267605626,
+      -0.047535211267605626
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.326554030710638,
+     "repaired": 0.3120414043187447,
+     "repaired_minus_raw": -0.014512626391893269,
+     "clip_bootstrap_95ci": [
+      -0.014512626391893269,
+      -0.014512626391893269
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.11375202983617783,
+     "repaired": 0.11457899026572704,
+     "repaired_minus_raw": 0.0008269604295492172,
+     "clip_bootstrap_95ci": [
+      0.0008269604295492172,
+      0.0008269604295492172
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.25202660262584686,
+     "repaired": 0.24523688852787018,
+     "repaired_minus_raw": -0.006789714097976685,
+     "clip_bootstrap_95ci": [
+      -0.006789714097976685,
+      -0.006789714097976685
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 29.05924940109253,
+     "repaired": 28.947441577911377,
+     "repaired_minus_raw": -0.11180782318115234,
+     "clip_bootstrap_95ci": [
+      -0.11180782318115234,
+      -0.11180782318115234
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 0,
+     "failures": 4,
+     "termination_causes": {
+      "ee_body_pos": 4
+     }
+    },
+    "repaired": {
+     "successes": 0,
+     "failures": 4,
+     "termination_causes": {
+      "ee_body_pos": 4
+     }
+    }
+   }
+  },
+  "CMU_108_108_14_poses_120_jpos": {
+   "conditions": 4,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.25,
+     "repaired": 0.25,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.6909722222222223,
+     "repaired": 0.6909722222222223,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.23435088491418415,
+     "repaired": 0.23435452610023078,
+     "repaired_minus_raw": 3.6411860466212254e-06,
+     "clip_bootstrap_95ci": [
+      3.6411860466212254e-06,
+      3.6411860466212254e-06
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.11463274993002415,
+     "repaired": 0.11463129706680775,
+     "repaired_minus_raw": -1.4528632164001465e-06,
+     "clip_bootstrap_95ci": [
+      -1.4528632164001465e-06,
+      -1.4528632164001465e-06
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.2928483188152313,
+     "repaired": 0.2928411401808262,
+     "repaired_minus_raw": -7.178634405136108e-06,
+     "clip_bootstrap_95ci": [
+      -7.178634405136108e-06,
+      -7.178634405136108e-06
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 26.01137351989746,
+     "repaired": 26.010939598083496,
+     "repaired_minus_raw": -0.00043392181396484375,
+     "clip_bootstrap_95ci": [
+      -0.00043392181396484375,
+      -0.00043392181396484375
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 1,
+     "failures": 3,
+     "termination_causes": {
+      "ee_body_pos": 3
+     }
+    },
+    "repaired": {
+     "successes": 1,
+     "failures": 3,
+     "termination_causes": {
+      "ee_body_pos": 3
+     }
+    }
+   }
+  },
+  "CMU_137_137_20_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.2857142857142857,
+     "repaired": 0.32142857142857145,
+     "repaired_minus_raw": 0.035714285714285754,
+     "clip_bootstrap_95ci": [
+      0.035714285714285754,
+      0.035714285714285754
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.567857142857143,
+     "repaired": 0.6054761904761905,
+     "repaired_minus_raw": 0.03761904761904755,
+     "clip_bootstrap_95ci": [
+      0.03761904761904755,
+      0.03761904761904755
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.27989630753738753,
+     "repaired": 0.2925195041110457,
+     "repaired_minus_raw": 0.01262319657365818,
+     "clip_bootstrap_95ci": [
+      0.01262319657365818,
+      0.01262319657365818
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.0817924819088408,
+     "repaired": 0.08468674016850335,
+     "repaired_minus_raw": 0.002894258259662552,
+     "clip_bootstrap_95ci": [
+      0.002894258259662552,
+      0.002894258259662552
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.15102557704917022,
+     "repaired": 0.15589660831860133,
+     "repaired_minus_raw": 0.004871031269431114,
+     "clip_bootstrap_95ci": [
+      0.004871031269431114,
+      0.004871031269431114
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 13.370662706238884,
+     "repaired": 16.555228803839004,
+     "repaired_minus_raw": 3.18456609760012,
+     "clip_bootstrap_95ci": [
+      3.18456609760012,
+      3.18456609760012
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 8,
+     "failures": 20,
+     "termination_causes": {
+      "ee_body_pos": 20
+     }
+    },
+    "repaired": {
+     "successes": 9,
+     "failures": 19,
+     "termination_causes": {
+      "ee_body_pos": 19
+     }
+    }
+   }
+  },
+  "CMU_18_19_Justin_18_06_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.39285714285714285,
+     "repaired": 0.32142857142857145,
+     "repaired_minus_raw": -0.0714285714285714,
+     "clip_bootstrap_95ci": [
+      -0.0714285714285714,
+      -0.0714285714285714
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.9014285714285714,
+     "repaired": 0.9045238095238096,
+     "repaired_minus_raw": 0.003095238095238262,
+     "clip_bootstrap_95ci": [
+      0.003095238095238262,
+      0.003095238095238262
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.4157796697751764,
+     "repaired": 0.41300084048769803,
+     "repaired_minus_raw": -0.002778829287478357,
+     "clip_bootstrap_95ci": [
+      -0.002778829287478357,
+      -0.002778829287478357
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.10320020866181169,
+     "repaired": 0.10389595452163901,
+     "repaired_minus_raw": 0.0006957458598273181,
+     "clip_bootstrap_95ci": [
+      0.0006957458598273181,
+      0.0006957458598273181
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.17285077273845673,
+     "repaired": 0.17670446314982005,
+     "repaired_minus_raw": 0.0038536904113633252,
+     "clip_bootstrap_95ci": [
+      0.0038536904113633252,
+      0.0038536904113633252
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 24.43218435559954,
+     "repaired": 24.838204588208878,
+     "repaired_minus_raw": 0.4060202326093396,
+     "clip_bootstrap_95ci": [
+      0.4060202326093396,
+      0.4060202326093396
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 11,
+     "failures": 17,
+     "termination_causes": {
+      "anchor_pos": 16,
+      "ee_body_pos": 1
+     }
+    },
+    "repaired": {
+     "successes": 9,
+     "failures": 19,
+     "termination_causes": {
+      "anchor_pos": 17,
+      "ee_body_pos": 1,
+      "anchor_pos;ee_body_pos": 1
+     }
+    }
+   }
+  },
+  "CMU_22_23_Rory_22_03_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.07142857142857142,
+     "repaired": 0.07142857142857142,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.429047619047619,
+     "repaired": 0.44809523809523805,
+     "repaired_minus_raw": 0.019047619047619035,
+     "clip_bootstrap_95ci": [
+      0.019047619047619035,
+      0.019047619047619035
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.15238063854443326,
+     "repaired": 0.1586067621598247,
+     "repaired_minus_raw": 0.006226123615391432,
+     "clip_bootstrap_95ci": [
+      0.006226123615391432,
+      0.006226123615391432
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.13695911690592766,
+     "repaired": 0.13635369310421602,
+     "repaired_minus_raw": -0.0006054238017116353,
+     "clip_bootstrap_95ci": [
+      -0.0006054238017116353,
+      -0.0006054238017116353
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.3107835277915001,
+     "repaired": 0.3111446127295494,
+     "repaired_minus_raw": 0.0003610849380493164,
+     "clip_bootstrap_95ci": [
+      0.0003610849380493164,
+      0.0003610849380493164
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 13.267004149300712,
+     "repaired": 14.52224338054657,
+     "repaired_minus_raw": 1.2552392312458576,
+     "clip_bootstrap_95ci": [
+      1.2552392312458576,
+      1.2552392312458576
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 2,
+     "failures": 26,
+     "termination_causes": {
+      "ee_body_pos": 26
+     }
+    },
+    "repaired": {
+     "successes": 2,
+     "failures": 26,
+     "termination_causes": {
+      "ee_body_pos": 26
+     }
+    }
+   }
+  },
+  "CMU_32_32_10_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 1.0,
+     "repaired": 1.0,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "survival_fraction": {
+     "raw": 1.0,
+     "repaired": 1.0,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.6189771198140479,
+     "repaired": 0.6190832832000561,
+     "repaired_minus_raw": 0.00010616338600821784,
+     "clip_bootstrap_95ci": [
+      0.00010616338600821784,
+      0.00010616338600821784
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.06140625250658819,
+     "repaired": 0.061536884999700954,
+     "repaired_minus_raw": 0.00013063249311276448,
+     "clip_bootstrap_95ci": [
+      0.00013063249311276448,
+      0.00013063249311276448
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.11290305773062366,
+     "repaired": 0.1126589293458632,
+     "repaired_minus_raw": -0.00024412838476045584,
+     "clip_bootstrap_95ci": [
+      -0.00024412838476045584,
+      -0.00024412838476045584
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 6.503554889133999,
+     "repaired": 6.604647959981646,
+     "repaired_minus_raw": 0.1010930708476474,
+     "clip_bootstrap_95ci": [
+      0.1010930708476474,
+      0.1010930708476474
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 28,
+     "failures": 0,
+     "termination_causes": {}
+    },
+    "repaired": {
+     "successes": 28,
+     "failures": 0,
+     "termination_causes": {}
+    }
+   }
+  },
+  "Eyes_Japan_Dataset_kanno_walk-03-sneak-kanno_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 1.0,
+     "repaired": 0.9642857142857143,
+     "repaired_minus_raw": -0.0357142857142857,
+     "clip_bootstrap_95ci": [
+      -0.0357142857142857,
+      -0.0357142857142857
+     ]
+    },
+    "survival_fraction": {
+     "raw": 1.0,
+     "repaired": 0.9985714285714286,
+     "repaired_minus_raw": -0.0014285714285714457,
+     "clip_bootstrap_95ci": [
+      -0.0014285714285714457,
+      -0.0014285714285714457
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.5218518059959335,
+     "repaired": 0.5185846375927239,
+     "repaired_minus_raw": -0.0032671684032096193,
+     "clip_bootstrap_95ci": [
+      -0.0032671684032096193,
+      -0.0032671684032096193
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.09223590019558157,
+     "repaired": 0.0926458729164941,
+     "repaired_minus_raw": 0.0004099727209125187,
+     "clip_bootstrap_95ci": [
+      0.0004099727209125187,
+      0.0004099727209125187
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.14225711932938015,
+     "repaired": 0.14395393817020313,
+     "repaired_minus_raw": 0.0016968188408229834,
+     "clip_bootstrap_95ci": [
+      0.0016968188408229834,
+      0.0016968188408229834
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 18.170191441263473,
+     "repaired": 19.116330410752976,
+     "repaired_minus_raw": 0.9461389694895033,
+     "clip_bootstrap_95ci": [
+      0.9461389694895033,
+      0.9461389694895033
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 28,
+     "failures": 0,
+     "termination_causes": {}
+    },
+    "repaired": {
+     "successes": 27,
+     "failures": 1,
+     "termination_causes": {
+      "ee_body_pos": 1
+     }
+    }
+   }
+  },
+  "KIT_167_walking_run03_poses_100_jpos": {
+   "conditions": 4,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.0,
+     "repaired": 0.0,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.5,
+     "repaired": 0.5496575342465754,
+     "repaired_minus_raw": 0.049657534246575374,
+     "clip_bootstrap_95ci": [
+      0.049657534246575374,
+      0.049657534246575374
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.26155228055770274,
+     "repaired": 0.27084560725049917,
+     "repaired_minus_raw": 0.009293326692796422,
+     "clip_bootstrap_95ci": [
+      0.009293326692796422,
+      0.009293326692796422
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.0832153744995594,
+     "repaired": 0.0908794216811657,
+     "repaired_minus_raw": 0.007664047181606293,
+     "clip_bootstrap_95ci": [
+      0.007664047181606293,
+      0.007664047181606293
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.14517577923834324,
+     "repaired": 0.162030927836895,
+     "repaired_minus_raw": 0.01685514859855175,
+     "clip_bootstrap_95ci": [
+      0.01685514859855175,
+      0.01685514859855175
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 12.9832124710083,
+     "repaired": 17.713346481323242,
+     "repaired_minus_raw": 4.730134010314941,
+     "clip_bootstrap_95ci": [
+      4.730134010314941,
+      4.730134010314941
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 0,
+     "failures": 4,
+     "termination_causes": {
+      "ee_body_pos": 4
+     }
+    },
+    "repaired": {
+     "successes": 0,
+     "failures": 4,
+     "termination_causes": {
+      "ee_body_pos": 4
+     }
+    }
+   }
+  },
+  "KIT_3_throw_right05_poses_100_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.5357142857142857,
+     "repaired": 0.35714285714285715,
+     "repaired_minus_raw": -0.17857142857142855,
+     "clip_bootstrap_95ci": [
+      -0.17857142857142855,
+      -0.17857142857142855
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.7866666666666668,
+     "repaired": 0.7161904761904763,
+     "repaired_minus_raw": -0.07047619047619058,
+     "clip_bootstrap_95ci": [
+      -0.07047619047619058,
+      -0.07047619047619058
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.39554187264466406,
+     "repaired": 0.36122557412218537,
+     "repaired_minus_raw": -0.034316298522478694,
+     "clip_bootstrap_95ci": [
+      -0.034316298522478694,
+      -0.034316298522478694
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.0930036332990442,
+     "repaired": 0.09140452928841114,
+     "repaired_minus_raw": -0.001599104010633054,
+     "clip_bootstrap_95ci": [
+      -0.001599104010633054,
+      -0.001599104010633054
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.1492260494934661,
+     "repaired": 0.15342194427336966,
+     "repaired_minus_raw": 0.004195894779903564,
+     "clip_bootstrap_95ci": [
+      0.004195894779903564,
+      0.004195894779903564
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 18.65520920072283,
+     "repaired": 16.08665975502559,
+     "repaired_minus_raw": -2.56854944569724,
+     "clip_bootstrap_95ci": [
+      -2.56854944569724,
+      -2.56854944569724
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 15,
+     "failures": 13,
+     "termination_causes": {
+      "ee_body_pos": 6,
+      "anchor_pos": 7
+     }
+    },
+    "repaired": {
+     "successes": 10,
+     "failures": 18,
+     "termination_causes": {
+      "ee_body_pos": 9,
+      "anchor_pos": 9
+     }
+    }
+   }
+  },
+  "KIT_513_seesaw_up02_poses_100_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 1.0,
+     "repaired": 1.0,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "survival_fraction": {
+     "raw": 1.0,
+     "repaired": 1.0,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.5521246692520893,
+     "repaired": 0.5537084855921407,
+     "repaired_minus_raw": 0.0015838163400514471,
+     "clip_bootstrap_95ci": [
+      0.0015838163400514471,
+      0.0015838163400514471
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.07925810771329063,
+     "repaired": 0.07929679990879127,
+     "repaired_minus_raw": 3.8692195500636406e-05,
+     "clip_bootstrap_95ci": [
+      3.8692195500636406e-05,
+      3.8692195500636406e-05
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.13219987281731196,
+     "repaired": 0.13099138332264765,
+     "repaired_minus_raw": -0.0012084894946643165,
+     "clip_bootstrap_95ci": [
+      -0.0012084894946643165,
+      -0.0012084894946643165
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 18.725183418818883,
+     "repaired": 19.04216984340123,
+     "repaired_minus_raw": 0.31698642458234616,
+     "clip_bootstrap_95ci": [
+      0.31698642458234616,
+      0.31698642458234616
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 28,
+     "failures": 0,
+     "termination_causes": {}
+    },
+    "repaired": {
+     "successes": 28,
+     "failures": 0,
+     "termination_causes": {}
+    }
+   }
+  },
+  "KIT_675_walk_with_handrail_right07_poses_100_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.9285714285714286,
+     "repaired": 0.9285714285714286,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.9847619047619048,
+     "repaired": 0.9823809523809525,
+     "repaired_minus_raw": -0.0023809523809523725,
+     "clip_bootstrap_95ci": [
+      -0.0023809523809523725,
+      -0.0023809523809523725
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.4967097128409391,
+     "repaired": 0.4933738704938446,
+     "repaired_minus_raw": -0.0033358423470944976,
+     "clip_bootstrap_95ci": [
+      -0.0033358423470944976,
+      -0.0033358423470944976
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.09684115621660437,
+     "repaired": 0.09728799494249481,
+     "repaired_minus_raw": 0.00044683872589043605,
+     "clip_bootstrap_95ci": [
+      0.00044683872589043605,
+      0.00044683872589043605
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.14517359275903022,
+     "repaired": 0.14675274331654822,
+     "repaired_minus_raw": 0.0015791505575180054,
+     "clip_bootstrap_95ci": [
+      0.0015791505575180054,
+      0.0015791505575180054
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 23.430618490491593,
+     "repaired": 24.263234547206334,
+     "repaired_minus_raw": 0.8326160567147411,
+     "clip_bootstrap_95ci": [
+      0.8326160567147411,
+      0.8326160567147411
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 26,
+     "failures": 2,
+     "termination_causes": {
+      "ee_body_pos": 2
+     }
+    },
+    "repaired": {
+     "successes": 26,
+     "failures": 2,
+     "termination_causes": {
+      "ee_body_pos": 1,
+      "anchor_pos;ee_body_pos": 1
+     }
+    }
+   }
+  },
+  "SFU_0018_0018_DanceTurns001_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.0,
+     "repaired": 0.0,
+     "repaired_minus_raw": 0.0,
+     "clip_bootstrap_95ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.21809523809523806,
+     "repaired": 0.21047619047619046,
+     "repaired_minus_raw": -0.007619047619047609,
+     "clip_bootstrap_95ci": [
+      -0.007619047619047609,
+      -0.007619047619047609
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.0595015487109843,
+     "repaired": 0.059143776432109954,
+     "repaired_minus_raw": -0.0003577722788743465,
+     "clip_bootstrap_95ci": [
+      -0.0003577722788743465,
+      -0.0003577722788743465
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.1187577536329627,
+     "repaired": 0.11595888089920793,
+     "repaired_minus_raw": -0.002798872733754773,
+     "clip_bootstrap_95ci": [
+      -0.002798872733754773,
+      -0.002798872733754773
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.3775256536900997,
+     "repaired": 0.37249685877135824,
+     "repaired_minus_raw": -0.005028794918741475,
+     "clip_bootstrap_95ci": [
+      -0.005028794918741475,
+      -0.005028794918741475
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 12.94805920124054,
+     "repaired": 12.653287853513445,
+     "repaired_minus_raw": -0.2947713477270941,
+     "clip_bootstrap_95ci": [
+      -0.2947713477270941,
+      -0.2947713477270941
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 0,
+     "failures": 28,
+     "termination_causes": {
+      "ee_body_pos": 27,
+      "anchor_pos;ee_body_pos": 1
+     }
+    },
+    "repaired": {
+     "successes": 0,
+     "failures": 28,
+     "termination_causes": {
+      "ee_body_pos": 28
+     }
+    }
+   }
+  },
+  "Transitions_mocap_mazen_c3d_walkbackwards_turntwist180_poses_120_jpos": {
+   "conditions": 28,
+   "clips": 1,
+   "metrics": {
+    "success": {
+     "raw": 0.6785714285714286,
+     "repaired": 0.6428571428571429,
+     "repaired_minus_raw": -0.0357142857142857,
+     "clip_bootstrap_95ci": [
+      -0.0357142857142857,
+      -0.0357142857142857
+     ]
+    },
+    "survival_fraction": {
+     "raw": 0.9209523809523811,
+     "repaired": 0.915952380952381,
+     "repaired_minus_raw": -0.0050000000000001155,
+     "clip_bootstrap_95ci": [
+      -0.0050000000000001155,
+      -0.0050000000000001155
+     ]
+    },
+    "tracking_score": {
+     "raw": 0.4311898706108105,
+     "repaired": 0.41708957253121637,
+     "repaired_minus_raw": -0.01410029807959412,
+     "clip_bootstrap_95ci": [
+      -0.01410029807959412,
+      -0.01410029807959412
+     ]
+    },
+    "common_root_relative_mpkpe_m_mean": {
+     "raw": 0.10848671809903213,
+     "repaired": 0.11090481121625219,
+     "repaired_minus_raw": 0.002418093117220063,
+     "clip_bootstrap_95ci": [
+      0.002418093117220063,
+      0.002418093117220063
+     ]
+    },
+    "common_anchor_orientation_error_rad_mean": {
+     "raw": 0.16813473696155207,
+     "repaired": 0.1790939670588289,
+     "repaired_minus_raw": 0.01095923009727684,
+     "clip_bootstrap_95ci": [
+      0.01095923009727684,
+      0.01095923009727684
+     ]
+    },
+    "absolute_mechanical_work_per_actuator_j": {
+     "raw": 32.53681928770883,
+     "repaired": 32.06407199587141,
+     "repaired_minus_raw": -0.4727472918374218,
+     "clip_bootstrap_95ci": [
+      -0.4727472918374218,
+      -0.4727472918374218
+     ]
+    }
+   },
+   "trial_accounting": {
+    "raw": {
+     "successes": 19,
+     "failures": 9,
+     "termination_causes": {
+      "anchor_pos": 5,
+      "anchor_pos;ee_body_pos": 1,
+      "ee_body_pos": 3
+     }
+    },
+    "repaired": {
+     "successes": 18,
+     "failures": 10,
+     "termination_causes": {
+      "ee_body_pos": 7,
+      "anchor_pos": 2,
+      "anchor_pos;ee_body_pos": 1
+     }
+    }
+   }
+  }
+ }
+}

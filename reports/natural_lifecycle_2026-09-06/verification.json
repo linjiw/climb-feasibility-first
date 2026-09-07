@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-09-06T12:36:57.523667-04:00",
+  "checks": [
+    {
+      "name": "tests",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "pytest",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_natural_entity_lifecycle.py",
+        "-q"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "compile",
+      "argv": [
+        "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+        "-m",
+        "py_compile",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_natural_lifecycle.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_natural_entity_lifecycle.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_natural_lifecycle.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_natural_entity_lifecycle.py",
+        "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_natural_entity_lifecycle.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "phase_g_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "plan/G_SEGMENT_FREEZE.sha256"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "confirmation_seal",
+      "argv": [
+        "sha256sum",
+        "--status",
+        "-c",
+        "reports/relative_progress_2026-09-05/confirmation_freeze/confirmation.sha256"
+      ],
+      "returncode": 0
+    }
+  ],
+  "unchanged_runtime_files": 376,
+  "sources": {
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_natural_lifecycle.py": "74455effba229a1b008ad1d9e51d377ce29245f62654261fc9f20e8169cd22a2",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/eval_natural_entity_lifecycle.py": "91b744d5355e17322d770c8a48e350349e3778d49fd698d5b2ea35b77c49cb11",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_natural_lifecycle.py": "d79a2b206e8c6c0688e3bbee9f85ffe7d85e6e4b441854f89f8f6d6560b3104e",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tools/analyze_natural_entity_lifecycle.py": "b891093a8cefc88373044e6987f88d1cbd5248e0eb9eca810363a6ad246fbed5",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/tests/test_natural_entity_lifecycle.py": "8e1318129e278bc2a9a889d1c863a03441b6d73e9d33c666d6b89b1c0e6e04d6"
+  },
+  "measured_verification": {
+    "path": "/home/linjiw/climb-icra-evidence-2026-09-06/reports/natural_entity_lifecycle_2026-09-06/verification.json",
+    "sha256": "c77d95bec8294ed502e5f308e3f0a7d11f9442d8dcfc9abfa2f604567b7c8b37"
+  }
+}

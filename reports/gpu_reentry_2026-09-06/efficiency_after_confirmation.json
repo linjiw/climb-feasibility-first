@@ -1,0 +1,5 @@
+{
+  "status": "postprocessing_failed",
+  "reason": "complete original analysis does not reproduce",
+  "binding_sha256": "e15116f7053c55f310db7b617f7580bc2539897591df76bd726caae4662bb5cf"
+}

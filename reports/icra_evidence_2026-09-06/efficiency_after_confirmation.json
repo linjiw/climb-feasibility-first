@@ -1,0 +1,11 @@
+{
+  "status": "unavailable",
+  "policy_endpoints_opened": false,
+  "original_terminal": {
+    "status": "execution_stopped",
+    "reason": "GPU availability deadline; job not launched",
+    "policy_endpoints_opened": false,
+    "completed_jobs": []
+  },
+  "contract_sha256": "8f2192a9b937060a9ba6aa4fbd1b4a6aed8a7da183abf1c64fa9db557a5af013"
+}

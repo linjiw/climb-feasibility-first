@@ -1,0 +1,15 @@
+{
+  "classification": "implementation verification; no measured policy endpoints",
+  "tests_passed": 71,
+  "test_command": "mjlab-1.6.0/.venv/bin/python -m pytest tests/test_relative_progress.py tests/test_relative_progress_probe.py tests/test_relative_progress_continuation.py tests/test_relative_policy_analysis.py tests/test_relative_policy_profiles.py tests/test_relative_policy_smokes.py tests/test_relative_policy_provenance.py -q",
+  "python_compile": "pass",
+  "git_diff_check": "pass",
+  "phase_g_seal_41_files": "unchanged",
+  "sources": {
+    "tools/continue_relative_progress.py": "3baa1be54cee1d450d2c6428c40eaa93d39be5f3e1a468bdf076c6dfafb2f818",
+    "tools/train_relative_policy.py": "70c30484cad3031ed3606d7e9625645f4cf926135499a6a0030b5cbe7ac4f13e",
+    "tools/run_relative_policy_smokes.py": "64765c9e8308557874f7bae5073367e5fca0d55e4ff404cef06ee5fa940b6cdd",
+    "tools/relative_policy_provenance.py": "ee86a6403ed7fae999caa8085afff1a54cb4c3f47d93e1bab5b5c6717e14218e",
+    "plan/R3_BASELINE_CONTRACT_2026-09-05.json": "60610018e5bd8a9d0874281666dfe81417275ad2b69e575bc748aa93a6dfb448"
+  }
+}
