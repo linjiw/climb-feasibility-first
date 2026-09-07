@@ -1,0 +1,142 @@
+{
+  "status": "inconclusive",
+  "primary_R_minus_U": {
+    "paired_seed_deltas": {
+      "21": -0.03399896411704021,
+      "22": -0.03298966480664032,
+      "23": 0.021783251119800687
+    },
+    "mean": -0.015068459267959947,
+    "sd_across_seeds": 0.03191850701633822,
+    "seed_t_95ci": [
+      -0.09435842624903064,
+      0.06422150771311073
+    ],
+    "independent_units": 3,
+    "df": 2,
+    "hierarchical_paired_95ci_supplementary": [
+      -0.04416877706957367,
+      0.025321222754109297
+    ]
+  },
+  "all_panel_nonregression": {
+    "paired_seed_deltas": {
+      "21": -0.04892353972843646,
+      "22": -0.014023812276798641,
+      "23": 0.035000832859315455
+    },
+    "mean": -0.009315506381973216,
+    "sd_across_seeds": 0.0421598290658464,
+    "seed_t_95ci": [
+      -0.11404632768409208,
+      0.09541531492014564
+    ],
+    "independent_units": 3,
+    "df": 2,
+    "hierarchical_paired_95ci_supplementary": [
+      -0.04768233802225798,
+      0.033113661535246725
+    ]
+  },
+  "secondary_descriptive": {
+    "R_minus_A": {
+      "feasible_hard": {
+        "paired_seed_deltas": {
+          "21": -0.01947977333485822,
+          "22": -0.02431547986340469,
+          "23": 0.023753031015096168
+        },
+        "mean": -0.006680740727722248,
+        "sd_across_seeds": 0.02646709015509707,
+        "seed_t_95ci": [
+          -0.07242863750148,
+          0.059067156046035504
+        ],
+        "independent_units": 3,
+        "df": 2
+      },
+      "all_panel": {
+        "paired_seed_deltas": {
+          "21": -0.019412350548387622,
+          "22": -0.013906525363197465,
+          "23": 0.020324877178761212
+        },
+        "mean": -0.0043313329109412905,
+        "sd_across_seeds": 0.02152963189961986,
+        "seed_t_95ci": [
+          -0.05781390343222711,
+          0.04915123761034453
+        ],
+        "independent_units": 3,
+        "df": 2
+      }
+    },
+    "R_minus_D": {
+      "feasible_hard": {
+        "paired_seed_deltas": {
+          "21": -0.013760517315210961,
+          "22": -0.0037672186976830057,
+          "23": -0.0027094544667275954
+        },
+        "mean": -0.006745730159873853,
+        "sd_across_seeds": 0.006097962398874235,
+        "seed_t_95ci": [
+          -0.021893908519565127,
+          0.00840244819981742
+        ],
+        "independent_units": 3,
+        "df": 2
+      },
+      "all_panel": {
+        "paired_seed_deltas": {
+          "21": -0.025824458793977486,
+          "22": 0.01721802650047338,
+          "23": -0.0008203985139314935
+        },
+        "mean": -0.0031422769358118666,
+        "sd_across_seeds": 0.021614976859465986,
+        "seed_t_95ci": [
+          -0.05683685609035664,
+          0.05055230221873291
+        ],
+        "independent_units": 3,
+        "df": 2
+      }
+    }
+  },
+  "AULC_R_minus_U_descriptive": {
+    "paired_seed_deltas": {
+      "21": -0.03977847384571198,
+      "22": -0.0304155925950228,
+      "23": -0.016759857847901016
+    },
+    "mean": -0.028984641429545266,
+    "sd_across_seeds": 0.011575832002156729,
+    "seed_t_95ci": [
+      -0.057740602250632767,
+      -0.0002286806084577618
+    ],
+    "independent_units": 3,
+    "df": 2
+  },
+  "analysis": {
+    "seed_order": [
+      21,
+      22,
+      23
+    ],
+    "primary_clips": 25,
+    "panel_clips": 100,
+    "sesoi": 0.02,
+    "nonregression_margin": -0.01,
+    "bootstrap_seed": 20260905,
+    "bootstrap_draws": 10000
+  },
+  "classification": "measured frozen simulation result; all secondary analyses descriptive",
+  "source_analysis_sha256": "2d1703da6d2d40fad9f9b17ffcf9d12036c4aaea917fb1054e81c91ed22bf3be",
+  "replay_verification_sha256": "68b233cb7e5c23872aeaa0614906836e51c8642f16a022d1fbac60fa28a94e1c",
+  "training_runs": 12,
+  "evaluation_cells": 48,
+  "evaluation_rows": 134400,
+  "conditions_per_cell": 2800
+}

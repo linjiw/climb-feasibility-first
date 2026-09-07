@@ -1,0 +1,144 @@
+{
+  "files": [
+    {
+      "path": "docs/index.html",
+      "sha256": "df6ccdf8c390ebc66f05ea95b5d3fc9276a2eebfcd7e67726f0546ee658b7d80"
+    },
+    {
+      "path": "docs/relative-progress.html",
+      "sha256": "ad2aec212a104747c75fdd8d1442e3e5492be910df26267e185e1a5b32027736"
+    },
+    {
+      "path": "docs/assets/research-story.js",
+      "sha256": "db5e453835e1ca641f710b1665426ef5b72cd82952d05a6348773704ee4bf82e"
+    },
+    {
+      "path": "plan/STATUS.md",
+      "sha256": "41963be098bf5568748b29cd729bc630f9942edd91ced8495b9718773f53e626"
+    },
+    {
+      "path": "paper/RESULTS_LOG.md",
+      "sha256": "c8e820f9d55105edfb43427419367dbcc11d2e560b32e01986c798c53131931a"
+    },
+    {
+      "path": "plan/USEFUL_PRACTICE_SUBMISSION_2026-09-06.md",
+      "sha256": "7779613f9d00b4e97a99650ac2bdf8e3be689c456b11e5a8941730befd581eb1"
+    },
+    {
+      "path": "plan/CONFIRMATION_OUTCOME_PUBLICATION_2026-09-06.md",
+      "sha256": "c213ebf59f5dd07172c509e39a83888cabab35e96fcc59d880db903022b73fbe"
+    },
+    {
+      "path": "docs/assets/confirmation-2026-09-06/summary.json",
+      "sha256": "5b1a5fdc537ab8e51405c443f29f34e2bb8f35887e295fc18342a108dd965429"
+    },
+    {
+      "path": "docs/assets/confirmation-2026-09-06/efficiency_descriptive.json",
+      "sha256": "2eaa2211f1618699f135a2b37d6f1650e26313088a451541ca07faf54bf5f831"
+    },
+    {
+      "path": "docs/assets/confirmation-2026-09-06/paired_results_and_learning_curves.pdf",
+      "sha256": "3c9855deb1c7c4f29fee41aebc0cd17ef4d72211ee2142a7d5dda989ca990cee"
+    },
+    {
+      "path": "docs/assets/confirmation-2026-09-06/paired_results_and_learning_curves.png",
+      "sha256": "116d36fb836c4d4c426cc4c3562896662a8ffd8184f7dac3c49ab747c2a6a0e9"
+    },
+    {
+      "path": "docs/assets/confirmation-2026-09-06/learning_curves.csv",
+      "sha256": "377adab5a7ae0fca5060d251d53fc3ed74f9a69cf3b01ba4ab08c0cd2b29631a"
+    },
+    {
+      "path": "reports/relative_confirmation_results_2026-09-06/summary.json",
+      "sha256": "5b1a5fdc537ab8e51405c443f29f34e2bb8f35887e295fc18342a108dd965429"
+    },
+    {
+      "path": "reports/relative_confirmation_results_2026-09-06/efficiency_descriptive.json",
+      "sha256": "2eaa2211f1618699f135a2b37d6f1650e26313088a451541ca07faf54bf5f831"
+    },
+    {
+      "path": "reports/relative_confirmation_results_2026-09-06/paired_results_and_learning_curves.pdf",
+      "sha256": "3c9855deb1c7c4f29fee41aebc0cd17ef4d72211ee2142a7d5dda989ca990cee"
+    },
+    {
+      "path": "reports/relative_confirmation_results_2026-09-06/integrity_verification.json",
+      "sha256": "aaa1e5389ad379b13d69e00068c7a5d6bec1705a8bfb566f246926deedbfacd1"
+    },
+    {
+      "path": "reports/relative_confirmation_results_2026-09-06/paired_results_and_learning_curves.png",
+      "sha256": "116d36fb836c4d4c426cc4c3562896662a8ffd8184f7dac3c49ab747c2a6a0e9"
+    },
+    {
+      "path": "reports/relative_confirmation_results_2026-09-06/README.md",
+      "sha256": "e106aa9b828be4b23c20941022b428807fcc177bb127a5e6ed9dff53a993a600"
+    },
+    {
+      "path": "reports/relative_confirmation_results_2026-09-06/learning_curves.csv",
+      "sha256": "377adab5a7ae0fca5060d251d53fc3ed74f9a69cf3b01ba4ab08c0cd2b29631a"
+    },
+    {
+      "path": "reports/relative_confirmation_results_2026-09-06/plot_results.py",
+      "sha256": "b298856e68c4ca21ce637f8b23f846b95ba7529917b49eb34ffaf264444658b5"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/relative-progress_390_dark.png",
+      "sha256": "420b9a460f64f070a46796f24c11512caa2c505218ac51de61269d76a3d75af4"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/relative-progress_390_light.png",
+      "sha256": "a8b4106f3eec412b5ad78ad9493e4a3edbf81bbe88c5fd21079d8247218bd094"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/check_pages.cjs",
+      "sha256": "2850efd266e73c7cb5c2d4a0c4d45f865b31d85ebc77a62f8cbe63cd786e458a"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/index_390_dark.png",
+      "sha256": "f16c911bf42f4310a671df45d2ce9da322dcb4a9aeaff0f62f99f6d5af7622a9"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/content_checks.json",
+      "sha256": "d4ad1c5b2a0c6b6c7c2c708abf7160fe70f5fca7843fab12f37824651fe72931"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/relative-progress_1440_dark.png",
+      "sha256": "e51fa57dd71541e2cd7fc45336e803442aa13d0dc80d13b5bb34407181ef9b6a"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/relative-progress_evidence.png",
+      "sha256": "5244cfb2da1a376e59b901319b14f72c0346c5af1bd6b7db1084532d9b2f65e9"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/index_1440_dark.png",
+      "sha256": "79a0642614ec47fdb7adf458e3779a84c889889f252166906b3912ab52b24ef0"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/browser_checks.json",
+      "sha256": "e078d4f7b443387dd5eb5d4fa1ef5cf6052fae1b316adbbb8dca7e41bf83417e"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/index_evidence.png",
+      "sha256": "0fee6be1b1a0a60347442c8d54a2e4ab1eb3649d7717c511377b9878b73cd220"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/index_1440_light.png",
+      "sha256": "62e74549f07d65d71b4c9f7b30b61005771a212b609776d428484f6b09048ab3"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/update_site.py",
+      "sha256": "f769edb4bdcd005066969be8b036b85e7afb50b06cc8754af7824123462bb934"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/browser.log",
+      "sha256": "d4f6bbb10d20ed6a8bbdd5d28a2482a94d31db3257036e5cdc99d7508a3fed98"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/relative-progress_1440_light.png",
+      "sha256": "e25e0b8ba4346271a700eba4787428a631de8ce9b3d479b13a02e806976e6f05"
+    },
+    {
+      "path": "reports/confirmation_pages_2026-09-06/index_390_light.png",
+      "sha256": "3b14a6d1467e6d20a66cac0f38eee223ddf323fdeb4a9c698f56c79728b88f9a"
+    }
+  ]
+}

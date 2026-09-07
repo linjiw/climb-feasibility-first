@@ -1,0 +1,8 @@
+{
+  "training_runs": 12,
+  "evaluation_cells": 48,
+  "analysis_status": "inconclusive",
+  "public_result_export_matches_report": true,
+  "exact_source_replay_receipt": "reports/continuous_execution_preparation_2026-09-06/serialized_confirmation_replay/verification.json",
+  "gpu_full_study_disabled": true
+}
