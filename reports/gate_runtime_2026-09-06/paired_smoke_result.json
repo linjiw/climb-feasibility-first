@@ -1,0 +1,125 @@
+{
+  "status": "matched_gate_lifecycle_pass",
+  "classification": "measured development PPO lifecycle; no policy benefit",
+  "configuration_equal_except_admission_manifest_binding_and_run_name": true,
+  "initial_actor_tensors_equal": true,
+  "arms": {
+    "on": {
+      "result": {
+        "status": "gate_smoke_pass",
+        "classification": "development PPO lifecycle only; no policy-benefit comparison",
+        "admission": "on",
+        "seed": 71,
+        "num_envs": 8,
+        "iterations": 20,
+        "transitions": 3840,
+        "completed_trials": 179,
+        "failed_trials": 175,
+        "invalid_start_count": 0,
+        "invalid_reference_frame_count": 0,
+        "censored_resets": 0,
+        "final_allocation": {
+          "protocol": "matched_gate_development/1",
+          "admission": "on",
+          "candidate_partition_sha256": "482fc4c6ff14bc057f8170a22f4be6c8ea9c7beb5a318ce1f36a355abd8b0e20",
+          "runtime_units": 1184,
+          "uncapped_prior_rejected_mass": 0.0,
+          "post_cap_rejected_mass": 0.0,
+          "rejected_completed_trials": 0,
+          "rejected_failed_trials": 0,
+          "max_clip_mass": 0.017293287401379216,
+          "full_training_enabled": false
+        },
+        "checkpoints": [
+          {
+            "iteration": 0,
+            "checkpoint_sha256": "0279f6ef1b459f9b6027bd041fd1c0725a16072e11bab29768acb3de14e62f1a",
+            "ledger_sha256": "d4f7b8060dbe60bf590f5f3cfbdb524fcfe4f25538b89b26af2b8940ed830b08",
+            "sampler_sha256": "9968685151632e6d1c4465ac9ba3be00c4733f59e2cb7b86eaf92daf6e47b7e0"
+          },
+          {
+            "iteration": 19,
+            "checkpoint_sha256": "1843059d182784acdea63c7c0c87851b1f5321152ec7269699eb0053f548e734",
+            "ledger_sha256": "8c73b07e4d1b46318291ce00b30f87582286653688dbf24e1bc46d24a592f291",
+            "sampler_sha256": "19a7db586944a193a8e3d95984da003640e2c233646f350ec41f323a183abd52"
+          }
+        ],
+        "initial_actor": {
+          "sha256": "9f01bec40e83aff3fbf5f7698a0092004b06fc784a1b32c75ca2462f048f7802",
+          "seed": 71
+        },
+        "full_training_enabled": false,
+        "heldout_endpoints_opened": false
+      },
+      "execution": {
+        "returncode": 0,
+        "elapsed_seconds": 24.919686395005556,
+        "device": "cpu"
+      },
+      "result_file": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_runtime_2026-09-06/cpu_on/result.json",
+        "sha256": "866b7cfc41ffd5870e2e50ab711e0da5d507fdc9f8703cda2ec0647d672b6ca9"
+      }
+    },
+    "off": {
+      "result": {
+        "status": "gate_smoke_pass",
+        "classification": "development PPO lifecycle only; no policy-benefit comparison",
+        "admission": "off",
+        "seed": 71,
+        "num_envs": 8,
+        "iterations": 20,
+        "transitions": 3840,
+        "completed_trials": 196,
+        "failed_trials": 194,
+        "invalid_start_count": 0,
+        "invalid_reference_frame_count": 0,
+        "censored_resets": 0,
+        "final_allocation": {
+          "protocol": "matched_gate_development/1",
+          "admission": "off",
+          "candidate_partition_sha256": "482fc4c6ff14bc057f8170a22f4be6c8ea9c7beb5a318ce1f36a355abd8b0e20",
+          "runtime_units": 1649,
+          "uncapped_prior_rejected_mass": 0.11537816012582959,
+          "post_cap_rejected_mass": 0.1143451524570283,
+          "rejected_completed_trials": 32,
+          "rejected_failed_trials": 32,
+          "max_clip_mass": 0.018929326268169327,
+          "full_training_enabled": false
+        },
+        "checkpoints": [
+          {
+            "iteration": 0,
+            "checkpoint_sha256": "0b72494d54ef085f16159e04d8cbe2b1b27716147326eaa2b93c960cd054879b",
+            "ledger_sha256": "fb842855b21ccbd4c93a3a750e6f5aded2feb6a0b6fab33a548e6a91230b5429",
+            "sampler_sha256": "7e7ae435ac214fedf160671e9dded7e273af4f5d3141f228732667aa5bbbcf46"
+          },
+          {
+            "iteration": 19,
+            "checkpoint_sha256": "0bc8bebe92812cc6f50ed37bc6b4716328446c604f40123307af5eb019f2c998",
+            "ledger_sha256": "310a3079a34fb5bb47a0ecb18bbd858391282d0a653774fd191ed949dbddf48e",
+            "sampler_sha256": "3747a698749943ac0f2265bca95fd885e2991caaefa353ba21cab343d3c84de8"
+          }
+        ],
+        "initial_actor": {
+          "sha256": "9f01bec40e83aff3fbf5f7698a0092004b06fc784a1b32c75ca2462f048f7802",
+          "seed": 71
+        },
+        "full_training_enabled": false,
+        "heldout_endpoints_opened": false
+      },
+      "execution": {
+        "returncode": 0,
+        "elapsed_seconds": 24.22240912000416,
+        "device": "cpu"
+      },
+      "result_file": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_runtime_2026-09-06/cpu_off/result.json",
+        "sha256": "6474b512a14f07eca8000e64077024585445e0ad4738ca08f423eafae74dbe6a"
+      }
+    }
+  },
+  "full_training_enabled": false,
+  "heldout_endpoints_opened": false,
+  "analyzer_sha256": "1b351041eb8b4722c56430650442bc9359a6c53deffc92e1df9d8098939025fb"
+}

@@ -1,0 +1,77 @@
+{
+  "status": "gate_training_pass",
+  "classification": "training integrity; no held-out policy benefit",
+  "admission": "off",
+  "seed": 81,
+  "smoke": true,
+  "configuration_sha256": "8280eb171004af52434c49b27c884bb6ff9817ba562bf85d497532d7a42ba1fa",
+  "contract_sha256": "57f36c6c20cb0cfbf09e08a479dc215164527e91487101056ac23444ae2f6ea2",
+  "num_envs": 8,
+  "device": "cpu",
+  "run_dir": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/cpu_off/run",
+  "contract": {
+    "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/preparation/draft_contract.json",
+    "sha256": "57f36c6c20cb0cfbf09e08a479dc215164527e91487101056ac23444ae2f6ea2"
+  },
+  "transitions": 3840,
+  "checkpoints": [
+    {
+      "iteration": 0,
+      "checkpoint": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/cpu_off/run/model_0.pt",
+        "sha256": "cfd2007d52ef72b4ce1b3675ca54cd7c35d52941f34770a2c6a0071683129cfd"
+      },
+      "sampler": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/cpu_off/run/model_0_sampler.pt",
+        "sha256": "2bfc046a3ffaa8b8d9e38f482859c0c15fd0f27687203a2e880189a07a5ea073"
+      },
+      "ledger": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/cpu_off/run/model_0_gate.json",
+        "sha256": "610e446554dc54d68c4f5fac218ee0c28ef8cbe62e03b5d53557bcd362790c7f"
+      }
+    },
+    {
+      "iteration": 19,
+      "checkpoint": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/cpu_off/run/model_19.pt",
+        "sha256": "c6011e64878a5032ba3ae3a2996fd823a204bb644af9aac664cf02354f0afa19"
+      },
+      "sampler": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/cpu_off/run/model_19_sampler.pt",
+        "sha256": "11e8a56e38ab725f37fdfd02f0db031c243a6b68d63bcf44b9ff19549658d14a"
+      },
+      "ledger": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/cpu_off/run/model_19_gate.json",
+        "sha256": "46ab5f55a4a3d6864b47eb4daa60f7c4983cdc173dc3774ae11519b6d64f5446"
+      }
+    }
+  ],
+  "final_allocation": {
+    "protocol": "matched_gate_study/1",
+    "admission": "off",
+    "candidate_partition_sha256": "482fc4c6ff14bc057f8170a22f4be6c8ea9c7beb5a318ce1f36a355abd8b0e20",
+    "runtime_units": 1649,
+    "uncapped_prior_rejected_mass": 0.11537816012582959,
+    "post_cap_rejected_mass": 0.11375725722182886,
+    "rejected_completed_trials": 25,
+    "rejected_failed_trials": 23,
+    "max_clip_mass": 0.01840142170831447,
+    "full_training_enabled": false,
+    "stage": "entrypoint_smoke",
+    "campaign_contract_sha256": "57f36c6c20cb0cfbf09e08a479dc215164527e91487101056ac23444ae2f6ea2"
+  },
+  "completed_trials": 173,
+  "failed_trials": 167,
+  "initial_actor": {
+    "sha256": "c4b09d2e1c310fc3a9adb54a49350feae2078c61a9471cba04f71f6a65a0dabd",
+    "seed": 81
+  },
+  "execution": {
+    "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/cpu_off/execution.json",
+    "sha256": "c2277b9584de9a9705c858232afab65bd0ca3bbe2c7b131395cf41e33d1b824f"
+  },
+  "design": {
+    "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/cpu_off/design.json",
+    "sha256": "098216c322fd098a373a1d816ae16ac984a0155faab7f509b728b73b3b2963dc"
+  }
+}

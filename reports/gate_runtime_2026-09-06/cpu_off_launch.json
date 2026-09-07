@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/tools/train_gate_smoke.py",
+    "--manifest",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_runtime_2026-09-06/manifests/gate_off.json",
+    "--manifest-sha256",
+    "5dc2c8b85bb5685843eedfb55729cd5ecb962fa23424dbb50c6ff5880cca932e",
+    "--admission",
+    "off",
+    "--clips",
+    "/home/linjiw/climb-feasibility-first/bank/tiers/tier_800.txt",
+    "--bank",
+    "/home/linjiw/climb-feasibility-first/bank/amass",
+    "--out-dir",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_runtime_2026-09-06/cpu_off",
+    "--device",
+    "cpu"
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "MUJOCO_GL": "egl",
+    "WANDB_MODE": "offline",
+    "OMP_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2"
+  },
+  "task": "Climb-Tracking-Flat-Unitree-G1-Gate-Off-Development",
+  "seed": 71,
+  "num_envs": 8,
+  "iterations": 20
+}

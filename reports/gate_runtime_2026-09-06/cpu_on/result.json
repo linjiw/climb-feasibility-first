@@ -1,0 +1,46 @@
+{
+  "status": "gate_smoke_pass",
+  "classification": "development PPO lifecycle only; no policy-benefit comparison",
+  "admission": "on",
+  "seed": 71,
+  "num_envs": 8,
+  "iterations": 20,
+  "transitions": 3840,
+  "completed_trials": 179,
+  "failed_trials": 175,
+  "invalid_start_count": 0,
+  "invalid_reference_frame_count": 0,
+  "censored_resets": 0,
+  "final_allocation": {
+    "protocol": "matched_gate_development/1",
+    "admission": "on",
+    "candidate_partition_sha256": "482fc4c6ff14bc057f8170a22f4be6c8ea9c7beb5a318ce1f36a355abd8b0e20",
+    "runtime_units": 1184,
+    "uncapped_prior_rejected_mass": 0.0,
+    "post_cap_rejected_mass": 0.0,
+    "rejected_completed_trials": 0,
+    "rejected_failed_trials": 0,
+    "max_clip_mass": 0.017293287401379216,
+    "full_training_enabled": false
+  },
+  "checkpoints": [
+    {
+      "iteration": 0,
+      "checkpoint_sha256": "0279f6ef1b459f9b6027bd041fd1c0725a16072e11bab29768acb3de14e62f1a",
+      "ledger_sha256": "d4f7b8060dbe60bf590f5f3cfbdb524fcfe4f25538b89b26af2b8940ed830b08",
+      "sampler_sha256": "9968685151632e6d1c4465ac9ba3be00c4733f59e2cb7b86eaf92daf6e47b7e0"
+    },
+    {
+      "iteration": 19,
+      "checkpoint_sha256": "1843059d182784acdea63c7c0c87851b1f5321152ec7269699eb0053f548e734",
+      "ledger_sha256": "8c73b07e4d1b46318291ce00b30f87582286653688dbf24e1bc46d24a592f291",
+      "sampler_sha256": "19a7db586944a193a8e3d95984da003640e2c233646f350ec41f323a183abd52"
+    }
+  ],
+  "initial_actor": {
+    "sha256": "9f01bec40e83aff3fbf5f7698a0092004b06fc784a1b32c75ca2462f048f7802",
+    "seed": 71
+  },
+  "full_training_enabled": false,
+  "heldout_endpoints_opened": false
+}

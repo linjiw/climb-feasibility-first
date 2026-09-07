@@ -1,0 +1,113 @@
+{
+  "schema_version": "matched_gate_prospective_draft/1",
+  "classification": "prospective study specification; not an executable frozen training contract",
+  "created_at": "2026-09-06T01:43:58.734080-04:00",
+  "full_training_enabled": false,
+  "entry_condition": "resolve the unchanged U/A/R/D confirmation before scheduling the next full training comparison",
+  "arms": [
+    "gate_on_D",
+    "gate_off_D"
+  ],
+  "proposed_training_seeds": [
+    61,
+    62,
+    63
+  ],
+  "fresh_seed_audit": "pending before freeze",
+  "num_envs": 512,
+  "ppo_iterations": 4000,
+  "steps_per_iteration": 24,
+  "training_transitions": 294912000,
+  "checkpoints": [
+    1000,
+    2000,
+    3000,
+    3999
+  ],
+  "horizon_steps": 50,
+  "changed_variable": "admission mask on the shared candidate-start partition, with consequent prior renormalization",
+  "held_fixed": [
+    "conditional-failure D rule",
+    "candidate interval boundaries and canonical IDs",
+    "motion bank",
+    "reward and termination recipe",
+    "PPO and controller architecture",
+    "training randomization",
+    "exact non-wrapping horizon",
+    "0.8 prior floor",
+    "0.05 unit cap",
+    "0.25 clip cap",
+    "fixed paired evaluation condition distribution"
+  ],
+  "primary": {
+    "estimand": "final feasible-hard clip-weighted TrackingScore gate-on minus gate-off",
+    "checkpoint": 3999,
+    "independent_unit": "paired training seed",
+    "uncertainty": "two-sided 95% t interval, df=2",
+    "benefit_target": 0.02,
+    "benefit_requires_positive_lower_bound": true,
+    "all_panel_nonregression_lower_bound_must_exceed": -0.01
+  },
+  "secondary_preservation_label": {
+    "hard_panel_lower_bound_must_exceed": -0.01,
+    "all_panel_lower_bound_must_exceed": -0.01,
+    "interpretation": "noninferiority within declared margins, not equivalence or improvement"
+  },
+  "sampling_manipulation": {
+    "gate_on_rejected_probability": 0.0,
+    "gate_off_uncapped_prior_rejected_fraction": 0.11537816012582959,
+    "gate_off_post_cap_rejected_probability_lower_bound": 0.09230252810066368,
+    "gate_off_post_cap_rejected_probability_upper_bound": 0.2923025281006637,
+    "numeric_tolerance": 1e-12,
+    "scope": "probability at saved sampler snapshots; not actual PPO transition mass",
+    "minimum_TV_gate": "not imposed; admission contrast has its own prior-floor bound"
+  },
+  "evaluation_order": "all six training/provenance gates pass before any of 24 paired checkpoint evaluation cells",
+  "heldout_panel_scope": "existing 100-clip reference-defined panel; 25 feasible-hard; panel reuse must be disclosed",
+  "source_manifests": {
+    "on": {
+      "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_runtime_2026-09-06/manifests/gate_on.json",
+      "sha256": "5a963422fcef4cee308dbbe689965877bcd191b62cbab1d57a52c2291b62b883",
+      "startup": {
+        "protocol": "matched_gate_development/1",
+        "admission": "on",
+        "candidate_partition_sha256": "482fc4c6ff14bc057f8170a22f4be6c8ea9c7beb5a318ce1f36a355abd8b0e20",
+        "runtime_units": 1184,
+        "uncapped_prior_rejected_mass": 0.0,
+        "post_cap_rejected_mass": 0.0,
+        "rejected_completed_trials": 0,
+        "rejected_failed_trials": 0,
+        "max_clip_mass": 0.017178432908434998,
+        "full_training_enabled": false
+      }
+    },
+    "off": {
+      "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_runtime_2026-09-06/manifests/gate_off.json",
+      "sha256": "5dc2c8b85bb5685843eedfb55729cd5ecb962fa23424dbb50c6ff5880cca932e",
+      "startup": {
+        "protocol": "matched_gate_development/1",
+        "admission": "off",
+        "candidate_partition_sha256": "482fc4c6ff14bc057f8170a22f4be6c8ea9c7beb5a318ce1f36a355abd8b0e20",
+        "runtime_units": 1649,
+        "uncapped_prior_rejected_mass": 0.11537816012582959,
+        "post_cap_rejected_mass": 0.11537816012582959,
+        "rejected_completed_trials": 0,
+        "rejected_failed_trials": 0,
+        "max_clip_mass": 0.018569935167069472,
+        "full_training_enabled": false
+      }
+    }
+  },
+  "pending_before_freeze": [
+    "source-bound full training entrypoint and complete checkpoint/provenance gate",
+    "fresh seed audit",
+    "GPU lifecycle smoke with matched full configuration except declared short budget",
+    "all-six-training-before-evaluation schedule and paired evaluation binding",
+    "analysis/decision integration and execution cost accounting",
+    "new prospective frozen contract after current confirmation disposition"
+  ],
+  "smoke_result": {
+    "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_runtime_2026-09-06/paired_smoke_result.json",
+    "sha256": "a084b7b9dda4e3e48e921e3f7c1e80c041d08d10a485ff20156f41ba8b9c6e47"
+  }
+}

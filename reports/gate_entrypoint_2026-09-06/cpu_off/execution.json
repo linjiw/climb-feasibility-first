@@ -1,0 +1,11 @@
+{
+  "admission": "off",
+  "seed": 81,
+  "smoke": true,
+  "num_envs": 8,
+  "contract_sha256": "57f36c6c20cb0cfbf09e08a479dc215164527e91487101056ac23444ae2f6ea2",
+  "configuration_sha256": "8280eb171004af52434c49b27c884bb6ff9817ba562bf85d497532d7a42ba1fa",
+  "device": "cpu",
+  "status": "completed",
+  "elapsed_seconds": 108.72968140299781
+}

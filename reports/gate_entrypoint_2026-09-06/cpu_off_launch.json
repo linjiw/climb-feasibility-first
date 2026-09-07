@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "/home/linjiw/climb-feasibility-first/mjlab-1.6.0/.venv/bin/python",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/tools/train_gate_study.py",
+    "--contract",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/preparation/draft_contract.json",
+    "--contract-sha256",
+    "57f36c6c20cb0cfbf09e08a479dc215164527e91487101056ac23444ae2f6ea2",
+    "--admission",
+    "off",
+    "--seed",
+    "81",
+    "--smoke",
+    "--device",
+    "cpu",
+    "--out-dir",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_entrypoint_2026-09-06/cpu_off"
+  ],
+  "cwd": "/home/linjiw/climb-gate-ablation-2026-09-06",
+  "env_overrides": {
+    "OMP_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2",
+    "CUDA_VISIBLE_DEVICES": ""
+  }
+}

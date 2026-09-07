@@ -1,0 +1,2848 @@
+{
+  "task": "Climb-Tracking-Flat-Unitree-G1-Gate-On-Development",
+  "classification": "development smoke only",
+  "config": {
+    "type": "mjlab.envs.manager_based_rl_env.ManagerBasedRlEnvCfg",
+    "fields": {
+      "decimation": 4,
+      "scene": {
+        "type": "mjlab.scene.scene.SceneCfg",
+        "fields": {
+          "num_envs": 8,
+          "env_spacing": 2.0,
+          "terrain": {
+            "type": "mjlab.terrains.terrain_entity.TerrainEntityCfg",
+            "fields": {
+              "init_state": {
+                "type": "mjlab.entity.entity.EntityCfg.InitialStateCfg",
+                "fields": {
+                  "pos": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "rot": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "lin_vel": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "ang_vel": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "joint_pos": {
+                    ".*": 0.0
+                  },
+                  "joint_vel": {
+                    ".*": 0.0
+                  }
+                }
+              },
+              "spec_fn": {
+                "callable": "mjlab.entity.entity.EntityCfg.<lambda>.<locals>.<lambda>"
+              },
+              "articulation": null,
+              "sort_actuators": false,
+              "lights": [
+                {
+                  "type": "mjlab.utils.spec_config.LightCfg",
+                  "fields": {
+                    "name": "sun",
+                    "body": "world",
+                    "mode": "fixed",
+                    "target": null,
+                    "type": "directional",
+                    "castshadow": true,
+                    "pos": [
+                      0.0,
+                      0.0,
+                      1.5
+                    ],
+                    "dir": [
+                      0.0,
+                      0.0,
+                      -1.0
+                    ],
+                    "cutoff": 45.0,
+                    "exponent": 10.0,
+                    "diffuse": null,
+                    "specular": null,
+                    "ambient": null,
+                    "active": true,
+                    "attenuation": [
+                      1.0,
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              ],
+              "cameras": [],
+              "textures": [
+                {
+                  "type": "mjlab.utils.spec_config.TextureCfg",
+                  "fields": {
+                    "name": "groundplane",
+                    "type": "2d",
+                    "builtin": "checker",
+                    "rgb1": [
+                      0.2,
+                      0.3,
+                      0.4
+                    ],
+                    "rgb2": [
+                      0.1,
+                      0.2,
+                      0.3
+                    ],
+                    "width": 300,
+                    "height": 300,
+                    "mark": "edge",
+                    "markrgb": [
+                      0.8,
+                      0.8,
+                      0.8
+                    ],
+                    "random": 0.01,
+                    "file": null,
+                    "cubefiles": null,
+                    "gridsize": null,
+                    "gridlayout": null,
+                    "nchannel": 3,
+                    "hflip": false,
+                    "vflip": false
+                  }
+                }
+              ],
+              "materials": [
+                {
+                  "type": "mjlab.utils.spec_config.MaterialCfg",
+                  "fields": {
+                    "name": "groundplane",
+                    "rgba": [
+                      1.0,
+                      1.0,
+                      1.0,
+                      1.0
+                    ],
+                    "texuniform": true,
+                    "texrepeat": [
+                      4.0,
+                      4.0
+                    ],
+                    "reflectance": 0.2,
+                    "texture": "groundplane",
+                    "geom_names_expr": [
+                      "terrain$"
+                    ]
+                  }
+                }
+              ],
+              "meshes": [],
+              "geoms": [],
+              "collisions": [],
+              "terrain_type": "plane",
+              "terrain_generator": null,
+              "env_spacing": 2.0,
+              "max_init_terrain_level": null,
+              "num_envs": 1,
+              "debug_vis": false
+            }
+          },
+          "entities": {
+            "robot": {
+              "type": "mjlab.entity.entity.EntityCfg",
+              "fields": {
+                "init_state": {
+                  "type": "mjlab.entity.entity.EntityCfg.InitialStateCfg",
+                  "fields": {
+                    "pos": [
+                      0,
+                      0,
+                      0.76
+                    ],
+                    "rot": [
+                      1.0,
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "lin_vel": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "ang_vel": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "joint_pos": {
+                      ".*_ankle_pitch_joint": -0.363,
+                      ".*_elbow_joint": 0.6,
+                      ".*_hip_pitch_joint": -0.312,
+                      ".*_knee_joint": 0.669,
+                      "left_shoulder_pitch_joint": 0.2,
+                      "left_shoulder_roll_joint": 0.2,
+                      "right_shoulder_pitch_joint": 0.2,
+                      "right_shoulder_roll_joint": -0.2
+                    },
+                    "joint_vel": {
+                      ".*": 0.0
+                    }
+                  }
+                },
+                "spec_fn": {
+                  "callable": "mjlab.asset_zoo.robots.unitree_g1.g1_constants.get_spec"
+                },
+                "articulation": {
+                  "type": "mjlab.entity.entity.EntityArticulationInfoCfg",
+                  "fields": {
+                    "actuators": [
+                      {
+                        "type": "mjlab.actuator.builtin_actuator.BuiltinPositionActuatorCfg",
+                        "fields": {
+                          "target_names_expr": [
+                            ".*_elbow_joint",
+                            ".*_shoulder_pitch_joint",
+                            ".*_shoulder_roll_joint",
+                            ".*_shoulder_yaw_joint",
+                            ".*_wrist_roll_joint"
+                          ],
+                          "transmission_type": {
+                            "enum": "mjlab.actuator.actuator.TransmissionType",
+                            "value": "joint"
+                          },
+                          "armature": 0.003609725,
+                          "frictionloss": null,
+                          "viscous_damping": null,
+                          "delay_min_lag": 0,
+                          "delay_max_lag": 0,
+                          "delay_hold_prob": 0.0,
+                          "delay_update_period": 0,
+                          "delay_per_env_phase": true,
+                          "stiffness": 14.25062309787429,
+                          "damping": 0.907222843292423,
+                          "effort_limit": 25.0
+                        }
+                      },
+                      {
+                        "type": "mjlab.actuator.builtin_actuator.BuiltinPositionActuatorCfg",
+                        "fields": {
+                          "target_names_expr": [
+                            ".*_hip_pitch_joint",
+                            ".*_hip_yaw_joint",
+                            "waist_yaw_joint"
+                          ],
+                          "transmission_type": {
+                            "enum": "mjlab.actuator.actuator.TransmissionType",
+                            "value": "joint"
+                          },
+                          "armature": 0.01017752004132231,
+                          "frictionloss": null,
+                          "viscous_damping": null,
+                          "delay_min_lag": 0,
+                          "delay_max_lag": 0,
+                          "delay_hold_prob": 0.0,
+                          "delay_update_period": 0,
+                          "delay_per_env_phase": true,
+                          "stiffness": 40.17923863450712,
+                          "damping": 2.557889775413375,
+                          "effort_limit": 88.0
+                        }
+                      },
+                      {
+                        "type": "mjlab.actuator.builtin_actuator.BuiltinPositionActuatorCfg",
+                        "fields": {
+                          "target_names_expr": [
+                            ".*_hip_roll_joint",
+                            ".*_knee_joint"
+                          ],
+                          "transmission_type": {
+                            "enum": "mjlab.actuator.actuator.TransmissionType",
+                            "value": "joint"
+                          },
+                          "armature": 0.025101924999999997,
+                          "frictionloss": null,
+                          "viscous_damping": null,
+                          "delay_min_lag": 0,
+                          "delay_max_lag": 0,
+                          "delay_hold_prob": 0.0,
+                          "delay_update_period": 0,
+                          "delay_per_env_phase": true,
+                          "stiffness": 99.09842777666111,
+                          "damping": 6.308801853496639,
+                          "effort_limit": 139.0
+                        }
+                      },
+                      {
+                        "type": "mjlab.actuator.builtin_actuator.BuiltinPositionActuatorCfg",
+                        "fields": {
+                          "target_names_expr": [
+                            ".*_wrist_pitch_joint",
+                            ".*_wrist_yaw_joint"
+                          ],
+                          "transmission_type": {
+                            "enum": "mjlab.actuator.actuator.TransmissionType",
+                            "value": "joint"
+                          },
+                          "armature": 0.00425,
+                          "frictionloss": null,
+                          "viscous_damping": null,
+                          "delay_min_lag": 0,
+                          "delay_max_lag": 0,
+                          "delay_hold_prob": 0.0,
+                          "delay_update_period": 0,
+                          "delay_per_env_phase": true,
+                          "stiffness": 16.77832748089279,
+                          "damping": 1.06814150219,
+                          "effort_limit": 5.0
+                        }
+                      },
+                      {
+                        "type": "mjlab.actuator.builtin_actuator.BuiltinPositionActuatorCfg",
+                        "fields": {
+                          "target_names_expr": [
+                            "waist_pitch_joint",
+                            "waist_roll_joint"
+                          ],
+                          "transmission_type": {
+                            "enum": "mjlab.actuator.actuator.TransmissionType",
+                            "value": "joint"
+                          },
+                          "armature": 0.00721945,
+                          "frictionloss": null,
+                          "viscous_damping": null,
+                          "delay_min_lag": 0,
+                          "delay_max_lag": 0,
+                          "delay_hold_prob": 0.0,
+                          "delay_update_period": 0,
+                          "delay_per_env_phase": true,
+                          "stiffness": 28.50124619574858,
+                          "damping": 1.814445686584846,
+                          "effort_limit": 50.0
+                        }
+                      },
+                      {
+                        "type": "mjlab.actuator.builtin_actuator.BuiltinPositionActuatorCfg",
+                        "fields": {
+                          "target_names_expr": [
+                            ".*_ankle_pitch_joint",
+                            ".*_ankle_roll_joint"
+                          ],
+                          "transmission_type": {
+                            "enum": "mjlab.actuator.actuator.TransmissionType",
+                            "value": "joint"
+                          },
+                          "armature": 0.00721945,
+                          "frictionloss": null,
+                          "viscous_damping": null,
+                          "delay_min_lag": 0,
+                          "delay_max_lag": 0,
+                          "delay_hold_prob": 0.0,
+                          "delay_update_period": 0,
+                          "delay_per_env_phase": true,
+                          "stiffness": 28.50124619574858,
+                          "damping": 1.814445686584846,
+                          "effort_limit": 50.0
+                        }
+                      }
+                    ],
+                    "soft_joint_pos_limit_factor": 0.9
+                  }
+                },
+                "sort_actuators": false,
+                "lights": [],
+                "cameras": [],
+                "textures": [],
+                "materials": [],
+                "meshes": [],
+                "geoms": [],
+                "collisions": [
+                  {
+                    "type": "mjlab.utils.spec_config.CollisionCfg",
+                    "fields": {
+                      "geom_names_expr": [
+                        ".*_collision"
+                      ],
+                      "contype": 1,
+                      "conaffinity": 1,
+                      "condim": {
+                        ".*_collision": 1,
+                        "^(left|right)_foot[1-7]_collision$": 3
+                      },
+                      "priority": {
+                        ".*": 0,
+                        "^(left|right)_foot[1-7]_collision$": 1
+                      },
+                      "friction": {
+                        "^(left|right)_foot[1-7]_collision$": [
+                          0.6
+                        ]
+                      },
+                      "solref": null,
+                      "solimp": null,
+                      "margin": null,
+                      "gap": null,
+                      "solmix": null,
+                      "disable_other_geoms": true
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "sensors": [
+            {
+              "type": "mjlab.sensor.contact_sensor.ContactSensorCfg",
+              "fields": {
+                "name": "self_collision",
+                "primary": {
+                  "type": "mjlab.sensor.contact_sensor.ContactMatch",
+                  "fields": {
+                    "mode": "subtree",
+                    "pattern": "pelvis",
+                    "entity": "robot",
+                    "exclude": []
+                  }
+                },
+                "secondary": {
+                  "type": "mjlab.sensor.contact_sensor.ContactMatch",
+                  "fields": {
+                    "mode": "subtree",
+                    "pattern": "pelvis",
+                    "entity": "robot",
+                    "exclude": []
+                  }
+                },
+                "fields": [
+                  "found",
+                  "force"
+                ],
+                "reduce": "none",
+                "num_slots": 1,
+                "secondary_policy": "first",
+                "track_air_time": false,
+                "global_frame": false,
+                "history_length": 4,
+                "debug": false
+              }
+            }
+          ],
+          "extent": null,
+          "spec_fn": null
+        }
+      },
+      "observations": {
+        "actor": {
+          "type": "mjlab.managers.observation_manager.ObservationGroupCfg",
+          "fields": {
+            "terms": {
+              "actions": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.envs.mdp.observations.last_action"
+                  },
+                  "params": {},
+                  "noise": null,
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "base_ang_vel": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.envs.mdp.observations.builtin_sensor"
+                  },
+                  "params": {
+                    "sensor_name": "robot/imu_ang_vel"
+                  },
+                  "noise": {
+                    "type": "mjlab.utils.noise.noise_cfg.UniformNoiseCfg",
+                    "fields": {
+                      "operation": "add",
+                      "_tensor_cache": {},
+                      "n_min": -0.2,
+                      "n_max": 0.2
+                    }
+                  },
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "base_lin_vel": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.envs.mdp.observations.builtin_sensor"
+                  },
+                  "params": {
+                    "sensor_name": "robot/imu_lin_vel"
+                  },
+                  "noise": {
+                    "type": "mjlab.utils.noise.noise_cfg.UniformNoiseCfg",
+                    "fields": {
+                      "operation": "add",
+                      "_tensor_cache": {},
+                      "n_min": -0.5,
+                      "n_max": 0.5
+                    }
+                  },
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "command": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.envs.mdp.observations.generated_commands"
+                  },
+                  "params": {
+                    "command_name": "motion"
+                  },
+                  "noise": null,
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "joint_pos": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.envs.mdp.observations.joint_pos_rel"
+                  },
+                  "params": {
+                    "biased": true
+                  },
+                  "noise": {
+                    "type": "mjlab.utils.noise.noise_cfg.UniformNoiseCfg",
+                    "fields": {
+                      "operation": "add",
+                      "_tensor_cache": {},
+                      "n_min": -0.01,
+                      "n_max": 0.01
+                    }
+                  },
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "joint_vel": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.envs.mdp.observations.joint_vel_rel"
+                  },
+                  "params": {},
+                  "noise": {
+                    "type": "mjlab.utils.noise.noise_cfg.UniformNoiseCfg",
+                    "fields": {
+                      "operation": "add",
+                      "_tensor_cache": {},
+                      "n_min": -0.5,
+                      "n_max": 0.5
+                    }
+                  },
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "motion_anchor_ori_b": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.tasks.tracking.mdp.observations.motion_anchor_ori_b"
+                  },
+                  "params": {
+                    "command_name": "motion"
+                  },
+                  "noise": {
+                    "type": "mjlab.utils.noise.noise_cfg.UniformNoiseCfg",
+                    "fields": {
+                      "operation": "add",
+                      "_tensor_cache": {},
+                      "n_min": -0.05,
+                      "n_max": 0.05
+                    }
+                  },
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "motion_anchor_pos_b": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.tasks.tracking.mdp.observations.motion_anchor_pos_b"
+                  },
+                  "params": {
+                    "command_name": "motion"
+                  },
+                  "noise": {
+                    "type": "mjlab.utils.noise.noise_cfg.UniformNoiseCfg",
+                    "fields": {
+                      "operation": "add",
+                      "_tensor_cache": {},
+                      "n_min": -0.25,
+                      "n_max": 0.25
+                    }
+                  },
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              }
+            },
+            "concatenate_terms": true,
+            "concatenate_dim": -1,
+            "enable_corruption": true,
+            "history_length": null,
+            "flatten_history_dim": true,
+            "nan_policy": "disabled",
+            "nan_check_per_term": true
+          }
+        },
+        "critic": {
+          "type": "mjlab.managers.observation_manager.ObservationGroupCfg",
+          "fields": {
+            "terms": {
+              "actions": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.envs.mdp.observations.last_action"
+                  },
+                  "params": {},
+                  "noise": null,
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "base_ang_vel": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.envs.mdp.observations.builtin_sensor"
+                  },
+                  "params": {
+                    "sensor_name": "robot/imu_ang_vel"
+                  },
+                  "noise": null,
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "base_lin_vel": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.envs.mdp.observations.builtin_sensor"
+                  },
+                  "params": {
+                    "sensor_name": "robot/imu_lin_vel"
+                  },
+                  "noise": null,
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "body_ori": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.tasks.tracking.mdp.observations.robot_body_ori_b"
+                  },
+                  "params": {
+                    "command_name": "motion"
+                  },
+                  "noise": null,
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "body_pos": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.tasks.tracking.mdp.observations.robot_body_pos_b"
+                  },
+                  "params": {
+                    "command_name": "motion"
+                  },
+                  "noise": null,
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "command": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.envs.mdp.observations.generated_commands"
+                  },
+                  "params": {
+                    "command_name": "motion"
+                  },
+                  "noise": null,
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "joint_pos": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.envs.mdp.observations.joint_pos_rel"
+                  },
+                  "params": {},
+                  "noise": null,
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "joint_vel": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.envs.mdp.observations.joint_vel_rel"
+                  },
+                  "params": {},
+                  "noise": null,
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "motion_anchor_ori_b": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.tasks.tracking.mdp.observations.motion_anchor_ori_b"
+                  },
+                  "params": {
+                    "command_name": "motion"
+                  },
+                  "noise": null,
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              },
+              "motion_anchor_pos_b": {
+                "type": "mjlab.managers.observation_manager.ObservationTermCfg",
+                "fields": {
+                  "func": {
+                    "callable": "mjlab.tasks.tracking.mdp.observations.motion_anchor_pos_b"
+                  },
+                  "params": {
+                    "command_name": "motion"
+                  },
+                  "noise": null,
+                  "clip": null,
+                  "scale": null,
+                  "delay_min_lag": 0,
+                  "delay_max_lag": 0,
+                  "delay_per_env": true,
+                  "delay_hold_prob": 0.0,
+                  "delay_update_period": 0,
+                  "delay_per_env_phase": true,
+                  "history_length": 0,
+                  "flatten_history_dim": true
+                }
+              }
+            },
+            "concatenate_terms": true,
+            "concatenate_dim": -1,
+            "enable_corruption": false,
+            "history_length": null,
+            "flatten_history_dim": true,
+            "nan_policy": "disabled",
+            "nan_check_per_term": true
+          }
+        }
+      },
+      "actions": {
+        "joint_pos": {
+          "type": "mjlab.envs.mdp.actions.actions.JointPositionActionCfg",
+          "fields": {
+            "entity_name": "robot",
+            "clip": null,
+            "transmission_type": {
+              "enum": "mjlab.actuator.actuator.TransmissionType",
+              "value": "joint"
+            },
+            "actuator_names": [
+              ".*"
+            ],
+            "scale": {
+              ".*_ankle_pitch_joint": 0.43857731392336724,
+              ".*_ankle_roll_joint": 0.43857731392336724,
+              ".*_elbow_joint": 0.43857731392336724,
+              ".*_hip_pitch_joint": 0.5475464629911068,
+              ".*_hip_roll_joint": 0.35066146637882434,
+              ".*_hip_yaw_joint": 0.5475464629911068,
+              ".*_knee_joint": 0.35066146637882434,
+              ".*_shoulder_pitch_joint": 0.43857731392336724,
+              ".*_shoulder_roll_joint": 0.43857731392336724,
+              ".*_shoulder_yaw_joint": 0.43857731392336724,
+              ".*_wrist_pitch_joint": 0.07450087032950714,
+              ".*_wrist_roll_joint": 0.43857731392336724,
+              ".*_wrist_yaw_joint": 0.07450087032950714,
+              "waist_pitch_joint": 0.43857731392336724,
+              "waist_roll_joint": 0.43857731392336724,
+              "waist_yaw_joint": 0.5475464629911068
+            },
+            "offset": 0.0,
+            "preserve_order": false,
+            "use_default_offset": true
+          }
+        }
+      },
+      "events": {
+        "base_com": {
+          "type": "mjlab.managers.event_manager.EventTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.envs.mdp.dr.body.body_com_offset"
+            },
+            "params": {
+              "asset_cfg": {
+                "type": "mjlab.managers.scene_entity_config.SceneEntityCfg",
+                "fields": {
+                  "name": "robot",
+                  "joint_names": null,
+                  "joint_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "body_names": [
+                    "torso_link"
+                  ],
+                  "body_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "geom_names": null,
+                  "geom_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "site_names": null,
+                  "site_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "actuator_names": null,
+                  "actuator_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "tendon_names": null,
+                  "tendon_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "camera_names": null,
+                  "camera_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "light_names": null,
+                  "light_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "material_names": null,
+                  "material_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "texture_names": null,
+                  "texture_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "pair_names": null,
+                  "pair_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "preserve_order": false
+                }
+              },
+              "operation": "add",
+              "ranges": {
+                "0": [
+                  -0.025,
+                  0.025
+                ],
+                "1": [
+                  -0.05,
+                  0.05
+                ],
+                "2": [
+                  -0.05,
+                  0.05
+                ]
+              }
+            },
+            "mode": "startup",
+            "interval_range_s": null,
+            "is_global_time": false,
+            "min_step_count_between_reset": 0
+          }
+        },
+        "encoder_bias": {
+          "type": "mjlab.managers.event_manager.EventTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.envs.mdp.dr.joint.encoder_bias"
+            },
+            "params": {
+              "asset_cfg": {
+                "type": "mjlab.managers.scene_entity_config.SceneEntityCfg",
+                "fields": {
+                  "name": "robot",
+                  "joint_names": null,
+                  "joint_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "body_names": null,
+                  "body_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "geom_names": null,
+                  "geom_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "site_names": null,
+                  "site_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "actuator_names": null,
+                  "actuator_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "tendon_names": null,
+                  "tendon_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "camera_names": null,
+                  "camera_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "light_names": null,
+                  "light_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "material_names": null,
+                  "material_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "texture_names": null,
+                  "texture_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "pair_names": null,
+                  "pair_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "preserve_order": false
+                }
+              },
+              "bias_range": [
+                -0.01,
+                0.01
+              ]
+            },
+            "mode": "startup",
+            "interval_range_s": null,
+            "is_global_time": false,
+            "min_step_count_between_reset": 0
+          }
+        },
+        "foot_friction": {
+          "type": "mjlab.managers.event_manager.EventTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.envs.mdp.dr.geom.geom_friction"
+            },
+            "params": {
+              "asset_cfg": {
+                "type": "mjlab.managers.scene_entity_config.SceneEntityCfg",
+                "fields": {
+                  "name": "robot",
+                  "joint_names": null,
+                  "joint_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "body_names": null,
+                  "body_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "geom_names": "^(left|right)_foot[1-7]_collision$",
+                  "geom_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "site_names": null,
+                  "site_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "actuator_names": null,
+                  "actuator_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "tendon_names": null,
+                  "tendon_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "camera_names": null,
+                  "camera_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "light_names": null,
+                  "light_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "material_names": null,
+                  "material_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "texture_names": null,
+                  "texture_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "pair_names": null,
+                  "pair_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "preserve_order": false
+                }
+              },
+              "operation": "abs",
+              "ranges": [
+                0.3,
+                1.2
+              ],
+              "shared_random": true
+            },
+            "mode": "startup",
+            "interval_range_s": null,
+            "is_global_time": false,
+            "min_step_count_between_reset": 0
+          }
+        },
+        "push_robot": {
+          "type": "mjlab.managers.event_manager.EventTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.envs.mdp.events.push_by_setting_velocity"
+            },
+            "params": {
+              "velocity_range": {
+                "pitch": [
+                  -0.52,
+                  0.52
+                ],
+                "roll": [
+                  -0.52,
+                  0.52
+                ],
+                "x": [
+                  -0.5,
+                  0.5
+                ],
+                "y": [
+                  -0.5,
+                  0.5
+                ],
+                "yaw": [
+                  -0.78,
+                  0.78
+                ],
+                "z": [
+                  -0.2,
+                  0.2
+                ]
+              }
+            },
+            "mode": "interval",
+            "interval_range_s": [
+              1.0,
+              3.0
+            ],
+            "is_global_time": false,
+            "min_step_count_between_reset": 0
+          }
+        }
+      },
+      "seed": 71,
+      "sim": {
+        "type": "mjlab.sim.sim.SimulationCfg",
+        "fields": {
+          "nconmax": 35,
+          "njmax": 250,
+          "contact_sensor_maxmatch": 64,
+          "broadphase": null,
+          "broadphase_filter": null,
+          "ls_parallel": null,
+          "mujoco": {
+            "type": "mjlab.sim.sim.MujocoCfg",
+            "fields": {
+              "timestep": 0.005,
+              "integrator": "implicitfast",
+              "impratio": 1.0,
+              "cone": "pyramidal",
+              "jacobian": "auto",
+              "solver": "newton",
+              "iterations": 10,
+              "tolerance": 1e-08,
+              "ls_iterations": 20,
+              "ls_tolerance": 0.01,
+              "ccd_iterations": 50,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "disableflags": [],
+              "enableflags": []
+            }
+          },
+          "nan_guard": {
+            "type": "mjlab.utils.nan_guard.NanGuardCfg",
+            "fields": {
+              "enabled": false,
+              "buffer_size": 100,
+              "output_dir": "/tmp/mjlab/nan_dumps",
+              "max_envs_to_dump": 5
+            }
+          }
+        }
+      },
+      "viewer": {
+        "type": "mjlab.viewer.viewer_config.ViewerConfig",
+        "fields": {
+          "origin_type": {
+            "enum": "mjlab.viewer.viewer_config.ViewerConfig.OriginType",
+            "value": 4
+          },
+          "height": 240,
+          "width": 320,
+          "enable_reflections": true,
+          "enable_shadows": true,
+          "geom_group": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "site_group": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "env_idx": 0,
+          "max_extra_envs": 2,
+          "reward_bar_max_terms": 20,
+          "distance": 2.8,
+          "elevation": -5.0,
+          "azimuth": 120.0,
+          "fovy": 55.0,
+          "lookat": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "entity_name": "robot",
+          "body_name": "torso_link"
+        }
+      },
+      "episode_length_s": 1.0,
+      "rewards": {
+        "action_rate_l2": {
+          "type": "mjlab.managers.reward_manager.RewardTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.envs.mdp.rewards.action_rate_l2"
+            },
+            "params": {},
+            "weight": -0.1
+          }
+        },
+        "failure_terminal": {
+          "type": "mjlab.managers.reward_manager.RewardTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.envs.mdp.rewards.is_terminated"
+            },
+            "params": {},
+            "weight": -500.0
+          }
+        },
+        "joint_limit": {
+          "type": "mjlab.managers.reward_manager.RewardTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.envs.mdp.rewards.joint_pos_limits"
+            },
+            "params": {
+              "asset_cfg": {
+                "type": "mjlab.managers.scene_entity_config.SceneEntityCfg",
+                "fields": {
+                  "name": "robot",
+                  "joint_names": [
+                    ".*"
+                  ],
+                  "joint_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "body_names": null,
+                  "body_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "geom_names": null,
+                  "geom_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "site_names": null,
+                  "site_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "actuator_names": null,
+                  "actuator_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "tendon_names": null,
+                  "tendon_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "camera_names": null,
+                  "camera_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "light_names": null,
+                  "light_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "material_names": null,
+                  "material_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "texture_names": null,
+                  "texture_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "pair_names": null,
+                  "pair_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "preserve_order": false
+                }
+              }
+            },
+            "weight": -10.0
+          }
+        },
+        "motion_body_ang_vel": {
+          "type": "mjlab.managers.reward_manager.RewardTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.tasks.tracking.mdp.rewards.motion_global_body_angular_velocity_error_exp"
+            },
+            "params": {
+              "command_name": "motion",
+              "std": 3.14
+            },
+            "weight": 1.0
+          }
+        },
+        "motion_body_lin_vel": {
+          "type": "mjlab.managers.reward_manager.RewardTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.tasks.tracking.mdp.rewards.motion_global_body_linear_velocity_error_exp"
+            },
+            "params": {
+              "command_name": "motion",
+              "std": 1.0
+            },
+            "weight": 1.0
+          }
+        },
+        "motion_body_ori": {
+          "type": "mjlab.managers.reward_manager.RewardTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.tasks.tracking.mdp.rewards.motion_relative_body_orientation_error_exp"
+            },
+            "params": {
+              "command_name": "motion",
+              "std": 0.4
+            },
+            "weight": 1.0
+          }
+        },
+        "motion_body_pos": {
+          "type": "mjlab.managers.reward_manager.RewardTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.tasks.tracking.mdp.rewards.motion_relative_body_position_error_exp"
+            },
+            "params": {
+              "command_name": "motion",
+              "std": 0.3
+            },
+            "weight": 1.0
+          }
+        },
+        "motion_global_root_ori": {
+          "type": "mjlab.managers.reward_manager.RewardTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.tasks.tracking.mdp.rewards.motion_global_anchor_orientation_error_exp"
+            },
+            "params": {
+              "command_name": "motion",
+              "std": 0.4
+            },
+            "weight": 0.5
+          }
+        },
+        "motion_global_root_pos": {
+          "type": "mjlab.managers.reward_manager.RewardTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.tasks.tracking.mdp.rewards.motion_global_anchor_position_error_exp"
+            },
+            "params": {
+              "command_name": "motion",
+              "std": 0.3
+            },
+            "weight": 0.5
+          }
+        },
+        "self_collisions": {
+          "type": "mjlab.managers.reward_manager.RewardTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.tasks.tracking.mdp.rewards.self_collision_cost"
+            },
+            "params": {
+              "force_threshold": 10.0,
+              "sensor_name": "self_collision"
+            },
+            "weight": -10.0
+          }
+        }
+      },
+      "terminations": {
+        "anchor_ori": {
+          "type": "mjlab.managers.termination_manager.TerminationTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.tasks.tracking.mdp.terminations.bad_anchor_ori"
+            },
+            "params": {
+              "asset_cfg": {
+                "type": "mjlab.managers.scene_entity_config.SceneEntityCfg",
+                "fields": {
+                  "name": "robot",
+                  "joint_names": null,
+                  "joint_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "body_names": null,
+                  "body_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "geom_names": null,
+                  "geom_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "site_names": null,
+                  "site_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "actuator_names": null,
+                  "actuator_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "tendon_names": null,
+                  "tendon_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "camera_names": null,
+                  "camera_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "light_names": null,
+                  "light_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "material_names": null,
+                  "material_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "texture_names": null,
+                  "texture_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "pair_names": null,
+                  "pair_ids": {
+                    "slice": [
+                      null,
+                      null,
+                      null
+                    ]
+                  },
+                  "preserve_order": false
+                }
+              },
+              "command_name": "motion",
+              "threshold": 0.8
+            },
+            "time_out": false
+          }
+        },
+        "anchor_pos": {
+          "type": "mjlab.managers.termination_manager.TerminationTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.tasks.tracking.mdp.terminations.bad_anchor_pos_z_only"
+            },
+            "params": {
+              "command_name": "motion",
+              "threshold": 0.25
+            },
+            "time_out": false
+          }
+        },
+        "ee_body_pos": {
+          "type": "mjlab.managers.termination_manager.TerminationTermCfg",
+          "fields": {
+            "func": {
+              "callable": "mjlab.tasks.tracking.mdp.terminations.bad_motion_body_pos_z_only"
+            },
+            "params": {
+              "body_names": [
+                "left_ankle_roll_link",
+                "right_ankle_roll_link",
+                "left_wrist_yaw_link",
+                "right_wrist_yaw_link"
+              ],
+              "command_name": "motion",
+              "threshold": 0.25
+            },
+            "time_out": false
+          }
+        },
+        "segment_trial": {
+          "type": "mjlab.managers.termination_manager.TerminationTermCfg",
+          "fields": {
+            "func": {
+              "callable": "climb.segment_command.segment_trial_timeout"
+            },
+            "params": {
+              "command_name": "motion"
+            },
+            "time_out": true
+          }
+        }
+      },
+      "commands": {
+        "motion": {
+          "type": "climb.gate_ablation.GateAblationCommandCfg",
+          "fields": {
+            "resampling_time_range": [
+              1000000000.0,
+              1000000000.0
+            ],
+            "debug_vis": true,
+            "motion_file": "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1229_flexion_with_help_02_poses_100_jpos.npz",
+            "anchor_body_name": "torso_link",
+            "body_names": [
+              "pelvis",
+              "left_hip_roll_link",
+              "left_knee_link",
+              "left_ankle_roll_link",
+              "right_hip_roll_link",
+              "right_knee_link",
+              "right_ankle_roll_link",
+              "torso_link",
+              "left_shoulder_roll_link",
+              "left_elbow_link",
+              "left_wrist_yaw_link",
+              "right_shoulder_roll_link",
+              "right_elbow_link",
+              "right_wrist_yaw_link"
+            ],
+            "entity_name": "robot",
+            "pose_range": {
+              "pitch": [
+                -0.1,
+                0.1
+              ],
+              "roll": [
+                -0.1,
+                0.1
+              ],
+              "x": [
+                -0.05,
+                0.05
+              ],
+              "y": [
+                -0.05,
+                0.05
+              ],
+              "yaw": [
+                -0.2,
+                0.2
+              ],
+              "z": [
+                -0.01,
+                0.01
+              ]
+            },
+            "velocity_range": {
+              "pitch": [
+                -0.52,
+                0.52
+              ],
+              "roll": [
+                -0.52,
+                0.52
+              ],
+              "x": [
+                -0.5,
+                0.5
+              ],
+              "y": [
+                -0.5,
+                0.5
+              ],
+              "yaw": [
+                -0.78,
+                0.78
+              ],
+              "z": [
+                -0.2,
+                0.2
+              ]
+            },
+            "joint_position_range": [
+              -0.1,
+              0.1
+            ],
+            "adaptive_kernel_size": 1,
+            "adaptive_lambda": 0.8,
+            "adaptive_uniform_ratio": 0.1,
+            "adaptive_alpha": 0.001,
+            "sampling_mode": "uniform",
+            "viz": {
+              "type": "mjlab.tasks.tracking.mdp.commands.MotionCommandCfg.VizCfg",
+              "fields": {
+                "mode": "ghost",
+                "ghost_color": [
+                  0.5,
+                  0.7,
+                  0.5,
+                  0.5
+                ]
+              }
+            },
+            "motion_files": [
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1229_flexion_with_help_02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1229_in_out_rotation_with_help_03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1229_hand_to_mouth_right_arm_03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1747_displace_tilt_middle_23_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1229_supination_with_help_03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1229_washing_movement_with_help_02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1747_displace_tilt_middle_12_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1226_Trial_67_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1717_displace_tilt_middle_24_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1747_displace_tilt_side_24_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1229_take_book_from_shelf_with_help_02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1717_displace_tilt_middle_21_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1717_displace_from_left_to_right_30_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_wave_left10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1229_washing_movement_left_arm_03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1226_Trial_13_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1717_displace_from_left_to_right_49_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1717_displace_from_left_to_right_21_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1229_take_of_t-shirt_with_help_05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1717_displace_from_left_to_right_33_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_bow_slight03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1717_displace_tilt_middle_11_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_wipe_circular_right05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_bow_slight02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1747_displace_tilt_side_05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1717_displace_tilt_side_08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_114_114_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_wave_both07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_105_105_06_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1717_displace_from_left_to_right_39_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1226_Trial_75_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_wave_left04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1226_Trial_44_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_969_Trial_18_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1226_Trial_06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_969_Trial_76_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_wave_left15_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_969_Trial_79_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_stir_right15_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_stir_right14_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_969_Trial_33_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_wave_both13_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_969_Trial_60_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1747_displace_tilt_side_21_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_969_Trial_62_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1717_displace_tilt_side_26_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1226_Trial_24_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_969_Trial_41_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_969_Trial_24_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1747_displace_tilt_side_04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1226_Trial_19_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1717_displace_tilt_side_42_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1226_Trial_78_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1226_Trial_03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_guitar_left13_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_stir_left09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_guitar_left10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_guitar_left17_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1747_displace_tilt_side_02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1229_take_of_t-shirt_left_arm_05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_guitar_left18_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_969_Trial_40_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_441_drinking05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_70_F_MoSh_Subject_70_F_19_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_64_F_MoSh_Subject_64_F_14_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_969_Trial_69_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_30_F_MoSh_Subject_30_F_5_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_111_111_37_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HUMAN4D_Subject3_Medhi_RGB_Talking_S3_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_64_F_MoSh_Subject_64_F_19_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_948_Wipe_Back_Dabbing_01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_13_13_07_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_5_F_MoSh_Subject_5_F_9_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HumanEva_S1_Gestures_3_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_84_84_09_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_950_Wipe_Head_Small_Circle_01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_64_F_MoSh_Subject_64_F_13_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_22_F_MoSh_Subject_22_F_10_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_aita_pose-18-applause-aita_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_950_Wipe_Head_Dabbing_01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_41_F_MoSh_Subject_41_F_5_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/TCD_handMocap_ExperimentDatabase_graspLumbrical001_1_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_62_F_MoSh_Subject_62_F_7_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_85_F_MoSh_Subject_85_F_7_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_67_F_MoSh_Subject_67_F_17_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_62_F_MoSh_Subject_62_F_8_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_74_74_09_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_883_wipe_leg_vertical07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_79_F_MoSh_Subject_79_F_10_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_883_wipe_head_vertical03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_48_F_MoSh_Subject_48_F_11_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_17_F_MoSh_Subject_17_F_20_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_883_wipe_back_dabbing03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/TCD_handMocap_ExperimentDatabase_TypingA_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_950_Wipe_Leg_Dabbing_01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_55_F_MoSh_Subject_55_F_3_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_55_F_MoSh_Subject_55_F_10_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_fryingpan_cook_2.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_27_F_MoSh_Subject_27_F_19_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/TCD_handMocap_ExperimentDatabase_TalkingC_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_950_Wipe_Leg_Dabbing_02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_85_85_09_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_22_F_MoSh_Subject_22_F_12_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_17_F_MoSh_Subject_17_F_10_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_74_F_MoSh_Subject_74_F_11_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_cubesmall_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_955_wipe_head_vertical01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_83_F_MoSh_Subject_83_F_21_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_952_wipe_back_biglcircles02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_39_F_MoSh_Subject_39_F_17_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1721_RecoveryStepping_30_0_03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_883_wipe_leg_dabbing03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_883_wipe_arm_vertical01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_79_F_MoSh_Subject_79_F_15_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_955_wipe_leg_bigcircles01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s4_spherelarge_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_Drinking09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_55_F_MoSh_Subject_55_F_13_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_39_F_MoSh_Subject_39_F_20_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_89_89_02_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_balancing01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_71_F_MoSh_Subject_71_F_13_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_aita_gesture_etc-22-mobile_receive-aita_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_cylindersmall_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HumanEva_S3_Gestures_3_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_291_walk_like_an_egyptian01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_wineglass_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s4_stanfordbunny_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_79_79_39_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_952_wipe_back_smallcircle02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_57_F_MoSh_Subject_57_F_6_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_955_wipe_arm_bigcircles01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_88_F_MoSh_Subject_88_F_17_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_80_80_40_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kudo_gesture_etc-18-eat-kudo_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_18_F_MoSh_Subject_18_F_17_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_golf_putting05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_aita_pose-14-look_up-aita_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_shiono_gesture_etc-33-watch_here-shiono_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_20_F_MoSh_Subject_20_F_7_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s4_spherelarge_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_5_F_MoSh_Subject_5_F_10_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_stanfordbunny_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_shiono_throw_toss-13-pass_to_right_light-shiono_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kaiwa_gesture_etc-01-set_1-kaiwa_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_72_F_MoSh_Subject_72_F_17_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_80_80_16_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_80_80_06_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s9_wineglass_drink_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s4_wineglass_toast_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_bowl_drink_2.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s9_cylinderlarge_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_51_F_MoSh_Subject_51_F_9_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_79_79_96_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_wave_right04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HUMAN4D_Subject1_2_Aude_INF_TalkingWhispering_S1S2_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_camera_offhand_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_gamecontroller_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_wineglass_drink_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_aita_greeting-02-bye-aita_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_walking_slow10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_62_62_14_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_13_13_08_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s2_hand_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_18_F_MoSh_Subject_18_F_3_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s9_torussmall_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_cubemedium_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_cup_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_cubelarge_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kudo_gesture_etc-45-feel_dizzy_-kudo_poses_250_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s10_phone_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_cubesmall_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_Push_Behind_Soft02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_hammer_use_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_32_F_MoSh_Subject_32_F_9_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_40_40_12_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_79_79_84_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_double_pour_and_mixing12_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_stanfordbunny_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kaiwa_gesture_etc-31-ok-kaiwa_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_22_F_MoSh_Subject_22_F_2_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1297_wipe02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s2_toruslarge_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s10_flashlight_on_2.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_double_pour_and_mixing05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_pyramidmedium_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_348_walking_slow08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kaiwa_pose-18-applause-kaiwa_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HUMAN4D_Subject3_4_Carine_RGB_TalkingWhispering_S3S4_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_Push_Right_Soft03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s9_piggybank_use_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/TCD_handMocap_ExperimentDatabase_Talking01A_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_cubesmall_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_77_77_02_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s2_cubelarge_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_squat05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_stanfordbunny_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1721_RecoveryStepping_50_135_04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_143_143_27_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_912_912_3_04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_79_79_54_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HUMAN4D_Subject3_Medhi_INF_InflightSafety_S3_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_bend_left05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_torusmedium_offhand_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_stamp_offhand_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_183_walking_slow02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_424_walking_slow10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HUMAN4D_Subject2_Aude_INF_InflightSafety_S2_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_441_PizzaDelivery03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_205_walking_slow02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_674_wash_head02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_WalkingStraightBackwards04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_eyeglasses_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s4_phone_call_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_cubelarge_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_551_sponge_big_and_mixing_bowl_big05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s10_pyramidmedium_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s4_banana_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HUMAN4D_Subject4_Carine_INF_InflightSafety_S4_02_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_79_79_59_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kaiwa_greeting-07-bow-kaiwa_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_cylinderlarge_offhand_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s5_duck_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_walking_slow01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s10_pyramidlarge_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s2_pyramidmedium_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s7_gamecontroller_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s6_apple_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s2_hand_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_20_F_MoSh_Subject_20_F_17_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_pyramidsmall_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_stanfordbunny_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_6_LeftTurn03_1_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_double_pour_and_mixing04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_punch_left05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_pyramidlarge_offhand_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_8_WalkingStraightBackwards03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_watch_offhand_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_200_Kniebeuge06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s4_cubemedium_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_674_shower_left_arm10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s10_piggybank_use_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_push_from_the_left_side09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_cylindersmall_offhand_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_dry_right_arm_014_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s9_pyramidmedium_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_eyeglasses_clean_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_442_PizzaDelivery05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_stomp_right02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s6_camera_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_seesaw_backwards07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_200_Kniebeuge04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_mug_drink_2.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_squat05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s9_alarmclock_see_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s2_flashlight_on_2.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_424_seesaw01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_424_seesaw_backwards03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_go_over_beam01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_551_mixing_cooking_spoon03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_76_76_10_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_205_walking_slow07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s2_banana_eat_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s9_alarmclock_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s6_spheremedium_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_6_RightTurn10_1_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/TCD_handMocap_ExperimentDatabase_Walking02_B_poses_150_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_aita_pain-01-headache-aita_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s7_wineglass_drink_2.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s7_lightbulb_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_4_WalkingStraightBackwards02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_54_54_23_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_hammer_use_3.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_424_seesaw09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_6_WalkingStraightBackwards08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s7_cubemedium_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_walking_slow07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_bend_left08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kaiwa_greeting-05-salute_(chest)-kaiwa_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_79_79_89_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s5_cylinderlarge_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_41_F_MoSh_Subject_41_F_2_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_76_F_MoSh_Subject_76_F_10_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_132_132_47_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/DFaust_67_50027_50027_hips_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_141_141_18_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_double_pour_and_mixing02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1297_wipe15_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s6_phone_call_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_200_Kniebeuge01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s2_gamecontroller_play_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s10_spherelarge_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_6_LeftTurn07_1_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_step_over_gap01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_4_RightTurn01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_359_go_over_beam03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_Push_Left_Hard01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_421_push_recovery_stand_left02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_314_walking_medium03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s6_banana_peel_2.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_183_bend_left01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_141_141_21_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s10_headphones_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S08_Novice_Trial_upper_left_056_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_evasion06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_throw_left05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_132_132_46_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s3_train_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_dry_right_arm_015_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_36_F_MoSh_Subject_36_F_11_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_throw_left03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_lean_over_table05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_WalkInClockwiseCircle07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_314_go_over_beam01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_359_go_over_beam02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_291_push_recovery_stand_right02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_hamada_pain-03-toothache-hamada_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_12_WalkingStraightBackwards10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1721_RecoveryStepping_80_0_02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s10_stamp_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_walk_with_table_right01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s6_scissors_use_2.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_lean_over_table14_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_inspect_shoe_sole07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_69_F_MoSh_Subject_69_F_18_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_8_WalkingStraightBackwards08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_walking_medium02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_hamada_gesture_etc-33-watch_here-hamada_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s7_mouse_use_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_424_bend_left05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_314_bend_left01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s6_eyeglasses_wear_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s2_pyramidlarge_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_12_WalkingStraightBackwards01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_674_dry_back01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_442_Bouncen01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kanno_pose-14-look_up-kanno_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_WalkInCounterClockwiseCircle08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_walking_medium06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_1297_wipe08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_binoculars_see_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_shiono_throw_toss-19-pass_to_front_light-shiono_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_WalkInCounterClockwiseCircle09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_421_push_recovery_stand_front03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_WalkInClockwiseCircle04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_576_MarcusS_AdrianM09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_evasion05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_seesaw_up03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_551_sponge_big01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_bend_left09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_bend_right05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_424_bend_left08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_kneel_down_with_left_hand04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_bend_right08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_57_F_MoSh_Subject_57_F_14_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_424_seesaw04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_421_push_recovery_back07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_11_WalkingStraightForwards02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_10_RightTurn05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_aita_gesture_etc-48-medium_drum-aita_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_421_push_recovery_stand_right08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kaiwa_walk-24-listless-kaiwa_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_stomp_right02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_10_WalkingStraightBackwards07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_28_28_16_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_27_27_11_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_6_WalkInCounterClockwiseCircle01_1_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_291_push_recovery_back05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_29_F_MoSh_Subject_29_F_21_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_hamada_gesture_etc-48-medium_drum-hamada_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s8_doorknob_use_2.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/ACCAD_Female1General_c3d_A5_-_pick_up_box_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_lean_on_table01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s6_duck_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_7_WalkInCounterClockwiseCircle04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_dance_waltz_01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_133_133_25_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_674_shower_right_arm02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kawaguchi_gesture_etc-42-hung_over-kawaguchi_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s5_camera_takepicture_3.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_seesaw_up10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_22_23_justin_22_06_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s5_toothpaste_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_29_29_24_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_scissors_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s7_banana_peel_2.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_348_turn_left06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_317_walking_fast09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_291_push_recovery_back07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s3_toruslarge_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_348_bend_right04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_mouse_offhand_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_dry_left_arm_14_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_bend_right09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_551_cutting_banana02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_115_115_06_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_348_turn_left05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_74_F_MoSh_Subject_74_F_5_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s5_cubelarge_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_22_23_justin_22_22_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HUMAN4D_Subject2_Aude_RGB_Talking_S2_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_674_shower_right_arm03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_hamada_throw_toss-14-pass_to_right_heavy-hamada_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s3_torusmedium_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_6_F_MoSh_Subject_6_F_2_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_348_bend_left08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_aita_greeting-10-card_exchange-aita_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_step_over_gap02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_walk_with_table_left10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_jump_up04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s10_cylindermedium_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_55_55_10_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s1_cubelarge_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_291_push_recovery_stand_left01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_317_bend_left01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_kneel_down_with_stool_left_hand08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_6_WalkInClockwiseCircle07_1_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_12_WalkingStraightBackwards02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_wash_left_arm_04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_dry_left_arm_15_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_378_push_recovery_stand_left01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_317_walking_medium07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_122_122_09_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_29_29_15_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_32_32_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_seesaw01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_421_push_recovery_back03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_317_go_over_beam08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s6_hammer_use_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_674_dry_front08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_walking_fast02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_seesaw_up08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_317_go_over_beam06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s7_apple_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S08_Novice_Trial_upper_right_086_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_seesaw_down09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_11_WalkingStraightForwards05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s3_pyramidmedium_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HumanEva_S1_Box_1_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_122_122_44_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kudo_greeting-03-election-kudo_poses_250_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S02_Novice_Trial_upper_left_012_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_kneel_down_with_stool_right_hand04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_29_29_13_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_314_walking_fast05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_359_walking_slow06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_stomp_right04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_12_WalkInCounterClockwiseCircle05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s4_doorknob_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_bend_right01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s9_spheresmall_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_walking_slow04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_turn_left03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_bend_right04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_11_WalkInCounterClockwiseCircle02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_317_step_over_gap05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_18_F_MoSh_Subject_18_F_1_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_72_F_MoSh_Subject_72_F_15_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_kneel_down_with_both_hands08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s3_bowl_drink_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_35_35_14_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_4_WalkInCounterClockwiseCircle03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s3_cylindersmall_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_441_synchron04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s6_cup_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s10_cylindersmall_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_6_WalkInClockwiseCircle10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_62_62_05_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_425_bend_right06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HUMAN4D_Subject4_Carine_RGB_Bending_S4_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s5_binoculars_see_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_walking_slow02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_shiono_gesture_etc-10-snip_nail-shiono_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_107_107_01_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_tennis_forehand_left05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_378_push_recovery_stand_right08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_walking_run01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_8_RightTurn06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_35_35_06_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_291_cal03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_183_step_over_gap05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_317_bend_right03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_dance_chacha06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_kick_high_right03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_7_WalkInClockwiseCircle06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_turn_left08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S06_Novice_Trial_upper_left_right_123_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_35_35_32_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_64_64_28_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_132_132_10_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_421_push_recovery_back06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_85_F_MoSh_Subject_85_F_4_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s10_spheremedium_pick_all.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_throw_right03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/ACCAD_MartialArtsWalksTurns_c3d_E16_-_block_right_middle_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_114_114_04_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_136_136_27_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_kick09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s3_piggybank_use_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_walk_with_left_support02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_6_WalkInClockwiseCircle03_1_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_10_WalkInClockwiseCircle09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_takiguchi_throw_toss-13-pass_to_right_light-takiguchi_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_turn_left01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_359_walking_slow04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_walk_with_handrail_right07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_walking_medium01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s6_mug_toast_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_183_step_over_gap09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_dance_waltz06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S08_Novice_Trial_upper_right_left_090_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_425_walking_slow05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s3_eyeglasses_offhand_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_425_bend_left03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S05_Novice_Trial_upper_left_061_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_35_35_07_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_12_WalkInCounterClockwiseCircle08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_62_62_19_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_hamada_gesture_etc-41-mosh-hamada_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_421_push_recovery_stand_front06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_walk_with_left_support_table01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_80_80_47_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_379_push_recovery_stand_back06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_105_105_21_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_aita_gesture_etc-20-swing_chair-aita_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_35_35_33_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_317_bend_right08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_359_walking_medium10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_122_122_48_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_step_over_gap11_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_walk_with_handrail_right01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_425_bend_right04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_turn_left07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s7_spheremedium_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_takiguchi_turn-01-call-takiguchi_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_143_143_10_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_425_bend_left10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_424_step_stones03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_12_RightTurn02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_jump_left05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_12_RightTurn05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/DFaust_67_50004_50004_knees_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_dance_chacha15_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_34_F_MoSh_Subject_34_F_20_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_parkour05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_359_walking_fast01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_122_122_34_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s2_camera_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_424_step_over_gap05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s3_toothbrush_brush_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_4_WalkInClockwiseCircle07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_291_push_recovery_right03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_675_walk_with_handrail_table_right009_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_takiguchi_throw_toss-16-pass_to_left_heavy-takiguchi_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_parkour04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_tennis_smash_right05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_golf_drive01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_41_F_MoSh_Subject_41_F_17_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kanno_greeting-03-election-kanno_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_183_parkour02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S09_Novice_Trial_upper_right_left_234_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/DFaust_67_50020_50020_knees_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s7_pyramidlarge_inspect_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_120_120_21_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kanno_accident-13-damage_back-kanno_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_314_walking_run04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_40_40_11_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_9_walking_run05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s6_train_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S09_Novice_Trial_upper_left_209_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kawaguchi_throw_toss-17-pass_to_back_light-kawaguchi_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_572_jump_right03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S09_Novice_Trial_upper_right_left_181_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s3_hand_pass_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_kneel_up_with_left_hand05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_317_walking_run09_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_132_132_43_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_30_30_09_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_379_push_recovery_front01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_53_F_MoSh_Subject_53_F_3_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_walking_run08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/ACCAD_MartialArtsWalksTurns_c3d_E2_-_Turn_around_left_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S05_Novice_Trial_upper_left_right_013_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_425_step_over_gap05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_132_132_19_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_379_push_recovery_stand_right07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_183_walking_run02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_18_19_Justin_18_15_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_183_walking_run06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S06_Novice_Trial_upper_right_217_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_turn_right10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_63_63_27_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_379_push_recovery_back10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_421_push_recovery_front02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_32_F_MoSh_Subject_32_F_19_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_72_F_MoSh_Subject_72_F_5_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_walking_fast05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_02_02_08_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_379_push_recovery_stand_left10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_shiono_gesture_etc-35-west_side-shiono_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HUMAN4D_Subject3_Medhi_RGB_TalkingWalking_S3_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_378_push_recovery_front04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/ACCAD_MartialArtsWalksTurns_c3d_E1_-_Turn_around_right_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_06_06_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/GRAB_s3_airplane_offhand_1.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_walking_run10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_83_83_15_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_36_F_MoSh_Subject_36_F_21_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_359_bend_left06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_11_WalkInCounterClockwiseCircle05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/ACCAD_Male2MartialArtsStances_c3d_D15_-_switch_stance_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_83_83_34_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_parkour06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_throw_left02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_3_kneel_up_from_crawl02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S07_Expert_Trial_upper_left_right_037_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_317_walking_run03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_183_walking_run07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/SSM_synced_20161014_50033_ATUSquat_sync_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_425_walking_fast02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_291_push_recovery_left07_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_123_123_10_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S09_Novice_Trial_upper_left_188_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S09_Novice_Trial_upper_left_right_087_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_37_37_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_54_54_21_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S05_Novice_Trial_upper_left_right_007_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_425_walking_01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_105_105_35_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_118_118_10_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_118_118_19_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_136_136_06_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_69_F_MoSh_Subject_69_F_1_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_348_parkour01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_4_WalkInClockwiseCircle10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_379_push_recovery_stand_right01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_67_F_MoSh_Subject_67_F_21_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/DFaust_67_50009_50009_light_hopping_stiff_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_143_143_20_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_425_walking_medium03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_138_138_23_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_314_turn_left04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_421_push_recovery_left06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_136_136_02_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_379_push_recovery_front06_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S07_Expert_Trial_upper_left_082_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_turn_left04_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_38_38_02_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/ACCAD_MartialArtsWalksTurns_c3d_E17_-_block_middle_high_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_12_12_02_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_114_114_06_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S08_Novice_Trial_upper_left_082_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_17_F_MoSh_Subject_17_F_14_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_314_turn_right10_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_77_77_30_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_41_F_MoSh_Subject_41_F_16_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_81_F_MoSh_Subject_81_F_15_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_55_55_18_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HUMAN4D_Subject4_Carine_RGB_BasketBall_S4_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_114_114_09_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_133_133_23_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_122_122_55_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/ACCAD_Male2MartialArtsStances_c3d_D5_-_ready_to_walk_away_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_07_07_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_parkour05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S09_Novice_Trial_upper_right_left_176_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_359_turn_right03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_183_turn_right08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_72_F_MoSh_Subject_72_F_6_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_359_turn_left02_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_317_turn_right05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_15_F_MoSh_Subject_15_F_16_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_8_F_MoSh_Subject_8_F_15_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_114_114_13_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S09_Novice_Trial_upper_left_219_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_83_F_MoSh_Subject_83_F_19_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_348_parkour05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_137_137_13_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_106_106_11_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_takiguchi_walk-05-backward-takiguchi_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_40_40_02_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_513_parkour01_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_30_30_13_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_84_84_01_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_22_23_justin_22_12_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_55_55_12_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_108_108_11_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_122_122_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_77_77_04_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_hamada_pose-04-drank-hamada_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_60_60_15_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S09_Novice_Trial_upper_right_left_118_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_139_139_15_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLhandball_S07_Expert_Trial_upper_right_210_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_aita_accident-08-damage_rightfoot-aita_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Transitions_mocap_mazen_c3d_punchkarate_kick_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_132_132_22_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_378_push_recovery_right05_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_36_F_MoSh_Subject_36_F_12_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_39_39_05_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/HUMAN4D_Subject3_4_Carine_INF_Dancing_S3S4_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kaiwa_jump-03-vertical-kaiwa_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_379_push_recovery_left08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_137_137_08_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_hamada_turn-05-turn-hamada_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_83_83_16_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_39_F_MoSh_Subject_39_F_18_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_84_84_05_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_143_143_38_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_79_79_01_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_144_144_17_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_51_F_MoSh_Subject_51_F_5_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_55_F_MoSh_Subject_55_F_21_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_83_83_49_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_3_F_MoSh_Subject_3_F_7_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/SSM_synced_20160330_03333_side_hopping_poses_59_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Transitions_mocap_mazen_c3d_airkick_turntwist180_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_36_36_18_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_27_F_MoSh_Subject_27_F_5_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_31_F_MoSh_Subject_31_F_21_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_hamada_walk-17-push_by_back-hamada_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_36_36_04_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_39_F_MoSh_Subject_39_F_14_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_359_turn_right08_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_83_83_53_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_120_120_07_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_15_15_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_74_74_05_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_06_06_14_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/ACCAD_MartialArtsWalksTurns_c3d_E3_-_advance_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_144_144_28_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_62_F_MoSh_Subject_62_F_3_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_18_19_Justin_18_07_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kanno_accident-11-fall_down-kanno_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_54_54_22_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_132_132_53_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_39_F_MoSh_Subject_39_F_6_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_27_F_MoSh_Subject_27_F_17_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_17_17_09_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/KIT_167_parkour03_poses_100_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_hamada_accident-08-damage_rightfoot-hamada_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_31_F_MoSh_Subject_31_F_8_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/DFaust_67_50025_50025_punching_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/SFU_0018_0018_Walking001_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_55_55_01_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_48_F_MoSh_Subject_48_F_18_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Transitions_mocap_mazen_c3d_airkick_jumpingtwist360_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Transitions_mocap_mazen_c3d_devishdance_longjump_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/DFaust_67_50002_50002_light_hopping_loose_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kanno_gesture_etc-41-mosh-kanno_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_yamaoka_tennis-01-forehand-yamaoka_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/DFaust_67_50004_50004_shake_hips_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_133_133_04_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_22_F_MoSh_Subject_22_F_1_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_aita_sitdown_standup-16-reseat-aita_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/SFU_0015_0015_KendoKata001_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_31_F_MoSh_Subject_31_F_4_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_60_60_09_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_102_102_20_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_hamada_walk-10-shoulder_bag-hamada_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_48_F_MoSh_Subject_48_F_16_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_20_21_rory1_20_08_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_74_F_MoSh_Subject_74_F_20_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_108_108_13_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_144_144_05_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_143_143_01_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_91_91_17_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_105_105_11_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_aita_walk-23-shuffle_oneleg-aita_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_131_131_12_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_aita_walk-05-backward-aita_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_24_F_MoSh_Subject_24_F_12_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_63_63_09_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_58_F_MoSh_Subject_58_F_3_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_13_F_MoSh_Subject_13_F_9_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/DFaust_67_50009_50009_one_leg_loose_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_1_F_MoSh_Subject_1_F_13_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_13_13_32_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_hamada_walk-02-drank-hamada_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_53_F_MoSh_Subject_53_F_20_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_91_91_12_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_15_F_MoSh_Subject_15_F_14_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/ACCAD_Male2MartialArtsStances_c3d_D16_-_switch_stance_and_bounce_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_82_82_07_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_20_F_MoSh_Subject_20_F_8_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_3_F_MoSh_Subject_3_F_6_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_11_F_MoSh_Subject_11_F_11_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_108_108_20_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_143_143_09_poses_60_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_91_91_11_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_78_78_31_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_24_F_MoSh_Subject_24_F_2_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/ACCAD_Male2MartialArtsKicks_c3d_G3_-_front_kick_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_138_138_25_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_16_16_35_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Eyes_Japan_Dataset_kanno_accident-02-dodge_fast-kanno_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_127_127_16_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/Transitions_mocap_mazen_c3d_twistdance_walk_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/CMU_135_135_02_poses_120_jpos.npz",
+              "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8/BMLmovi_Subject_3_F_MoSh_Subject_3_F_18_poses_120_jpos.npz"
+            ],
+            "clip_uniform_ratio": 0.1,
+            "clip_adaptive_alpha": 0.01,
+            "eligibility_path": null,
+            "eligibility_mode": "off",
+            "eligibility_hard_threshold": 0.5,
+            "segment_manifest": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_runtime_2026-09-06/manifests/gate_on.json",
+            "segment_sampling_mode": "adaptive",
+            "sampler_seed": 71,
+            "segment_exploration_ratio": 0.8,
+            "segment_difficulty_power": 1.0,
+            "segment_rank": "failure",
+            "segment_progress_window": 10,
+            "segment_progress_floor": 0.0,
+            "segment_decay": 0.99,
+            "segment_prior_rate": 0.5,
+            "segment_prior_strength": 2.0,
+            "max_unit_probability": 0.05,
+            "max_clip_probability": 0.25,
+            "max_top1_probability": 0.05,
+            "min_entropy_effective_units": 12.0,
+            "curriculum_update_interval_steps": 50,
+            "segment_timeout_term": "segment_trial",
+            "verify_motion_hashes": true,
+            "gate_admission": "on",
+            "gate_manifest_sha256": "5a963422fcef4cee308dbbe689965877bcd191b62cbab1d57a52c2291b62b883"
+          }
+        }
+      },
+      "curriculum": {},
+      "metrics": {},
+      "recorders": {},
+      "is_finite_horizon": false,
+      "auto_reset": true,
+      "scale_rewards_by_dt": true
+    }
+  },
+  "agent": {
+    "type": "mjlab.rl.config.RslRlOnPolicyRunnerCfg",
+    "fields": {
+      "seed": 71,
+      "num_steps_per_env": 24,
+      "max_iterations": 20,
+      "obs_groups": {
+        "actor": [
+          "actor"
+        ],
+        "critic": [
+          "critic"
+        ]
+      },
+      "save_interval": 100,
+      "experiment_name": "g1_tracking",
+      "run_name": "gate_on_smoke_s71",
+      "logger": "wandb",
+      "wandb_project": "mjlab",
+      "wandb_tags": [],
+      "resume": false,
+      "load_run": ".*",
+      "load_checkpoint": "model_.*.pt",
+      "clip_actions": null,
+      "upload_model": true,
+      "class_name": "OnPolicyRunner",
+      "actor": {
+        "type": "mjlab.rl.config.RslRlModelCfg",
+        "fields": {
+          "hidden_dims": [
+            512,
+            256,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "GaussianDistribution",
+            "init_std": 1.0,
+            "std_type": "scalar"
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        }
+      },
+      "critic": {
+        "type": "mjlab.rl.config.RslRlModelCfg",
+        "fields": {
+          "hidden_dims": [
+            512,
+            256,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        }
+      },
+      "algorithm": {
+        "type": "mjlab.rl.config.RslRlPpoAlgorithmCfg",
+        "fields": {
+          "num_learning_epochs": 5,
+          "num_mini_batches": 4,
+          "learning_rate": 0.001,
+          "schedule": "adaptive",
+          "gamma": 0.99,
+          "lam": 0.95,
+          "entropy_coef": 0.005,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.2,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      }
+    }
+  },
+  "device": "cpu",
+  "manifest": {
+    "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/gate_runtime_2026-09-06/manifests/gate_on.json",
+    "sha256": "5a963422fcef4cee308dbbe689965877bcd191b62cbab1d57a52c2291b62b883"
+  },
+  "sources": {
+    "/home/linjiw/climb-gate-ablation-2026-09-06/tools/train_gate_smoke.py": "a4ae914f1a847b72f4e671560225a8eb13bc621660be4fdd66a4674fe4af82d6",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/climb/gate_ablation.py": "dba64b750cf65dffe836424122778b1dc6922b317b169ca2c8cf0e426e8df88b",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/climb/segment_command.py": "da0132e6facd00ec088f6fafdd7f3aa8ab0a405644f7f56bc61a056c4855a696",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/climb/segment_runtime.py": "2b2631e2fffdebb70eac8d885daca4689283e52c0674ddfcd79d29dc0591e50f",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/climb/segment_curriculum.py": "dd3fe6f54ab11b09e8ba28d29504f4b6d1403f7102ac9fc0ce3ca1082df24b8e",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/climb/segment_env_cfg.py": "dda2a3c044235e102bf05c30fdd26ea2cb5f6610f57426807e432497d765b5f2"
+  },
+  "full_training_enabled": false
+}
