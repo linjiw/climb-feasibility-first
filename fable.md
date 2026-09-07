@@ -1,426 +1,382 @@
-# fable.md — Research guidance for CLIMB / feasibility-first (2026-08-27, rev 3)
+# fable.md — Research guidance for CLIMB / feasibility-first (2026-09-07, rev 4)
 
-**Author:** Claude Fable 5, from a full read of `plan/STATUS.md`, the sealed result files,
-`paper/RESULTS_LOG.md`, `RED_TEAM.md`, the DFRP v0/v1 results, the Newton direction addendum,
-the segment-native follow-up, and the autoresearch logs through `autoresearch-260821-0115`.
+**Author:** Claude Fable 5.1, from a full read of `plan/STATUS.md`, `paper/RESULTS_LOG.md`,
+`paper/RED_TEAM.md`, `paper/icra/DRAFT.md` + `REVIEW_2026-09-04.md` + `BUILD_AUDIT_2026-09-04.md`,
+`reports/relative_confirmation_results_2026-09-06/README.md`, and the September 5–6 plan
+addenda (`USEFUL_PRACTICE_SUBMISSION`, `USEFUL_PRACTICE_NEXT_STEPS`, `ICRA_EVIDENCE_ROADMAP`,
+`MATCHED_GATE_RUNTIME`, `H1_*`, `RELATIVE_PROGRESS_R1_RESULT`).
 **Status:** unsealed guidance. Not a preregistration; authorizes nothing by itself.
-**Rev 2 (Aug 26, evening):** Phase-W tranche W2–W5 landed and verified (§7).
-**Rev 3 (Aug 27, 01:00):** Phase N sealed and the real N-c probe is running (§9). B1–B3 closed. Next directive is §10; §8 is kept as the record of what was asked.
-Supersedes the aspirational plan in `/home/robotixx/newton/fable.md` (Aug 2026 v1), which
-predates every measured result below.
+**Supersedes** rev 3 (2026-08-27; kept in git history at `d77b226`). Everything rev 3 asked for
+has since happened: Newton gate sealed and failed (G3 killed), Phase-G sealed and run, E4
+`not_tested`, relative-ALP calibrated, four-arm three-seed confirmation completed. This revision
+is written for one purpose: **a complete, honest, eight-page ICRA 2027 submission on
+September 15, 2026 — eight days from now.**
 
 ---
 
 ## 0. One-paragraph verdict
 
-The project has already produced its paper. The *measurement* line is strong, sealed, and
-public: sampler collapse on a physically impossible clip, the ε-non-floor, the 22.8 % vs 0.14 %
-cross-corpus prevalence contrast, the anatomy of clip #44, feasibility features as the first
-policy-transferable difficulty labels, and a released tool. The *intervention* line is, as of
-today, a sequence of honest nulls: E-HYG (prune) null, FGAS (soft segment) fails its wiring gate,
-N7 (repair-all) misses SESOI with the benefit sitting in over-budget edits, P-SIGN fails, the
-segment-v2 adaptive arm is 0.014 TV from its own control. **The correct reading is not "the
-intervention doesn't work"; it is "we have not yet run an intervention arm whose manipulation
-check passes."** That is the single thing the next GPU window must fix, and it is cheaper than
-any of the four programs (DFRP-at-scale, Newton fragility, Universal Atlas, SafeTrack) currently
-competing for attention. Everything below follows from that.
+The research programme has done its job: the sealed four-arm confirmation ran to completion
+and returned **inconclusive** (final feasible-hard R−U = −0.015, 95 % seed-t CI
+[−0.094, +0.064]; exploratory AULC negative in 3/3 seeds). The correct reading is not
+"CLIMB failed" — it is that the paper's claim set must now be *chosen*, not *hoped for*. The
+draft of Sept 4 still says E4 is "in progress" and frames three method contributions of which
+two have no positive policy result. That framing will not survive review and must change this
+week. The strong, fully-evidenced spine is the **measurement line**: reference–physics
+misalignment (RPM) diagnosed in a sealed campaign, a bank-scale screen with cross-implementation
+agreement, feasibility features that transfer difficulty across policies, an exact temporal
+support interface, and a *controlled* result that on exact support, outcome-driven allocation
+changes exposure but not held-out tracking at this budget. **One** experiment is worth the GPU
+before the evidence cutoff: **H1, admission on/off under the same failure-driven allocator on
+the contaminated bank**, because it is the only test of the word "feasibility-gated" in the
+title and it fits in roughly one GPU-day. Everything else (continuous execution, physical
+sensitivity, noise study, practice branches, video, hardware) is stopped until Sept 16.
 
 ---
 
-## 1. Where the project actually stands (Aug 26)
+## 1. Where the project stands on Sept 7
 
-### 1.1 What is settled and should not be reopened
+### 1.1 Settled evidence the paper can lean on
 
 | claim | label | artifact |
 |---|---|---|
-| Failure-adaptive sampler collapses (top-1 0.87–0.89) onto one clip; that clip's descent is dynamically infeasible (~329 N unsupported vs 327 N robot) | sealed ✓ | `reports/A5_coverage_dose.json`, `reports/N1_clip44_knee_id.json` |
-| ε/N is not a floor; normalise-then-mix repairs it (+0.030/+0.028/+0.030 per seed) | sealed ✓, upstream-filed | mjlab#1153, wbt#73 |
-| 22.8 % of the AMASS→wbt→G1 bank is >10 % infeasible; BONES-SEED/SONIC is 0.14 % — *per corpus-and-pipeline pairing* | measured, pre-registered P10 | `reports/feasibility_all/`, P10 register |
-| Feasibility features lift cross-policy difficulty transfer 0.567→0.609 (p = 0.010) | sealed ✓ (F2) | `reports/N_atlas_v21.json` |
-| Dual-stack conformance \|Δq̇\| ≤ 3e-5 after four integration fixes | measured | `plan/S1_RESULT.md` |
-| G1 physics-fragility gate: #44 is a coverage failure, not physics fragility | sealed ✗ (kept) | `plan/G1_RESULT.md` |
-| Exact DFRP repair contract: 22/26 flagged + 4/4 byte-identical controls, 36 units, 10,561 legal starts, fail-closed hash binding | measured (implementation gate) | `reports/dfrp_v1_exact_panel/iter1/` |
+| Failure-adaptive sampler concentrates (peak top-1 0.870–0.893) on a kneel/crawl clip whose 0.75–1.75 s descent demands ≈329 N unsupported vs 327 N robot weight; uniform beats adaptive +0.030/+0.0275/+0.030 in 3/3 paired seeds | sealed ✓ | `reports/A5_coverage_dose.json`, `A7_attractor.json`, `N1_clip44_knee_id.json` |
+| ε/N is not a floor; normalise-then-mix is | sealed ✓, upstream-filed (mjlab #1153, wbt #73, still open) | `RED_TEAM` #3 |
+| 2,442/10,705 (22.8 %) flagged in AMASS→wbt→G1; 7/4,950 (0.14 %) in BONES-SEED→G1; never pooled | measured | `reports/feasibility_all/`, `reports/feasibility_sonic/` |
+| Same-clip 20+20 panel: ρ 0.984/0.997, 39/40 strict flags agree (κ 0.948) | measured | `reports/feasibility_xcheck/` |
+| Feasibility features lift cross-policy difficulty transfer 0.567→0.609 (p = 0.010 vs 200 random triples) | sealed ✓ | `reports/N_atlas_v21.json` |
+| Exact support over tier_800: 1,841 runs → 1,184 admissible units, 368,951 legal starts; hash-bound; paired evaluator with 100-clip name+hash-disjoint panel, 2,800 conditions | measured (apparatus) | `reports/g_segment/unit_table.json`, `eval_conditions.json` |
+| DFRP v1 exact contract: 22/26 flagged qualify, 4/4 controls byte-identical | measured (implementation gate) | `reports/dfrp_v1_exact_panel/iter1/` |
+| DFRP fixed-policy deployment: raw 0.3925 → repaired 0.3915, Δ −0.0010, clip-bootstrap CI [−0.0086, +0.0080], one policy, 26 clips | measured exploratory | `reports/dfrp_policy_validation_2026-09-05/result.json` |
+| Newton no-training predictive gate FAIL (partial ρ 0.141, p 0.158); G3 killed | sealed ✗ (kept) | `plan/NEWTON_PRED_RESULT.md` |
 
-### 1.2 The nulls, read correctly
+### 1.2 What changed since rev 3 (the load-bearing new facts)
 
-Each null has a *specific* reason that is not "the idea is wrong":
+1. **E4 (absolute-floor ALP, seed 1): `not_tested`.** Mean post-warm-up TV 0.0297 < 0.05. Seeds
+   2–3 stopped, endpoint never opened. This is the fourth arm in a row to fail its manipulation
+   check (FGAS, segment-v2, E4, and the old adaptive "A" arm at TV 0.03 inside confirmation).
+2. **Relative ALP (R) passes the manipulation gate** in every seed run (TV 0.082–0.083; effective
+   units > 600; caps respected; zero invalid/censored). So did the conditional-failure allocator
+   D (TV 0.082–0.086). **The allocation half of the thesis is now testable and was tested.**
+3. **Confirmation (U/A/R/D × seeds 21–23, 512 env × 4,000 it = 49.2 M transitions per policy,
+   48 held-out cells): inconclusive.** Per-seed R−U: −0.0340, −0.0330, +0.0218. All-panel guard
+   fails (CI lower −0.114). R−D −0.0067 with CI [−0.022, +0.008] — R and D are
+   indistinguishable and both slightly below uniform. Exploratory hard AULC R−U negative in
+   every seed (mean −0.029). **No allocator beats uniform on exact support at this budget.**
+4. **Repair does not move a fixed policy** (Δ −0.001 on 26 clips). Combined with N7, the honest
+   sentence is: certified repair is *consumable without harm* on this panel; it is not a
+   performance lever we have shown.
+5. **H1 is nearly launch-ready.** Matched gate-on/gate-off runtime exists in
+   `/home/linjiw/climb-gate-ablation-2026-09-06`; CPU PPO smokes pass from identical actor
+   tensors; the candidate partition retains all 1,184 feasible units + 465 rejected intervals
+   (368,951 of 417,072 legal starts admitted; 11.54 % excluded); the gate-off prior floor
+   guarantees ≥ 0.0923 rejected-start probability; the provenance checker passes 19 tests.
+   Missing: the freeze contract, seeds, the analysis decision rule, and the scheduler.
+6. **The physics audit** found both knee clamps at ±139 N·m vs Unitree's public 90 (G1) /
+   120 (G1 EDU) N·m; zero command delay; plane terrain. This is one limitation sentence, not
+   an experiment.
+7. **The GPU follow-up queue is in a failed state**: nine CUDA lifecycle cells completed but the
+   aggregate original/unchanged CSV parity gate failed, cause unresolved. The physical-
+   sensitivity study S1 therefore cannot be trusted to produce a paper number this week.
 
-- **E-HYG** (prune 99/800 clips): the treatment differed from control by 12 % of clips that
-  the policy was already failing on. A prune removes exposure the policy wasn't converting
-  anyway. Expected null; sealed as such. Do not re-run pruning.
-- **FGAS soft**: failure weighting swamped the clip-mean multiplier (late rejected mass 0.199 >
-  0.15). This is the *raw-failure-flux* sampler bug the three independent reviews later found
-  (`SEGMENT_NATIVE_FOLLOWUP` §Load-bearing findings 1–5). The v2 runtime fixes it. The null is
-  about the old sampler, not about segment-native curation.
-- **N7**: +0.0397 decomposes as −0.0036 (policy) + 0.0233 (reference) + 0.0200 (interaction),
-  with the gain concentrated in 11 over-budget (>15 cm) edits. Lesson: repair changes the
-  *target*, so a survival contrast against the raw reference is not a policy claim. The 8 cm
-  budget + fidelity metrics in DFRP v1 are the right response; they've been built.
-- **P-SIGN**: sign reversal is real on #44 (r = 0.92 across seeds) but not general (7/12) and
-  not clean on controls (4/12). Dead as a detector; alive as one anatomy paragraph.
-- **Segment-v2 pilot**: mechanically clean (zero invalid starts, exact truncation) but the
-  adaptive distribution was 0.014 TV from uniform because conditional failure saturated near 1.
-  **This is the load-bearing null.** It means no segment-level adaptive arm has yet been
-  *tested*; the arm was a uniform arm wearing an adaptive label.
+### 1.3 Calendar and machine
 
-### 1.3 Calendar reality
-
-- v5 schedule: CPU-only to **Sept 15**; companion submittable **Sept 5** (10 days); flagship
-  full draft **Sept 12**; results freeze **Dec 1**; RSS 2027.
-- Last commit Aug 21 01:45. Five days of no recorded progress in the writing-first window.
-- Companion note is v0.2 with zero unresolved majors; it is blocked on Linji's author/scope
-  pass and figure typesetting, not on research.
-- GPU (RTX 5090, 32 GB) is a shared box; today it carries three foreign jobs and ~30 GB used.
-  The Sept 15 "GPU order" assumption should be treated as *gap capacity*, not ownership.
-
----
-
-## 2. Strategic assessment
-
-### 2.1 The thesis has narrowed, and that is good
-
-The public README already states the real thesis: **difficulty conflates feasibility, support,
-and intrinsic hardness, and pipelines that can't tell them apart optimise the wrong objective.**
-The flagship's spine (collapse → non-floor → unsupported attractor → grounded repair →
-composition N3 → support-moderation E3) is complete except for E3, which is frozen post-Sept 15.
-
-The DFRP advisor guidance (Aug 21) and the Newton direction addendum (Aug 21) each propose a
-*second* paper's worth of work. Both are good programs. Neither should be allowed to pull
-effort from the flagship before Sept 12, and neither should be started at scale before one
-clean segment-native arm exists — because both of them *depend* on that arm:
-
-- DFRP arms 1–3 are "curated bank × sampler" arms. Without a sampler whose manipulation check
-  passes, arm 3 vs arm 2 is uninterpretable (it would be FGAS/segment-v2 again).
-- Newton G3 vs G2 is "learning-progress + fragility vs learning-progress". G2 is precisely the
-  arm that has never been run.
-
-So the dependency graph is: **G1/G2 wiring screen → (DFRP arm 3, Newton G3)**, not the other
-way round. The Newton recertification is a *parallel* CPU/small-GPU track, not a prerequisite
-for G2.
-
-### 2.2 Three temptations to refuse
-
-1. **Bank-wide DFRP repair as the next milestone.** The 65.8 % census is a legacy root-only
-   number at 15 cm; the exact contract admits 22/26 on a *stratified* panel. Extrapolating to
-   ~1,600 clips before a single policy has consumed 26 repaired clips is exactly the pattern
-   (build the artifact, then discover the training effect is null) that E-HYG and N7 already
-   punished. Scale the repair only after a training arm shows the 26-clip view is worth
-   consuming.
-2. **Making Newton fragility a training signal before it is a predictor.** The direction
-   addendum's gate 2 ("no-training predictive gate: Newton vector must improve held-out
-   degradation prediction beyond screen + reference features") is exactly right and should be
-   held to. G1 already showed same-solver chaos floors ≈ effect sizes on single trajectories;
-   N5 fixed that with replicate means. The fragility vector is plausible as an *instrument*
-   (companion of the atlas) even if G3 never runs.
-3. **Adding a fourth program** (differentiable feasibility, cross-embodiment atlas, terrain,
-   SafeTrack). These go to `plan/PARKING.md` with one paragraph each. The no-new-threads rule
-   from v5 stands until the flagship draft is assembled.
-
-### 2.3 Where the remaining scientific upside is
-
-Ranked by (probability the sealed result is positive) × (what it adds to the paper):
-
-1. **A segment-native adaptive arm with a passing manipulation check** (G2 in the Newton
-   addendum; "exact-feasible conditional segment-adaptive v2" in the follow-up). This converts
-   §8 of the flagship from "three nulls and an implementation" into a causal test of the
-   thesis's intervention half. Even a null *with a passing manipulation check* is publishable
-   as "allocation doesn't help once hygiene is exact", which is a clean statement.
-2. **E3 support-moderation** (sealed addendum v2, `2c38845b…`, named gainers/losers). Cheap
-   relative to its value — it is the scale test of the atlas result and its predictions are
-   already on the record. Runs uniform arms only, so it does not depend on item 1.
-3. **Newton v1.5 no-training predictive gate.** CPU + short GPU probes; produces a companion
-   instrument regardless of outcome; unblocks or kills G3 without a training seed.
-4. **DFRP curated-view training arm (26 clips as a treatment inside G1)** — only after item 1
-   shows the sampler is interpretable.
+- **ICRA 2027 deadline: Sept 15, 2026** (checked against the official call on Sept 6). Eight pages
+  including references. Video window closed Sept 9, reopens Sept 17–22.
+- Internal gates already adopted: **Sept 10 claim selection, Sept 12 evidence cutoff,
+  Sept 13–15 integration.** This document tightens the first to **Sept 8** (see §3) because the
+  claim set no longer depends on any pending result except H1.
+- Current draft: `paper/icra/ICRA_DRAFT.pdf` is **7 of 8 pages**, built Sept 4–5, with §5.4
+  reading "E4's three-seed policy comparison is in progress". It has never been rebuilt with
+  the completed result.
+- GPU today: 16 GB card, 1.2 GB used, 1 % utilisation, one foreign eval process. A 512-env,
+  4,000-iteration arm took **0.74 GPU-hours** (R1, shared). The 12-run + 48-cell confirmation
+  finished in ≈ 14 wall-hours. **H1 at five paired seeds (10 runs + 40 cells) is ≈ 12–14 h.**
+- Working tree: 8 modified + ≈ 50 untracked files (plans, reports, `climb/relative_progress.py`,
+  two figure scripts, tests). Nothing sealed touched. **Not committed.** Four detached
+  worktrees hold the H1, ICRA-evidence, signal-quality, and pages tooling.
 
 ---
 
-## 3. Directive — the next six weeks
+## 2. Review of the Sept 4 draft (Xiao-rubric pass, read-only)
 
-### Phase W (now → Sept 12): finish the paper; CPU only
+**Scope:** full `paper/icra/DRAFT.md` (mirrors `root.tex`), plus the claim ledger. Not an ICRA
+verdict; an evidence audit.
 
-| # | task | done when | owner/notes |
+**Charitable reconstruction.** Outcome-adaptive curricula misread reference defects as learnable
+difficulty; CLIMB screens final robot-space references for contact/actuator admissibility, routes
+intervals, and lets adaptive allocation act only on exact feasible support. Strongest supported
+contribution: the RPM diagnosis + bank-scale screen + exact-support apparatus, backed by sealed
+campaign telemetry and cross-implementation agreement.
+
+### 2.1 Claim–evidence table for the abstract as written
+
+| abstract claim | unit / n | comparator | warrant today | smallest repair |
+|---|---|---|---|---|
+| top-1 peaked 87–89 %, same kneel/crawl attractor recurs | seed; 3 | historical uniform/grounded | supported (peak owner differs in 2 seeds — already stated in §5.1) | none |
+| refeas flags 2,442/10,705; 39/40 agreement | clip | one pipeline; enriched panel | supported, scoped | none |
+| DFRP qualifies 22/26, 4/4 controls unchanged | clip in frozen panel | qualification gates | supported as *implementation*; abstract implies more | add "fixed-policy deployment unchanged (Δ −0.001)"; drop "restores" verbs |
+| "exact-support curriculum … capped learning-progress allocation" as contribution 3 | — | — | **now contradicted as a benefit**: confirmation inconclusive, AULC negative 3/3 | rewrite as *interface + matched negative/inconclusive result* |
+| transfer 0.567→0.609, p = 0.010 | clip; 100 | 200 random triples | supported | none |
+| "closed-loop data-to-policy framework" | — | — | unclear: the loop has never improved a policy | replace with "a training interface that makes admission and allocation separately testable" |
+
+### 2.2 Prioritised concerns
+
+1. **Validity-critical — §5.4 and contribution 3.** The manuscript's E4 paragraph is stale; the
+   completed result contradicts any benefit reading. Consequence: a reviewer who reads "in
+   progress" beside an ALP contribution will assume the result was withheld. Repair: replace
+   §5.4 with the completed four-arm table (per-seed deltas, both CIs, AULC as exploratory) and
+   the existing figure `paired_results_and_learning_curves.pdf`; rewrite contribution 3 and the
+   abstract; retitle (§3.3).
+2. **Validity-critical — the title word "gated".** No experiment in the paper isolates the gate.
+   E-HYG (whole-clip prune) is a null; exact-interval gating has never been contrasted with its
+   absence. Repair: H1 (§4), or, if H1 does not land by the cutoff, a title and abstract that
+   claim *screening + exact support*, not *gating benefit*.
+3. **Major — DFRP page cost vs evidence.** §3.3 spends a full display program plus a two-stage
+   description on a component whose only policy-facing number is Δ −0.001. Repair: compress to
+   one paragraph and one table row; move the program to a released-code note. This also buys
+   the space §5.4 needs.
+4. **Major clarification — "closed loop".** Fig. 1 and the abstract call CLIMB closed-loop. The
+   only loop actually run is allocation-from-outcomes, which did not help. Repair: describe the
+   loop as *what the interface permits* and state that the tested loop gave no measurable gain.
+5. **Presentation — pooled tiers.** §5.4's "Alternative routing and allocation controls" mixes
+   sealed (E-HYG), failed-manipulation (FGAS) and exploratory (N7) numbers in one paragraph.
+   Repair: a four-row table with a status column, one sentence each.
+
+### 2.3 Arithmetic pass
+
+- 2,442/10,705 = 22.81 % ✓; 7/4,950 = 0.141 % ✓; 39/40 = 97.5 % ✓; 1,841 − 657 = 1,184 ✓.
+- Confirmation: seed deltas −0.0340, −0.0330, +0.0218 → mean −0.0151, sd 0.0319, t(2, .975)
+  = 4.30 → half-width 0.079 → CI [−0.094, +0.064] ✓ matches the ledger.
+- **Power fact the paper must state:** with that seed sd, a three-seed design cannot resolve a
+  +0.02 target (half-width 0.079). The +0.02 margin was a *point* target with a lower-bound
+  rule; it was never a detectable effect size at n = 3. Say this in limitations rather than let
+  a reviewer discover it.
+
+| paired seeds | 95 % t half-width at sd 0.032 |
+|---|---|
+| 3 | 0.079 |
+| 4 | 0.051 |
+| 5 | 0.040 |
+| 6 | 0.034 |
+
+- Iteration 2000 = 2001/4000 = 50.0 % of budget ✓ (zero-indexed checkpoint convention).
+- 368,951 / 417,072 = 88.46 % admitted → 11.54 % excluded ✓.
+
+---
+
+## 3. The decision: what the ICRA paper claims
+
+### 3.1 Principle
+
+Claim exactly what the ledger supports on Sept 12, with one status label per number, and let
+the *controlled inconclusive* result be a finding rather than an apology. A reviewer can
+reject an overclaim; a reviewer cannot reject a matched, hash-bound, preregistered comparison
+for returning the answer it returned — provided the paper's contributions are stated so that
+they do not depend on a positive allocation effect.
+
+### 3.2 Three contributions, rewritten
+
+1. **RPM and `refeas`** *(sealed/measured).* A final-trajectory contact-capacity screen; the E1
+   attractor anatomy; 22.8 % vs 0.14 % per corpus–pipeline pairing; 39/40 cross-implementation
+   agreement; feasibility features transfer difficulty across policies. *Unchanged; this is the
+   paper's core.*
+2. **Exact temporal support as a training interface** *(measured apparatus + controlled result).*
+   Frame-run units, hash-bound legal starts, zero rejected mass, explicit truncation, a paired
+   evaluator — **and the finding that, on identical exact support and budget, four allocators
+   (uniform, absolute-ALP, relative-ALP, conditional-failure) differ in exposure (TV 0.03–0.09)
+   but not in held-out tracking at three seeds** (R−U −0.015 [−0.094, +0.064]; R−D −0.007
+   [−0.022, +0.008]). State plainly that the design was underpowered for +0.02 and that AULC
+   was exploratory-negative. This is the honest replacement for "capped learning-progress
+   allocation" as a contribution.
+3. **Admission value (H1)** *(conditional; §4).* Same failure-driven allocator D, contaminated
+   800-motion bank, admission on vs off, ≥ 5 paired seeds. If it lands by Sept 12, it becomes
+   contribution 3 with whatever sign it has, plus the mechanism telemetry (does D's excess mass
+   migrate onto rejected intervals?). If it does not land, contribution 3 is **deleted**, not
+   left pending, and DFRP + H1 become one "next test" paragraph.
+
+DFRP is demoted to a routing option inside contribution 1 (one paragraph in §3, one row in the
+results table with the 22/26 and the Δ −0.001). It stays in the paper because reviewers will
+ask "why not repair?"; the answer is now measured: it is safe and, so far, neutral.
+
+### 3.3 Title
+
+- Without H1: **"When Failure Is Not Difficulty: Screening Reference–Physics Misalignment and
+  Testing Adaptive Allocation on Exact Support for Humanoid Motion Tracking."**
+- With H1 (either sign): **"Feasibility-First Humanoid Motion Tracking: Screening
+  Reference–Physics Misalignment and a Matched Test of Admission and Allocation."**
+
+Do not keep "Feasibility-Gated" unless H1 is in the paper. Do not keep "Generalist Humanoid
+Controllers" — nothing in the paper tests generality across embodiments or architectures.
+
+### 3.4 Abstract skeleton (numbers only where a table holds them)
+
+RPM definition → E1 anatomy (3/3 seeds, 329 N vs 327 N, uniform +0.03 in 3/3) → screen at bank
+scale (2,442/10,705; 7/4,950; 39/40) → transfer (0.567→0.609, p = 0.010) → exact support
+(1,184 units, 368,951 starts, zero rejected mass) → **on that support, four allocators change
+exposure but not held-out tracking at three seeds (R−U −0.015, CI [−0.094, +0.064])** →
+[H1 sentence if landed] → conclusion: feasibility, support, and allocation are separately
+measurable, and the measurable damage of RPM is in exposure, not in any allocation rule tested.
+
+---
+
+## 4. The one experiment: H1, admission on/off
+
+### 4.1 Why H1 and nothing else
+
+| candidate | tests the paper's claim? | can produce a paper-bound number by Sept 12? | verdict |
 |---|---|---|---|
-| W1 ⏳ | Companion note author/scope pass + figure typesetting; re-render `docs/companion.html` | Linji sign-off; `RED_TEAM` rows 3/4/8 closed | blocked on Linji since Aug 20 — this is the critical path |
-| W2 ✅ | **Durable copy of the BONES-SEED 4,950-row screen CSV** + sentinel under `reports/feasibility_sonic/` | `RESULTS_LOG` cross-bank row loses its ⚠ | flagged since Aug 19; re-run the screen (0.145 s/clip ≈ 12 CPU-min) if the /tmp copy is gone |
-| W3 ✅ | Flagship §8 rewrite as *three nulls, one mechanism*: E-HYG (exposure not converted), FGAS/segment-v2 (manipulation failure), N7 (reference-side gain). State explicitly that no interpretable adaptive segment arm has run and that G2 is the slot | §8 has no "pending 🕐" doing load-bearing work | the honest framing is stronger than a slot promising a positive result |
-| W4 ✅ | Fold DFRP v1 (22/26, fail-closed contract, four excluded clips as the case for separate residual/IK gates) into flagship §6 method + companion §8 as **implementation-validated, not policy-validated** | numbers pathed in `RESULTS_LOG` (already), prose landed | one page, no more |
-| W5 ✅ (assembly; red-team pass still Sept 5–12) | Assemble `DRAFT_full.md` with slots; red-team pass Sept 5–12 per v5 | `RED_TEAM` open items ≤ 2, both "by construction" | |
-| W6 ⏳ | Cross-retargeter feasibility comparison (GMR vs wbt on the 40 shared LAFAN1 clips) — **only if** W1–W5 are done before Sept 5 | one CSV + one sentence in companion §4 | parked idea; one CPU afternoon; strengthens "pipeline property" |
+| **H1 gate on/off under D** | yes — the only test of "feasibility-gated" | yes: ≈ 12–14 GPU-h; runtime, partition, provenance checker exist | **run** |
+| C1 continuous execution | no (evaluation-duration question) | no: selection manifest and freeze absent | stop |
+| S1 physical sensitivity (96 cells) | no (robustness of already-inconclusive policies) | no: GPU parity gate failed, cause unresolved | stop |
+| N stationary-noise study | mechanism of R only | no: 17.6 M-transition burn-in per cell | stop |
+| P practice branches | mechanism of R only | no: restoration untested | stop |
+| More confirmation seeds | forbidden by the frozen disposition | — | never |
+| Video / hardware | not evidence | window closed Sept 9 | Sept 17–22 only if trivial |
 
-Refuse during Phase W: any GPU training, any new preregistration except the ones in Phase G
-(sealing is fine; running is not), any bank-wide repair run.
+### 4.2 Design (freeze before any GPU job; one seal, one analyzer dry-run)
 
-### Phase N (parallel, CPU + gap GPU, Aug 27 → Sept 15): Newton v1.5 recertification
+- **Arms:** gate-on (exact admission, current D) vs gate-off (same D over the full candidate
+  partition: 1,184 feasible units + 465 rejected intervals, exact H = 50 non-wrapping starts
+  everywhere; rejected intervals are *dynamically rejected*, never called admissible).
+  Controller, rewards, PPO, randomisation, caps, seeds, evaluator, panel: identical.
+- **Seeds: five paired fresh seeds** (not 21–23; not 11/12/31/32/51/71/81). Five seeds give a
+  half-width of about 0.040 at the observed seed sd, which still exceeds the historical E1
+  effect of 0.03 — so state up front that H1 is powered for effects ≥ ≈ 0.04, and declare the
+  outcome format as estimate + CI + per-seed values, with "positive" only if the CI lower bound
+  > 0 and "negative" only if the upper bound < 0. Drop the +0.02 SESOI as a pass/fail rule; keep
+  it as the reported reference line. Six seeds if the first five finish before Sept 11 12:00.
+- **Primary:** paired final feasible-hard TrackingScore, gate-on − gate-off. **Guard:** all-panel
+  paired difference reported, no lower-bound rule.
+- **Mechanism endpoint (pre-declared, cheap, informative at any n):** in gate-off, the mean
+  post-warm-up share of D's *above-prior* mass that lands on rejected intervals, versus the
+  rejected intervals' prior share (0.115 of starts; ≥ 0.092 after the floor). Also: top-1
+  interval identity per seed and whether it is a rejected interval. This is E1's attractor
+  question asked at interval scale and it does not need policy power to answer.
+- **Manipulation checks:** gate-on realised rejected trials = 0; gate-off realised rejected
+  trials > 0 and post-cap rejected probability ≥ 0.0923; both arms zero invalid/censored;
+  exact sampler replay at every checkpoint (the existing checker).
+- **Analysis:** one frozen script with `--synthetic` positive/null/inconclusive/gate-fail
+  branches, dry-run before launch, hash in the seal. Exactly one printed status.
+- **Kill rule / calendar:** if the seal and scheduler are not live by **Sept 8 22:00 EDT**, or if
+  fewer than five paired seeds have passed training gates by **Sept 11 12:00 EDT**, H1 is out of
+  the paper and is written as the named next test. No partial-seed reporting.
+- **Budget:** 10 runs × 0.74 GPU-h ≈ 7.5 h training + 40 cells; run sequentially under the
+  existing 14,000 MiB / ≤ 60 % gate; one attempt per job; sentinel per job.
 
-Follow `plan/NEWTON_SEGMENT_DIRECTION_2026-08-21.md` §Staged gates 1–2 exactly:
+### 4.3 What H1 does to the paper
 
-- N-a. Fresh isolated venv (`newton15/.venv`), pin Newton 1.5.0 / Warp / MuJoCo 3.11 / MJWarp;
-  never touch `mjlab-1.6.0/.venv`. Record pins in `plan/NEWTON15_PINS.md`.
-- N-b. Recertify with the S1 six-step protocol on one easy exact unit and one contact-rich
-  exact unit from the DFRP v1 unit table (the units are hash-bound; use them). Pass = placement,
-  first obs, action, state, contact timing match; deterministic repeats give zero dispersion.
-  Expect the G0 lessons to bite again (DR mirror, float32 geometry, stale first obs, clip-wrap
-  teleport) — they are documented in `STATUS.md` §G0 lessons; check each before debugging.
-- N-c. Seal the **no-training predictive gate** *before* measuring: on a development-only
-  panel (the 42-unit mechanism panel from `reports/segment_v2_smoke/`), does the Newton axis
-  vector (delay, motor clamp, contact pipeline; 0.25–0.5 s canonical-state probes; replicate
-  means per N5) improve held-out-policy degradation prediction beyond `infeasible_frac` +
-  reference kinematics? Pre-declare the statistic (partial Spearman / permutation, as in
-  atlas v2.1) and the threshold.
-- Kill rule (already written, keep it): if N-c fails, Newton is an analysis instrument in the
-  companion/appendix and **G3 never runs**. Do not soften this after seeing the data.
+| outcome | contribution 3 sentence | title |
+|---|---|---|
+| CI lower bound > 0 | admission protects learning under a failure-driven allocator on a contaminated bank | "Feasibility-First … Matched Test" |
+| CI straddles 0, mechanism shows D's excess mass on rejected intervals | admission removes measurable exposure diversion; tracking effect below the resolvable size | same |
+| CI straddles 0, no exposure migration | at this contamination level (11.5 % of starts) admission neither helps nor harms; the E1 collapse needed the non-floor sampler *and* RPM | same, softened abstract |
+| upper bound < 0 | report it; discuss exclusion cost vs data loss | same |
 
-### Phase G (Sept 15 → Oct 31, gap-gated GPU): one clean causal test, then E3
+Every row is publishable because the paper's core (contribution 1) does not depend on it.
 
-**G-0. Seal first (CPU, before Sept 15):** a single preregistration covering a one-seed wiring
-screen and a three-seed confirmation of the four-arm design in the Newton addendum, *minus G3*
-unless N-c has passed by the seal date:
+---
 
-| arm | support | priority | contrast |
+## 5. Stop list (until Sept 16)
+
+- No S1, C1, N, P, shuffled-score, reliability-calibrated score, smooth gate, repair expansion,
+  Newton, hardware, or new preregistrations other than H1.
+- No modification of R, D, thresholds, seeds, or endpoints of the completed confirmation. No
+  bootstrap or secondary re-labelling. The disposition word is "inconclusive".
+- No new tools in the original `tools/` root while the H1 worktree is the launch source; keep
+  H1 in `/home/linjiw/climb-gate-ablation-2026-09-06` with its own inventory hash.
+- No edits to `docs/`, the companion, or the flagship until after submission.
+- No autonomous "development checks" that consume the writing window. Every CPU hour from
+  Sept 9 goes to the manuscript unless it is the H1 analyzer dry-run.
+
+Each stopped thread gets **one sentence** in §6 Limitations / future work, with its measured
+preparatory fact where one exists (knee 139 vs 90/120 N·m; zero command delay; continuous
+adapter runs 8.6 s references; 17.6 M-transition burn-in bound for the noise study).
+
+---
+
+## 6. Schedule, Sept 7 → 15
+
+| day | deliverable | done when |
+|---|---|---|
+| **Sept 7 (today)** | Commit the tree (§8.1). Read this file. Decide §3 (claim set + title) — this is the Sept 10 "claim selection" moved up. | `git status` clean except worktrees; decision recorded in `plan/STATUS.md` as one dated entry |
+| **Sept 8** | H1 seal: contract JSON (arms, five seeds, partition hashes, endpoints, mechanism endpoint, kill rule), analyzer with four synthetic branches, scheduler argv; launch by 22:00 | `plan/H1_FREEZE_2026-09-08.sha256` written; first training job running; sentinel dir exists |
+| **Sept 8–9** | Manuscript surgery (CPU): §5.4 → completed four-arm table + figure; contribution 3 rewrite; abstract; title; DFRP compression; §5.4 controls table; limitations power paragraph; AI-disclosure update (Codex *and* Claude assisted) | `paper/icra/build.sh` passes at ≤ 8 pages with H1 as a bracketed slot |
+| **Sept 10** | H1 mid-point: ≥ 6/10 training gates passed? If not on track for Sept 11 12:00, invoke the kill rule now and finalise the no-H1 title | decision line in `STATUS.md` |
+| **Sept 11** | H1 training complete, 40 cells run, analyzer run once, verbatim result into `RESULTS_LOG.md`, `STATUS.md`, §5.5 and abstract | one status word printed; hashes recorded |
+| **Sept 12** | **Evidence cutoff.** Rebuild PDF. Red-team pass on the new text only: every abstract number has a table; every tier labelled; no "closed-loop" verb without its qualifier | `RED_TEAM.md` new rows for E4-final and H1; build audit rerun |
+| **Sept 13–14** | Figure polish (Fig. 1 remove the "closed loop" arrow or relabel; Fig. 3 = paired results + learning curves; Fig. 4 = H1 if present); anonymity sweep; PDF checker; references | second build audit; PDF digest recorded |
+| **Sept 15** | Submit. Then tag `icra2027-submitted`, push, and only then reopen the stop list | tag exists |
+
+---
+
+## 7. Page budget (eight pages including references) and cut list
+
+| section | Sept 4 draft | target | how |
 |---|---|---|---|
-| G0 | unmasked grounded starts (tier_800, normalise-then-mix) | deployment prior | control — must be a **fresh** arm, not the old grounded checkpoint |
-| G1 | exact feasible segments (unit table, guard 0, 50-step trials, explicit truncation) | deployment prior | G1−G0 = exact hygiene |
-| G2 | exact feasible segments | learning-progress / uncertainty rank, ρ = 0.10 floor, caps 0.05/0.25 | G2−G1 = allocation |
+| abstract + §1 | 0.9 | 0.9 | rewrite, same length |
+| §2 related work | 0.6 | 0.5 | merge "evaluation on fixed support" into §3.4 |
+| §3 method | 1.6 | 1.2 | DFRP §3.3: keep the program statement, cut the two-stage prose to four lines |
+| §4 design | 0.9 | 0.7 | E4 calibration grid → two sentences; H1 design → one paragraph |
+| §5 results | 1.6 | 2.3 | new §5.4 table + figure (0.5); §5.5 H1 (0.4); controls table replaces the paragraph |
+| §6–7 limitations, conclusion | 0.5 | 0.5 | add the power paragraph and the knee-torque sentence; delete one paragraph of conclusion |
+| references | 0.9 | 0.9 | unchanged (22 entries) |
+| **total** | **7.0** | **7.0–7.5** | leaves slack for H1 |
 
-Mandatory pre-declared **manipulation gate** (the thing every prior arm lacked): after warm-up,
-TV(G2, G1) ∈ [0.05, 0.15]; entropy-effective units ≥ 12; realized invalid frames = 0; late
-rejected-start mass = 0 (exact support makes this trivially checkable). If the one-seed wiring
-screen fails the gate, **stop, fix the rank, re-screen** — do not spend seeds 2–3. This is the
-single procedural change that would have saved FGAS and segment-v2.
-
-Primary endpoint: feasible-disjoint survival + AULC under the paired v2 evaluator
-(`tools/eval_paired_v2.py`; frozen condition manifest; auto-reset disabled for terminal reads;
-no `heldout100` — build a disjoint panel and verify disjointness by hash *before sealing*, per
-the N7 audit). Secondary: common-survivor quality noninferiority (MPKPE, anchor orientation,
-work) with the CI lower bound, not the point, above margin. Seed × unit hierarchical bootstrap.
-
-Budget note: the segment pilot was 2 arms × 512 envs × 200 it. The confirmation needs
-4000-iteration arms; measure realized GPU-hours on the wiring screen and *then* decide whether
-three seeds of three arms fit before Dec 1. If not, drop G0 (the hygiene contrast G1−G0 is the
-least novel; E-HYG already bounds it) before dropping seeds.
-
-**G-1. E3 under addendum v2** (uniform arms only, 100 vs 800 bank; predictions sealed
-`2c38845b…`). Independent of G-0; schedule it in whichever gap opens first. It is the cheapest
-positive-expected-value experiment on the board because the predictions are already named.
-
-**G-2. DFRP curated-view arm** — a G1 variant whose 800-clip bank swaps in the 22 repaired
-clips (exact sidecars) — only if G-0's wiring screen passes and E3 is scheduled. This is where
-the DFRP program earns its first policy number; 26 clips is enough for a paired per-motion
-contrast on those 26, not for a bank-level claim. Say so in the seal.
-
-Deferred to post-freeze (Dec 1+), one paragraph each in `PARKING.md`: bank-wide DFRP repair,
-G3 fragility-weighted sampling, differentiable feasibility, cross-embodiment atlas, terrain
-refeas, SafeTrack runtime guard, SONIC as anything other than an evaluation target.
+The existing figure `reports/relative_confirmation_results_2026-09-06/paired_results_and_learning_curves.pdf`
+is already the right exhibit: seed pairs as points, mean + t-interval, four learning curves,
+x-axis in transitions. Use it as is.
 
 ---
 
-## 4. Standing rules (unchanged, restated because they keep working)
+## 8. Repository hygiene (do today; ten minutes)
 
-1. Seal-before-run; frozen analysis dry-run on `--synthetic` before outcomes exist.
-2. Every arm has a **manipulation check** sealed alongside its endpoint. An arm that fails
-   its manipulation check is reported as "not tested", never as a null.
-3. Repair changes the target: any repaired-reference contrast reports the 2×2 decomposition
-   (policy / reference / interaction) as N7 did, plus fidelity diagnostics.
-4. Prevalence numbers are per corpus-and-pipeline pairing. Never "retargeted banks in general".
-5. One status label per claim; pending results do no load-bearing work.
-6. Every background job writes a sentinel; every paper number has a path in `RESULTS_LOG`.
-7. No new threads until the flagship draft is assembled (Sept 12). Ideas → `PARKING.md`.
+1. **Commit** the current tree in two commits: (a) `Record completed confirmation, DFRP
+   fixed-policy result, and September plan addenda` — plans, reports, `RESULTS_LOG`, `STATUS`,
+   `climb/relative_progress.py`, tests, figure scripts; (b) `Add CLAUDE.md and fable rev 4`.
+   Do not commit the lock files or anything under the ignored patterns. Push.
+2. **Worktrees:** leave the four detached worktrees; record their purpose and HEAD in
+   `plan/STATUS.md` once. After submission, fold the H1 tools into `tools/` with a fresh
+   inventory hash and remove the others.
+3. **AI disclosure** in `root.tex`: "OpenAI Codex and Anthropic Claude assisted with code,
+   analysis tooling, figure composition, and language editing; the authors verified all claims
+   and artifact provenance." The current sentence names only Codex.
+4. **`AGENTS.md`** says there is no root pytest suite; there are 310 tests that pass with the
+   pinned interpreter. Fix the sentence when convenient (not paper-critical).
+5. **Site** (`docs/`): unchanged until Sept 16; the public page already carries the completed
+   result and is consistent with the ledger.
 
 ---
 
-## 5. Risks and what to do about them
+## 9. Standing rules (unchanged; they are why the evidence is trustworthy)
+
+1. Seal before run; frozen analyzer dry-run on `--synthetic` before outcomes exist.
+2. Every arm carries a manipulation check; a failed check is "not tested", never a null.
+3. One status label per number; pending numbers do no load-bearing work — **including in the
+   abstract and title**.
+4. Prevalence is per corpus-and-pipeline pairing.
+5. Repair changes the target; any repaired-reference contrast reports the 2×2 decomposition.
+6. Every background job writes a sentinel; every paper number has a path in `RESULTS_LOG.md`.
+7. No new threads until the submission is tagged.
+
+---
+
+## 10. Risks
 
 | risk | signal | mitigation |
 |---|---|---|
-| Companion slips past Sept 5 waiting on the author pass | no commits since Aug 21 | Linji: 2-hour scope pass is the only blocker; everything else is done |
-| GPU never becomes free enough for 4000-it arms | today: 30/32 GB used by other groups | keep `run_when_free.sh` gap-gating; pre-decide the drop order (G0 first, then seeds) in the seal |
-| G2's learning-progress rank saturates like conditional failure did | wiring-screen TV < 0.05 | the manipulation gate catches it in one seed; have the uncertainty/progress variant ready as the pre-declared fallback rank |
-| Newton 1.5 recert repeats G0's four integration errors | Δq̇ > 3e-5 on the easy unit | check the four documented classes first; budget 1 week, not 3 |
-| Reviewers read §8 as "the method doesn't work" | — | W3 framing: the intervention half is *untested* with a passing manipulation check; the measurement half is the contribution |
-| BONES-SEED per-clip CSV is lost | `/tmp` scratchpad gone | re-run the screen: 12 CPU-minutes; do it this week (W2) |
+| H1 slips past Sept 11 | < 6 training gates passed on Sept 10 | kill rule §4.2; no-H1 title is pre-written; nothing else in the paper waits on it |
+| GPU is reclaimed by other users | gate wait > 2 h on any job | sequential jobs + one-attempt rule already handle it; do not lower the memory gate |
+| Reviewer reads the paper as "method with no positive result" | — | contribution 1 is positive and sealed; contribution 2 is a controlled finding with stated power; the abstract leads with E1 and the screen, not with the allocator |
+| Temptation to add seeds 24–26 to confirmation because the GPU is free | anyone proposing it | forbidden by the frozen disposition; the correct use of free GPU is H1's fifth and sixth seed |
+| Manuscript rebuild breaks the 8-page gate after adding two exhibits | build.sh fails | the cut list in §7 is ordered; apply top-down |
+| Writing window consumed by more "development checks" | new `plan/*_2026-09-0x.md` files that are not H1 or manuscript | §5 stop list; every such file needs a paper sentence it unlocks |
 
 ---
 
-## 6. What I would tell the advisor in one line
+## 11. One line for the advisor
 
-*The measurement paper is done and public; the one experiment worth GPU before Dec 1 is a
-segment-native adaptive arm whose manipulation check passes, with E3 alongside; DFRP and Newton
-are excellent second-paper programs and should be gated on that arm, not run ahead of it.*
-
----
-
-## 7. Progress ledger — 2026-08-26 evening (verified against the tree)
-
-| item | evidence | disposition |
-|---|---|---|
-| W2 BONES-SEED screen reproduced | `reports/feasibility_sonic/hygiene_screen.csv` (4,950 rows), `COMPLETED.json` (0 failures, 179.8 s wall, 8 workers, μ 0.7 / gap 0.06 / ½-weight, MJCF sha `15a330f1…`); counts 29/7/5 infeasible and 225/111/32 airborne at >0.05/>0.10/>0.20; flagged duration 0.000939 | **closed.** `RESULTS_LOG` cross-bank row loses its ⚠. External screen/runner SHAs recorded in `autoresearch/autoresearch-260826-1617/research_log.md` |
-| W3 §8 reframed | `paper/flagship/S8_causal_slots.md` §8.5 "exact mechanics, failed manipulation [exploratory; not tested]"; 0.014 TV / corr 0.998 stated | **closed** |
-| W4 DFRP v1 folded | flagship §6, companion §8, §10 limitations; `RED_TEAM` row 26 | **closed** |
-| W5 assembly + render | `DRAFT_full.md`, `docs/{companion,flagship}.html` regenerated; section↔draft diff content-identical | **closed** (red-team pass itself still scheduled Sept 5–12) |
-| RED_TEAM #3 upstream threads | mjlab #1153 and wbt #73 both open, no maintainer ack or linked fix | **closed as a check**; drafts say only "filed" — keep it that way |
-| PARKING | five deferred programs written with their wait conditions | **closed** |
-| Working tree | 14 modified + 3 untracked, no sealed file or manifest touched, `git diff --check` clean, **not committed** | see §8.0 |
-
-Remaining companion blockers (as reported): Linji's author/scope sign-off; the expanded 5+5
-extreme-source inspection; final bibliography pass; same-clip cross-implementation check.
-
----
-
-## 8. Next directive (rev 2)
-
-Phase W's deliverables that did not need Linji are done. The critical path is now Linji's
-sign-off, which is external to this workspace; the correct move is to **start Phase N in
-parallel** and to **draft the Phase-G seal on CPU** so that neither waits on Sept 15.
-
-### 8.0 Commit the tranche first (today)
-
-One commit, scoped to the Phase-W files, subject like `Close second-bank artifact hygiene and
-reframe §8 around null mechanisms`. Include `fable.md` and `autoresearch/autoresearch-260826-1617/`.
-Do not commit `reports/feasibility_sonic/` per-clip intermediates (already removed — good). Push
-so the public page reflects the reframed §8 before any external reviewer reads it.
-
-### 8.1 Close the four companion blockers (CPU, this week, in this order)
-
-| # | blocker | definition of done | notes |
-|---|---|---|---|
-| B1 | **Same-clip cross-implementation check** | Pick ≥ 10 clips present in *both* banks' source families is impossible (different corpora) — so instead run the CLIMB screen (`tools/n1_knee_id.py` / `refeas`) on 20 BONES-SEED clips (the 7 flagged + 13 random feasible) and the SONIC screen on 20 AMASS clips (10 flagged incl. #44, 10 feasible). DoD: a 40-row table with both implementations' `infeasible_frac`/`airborne_frac`, Spearman ρ, and the flag agreement matrix; goes to companion §4 as one sentence + appendix table; artifact `reports/feasibility_xcheck/` with sentinel | This is the single most reviewer-proofing item left: the 160× contrast currently rests on two *different* implementations. If agreement is poor, the contrast becomes "two screens, two banks" and must be reworded before submission. Do it before B2. |
-| B2 | **5+5 extreme-source inspection** | For CNRS (100 %) and Transitions (90 %): 5 clips each, hand-inspected with rendered airborne-window frames + lowest-geom clearance trace; extends `reports/upstream_drafts/CNRS_AUDIT.md`. DoD: verdict per clip (ingest / content / scene-mismatch), median clearance, one figure panel | Reuse the CNRS_AUDIT script; budget one afternoon |
-| B3 | **Bibliography pass** | Every citation in companion + flagship §2 live-verified (the 12 already are); ○-standards entries resolved; `/ars-citation-check` on the companion source | Mechanical; do last |
-| B4 | **Linji sign-off** | author list, scope, venue (arXiv + workshop per D2b), title; approval to file the upstream drafts | Send Linji a 10-line summary with links to `docs/companion.html` and the three decisions needed. Nothing else in this file blocks on it. |
-
-Optional W6 (GMR vs wbt on 40 LAFAN1 clips) only after B1–B3.
-
-### 8.2 Start Phase N now (Aug 27 →)
-
-Nothing in Phase N needs Linji or the GPU beyond gap minutes. Concretely, in order:
-
-1. `newton15/` isolated env: Newton 1.5.0, Warp, MuJoCo 3.11, MJWarp pinned; write
-   `plan/NEWTON15_PINS.md` with every version + G1 MJCF sha. Verify `mjlab-1.6.0/.venv` is untouched.
-2. Port the S1 six-step conformance protocol into the new env against the **DFRP v1 unit table**
-   (`reports/dfrp_v1_exact_panel/iter1/unit_table.json`): one easy unit, one contact-rich unit.
-   Pass criterion unchanged: placement, first obs, action, state, contact timing match; |Δq̇| ≤ 3e-5;
-   deterministic repeats zero dispersion. Check the four G0 error classes *before* debugging.
-3. **Seal the no-training predictive gate before measuring** (`plan/PREREGISTRATION_NEWTON_PRED.md`):
-   panel = the 42-unit mechanism panel; axes = delay, motor clamp, MuJoCo-vs-Newton contact
-   pipeline; horizon 0.25–0.5 s from canonical state; statistic = replicate-mean signed S (N5);
-   prediction target = held-out-policy degradation; test = partial Spearman with permutation
-   baseline, controlling for `infeasible_frac` + reference kinematics (mirror atlas v2.1 F2);
-   threshold declared in the seal. Kill rule: fail → Newton is an instrument, G3 never runs.
-4. Frozen analysis with `--synthetic` dry-run, then run.
-
-Budget: one week for 1–2; if recert is not passing by Sept 5, stop and write it up as a limitation
-rather than sinking the writing window.
-
-### 8.3 Draft the Phase-G seal on CPU (target seal date Sept 10)
-
-`plan/PREREGISTRATION_G_SEGMENT.md`, covering the one-seed wiring screen and the three-seed
-confirmation of G0/G1/G2 (§3 Phase G). Items that must be *in the seal*, because their absence is
-what sank the earlier arms:
-
-- the exact rank used in G2 (learning-progress or uncertainty — pick one and name the fallback);
-- the manipulation gate: TV(G2,G1) ∈ [0.05, 0.15] after warm-up, ≥ 12 entropy-effective units,
-  0 realized invalid frames, 0 rejected-start mass; fail → stop after seed 1, fix rank, re-screen;
-- a **disjoint evaluation panel** built now, with a hash-verified empty intersection against
-  tier_800 and the DFRP panel (N7's 8-clip overlap must not recur);
-- the drop order under GPU scarcity (G0 first, then seeds), decided in advance;
-- the 2×2 decomposition template for any repaired-reference contrast (G-2 later).
-
-Dry-run the frozen analyzer on synthetic data before Sept 15. Then E3 (addendum v2) and the
-wiring screen go into the gap queue in whichever order capacity allows.
-
-### 8.4 What not to do this week
-
-No GPU training. No bank-wide repair. No G3. No new preregistrations beyond the two named above.
-No edits to sealed files. Do not soften §8's "not tested" wording to make the draft read better.
-
-
----
-
-## 9. Progress ledger — 2026-08-27 (verified against the tree; probe in flight)
-
-| item | evidence | disposition |
-|---|---|---|
-| 8.0 commit | `529e97a`, `c4d1d6f` pushed; tree clean at session start | **closed** |
-| B1 cross-implementation check | `reports/feasibility_xcheck/`: ρ 0.984 / 0.997, flags agree 39/40 (κ 0.948) | **closed** |
-| B2 5+5 extreme-source audit | recorded in STATUS; no sealed claim changed | **closed** |
-| B3 bibliography | 20/20 live-verified | **closed** |
-| B4 Linji sign-off | `paper/LINJI_SIGNOFF_ASK_2026-08-26.md` drafted, **not sent** | **open — the only external blocker; send it** |
-| N-a pins | `plan/NEWTON15_PINS.md`; trainer venv untouched (freeze hash identical) | **closed** |
-| N-b recert | `plan/NEWTON15_RECERT_RESULT.md` **PASS**: easy + contact-rich DFRP v1 units, zero dispersion after seven live-model residuals were mirrored | **closed** |
-| N-c seal | `plan/PREREGISTRATION_NEWTON_PRED.md` sealed `b1773fc5…` before outcomes; analyzer `1324aa6f…` passes pass/null/discordant synthetic | **closed** |
-| N-c probe | launched 2026-08-27 00:5x on the real 42-unit panel, pid in `reports/newton15_pred/probe/probe.pid`, log `probe_run.log`; ≈ 22 h at 4 worlds/batch | **running** |
-| Probe harness repairs | int32 scatter overflow at 42 worlds → subprocess batching; `TensorDict` flatten; OOM retry. Log: `autoresearch/autoresearch-260827-0040/research_log.md` | **closed** (unsealed implementation; batch size in manifest) |
-| G-0 panel | `reports/g_segment/panel/` 100 clips, disjoint by name + hash, `ec23b7b9…` | **closed** |
-| G-0 seal draft | `plan/PREREGISTRATION_G_SEGMENT.md` DRAFT; pre-seal checklist S1–S7 | **open — target seal Sept 10** |
-| S1 G2 rank | `SegmentSampler(rank="learning_progress"\|"uncertainty")`, W = 10, λ = 0.01; ledger logs `rank_saturation_fraction`; 59 tests pass | **closed** (2026-08-27 01:20) |
-| S2 exact unit table | `reports/g_segment/unit_table.json`: 800 clips → 1,184 admissible units, 368,951 legal starts; 701 unflagged clips newly screened in full mode (4.5 min, 8 CPU workers) | **closed** |
-| S3 eval conditions | `reports/g_segment/eval_conditions.json`: 2,800 conditions, all full-window | **closed** |
-| S4 analyzer | `tools/analyze_g_segment.py`; synthetic positive/null/inconclusive/gate-fail all pass; fails closed without a post-warm-up ledger | **closed** (draft; re-hash at seal) |
-| S5 gap gate | `tools/run_when_free.sh` in repo; memory + utilization gated; OOM retry; 512-env need still unmeasured | **closed** (script) |
-| S6 seeds/drop order | seeds 1,2,3; G0 first, then seed 3 — in the draft and `STATUS.md` | **closed** |
-| **N-c verdict: FAIL on valid data** | attempt 5 (13.9 h) passes every component check; analyzer (addendum 1) on 40 units: adaptive partial ρ +0.141 (p 0.158), LOCO lift −0.006; grounded ρ +0.022, lift −0.036. `plan/NEWTON_PRED_RESULT.md`, `reports/newton15_pred/result.json`. **G3 killed; Newton = instrument.** S7 closed (PARKING updated) | **closed** |
-| Probe attempt 4 → NOT TESTED; addendum 1 | all 126 rows completed (13.8 h) but `env_spacing` offset paired worlds (cross-condition delta 2.0) and unit 46 is unlearnable within 0.5 s for dev/adaptive (alive 0.19). Effects never opened. Addendum 1 sealed 22:1x Aug 27: unit-level exclusion (≥ 36 remain), analyzer re-frozen `95479ebc…`. **Attempt 5 launched 21:50 with `env_spacing = 0`; ETA ≈ 11:30 Aug 28** | **closed**; probe **running** |
-| Probe harness, 3rd repair | attempt 3 ran 6 h (development preflight/delay/clamp clean, zero OOM retries) then hit the never-executed `newton_contact` axis: Newton needs its own `CollisionPipeline` contacts when MJWarp collision is off. Fixed in the probe (S1 baseline untouched), verified on 4 worlds; per-stage cache added. **Attempt 4 launched 08:0x Aug 27, ETA ≈ 06:00 Aug 28** | **closed**; probe **running** |
-| Probe harness, 2nd repair | mjlab's `auto_reset=False` guard refused to step a fallen world at batch 6; the probe now clears `_manual_reset_pending` each step (no reset, no RNG consumed; `alive` masks). Relaunched 01:2x | **closed**; probe **running** |
-
-Three facts the seal work surfaced that change the plan: **G2's learning-progress rank did not
-exist in code** (now implemented, S1); the **DFRP v1 panel overlaps `tier_800` by 2 clips** (the
-G-2 arm must exclude or disclose them); and **140 of the 701 "unflagged" tier_800 clips contain
-severe windows at guard 0** — the FGAS-era `assumeunflagged` eligibility was not exact, which is
-one more reason the FGAS null is about wiring, not about segment-native curation.
-
-## 10. Next directive (rev 3)
-
-### 10.0 While the probe runs (≈ 22 h; CPU only; do not touch the GPU)
-
-Do not start any other GPU job; the probe's batches need ~5.6 GB and the foreign jobs already
-spike to 27.9 GB. `run_when_free.sh` must not be used to queue anything alongside it.
-
-1. **Send B4.** The 10-line ask is written. Nothing else in this file blocks on Linji, but the
-   companion release does.
-2. ~~S1~~–~~S7~~ — all done (see §9). N-c failed on valid data, so the Phase-G seal drops G3 unconditionally. Remaining: the seal itself (§10.2) after Linji reads the draft, then the wiring screen via `tools/run_when_free.sh`.
-2′. *(record)* **S1 — implement the G2 rank** (`climb/segment_curriculum.py`, `segment_runtime.py`): the LP
-   rank exactly as §3 of the draft seal defines it (W = 10 ticks, λ = 0.01, `difficulty_power` 0),
-   plus the uncertainty fallback; extend `tests/test_segment_{curriculum,runtime}.py` with the
-   resume-equivalence property for the new state (`s_u(k − W)` ring buffer must round-trip
-   through `state_dict`). This is the single prerequisite the wiring screen cannot start without.
-3. **S2 — build the `tier_800` guard-0 unit table** with `tools/build_segment_unit_table.py`
-   (`--sidecars reports/segments_v2_tier800_guard0 --horizon-steps 50`) →
-   `reports/g_segment/unit_table.json`; record admissible units and legal starts in the draft.
-4. **S3 — build the panel's condition manifest** with `eval_paired_v2.build_conditions`
-   (7 phases × 4 reps × 3.0 s) → `reports/g_segment/eval_conditions.json`; hash it into the draft.
-5. **S4 — frozen analyzer `tools/analyze_g_segment.py`** with four `--synthetic` branches
-   (positive / null / inconclusive / gate-fail) that fails closed without the sampler ledger.
-6. **S5 — bring `run_when_free.sh` into `tools/`** and make it gate on free memory *and*
-   utilization; the `need_MiB` for a 512-env arm is still a guess until the wiring screen.
-
-### 10.1 When the probe finishes — DONE 2026-08-28 (verdict FAIL; G3 killed; see §9)
-
-1. Check `reports/newton15_pred/probe/COMPLETED.json` and the manifest: `pass_preflight`,
-   `deterministic_repeat_max_abs_delta = 0`, `cross_condition_initial_state_max_abs_delta = 0`,
-   `invalid_starts = 0`, `escaped_reference_frames = 0`, motor-clamp realized in ≥ 12 units,
-   paired-alive ≥ 0.80 everywhere. **If any fails → "not tested"**; repair under a dated
-   addendum; re-run. Do not look at the effects table first.
-2. Run the frozen analyzer unchanged (10,000 permutations, seed 20260826) →
-   `reports/newton15_pred/result.json` + sentinel. Record the verdict verbatim in
-   `plan/STATUS.md`, `paper/RESULTS_LOG.md`, and `PARKING.md` (G3 entry).
-3. **Kill rule stands:** valid-data fail → Newton is an instrument; G3 never runs; the
-   fragility vector goes to the companion appendix. Pass → G3 remains *eligible* for its own
-   later seal; it still does not run before G2 has a passing manipulation check.
-4. Commit the probe artifacts (`effects.csv`, `probe_manifest.json`, `COMPLETED.json`,
-   `result.json`, `launch_env.txt`, `gpu_watch.log`) in one commit with the research log.
-
-### 10.2 Seal Phase G (target Sept 10)
-
-When S1–S6 are closed: freeze `plan/G_SEGMENT_FREEZE.sha256`, append the document hash to
-`plan/SEALS_2026-08-19.sha256`, dry-run the analyzer on synthetic data, and put the one-seed
-wiring screen and E3 (addendum v2) into the gap queue in whichever order capacity allows.
-The wiring screen's sentinel must record realized GPU-hours and peak memory; the three-seed
-decision (and the G0-first drop) is made from that number, not from an estimate.
-
-### 10.3 What not to do
-
-No second GPU job while the probe runs. No G3. No bank-wide repair. No edits to sealed files or
-to the frozen analyzer. No softening of any threshold in the draft seal after S1–S4 exist —
-the draft is a draft only until the hashes are written, not until the numbers look right.
+*The controlled test ran and was inconclusive at three seeds; the paper is the RPM measurement
+line plus an exact-support interface with a matched allocation result, retitled to what it
+shows; the one GPU-day before the cutoff goes to admission on/off (H1) because it is the only
+experiment that tests the word "gated", and it is publishable whichever way it falls.*
