@@ -1,0 +1,6 @@
+{
+  "status": "pass",
+  "tests": 8,
+  "classification": "SYNTHETIC protocol and scheduling validation; no policy data",
+  "failures": []
+}

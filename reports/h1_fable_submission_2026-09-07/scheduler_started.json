@@ -1,0 +1,8 @@
+{
+  "pid": 3010547,
+  "started_at": "2026-09-07T05:11:58.627775+00:00",
+  "contract": {
+    "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/contract.json",
+    "sha256": "fdc5354045bb848fb982822d5ebd6d9b40ca88cb14209acc6b880579eed4b474"
+  }
+}

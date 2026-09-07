@@ -1,0 +1,17 @@
+{
+  "phase_g": {
+    "exit_code": 0,
+    "entries": 41,
+    "failures": []
+  },
+  "confirmation": {
+    "exit_code": 0,
+    "entries": 7,
+    "failures": []
+  },
+  "h1": {
+    "exit_code": 0,
+    "entries": 624,
+    "failures": []
+  }
+}

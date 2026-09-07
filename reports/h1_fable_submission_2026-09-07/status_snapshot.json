@@ -1,0 +1,7 @@
+{
+  "status": "waiting_for_gpu",
+  "free_mib": 1602,
+  "utilization_percent": 0,
+  "next_stage": "smoke",
+  "updated_at": "2026-09-07T05:24:48.050773+00:00"
+}

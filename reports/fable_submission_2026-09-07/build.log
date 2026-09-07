@@ -1,0 +1,320 @@
+warning: root.tex:24: 
+Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 9.99997pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 10.00003pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;" at 10.00003pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;" at 10.00003pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;" at 10.00003pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Slanted.otf]/OT:script=latn;language=dflt;" at 10.00003pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;" at 10.00003pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-BoldSlanted.otf]/OT:script=latn;language=dflt;" at 10.00003pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 5.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 5.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 5.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 5.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 7.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 7.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 7.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 7.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 11.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 11.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 11.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 11.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 16.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 16.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 16.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 16.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 20.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 20.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 20.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 20.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 24.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 24.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 24.0pt
+warning: root.tex:24: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 24.0pt
+warning: root.tex:42: 
+Requested font "ntx-Regular-tlf-ot1" at 9.0pt
+warning: root.tex:42:  -> ntx-Regular-tlf-ot1
+warning: root.tex:42: Requested font "ntx-Regular-tlf-ot1" at 7.3pt
+warning: root.tex:42:  -> ntx-Regular-tlf-ot1
+warning: root.tex:42: Requested font "ntx-Regular-tlf-ot1" at 5.5pt
+warning: root.tex:42:  -> ntx-Regular-tlf-ot1
+warning: root.tex:42: Requested font "ntxmi" at 9.0pt
+warning: root.tex:42:  -> ntxmi
+warning: root.tex:42: Requested font "ntxmi7" at 7.3pt
+warning: root.tex:42:  -> ntxmi7
+warning: root.tex:42: Requested font "ntxmi5" at 5.5pt
+warning: root.tex:42:  -> ntxmi5
+warning: root.tex:42: Requested font "ntxsy" at 9.0pt
+warning: root.tex:42:  -> ntxsy
+warning: root.tex:42: Requested font "ntxsy7" at 7.3pt
+warning: root.tex:42:  -> ntxsy7
+warning: root.tex:42: Requested font "ntxsy5" at 5.5pt
+warning: root.tex:42:  -> ntxsy5
+warning: root.tex:42: Requested font "ntxexx" at 9.0pt
+warning: root.tex:42:  -> ntxexx
+warning: root.tex:42: Requested font "ntxexx" at 7.3pt
+warning: root.tex:42:  -> ntxexx
+warning: root.tex:42: Requested font "ntxexx" at 5.5pt
+warning: root.tex:42:  -> ntxexx
+warning: root.tex:42: 
+Requested font "ntxmia" at 9.0pt
+warning: root.tex:42:  -> ntxmia
+warning: root.tex:42: Requested font "ntxmia" at 7.3pt
+warning: root.tex:42:  -> ntxmia
+warning: root.tex:42: Requested font "ntxmia" at 5.5pt
+warning: root.tex:42:  -> ntxmia
+warning: root.tex:42: 
+Requested font "ntxsym" at 9.0pt
+warning: root.tex:42:  -> ntxsym
+warning: root.tex:42: Requested font "ntxsym" at 7.3pt
+warning: root.tex:42:  -> ntxsym
+warning: root.tex:42: Requested font "ntxsym" at 5.5pt
+warning: root.tex:42:  -> ntxsym
+warning: root.tex:42: 
+Requested font "ntxsyc" at 9.0pt
+warning: root.tex:42:  -> ntxsyc
+warning: root.tex:42: Requested font "ntxsyc" at 7.3pt
+warning: root.tex:42:  -> ntxsyc
+warning: root.tex:42: Requested font "ntxsyc" at 5.5pt
+warning: root.tex:42:  -> ntxsyc
+warning: root.tex:42: Requested font "ntxexa" at 9.0pt
+warning: root.tex:42:  -> ntxexa
+warning: root.tex:42: Requested font "ntxexa" at 7.3pt
+warning: root.tex:42:  -> ntxexa
+warning: root.tex:42: Requested font "ntxexa" at 5.5pt
+warning: root.tex:42:  -> ntxexa
+warning: root.tex:49: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;" at 10.0pt
+warning: root.tex:79: Requested font "[lmmono10-regular]:" at 10.0pt
+warning: root.tex:146: 
+Requested font "ntx-Regular-tlf-ot1" at 10.0pt
+warning: root.tex:146:  -> ntx-Regular-tlf-ot1
+warning: root.tex:146: Requested font "ntxmi" at 10.0pt
+warning: root.tex:146:  -> ntxmi
+warning: root.tex:146: Requested font "ntxsy" at 10.0pt
+warning: root.tex:146:  -> ntxsy
+warning: root.tex:146: Requested font "ntxexx" at 10.0pt
+warning: root.tex:146:  -> ntxexx
+warning: root.tex:146: Requested font "ntxmia" at 10.0pt
+warning: root.tex:146:  -> ntxmia
+warning: root.tex:146: Requested font "ntxsym" at 10.0pt
+warning: root.tex:146:  -> ntxsym
+warning: root.tex:146: Requested font "ntxsyc" at 10.0pt
+warning: root.tex:146:  -> ntxsyc
+warning: root.tex:146: Requested font "ntxexa" at 10.0pt
+warning: root.tex:146:  -> ntxexa
+warning: root.tex:154: Requested font "ntx-Bold-tlf-ot1" at 10.0pt
+warning: root.tex:154:  -> ntx-Bold-tlf-ot1
+warning: root.tex:154: Requested font "ntx-Bold-tlf-ot1" at 7.3pt
+warning: root.tex:154:  -> ntx-Bold-tlf-ot1
+warning: root.tex:154: Requested font "ntx-Bold-tlf-ot1" at 5.5pt
+warning: root.tex:154:  -> ntx-Bold-tlf-ot1
+warning: root.tex:155: Requested font "ntxbmi" at 10.0pt
+warning: root.tex:155:  -> ntxbmi
+warning: root.tex:155: Requested font "ntxbmi7" at 7.3pt
+warning: root.tex:155:  -> ntxbmi7
+warning: root.tex:155: Requested font "ntxbmi5" at 5.5pt
+warning: root.tex:155:  -> ntxbmi5
+warning: root.tex:155: Requested font "ntxbsy" at 10.0pt
+warning: root.tex:155:  -> ntxbsy
+warning: root.tex:155: Requested font "ntxbsy7" at 7.3pt
+warning: root.tex:155:  -> ntxbsy7
+warning: root.tex:155: Requested font "ntxbsy5" at 5.5pt
+warning: root.tex:155:  -> ntxbsy5
+warning: root.tex:155: Requested font "ntxbexx" at 10.0pt
+warning: root.tex:155:  -> ntxbexx
+warning: root.tex:155: Requested font "ntxbexx" at 7.3pt
+warning: root.tex:155:  -> ntxbexx
+warning: root.tex:155: Requested font "ntxbexx" at 5.5pt
+warning: root.tex:155:  -> ntxbexx
+warning: root.tex:155: Requested font "ntxbmia" at 10.0pt
+warning: root.tex:155:  -> ntxbmia
+warning: root.tex:155: Requested font "ntxbmia" at 7.3pt
+warning: root.tex:155:  -> ntxbmia
+warning: root.tex:155: Requested font "ntxbmia" at 5.5pt
+warning: root.tex:155:  -> ntxbmia
+warning: root.tex:155: Requested font "ntxbsym" at 10.0pt
+warning: root.tex:155:  -> ntxbsym
+warning: root.tex:155: Requested font "ntxbsym" at 7.3pt
+warning: root.tex:155:  -> ntxbsym
+warning: root.tex:155: Requested font "ntxbsym" at 5.5pt
+warning: root.tex:155:  -> ntxbsym
+warning: root.tex:155: Requested font "ntxbsyc" at 10.0pt
+warning: root.tex:155:  -> ntxbsyc
+warning: root.tex:155: Requested font "ntxbsyc" at 7.3pt
+warning: root.tex:155:  -> ntxbsyc
+warning: root.tex:155: Requested font "ntxbsyc" at 5.5pt
+warning: root.tex:155:  -> ntxbsyc
+warning: root.tex:155: Requested font "ntxbexa" at 10.0pt
+warning: root.tex:155:  -> ntxbexa
+warning: root.tex:155: Requested font "ntxbexa" at 7.3pt
+warning: root.tex:155:  -> ntxbexa
+warning: root.tex:155: Requested font "ntxbexa" at 5.5pt
+warning: root.tex:155:  -> ntxbexa
+warning: root.tex:164: Requested font "[lmmono10-italic]:" at 10.0pt
+warning: root.tex:187: Underfull \hbox (badness 2452) in paragraph at lines 180--187
+warning: root.tex:384: Requested font "[lmmono8-regular]:" at 8.0pt
+warning: root.tex:384: Requested font "ntx-Regular-tlf-ot1" at 8.0pt
+warning: root.tex:384:  -> ntx-Regular-tlf-ot1
+warning: root.tex:384: Requested font "ntx-Regular-tlf-ot1" at 6.2pt
+warning: root.tex:384:  -> ntx-Regular-tlf-ot1
+warning: root.tex:384: Requested font "ntxmi7" at 8.0pt
+warning: root.tex:384:  -> ntxmi7
+warning: root.tex:384: Requested font "ntxmi5" at 6.2pt
+warning: root.tex:384:  -> ntxmi5
+warning: root.tex:384: Requested font "ntxsy7" at 8.0pt
+warning: root.tex:384:  -> ntxsy7
+warning: root.tex:384: Requested font "ntxsy5" at 6.2pt
+warning: root.tex:384:  -> ntxsy5
+warning: root.tex:384: Requested font "ntxexx" at 8.0pt
+warning: root.tex:384:  -> ntxexx
+warning: root.tex:384: Requested font "ntxexx" at 6.2pt
+warning: root.tex:384:  -> ntxexx
+warning: root.tex:384: Requested font "ntx-Bold-tlf-ot1" at 8.0pt
+warning: root.tex:384:  -> ntx-Bold-tlf-ot1
+warning: root.tex:384: Requested font "ntx-Bold-tlf-ot1" at 6.2pt
+warning: root.tex:384:  -> ntx-Bold-tlf-ot1
+warning: root.tex:384: Requested font "ntxmia" at 8.0pt
+warning: root.tex:384:  -> ntxmia
+warning: root.tex:384: Requested font "ntxmia" at 6.2pt
+warning: root.tex:384:  -> ntxmia
+warning: root.tex:384: Requested font "ntxsym" at 8.0pt
+warning: root.tex:384:  -> ntxsym
+warning: root.tex:384: Requested font "ntxsym" at 6.2pt
+warning: root.tex:384:  -> ntxsym
+warning: root.tex:384: Requested font "ntxsyc" at 8.0pt
+warning: root.tex:384:  -> ntxsyc
+warning: root.tex:384: Requested font "ntxsyc" at 6.2pt
+warning: root.tex:384:  -> ntxsyc
+warning: root.tex:384: Requested font "ntxexa" at 8.0pt
+warning: root.tex:384:  -> ntxexa
+warning: root.tex:384: Requested font "ntxexa" at 6.2pt
+warning: root.tex:384:  -> ntxexa
+warning: root.tex:396: Underfull \vbox (badness 1033) has occurred while \output is active
+warning: root.tex:399: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;" at 8.0pt
+warning: root.tex:425: Underfull \hbox (badness 2096) in paragraph at lines 418--425
+warning: root.tex:425: Underfull \hbox (badness 6316) in paragraph at lines 418--425
+warning: root.tex:425: Underfull \hbox (badness 10000) in paragraph at lines 418--425
+warning: root.tex:425: Underfull \hbox (badness 8094) in paragraph at lines 418--425
+warning: root.tex:425: Underfull \hbox (badness 8151) in paragraph at lines 418--425
+warning: root.tex:425: Underfull \hbox (badness 2435) in paragraph at lines 418--425
+warning: root.tex:488: Underfull \hbox (badness 2662) in paragraph at lines 488--488
+error: root.tex:517: Missing $ inserted
+error: something bad happened inside XeTeX; its output follows:
+
+===============================================================================
+(root.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24> (ieeeconf.cls
+Document Class: ieeeconf 2016/4/23 revision V1.6b by Pradeep Misra
+
+LaTeX Font Warning: Font shape `TU/ptm/m/n' undefined
+(Font)              using `TU/lmr/m/n' instead on input line 794.
+
+-- This is a 10 point document.
+
+LaTeX Font Warning: Font shape `TU/ptm/bx/n' undefined
+(Font)              using `TU/ptm/m/n' instead on input line 1113.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/m/it' undefined
+(Font)              using `TU/ptm/m/n' instead on input line 1113.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/bx/it' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 1113.
+
+)
+** ATTENTION: Overriding command lockouts (line 3).
+** ATTENTION: Overriding IEEE standard margins (line 4).
+(fontenc.sty (t1ptm.fd)) (amsmath.sty
+For additional information on amsmath, use the `?' option.
+(amstext.sty (amsgen.sty)) (amsbsy.sty) (amsopn.sty)) (booktabs.sty)
+(graphicx.sty (keyval.sty) (graphics.sty (trig.sty) (graphics.cfg) (xetex.def))
+) (newtxtext.sty
+`newtxtext' v1.71, 2022/02/28 Text macros taking advantage of TeXGyre Termes an
+d its extensions (msharpe) (iftex.sty) (xkeyval.sty (xkeyval (xkvutils)))
+(etoolbox.sty) (textcomp.sty) (xstring.sty (xstring.tex)) (ifthen.sty)
+(scalefnt.sty) (binhex)
+ntx@otftexttrue
+(fontspec.sty (xparse.sty (expl3.sty (l3backend-xetex.def)))
+(fontspec-xetex.sty (fontenc.sty) (fontspec.cfg))) (realscripts.sty))
+(newtxmath.sty
+`newtxmath' v1.71, 2022/01/16 Math macros based originally on txfonts (msharpe)
+(ifxetex.sty) (ifluatex.sty) (centernot.sty) (binhex)
+amsthm NOT loaded
+) (tabularx.sty (array.sty)) (url.sty) (xcolor.sty (color.cfg))
+(TeXGyreTermesX.fontspec) (root.aux) (omlntxmi.fd) (ts1cmr.fd) (untxexa.fd)
+(lmsntxsy.fd) (lmxntxexx.fd) (ot1minntx.fd) (untxmia.fd) (untxsym.fd)
+(untxsyc.fd) [1]
+Underfull \hbox (badness 2452) in paragraph at lines 180--187
+[]\TU/TeXGyreTermesX(0)/m/n/10 We report the fraction of frames with no contact
+
+[2] [3]
+Underfull \vbox (badness 1033) has occurred while \output is active [4]
+
+LaTeX Warning: Reference `tab:repair' on page 5 undefined on input line 411.
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 418--425
+[]\TU/TeXGyreTermesX(0)/m/n/10 The earlier E4 absolute-progress arm reaches mea
+n
+
+Underfull \hbox (badness 6316) in paragraph at lines 418--425
+\TU/TeXGyreTermesX(0)/m/n/10 post-warm-up TV 0.0297, below its 0.05 gate. Its
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--425
+\TU/TeXGyreTermesX(0)/m/n/10 disposition is \TU/lmtt/m/n/10 not_tested\TU/TeXGy
+reTermesX(0)/m/n/10 ; it supplies no policy
+
+Underfull \hbox (badness 8094) in paragraph at lines 418--425
+\TU/TeXGyreTermesX(0)/m/n/10 comparator rule. R changes exposure in all three
+
+Underfull \hbox (badness 8151) in paragraph at lines 418--425
+\TU/TeXGyreTermesX(0)/m/n/10 seeds (mean TV 0.08348/0.08249/0.08233), as does
+
+Underfull \hbox (badness 2435) in paragraph at lines 418--425
+\TU/TeXGyreTermesX(0)/m/n/10 D (0.08391/0.08587/0.08398). All twelve training r
+uns
+
+LaTeX Warning: Reference `tab:confirmation' on page 5 undefined on input line 4
+45.
+
+
+LaTeX Warning: Reference `fig:confirmation' on page 5 undefined on input line 4
+69.
+
+
+LaTeX Warning: Reference `tab:controls' on page 5 undefined on input line 472.
+
+
+Underfull \hbox (badness 2662) in paragraph at lines 488--488
+[]|\TU/TeXGyreTermesX(0)/m/n/8 Deployment contrast $\LMS/ntxsy/m/n/8 Ï\OT1/minn
+tx/m/n/8 0\OML/ntxmi/m/it/8 :\OT1/minntx/m/n/8 0397$ \TU/TeXGyreTermesX(0)/m/n/
+8 misses
+[5]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.517 
+      
+Output written on root.xdv (5 pages, 256452 bytes).
+Transcript written on root.log.
+===============================================================================
+error: the XeTeX engine had an unrecoverable error
+caused by: halted on potentially-recoverable error as specified

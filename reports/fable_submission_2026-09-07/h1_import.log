@@ -1,0 +1,9 @@
+usage: job.py [-h] --contract CONTRACT --sha256 SHA256 --job-id JOB_ID
+
+Execute one assigned H1 job; authenticate all training before held-out reads.
+
+options:
+  -h, --help           show this help message and exit
+  --contract CONTRACT
+  --sha256 SHA256
+  --job-id JOB_ID

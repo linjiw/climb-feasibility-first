@@ -42,7 +42,8 @@ fi
 
 cp "$CACHE_DIR/ieeeconf.cls" "$BUILD_DIR/ieeeconf.cls"
 cp "$SCRIPT_DIR/root.tex" "$SCRIPT_DIR/references.bib" "$BUILD_DIR/"
-cp "$REPO_ROOT/paper/figures/f1_feasibility_first.pdf" \
+cp "$SCRIPT_DIR/figures/f1_evidence_interface.pdf" \
+  "$SCRIPT_DIR/figures/paired_results_and_learning_curves.pdf" \
   "$REPO_ROOT/paper/figures/f2_bank_scale.pdf" "$BUILD_DIR/"
 
 (
@@ -79,3 +80,5 @@ if grep -Eq 'Overfull \\hbox|Citation .* undefined|undefined references' "$BUILD
 fi
 
 cp "$PDF_PATH" "$SCRIPT_DIR/ICRA_DRAFT.pdf"
+
+python3 "$SCRIPT_DIR/export_markdown.py"

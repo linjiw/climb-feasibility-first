@@ -1,5 +1,29 @@
 # CLIMB / feasibility-first — status against Research Plan v5
 
+## September 7, 01:20 EDT — Fable manuscript rebuilt; H1 frozen and queued
+
+The seven-page ICRA manuscript now reports the completed allocation result as
+inconclusive, includes all three paired differences and learning curves, and
+separates repair qualification from its one-policy deployment result. Markdown is
+exported from the LaTeX source. Build, numerical consistency and original seal /
+376-file runtime checks pass. No website changes were made under the stop list.
+
+The separate H1 contract is frozen at
+`fdc5354045bb848fb982822d5ebd6d9b40ca88cb14209acc6b880579eed4b474`: five fresh pairs
+1041–1045, two GPU smokes, ten full runs, forty cells, exact training-first order,
+rejected-support mechanism, resource and calendar stop rules. Eight protocol tests
+and both CPU training replays passed. Scheduler PID 3010547 is live, **waiting
+for GPU capacity**; two IsaacLab processes currently occupy the GPU. No new H1
+GPU job or held-out cell has started. Live status:
+`/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/campaign/status.json`.
+
+Next: let the bounded H1 scheduler advance when the frozen resource gate passes;
+include only a complete, verified H1 result before cutoff. Finish author review
+and submission integration around the actual claim. H1 launch/complete-training
+failure retains the no-H1 manuscript. Details:
+`plan/H1_FABLE_FREEZE_2026-09-07.md`, `paper/icra/REVIEW_2026-09-07.md`.
+
+
 ## 2026-09-07 Fable revision 4 adopted: H1 and manuscript only
 
 The user-directed submission priority supersedes the earlier C1-first roadmap.

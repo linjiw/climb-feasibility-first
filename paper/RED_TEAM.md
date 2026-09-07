@@ -1,5 +1,10 @@
 # Red-team audit — "what exposure, harness, or data artifact could explain this instead?"
 
+September 7 manuscript addendum: see `paper/icra/REVIEW_2026-09-07.md` for the
+completed-result claim audit. The three-seed allocation comparison is inconclusive;
+H1 is a separately sealed five-pair test with no outcome yet. Previous rows below
+retain their historical scope.
+
 Pass scheduled Sept 5–12 (RESEARCH_PLAN_v5). Skeleton opened 2026-08-19 so checks can be logged as
 they are done rather than reconstructed. Format: claim → alternative artifact explanations →
 closing check (specific, with artifact path) → status.

@@ -1,5 +1,38 @@
 # Results log — every paper-bound number and its artifact path (policy: RESEARCH_PLAN_v5)
 
+## 2026-09-07 Fable submission manuscript and frozen H1
+
+**Manuscript update, no scientific contract or completed numeric result changed.**
+The ICRA source, generated Markdown and seven-page PDF now incorporate the
+complete U/A/R/D result from
+`reports/relative_confirmation_results_2026-09-06/summary.json`. Table II contains
+all three paired final R−U differences on both panels and their mean/t intervals;
+Figure 3 contains paired results and all learning curves. Primary hard mean
+−0.0150684593, CI [−0.0943584262,+0.0642215077]; all-panel mean −0.0093155064,
+CI [−0.1140463277,+0.0954153149]. Both registered criteria fail; disposition remains
+**inconclusive**, not equivalence or demonstrated harm. The repair table uses the
+existing one-policy result: raw 0.3925, repaired 0.3915, difference −0.0010,
+clip-bootstrap CI [−0.0086,+0.0080], 26 clips and 656 paired conditions per arm.
+Its qualification count remains 22/26 plus 4/4 byte-identical controls.
+
+All 12 signed table values match the source at five decimals. Source summary
+SHA-256 `5b1a5fdc537ab8e51405c443f29f34e2bb8f35887e295fc18342a108dd965429`.
+Build/number/seal evidence: `reports/fable_submission_2026-09-07/` and
+`paper/icra/BUILD_AUDIT_2026-09-07.md`. Claims, alternatives and unresolved limits
+are reviewed in `paper/icra/REVIEW_2026-09-07.md`. E4 is explicitly `not_tested`;
+normalization alone is not a novelty claim; no admission benefit enters the paper.
+
+**H1: prospectively sealed, no policy result yet.** Fixed new paired seeds
+1041–1045; two GPU smokes, ten training runs, forty held-out cells. Contract SHA-256
+`fdc5354045bb848fb982822d5ebd6d9b40ca88cb14209acc6b880579eed4b474`.
+Five-seed two-sided primary t decision, +0.02 descriptive, all-panel interval with
+no pass/fail guard. Eight synthetic tests and two CPU smoke replays pass; these
+are instrumentation evidence only. The durable scheduler is waiting for GPU
+capacity. See `plan/H1_FABLE_FREEZE_2026-09-07.md` for exact commands, cutoffs and
+artifact locations. This separate H1 design does not amend the completed R/U
+contract or append seeds to that comparison.
+
+
 ## 2026-09-07 continuous natural-failure coverage and reference census
 
 **Measured CPU development simulation:** the R41 checkpoint-19 policy produces
