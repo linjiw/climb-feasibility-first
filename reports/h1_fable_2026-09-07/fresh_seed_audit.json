@@ -1,0 +1,37 @@
+{
+  "status": "fresh_seed_audit_pass",
+  "seeds": [
+    1041,
+    1042,
+    1043,
+    1044,
+    1045
+  ],
+  "scope": "seed fields, --seed and _s run identities in existing local JSON/YAML/log records; four research worktrees, reports/runs/logs",
+  "limitation": "Does not assert absence from unrecorded or external experiments.",
+  "command": [
+    "rg",
+    "--no-ignore",
+    "--hidden",
+    "--line-number",
+    "-g",
+    "*.json",
+    "-g",
+    "*.yaml",
+    "-g",
+    "*.yml",
+    "-g",
+    "*.log",
+    "(?i)(?:[\"\\x27]?(?:seed|sampler_seed|training_seed|env_seed)[\"\\x27]?\\s*[:=]\\s*|(?:_s|--seed\\s+))(?:1041|1042|1043|1044|1045)\\b",
+    "/home/linjiw/climb-feasibility-first/reports",
+    "/home/linjiw/climb-feasibility-first/runs",
+    "/home/linjiw/climb-feasibility-first/logs",
+    "/home/linjiw/climb-gate-ablation-2026-09-06/reports",
+    "/home/linjiw/climb-icra-evidence-2026-09-06/reports",
+    "/home/linjiw/climb-signal-quality-2026-09-06/reports"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "",
+  "audited_at": "2026-09-07T05:11:16.262768+00:00"
+}
