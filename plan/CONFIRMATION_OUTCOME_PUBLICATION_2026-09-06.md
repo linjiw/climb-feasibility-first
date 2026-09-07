@@ -55,3 +55,11 @@ research addenda, result exports and verification artifacts are copied. Original
 motion payloads, checkpoints and simulation traces are not published.
 The final deployment receipt is recorded after checking the actual Pages build
 and exact public file bytes.
+
+## Deployed result
+
+Site commit `140d225205cee9d401fcaf7b1a54f8f8265b4165` built successfully. All
+eight changed public pages/assets returned HTTP 200 and matched the reviewed
+local bytes. Receipt: `reports/confirmation_pages_2026-09-06/deployment_verification.json`.
+The current result is live at https://linjiw.github.io/climb-feasibility-first/#results.
+The separate publication checkout preserves the original research branch.

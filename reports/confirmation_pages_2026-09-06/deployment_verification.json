@@ -1,0 +1,63 @@
+{
+  "checked_at_utc": "2026-09-07T04:06:08.310257+00:00",
+  "deployed_commit": "140d225205cee9d401fcaf7b1a54f8f8265b4165",
+  "pages_build": "built",
+  "files": [
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/index.html",
+      "http_status": 200,
+      "bytes": 25839,
+      "matches_local_bytes": true,
+      "sha256": "df6ccdf8c390ebc66f05ea95b5d3fc9276a2eebfcd7e67726f0546ee658b7d80"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/relative-progress.html",
+      "http_status": 200,
+      "bytes": 19770,
+      "matches_local_bytes": true,
+      "sha256": "ad2aec212a104747c75fdd8d1442e3e5492be910df26267e185e1a5b32027736"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/research-story.js",
+      "http_status": 200,
+      "bytes": 2522,
+      "matches_local_bytes": true,
+      "sha256": "db5e453835e1ca641f710b1665426ef5b72cd82952d05a6348773704ee4bf82e"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/confirmation-2026-09-06/summary.json",
+      "http_status": 200,
+      "bytes": 3790,
+      "matches_local_bytes": true,
+      "sha256": "5b1a5fdc537ab8e51405c443f29f34e2bb8f35887e295fc18342a108dd965429"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/confirmation-2026-09-06/efficiency_descriptive.json",
+      "http_status": 200,
+      "bytes": 8495,
+      "matches_local_bytes": true,
+      "sha256": "2eaa2211f1618699f135a2b37d6f1650e26313088a451541ca07faf54bf5f831"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/confirmation-2026-09-06/paired_results_and_learning_curves.pdf",
+      "http_status": 200,
+      "bytes": 30722,
+      "matches_local_bytes": true,
+      "sha256": "3c9855deb1c7c4f29fee41aebc0cd17ef4d72211ee2142a7d5dda989ca990cee"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/confirmation-2026-09-06/paired_results_and_learning_curves.png",
+      "http_status": 200,
+      "bytes": 198623,
+      "matches_local_bytes": true,
+      "sha256": "116d36fb836c4d4c426cc4c3562896662a8ffd8184f7dac3c49ab747c2a6a0e9"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/confirmation-2026-09-06/learning_curves.csv",
+      "http_status": 200,
+      "bytes": 2807,
+      "matches_local_bytes": true,
+      "sha256": "377adab5a7ae0fca5060d251d53fc3ed74f9a69cf3b01ba4ab08c0cd2b29631a"
+    }
+  ]
+}

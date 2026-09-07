@@ -21,7 +21,8 @@ admitted training references lasting 8.58/6.12 seconds, using development R11/20
 No active reset/reference rewrite occurs. This is development continuity evidence,
 not a U/D/R comparison. Thirteen support/continuity tests pass. CUDA lifecycle
 validation stopped on an optional camera/raycast-graph assertion; its separately
-bound correction passes seven tests. The nine-cell GPU reentry subsequently completed all cells, but its aggregate
+bound correction passes seven tests. The nine-cell GPU reentry subsequently
+completed all cells, but its aggregate
 original/unchanged exact CSV parity check failed. Individual lifecycle replay
 is recorded separately; no automatic cell retries or full study is enabled.
 
@@ -29,6 +30,10 @@ Result, figure, exports and provenance:
 `reports/relative_confirmation_results_2026-09-06/README.md`.
 Adopted research question, continuous/H1 priority and September submission milestones:
 `plan/USEFUL_PRACTICE_SUBMISSION_2026-09-06.md`.
+
+The completed result and revised research story are live on GitHub Pages:
+site commit `140d225`, successful build and eight exact public file matches.
+Receipt: `reports/confirmation_pages_2026-09-06/deployment_verification.json`.
 
 ## 2026-09-06 ten training runs verified; public research story refreshed
 
