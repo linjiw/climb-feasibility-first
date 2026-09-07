@@ -1,0 +1,105 @@
+{
+  "checked_at_utc": "2026-09-07T02:32:05.869421+00:00",
+  "deployed_commit": "99cb95ad9965956e5aaca36d99e5d32fc114cf8d",
+  "pages_build": "built",
+  "files": [
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/index.html",
+      "http_status": 200,
+      "bytes": 19312,
+      "matches_local_bytes": true,
+      "sha256": "d56a62980603e03c0c9ca425f544523e13451436c4d3f04775b1e80096295510"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/relative-progress.html",
+      "http_status": 200,
+      "bytes": 19362,
+      "matches_local_bytes": true,
+      "sha256": "a09259e67ebde2f561a440bd8f4f82840865cf1ca3cf2927f1ea3140d324b9a1"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/archive-2026-09-05.html",
+      "http_status": 200,
+      "bytes": 377373,
+      "matches_local_bytes": true,
+      "sha256": "47afdd60300f0bac06370b400c20c5d50c7216c3e24c42bce9b802469a637b0b"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/flagship.html",
+      "http_status": 200,
+      "bytes": 100738,
+      "matches_local_bytes": true,
+      "sha256": "e50a7fc96a04520e6a6264f462d6f2b9f39adc176b63d6167cb53e538b9ca18c"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/companion.html",
+      "http_status": 200,
+      "bytes": 36857,
+      "matches_local_bytes": true,
+      "sha256": "71e0b7f7c47e6dcaca5a515016fef0a7ddae0dfa4749a8364c673b97a6856e87"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/segment-native.html",
+      "http_status": 200,
+      "bytes": 28013,
+      "matches_local_bytes": true,
+      "sha256": "5389b96cecbb2f15c2bfee543897920fb221231f478e8bf402451be31a99a40e"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/research-story.css",
+      "http_status": 200,
+      "bytes": 5571,
+      "matches_local_bytes": true,
+      "sha256": "940a5f4186cfd9ce84155d847c62d974a8ace116e787ace8ad419a9ffd4a09dc"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/research-story.js",
+      "http_status": 200,
+      "bytes": 2497,
+      "matches_local_bytes": true,
+      "sha256": "524469d84f2b4e58be89f42644fbbc5a8b874662191c5ec28ff4441efd05eeb4"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/research-update.css",
+      "http_status": 200,
+      "bytes": 7294,
+      "matches_local_bytes": true,
+      "sha256": "62ff00ac8e4ea77cf3241e5cff00014f289bcf14e6e8126a82a40a63d7ba97b5"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/progress-2026-09-06/allocation_snapshots.csv",
+      "http_status": 200,
+      "bytes": 30463,
+      "matches_local_bytes": true,
+      "sha256": "c107999a5fc6a4741dcea361db939e5a782be2b809040b9c14aff72bc1d070b4"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/progress-2026-09-06/confirmation_allocation.pdf",
+      "http_status": 200,
+      "bytes": 28557,
+      "matches_local_bytes": true,
+      "sha256": "4e8e911d22aa877bd24f475739bb07a9dab08f9fc67bc0a6296335ce63c4f309"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/progress-2026-09-06/development_evidence.json",
+      "http_status": 200,
+      "bytes": 3968,
+      "matches_local_bytes": true,
+      "sha256": "b687403c6610788c46e60dd45f43dcfcc436fb6e3dd2013dbbab6a758089f189"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/progress-2026-09-06/research_snapshot.json",
+      "http_status": 200,
+      "bytes": 5263,
+      "matches_local_bytes": true,
+      "sha256": "ceaf00ae83db186a8ce5d3244b3a7ff4d4b1f27b4959174c9e3231f824d35e6c"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/progress-2026-09-06/confirmation_allocation.png",
+      "http_status": 200,
+      "bytes": 175862,
+      "matches_local_bytes": true,
+      "sha256": "a472623f01608aff93599e584148f91656d42383e75b599a2d33a12c5e287f2c"
+    }
+  ]
+}

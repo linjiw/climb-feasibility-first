@@ -136,3 +136,13 @@ Screenshots: [desktop homepage](../reports/pages_update_2026-09-06/index_1440_li
 Publication uses a separate checkout and an explicit file list, preserving unrelated
 local research work. Deployment completion and live byte checks are recorded in
 `reports/pages_update_2026-09-06/deployment_verification.json` after publication.
+
+## Deployed publication
+
+The research site was published in commit
+`99cb95ad9965956e5aaca36d99e5d32fc114cf8d`. GitHub Pages reports the build as
+`built`. All fourteen checked public pages/assets return HTTP 200 and match the
+reviewed local bytes, including both research pages, historical pages, styles,
+script, JSON exports, CSV and PNG/PDF figure. The deployment receipt is preserved
+in the report directory linked above. The page remains a dated 22:17 EDT snapshot;
+training continues independently.
