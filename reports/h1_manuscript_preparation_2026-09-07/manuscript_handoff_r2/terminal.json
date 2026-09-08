@@ -1,0 +1,16 @@
+{
+  "status": "no_complete_H1_candidate",
+  "report_status": {
+    "status": "no_H1_manuscript_result",
+    "campaign_terminal": {
+      "status": "stopped_without_complete_H1",
+      "job": "evaluate_on_s1041_i1000",
+      "reason": "evaluate_on_s1041_i1000 failed with exit code 1; no automatic retry",
+      "completed_at": "2026-09-07T13:45:50.492266+00:00",
+      "contract": {
+        "path": "/home/linjiw/climb-gate-ablation-2026-09-06/reports/h1_fable_2026-09-07/contract.json",
+        "sha256": "fdc5354045bb848fb982822d5ebd6d9b40ca88cb14209acc6b880579eed4b474"
+      }
+    }
+  }
+}

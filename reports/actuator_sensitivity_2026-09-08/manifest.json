@@ -1,0 +1,25 @@
+{
+  "design": "plan/ACTUATOR_SENSITIVITY_2026-09-08.md",
+  "classification": "measured CPU screen sensitivity; no policy, no training, no endpoint",
+  "clips": 900,
+  "levels": [
+    139,
+    120,
+    90
+  ],
+  "gap_m": 0.06,
+  "mu": 0.6,
+  "screen_sha256": "5ef2c91bf9f4634fa484057eea4a9c74577e73ed60a52801c2739ad30fdfe8db",
+  "model_sha256": {
+    "139": "3e1630b42b1d01a45823f228ffe76443a39b85d47df456b9ca119d5431cf7357",
+    "120": "3302db2bfa7fe39ca2bdfe6d21a0084004ac06992d2b561aa1c1673cd52c7146",
+    "90": "0d169f686e0e1acdaad9b629be2206dd9201c6e946b3686ab810578e9ce9d37d"
+  },
+  "bank": "/home/linjiw/dataset/amass-licensed/phase-g-bank-rebuilt-fmt8",
+  "errors": [],
+  "completed": {
+    "139": 900,
+    "120": 900,
+    "90": 900
+  }
+}

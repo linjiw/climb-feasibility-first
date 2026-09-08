@@ -1,0 +1,29 @@
+{
+  "classification": "synthetic illustration; not frozen-policy robot evidence",
+  "assumptions": [
+    "independent equal-variance Gaussian signed changes",
+    "equal prior mass",
+    "inactive caps",
+    "positive noise amplitude"
+  ],
+  "seed": 260906,
+  "repetitions": 2000,
+  "units": 1184,
+  "analytical_large_unit_tv": 0.06048797312237089,
+  "quadrature_tv": 0.0604879731223709,
+  "finite_unit_mean_tv": 0.06040427805965625,
+  "finite_unit_sd_tv": 0.0012127243081028493,
+  "monte_carlo_standard_error": 2.7117339908843698e-05,
+  "replicate_tv_quantiles_025_50_975": [
+    0.05805445610044638,
+    0.06040456578003797,
+    0.06288780413404166
+  ],
+  "fraction_above_005": 1.0,
+  "limitations": "No actual prior, estimator history, event process, caps, or policy learning; do not subtract this null from observed TV.",
+  "source_sha256": "d0381409bbc69cfee51e491ae18ce977ce775c3728dc2135d652eb7ceb79ef92",
+  "numpy_version": "2.5.1",
+  "confirmation_transitions": 589824000,
+  "proposed_branch_transitions": 29491200,
+  "branch_to_confirmation_fraction": 0.05
+}

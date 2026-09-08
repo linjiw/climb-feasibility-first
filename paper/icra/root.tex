@@ -15,8 +15,9 @@
 \newcommand{\method}{CLIMB}
 
 \title{\LARGE \bf
-When Failure Is Not Difficulty: Screening Reference--Physics Misalignment\\
-and Testing Adaptive Allocation on Exact Support for Humanoid Motion Tracking
+When Failure Is Not Difficulty:\\
+Screening Reference--Physics Misalignment and Testing Adaptive Allocation\\
+on Exact Support for Humanoid Motion Tracking
 }
 
 \author{Anonymous Authors}
@@ -32,7 +33,7 @@ demand support unavailable under the declared robot and scene. We study this
 reference--physics misalignment (RPM) through model-relative screening and controlled
 allocation experiments. In a three-seed Unitree G1 campaign, top-1 exposure peaks at
 87--89\%, an unsupported kneel-and-crawl reference repeatedly attracts practice, and
-uniform sampling yields higher held-out survival in each seed. A final-trajectory
+uniform sampling yields higher held-out survival than that sampler in each seed. A final-trajectory
 contact-capacity screen flags 2,442 of 10,705 AMASS-derived references in one retargeting
 pipeline and 7 of 4,950 in a separate production pairing; two implementations agree on
 39 of 40 enriched-panel decisions. Feasibility features improve cross-policy difficulty
@@ -161,7 +162,8 @@ geometry becomes a candidate contact when its exact distance to the plane is at 
 $g=0.06$\,m.
 
 The 6\,cm band is a declared tolerance. At 3\,cm a known feasible control is flagged on 42\% of
-frames because the bank carries an approximately 3\,cm ground-alignment offset. At 10\,cm the
+its frames because that clip's stance frames sit approximately 3\,cm above the plane, a residual
+we attribute to retarget ground alignment but have not measured bank-wide. At 10\,cm the
 attractor's 7--10\,cm floating descent is incorrectly granted a contact candidate. The chosen
 setting lies between these observed failure modes; it is not a universal constant.
 
@@ -185,14 +187,19 @@ We report the fraction of frames with no contact candidate (\texttt{airborne\_fr
 whose torque-limited unsupported force exceeds half the robot weight
 (\texttt{infeasible\_frac}), normalized unsupported-force integral, and joint-torque
 infeasibility. A clip crosses the primary rule only when
-\texttt{infeasible\_frac}$>0.10$ (strict inequality). Ballistic flight is not flagged merely for
+\texttt{infeasible\_frac}$>0.10$ (strict inequality). A frame whose torque-limited program is
+itself infeasible in contact has no finite unsupported force and enters
+\texttt{infeasible\_frac} as zero; such frames are reported separately as joint-torque
+infeasibility, which is nonzero for 734 clips. Counting them as unsupported would flag 2,502
+clips (23.4\%) rather than 2,442, so the reported rate is the conservative convention.
+Ballistic flight is not flagged merely for
 being airborne: near-gravity acceleration has little external support demand. Conversely,
 nonballistic hovering or descent without support is flagged.
 
-The screen takes approximately one CPU-second per clip in the primary implementation. An
-independent implementation processes the production bank at 0.145 CPU-s per clip
-(0.84\,ms/frame). The screen therefore runs as an offline bank-ingestion stage rather than in the
-policy control loop.
+An independent implementation screens the 4,950-clip production bank in 179.8\,s of wall time on
+eight workers, or 0.29 CPU-seconds per clip over 1,818,423 screened frames (0.79\,ms per frame).
+The screen therefore runs as an offline bank-ingestion stage rather than in the policy control
+loop.
 
 \subsection{Repair as a routing alternative}
 DFRP applies a bounded contact projection to qualified floating-reference cases. It lowers
@@ -233,15 +240,24 @@ p_u=0.8b_u+0.2\frac{b_ug_u}{\mu}.
 The implemented prior/cap fallback covers incomplete history or zero $\mu$.
 Common positive rescaling of $g$ leaves Eq.~\eqref{eq:gate} unchanged, and its
 pre-cap total variation from $b$ is at most 0.2. These are exposure properties,
-not guarantees of useful practice. D uses conditional failure under the same
-support; its startup and floor/cap composition differ from R, so R$-$D compares
-allocator designs rather than isolating ranking alone.
+not guarantees of useful practice. The sampler clock advances every 50 environment steps, so the
+ten-tick window spans 500 steps, and conditional rates use a Beta prior with per-tick decay 0.99.
+Equation~\eqref{eq:gate} is the general rule at exploration ratio 0.4 and relative factor 2.
+All arms share a 10-tick progress window and per-unit
+and per-clip ceilings of 0.05 and 0.25. A ranks the same absolute progress but adds a fixed
+floor of 0.05 before a 0.4 exploration mixture; R replaces that floor with the scale-relative
+form of Eq.~\eqref{eq:gate}. D ranks conditional failure at exploration 0.8 with difficulty
+power 1, so R$-$D compares allocator designs rather than isolating ranking alone.
 
 Intervals do not all receive the same remedy. Admissible runs and DFRP-qualified repairs enter the
 exact support; missing-context and residual failures do not. This routing preserves feasible
 subsequences rather than treating every screen flag as a whole-clip deletion instruction.
 The four-arm comparison uses the original admitted bank; it substitutes no repaired targets.
 
+A trial fails when a non-timeout termination fires: anchor height error above 0.25\,m, anchor
+gravity-projection error above 0.8, or height error above 0.25\,m at an ankle or a wrist.
+Truncation at a segment boundary is not a failure. Every arm adds the same one-off terminal cost
+of $-10$ on failure to the inherited tracking rewards.
 The runtime samples only legal starts, emits explicit truncation at a segment boundary, never
 wraps into a rejected frame, and serializes its deterministic generator and sufficient
 statistics. Per-unit and per-clip caps bound concentration. Missing sidecars, changed motion
@@ -284,15 +300,16 @@ failure-adaptive allocator will collapse under RPM.
 \subsection{E2: bank scale, agreement, and transfer}
 
 The primary corpus contains 10,705 AMASS-derived references retargeted through
-\texttt{whole\_body\_tracking} to G1. We report raw counts under the fixed rule, category/source
-breakdowns, and contamination in the historical evaluator. A separate experiment covers all
+\texttt{whole\_body\_tracking} to G1. We report raw counts under the fixed rule and
+category/source breakdowns. A separate experiment covers all
 4,950 references in the filtered BONES-SEED production pairing. We never pool their prevalence.
 A deterministic 40-clip panel, 20 from each bank and enriched for flags, passes through both
 implementations to measure score and decision agreement; it is not a prevalence sample.
 Separately, a ridge model fits 11 intrinsic reference features to per-clip difficulty under one
 curriculum and ranks difficulty under another on the same 100 held-out clips. We compare intrinsic
-features with and without the three \texttt{refeas} features against 200 random three-feature
-additions; this is cross-policy transfer, not cross-architecture transfer.
+features with and without the three \texttt{refeas} features against 200 control designs that
+append three i.i.d. standard-normal columns in their place; this is cross-policy transfer, not
+cross-architecture transfer.
 
 \subsection{E3: DFRP repair qualification}
 
@@ -301,8 +318,8 @@ span three root-displacement bands and two initial-infeasibility bands, and four
 feasible clips serve as no-op controls. The primary outcome is exact-ready flagged count under the
 5\% residual, 8\,cm root, joint-limit, 10\,mm contact-IK, source-hash, and legal-start gates. The
 gate requires at least 20/26 candidates, 4/4 byte-identical ready controls, zero integrity or
-qualification failures among admitted clips, and a reproducible manifest payload. Runtime and
-root, joint, body, velocity, and acceleration deviations are secondary diagnostics.
+qualification failures among admitted clips, and a reproducible manifest payload. Per-clip CPU
+runtime is a secondary diagnostic.
 
 \subsection{Four-arm allocation on unchanged exact support}
 An earlier two-arm E4 protocol selected absolute-progress settings using allocation-only
@@ -314,8 +331,14 @@ The completed study uses seeds 21, 22 and 23, 512 environments, 4,000 PPO iterat
 24 rollout steps: 49,152,000 simulator transitions per policy. Support, learner, rewards
 and reference targets are common. All twelve training gates passed before any held-out
 cell opened. Checkpoints 1000, 2000, 3000 and 3999 give 48 evaluation cells on 100 unchanged
-held-out clips, including 25 feasible-hard clips selected from reference features. Each cell
-contains 2,800 conditions, evaluated over uninterrupted windows of up to three seconds.
+held-out clips, including 25 feasible-hard clips. That stratum is fixed before training: panel
+clips are ranked by the mean percentile rank of seven reference quantities (peak required
+friction, peak vertical force, contact-switch rate, flight fraction, non-foot ground contact,
+peak angular momentum, and negated mean support margin), and the top 25 are taken. No policy
+outcome enters the rule. A cell's 2,800 conditions are 100 clips $\times$ 7 phase starts
+$\times$ 4 replicates, each an independent episode in its own environment, never concatenated.
+Both error terms are means over the survived prefix of an episode, evaluated over uninterrupted
+windows of up to three seconds.
 
 The actor and critic are observation-normalized ELU multilayer perceptrons with
 hidden widths 512/256/128, taking 160 and 286 observation coordinates, respectively;
@@ -329,8 +352,9 @@ The primary score is liveness-weighted reference tracking:
 h\exp\!\left(-\frac{\mathrm{MPKPE}}{0.30\,\mathrm{m}}
              -\frac{\mathrm{anchor\ error}}{0.40\,\mathrm{rad}}\right),
 \end{equation}
-where $h$ is survived-horizon fraction, MPKPE is root-relative body-position error,
-and anchor error is orientation error. We average conditions within clip, clips within
+where $h$ is survived-horizon fraction, MPKPE is the mean position error of the 14 tracked
+bodies expressed relative to the \texttt{torso\_link} anchor, and anchor error is that anchor
+body's orientation error. We average conditions within clip, clips within
 panel and paired differences across training seeds. Independent replication is the
 trained seed pair, not the number of conditions.
 
@@ -352,13 +376,24 @@ clip in two seeds. Uniform sampling achieves higher held-out endpoint survival i
 seed: differences (uniform minus adaptive) are $+0.0300$, $+0.0275$, and $+0.0300$. With only
 three seeds, the sign pattern is the useful description; the minimum attainable paired
 permutation $p$-value is 0.125.
+The campaign's third arm separates the sampler defect from outcome-driven allocation as such.
+A grounded sampler, a convex mixture holding exactly 10\% of the mass on the uniform prior,
+peaks at top-1 mass 0.568/0.649/0.696 instead of 0.87--0.89, and its endpoint survival exceeds
+uniform in all three paired seeds ($+0.0088$, $+0.0238$, $+0.0125$; mean $+0.015$). Collapse
+therefore tracks the additive-floor construction rather than outcome-driven allocation itself.
+At three seeds this ordering is descriptive, and it does not license a grounded-sampler
+recommendation.
 
-The reference has no joint-limit violation and peak joint speed is at most 5.6\,rad/s. The
+The reference violates no joint limit in the model's declared ranges. The
 dynamic screen instead localizes the failure. From 0.75--1.75\,s, 86\%
 of frames have no candidate contact and median unsupported force is 329\,N; the model weighs
 327\,N. The 1.75--7.25\,s kneeling interval is supportable through non-foot contacts, and the
-8.0--8.5\,s rise again becomes unsupported. Every trained policy has zero survival from frame
-zero, while the tested late 8\,s offset survives.
+8.0--8.5\,s rise again becomes unsupported. Under a whole-clip start with a 10\,s horizon no
+trained policy survives the reference, stopping after 2.38\,s on average. Under three-second
+stratified windows the picture is protocol-dependent: a frame-zero window survives in 0.25 to
+1.00 of episodes across seven evaluated policies, while an 8\,s start completes the remaining
+1.96\,s in all seven. We therefore report the horizon with every survival number and do not
+read the late-offset result as evidence about the descent.
 
 \subsection{E2: Bank-scale screening and difficulty transfer}
 
@@ -384,8 +419,10 @@ The difficulty decomposition is also visible across policies trained with differ
 allocations. On the same 100 held-out clips, an 11-feature intrinsic atlas fit to adaptive-policy
 difficulty ranks uniform-policy difficulty at $\rho=0.567$. Adding
 \texttt{infeasible\_frac}, \texttt{airborne\_frac}, and normalized unsupported impulse raises
-the rank correlation to $0.609$, above 198 of 200 random three-feature additions (one-sided
-$p=0.010$). All six directed policy pairs move in the same direction and four have $p<0.05$;
+the rank correlation to $0.609$, above 198 of 200 control designs in which three i.i.d.
+standard-normal columns replace the \texttt{refeas} features (one-sided $p=0.010$). This
+control establishes that the gain is not attributable to added design width alone; it is not a
+comparison against three other real reference features. All six directed policy pairs move in the same direction and four have $p<0.05$;
 the two pairs targeting the grounded policy do not. This is transfer across policies sharing an
 architecture, not evidence of cross-architecture or cross-robot transfer.
 
@@ -406,8 +443,9 @@ architecture, not evidence of cross-architecture or cross-robot transfer.
 \subsection{E3: Contact-manifold repair via DFRP}
 
 DFRP qualifies 22/26 flagged candidates (84.6\%) and all four feasible controls pass as
-byte-identical no-ops. The resulting 26-clip curated view contains 36 admissible units and 10,561
-legal 50-step starts. Median and 95th-percentile CPU runtime are 2.57 and 6.29\,s per clip. Two
+byte-identical no-ops. The resulting curated view, the 22 qualified repairs plus the 4 controls,
+contains 36 admissible units and 10,561 legal 50-step starts. Across all 30 panel clips, median
+and 95th-percentile CPU runtime are 2.57 and 6.29\,s per clip. Two
 candidates remain above the 5\% residual-infeasibility ceiling, and two more reach that ceiling
 but violate the 10\,mm contact-IK bound; all four are quarantined. Thus 84.6\% is a qualification
 rate on the frozen panel, not a bank-wide recovery rate or a policy-benefit estimate.
@@ -421,8 +459,11 @@ rate on the frozen panel, not a bank-wide recovery rate or a policy-benefit esti
 Evidence / status & Result and scope \\
 \midrule
 Qualification / measured & 22/26 flagged candidates; 4/4 feasible controls byte-identical. \\
-Deployment / exploratory & One policy, 26 clips, 656 paired conditions per arm: raw 0.3925,
-repaired 0.3915; difference $-0.0010$, clip-bootstrap 95\% CI $[-0.0086,+0.0080]$. \\
+Deployment / exploratory & One policy, 26 clips (22 qualified repairs plus 4 byte-identical
+controls), 656 paired conditions per arm: raw 0.3925, repaired 0.3915; difference $-0.0010$,
+clip-bootstrap 95\% CI $[-0.0086,+0.0080]$. On the 22 repaired clips alone the difference is
+$-0.0015$ $[-0.0105,+0.0090]$, while the unchanged controls return $+0.0020$
+$[-0.0025,+0.0085]$, which bounds evaluator reproducibility at twice the headline magnitude. \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -437,7 +478,14 @@ The earlier E4 absolute-progress arm reaches mean post-warm-up TV 0.0297, below 
 0.05 gate. Its disposition is \texttt{not\_tested}; it supplies no policy null.
 The newer confirmation retains A under its own comparator rule. R changes exposure
 in all three seeds (mean TV 0.08348/0.08249/0.08233), as does D
-(0.08391/0.08587/0.08398). All twelve training runs pass their declared gates with
+(0.08391/0.08587/0.08398), while A stays near uniform at 0.02976/0.02934/0.02982 and therefore
+acts as a weak-separation comparator rather than a second strong intervention.
+A learning-free reference for this functional form, with 1,184 units, equal prior mass, inactive
+caps and independent Gaussian progress changes, yields mean total variation 0.0605 over 2,000
+replicates and exceeds 0.05 in every replicate. Exposure change above the gate therefore records
+that allocation moved, not that it tracked learning progress. The reference is an illustration
+under idealized assumptions and is not subtracted from the observed values.
+All twelve training runs pass their declared gates with
 zero recorded invalid or censored events. Across 492 saved states, exact sampler
 and checkpoint replay establishes intervention integrity.
 
@@ -498,7 +546,7 @@ completed four-arm result or substituted for a matched admission on/off test.
 Study / status & Bounded finding \\
 \midrule
 E-HYG / sealed & Whole-clip pruning: feasible-panel survival $0.918\to0.907$;
-$\Delta=-0.0101$, one-sided permutation $p=0.951$. \\
+$\Delta=-0.0101$; one seed pair, permutation over held-out feasible clips, $p=0.951$. \\
 Soft weighting / failed gate & Hard-rejected mass 0.199; this does not implement exact admission. \\
 E4 / not tested & Mean TV 0.0297 below 0.05; policy endpoint unopened. \\
 Repair-all / exploratory & Deployment contrast $+0.0397$ misses $+0.05$ target and coverage gate. \\
@@ -520,8 +568,9 @@ the four box-jump flags in the production bank are routed to missing context rat
 bad motion.
 
 Finite differences, the 6\,cm contact band, and the half-weight residual threshold introduce
-modeling choices. Local sensitivity checks bound the two thresholds on this bank, but a new robot
-or retargeter must recalibrate them. The 22.8\% and 0.14\% rates therefore remain separate
+modeling choices. The sensitivity evidence is local: two clips across three contact bands and one
+clip across three residual thresholds. Bank-scale sensitivity of either threshold is untested,
+and a new robot or retargeter must recalibrate them. The 22.8\% and 0.14\% rates therefore remain separate
 corpus--pipeline measurements. A smooth feasibility weight derived from residual slack could
 retain borderline cases, but would couple admissibility and allocation; it requires its own
 matched ablation against the current binary gate.
@@ -533,8 +582,22 @@ power guarantee or evidence of equivalence. Thousands of evaluation conditions c
 replace independent training. The current result neither establishes benefit nor rules
 out a target-sized benefit; a future replication requires its own fixed sample size.
 
-The current simulator has knee effort clamps of approximately $\pm139$\,N\,m,
-zero added command delay and plane terrain; physical G1 transfer is untested. Numerical
+The current simulator clamps knee and hip-roll effort at $\pm139$\,N\,m and adds zero command
+delay on plane terrain; physical G1 transfer is untested. Our configuration audit records
+vendor-published knee maxima of 90 and 120\,N\,m for two G1 revisions, but we archive no snapshot
+of that source and cannot confirm that those figures and the compiled limit describe the same
+point in the drivetrain, so we treat this as a recorded discrepancy rather than a measurement.
+The screen compiles the same actuator ranges as training. Re-screening the 900-clip bank behind
+our exact support at 120 and 90\,N\,m leaves 888 clips unchanged and moves the flagged count from
+99 to 98 of 900, with no clip newly flagged, so on this bank the screen's decisions are dominated
+by the unsupported-wrench residual rather than by the actuator channel. We had predicted that a
+tighter limit could only raise the flagged fraction, and measurement refuted it: the reported
+quantity is the translational component of a residual whose total the program minimizes, so
+tightening can redistribute slack between components, and four clips fall by at most 0.024. We
+therefore make no lower-bound claim. The actor additionally consumes two terms
+that the upstream hardware-oriented G1 configuration removes, base linear velocity and the
+reference anchor pose in the torso frame, so a physical deployment would have to rebuild the
+observation interface and not only the dynamics. Numerical
 parity remains unresolved in a separate physical-sensitivity development check, so
 its perturbation scores are not reported as evidence. A continuous adapter traverses
 8.58-second training references, but comparative full-motion execution is untested.
@@ -559,8 +622,8 @@ Motion, sidecar, unit-table, task, checkpoint, evaluator, condition and output i
 are SHA-256 bound. Licensed motion payloads cannot be redistributed; release requires
 reconstruction instructions and permitted aggregate metadata. OpenAI Codex and
 Anthropic Claude assisted with code, analysis tooling, figures and manuscript drafting
-in Sections I--VII; claims are tied to verified artifacts, with final author review
-required before submission.
+in Sections I--VII; all claims are tied to verified artifacts and their recorded
+provenance.
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}

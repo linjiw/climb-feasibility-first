@@ -1,5 +1,91 @@
 # CLIMB / feasibility-first — status against Research Plan v5
 
+## 2026-09-08 two open decisions taken; screen sensitivity measured; prediction refuted
+
+The two decisions left open on 7 September were delegated and are now taken.
+
+**H1 will not be revived for this submission.** The reasoning is a page budget, not a doubt about
+the experiment. Page 8 now carries 78 of roughly 120 lines after the audit repairs and the two new
+limitations; an integrated H1 section needs about 119 line-equivalents including its figure, so
+including it would require cutting roughly 45 lines that adversarial verification just established
+as necessary. That is a bad trade eight days from the deadline. H1 also sits at rung 3 of the
+deployment ladder, behind two desk-work rungs that cost no compute. Its ten completed training runs
+are intact and hash-bound, and the paper already names admission as the next test, so nothing is
+lost but time. `plan/H1_EVALUATION_FAILURE_2026-09-07.md` remains the record.
+
+**The anonymized draft is no longer linked publicly.** Five links to `paper/icra/OUTLINE.md`,
+`DRAFT.md` and `ICRA_DRAFT.pdf` were removed from `docs/archive-2026-09-05.html` and
+`docs/segment-native.html` and replaced with inert text marked "withheld during review". No
+`paper/icra/` path is now reachable from any published page. The pages remain as historical
+records.
+
+**Rung 2 of the deployment ladder was executed, and it refuted its own registered prediction.**
+Design declared before the outcome: `plan/ACTUATOR_SENSITIVITY_2026-09-08.md`. Re-screening all
+900 Phase-G clips at knee and hip-roll limits of 139, 120 and 90 N·m leaves 888 clips unchanged
+and moves the flagged count from 99 to 98 of 900, with no clip newly flagged. The baseline
+reproduces the published screen exactly on all 900 clips, maximum delta 0.0. The design had
+predicted the flagged fraction could only rise; four clips fall, by up to 0.0236, because the
+screen thresholds the translational component of a residual whose total the program minimizes.
+The lower-bound sentence was withdrawn from the manuscript and the public page and replaced by
+the measurement. Full record: `reports/actuator_sensitivity_2026-09-08/result.json`.
+
+Four remaining manuscript polish items were applied (denominator of the repair panel, the E-HYG
+resampling unit, the sampler clock and constants, and the evaluation cell composition). The paper
+builds at 8 pages with every gate passing. The public page now carries the sensitivity result as a
+measured finding and marks that ladder rung done.
+
+## 2026-09-08 public page rebuilt around the paper and a deployment ladder
+
+The project page now introduces the submission by its current title and abstract, gives the
+screening line its own section, reports all three E1 arms, states the learning-free total-variation
+floor of 0.0605 beside the 0.05 gate, splits the repair result into 22 qualified repairs and 4
+byte-identical controls, and records that the admission test trained completely and then stopped
+before measuring anything.
+
+It also carries a real-world deployment ladder of seven rungs, ordered by what can invalidate
+what. Two verified code facts set that order. First, the upstream hardware-oriented G1 tracking
+configuration registers with `has_state_estimation=False`, stripping `motion_anchor_pos_b` and
+`base_lin_vel` from the actor group because a robot cannot measure them; `climb/` never sets the
+flag, so every policy here consumes both. Second, `refeas/examples/g1_flat.xml` carries
+`forcerange="-139 139"` on both knees and hip rolls, the same optimistic limits as the training
+model, so the screen's actuator channel is optimistic by construction and the flag counts are a
+lower bound against the published 90 N·m (G1) and 120 N·m (G1 EDU). Both facts were added to the
+manuscript's Limitations; the paper still builds at 8 pages with every gate passing.
+
+The reachable physical claim is screen validity, not the curriculum claim: the allocation result
+is inconclusive, and its independent unit is the training seed pair, which robot time cannot
+manufacture. Superseded public pages were corrected rather than deleted. The experiments page
+carried a pre-result snapshot reading 10/12 and "Pending"; its headline tiles now read 12/12, 492
+replayed states and inconclusive, under an explicit supersession banner. The four archived draft
+pages gained a banner naming the absolute wording ("impossible", "dynamically infeasible") that
+the manuscript replaced with model-relative language. The ICRA footer and call link were removed
+from the landing page; the archived pages still link the anonymized draft under an identifying
+account, which remains an open decision.
+
+Guidance is rev 5 in `fable.md` / `fable.html`.
+
+## 2026-09-07 H1 stopped before its first evaluation cell; manuscript repaired
+
+All ten H1 training runs completed and passed their gates; the campaign then stopped on the first
+evaluation job because the sealed evaluation path omits the condition-manifest adapter the
+completed confirmation used. The failure is provably pre-endpoint: no checkpoint was loaded and no
+CSV written. Nothing scientific is wrong, and the fix carries no scientific content, but
+continuation in place is blocked by exclusive-create sentinels, the preserved terminal record and
+the contract-bound campaign path. Completing H1 therefore needs a contract revision, which is a
+preregistration decision and is recorded, not taken:
+`plan/H1_EVALUATION_FAILURE_2026-09-07.md`. Recommended option is a clean v3 contract that
+re-runs training and evaluation together under one seal, at roughly six GPU-hours, since the GPU
+is free and the deadline is eight days out; a one-GPU-hour variant that binds the ten completed
+v2 training runs and runs only the 40 evaluation cells is scientifically equivalent and available
+if the result is wanted sooner.
+
+Independently of H1, twenty verified repairs were applied to the manuscript across two passes,
+and it rebuilds to 8 pages with all gates passing. The most consequential report the E1 campaign's
+third arm, which the design announced and the results omitted; correct the attractor's survival
+sentence, which was contradicted by its own artifact and mixed two evaluation protocols; and
+disclose that the 0.05 exposure gate sits below a measured learning-free floor of 0.0605. Evidence and staged repairs:
+`reports/fable_independent_verification_2026-09-07/`.
+
 ## September 7, 07:43 EDT — H1 eight runs complete; manuscript handoff running
 
 **Measured training integrity; H1 policy result pending.** Both seed-81 GPU

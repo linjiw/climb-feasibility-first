@@ -1,0 +1,105 @@
+{
+  "design": "plan/ACTUATOR_SENSITIVITY_2026-09-08.md",
+  "classification": "measured CPU screen sensitivity on the 900-clip Phase-G bank",
+  "rule": "infeasible_frac > 0.10",
+  "levels_nm": [
+    139,
+    120,
+    90
+  ],
+  "screen_sha256": "5ef2c91bf9f4634fa484057eea4a9c74577e73ed60a52801c2739ad30fdfe8db",
+  "model_sha256": {
+    "139": "3e1630b42b1d01a45823f228ffe76443a39b85d47df456b9ca119d5431cf7357",
+    "120": "3302db2bfa7fe39ca2bdfe6d21a0084004ac06992d2b561aa1c1673cd52c7146",
+    "90": "0d169f686e0e1acdaad9b629be2206dd9201c6e946b3686ab810578e9ce9d37d"
+  },
+  "completed": {
+    "139": 900,
+    "120": 900,
+    "90": 900
+  },
+  "errors": 0,
+  "reproduction": {
+    "clips_checked": 900,
+    "clips_absent_from_published": 0,
+    "max_abs_delta": 0.0,
+    "tolerance": 1e-12
+  },
+  "monotonicity": {
+    "violations": 8,
+    "tolerance": 1e-09,
+    "examples": [
+      {
+        "clip": "Eyes_Japan_Dataset_kanno_accident-11-fall_down-kanno_poses_120_jpos",
+        "from": "139",
+        "to": "120",
+        "delta": -0.0006720430107526876
+      },
+      {
+        "clip": "Transitions_mocap_mazen_c3d_twistdance_walk_poses_120_jpos",
+        "from": "139",
+        "to": "120",
+        "delta": -0.004878048780487795
+      },
+      {
+        "clip": "BMLmovi_Subject_48_F_MoSh_Subject_48_F_16_poses_120_jpos",
+        "from": "120",
+        "to": "90",
+        "delta": -0.0019157088122605248
+      },
+      {
+        "clip": "CMU_22_23_justin_22_12_poses_120_jpos",
+        "from": "120",
+        "to": "90",
+        "delta": -0.023622047244094488
+      },
+      {
+        "clip": "BMLmovi_Subject_48_F_MoSh_Subject_48_F_16_poses_120_jpos",
+        "from": "139",
+        "to": "90",
+        "delta": -0.0019157088122605248
+      }
+    ]
+  },
+  "status": "monotonicity_falsified",
+  "reason": "the lower-bound argument in the manuscript and on the public page must be withdrawn and the cause diagnosed",
+  "descriptive_after_falsification": {
+    "note": "The pre-declared monotonicity prediction failed, so the lower-bound interpretation is withdrawn. The primary readout below was also pre-declared and remains a valid descriptive measurement of stability.",
+    "per_level": {
+      "139": {
+        "flagged": 99,
+        "of": 900,
+        "percent": 11.0,
+        "clips_with_any_torque_infeasible_frame": 9
+      },
+      "120": {
+        "flagged": 98,
+        "of": 900,
+        "percent": 10.89,
+        "clips_with_any_torque_infeasible_frame": 9
+      },
+      "90": {
+        "flagged": 98,
+        "of": 900,
+        "percent": 10.89,
+        "clips_with_any_torque_infeasible_frame": 9
+      }
+    },
+    "flag_changes_vs_baseline": {
+      "120": {
+        "newly_flagged": 0,
+        "no_longer_flagged": 1
+      },
+      "90": {
+        "newly_flagged": 0,
+        "no_longer_flagged": 1
+      }
+    },
+    "clips_changed_at_all_139_to_90": 12,
+    "clips_unchanged": 888,
+    "largest_decrease": -0.023622047244094488,
+    "largest_increase": 0.016216216216216217
+  },
+  "mechanism": "The screen thresholds the translational component of a weighted wrench residual whose total the linear program minimizes, with angular rows weighted by two. Tightening the torque constraint can only raise the total slack, but it can redistribute that slack between the translational and angular components, so the thresholded sub-component is not monotone in the actuator limit. torque_infeasible_frac is unchanged on every affected clip, so the NaN-to-zero convention is not the cause.",
+  "consequence": "Withdraw the lower-bound sentence from paper/icra/root.tex and docs/index.html. Replace it with the measured stability result and the non-monotonicity, both reported here."
+}

@@ -1,5 +1,117 @@
 # Results log — every paper-bound number and its artifact path (policy: RESEARCH_PLAN_v5)
 
+## 2026-09-08 actuator-model sensitivity of the screen: measured, and a registered prediction refuted
+
+**Measured CPU screen sensitivity; no policy, training or held-out endpoint.** Design declared
+before the tightened conditions ran: `plan/ACTUATOR_SENSITIVITY_2026-09-08.md`. Artifacts:
+`reports/actuator_sensitivity_2026-09-08/` (design-bound runner, pre-written analyzer, three model
+files, 2,700 per-clip screens, `result.json`).
+
+All 900 clips of the local Phase-G bank were re-screened at knee and hip-roll `forcerange` levels
+of ±139 (baseline), ±120 and ±90 N·m. Only those four attributes differ between conditions;
+screen source, bank, contact band (0.06 m), friction (0.6) and clip extent are identical.
+
+| Knee/hip-roll limit | Flagged, `infeasible_frac` > 0.10 | Clips with any torque-infeasible frame |
+| --- | ---: | ---: |
+| ±139 N·m (baseline) | 99 / 900 (11.00%) | 9 |
+| ±120 N·m | 98 / 900 (10.89%) | 9 |
+| ±90 N·m | 98 / 900 (10.89%) | 9 |
+
+**Reproduction gate passed exactly.** The baseline reproduces the published 10,705-clip screen on
+all 900 overlapping clips with maximum absolute delta 0.0 on `infeasible_frac`, `airborne_frac`
+and `torque_infeasible_frac`. That licenses attributing any change to the actuator limit alone.
+
+**Measured result:** the screen is highly stable on this axis. Tightening by 35% leaves 888 of 900
+clips completely unchanged, moves the flagged count by one clip, and makes no clip newly flagged.
+On this bank the screen's decisions are dominated by the unsupported-wrench residual, not by the
+actuator channel.
+
+**Registered prediction refuted.** The design predicted the flagged fraction could only rise and
+that no clip's `infeasible_frac` could fall by more than 1e-9. Four clips fall, by up to 0.023622,
+and the flagged count falls rather than rises. The pre-written analyzer stopped at that gate with
+status `monotonicity_falsified`. Diagnosis: `torque_infeasible_frac` is unchanged on every
+affected clip, so the NaN-to-zero convention is not the cause; the reported quantity is the
+translational component of a weighted residual whose *total* the linear program minimizes, so a
+tighter torque constraint can redistribute slack between translational and angular components.
+**Consequence:** the lower-bound sentence was removed from `paper/icra/root.tex` and
+`docs/index.html` and replaced by this measurement.
+
+**Scope:** the 900-clip Phase-G bank, not the 10,705-clip corpus behind the 22.8% headline, which
+is not held locally. The 120 and 90 N·m levels are recorded vendor figures used as declared stress
+points, not calibrated hardware values; this establishes nothing about a physical motor.
+
+## 2026-09-07 H1 stopped pre-endpoint; twelve manuscript repairs applied
+
+**Measured harness failure, no policy outcome.** The sealed five-paired-seed H1 campaign
+(contract SHA-256 `fdc5354045bb…`) completed 12 of 52 jobs: two GPU smokes and all ten
+4,000-iteration training runs, each `gate_training_pass`, at a mean 28.2 minutes per run. It then
+stopped on `evaluate_on_s1041_i1000` with exit code 1 and no automatic retry. Cause:
+`eval_paired_v2.load_or_create_manifest` compares the rebuilt condition manifest to the stored one
+by strict dictionary equality, and the stored Phase-G manifest carries two provenance keys
+(`classification`, `panel_txt_sha256`) that the builder does not emit. All 2,800 conditions, all
+100 motion records and every scientific parameter match exactly. **No checkpoint was loaded, no
+rollout run and no CSV written, so no held-out endpoint was observed.** The completed U/A/R/D
+confirmation avoided this by running through `tools/eval_relative_confirmation.py`, whose
+`load_sealed_conditions` adds the two keys before comparing; H1's job runner omits that adapter.
+Diagnosis, options and recommendation: `plan/H1_EVALUATION_FAILURE_2026-09-07.md`.
+No H1 number exists and none may be quoted.
+
+**Measured configuration fact, newly paper-bound:** the screen compiles the same actuator ranges
+as the training model. `refeas/examples/g1_flat.xml` carries four actuators at
+`forcerange="-139 139"` (both knees, both hip rolls), matching the compiled G1 audited in
+`reports/icra_evidence_2026-09-06/physics_audit.json`. **That argument has since been withdrawn.** It held that
+tightening a force range can only shrink the feasible set of the torque-limited contact program,
+so a stricter actuator model could only raise the flagged fraction. A prospectively designed
+re-screen refuted it on 8 September; see the entry above. No lower-bound claim is made.
+
+**Provenance caveat, recorded after adversarial verification.** The vendor knee maxima of 90 N·m
+and 120 N·m appear in this repository only as a hand-entered block in `physics_audit.json`, which
+the ledger already classes as an externally reported specification rather than a measurement. No
+snapshot of the source page is archived here, and the repository does not establish that the
+compiled 139 N·m limit and the published figures describe the same point in the drivetrain, nor
+which G1 variant the 90 N·m figure describes. The manuscript and the public page now state this
+as a recorded discrepancy, not a measured one. An earlier draft of both asserted the vendor
+figures as fact and inferred that a reference demanding 90-139 N·m at the knee is admissible to
+the screen; that inference was wrong, because the per-clip flag is driven by the unsupported-wrench
+residual and such a clip can still be flagged. Both statements were replaced by the monotonicity
+argument above.
+
+**Measured document repairs.** Twenty independently verified repairs were applied to
+`paper/icra/root.tex` in two passes; the paper rebuilds to 8 pages with zero overfull boxes, no
+undefined citation or reference, and all fonts embedded. A ten-dimension adversarial audit
+(72 findings, 32 surviving independent refutation) drove the second pass. Its corrections of
+record: the E1 attractor's "zero survival from frame zero" is true only under a 10-second
+whole-clip horizon (mean survival 2.376 s, `reports/eval_tier_mixed100_fixed.csv`), while under
+three-second stratified windows a frame-zero start survives in 0.25 to 1.00 of episodes across
+seven policies and an 8-second start completes the remaining 1.96 s in all seven
+(`reports/N3_*_strat.csv`); a learning-free reference for the sampler's functional form yields
+mean total variation 0.0605 over 2,000 replicates at 1,184 units and exceeds the 0.05
+manipulation gate in every replicate, so exposure change above that gate records movement rather
+than tracking of learning progress (`reports/fable_independent_verification_2026-09-07/noise_only_tv.json`;
+the artifact's own limitation against subtracting it is preserved in the prose); the DFRP
+deployment row now separates 22 qualified repairs (−0.0015, [−0.0105,+0.0090]) from 4
+byte-identical controls (+0.0020, [−0.0025,+0.0085]), the latter bounding evaluator
+reproducibility at twice the headline magnitude; the screen-cost pair 0.145 CPU-s per clip with
+0.84 ms per frame was internally inconsistent by 2.1× against 367.36 frames per clip and is
+replaced by the sourced 0.29 CPU-s per clip and 0.79 ms per frame from
+`reports/feasibility_sonic/COMPLETED.json`; threshold-sensitivity scope is narrowed to the two
+clips and one clip actually swept; the unsourced 5.6 rad/s peak joint speed is removed; and the
+trial-failure criterion and the −10 terminal cost are stated for the first time. Three correct disagreements between the manuscript and its own
+code: `infeasible_frac` scores a torque-limited-infeasible contact frame as zero unsupported force
+(union rule would flag 2,502/10,705 = 23.37% rather than 2,442 = 22.81%; 734 clips have
+`torque_infeasible_frac` > 0); the primary score's MPKPE is torso-anchor-relative over 14 tracked
+bodies, not root-relative; and the 200-draw transfer control appends i.i.d. standard-normal
+columns rather than three other real reference features. One reports a previously omitted arm:
+the sealed E1 campaign ran **three** arms, and the grounded sampler reached final survival
+0.82250/0.83625/0.81500 against uniform 0.81375/0.81250/0.80250 (+0.0088/+0.0238/+0.0125, 3/3
+seeds) with peak top-1 mass 0.568/0.649/0.696 rather than 0.87–0.89. One reports arm A's
+completed exposure (mean post-warm-up TV 0.029759/0.029339/0.029822, below the 0.05 separation
+level in every seed), which makes the reported R−A contrast interpretable. The rest close
+promises the design made and the results did not keep, print the allocator constants and the
+feasible-hard panel rule, and remove an internal note from the acknowledgments.
+Full per-repair justification and artifact checks:
+`reports/fable_independent_verification_2026-09-07/`.
+
 ## 2026-09-07 07:43 EDT — learner disclosure and H1 manuscript preparation
 
 **Measured configuration and document checks; no new policy outcome.** The

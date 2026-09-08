@@ -56,3 +56,6 @@ reports/**/*.lock
 # Isolated, synthetic manuscript-layout workspaces (retain result PDF/logs).
 reports/h1_manuscript_preparation_2026-09-07/synthetic_layout*/workspace/
 reports/h1_manuscript_preparation_2026-09-07/synthetic_layout*/SYNTHETIC_REPORT/
+
+# actuator-sensitivity per-clip shards; the aggregate, result and models are versioned
+reports/actuator_sensitivity_2026-09-08/raw/
