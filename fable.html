@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>fable.md — CLIMB guidance rev 4 (2026-09-07)</title>
+<title>fable.md — CLIMB guidance rev 5 (2026-09-08)</title>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#F7F8F8;--paper:#FFFFFF;--ink:#1A2530;--muted:#5C6B75;--rule:#DCE2E6;--accent:#0B7285;--code:#EFF2F3;--warn:#B45309}
@@ -26,649 +26,332 @@ hr{border:0;border-top:1px solid var(--rule);margin:2rem 0}
 @media print{body{background:#fff}.sheet{border:0;margin:0;max-width:none;padding:0}}
 </style></head><body>
 <div class="sheet">
-<div class="banner">Rendered from <code>fable.md</code> (rev 4, 2026-09-07). Unsealed guidance; authorizes nothing by itself. Generated file — edit the markdown, then re-render.</div>
-<h1 id="fablemd-research-guidance-for-climb-feasibility-first-2026-09-07-rev-4">fable.md — Research guidance for CLIMB / feasibility-first (2026-09-07, rev 4)</h1>
-<p><strong>Author:</strong> Claude Fable 5.1, from a full read of <code>plan/STATUS.md</code>, <code>paper/RESULTS_LOG.md</code>,
-<code>paper/RED_TEAM.md</code>, <code>paper/icra/DRAFT.md</code> + <code>REVIEW_2026-09-04.md</code> + <code>BUILD_AUDIT_2026-09-04.md</code>,
-<code>reports/relative_confirmation_results_2026-09-06/README.md</code>, and the September 5–6 plan
-addenda (<code>USEFUL_PRACTICE_SUBMISSION</code>, <code>USEFUL_PRACTICE_NEXT_STEPS</code>, <code>ICRA_EVIDENCE_ROADMAP</code>,
-<code>MATCHED_GATE_RUNTIME</code>, <code>H1_*</code>, <code>RELATIVE_PROGRESS_R1_RESULT</code>).
-<strong>Status:</strong> unsealed guidance. Not a preregistration; authorizes nothing by itself.
-<strong>Supersedes</strong> rev 3 (2026-08-27; kept in git history at <code>d77b226</code>). Everything rev 3 asked for
-has since happened: Newton gate sealed and failed (G3 killed), Phase-G sealed and run, E4
-<code>not_tested</code>, relative-ALP calibrated, four-arm three-seed confirmation completed. This revision
-is written for one purpose: <strong>a complete, honest, eight-page ICRA 2027 submission on
-September 15, 2026 — eight days from now.</strong></p>
+<div class="banner">Rendered from <code>fable.md</code> (rev 5, updated 2026-09-08). Unsealed guidance; authorizes nothing by itself. Every result below is simulation: this project has run no hardware experiment. Generated file — edit the markdown, then re-render.</div>
+<h1 id="fablemd-research-guidance-for-climb-feasibility-first-rev-5-updated-2026-09-08">fable.md — Research guidance for CLIMB / feasibility-first (rev 5, updated 2026-09-08)</h1>
+<p><strong>Author:</strong> Claude Fable 5.1. <strong>Status:</strong> unsealed guidance. Not a preregistration; authorizes
+nothing by itself.
+<strong>Supersedes</strong> rev 4 (same day, morning; kept in git history). Rev 4 was written to get a
+complete, honest eight-page ICRA submission out of an inconclusive result. That has happened.
+Rev 5 records the finished state, the one open loop, and the thing this project has never had:
+<strong>a route to a physical robot.</strong></p>
 <hr />
 <h2 id="0-one-paragraph-verdict">0. One-paragraph verdict</h2>
-<p>The research programme has done its job: the sealed four-arm confirmation ran to completion
-and returned <strong>inconclusive</strong> (final feasible-hard R−U = −0.015, 95 % seed-t CI
-[−0.094, +0.064]; exploratory AULC negative in 3/3 seeds). The correct reading is not
-"CLIMB failed" — it is that the paper's claim set must now be <em>chosen</em>, not <em>hoped for</em>. The
-draft of Sept 4 still says E4 is "in progress" and frames three method contributions of which
-two have no positive policy result. That framing will not survive review and must change this
-week. The strong, fully-evidenced spine is the <strong>measurement line</strong>: reference–physics
-misalignment (RPM) diagnosed in a sealed campaign, a bank-scale screen with cross-implementation
-agreement, feasibility features that transfer difficulty across policies, an exact temporal
-support interface, and a <em>controlled</em> result that on exact support, outcome-driven allocation
-changes exposure but not held-out tracking at this budget. <strong>One</strong> experiment is worth the GPU
-before the evidence cutoff: <strong>H1, admission on/off under the same failure-driven allocator on
-the contaminated bank</strong>, because it is the only test of the word "feasibility-gated" in the
-title and it fits in roughly one GPU-day. Everything else (continuous execution, physical
-sensitivity, noise study, practice branches, video, hardware) is stopped until Sept 16.</p>
+<p>The paper is done at simulation scale and it is honest. Twenty verified repairs closed every
+disagreement found between the manuscript and its own code, the build passes every gate at eight
+pages, and the claim set no longer depends on a positive result anywhere. The scientific position
+is: <strong>reference–physics misalignment is real, measurable at bank scale, and transfers difficulty
+information across policies; and on exact admissible support, no allocation rule we tested beat
+uniform at this budget.</strong> That is a publishable contribution and a genuinely useful negative
+result. One loop was open and is now closed by decision rather than by
+evidence: H1, the admission on/off test, finished all ten training runs and then stopped before
+its first evaluation cell on a harness bug. It has no result, and it will not be revived for this
+submission, because integrating it would cost roughly 45 lines of content that adversarial
+verification just established as necessary. Rung 2 of the deployment ladder <em>was</em> run on 8
+September, and it refuted its own registered prediction. Everything beyond that is the next
+programme, and the honest name for it is not "more allocation experiments" — it is <strong>the
+deployment gap</strong>, because this project has never run a physical experiment of any kind.</p>
 <hr />
-<h2 id="1-where-the-project-stands-on-sept-7">1. Where the project stands on Sept 7</h2>
-<h3 id="11-settled-evidence-the-paper-can-lean-on">1.1 Settled evidence the paper can lean on</h3>
+<h2 id="1-state-at-the-end-of-7-september">1. State at the end of 7 September</h2>
+<h3 id="11-the-manuscript">1.1 The manuscript</h3>
 <table>
 <thead>
 <tr>
-<th>claim</th>
-<th>label</th>
-<th>artifact</th>
+<th>item</th>
+<th>state</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Failure-adaptive sampler concentrates (peak top-1 0.870–0.893) on a kneel/crawl clip whose 0.75–1.75 s descent demands ≈329 N unsupported vs 327 N robot weight; uniform beats adaptive +0.030/+0.0275/+0.030 in 3/3 paired seeds</td>
-<td>sealed ✓</td>
-<td><code>reports/A5_coverage_dose.json</code>, <code>A7_attractor.json</code>, <code>N1_clip44_knee_id.json</code></td>
+<td>Title</td>
+<td>"When Failure Is Not Difficulty: Screening Reference–Physics Misalignment and Testing Adaptive Allocation on Exact Support for Humanoid Motion Tracking"</td>
 </tr>
 <tr>
-<td>ε/N is not a floor; normalise-then-mix is</td>
-<td>sealed ✓, upstream-filed (mjlab #1153, wbt #73, still open)</td>
-<td><code>RED_TEAM</code> #3</td>
+<td>Contributions</td>
+<td>two, as rev 4 §3.2 specified. The third (admission) was deleted, not left pending, because H1 has no result</td>
 </tr>
 <tr>
-<td>2,442/10,705 (22.8 %) flagged in AMASS→wbt→G1; 7/4,950 (0.14 %) in BONES-SEED→G1; never pooled</td>
-<td>measured</td>
-<td><code>reports/feasibility_all/</code>, <code>reports/feasibility_sonic/</code></td>
+<td>Build</td>
+<td>8 pages, US Letter, zero overfull boxes, no undefined citation or reference, no Type 3 fonts, no anonymity leak in the PDF</td>
 </tr>
 <tr>
-<td>Same-clip 20+20 panel: ρ 0.984/0.997, 39/40 strict flags agree (κ 0.948)</td>
-<td>measured</td>
-<td><code>reports/feasibility_xcheck/</code></td>
+<td>Repairs</td>
+<td>20 applied across two passes, all fail-closed and artifact-verified (<code>reports/fable_independent_verification_2026-09-07/</code>)</td>
 </tr>
 <tr>
-<td>Feasibility features lift cross-policy difficulty transfer 0.567→0.609 (p = 0.010 vs 200 random triples)</td>
-<td>sealed ✓</td>
-<td><code>reports/N_atlas_v21.json</code></td>
-</tr>
-<tr>
-<td>Exact support over tier_800: 1,841 runs → 1,184 admissible units, 368,951 legal starts; hash-bound; paired evaluator with 100-clip name+hash-disjoint panel, 2,800 conditions</td>
-<td>measured (apparatus)</td>
-<td><code>reports/g_segment/unit_table.json</code>, <code>eval_conditions.json</code></td>
-</tr>
-<tr>
-<td>DFRP v1 exact contract: 22/26 flagged qualify, 4/4 controls byte-identical</td>
-<td>measured (implementation gate)</td>
-<td><code>reports/dfrp_v1_exact_panel/iter1/</code></td>
-</tr>
-<tr>
-<td>DFRP fixed-policy deployment: raw 0.3925 → repaired 0.3915, Δ −0.0010, clip-bootstrap CI [−0.0086, +0.0080], one policy, 26 clips</td>
-<td>measured exploratory</td>
-<td><code>reports/dfrp_policy_validation_2026-09-05/result.json</code></td>
-</tr>
-<tr>
-<td>Newton no-training predictive gate FAIL (partial ρ 0.141, p 0.158); G3 killed</td>
-<td>sealed ✗ (kept)</td>
-<td><code>plan/NEWTON_PRED_RESULT.md</code></td>
+<td>Ledgers</td>
+<td><code>paper/RESULTS_LOG.md</code> and <code>plan/STATUS.md</code> carry dated entries for the H1 stop and both repair passes</td>
 </tr>
 </tbody>
 </table>
-<h3 id="12-what-changed-since-rev-3-the-load-bearing-new-facts">1.2 What changed since rev 3 (the load-bearing new facts)</h3>
+<p>The three corrections that most changed what a reviewer concludes:</p>
 <ol>
-<li><strong>E4 (absolute-floor ALP, seed 1): <code>not_tested</code>.</strong> Mean post-warm-up TV 0.0297 &lt; 0.05. Seeds
-   2–3 stopped, endpoint never opened. This is the fourth arm in a row to fail its manipulation
-   check (FGAS, segment-v2, E4, and the old adaptive "A" arm at TV 0.03 inside confirmation).</li>
-<li><strong>Relative ALP (R) passes the manipulation gate</strong> in every seed run (TV 0.082–0.083; effective
-   units &gt; 600; caps respected; zero invalid/censored). So did the conditional-failure allocator
-   D (TV 0.082–0.086). <strong>The allocation half of the thesis is now testable and was tested.</strong></li>
-<li><strong>Confirmation (U/A/R/D × seeds 21–23, 512 env × 4,000 it = 49.2 M transitions per policy,
-   48 held-out cells): inconclusive.</strong> Per-seed R−U: −0.0340, −0.0330, +0.0218. All-panel guard
-   fails (CI lower −0.114). R−D −0.0067 with CI [−0.022, +0.008] — R and D are
-   indistinguishable and both slightly below uniform. Exploratory hard AULC R−U negative in
-   every seed (mean −0.029). <strong>No allocator beats uniform on exact support at this budget.</strong></li>
-<li><strong>Repair does not move a fixed policy</strong> (Δ −0.001 on 26 clips). Combined with N7, the honest
-   sentence is: certified repair is <em>consumable without harm</em> on this panel; it is not a
-   performance lever we have shown.</li>
-<li><strong>H1 is nearly launch-ready.</strong> Matched gate-on/gate-off runtime exists in
-   <code>/home/linjiw/climb-gate-ablation-2026-09-06</code>; CPU PPO smokes pass from identical actor
-   tensors; the candidate partition retains all 1,184 feasible units + 465 rejected intervals
-   (368,951 of 417,072 legal starts admitted; 11.54 % excluded); the gate-off prior floor
-   guarantees ≥ 0.0923 rejected-start probability; the provenance checker passes 19 tests.
-   Missing: the freeze contract, seeds, the analysis decision rule, and the scheduler.</li>
-<li><strong>The physics audit</strong> found both knee clamps at ±139 N·m vs Unitree's public 90 (G1) /
-   120 (G1 EDU) N·m; zero command delay; plane terrain. This is one limitation sentence, not
-   an experiment.</li>
-<li><strong>The GPU follow-up queue is in a failed state</strong>: nine CUDA lifecycle cells completed but the
-   aggregate original/unchanged CSV parity gate failed, cause unresolved. The physical-
-   sensitivity study S1 therefore cannot be trusted to produce a paper number this week.</li>
+<li><strong>The E1 campaign ran three arms and the paper reported two.</strong> The omitted grounded sampler
+   peaked at top-1 mass 0.568/0.649/0.696 rather than 0.87–0.89 and beat uniform in 3/3 paired
+   seeds (+0.0088/+0.0238/+0.0125). It is the direct evidence for the paper's own claim that the
+   collapse came from the additive-floor construction rather than from outcome-driven allocation
+   as such. Reporting it is both more honest and better for the argument.</li>
+<li><strong>A survival sentence was contradicted by its own artifact.</strong> "Zero survival from frame zero"
+   holds only under a 10-second whole-clip horizon. Under three-second stratified windows the
+   same reference survives from frame zero in 0.25–1.00 of episodes across seven policies. The
+   sentence compared two protocols without naming either.</li>
+<li><strong>The 0.05 exposure gate sits below its own noise floor.</strong> A learning-free reference for the
+   sampler's functional form yields total variation 0.0605 at 1,184 units and exceeds 0.05 in
+   every one of 2,000 replicates. Passing that gate shows allocation moved, not that it tracked
+   learning progress.</li>
 </ol>
-<h3 id="13-calendar-and-machine">1.3 Calendar and machine</h3>
-<ul>
-<li><strong>ICRA 2027 deadline: Sept 15, 2026</strong> (checked against the official call on Sept 6). Eight pages
-  including references. Video window closed Sept 9, reopens Sept 17–22.</li>
-<li>Internal gates already adopted: <strong>Sept 10 claim selection, Sept 12 evidence cutoff,
-  Sept 13–15 integration.</strong> This document tightens the first to <strong>Sept 8</strong> (see §3) because the
-  claim set no longer depends on any pending result except H1.</li>
-<li>Current draft: <code>paper/icra/ICRA_DRAFT.pdf</code> is <strong>7 of 8 pages</strong>, built Sept 4–5, with §5.4
-  reading "E4's three-seed policy comparison is in progress". It has never been rebuilt with
-  the completed result.</li>
-<li>GPU today: 16 GB card, 1.2 GB used, 1 % utilisation, one foreign eval process. A 512-env,
-  4,000-iteration arm took <strong>0.74 GPU-hours</strong> (R1, shared). The 12-run + 48-cell confirmation
-  finished in ≈ 14 wall-hours. <strong>H1 at five paired seeds (10 runs + 40 cells) is ≈ 12–14 h.</strong></li>
-<li>Working tree: 8 modified + ≈ 50 untracked files (plans, reports, <code>climb/relative_progress.py</code>,
-  two figure scripts, tests). Nothing sealed touched. <strong>Not committed.</strong> Four detached
-  worktrees hold the H1, ICRA-evidence, signal-quality, and pages tooling.</li>
-</ul>
+<h3 id="12-h1-ten-training-runs-no-result">1.2 H1: ten training runs, no result</h3>
+<p>All ten 4,000-iteration runs completed and passed their gates at a mean 28.2 minutes each. The
+campaign then failed on <code>evaluate_on_s1041_i1000</code> because <code>paper/h1/job.py</code> calls the evaluator
+directly instead of through <code>tools/eval_relative_confirmation.py</code>, whose <code>load_sealed_conditions</code>
+adds the two provenance keys (<code>classification</code>, <code>panel_txt_sha256</code>) that the stored Phase-G
+condition manifest carries and the builder does not emit. Every scientific parameter, all 2,800
+conditions and all 100 motion records match exactly.</p>
+<p>The failure is <strong>provably pre-endpoint</strong> — before any checkpoint load or CSV write — so nothing
+about the comparison has been observed. Continuation in place is blocked by design: sentinels use
+exclusive create, the terminal record already exists, and the campaign path is contract-bound.
+Finishing H1 needs a contract revision. <strong>Decided on 8 September: not for this submission.</strong>
+Page 8 carries 78 of roughly 120 lines after the audit repairs and the new limitations, while an
+integrated H1 section needs about 119 line-equivalents including its figure. H1 is also rung 3,
+behind two desk rungs that cost no compute. The ten training runs remain intact and hash-bound, so
+the cost of waiting is time, not evidence. Options and costs stay recorded in
+<code>plan/H1_EVALUATION_FAILURE_2026-09-07.md</code> for whenever the revision is made.</p>
+<h3 id="13-what-this-project-has-never-done">1.3 What this project has never done</h3>
+<p>No hardware experiment. No physical G1. No tethered bench test. No sim-to-real transfer of any
+kind. Every number in the paper, on the public site, and in this file is simulation. Section 4 is
+about closing that, and it must never be written as though any of it has happened.</p>
 <hr />
-<h2 id="2-review-of-the-sept-4-draft-xiao-rubric-pass-read-only">2. Review of the Sept 4 draft (Xiao-rubric pass, read-only)</h2>
-<p><strong>Scope:</strong> full <code>paper/icra/DRAFT.md</code> (mirrors <code>root.tex</code>), plus the claim ledger. Not an ICRA
-verdict; an evidence audit.</p>
-<p><strong>Charitable reconstruction.</strong> Outcome-adaptive curricula misread reference defects as learnable
-difficulty; CLIMB screens final robot-space references for contact/actuator admissibility, routes
-intervals, and lets adaptive allocation act only on exact feasible support. Strongest supported
-contribution: the RPM diagnosis + bank-scale screen + exact-support apparatus, backed by sealed
-campaign telemetry and cross-implementation agreement.</p>
-<h3 id="21-claimevidence-table-for-the-abstract-as-written">2.1 Claim–evidence table for the abstract as written</h3>
+<h2 id="2-the-deployment-gap-stated-plainly">2. The deployment gap, stated plainly</h2>
+<p>The paper's result is about <em>which references a trainer should admit and where it should spend
+practice</em>. None of that is a controller you can put on a robot. Six things stand between the
+current artifact and a physical G1, and they are not equally hard.</p>
+<h3 id="21-the-model-is-not-the-robot">2.1 The model is not the robot</h3>
+<p><code>reports/icra_evidence_2026-09-06/physics_audit.json</code> reproduced all twelve frozen configuration
+hashes and compiled the unchanged robot, exposing every actuator limit. What it found:</p>
 <table>
 <thead>
 <tr>
-<th>abstract claim</th>
-<th>unit / n</th>
-<th>comparator</th>
-<th>warrant today</th>
-<th>smallest repair</th>
+<th>axis</th>
+<th>configured</th>
+<th>gap</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>top-1 peaked 87–89 %, same kneel/crawl attractor recurs</td>
-<td>seed; 3</td>
-<td>historical uniform/grounded</td>
-<td>supported (peak owner differs in 2 seeds — already stated in §5.1)</td>
-<td>none</td>
+<td>Knee effort</td>
+<td>±139 N·m, force limiting on, unit gear</td>
+<td>Our audit <em>records</em> vendor figures of 90 N·m (G1) and 120 N·m (G1 EDU) with no archived source, and does not establish that they describe the same point in the drivetrain as the compiled limit. Re-screening at those levels moved 12 of 900 clips (§3 rung 2)</td>
 </tr>
 <tr>
-<td>refeas flags 2,442/10,705; 39/40 agreement</td>
-<td>clip</td>
-<td>one pipeline; enriched panel</td>
-<td>supported, scoped</td>
-<td>none</td>
+<td>Command delay</td>
+<td>0/0 min-max on all six actuator groups</td>
+<td>Physics steps 5 ms, control 20 ms. Command delay, motor response lag and observation latency are three different perturbations, none modeled</td>
 </tr>
 <tr>
-<td>DFRP qualifies 22/26, 4/4 controls unchanged</td>
-<td>clip in frozen panel</td>
-<td>qualification gates</td>
-<td>supported as <em>implementation</em>; abstract implies more</td>
-<td>add "fixed-policy deployment unchanged (Δ −0.001)"; drop "restores" verbs</td>
+<td>Contact</td>
+<td>full collision config, feet condim 3, nominal foot friction 0.6, startup sampling 0.3–1.2</td>
+<td>Configured friction is not measured contact fidelity</td>
 </tr>
 <tr>
-<td>"exact-support curriculum … capped learning-progress allocation" as contribution 3</td>
-<td>—</td>
-<td>—</td>
-<td><strong>now contradicted as a benefit</strong>: confirmation inconclusive, AULC negative 3/3</td>
-<td>rewrite as <em>interface + matched negative/inconclusive result</em></td>
+<td>Terrain</td>
+<td>plane</td>
+<td>Uneven terrain untested; the screen would need its terrain in the scene</td>
 </tr>
 <tr>
-<td>transfer 0.567→0.609, p = 0.010</td>
-<td>clip; 100</td>
-<td>200 random triples</td>
-<td>supported</td>
-<td>none</td>
-</tr>
-<tr>
-<td>"closed-loop data-to-policy framework"</td>
-<td>—</td>
-<td>—</td>
-<td>unclear: the loop has never improved a policy</td>
-<td>replace with "a training interface that makes admission and allocation separately testable"</td>
+<td>Evaluation</td>
+<td>sealed <code>nominal=false</code>, startup COM/friction/encoder randomization retained, pushes and observation corruption removed</td>
+<td>Not a factorial robustness study</td>
 </tr>
 </tbody>
 </table>
-<h3 id="22-prioritised-concerns">2.2 Prioritised concerns</h3>
-<ol>
-<li><strong>Validity-critical — §5.4 and contribution 3.</strong> The manuscript's E4 paragraph is stale; the
-   completed result contradicts any benefit reading. Consequence: a reviewer who reads "in
-   progress" beside an ALP contribution will assume the result was withheld. Repair: replace
-   §5.4 with the completed four-arm table (per-seed deltas, both CIs, AULC as exploratory) and
-   the existing figure <code>paired_results_and_learning_curves.pdf</code>; rewrite contribution 3 and the
-   abstract; retitle (§3.3).</li>
-<li><strong>Validity-critical — the title word "gated".</strong> No experiment in the paper isolates the gate.
-   E-HYG (whole-clip prune) is a null; exact-interval gating has never been contrasted with its
-   absence. Repair: H1 (§4), or, if H1 does not land by the cutoff, a title and abstract that
-   claim <em>screening + exact support</em>, not <em>gating benefit</em>.</li>
-<li><strong>Major — DFRP page cost vs evidence.</strong> §3.3 spends a full display program plus a two-stage
-   description on a component whose only policy-facing number is Δ −0.001. Repair: compress to
-   one paragraph and one table row; move the program to a released-code note. This also buys
-   the space §5.4 needs.</li>
-<li><strong>Major clarification — "closed loop".</strong> Fig. 1 and the abstract call CLIMB closed-loop. The
-   only loop actually run is allocation-from-outcomes, which did not help. Repair: describe the
-   loop as <em>what the interface permits</em> and state that the tested loop gave no measurable gain.</li>
-<li><strong>Presentation — pooled tiers.</strong> §5.4's "Alternative routing and allocation controls" mixes
-   sealed (E-HYG), failed-manipulation (FGAS) and exploratory (N7) numbers in one paragraph.
-   Repair: a four-row table with a status column, one sentence each.</li>
-</ol>
-<h3 id="23-arithmetic-pass">2.3 Arithmetic pass</h3>
-<ul>
-<li>2,442/10,705 = 22.81 % ✓; 7/4,950 = 0.141 % ✓; 39/40 = 97.5 % ✓; 1,841 − 657 = 1,184 ✓.</li>
-<li>Confirmation: seed deltas −0.0340, −0.0330, +0.0218 → mean −0.0151, sd 0.0319, t(2, .975)
-  = 4.30 → half-width 0.079 → CI [−0.094, +0.064] ✓ matches the ledger.</li>
-<li><strong>Power fact the paper must state:</strong> with that seed sd, a three-seed design cannot resolve a
-  +0.02 target (half-width 0.079). The +0.02 margin was a <em>point</em> target with a lower-bound
-  rule; it was never a detectable effect size at n = 3. Say this in limitations rather than let
-  a reviewer discover it.</li>
-</ul>
+<p>The screen itself declares electrical, thermal, compliance, latency and structural limits out of
+scope. <strong>Model-relative admissibility is not physical feasibility, and the paper says so.</strong></p>
+<h3 id="22-execution-is-short-and-segmented">2.2 Execution is short and segmented</h3>
+<p>A training trial is capped at one second of simulated time (50 control steps at 50 Hz), though
+failure terminations end many sooner. Evaluation windows are three seconds. The longest genuinely
+continuous execution ever demonstrated is <strong>8.58 seconds</strong>, on one development policy
+(R11, checkpoint 2000), on two fully admitted training references, with zero active resets. That
+is a pipeline smoke, not a comparison and not a generalization result. A deployment needs whole
+references, transitions between them, and recovery after disturbance — none of which exists.</p>
+<h3 id="23-the-physical-sensitivity-study-is-blocked">2.3 The physical-sensitivity study is blocked</h3>
+<p>The eight-condition frozen-policy sensitivity design (delays 5/10/20 ms, knee caps 120/90 N·m,
+foot friction 0.3/1.2) is implemented and CPU-verified, but its CUDA queue completed all nine
+development cells and then failed the aggregate original-versus-unchanged exact CSV parity gate.
+The cause is unresolved, so no perturbation number may be reported.</p>
+<h3 id="24-the-observation-interface-is-privileged">2.4 The observation interface is privileged</h3>
+<p>The policy consumes simulator state and a time-indexed reference. On hardware that requires state
+estimation, reference synchronization, on-robot compute at the control rate, and a safety
+envelope. None of it is built here.</p>
+<h3 id="25-the-scientific-claim-would-have-to-be-re-earned">2.5 The scientific claim would have to be re-earned</h3>
+<p>Even a perfect port would not transfer the paper's finding. The allocation comparison is
+inconclusive <em>in simulation at three seeds</em>; it says nothing about hardware. A hardware claim
+needs its own preregistration, its own independent unit, and its own power statement.</p>
+<h3 id="26-the-honest-summary">2.6 The honest summary</h3>
+<p>CLIMB is a <strong>data-and-training-interface contribution with a bank-scale measurement result</strong>. It
+is not a controller, and it is two or three programmes away from being one.</p>
+<hr />
+<h2 id="3-the-deployment-ladder">3. The deployment ladder</h2>
+<p>Ordered. Each rung answers one question, and several may return nulls. Simulation rungs are cheap
+and should be finished first because they are the ones that can still change the paper's claims.</p>
+<p>Ordered by what can invalidate what, not by what is exciting. Two verified facts reordered this
+table after rev 5's first draft, and both came from reading the code rather than the plans.</p>
 <table>
 <thead>
 <tr>
-<th>paired seeds</th>
-<th>95 % t half-width at sd 0.032</th>
+<th>#</th>
+<th>rung</th>
+<th>tier</th>
+<th>question</th>
+<th>cost</th>
+<th>kill rule</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>1</td>
+<td><strong>Observation-interface audit</strong></td>
+<td>desk</td>
+<td>What does the policy consume that a G1 cannot measure?</td>
+<td>days, no compute</td>
+<td>If the actor's observations cannot be reconstructed on-robot, redesign before spending any hardware time</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Re-screen under tighter limits</strong> — <strong>DONE 8 Sep</strong></td>
+<td>desk</td>
+<td>Does the flagged set survive replacing ±139 N·m with 120 and 90 N·m?</td>
+<td>CPU only, ~5 min</td>
+<td><em>Ran. 888/900 clips unchanged, flagged 99 → 98. Registered monotonicity prediction refuted; lower-bound claim withdrawn.</em></td>
+</tr>
 <tr>
 <td>3</td>
-<td>0.079</td>
+<td><strong>Finish H1</strong></td>
+<td>sim</td>
+<td>Does excluding model-inadmissible practice protect learning under a common allocator?</td>
+<td>~1–6 GPU-h</td>
+<td>If the revised contract is not sealed, H1 stays a named next test</td>
 </tr>
 <tr>
 <td>4</td>
-<td>0.051</td>
+<td><strong>S1 parity, then sensitivity</strong></td>
+<td>sim</td>
+<td>Do frozen policies degrade under declared delay, torque and friction perturbations?</td>
+<td>~1 GPU-day after the parity bug</td>
+<td>If parity cannot be restored, report no perturbation number</td>
 </tr>
 <tr>
 <td>5</td>
-<td>0.040</td>
+<td><strong>C1 continuous execution</strong></td>
+<td>sim</td>
+<td>Do learned differences survive whole admitted references rather than 3 s windows?</td>
+<td>~1 GPU-day</td>
+<td>Blocked on missing frame-level screen provenance, not compute</td>
 </tr>
 <tr>
 <td>6</td>
-<td>0.034</td>
+<td><strong>Tethered bench, then identification</strong></td>
+<td>hardware</td>
+<td>Does the exported policy behave as the simulator predicts, and what are the robot's real delay and torque envelope?</td>
+<td>operator sessions</td>
+<td>Any uncommanded actuator behaviour stops the rung</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Screen validity on hardware</strong></td>
+<td>hardware</td>
+<td>Do flagged references fail earlier than matched unflagged ones on a real G1?</td>
+<td>a study of its own</td>
+<td>Stop on any safety event; report every attempt</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Iteration 2000 = 2001/4000 = 50.0 % of budget ✓ (zero-indexed checkpoint convention).</li>
-<li>368,951 / 417,072 = 88.46 % admitted → 11.54 % excluded ✓.</li>
-</ul>
+<p><strong>Rung 1 is first because it can invalidate everything above it.</strong> The upstream hardware-oriented
+G1 tracking configuration registers with <code>has_state_estimation=False</code>, which strips
+<code>motion_anchor_pos_b</code> and <code>base_lin_vel</code> from the actor group precisely because a robot cannot
+measure them. <code>climb/</code> never sets that flag, so it inherits <code>True</code> and every policy in this project
+consumes both terms. That is four lines of code and it is the sharpest deployment fact we have.</p>
+<p><strong>Rung 2 has been run, and it refuted its own registered prediction.</strong> <code>refeas</code>'s own
+<code>g1_flat.xml</code> carries <code>forcerange="-139 139"</code> on both knees and hip rolls, the same limits as the
+training model, so we re-screened all 900 Phase-G clips at 139, 120 and 90 N·m. The baseline
+reproduced the published screen exactly (max delta 0.0 across 900 clips), and tightening left
+<strong>888 of 900 clips unchanged</strong>, moving the flagged count from 99 to 98 with no clip newly flagged.
+The design had predicted the flagged fraction could only rise; four clips fell, by up to 0.0236,
+because the screen thresholds the <em>translational component</em> of a residual whose total the program
+minimizes, so tightening redistributes slack between components. The lower-bound sentence was
+withdrawn from the manuscript and the public page and replaced by this measurement.
+Design <code>plan/ACTUATOR_SENSITIVITY_2026-09-08.md</code>; result
+<code>reports/actuator_sensitivity_2026-09-08/result.json</code>.</p>
+<p><strong>Rung 7 is screen validity, not the curriculum claim.</strong> The project's positive asset is the
+measurement line, so the reachable physical question is whether the instrument predicts failure on
+a real robot. The allocation comparison is inconclusive, so there is no simulation result for a
+hardware version of that question to confirm.</p>
+<p><strong>The allocation claim is not reachable on hardware at all</strong>, and the reason is worth stating: the
+independent unit is the training seed pair, and robot time does not manufacture training seeds. At
+the observed seed spread, resolving the +0.02 target would take roughly a dozen paired seeds <em>in
+simulation</em> first.</p>
+<p><strong>The trap to avoid:</strong> doing rung 7 first because it is the exciting one. A hardware demonstration
+of a policy whose simulation comparison is inconclusive would produce a video, not a result.</p>
 <hr />
-<h2 id="3-the-decision-what-the-icra-paper-claims">3. The decision: what the ICRA paper claims</h2>
-<h3 id="31-principle">3.1 Principle</h3>
-<p>Claim exactly what the ledger supports on Sept 12, with one status label per number, and let
-the <em>controlled inconclusive</em> result be a finding rather than an apology. A reviewer can
-reject an overclaim; a reviewer cannot reject a matched, hash-bound, preregistered comparison
-for returning the answer it returned — provided the paper's contributions are stated so that
-they do not depend on a positive allocation effect.</p>
-<h3 id="32-three-contributions-rewritten">3.2 Three contributions, rewritten</h3>
+<h2 id="4-standing-rules-unchanged-they-are-why-the-evidence-is-trustworthy">4. Standing rules (unchanged; they are why the evidence is trustworthy)</h2>
 <ol>
-<li><strong>RPM and <code>refeas</code></strong> <em>(sealed/measured).</em> A final-trajectory contact-capacity screen; the E1
-   attractor anatomy; 22.8 % vs 0.14 % per corpus–pipeline pairing; 39/40 cross-implementation
-   agreement; feasibility features transfer difficulty across policies. <em>Unchanged; this is the
-   paper's core.</em></li>
-<li><strong>Exact temporal support as a training interface</strong> <em>(measured apparatus + controlled result).</em>
-   Frame-run units, hash-bound legal starts, zero rejected mass, explicit truncation, a paired
-   evaluator — <strong>and the finding that, on identical exact support and budget, four allocators
-   (uniform, absolute-ALP, relative-ALP, conditional-failure) differ in exposure (TV 0.03–0.09)
-   but not in held-out tracking at three seeds</strong> (R−U −0.015 [−0.094, +0.064]; R−D −0.007
-   [−0.022, +0.008]). State plainly that the design was underpowered for +0.02 and that AULC
-   was exploratory-negative. This is the honest replacement for "capped learning-progress
-   allocation" as a contribution.</li>
-<li><strong>Admission value (H1)</strong> <em>(conditional; §4).</em> Same failure-driven allocator D, contaminated
-   800-motion bank, admission on vs off, ≥ 5 paired seeds. If it lands by Sept 12, it becomes
-   contribution 3 with whatever sign it has, plus the mechanism telemetry (does D's excess mass
-   migrate onto rejected intervals?). If it does not land, contribution 3 is <strong>deleted</strong>, not
-   left pending, and DFRP + H1 become one "next test" paragraph.</li>
-</ol>
-<p>DFRP is demoted to a routing option inside contribution 1 (one paragraph in §3, one row in the
-results table with the 22/26 and the Δ −0.001). It stays in the paper because reviewers will
-ask "why not repair?"; the answer is now measured: it is safe and, so far, neutral.</p>
-<h3 id="33-title">3.3 Title</h3>
-<ul>
-<li>Without H1: <strong>"When Failure Is Not Difficulty: Screening Reference–Physics Misalignment and
-  Testing Adaptive Allocation on Exact Support for Humanoid Motion Tracking."</strong></li>
-<li>With H1 (either sign): <strong>"Feasibility-First Humanoid Motion Tracking: Screening
-  Reference–Physics Misalignment and a Matched Test of Admission and Allocation."</strong></li>
-</ul>
-<p>Do not keep "Feasibility-Gated" unless H1 is in the paper. Do not keep "Generalist Humanoid
-Controllers" — nothing in the paper tests generality across embodiments or architectures.</p>
-<h3 id="34-abstract-skeleton-numbers-only-where-a-table-holds-them">3.4 Abstract skeleton (numbers only where a table holds them)</h3>
-<p>RPM definition → E1 anatomy (3/3 seeds, 329 N vs 327 N, uniform +0.03 in 3/3) → screen at bank
-scale (2,442/10,705; 7/4,950; 39/40) → transfer (0.567→0.609, p = 0.010) → exact support
-(1,184 units, 368,951 starts, zero rejected mass) → <strong>on that support, four allocators change
-exposure but not held-out tracking at three seeds (R−U −0.015, CI [−0.094, +0.064])</strong> →
-[H1 sentence if landed] → conclusion: feasibility, support, and allocation are separately
-measurable, and the measurable damage of RPM is in exposure, not in any allocation rule tested.</p>
-<hr />
-<h2 id="4-the-one-experiment-h1-admission-onoff">4. The one experiment: H1, admission on/off</h2>
-<h3 id="41-why-h1-and-nothing-else">4.1 Why H1 and nothing else</h3>
-<table>
-<thead>
-<tr>
-<th>candidate</th>
-<th>tests the paper's claim?</th>
-<th>can produce a paper-bound number by Sept 12?</th>
-<th>verdict</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>H1 gate on/off under D</strong></td>
-<td>yes — the only test of "feasibility-gated"</td>
-<td>yes: ≈ 12–14 GPU-h; runtime, partition, provenance checker exist</td>
-<td><strong>run</strong></td>
-</tr>
-<tr>
-<td>C1 continuous execution</td>
-<td>no (evaluation-duration question)</td>
-<td>no: selection manifest and freeze absent</td>
-<td>stop</td>
-</tr>
-<tr>
-<td>S1 physical sensitivity (96 cells)</td>
-<td>no (robustness of already-inconclusive policies)</td>
-<td>no: GPU parity gate failed, cause unresolved</td>
-<td>stop</td>
-</tr>
-<tr>
-<td>N stationary-noise study</td>
-<td>mechanism of R only</td>
-<td>no: 17.6 M-transition burn-in per cell</td>
-<td>stop</td>
-</tr>
-<tr>
-<td>P practice branches</td>
-<td>mechanism of R only</td>
-<td>no: restoration untested</td>
-<td>stop</td>
-</tr>
-<tr>
-<td>More confirmation seeds</td>
-<td>forbidden by the frozen disposition</td>
-<td>—</td>
-<td>never</td>
-</tr>
-<tr>
-<td>Video / hardware</td>
-<td>not evidence</td>
-<td>window closed Sept 9</td>
-<td>Sept 17–22 only if trivial</td>
-</tr>
-</tbody>
-</table>
-<h3 id="42-design-freeze-before-any-gpu-job-one-seal-one-analyzer-dry-run">4.2 Design (freeze before any GPU job; one seal, one analyzer dry-run)</h3>
-<ul>
-<li><strong>Arms:</strong> gate-on (exact admission, current D) vs gate-off (same D over the full candidate
-  partition: 1,184 feasible units + 465 rejected intervals, exact H = 50 non-wrapping starts
-  everywhere; rejected intervals are <em>dynamically rejected</em>, never called admissible).
-  Controller, rewards, PPO, randomisation, caps, seeds, evaluator, panel: identical.</li>
-<li><strong>Seeds: five paired fresh seeds</strong> (not 21–23; not 11/12/31/32/51/71/81). Five seeds give a
-  half-width of about 0.040 at the observed seed sd, which still exceeds the historical E1
-  effect of 0.03 — so state up front that H1 is powered for effects ≥ ≈ 0.04, and declare the
-  outcome format as estimate + CI + per-seed values, with "positive" only if the CI lower bound<blockquote>
-<p>0 and "negative" only if the upper bound &lt; 0. Drop the +0.02 SESOI as a pass/fail rule; keep
-  it as the reported reference line. Six seeds if the first five finish before Sept 11 12:00.</p>
-</blockquote>
-</li>
-<li><strong>Primary:</strong> paired final feasible-hard TrackingScore, gate-on − gate-off. <strong>Guard:</strong> all-panel
-  paired difference reported, no lower-bound rule.</li>
-<li><strong>Mechanism endpoint (pre-declared, cheap, informative at any n):</strong> in gate-off, the mean
-  post-warm-up share of D's <em>above-prior</em> mass that lands on rejected intervals, versus the
-  rejected intervals' prior share (0.115 of starts; ≥ 0.092 after the floor). Also: top-1
-  interval identity per seed and whether it is a rejected interval. This is E1's attractor
-  question asked at interval scale and it does not need policy power to answer.</li>
-<li><strong>Manipulation checks:</strong> gate-on realised rejected trials = 0; gate-off realised rejected
-  trials &gt; 0 and post-cap rejected probability ≥ 0.0923; both arms zero invalid/censored;
-  exact sampler replay at every checkpoint (the existing checker).</li>
-<li><strong>Analysis:</strong> one frozen script with <code>--synthetic</code> positive/null/inconclusive/gate-fail
-  branches, dry-run before launch, hash in the seal. Exactly one printed status.</li>
-<li><strong>Kill rule / calendar:</strong> if the seal and scheduler are not live by <strong>Sept 8 22:00 EDT</strong>, or if
-  fewer than five paired seeds have passed training gates by <strong>Sept 11 12:00 EDT</strong>, H1 is out of
-  the paper and is written as the named next test. No partial-seed reporting.</li>
-<li><strong>Budget:</strong> 10 runs × 0.74 GPU-h ≈ 7.5 h training + 40 cells; run sequentially under the
-  existing 14,000 MiB / ≤ 60 % gate; one attempt per job; sentinel per job.</li>
-</ul>
-<h3 id="43-what-h1-does-to-the-paper">4.3 What H1 does to the paper</h3>
-<table>
-<thead>
-<tr>
-<th>outcome</th>
-<th>contribution 3 sentence</th>
-<th>title</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CI lower bound &gt; 0</td>
-<td>admission protects learning under a failure-driven allocator on a contaminated bank</td>
-<td>"Feasibility-First … Matched Test"</td>
-</tr>
-<tr>
-<td>CI straddles 0, mechanism shows D's excess mass on rejected intervals</td>
-<td>admission removes measurable exposure diversion; tracking effect below the resolvable size</td>
-<td>same</td>
-</tr>
-<tr>
-<td>CI straddles 0, no exposure migration</td>
-<td>at this contamination level (11.5 % of starts) admission neither helps nor harms; the E1 collapse needed the non-floor sampler <em>and</em> RPM</td>
-<td>same, softened abstract</td>
-</tr>
-<tr>
-<td>upper bound &lt; 0</td>
-<td>report it; discuss exclusion cost vs data loss</td>
-<td>same</td>
-</tr>
-</tbody>
-</table>
-<p>Every row is publishable because the paper's core (contribution 1) does not depend on it.</p>
-<hr />
-<h2 id="5-stop-list-until-sept-16">5. Stop list (until Sept 16)</h2>
-<ul>
-<li>No S1, C1, N, P, shuffled-score, reliability-calibrated score, smooth gate, repair expansion,
-  Newton, hardware, or new preregistrations other than H1.</li>
-<li>No modification of R, D, thresholds, seeds, or endpoints of the completed confirmation. No
-  bootstrap or secondary re-labelling. The disposition word is "inconclusive".</li>
-<li>No new tools in the original <code>tools/</code> root while the H1 worktree is the launch source; keep
-  H1 in <code>/home/linjiw/climb-gate-ablation-2026-09-06</code> with its own inventory hash.</li>
-<li>No edits to <code>docs/</code>, the companion, or the flagship until after submission.</li>
-<li>No autonomous "development checks" that consume the writing window. Every CPU hour from
-  Sept 9 goes to the manuscript unless it is the H1 analyzer dry-run.</li>
-</ul>
-<p>Each stopped thread gets <strong>one sentence</strong> in §6 Limitations / future work, with its measured
-preparatory fact where one exists (knee 139 vs 90/120 N·m; zero command delay; continuous
-adapter runs 8.6 s references; 17.6 M-transition burn-in bound for the noise study).</p>
-<hr />
-<h2 id="6-schedule-sept-7-15">6. Schedule, Sept 7 → 15</h2>
-<table>
-<thead>
-<tr>
-<th>day</th>
-<th>deliverable</th>
-<th>done when</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Sept 7 (today)</strong></td>
-<td>Commit the tree (§8.1). Read this file. Decide §3 (claim set + title) — this is the Sept 10 "claim selection" moved up.</td>
-<td><code>git status</code> clean except worktrees; decision recorded in <code>plan/STATUS.md</code> as one dated entry</td>
-</tr>
-<tr>
-<td><strong>Sept 8</strong></td>
-<td>H1 seal: contract JSON (arms, five seeds, partition hashes, endpoints, mechanism endpoint, kill rule), analyzer with four synthetic branches, scheduler argv; launch by 22:00</td>
-<td><code>plan/H1_FREEZE_2026-09-08.sha256</code> written; first training job running; sentinel dir exists</td>
-</tr>
-<tr>
-<td><strong>Sept 8–9</strong></td>
-<td>Manuscript surgery (CPU): §5.4 → completed four-arm table + figure; contribution 3 rewrite; abstract; title; DFRP compression; §5.4 controls table; limitations power paragraph; AI-disclosure update (Codex <em>and</em> Claude assisted)</td>
-<td><code>paper/icra/build.sh</code> passes at ≤ 8 pages with H1 as a bracketed slot</td>
-</tr>
-<tr>
-<td><strong>Sept 10</strong></td>
-<td>H1 mid-point: ≥ 6/10 training gates passed? If not on track for Sept 11 12:00, invoke the kill rule now and finalise the no-H1 title</td>
-<td>decision line in <code>STATUS.md</code></td>
-</tr>
-<tr>
-<td><strong>Sept 11</strong></td>
-<td>H1 training complete, 40 cells run, analyzer run once, verbatim result into <code>RESULTS_LOG.md</code>, <code>STATUS.md</code>, §5.5 and abstract</td>
-<td>one status word printed; hashes recorded</td>
-</tr>
-<tr>
-<td><strong>Sept 12</strong></td>
-<td><strong>Evidence cutoff.</strong> Rebuild PDF. Red-team pass on the new text only: every abstract number has a table; every tier labelled; no "closed-loop" verb without its qualifier</td>
-<td><code>RED_TEAM.md</code> new rows for E4-final and H1; build audit rerun</td>
-</tr>
-<tr>
-<td><strong>Sept 13–14</strong></td>
-<td>Figure polish (Fig. 1 remove the "closed loop" arrow or relabel; Fig. 3 = paired results + learning curves; Fig. 4 = H1 if present); anonymity sweep; PDF checker; references</td>
-<td>second build audit; PDF digest recorded</td>
-</tr>
-<tr>
-<td><strong>Sept 15</strong></td>
-<td>Submit. Then tag <code>icra2027-submitted</code>, push, and only then reopen the stop list</td>
-<td>tag exists</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="7-page-budget-eight-pages-including-references-and-cut-list">7. Page budget (eight pages including references) and cut list</h2>
-<table>
-<thead>
-<tr>
-<th>section</th>
-<th>Sept 4 draft</th>
-<th>target</th>
-<th>how</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>abstract + §1</td>
-<td>0.9</td>
-<td>0.9</td>
-<td>rewrite, same length</td>
-</tr>
-<tr>
-<td>§2 related work</td>
-<td>0.6</td>
-<td>0.5</td>
-<td>merge "evaluation on fixed support" into §3.4</td>
-</tr>
-<tr>
-<td>§3 method</td>
-<td>1.6</td>
-<td>1.2</td>
-<td>DFRP §3.3: keep the program statement, cut the two-stage prose to four lines</td>
-</tr>
-<tr>
-<td>§4 design</td>
-<td>0.9</td>
-<td>0.7</td>
-<td>E4 calibration grid → two sentences; H1 design → one paragraph</td>
-</tr>
-<tr>
-<td>§5 results</td>
-<td>1.6</td>
-<td>2.3</td>
-<td>new §5.4 table + figure (0.5); §5.5 H1 (0.4); controls table replaces the paragraph</td>
-</tr>
-<tr>
-<td>§6–7 limitations, conclusion</td>
-<td>0.5</td>
-<td>0.5</td>
-<td>add the power paragraph and the knee-torque sentence; delete one paragraph of conclusion</td>
-</tr>
-<tr>
-<td>references</td>
-<td>0.9</td>
-<td>0.9</td>
-<td>unchanged (22 entries)</td>
-</tr>
-<tr>
-<td><strong>total</strong></td>
-<td><strong>7.0</strong></td>
-<td><strong>7.0–7.5</strong></td>
-<td>leaves slack for H1</td>
-</tr>
-</tbody>
-</table>
-<p>The existing figure <code>reports/relative_confirmation_results_2026-09-06/paired_results_and_learning_curves.pdf</code>
-is already the right exhibit: seed pairs as points, mean + t-interval, four learning curves,
-x-axis in transitions. Use it as is.</p>
-<hr />
-<h2 id="8-repository-hygiene-do-today-ten-minutes">8. Repository hygiene (do today; ten minutes)</h2>
-<ol>
-<li><strong>Commit</strong> the current tree in two commits: (a) <code>Record completed confirmation, DFRP
-   fixed-policy result, and September plan addenda</code> — plans, reports, <code>RESULTS_LOG</code>, <code>STATUS</code>,
-   <code>climb/relative_progress.py</code>, tests, figure scripts; (b) <code>Add CLAUDE.md and fable rev 4</code>.
-   Do not commit the lock files or anything under the ignored patterns. Push.</li>
-<li><strong>Worktrees:</strong> leave the four detached worktrees; record their purpose and HEAD in
-   <code>plan/STATUS.md</code> once. After submission, fold the H1 tools into <code>tools/</code> with a fresh
-   inventory hash and remove the others.</li>
-<li><strong>AI disclosure</strong> in <code>root.tex</code>: "OpenAI Codex and Anthropic Claude assisted with code,
-   analysis tooling, figure composition, and language editing; the authors verified all claims
-   and artifact provenance." The current sentence names only Codex.</li>
-<li><strong><code>AGENTS.md</code></strong> says there is no root pytest suite; there are 310 tests that pass with the
-   pinned interpreter. Fix the sentence when convenient (not paper-critical).</li>
-<li><strong>Site</strong> (<code>docs/</code>): unchanged until Sept 16; the public page already carries the completed
-   result and is consistent with the ledger.</li>
-</ol>
-<hr />
-<h2 id="9-standing-rules-unchanged-they-are-why-the-evidence-is-trustworthy">9. Standing rules (unchanged; they are why the evidence is trustworthy)</h2>
-<ol>
-<li>Seal before run; frozen analyzer dry-run on <code>--synthetic</code> before outcomes exist.</li>
+<li>Seal before run; frozen analyzer dry-run on synthetic data before outcomes exist.</li>
 <li>Every arm carries a manipulation check; a failed check is "not tested", never a null.</li>
-<li>One status label per number; pending numbers do no load-bearing work — <strong>including in the
-   abstract and title</strong>.</li>
+<li>One status label per number; pending numbers do no load-bearing work, including in the
+   abstract, the title, and on the public site.</li>
 <li>Prevalence is per corpus-and-pipeline pairing.</li>
 <li>Repair changes the target; any repaired-reference contrast reports the 2×2 decomposition.</li>
 <li>Every background job writes a sentinel; every paper number has a path in <code>RESULTS_LOG.md</code>.</li>
-<li>No new threads until the submission is tagged.</li>
+<li>Simulation results are never written in hardware language.</li>
+<li><strong>New:</strong> an experiment that fails before its endpoint is a harness event, not a scientific
+   one. Preserve it, diagnose it, and let a human decide whether the seal is revised.</li>
 </ol>
 <hr />
-<h2 id="10-risks">10. Risks</h2>
+<h2 id="5-immediate-actions">5. Immediate actions</h2>
 <table>
 <thead>
 <tr>
-<th>risk</th>
-<th>signal</th>
-<th>mitigation</th>
+<th>#</th>
+<th>action</th>
+<th>owner</th>
+<th>state</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>H1 slips past Sept 11</td>
-<td>&lt; 6 training gates passed on Sept 10</td>
-<td>kill rule §4.2; no-H1 title is pre-written; nothing else in the paper waits on it</td>
+<td>1</td>
+<td>H1 contract revision</td>
+<td>agent, delegated</td>
+<td><strong>decided: not for this submission.</strong> Page 8 holds 78 of ~120 lines; an integrated H1 needs ~119 including its figure, so it would cost ~45 lines that verification just established as necessary. H1 is rung 3, behind two free desk rungs. The ten training runs stay intact and hash-bound.</td>
 </tr>
 <tr>
-<td>GPU is reclaimed by other users</td>
-<td>gate wait &gt; 2 h on any job</td>
-<td>sequential jobs + one-attempt rule already handle it; do not lower the memory gate</td>
-</tr>
-<tr>
-<td>Reviewer reads the paper as "method with no positive result"</td>
+<td>2</td>
+<td>Publish the project page with the paper and the deployment ladder</td>
+<td>done in this revision</td>
 <td>—</td>
-<td>contribution 1 is positive and sealed; contribution 2 is a controlled finding with stated power; the abstract leads with E1 and the screen, not with the allocator</td>
 </tr>
 <tr>
-<td>Temptation to add seeds 24–26 to confirmation because the GPU is free</td>
-<td>anyone proposing it</td>
-<td>forbidden by the frozen disposition; the correct use of free GPU is H1's fifth and sixth seed</td>
+<td>3</td>
+<td>Public links to the anonymized draft</td>
+<td>agent, delegated</td>
+<td><strong>decided: removed.</strong> Five links across two archive pages replaced with inert "withheld during review" text. No <code>paper/icra/</code> path is reachable from any published page.</td>
 </tr>
 <tr>
-<td>Manuscript rebuild breaks the 8-page gate after adding two exhibits</td>
-<td>build.sh fails</td>
-<td>the cut list in §7 is ordered; apply top-down</td>
+<td>4</td>
+<td>Apply the remaining lower-priority manuscript polish</td>
+<td>agent</td>
+<td>staged in <code>reports/fable_independent_verification_2026-09-07/audit_repair_plan.md</code> §2</td>
 </tr>
 <tr>
-<td>Writing window consumed by more "development checks"</td>
-<td>new <code>plan/*_2026-09-0x.md</code> files that are not H1 or manuscript</td>
-<td>§5 stop list; every such file needs a paper sentence it unlocks</td>
+<td>5</td>
+<td>Commit and tag when the user asks</td>
+<td>Linji</td>
+<td>uncommitted by policy</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="11-one-line-for-the-advisor">11. One line for the advisor</h2>
-<p><em>The controlled test ran and was inconclusive at three seeds; the paper is the RPM measurement
-line plus an exact-support interface with a matched allocation result, retitled to what it
-shows; the one GPU-day before the cutoff goes to admission on/off (H1) because it is the only
-experiment that tests the word "gated", and it is publishable whichever way it falls.</em></p>
+<h2 id="6-one-line-for-the-advisor">6. One line for the advisor</h2>
+<p><em>The simulation paper is finished and honest: reference–physics misalignment is measurable at bank
+scale and transfers across policies, and no allocation rule beat uniform on exact support at three
+seeds. The one open loop is a harness bug that stopped H1 after its training completed. Everything
+after that is the deployment gap, and this project has not yet run a single physical experiment.</em></p>
 </div></body></html>
