@@ -1,0 +1,64 @@
+{
+  "checked_at_utc": "2026-09-08T04:51:28.299992+00:00",
+  "deployed_commit": "4c5b4cc3ae91aa6fc952e1154267d8e4089d48e4",
+  "pages_build": "built",
+  "all_match": true,
+  "files": [
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/index.html",
+      "http_status": 200,
+      "bytes": 32818,
+      "matches_local_bytes": true,
+      "sha256": "4885ab24cae446d87139429e4e65eb6e9cdd7873793915aee4185149989c03d1"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/relative-progress.html",
+      "http_status": 200,
+      "bytes": 20374,
+      "matches_local_bytes": true,
+      "sha256": "31595b8879eb68b01d3f527428dec695069d5a83fbbaacbcd3cf95028bbec444"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/flagship.html",
+      "http_status": 200,
+      "bytes": 101111,
+      "matches_local_bytes": true,
+      "sha256": "909c4ee1cc58acf873eaecd59f86e34a2bd4c8c2b3eafacea9a4f1326881add9"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/companion.html",
+      "http_status": 200,
+      "bytes": 37230,
+      "matches_local_bytes": true,
+      "sha256": "1842b9322d0bcebdbcb2dd8959de9e13e0b5bef2231acd62758123745deec088"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/segment-native.html",
+      "http_status": 200,
+      "bytes": 28396,
+      "matches_local_bytes": true,
+      "sha256": "26b722d348dedbc7fa61b75c878d09a8c1d86b0b92b7a6fb437e6a3347b2449c"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/archive-2026-09-05.html",
+      "http_status": 200,
+      "bytes": 377756,
+      "matches_local_bytes": true,
+      "sha256": "ef960628aa1557545f118b19632b350d2cc3080526ffb43a1c8a1f3bd24f8c51"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/research-story.css",
+      "http_status": 200,
+      "bytes": 5571,
+      "matches_local_bytes": true,
+      "sha256": "940a5f4186cfd9ce84155d847c62d974a8ace116e787ace8ad419a9ffd4a09dc"
+    },
+    {
+      "url": "https://linjiw.github.io/climb-feasibility-first/assets/confirmation-2026-09-06/summary.json",
+      "http_status": 200,
+      "bytes": 3790,
+      "matches_local_bytes": true,
+      "sha256": "5b1a5fdc537ab8e51405c443f29f34e2bb8f35887e295fc18342a108dd965429"
+    }
+  ]
+}
